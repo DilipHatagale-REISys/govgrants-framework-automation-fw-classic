@@ -502,21 +502,21 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" inside table
+    When I perform quick search for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
     When I navigate to "Collab" sub tab
     When I perform quick search for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
-    When I enter value "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
+    When I enter value "body @&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I softly see "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
-    Then I softly see "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
+    When I perform quick search for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I softly see "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
+    Then I softly see "body @&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
 
   @89743 @validateReplyModalTitleAtSendEmail @sendEmail
   Scenario: Validate reply modal title at send email
@@ -844,7 +844,7 @@ Business Need: Send Email Component Scenarios
     When I click on "view" icon for "DND-Test Automation Record" inside table
     Then I softly see "9/4/2020 5:05 AM" on html page
 
-  @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal
+  @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -874,7 +874,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see select files section is displayed under send email modal
 
-  @102059 @validateSelectFilesComponentIsNotDisplayedWhenCheckboxIsUncheckedInCustomMetadataInSendEmailModal @wip @apiIssue
+  @102059 @validateSelectFilesComponentIsNotDisplayedWhenCheckboxIsUncheckedInCustomMetadataInSendEmailModal  @needManagedAPI @wip
   Scenario: disabling select files section from custom metadata config and validating display of attachments in send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -904,7 +904,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I do not see select files section is displayed under send email modal
 
-  @102090 @validateThatSelectFilesModalIsDisplayedByClickOnSelectFileSectionInSendEmailModal
+  @102090 @validateThatSelectFilesModalIsDisplayedByClickOnSelectFileSectionInSendEmailModal  @needManagedAPI @wip
   Scenario: validate that select file modal is displayed by click on select files section in send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -935,7 +935,7 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     Then I see "Select File(s)" modal window is displayed
 
-  @102092 @validateThatByClickOnSelectFileModalWindowAddFileWindowDisappearsUnderSendEmailModal
+  @102092 @validateThatByClickOnSelectFileModalWindowAddFileWindowDisappearsUnderSendEmailModal  @needManagedAPI @wip
   Scenario: validate that by click on select file modal window, add file modal disappears and send email modal displays
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

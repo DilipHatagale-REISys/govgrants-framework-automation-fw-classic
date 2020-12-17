@@ -341,3 +341,14 @@ Business Need: Forms Component Scenarios
     When I click on "Save" button in right header
     Then I see the following message in the page details :
       | 1. Describe In Detail The Applicant’s Overall Plan To Focus On The Key Priorities For This Program. is required to save. |
+
+  @119860  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtFormEdit-gPlanning
+  Scenario: validate field message displayed for required for save and submit Field at page header for admin user at form edit
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    Then I see field message with text as "Required to Save" and "Required to Submit"

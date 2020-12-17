@@ -25,13 +25,9 @@ Business Need: collab Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
-    And I select "All Users" from dropdown
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    When I click on "Menu" in the page details
-    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed

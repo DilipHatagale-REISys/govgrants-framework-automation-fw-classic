@@ -44,7 +44,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Edit" icon for "Program Artifacts" inside table
+    When I click on "Edit" icon for "Receipt" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment
     When I close modal by clicking the top right x button
     Then I see "Test Automation" has been added in "Attachments" flex table
@@ -73,7 +73,10 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I add notes records
-    When I click on "Delete" icon for "Automation Notes" inside table
+    When I close modal by clicking the top right x button
+    When I click on "Delete" icon for "Notes Record" inside table
+    When I click "Yes" on modal confirmation box
+    And I click modal button "Ok"
     Then I see confirmation box with body "Record deleted successfully." is displayed
 
   @54857    @validateNotesEditActionWorkingOrNot
@@ -99,9 +102,9 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "Automation Notes" inside table
+    When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
-    When I close alertbox
+    And I click modal button "Ok"
     When I add notes records
     Then I see the text containing :
       | Note saved Successfully. |
@@ -411,7 +414,7 @@ Business Need: Logged Issues Scenarios
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation" into field "fieldName__c"
+    And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -644,9 +647,9 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "Edit" icon for "Test Announcement For Automation" inside table
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
     When I navigate to "Financials" sub tab
     When I click dropdown field "fieldDetailedBudgetingRequired__c"
     Then I see only the following ordered options in dropdown field "DetailedBudgetingRequired__c" :
@@ -665,7 +668,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "FAD-GHHS-BP-01-00" inside table
     Then I see "Edit" button is not displayed
 
-  @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes
+  @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes @wip
   Scenario Outline: validate current date is displayed on sticky notes
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -756,13 +759,13 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "Edit" icon for "Test Announcement For Automation" inside table
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
     When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "ty" status in lookup modal table
 
-  @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation
+  @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation @wip
   Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -879,8 +882,8 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Shambhavi Application"
-    When I click on "View" icon for "Shambhavi Application" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     When I expand nested table containing column value "BP-01"
@@ -1347,6 +1350,12 @@ Business Need: Logged Issues Scenarios
 
   @59827    @numberFieldValueShouldDisplayProperlyWithEnteredMinusValue
   Scenario: Validate entered negative value inside Number field at page block detail should displayed properly at program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantee State Program | Name                      | PBD-9160                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1561,6 +1570,9 @@ Business Need: Logged Issues Scenarios
       | Flex Table List       | Default ? | true          | Programs           | Name                      | FLV-1837                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     Then I see "Draft Programs" is selected at program flex table
 
@@ -2449,7 +2461,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "PG-343-0058"
-    Then I see "PG-343-0058" value in flex table id "---program:-:programSearchFlexTableID---"
+    Then I see value "PG-343-0058" for title "ID" inside table "---program:-:programSearchFlexTableID---"
 
   @86985 @validateThatAlertMessageWillAppearAtModalIfUserDonnotHaveAccessToEditFileAtFileList @libraryFiles
   Scenario: Verify that user can upload file from HomePhase - FileList table
@@ -3375,7 +3387,7 @@ Business Need: Logged Issues Scenarios
       | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | true          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | tr ue          | ApplicationBudgetPeriods |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3499,7 +3511,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Default Value | 1             | TmpActiveGrantsGrid | Name                      | FTC-1525                   |
-    Given I delete the record "Grant Created for default value testing" from the object "Grant__c"
+    Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4082,7 +4094,7 @@ Business Need: Logged Issues Scenarios
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation" into field "fieldName__c"
+    And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -4352,24 +4364,6 @@ Business Need: Logged Issues Scenarios
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
     Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"
 
-  @118847    @verifyHideCellJSONAtEnhancedGridIfUsedFieldIsNotPresentInsideTable-EGrid @enhancedGrid
-  Scenario: Verify Hide cell JSON By hiding cell if field used in expression is not displayed inside table - enhanced grid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
-
   @117577    @validateDecimalPlacesDisplayedAtPercentFieldInsideEGrid
   Scenario Outline: Validate decimal places displayed at percent field inside enhanced grid
     Given I have "default" configuration as below:
@@ -4393,3 +4387,53 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                  | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
       | Status__c,Name,ProjectTitle__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116139    @VerifyDefaultTotalIsNotDisplayedAtCurrencyFieldAtMEGrid-gPlanning @wip
+  Scenario Outline: Validating default total is not displayed for currency field inside ME Grid-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | false          | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
+      | Flex Table:General    | Enable Total Row    | false          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    Then I do not see default total at "---program:-:applicationBudgetCategoryFlexGridTableId---" flex grid
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @116140    @VerifyDefaultTotalIsNotDisplayedAtCurrencyFieldAtMEGridInPageEditMode-gPlanning @wip
+  Scenario Outline: Validating default total is not displayed for currency field inside ME Grid in page edit mode-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | false          | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
+      | Flex Table:General    | Enable Total Row    | false          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    Then I do not see default total at "---program:-:applicationBudgetCategoryFlexGridTableId---" flex grid
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |

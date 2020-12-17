@@ -1,8 +1,7 @@
-@SecurityReview @regression-test8 @collab
+@SecurityReview @regression-test8 @securityReview
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
-
 
   @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate flex  table at record table is rendered properly by PM user
