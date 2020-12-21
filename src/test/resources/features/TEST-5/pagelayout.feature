@@ -3002,9 +3002,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantee State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                          | Grantee State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3778,3 +3778,360 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
+
+  @119858  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditModal-gPlanning
+  Scenario: validate field message displayed for required for save and submit Field at page header for admin user at modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    Then I see field message with text as "Required to Save" and "Required to Submit"
+
+  @119859    @requiredToSaveBehaviourAtModalWindowIfDataInAnyRequiredFieldIsMissing-gPlanning
+  Scenario: validate req to save error message at announcement create modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    And I click modal button "Continue"
+    Then I see the following message in the page details contains:
+      | Program ID is required to save. |
+
+  @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
+  Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-3111                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-3111                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<new_helpText1>" shown as help text
+    And I refresh the page
+    When I hovering mouse on help text icon at "Status" inside "Overview Header" header
+    Then I softly see "<new_helpText2>" shown as help text
+
+    Examples:
+      | new_helpText1 | new_helpText2 |
+      | help text     | help text     |
+
+  @120005    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInViewMode-gPlanning
+  Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-3111                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-3111                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<new_helpText1>" shown as help text
+    And I refresh the page
+    When I hovering mouse on help text icon at "Status" inside "Overview Header" header
+    Then I softly see "<new_helpText2>" shown as help text
+
+    Examples:
+      | new_helpText1 | new_helpText2 |
+      | help text     | help text     |
+
+  @120006    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInEditMode-gPlanning
+  Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9239                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9239                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<new_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Details" page block
+    Then I softly see "<new_helpText2>" shown as help text
+
+    Examples:
+      | new_helpText1 | new_helpText2 |
+      | help text     | help text     |
+
+  @120007    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInViewMode-gPlanning
+  Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9239                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9239                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<new_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Details" page block
+    Then I softly see "<new_helpText2>" shown as help text
+
+    Examples:
+      | new_helpText1 | new_helpText2 |
+      | help text     | help text     |
+
+  @120009    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithDiffHelpText-gPlanning
+  Scenario Outline: validating help text on hover at field two same name fields are displayed at 2 diff tabs in edit mode with diff help text
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<new_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Financial Details" page block
+    Then I softly see "<new_helpText2>" shown as help text
+
+    Examples:
+      | new_helpText1 | new_helpText2 |
+      | help text     | help text     |
+
+  @120010    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithDiffHelpText-gPlanning
+  Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with diff help text
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<default_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Financial Details" page block
+    Then I softly see "<default_helpText2>" shown as help text
+
+    Examples:
+      | default_helpText1 | default_helpText2 |
+      | help text         | help text2        |
+
+  @120012    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithSameHelpText-gPlanning
+  Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with same help text
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<default_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Financial Details" page block
+    Then I softly see "<default_helpText1>" shown as help text
+
+    Examples:
+      | default_helpText1 | default_helpText2 |
+      | help text         | help text2        |
+
+  @120013    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithSameHelpText-gPlanning
+  Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in edit mode with same help text
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    Then I softly see "<default_helpText1>" shown as help text
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon at "Status" inside "Financial Details" page block
+    Then I softly see "<default_helpText1>" shown as help text
+
+    Examples:
+      | default_helpText1 | default_helpText2 |
+      | help text         | help text2        |
+
+  @120065    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInEditMode-gPlanning
+  Scenario: validate the page instructions text displayed with bulb icon at page header in page edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
+      | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see bulb icon at header instruction is displayed
+    And I refresh the page
+    Then I softly see "Automation Instruction Text" shown as page instruction text
+
+  @120062    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInCreateMode-gPlanning
+  Scenario: validate the page instructions text displayed with bulb icon at page header in page create mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
+      | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on top right button "New" in flex table with id "Programs"
+    Then I softly see bulb icon at header instruction is displayed
+    And I refresh the page
+    Then I softly see "Automation Instruction Text" shown as page instruction text
+
+  @120069    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInViewMode-gPlanning
+  Scenario: validate the page instructions text displayed with bulb icon at page header in page view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
+      | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see bulb icon at header instruction is displayed
+    And I refresh the page
+    Then I softly see "Automation Instruction Text" shown as page instruction text
+
+  @120091    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInViewMode-gPlanning
+  Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9163                   |
+    And I refresh the page
+    Then I see "Missing fields information" shown as help text at visual indicator inside page layout
+
+  @120089    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInEditMode-gPlanning
+  Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    Then I see "Missing fields information" shown as help text at visual indicator inside page layout
