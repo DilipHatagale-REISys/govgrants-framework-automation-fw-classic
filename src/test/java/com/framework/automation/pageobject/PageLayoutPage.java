@@ -453,6 +453,22 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().click().on(getRadioButtons);
     }
 
+
+    /**
+     * mouse hover on help text icon at field inside page block
+     *
+     * @param fieldName
+     * @param pageBlockName
+     * @author ashwini.mahore
+     */
+    public void hoverAttHelpTextAtFieldInsidePageBlock(String fieldName, String pageBlockName, boolean isPageBlock) {
+        if (isPageBlock) {
+            I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
+        } else {
+            I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/..//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
+        }
+    }
+
     /**
      * select value from radio buttons at form layout
      *
@@ -1114,16 +1130,23 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * assert true if correct page instruction text is displayed
      */
-    public void assertPageInstructionText(String text) {
-        Assert.assertTrue(isPageInstructionTextDisplayed(text));
+    public void assertPageInstructionText(String usage, String text) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isPageInstructionTextDisplayed(text));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageInstructionTextDisplayed(text)).isTrue();
+        }
     }
-
 
     /**
      * assert true if bulb icon displayed at page instruction inside page layout
      */
-    public void assertBulbIconAtHeaderInstruction() {
-        Assert.assertTrue(isBulbIconDisplayedAtPageInstructionInsidePageLayout());
+    public void assertBulbIconAtHeaderInstruction(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isBulbIconDisplayedAtPageInstructionInsidePageLayout());
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isBulbIconDisplayedAtPageInstructionInsidePageLayout()).isTrue();
+        }
     }
 
     /**
@@ -1339,6 +1362,16 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().waitFor().makeThreadSleep(1000);
         I.amPerforming().snapShotTo().takeElementScreenShot(getValidationButton, "captureMiniPageLayout");
         Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureMiniPageLayout.png", "src/main/resources/" + imageName + ""));
+    }
+
+    /**
+     * return true if help text is displayed on hover at visual indicator inside page layout
+     *
+     * @param helpText
+     * @author ashwini.mahore
+     */
+    public void assertHelpTextAtVisualIndicator(String helpText) {
+        Assert.assertTrue(isHelpTextDisplayedAtVisualIndicatorInsidePageBlock(helpText));
     }
 
     /**
@@ -2379,7 +2412,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isBulbIconDisplayedAtPageInstructionInsidePageLayout() {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.healingXpathName("pageLayout_getBulbIconAtHeaderInstruction"))) {
+        //if (I.amPerforming().checkToSee().isDisplayed(ByUsing.healingXpathName("pageLayout_getBulbIconAtHeaderInstruction"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'article')]//*[@class='bulbIcon']"))) {
             flag = true;
         }
         return flag;
@@ -2629,6 +2663,23 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = true;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+                flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if help text is displayed on hover at visual indicator inside page layout
+     *
+     * @param helpText
+     * @author ashwini.mahore
+     */
+    public Boolean isHelpTextDisplayedAtVisualIndicatorInsidePageBlock(String helpText) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[contains(@class,'tabYellowDot') and contains(@style,'inline-block') and @title='" + helpText + "']"))) {
                 flag = false;
             }
         } catch (Exception e) {

@@ -151,6 +151,11 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueInsideRadioFieldAtFormLayout(value, fieldApiName);
     }
 
+    @When("^I hovering mouse on help text icon at \"([^\"]*)\" inside \"([^\"]*)\" (page block|header)$")
+    public void iHoveringMouseOnHelpTextIconAtInsidePageBlock(String fieldName, String pageBlockName, String uiType) {
+        pageLayoutPage.hoverAttHelpTextAtFieldInsidePageBlock(fieldName, pageBlockName, uiType.equalsIgnoreCase("page block"));
+    }
+
     @And("^I enter value \"([^\"]*)\" in the (post|comment) at collab$")
     public void iEnterValueInThePostAtMyFeedSection(String postOrComment, String sharingType) {
         pageLayoutPage.enterValueInsidePostOrCommentCollab(postOrComment, sharingType.equalsIgnoreCase("post"));
@@ -533,14 +538,14 @@ public class PageLayoutSteps {
         pageLayoutPage.assertAlignmentOfTextInsideMyFeedSection();
     }
 
-    @Then("^I see \"([^\"]*)\" shown as page instruction text$")
-    public void assertPageInstructionText(String pageInstructionText) {
-        pageLayoutPage.assertPageInstructionText(pageInstructionText);
+    @Then("^I (see|softly see) \"([^\"]*)\" shown as page instruction text$")
+    public void assertPageInstructionText(String usage, String pageInstructionText) {
+        pageLayoutPage.assertPageInstructionText(usage, pageInstructionText);
     }
 
-    @Then("I see bulb icon at header instruction is displayed")
-    public void iSeeBulbIconAtHeaderInstructionIsDisplayed() {
-        pageLayoutPage.assertBulbIconAtHeaderInstruction();
+    @Then("^I (see|softly see) bulb icon at header instruction is displayed$")
+    public void iSeeBulbIconAtHeaderInstructionIsDisplayed(String usage) {
+        pageLayoutPage.assertBulbIconAtHeaderInstruction(usage);
     }
 
     @Then("I see collab my feed page refreshed")
@@ -631,5 +636,10 @@ public class PageLayoutSteps {
     @Then("I see mini page layout displayed and compared with {string}")
     public void iSeeMiniPageLayoutDisplayedAtLookupModalWindowAndComparedWith(String imageName) throws IOException {
         pageLayoutPage.assertMiniPageLayoutDisplayedAtModalWindow(imageName);
+    }
+
+    @Then("I see {string} shown as help text at visual indicator inside page layout")
+    public void iSeeShownAsHelpTextAtVisualIndicatorInsidePageLayout(String helpText) {
+        pageLayoutPage.assertHelpTextAtVisualIndicator(helpText);
     }
 }

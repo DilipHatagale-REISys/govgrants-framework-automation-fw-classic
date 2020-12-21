@@ -552,3 +552,23 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see "$200,000.50" shown inside "New Value" column in history table
     Then I softly see "$300,000.00" shown inside "Old Value" column in history table
+
+  @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable @wip
+  Scenario: validate the currency field format under field history table inside new value column
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "History" sub tab
+    When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
+    When I enter advance filter values inside id "advfHistory"
+      | Entity Name | Equals to | PG-343-0058 |
+    Then I see value "PG-343-0058" for title "Entity Name" inside table "---program:-:historyTableId---"

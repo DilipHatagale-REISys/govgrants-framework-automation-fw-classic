@@ -2571,3 +2571,14 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     Then I cannot see the following messages in the page details :
       | Apex CPU time limit exceeded |
+
+  @119851 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtUploadFileModalUnderPlanningFilesTableFromFiles_LibraryTab-PhaseLevel
+  Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at upload file modal from files_Library tab- home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Upload File" option at library/folder/file "Asset Library"
+    Then I see pre-selected library/folder as "Asset Library" is displayed at add file modal
