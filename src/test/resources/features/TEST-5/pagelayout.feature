@@ -4105,7 +4105,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4135,3 +4135,121 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     Then I see "Missing fields information" shown as help text at visual indicator inside page layout
+
+  @120233    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewMode
+  Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Notes" modal
+
+  @120235    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInEditMode
+  Scenario: validate loading icon is not displayed at add Notes modal window when record is in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Notes" modal
+
+  @120234    @validateLoadingIconIsNotDisplayedAtAddAttachmentModalWindowInViewMode
+  Scenario: validate loading icon is not displayed at add attachment modal window when record is in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Attachments" modal
+
+  @120236    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInEditMode
+  Scenario: validate loading icon is not displayed at add Attachments modal window when record is in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Attachments" modal
+
+  @120450    @validateNotesIsAddedSuccessfullyUsingAddNotesButton
+  Scenario: validate Notes are getting added successfully using add button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "Notes Record" inside table
+    When I click "Yes" on modal confirmation box
+    And I click modal button "Ok"
+    When I add notes records
+    When I close modal by clicking the top right x button
+    Then I see table with header "Notes" contains records "Notes Record"
+
+  @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
+  Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "5" seconds
+    Then I do not see loading icon at "Associate" modal
+
+  @120239    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInViewMode
+  Scenario: validate loading icon is not displayed at associate modal at flex table when record is in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Associate" modal
+
+  @120241    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewModeByLoginAsExternalUser
+  Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode by login as external user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Notes" modal
+
+  @120242    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInViewModeByLoginAsExternalUser
+  Scenario: validate loading icon is not displayed at add attachments modal window when record is in view mode by login as external user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I wait for "5" seconds
+    Then I do not see loading icon at "Add Attachments" modal
