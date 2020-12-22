@@ -642,4 +642,9 @@ public class PageLayoutSteps {
     public void iSeeShownAsHelpTextAtVisualIndicatorInsidePageLayout(String helpText) {
         pageLayoutPage.assertHelpTextAtVisualIndicator(helpText);
     }
+
+    @Then("I do not see loading icon at {string} modal")
+    public void iDoNotSeeLoadingIconAtModal(String modalTitle) {
+        pageLayoutPage.assertLoadingIconAtModalWindow(modalTitle);
+    }
 }

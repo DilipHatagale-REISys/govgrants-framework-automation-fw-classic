@@ -1375,6 +1375,16 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if loading icon is not displayed at modal window
+     *
+     * @param modalTitle
+     * @author ashwini.mahore
+     */
+    public void assertLoadingIconAtModalWindow(String modalTitle) {
+        Assert.assertTrue(isLoadingIconDisplayedAtModalWindow(modalTitle));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2677,10 +2687,28 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public Boolean isHelpTextDisplayedAtVisualIndicatorInsidePageBlock(String helpText) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[contains(@class,'tabYellowDot') and contains(@style,'inline-block') and @title='" + helpText + "']"))) {
-                flag = false;
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if loading icon is not displayed at modal window
+     *
+     * @param modalTitle
+     * @author ashwini.mahore
+     */
+    public Boolean isLoadingIconDisplayedAtModalWindow(String modalTitle) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        try {
+            if (I.amPerforming().getElementReference().of(ByUsing.xpath("//p[text()='"+modalTitle+"']/parent::div/following-sibling::div/div[@class='modalLoadIcon']")).getAttribute("style").contains("none")) {
+                flag = true;
             }
         } catch (Exception e) {
         }
