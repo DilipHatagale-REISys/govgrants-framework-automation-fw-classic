@@ -470,6 +470,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * select value from collab sidebar menu
+     *
+     * @param menu
+     * @author ashwini.mahore
+     */
+    public void clickOnCollabSidebarMenu(String menu) {
+        By getCollabSidebarMenu = By.xpath("//div[@id='CollabMenu']//*[text()='" + menu + "']");
+        I.amPerforming().click().on(getCollabSidebarMenu);
+    }
+
+    /**
      * select value from radio buttons at form layout
      *
      * @param value
@@ -541,9 +552,20 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param lookUpLink
      */
-    public void getLookUpLinkToHover(String lookUpLink) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered'] |" +
-                " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')]"), false);
+    public void getLookUpLinkToHover(String lookUpLink, String uiType) {
+        if (uiType.contains("grid")) {
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().scroll().toMoveToElement(By.xpath("//td//a[@title='" + lookUpLink + "' and contains(@class,'tableRowLinks') and not(contains(@class,'ng-hide'))]"), false);
+
+        } else if (uiType.contains("table")) {
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().scroll().toMoveToElement(By.xpath("//td//*[text()='" + lookUpLink + "' and @ng-mouseover]"), true);
+
+        } else {
+            I.amPerforming().waitFor().makeThreadSleep(500);
+            I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "')] |" +
+                    " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')] | //a[contains(@id,'recentView')]//span[text()='" + lookUpLink + "'] | //td//*[@title='" + lookUpLink + "' and @class='tableRowLinks']"), false);
+        }
     }
 
     /**
@@ -1382,6 +1404,16 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertLoadingIconAtModalWindow(String modalTitle) {
         Assert.assertTrue(isLoadingIconDisplayedAtModalWindow(modalTitle));
+    }
+
+    /**
+     * return true if if mini-page layout is displayed with bold label and value
+     *
+     * @param isTitle
+     * @author ashwini.mahore
+     */
+    public void assertMiniPageLayoutFormating(Boolean isTitle) {
+        I.amPerforming().assertionsTo().assertThat(isMiniPageLayoutDisplayedInExpectedFormating(isTitle)).isTrue();
     }
 
     /**
@@ -2707,7 +2739,28 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         try {
-            if (I.amPerforming().getElementReference().of(ByUsing.xpath("//p[text()='"+modalTitle+"']/parent::div/following-sibling::div/div[@class='modalLoadIcon']")).getAttribute("style").contains("none")) {
+            if (I.amPerforming().getElementReference().of(ByUsing.xpath("//p[text()='" + modalTitle + "']/parent::div/following-sibling::div/div[@class='modalLoadIcon']")).getAttribute("style").contains("none")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if mini-page layout is displayed with bold label and value
+     *
+     * @param isTitle
+     * @author ashwini.mahore
+     */
+    public Boolean isMiniPageLayoutDisplayedInExpectedFormating(Boolean isTitle) {
+        boolean flag = false;
+        try {
+            if (isTitle) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[@class='tooltipObjname']/..//div[@class='tooltipLabel']"))) {
+                    flag = true;
+                }
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='tooltipValue']"))) {
                 flag = true;
             }
         } catch (Exception e) {

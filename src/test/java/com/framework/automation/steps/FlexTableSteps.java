@@ -272,4 +272,9 @@ public class FlexTableSteps {
     public void iSeeLabelWithTextInsideAdvanceFilter(String value) {
         flexTablePage.assertTextInsideLabelAtAdvanceFilter(value);
     }
+
+    @Then("I see cross icon is displayed at search box at {string}")
+    public void iSeeCrossIconAtSearchBoxIsDisplayed(String tableId) {
+        flexTablePage.assertCrossIconAtQuickSearchBox(tableId);
+    }
 }

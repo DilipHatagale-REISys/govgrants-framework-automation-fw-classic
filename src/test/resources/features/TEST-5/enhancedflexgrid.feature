@@ -2570,3 +2570,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
       | Status__c,Name,ProjectTitle__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @120976  @VerifyCrossIconIsDisplayedAtEnhancedGridQuickSearchBox
+  Scenario: validate that cross icon is displayed at enhanced Grid quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see cross icon is displayed at search box at "---program:-:flexGridEnhancedID---"

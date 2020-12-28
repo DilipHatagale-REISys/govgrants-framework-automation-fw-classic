@@ -356,11 +356,11 @@ Business Need: Forms Component Scenarios
   @119861 @verifyRequiredForSaveFieldAlertMessageAtFormLayoutInEditMode
   Scenario:validate required for save alert message displayed if data from required field is missing at form layout in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |  | Application - Simple | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField   | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Application - Simple | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Application - Simple | Name                      | PBD-4188                    |
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Application - Simple | Name                      | PBD-4188                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -371,4 +371,18 @@ Business Need: Forms Component Scenarios
     And I enter value "" into field "ProposedStartdate__c"
     When I click on "Save" button in right header
     Then I see the following message in the page details :
-      |  Proposed Start Date : is required to save.|
+      | Proposed Start Date : is required to save. |
+
+  @120398 @verifyErrorMessageIsNotDisplayedAtFormLayoutWhileClickOnSaveButton
+  Scenario:validate error message is not displayed if user click on save button by changing form data
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    And I enter value "test" into field "SimpleQuestion1__c"
+    When I click on "Save" button in right header
+    Then I cannot see the following message in the page details :
+      | Invalid Id : |

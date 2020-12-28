@@ -95,16 +95,6 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertThatObjectIsShowingInRecentlyViewedSideBarOption(acronym);
     }
 
-    @Then("^I see \"([^\"]*)\" inside CustomApp dropDown$")
-    public void assertCustomAppInsideDropdownDisplayed(String dropDownValue) {
-        phaseConfigPage.assertCustomAppValueInsideDropdownDisplayed(dropDownValue);
-    }
-
-    @Then("^I see \"([^\"]*)\" inside CustomApp dropDown not displayed$")
-    public void assertCustomAppInsideDropdownNotDisplayed(String dropDownValue) {
-        phaseConfigPage.assertCustomAppValueInsideDropdownNotDisplayed(dropDownValue);
-    }
-
     @Then("^I see \"([^\"]*)\" on complete page for custom App as a Grantor$")
     public void assertContrastColorForAsaGrantorCustomApp(String contrastValue) {
         phaseConfigPage.assertContrastColourForCustomAppAsaGrantor(contrastValue);

@@ -4253,3 +4253,145 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Attachments" modal
+
+  @120451    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileEditingRecord
+  Scenario: validate are getting edited successfully without throwing alert message if all required fields are filled
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "Notes Record" inside table
+    When I click "Yes" on modal confirmation box
+    And I click modal button "Ok"
+    When I add notes records
+    When I close modal by clicking the top right x button
+    And I edit the notes
+    And I click modal button "Save"
+    Then I cannot see the following messages in the page details contains:
+      | required fields missing:[Parent Id] |
+
+  @120452    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileAddingNewRecord
+  Scenario: validate records are getting added successfully without throwing alert message if all required fields are filled
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "Notes Record" inside table
+    When I click "Yes" on modal confirmation box
+    And I click modal button "Ok"
+    When I add notes records
+    Then I cannot see the following messages in the page details contains:
+      | required fields missing:[Parent Id] |
+
+  @120516  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMod
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I hover mouse on lookup link "Department of Community Health"
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @120519  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtModalWindow
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Program Approver" inside table
+    And I pause execution for "3" seconds
+    When I hover mouse on lookup link "Automation PM"
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @120517  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtEnhancedGridLookupValue
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at enhanced grid lookup value
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Child Development Centre" at grid
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @120515  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtFlexTableLookupValue
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at table lookup value
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Framework QA" in "toggleFlexTableProgramContacts" panel
+    When I hover mouse on lookup link "Framework QA" at table
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at ME Grid lookup value
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I hover mouse on lookup link "Loans & Debt Payment" at grid
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @120455  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinks
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at sidebar links
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hover mouse on lookup link "AN-343-020"
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @121028  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtN2GridLookupValue
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at n2 grid lookup value
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                    | filterId         |
+      | Flex Grid             | Display Field Names | Type__c,Title__c,Description__c,Status__c,DueDate__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | Type__c,Title__c,Description__c,Status__c,DueDate__c,CreatedBy.Name | ProgramStrategicGoals |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I hover mouse on lookup link "Nauman Shahid" at grid
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned

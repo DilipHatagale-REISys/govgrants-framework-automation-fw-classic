@@ -191,34 +191,6 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     /**
-     * assert if custom App is displayed inside custom app dropdown list
-     *
-     * @param dropDownValue
-     */
-    public void assertCustomAppValueInsideDropdownDisplayed(String dropDownValue) {
-        Assert.assertTrue(isSpecificCustomAppDisplayed(dropDownValue));
-    }
-
-    /**
-     * assert if custom App is not displayed inside custom app dropdown list
-     *
-     * @param dropDownValue
-     */
-    public void assertCustomAppValueInsideDropdownNotDisplayed(String dropDownValue) {
-        Assert.assertFalse(isSpecificCustomAppDisplayed(dropDownValue));
-    }
-
-    /**
-     * get item from custom App Dropdown
-     *
-     * @param dropDownValue
-     * @return
-     */
-    public WebElement getCustomAppFromCustomAppDropdown(String dropDownValue) {
-        return I.amPerforming().getElementReference().of(By.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
-    }
-
-    /**
      * get the top right drop down items. grntee etc
      *
      * @param dropDownItem
@@ -499,25 +471,6 @@ public class PhaseConfigPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * return true if specific custom App displayed
-     *
-     * @param dropDownValue
-     * @return
-     */
-    private boolean isSpecificCustomAppDisplayed(String dropDownValue) {
-        boolean flag = false;
-        try {
-            if (getCustomAppFromCustomAppDropdown(dropDownValue).getAttribute("innerText").trim()
-                    .equalsIgnoreCase(dropDownValue)) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-
         }
         return flag;
     }

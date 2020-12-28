@@ -1367,6 +1367,23 @@ Business Need: Flex Table Component Scenarios
     Then I softly see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
     Then I softly do not see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
 
+  @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
+  Scenario: validate that cross icon is displayed at flex table quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
+
+  @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
+  Scenario: validate that cross icon is displayed at flex table quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed

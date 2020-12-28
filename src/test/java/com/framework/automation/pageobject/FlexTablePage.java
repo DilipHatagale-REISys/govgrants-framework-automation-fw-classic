@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.exception.TestingBlazeCustomException;
 import com.testingblaze.objects.Elements;
@@ -494,6 +495,15 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertTextInsideLabelAtAdvanceFilter(String value) {
         Assert.assertTrue(isTextInsideLabelDisplayedAtAdvanceFilter(value));
+    }
+
+    /**
+     * return true if cross icon is displayed at quick search box
+     *
+     * @param tableId
+     */
+    public void assertCrossIconAtQuickSearchBox(String tableId) {
+        Assert.assertTrue(isCrossIconDisplayedQuickSearchBox(tableId));
     }
 
     /**
@@ -1056,6 +1066,22 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'advf')]//span[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if cross icon is displayed at quick search box
+     *
+     * @param tableId
+     */
+    private boolean isCrossIconDisplayedQuickSearchBox(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@id='" + tableId + "']//input[@type='search']"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {

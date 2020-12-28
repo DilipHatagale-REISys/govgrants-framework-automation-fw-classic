@@ -36,9 +36,9 @@ public class PageLayoutSteps {
         pageLayoutPage.getHelpTextAtPageBlock(blockTitle);
     }
 
-    @When("^I hover mouse on lookup link \"([^\"]*)\"$")
-    public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink) {
-        pageLayoutPage.getLookUpLinkToHover(lookUpLink);
+    @When("^I hover mouse on lookup link \"([^\"]*)\"(| at table| at grid)$")
+    public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink, String uiType) {
+        pageLayoutPage.getLookUpLinkToHover(lookUpLink,uiType);
     }
 
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
@@ -154,6 +154,11 @@ public class PageLayoutSteps {
     @When("^I hovering mouse on help text icon at \"([^\"]*)\" inside \"([^\"]*)\" (page block|header)$")
     public void iHoveringMouseOnHelpTextIconAtInsidePageBlock(String fieldName, String pageBlockName, String uiType) {
         pageLayoutPage.hoverAttHelpTextAtFieldInsidePageBlock(fieldName, pageBlockName, uiType.equalsIgnoreCase("page block"));
+    }
+
+    @When("I navigate to {string} menu inside collab sidebar")
+    public void iNavigateToMenuInsideCollabSidebar(String menu) {
+        pageLayoutPage.clickOnCollabSidebarMenu(menu);
     }
 
     @And("^I enter value \"([^\"]*)\" in the (post|comment) at collab$")
@@ -646,5 +651,10 @@ public class PageLayoutSteps {
     @Then("I do not see loading icon at {string} modal")
     public void iDoNotSeeLoadingIconAtModal(String modalTitle) {
         pageLayoutPage.assertLoadingIconAtModalWindow(modalTitle);
+    }
+
+    @Then("^I softly see (title|value) at miniPageLayout is displayed as bold and left aligned$")
+    public void iSeeMiniPageLayoutIsDisplayedWithExpectedFormating(String titleOrValue) {
+        pageLayoutPage.assertMiniPageLayoutFormating(titleOrValue.equalsIgnoreCase("title"));
     }
 }

@@ -176,19 +176,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if classification name is displayed under select classification field at upload file modal - Record level
-     *
-     * @param classification
-     */
-    public void assertClassificationNameAtAddFileModal(String usuage, String classification) {
-        if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isClassificationNameDisplayedAtFileUploadModal(classification));
-        } else if (usuage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isClassificationNameDisplayedAtFileUploadModal(classification)).isTrue();
-        }
-    }
-
-    /**
      * assert true if given label is displayed at upload file button under add file modal - Record level
      *
      * @param buttonName
@@ -558,23 +545,6 @@ public class LibraryFilesPage extends GovGrantsManager {
             }
         } catch (NoSuchElementException var5) {
             flag = false;
-        }
-        return flag;
-    }
-
-    /**
-     * return true if classification name is displayed under select classification field at upload file modal - Record level
-     *
-     * @param classification
-     * @return
-     */
-    private boolean isClassificationNameDisplayedAtFileUploadModal(String classification) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().libraryFiles().getClassificationAtUploadFileModalUnderLibrary(classification))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

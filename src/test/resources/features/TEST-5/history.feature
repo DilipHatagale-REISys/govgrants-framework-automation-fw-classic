@@ -553,7 +553,7 @@ Business Need: history Component Scenarios
     Then I softly see "$200,000.50" shown inside "New Value" column in history table
     Then I softly see "$300,000.00" shown inside "Old Value" column in history table
 
-  @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable @wip
+  @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -565,10 +565,32 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Entity Name | Equals to | PG-343-0058 |
-    Then I see value "PG-343-0058" for title "Entity Name" inside table "---program:-:historyTableId---"
+      | Changed Field  | Equals to | Program Type |
+    Then I see value "Program Type" for title "Changed Field" inside table "---program:-:historyTableId---"
+
+  @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
+  Scenario: validate approval history table is displayed at history tab when page is in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I see expected table with id "toggleApprovalHistory"
+
+  @121042    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageEditMode
+  Scenario: validate approval history table is displayed at history tab when page is in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I see expected table with id "toggleApprovalHistory"

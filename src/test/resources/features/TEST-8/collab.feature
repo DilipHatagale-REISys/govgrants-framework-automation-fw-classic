@@ -43,7 +43,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation SPI collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation SPI collab phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104679    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by SPI user at application phase
@@ -59,7 +59,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation SPI application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104680    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by Admin user at collab tab
@@ -71,7 +71,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation Admin collab phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104688    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by PM user
@@ -100,7 +100,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104683    @verifyThatByClickOnDeleteCommentActionCommentDeletedByLoggedInAsSPIUserFromHomePhase
   Scenario: validate the delete action at comment section at my feed section by SPI user from home phase
@@ -161,7 +161,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation ADMIN application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104674    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at application phase
@@ -177,7 +177,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @111868    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as ADMIN user
@@ -485,3 +485,55 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "test @Simon Automation" in my feed section and share the comment
     Then I see "test @Simon Automation" inside flex table with id "---program:-:myFeedTableId---"
+
+  @120990   @VerifyCrossIconIsDisplayedAtCollabPhaseQuickSearchBox
+  Scenario: validate that cross icon is displayed at collab phase quick search box
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabFeeds"
+
+  @120991   @VerifyCrossIconIsDisplayedAtCollabPhaseMyColleaguesQuickSearchBox
+  Scenario: validate that cross icon is displayed at collab phase - my colleagues quick search box
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Colleagues" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabColleagues"
+
+  @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
+  Scenario: validate that cross icon is displayed at collab phase - external users quick search box
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "External Users" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabCommunityUsers"
+
+  @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
+  Scenario: validate that cross icon is displayed at collab phase - external users quick search box
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "External Users" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabCommunityUsers"
+
+  @120994   @VerifyCrossIconIsDisplayedAtCollabPhaseMyGroupsTabQuickSearchBox
+  Scenario: validate that cross icon is displayed at collab phase - my group quick search box
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Groups" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabGroups"
+
+  @119853   @VerifyFlexGridDisplayedAtCollabPhaseMyContentTab
+  Scenario: validate flex grid displayed at collab phase my content tab
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Content" menu inside collab sidebar
+    Then I see expected table with id "WorkSpaceFilesFlexToggle"
