@@ -76,7 +76,6 @@ Business Need: Logged Issues Scenarios
     When I close modal by clicking the top right x button
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
-    And I click modal button "Ok"
     Then I see confirmation box with body "Record deleted successfully." is displayed
 
   @54857    @validateNotesEditActionWorkingOrNot

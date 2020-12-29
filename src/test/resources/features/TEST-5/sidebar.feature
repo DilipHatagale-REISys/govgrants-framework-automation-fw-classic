@@ -471,3 +471,12 @@ Business Need: Side bar Component Scenarios
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
     Then I see sidebar global search box displayed in "blue"
+
+  @120977    @VerifyCrossIconIsDisplayedAtGlobalSearchQuickSearchBox
+  Scenario: validate that cross icon is displayed at global search quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Program"
+    When I perform quick search inside global search "PG-343-0058"
+    Then I see cross icon is displayed at search box at "sidebarAppId"
