@@ -165,7 +165,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param subTabName
      */
     public void assertChangedTitleOfSubTab(String subTabName) {
-        Assert.assertTrue(isChangedSubTabTitleDisplayed(subTabName));
+        I.amPerforming().assertionsTo().assertThat(isChangedSubTabTitleDisplayed(subTabName)).isTrue();
     }
 
     /**
@@ -564,7 +564,7 @@ public class PageLayoutPage extends GovGrantsManager {
         } else {
             I.amPerforming().waitFor().makeThreadSleep(500);
             I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "')] |" +
-                    " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')] | //a[contains(@id,'recentView')]//span[text()='" + lookUpLink + "'] | //td//*[@title='" + lookUpLink + "' and @class='tableRowLinks']"), false);
+                    " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')] | //span[text()='" + lookUpLink + "'] | //td//*[@title='" + lookUpLink + "' and @class='tableRowLinks']"), false);
         }
     }
 
@@ -875,6 +875,16 @@ public class PageLayoutPage extends GovGrantsManager {
     public void clickRefreshButtonAtCollabPhase() {
         WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
         I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+    }
+
+    /**
+     * click on button at collab - my feed section
+     *
+     * @param buttonName
+     */
+    public void clickOnButtonAtCollab(String buttonName) {
+        WebElement getButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//a[text()='" + buttonName + "']"));
+        I.amPerforming().click().on(getButtonAtCollabPhase);
     }
 
     /**
@@ -1417,6 +1427,16 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if user logo is displayed small in size at collab - my feed section
+     *
+     * @param comment
+     * @author ashwini.mahore
+     */
+    public void assertCommentSectionLogoSizeAtMyFeed(String comment) {
+        I.amPerforming().assertionsTo().assertThat(isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(comment)).isTrue();
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1563,7 +1583,6 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
-
         }
         return flag;
     }
@@ -2764,6 +2783,26 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if user logo is displayed small in size at collab - my feed section
+     *
+     * @param comment
+     * @author ashwini.mahore
+     */
+    public Boolean isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(String comment) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getCommentLogoSizeAtCollab = I.amPerforming().getElementReference().of(By.xpath("//div[text()='" + comment + "']/parent::div/preceding-sibling::div[@class='usrImgLeft']/img"));
+        if (getCommentLogoSizeAtCollab.getCssValue("width").equals("25px")
+                && getCommentLogoSizeAtCollab.getCssValue("height").equals("25px")) {
+            flag = true;
+        } else {
+            return false;
         }
         return flag;
     }

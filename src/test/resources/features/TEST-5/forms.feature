@@ -386,3 +386,15 @@ Business Need: Forms Component Scenarios
     When I click on "Save" button in right header
     Then I cannot see the following message in the page details :
       | Invalid Id : |
+
+  @120968 @verifyFormViewPageIsDisplayedByClickOnFormCancelButton
+  Scenario:validate form view page is displayed by click on form cancel button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Cancel" button in right header
+    Then I see "DynamicFormView" in current url

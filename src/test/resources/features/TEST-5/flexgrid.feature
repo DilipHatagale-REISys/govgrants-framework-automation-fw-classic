@@ -2467,3 +2467,15 @@ Business Need: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                               | newFieldsApi                                                               |
       | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,DateTime__c |
+
+  @120419   @verifyLookupFieldValueIsDisplayedInInlineEditModeAtMEGrid
+  Scenario: validate that lookup field value displayed in inline edit mode in ME Grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-01" inside table
+    Then I see lookup field "ID" is in edit mode

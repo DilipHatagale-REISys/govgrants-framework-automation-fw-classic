@@ -570,7 +570,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Changed Field  | Equals to | Program Type |
+      | Changed Field | Equals to | Program Type |
     Then I see value "Program Type" for title "Changed Field" inside table "---program:-:historyTableId---"
 
   @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
@@ -594,3 +594,27 @@ Business Need: history Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleApprovalHistory"
+
+  @121152  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
+  Scenario: validate that approval history table , field history table and snapshot history is displayed a newly created record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I navigate to "Overview" sub tab
+    And I enter value "$300,000.00" into field "DecimalCurrency__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see expected table with id "toggleApprovalHistory"
+    Then I softly see expected table with id "toggleFlexTableHistory"
+    Then I softly see the text :
+      | Snapshot History |
