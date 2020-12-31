@@ -181,6 +181,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickRefreshButtonAtCollabPhase();
     }
 
+    @And("I click on {string} button at collab")
+    public void iClickOnButtonAtCollab(String buttonName) {
+        pageLayoutPage.clickOnButtonAtCollab(buttonName);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -231,7 +236,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertHeaderInstructionText(headerText);
     }
 
-    @Then("^I see \"([^\"]*)\" sub tab is displayed at view detail page$")
+    @Then("^I softly see \"([^\"]*)\" sub tab is displayed at view detail page$")
     public void assertChangedSubTabTitleInsideDetailsPage(String subTabName) {
         pageLayoutPage.assertChangedTitleOfSubTab(subTabName);
     }
@@ -656,5 +661,10 @@ public class PageLayoutSteps {
     @Then("^I softly see (title|value) at miniPageLayout is displayed as bold and left aligned$")
     public void iSeeMiniPageLayoutIsDisplayedWithExpectedFormating(String titleOrValue) {
         pageLayoutPage.assertMiniPageLayoutFormating(titleOrValue.equalsIgnoreCase("title"));
+    }
+
+    @Then("I see user logo at comment {string} is small in size inside my feed")
+    public void iSeeUserLogoAtCommentIsSmallInSizeInsideMyFeed(String comment) {
+        pageLayoutPage.assertCommentSectionLogoSizeAtMyFeed(comment);
     }
 }

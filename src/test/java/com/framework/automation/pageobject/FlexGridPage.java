@@ -199,9 +199,10 @@ public class FlexGridPage extends GovGrantsManager {
      * assert true if lookup field coming up in view mode even after editing record in inline mode inside parent table of ME grid
      *
      * @param lookupFieldName
+     * @param type
      */
-    public void assertLookupFieldRenderingBehaviourInEditMode(String lookupFieldName) {
-        Assert.assertTrue(isLookupFieldComingInViewMode(lookupFieldName));
+    public void assertLookupFieldRenderingBehaviourInEditMode(String lookupFieldName, String type) {
+        Assert.assertTrue(isLookupFieldComingInViewMode(lookupFieldName, type));
     }
 
     /**
@@ -578,11 +579,18 @@ public class FlexGridPage extends GovGrantsManager {
 
     /**
      * @return true if lookup field at parent level of ME grid is in view mode
+     *
+     * @param lookupFieldNAme
+     * @param type
      */
-    private Boolean isLookupFieldComingInViewMode(String lookupFieldNAme) {
+    private Boolean isLookupFieldComingInViewMode(String lookupFieldNAme, String type) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')] | //field//span[@ng-bind='fieldValue' and contains(text(),'" + lookupFieldNAme + "')]"))) {
+            if (type.equalsIgnoreCase("view")) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')] | //field//span[@ng-bind='fieldValue' and contains(text(),'" + lookupFieldNAme + "')]"))) {
+                    flag = true;
+                }
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + lookupFieldNAme + "']/ancestor::tbody/following-sibling::tbody//input[@ng-model='viewValue']"))) {
                 flag = true;
             }
         } catch (Exception e) {

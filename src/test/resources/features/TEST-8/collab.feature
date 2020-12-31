@@ -537,3 +537,46 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Content" menu inside collab sidebar
     Then I see expected table with id "WorkSpaceFilesFlexToggle"
+
+  @120448    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSection
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed
+
+  @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
+    When I login as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
+
+  @121306    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtCollabPhase
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
+
+  @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
+  Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I see "Add Files" opens in overLay window

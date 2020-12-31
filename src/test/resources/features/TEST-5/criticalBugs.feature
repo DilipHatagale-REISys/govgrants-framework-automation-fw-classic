@@ -1349,12 +1349,6 @@ Business Need: Logged Issues Scenarios
 
   @59827    @numberFieldValueShouldDisplayProperlyWithEnteredMinusValue
   Scenario: Validate entered negative value inside Number field at page block detail should displayed properly at program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantee State Program | Name                      | PBD-9160                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3386,7 +3380,7 @@ Business Need: Logged Issues Scenarios
       | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | tr ue          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | ApplicationBudgetPeriods |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4436,3 +4430,55 @@ Business Need: Logged Issues Scenarios
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @121156  @verifySubTabDisplayedWhileCreatingNewRecordAtProgram
+  Scenario: validate that all sub tabs displayed while creating new records at program
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    Then I softly see "Overview" sub tab is displayed at view detail page
+    Then I softly see "Plan" sub tab is displayed at view detail page
+    Then I softly see "Roles" sub tab is displayed at view detail page
+    Then I softly see "Financials" sub tab is displayed at view detail page
+    Then I softly see "Terms & Conditions" sub tab is displayed at view detail page
+    Then I softly see "Log" sub tab is displayed at view detail page
+    Then I softly see "Attachments" sub tab is displayed at view detail page
+    Then I softly see "History" sub tab is displayed at view detail page
+
+  @121203  @verifyThatTopRightEditActionIsWorkingAtPageDetails
+  Scenario: validate that if user clicks on edit action at page detail then edit page opens
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on "Edit" in the page details
+    Then I see "ProgramEdit" in current url
+
+  @121221  @verifyThatErrorMessageNotDisplayedAtProgramEditDetailPage
+  Scenario: validate that if user clicks on edit action at program table then edit page opens without error message
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I cannot see the following message in the page details contains:
+      | Attempt to de-reference a null object |
+
+  @121220  @verifyThatErrorMessageNotDisplayedAtProgramViewDetailPage
+  Scenario: validate that if user clicks on edit action at program table then view page opens without error message
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I cannot see the following message in the page details contains:
+      | Attempt to de-reference a null object |

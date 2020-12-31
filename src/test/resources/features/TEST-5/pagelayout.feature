@@ -269,7 +269,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Automation Overview" sub tab is displayed at view detail page
+    Then I softly see "Automation Overview" sub tab is displayed at view detail page
 
   @34359    @tabIconFieldAtPageTab-gPlanning
   Scenario: Setup tab icon for overview page tab from config and validating it at program detail page
@@ -4395,3 +4395,80 @@ Business Need: Page Layout Component Scenarios
     When I hover mouse on lookup link "Nauman Shahid" at grid
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @121223  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactiveInEditMode
+  Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I do not see missing field badge on "Overview" tab
+
+  @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
+  Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on "Save" in the page details
+    Then I do not see missing field badge on "Overview" tab
+
+  @121225  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsHiddenInEditMode
+  Scenario: validate that visual indicator not displayed at detail page if req for save field is hidden in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I do not see missing field badge on "Overview" tab
+
+  @121226  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsHidden
+  Scenario: validate that visual indicator not displayed at detail page if req for save field is hidden
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I do not see missing field badge on "Overview" tab

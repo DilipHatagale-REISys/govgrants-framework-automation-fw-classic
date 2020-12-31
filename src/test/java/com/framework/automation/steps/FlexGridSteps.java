@@ -102,9 +102,9 @@ public class FlexGridSteps {
         flexGridPage.assertActiveGrantsGridHeaderColumnName(columnTitleName, tableId);
     }
 
-    @Then("^I see lookup field \"([^\"]*)\" is in view mode$")
-    public void assertLookupFieldRenderingMode(String lookupFieldName) {
-        flexGridPage.assertLookupFieldRenderingBehaviourInEditMode(lookupFieldName);
+    @Then("^I see lookup field \"([^\"]*)\" is in (view|edit) mode$")
+    public void assertLookupFieldRenderingMode(String lookupFieldName,String type) {
+        flexGridPage.assertLookupFieldRenderingBehaviourInEditMode(lookupFieldName, type);
     }
 
     @Then("^I (see|softly see) expected table with id \"([^\"]*)\"$")
