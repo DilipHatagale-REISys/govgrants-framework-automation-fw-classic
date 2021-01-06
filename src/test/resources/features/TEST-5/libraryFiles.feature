@@ -1229,7 +1229,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
-    Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "DuplicateFile.txt" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @70745 @validateThatByClickOnFirstArrowAFirstPageIsDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by click on first navigation arrow , a first page is displayed under upload file modal - record level
@@ -1244,7 +1244,7 @@ Business Need: Library Files Component Scenarios
     And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
     When I click on page navigation arrow "First" at table with id "WorkspaceFilesUpload" under upload file modal
-    Then I see "SendEmailAttachment.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "AssetLibraryTestData.pdf" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @70746 @validateThatByClickOnPagesDropdownAndBySelecting2ndPageThenRecordsFrom2ndPageAreDisplayed-RecordLevel
   Scenario: Verify that by click on pages dropdown and selecting 2nd page then 2nd page record is displayed under upload file modal - record level
@@ -1771,8 +1771,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on SelectChange Folder in add file modal
-    Then I softly do not see library/folder/file "Department of Community Health" is displayed under files library
-    Then I softly see library/folder/file "UnitedHealth Group" is displayed under files library
+    Then I softly see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly do not see library/folder/file "UnitedHealth Group" is displayed under files library
 
     Examples:
       | actionUrlLongNewValue                                                                                                          | actionUrlLongDefaultValue                                                                           |

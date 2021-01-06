@@ -1517,6 +1517,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "Groups"
     When I enter value "test group 1;test group 2" into field "To" on send email modal
+    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see "test group 1;test group 2" on html page
+    Then I softly see "test group 2" on html page

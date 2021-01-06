@@ -15,7 +15,8 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text Text"
-    Then I see "Text Text" value in flex table id "---program:-:programSearchFlexTableID---"
+    And I pause execution for "3" seconds
+    Then I see value "Text Text" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               |
@@ -92,7 +93,8 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "test"
-    Then I see "test128@example.com" value in flex table id "---program:-:programSearchFlexTableID---"
+    And I pause execution for "3" seconds
+    Then I see value "test128@example.com" for title "DND_Email" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               |
@@ -165,6 +167,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Sne"
+    And I pause execution for "3" seconds
     Then I see "PG-REI-0022" value in flex table id "---program:-:programSearchFlexTableID---"
 
     Examples:
@@ -206,7 +209,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                    |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} |
 
   @102712 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorContains
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using 'contains' operator in filter criteria
@@ -220,11 +223,12 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "US"
+    And I pause execution for "3" seconds
     Then I see "US" value in flex table id "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                 |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"CONTAINS"} |
+      | {"objectField":"DND_Country__c","userField":"DND_Country__c","operator":"CONTAINS"} |
 
   @103485 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using '!=' operator in filter criteria
@@ -570,6 +574,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "France"
+    And I expand table with header "NGO Programs"
     Then I do not see value "France" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
@@ -588,7 +593,9 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "IND"
+    And I pause execution for "3" seconds
     Then I softly see value "USA" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search for "FPG-ED-0005"
     Then I softly see value "US" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
@@ -743,7 +750,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                 | dndCriteria                              |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"CONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"CONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
 
   @116933 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEMAILFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for EMAIL fields using 'NOTCONTAINS' operator in filter criteria and search value as "@text"
@@ -761,7 +768,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                    | dndCriteria                              |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
 
   @103480 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEMAILFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for EMAIL fields using '!=' operator in filter criteria and search value as invalid
@@ -780,7 +787,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                    | dndCriteria                              |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
 
   @116931 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using '!=' operator in filter criteria and search value as invalid
@@ -798,7 +805,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                    | dndCriteria                              |
-      | {"objectField":"Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') |
 
   @103489 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for relation fields using '!=' operator in filter criteria and search value as invalid
@@ -997,7 +1004,7 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Control"
+    When I perform quick search inside global search "Disease Control"
     Then I softly do not see value "Health Resources And Services Administration" for title "Organization" inside table "---program:-:programSearchFlexTableID---"
     When I perform quick search for "FPG-HHS-CDC-0005"
     Then I softly see value "Centers For Disease Control And Prevention" for title "Organization" inside table "---program:-:programSearchFlexTableID---"
@@ -1054,7 +1061,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "sne"
-    Then I see value "SNEP" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
+    Then I see value "PG-REI-0022" for title "EGMS ID" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     | dndCriteria                                                                                |
@@ -1201,8 +1208,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "SNEP"
-    Then I see value "SNEP" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search "sne_27"
+    Then I see value "sne_27" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               | dndCriteria                                      |

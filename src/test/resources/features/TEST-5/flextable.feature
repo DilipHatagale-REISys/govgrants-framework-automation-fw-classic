@@ -1363,7 +1363,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Change Requested"
+    When I perform quick search for "Department of Community Health"
     Then I softly see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
     Then I softly do not see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
 

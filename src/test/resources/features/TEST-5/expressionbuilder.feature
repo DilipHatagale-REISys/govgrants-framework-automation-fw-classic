@@ -271,6 +271,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
+    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
     When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Overview" sub tab
@@ -284,7 +285,7 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserAppSAAdministratorWithOperatorIn | CreatedandInactiveOrganizations | Name                      | New                        |
-    When I login as "Automation" user
+    When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As an Administrator"
     And I navigate to "Setup" tab
     Then I see "New" button inside "Draft Internal Organizations" flex table not displayed
@@ -1134,6 +1135,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
+    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
     When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Overview" sub tab
@@ -1147,7 +1149,7 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAAdministratorWithOperatorIn | GranteeOrganizationInternal | Name                      | Activate                   |
-    When I login as "Automation" user
+    When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As an Administrator"
     And I navigate to "Setup" tab
     And I click toggle button to select "Draft Internal Organizations"
@@ -2317,12 +2319,12 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN_StateasGrantor_PM | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-PM" user
-    When I setup my app as "As a Grantee"
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Activities" subheader on left panel
     When I perform quick search for "Test Announcement For Automation"
     When I click on "view" icon for "Test Announcement For Automation" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45853    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FunderType__c_Federal_OR_ProgramType__c_Grant
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field (FunderType__c = Federal OR ProgramType__c = Grant )

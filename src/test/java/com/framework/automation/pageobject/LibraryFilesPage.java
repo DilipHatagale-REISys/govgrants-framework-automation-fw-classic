@@ -396,7 +396,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isLibraryFileFolderIsDisplayed(String libraryFileFolderName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='WorkspaceFilesHierarchy']//div[contains(@class,'slds-tree__item')]//*[text()='" + libraryFileFolderName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

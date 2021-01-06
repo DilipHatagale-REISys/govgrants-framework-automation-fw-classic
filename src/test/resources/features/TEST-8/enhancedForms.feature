@@ -11,7 +11,7 @@ Business Need: enhanced Forms Component Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
-    When I navigate to "Budget" sub tab
+    When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
     Then I see "Application" shown as over view header
@@ -24,7 +24,7 @@ Business Need: enhanced Forms Component Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
-    When I navigate to "Budget" sub tab
+    When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
     Then I see "Application" shown as over view header
@@ -40,4 +40,4 @@ Business Need: enhanced Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
-    Then I see "Application" shown as over view header
+    Then I see "FN-00111" shown as over view header

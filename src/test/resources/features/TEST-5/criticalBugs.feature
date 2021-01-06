@@ -511,7 +511,7 @@ Business Need: Logged Issues Scenarios
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     And I click on "Save" in the page details
     Then I see the text containing :
-      | is Required to save. |
+      | is required to save. |
       | Assigned to User     |
 
   @56773    @programRecordsSholdOpensProperlyInsidePlanTab
@@ -571,7 +571,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    And I click toggle button to select "Open Funding Opportunities"
+    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "FOA--114" inside table
     When I click on "Menu" in the page details
@@ -587,7 +587,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    And I click toggle button to select "Open Funding Opportunities"
+    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "Edit" icon for "FOA--114" inside table
     When I click dropdown field "fieldAnnouncementType__c"
@@ -1174,7 +1174,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    And I click toggle button to select "Open Funding Opportunities"
+    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
@@ -4482,3 +4482,112 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see the following message in the page details contains:
       | Attempt to de-reference a null object |
+
+  @121594 @validateThatIfDataIsNotPresentThenNoRecordFoundDisplayedInsideMEGridParentTable
+  Scenario: Verify that if data is not present then, no record found is displayed inside me grid parent table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Plan" sub tab
+    Then I see "No Records Found" inside flex table with id "---program:-:programOutComesTableId---"
+
+  @121616    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtCollabPhase
+  Scenario: validate that more actions dropdown is displayed at attached file at comment inside collab phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "More Actions" action at "Test Attachment comment DND" comment inside my feed
+    Then I see More Actions dropdown window displayed at collab
+
+  @121615    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtHomePhase
+  Scenario: validate that more actions dropdown is displayed at attached file at comment inside home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:2 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:3 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:4 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Line                         |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "More Actions" action at "Test Attachment comment DND" comment inside my feed
+    Then I see More Actions dropdown window displayed at collab
+
+  @121379    @vverifyThatQuickSearchIsWorkProperlyForMultiPicklistAtFlexTable-gMonitoring
+  Scenario Outline: validate that quick search is working for multi picklist field at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorAmendmentRequests |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Amendment Requests" content inside "Activities" subheader on left panel
+    When I perform quick search for "Test value 1"
+    Then I see "Test value 1" value in flex table id "toggleFlexTableGrantorAmendmentRequests"
+
+    Examples:
+      | newFieldsApi                                                                                            | defaultFieldsApi                                                            |
+      | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c,Test_multipicklist_field__c | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c |
+
+  @121366    @hideExpressioJsonForRightOperandForUserType-Applicant-gAnnouncement
+  Scenario: validate disabling of create button for user type Appplicant from Announcement-Program
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionJSONToHideReqFieldAndCreateModal | Announcement Create - Grantor | Name                      | PBD-6759                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-343-0034" into field "Program__c"
+    And I click modal button "Continue"
+    Then I cannot see the following message in the page details contains:
+      | Announcement Type is required to save. |
+
+  @121722    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTable
+  Scenario: Validate that a draft program table is displayed by click on cancel button at record creation
+   When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on "Cancel" in the page details
+    Then I see expected table with id "toggleFlexTablePrograms"
+
+  @121744    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtCollabPhase
+  Scenario: validate that more actions dropdown is displayed at attached file at comment inside collab phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "More Actions" action at "Test Attachment record level comment DND" comment inside my feed
+    Then I see More Actions dropdown window displayed at collab

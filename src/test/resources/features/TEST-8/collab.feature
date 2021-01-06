@@ -262,15 +262,12 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Test Automation Admin Comment record detail" in my feed section and share the comment
-    Then I softly see "Test Automation Admin Comment record detail" inside flex table with id "---program:-:myFeedTableId---"
-    And I click on "Delete" action at "Test Automation Admin Comment record detail" comment inside my feed
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation record comment" in my feed section and share the comment
+    Then I softly see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation record comment" comment inside my feed
     And I click modal button "OK"
-    And I refresh the page
-    When I click on "Menu" in the page details
-    And I select "All Users" from dropdown
-    Then I softly do not see "Test Automation Admin Comment home" inside flex table with id "---program:-:myFeedTableId---"
+    Then I softly do not see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
 
   @112492    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from home phase-my feed section
@@ -387,7 +384,7 @@ Business Need: collab Component Scenarios
 
   @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToAdminUser
   Scenario: validate that No feed available is displayed at my feed-to me only section by login as admin user
-    When I login as "Admin" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -396,7 +393,7 @@ Business Need: collab Component Scenarios
 
   @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsAdminUser
   Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as admin user
-    When I login as "Admin" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel
@@ -409,7 +406,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see "You, David FO, and 2 others like this." inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "You and Automation PM likes this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115483    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToPMUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
@@ -418,7 +415,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see "You, David FO, and 2 others like this." inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "You and Framework Admin likes this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
   Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
@@ -557,6 +554,7 @@ Business Need: collab Component Scenarios
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
     Then I softly see tab label as "Upload File from Computer" at files library upload modal
     Then I softly see tab label as "Upload File from Library" at files library upload modal
 
@@ -567,6 +565,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
     Then I softly see tab label as "Upload File from Computer" at files library upload modal
     Then I softly see tab label as "Upload File from Library" at files library upload modal
 
@@ -580,3 +579,14 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     Then I see "Add Files" opens in overLay window
+
+  @121625    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtHomePhase
+  Scenario: validate that upload file from library and computer is not displayed at attach file modal at home phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly do not see tab label as "Upload File from Library" at files library upload modal

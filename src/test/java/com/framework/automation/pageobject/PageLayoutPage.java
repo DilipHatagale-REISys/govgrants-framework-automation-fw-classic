@@ -489,15 +489,15 @@ public class PageLayoutPage extends GovGrantsManager {
     public void enterValueInsidePostOrCommentCollab(String value, Boolean isPost) {
         if (isPost) {
             By feedSection = By.xpath("//div/textarea[@class='mention-for-post']");
+            I.amPerforming().click().on(feedSection);
             I.amPerforming().textInput().in(feedSection, value);
             I.amPerforming().waitFor().makeThreadSleep(2000);
         } else {
             By commentSection = By.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//textarea[@class='mention-for-comment']");
-            I.amPerforming().waitFor().ElementToBeVisible(commentSection, 2000);
-            I.amPerforming().click().withJavaScript(commentSection);
+            I.amPerforming().waitFor().makeThreadSleep(2000);
+            I.amPerforming().click().on(commentSection);
             I.amPerforming().textInput().in(commentSection, value);
         }
-
     }
 
     /**
@@ -1434,6 +1434,15 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertCommentSectionLogoSizeAtMyFeed(String comment) {
         I.amPerforming().assertionsTo().assertThat(isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(comment)).isTrue();
+    }
+
+    /**
+     * return true if dropdown window at More Actions is displayed inside collab - my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public void assertMoreActionsDropdownAtCollab() {
+        I.amPerforming().assertionsTo().assertThat(isMoreActionsDropdownWindowDisplayedAtMyFeedSection()).isTrue();
     }
 
     /**
@@ -2740,7 +2749,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isHelpTextDisplayedAtVisualIndicatorInsidePageBlock(String helpText) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[contains(@class,'tabYellowDot') and contains(@style,'inline-block') and @title='" + helpText + "']"))) {
+            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//span[contains(@class,'tabYellowDot') and contains(@style,'inline-block') and @title='" + helpText + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -2803,6 +2812,22 @@ public class PageLayoutPage extends GovGrantsManager {
             flag = true;
         } else {
             return false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if dropdown window at More Actions is displayed inside collab - my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isMoreActionsDropdownWindowDisplayedAtMyFeedSection() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='moreActions active']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
