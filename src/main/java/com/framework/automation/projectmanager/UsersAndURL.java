@@ -72,6 +72,9 @@ public class UsersAndURL implements UsersController {
             case "AUTOMATION-SPI":
                 password = "Automation@1234567";
                 break;
+            case "AUTOMATION-ADMIN":
+                password = "Automation@12345";
+                break;
             default:
                 password = "Automation@12345";
         }
@@ -107,6 +110,9 @@ public class UsersAndURL implements UsersController {
                 break;
             case "AUTOMATION-SPI":
                 username = "Monu.Kumar@ggp.test5.com";
+                break;
+            case "AUTOMATION-ADMIN":
+                username = "frameworkqa@ggp.test5";
                 break;
             default:
                 username = "qa_automation@ggp.test5";

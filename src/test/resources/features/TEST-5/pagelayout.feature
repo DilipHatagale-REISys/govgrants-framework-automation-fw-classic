@@ -2780,8 +2780,8 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see missing field badge on "Overview" tab
 
-  @112363    @requiredForSaveBehaviourAtPageBlockDetailForAdminUser-gPlanning
-  Scenario Outline: Changing value for required for save behaviour field from config and checking error message at program save for admin user
+  @112363    @verifyThatAdminUserIsAbleToAccessChatterNativePage-gPlanning
+  Scenario Outline: verify that admin user is able to access chatter native page
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to url "<URL_Value>"
@@ -3535,6 +3535,8 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     And I enter value "12/11/2020" into field "Publisheddate__c"
     And I enter value "123" into field "Number__c"
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
     Then I softly see "Project Goals" is not displayed inside page block detail
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
@@ -3928,15 +3930,15 @@ Business Need: Page Layout Component Scenarios
   @120009    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithDiffHelpText-gPlanning
   Scenario Outline: validating help text on hover at field two same name fields are displayed at 2 diff tabs in edit mode with diff help text
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false               | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9240                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4105,8 +4107,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I clear the value from field "ProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4263,7 +4265,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "Notes Record" inside table
+    When I click on "Delete" icon for "Updated Notes Record" inside table
     When I click "Yes" on modal confirmation box
     And I click modal button "Ok"
     When I add notes records

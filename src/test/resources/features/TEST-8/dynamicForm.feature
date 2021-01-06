@@ -275,6 +275,11 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
+      | Field          | Value |
+      | Rich Text Area |       |
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I enter values into "Section 1" page block
       | Field          | Value                     |
       | Rich Text Area | Test Automation Rich Text |
     When I click on "Save" in the page details
@@ -2660,7 +2665,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Written Section 2 in Section Section 2 question not answered |
+      | Date Required in Section Section 1 question not answered |
 
   @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode
@@ -3948,7 +3953,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Cancel" button in right header
     When I pause execution for "3" seconds
-    Then I see "uformview" in current url
+    Then I see "UFormView" in current url
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode

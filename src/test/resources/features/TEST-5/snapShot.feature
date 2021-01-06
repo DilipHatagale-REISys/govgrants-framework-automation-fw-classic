@@ -82,17 +82,19 @@ Business Need: Snapshot Config Component Scenarios
   @70016    @verifyAutoSnapShotFileNameWithSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chages after making changes inside field SnapShot File Name at config page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Snapshot File Name              |                   | ApiGeneratedId:0 |
-      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:1 |
-      | Page Tabs Config      | Is Active                       | false             | ApiGeneratedId:2 |
-      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
+      | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+      | Auto Snapshot                     | Snapshot File Name              |                   | ApiGeneratedId:0 |
+      | Auto Snapshot                     | Is Active                       | false             | ApiGeneratedId:1 |
+      | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot | Program__c            | Name                      | SAS-0000                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                   | Program__c            | Name                      | SAS-0000                   |
-      | Page Tabs Config:Page Layout Action | Is Active                       | true                   | Grantee State Program | Name                      | TAB-027                    |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                  | Grantee State Program | Name                      | Submit For Approval        |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                             | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab

@@ -667,4 +667,9 @@ public class PageLayoutSteps {
     public void iSeeUserLogoAtCommentIsSmallInSizeInsideMyFeed(String comment) {
         pageLayoutPage.assertCommentSectionLogoSizeAtMyFeed(comment);
     }
+
+    @Then("I see More Actions dropdown window displayed at collab")
+    public void iSeeMoreActionsDropdownWindowDisplayedAtCollab() {
+        pageLayoutPage.assertMoreActionsDropdownAtCollab();
+    }
 }
