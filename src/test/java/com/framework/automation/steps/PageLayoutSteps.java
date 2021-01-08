@@ -38,7 +38,7 @@ public class PageLayoutSteps {
 
     @When("^I hover mouse on lookup link \"([^\"]*)\"(| at table| at grid)$")
     public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink, String uiType) {
-        pageLayoutPage.getLookUpLinkToHover(lookUpLink,uiType);
+        pageLayoutPage.getLookUpLinkToHover(lookUpLink, uiType);
     }
 
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
@@ -428,9 +428,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertInternalExternalUsersDisplayedInSuggestionBox(Parameters);
     }
 
-    @Then("^I see attachment \"([^\"]*)\" is present in send email modal$")
-    public void assertAttachmentIsPresentInSendEmailModal(String attachmentName) {
-        pageLayoutPage.assertAttachmentPresentInSendEmailModal(attachmentName);
+    @Then("^I (see|softly see) attachment \"([^\"]*)\" is present in send email modal$")
+    public void assertAttachmentIsPresentInSendEmailModal(String usage, String attachmentName) {
+        pageLayoutPage.assertAttachmentPresentInSendEmailModal(usage, attachmentName);
     }
 
     @Then("^I see sticky bottom menu button with id \"([^\"]*)\" is not present$")
@@ -663,13 +663,23 @@ public class PageLayoutSteps {
         pageLayoutPage.assertMiniPageLayoutFormating(titleOrValue.equalsIgnoreCase("title"));
     }
 
-    @Then("I see user logo at comment {string} is small in size inside my feed")
-    public void iSeeUserLogoAtCommentIsSmallInSizeInsideMyFeed(String comment) {
-        pageLayoutPage.assertCommentSectionLogoSizeAtMyFeed(comment);
+    @Then("^I see user logo at comment \"([^\"]*)\" is small in size inside my feed (home|collab)$")
+    public void iSeeUserLogoAtCommentIsSmallInSizeInsideMyFeed(String comment, String uiType) {
+        pageLayoutPage.assertCommentSectionLogoSizeAtMyFeed(comment, uiType.equalsIgnoreCase("home"));
     }
 
     @Then("I see More Actions dropdown window displayed at collab")
     public void iSeeMoreActionsDropdownWindowDisplayedAtCollab() {
         pageLayoutPage.assertMoreActionsDropdownAtCollab();
+    }
+
+    @Then("^I softly see (plus|minus) icon is displayed at \"([^\"]*)\" menu inside sidebar$")
+    public void iSeeExpandIconIsDisplayedAtMenuInsideSidebar(String uiType, String sidebarMenu) {
+        pageLayoutPage.assertExpandCollapsedIconAtSidebarMenu(uiType.equalsIgnoreCase("plus"), sidebarMenu);
+    }
+
+    @Then("I do not see attached file as {string} inside collab my feed")
+    public void iDoNotSeeAttachedFileAsInsideCollabMyFeed(String fileName) {
+        pageLayoutPage.assertAttachedFileInsideCollabMyFeedSection(fileName);
     }
 }

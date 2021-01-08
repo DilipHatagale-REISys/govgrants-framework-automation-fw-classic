@@ -385,8 +385,12 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if uploaded attachment is present under send email modal
      */
-    public void assertAttachmentPresentInSendEmailModal(String attachmentName) {
-        Assert.assertTrue(isAttachmentPresentInSendEmailModal(attachmentName));
+    public void assertAttachmentPresentInSendEmailModal(String usage, String attachmentName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isAttachmentPresentInSendEmailModal(attachmentName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isAttachmentPresentInSendEmailModal(attachmentName)).isTrue();
+        }
     }
 
     /**
@@ -1432,8 +1436,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param comment
      * @author ashwini.mahore
      */
-    public void assertCommentSectionLogoSizeAtMyFeed(String comment) {
-        I.amPerforming().assertionsTo().assertThat(isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(comment)).isTrue();
+    public void assertCommentSectionLogoSizeAtMyFeed(String comment, Boolean isHome) {
+        I.amPerforming().assertionsTo().assertThat(isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(comment, isHome)).isTrue();
     }
 
     /**
@@ -1443,6 +1447,27 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertMoreActionsDropdownAtCollab() {
         I.amPerforming().assertionsTo().assertThat(isMoreActionsDropdownWindowDisplayedAtMyFeedSection()).isTrue();
+    }
+
+
+    /**
+     * return true if expand/collapsed icons displayed at sidebar sub-menu/menu
+     *
+     * @param sidebarMenu
+     * @author ashwini.mahore
+     */
+    public void assertExpandCollapsedIconAtSidebarMenu(boolean isExpanded, String sidebarMenu) {
+        I.amPerforming().assertionsTo().assertThat(isExpandCollapsedIconDisplayedAtSidebarMenu(isExpanded, sidebarMenu)).isTrue();
+    }
+
+    /**
+     * return true if attached file is not displayed at collab - my feed section
+     *
+     * @param fileName
+     * @author ashwini.mahore
+     */
+    public void assertAttachedFileInsideCollabMyFeedSection(String fileName) {
+        I.amPerforming().assertionsTo().assertThat(isAttachedFileDisplayedInsideCollabMyFeedSection(fileName)).isTrue();
     }
 
     /**
@@ -2803,15 +2828,20 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param comment
      * @author ashwini.mahore
      */
-    public Boolean isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(String comment) {
+    public Boolean isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(String comment, Boolean isHome) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getCommentLogoSizeAtCollab = I.amPerforming().getElementReference().of(By.xpath("//div[text()='" + comment + "']/parent::div/preceding-sibling::div[@class='usrImgLeft']/img"));
-        if (getCommentLogoSizeAtCollab.getCssValue("width").equals("25px")
-                && getCommentLogoSizeAtCollab.getCssValue("height").equals("25px")) {
-            flag = true;
+        WebElement getCommentLogoSizeAtCollab = I.amPerforming().getElementReference().of(By.xpath("//div[text()='" + comment + "']/parent::div/preceding-sibling::div[@class='usrImgLeft' or @class='collabCommentUserImage']/img"));
+        if (isHome) {
+            if (getCommentLogoSizeAtCollab.getCssValue("width").equals("25px")
+                    && getCommentLogoSizeAtCollab.getCssValue("height").equals("25px")) {
+                flag = true;
+            }
         } else {
-            return false;
+            if (getCommentLogoSizeAtCollab.getCssValue("width").equals("30px")
+                    && getCommentLogoSizeAtCollab.getCssValue("height").equals("30px")) {
+                flag = true;
+            }
         }
         return flag;
     }
@@ -2831,4 +2861,46 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+
+    /**
+     * return true if expand/collapsed icons displayed at sidebar sub-menu/menu
+     *
+     * @param sidebarMenu
+     * @author ashwini.mahore
+     */
+    public Boolean isExpandCollapsedIconDisplayedAtSidebarMenu(Boolean isCollapsed, String sidebarMenu) {
+        boolean flag = false;
+        try {
+            if (isCollapsed) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + sidebarMenu + "']/ancestor::li[not(contains(@class,'clicked'))]"))) {
+                    flag = true;
+                }
+            } else {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + sidebarMenu + "']/ancestor::li[contains(@class,'clicked')]"))) {
+                    flag = true;
+                }
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if attached file is not displayed at collab - my feed section
+     *
+     * @param fileName
+     * @author ashwini.mahore
+     */
+    public Boolean isAttachedFileDisplayedInsideCollabMyFeedSection(String fileName) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='existingCommentFileDiv active']//div[text()='" + fileName + "']"))) {
+                flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }

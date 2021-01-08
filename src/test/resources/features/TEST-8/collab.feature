@@ -542,7 +542,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed
+    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed home
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
@@ -590,3 +590,19 @@ Business Need: collab Component Scenarios
     And I pause execution for "3" seconds
     Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
     Then I softly do not see tab label as "Upload File from Library" at files library upload modal
+
+  @122006    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionRecordLevel
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
+    When I login as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab
+
+  @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
+   When I login as "Admin" user
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab

@@ -465,5 +465,5 @@ Business Need: Flex Table enhanced Component Scenarios
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
-      | new_helpText                  |
+      | new_helpText                           |
       | This is the test application for IE 11 |

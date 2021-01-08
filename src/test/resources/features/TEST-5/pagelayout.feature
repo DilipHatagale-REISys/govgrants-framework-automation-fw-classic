@@ -4474,3 +4474,19 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see missing field badge on "Overview" tab
+
+  @122001    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTableWhenPageRedirectBehaviourIsSetToSaveAndContinue
+  Scenario: Validate that a draft program table is displayed by click on cancel button at record creation if page redirected behaviour is set to save and continue
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Page Redirect Behaviour | Save and Continue | Grantee State Program |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on "Cancel" in the page details
+    Then I see expected table with id "toggleFlexTablePrograms"

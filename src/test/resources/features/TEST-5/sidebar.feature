@@ -480,3 +480,11 @@ Business Need: Side bar Component Scenarios
     When I click on global search and select "Program"
     When I perform quick search inside global search "PG-343-0058"
     Then I see cross icon is displayed at search box at "sidebarAppId"
+
+  @119850    @VerifyCompleteTextIsDisplayedOnMouseHoverAtSidebarMenu
+  Scenario: validate that complete text is displayed at sidebar menu on mouse hover
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hover mouse on lookup link "Data table enhanced record"
+    Then I see "Data table enhanced record" shown at mouse hover inside "---program:-:sidebarWrapperId---" table

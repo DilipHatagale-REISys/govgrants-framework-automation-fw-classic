@@ -4567,7 +4567,7 @@ Business Need: Logged Issues Scenarios
 
   @121722    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTable
   Scenario: Validate that a draft program table is displayed by click on cancel button at record creation
-   When I login as "Automation" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4582,6 +4582,7 @@ Business Need: Logged Issues Scenarios
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4591,3 +4592,155 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Collab" sub tab
     And I click on "More Actions" action at "Test Attachment record level comment DND" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
+
+  @121310    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForAdminUser
+  Scenario: validate that expand collapsed icons are displayed at sidebar for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "HOME" tab
+    Then I softly see plus icon is displayed at "Support" menu inside sidebar
+    Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
+
+  @121311    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForPMUser
+  Scenario: validate that expand collapsed icons are displayed at sidebar for PM user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "HOME" tab
+    Then I softly see plus icon is displayed at "Search" menu inside sidebar
+    Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
+
+  @121312    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForSPIUser
+  Scenario: validate that expand collapsed icons are displayed at sidebar for SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    Then I softly see plus icon is displayed at "Recently Viewed" menu inside sidebar
+    Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
+
+  @121623    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromHomePhase
+  Scenario: validate that file attached to any post can be removed by click on cancel button at collab Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I click on "Cancel" button at collab
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+
+  @121981    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromRecordLevel
+  Scenario: validate that file attached to any post can be removed by click on cancel button at collab record level
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I click on "Cancel" button at collab
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+
+  @121624    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromCollabPhase
+  Scenario: validate that file attached to any post can be removed by click on cancel button at collab phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I click on "Cancel" button at collab
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+
+  @121619    @verifyThatAttachedFileFromHomePhaseIsGettingDisplayedAtFilesList-HomePhase
+  Scenario: validate that file attached to any post from home phase is displayed at files list tab at Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Temporary Comment" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "CollabFileTemp.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    And I refresh the page
+    And I click on "Delete" action at "Temporary Comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I softly do not see "Temporary Comment" inside flex table with id "---program:-:myFeedTableId---"
+
+  @121621    @verifyThatFileAttachedFromCollabPhaseIsGettingDisplayedAtFilesList-HomePhase
+  Scenario: validate that file attached to any post from collab phase is displayed at files list tab at Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "CollabFileTemp.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    And I navigate to "Collab" tab
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I softly do not see "Collab Phase temporary comment" inside flex table with id "---program:-:myFeedTableId---"
