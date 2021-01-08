@@ -2582,3 +2582,16 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "Asset Library"
     When I click on "Upload File" option at library/folder/file "Asset Library"
     Then I see pre-selected library/folder as "Asset Library" is displayed at add file modal
+
+  @118594 @validateThatErrorMessageIsNotDisplayedInsideSelectChangeFolderAtAddFileModal-ApplicationPhaseRecordLevel
+  Scenario: Verify that error message should not displayed at selectChange folder modal at file uploaded from record level
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    Then I cannot see the following messages in the page details :
+      | Apex CPU time limit exceeded |
