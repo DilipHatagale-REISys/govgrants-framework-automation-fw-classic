@@ -87,9 +87,9 @@ public class LibraryFilesSteps {
         libraryFilesPage.isLibraryFolderFileCountDisplayedAtLibraryFiles(usuage, labelAndCount);
     }
 
-    @Then("^I see \"([^\"]*)\" shown in search table with id \"([^\"]*)\" at file upload modal$")
-    public void assertValueShownInSearchTableAtFileUploadModal(String tableValue, String tableId) {
-        libraryFilesPage.assertValueShownInSearchTableAtFileUploadModal(tableValue, tableId);
+    @Then("^I (softly see|see) \"([^\"]*)\" shown in search table with id \"([^\"]*)\" at file upload modal$")
+    public void assertValueShownInSearchTableAtFileUploadModal(String usuage, String tableValue, String tableId) {
+        libraryFilesPage.assertValueShownInSearchTableAtFileUploadModal(usuage, tableValue, tableId);
     }
 
     @Then("^I (softly see|see|softly do not see|do not see) tab label as \"([^\"]*)\" at files library upload modal$")

@@ -2595,3 +2595,288 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     Then I cannot see the following messages in the page details :
       | Apex CPU time limit exceeded |
+
+  @122127 @validateThatFileNameSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering text in quick search box, respective file is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "F-product-banner" in "WorkspaceFiles" panel
+    Then I softly see "F-product-banner.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I softly see "F-product-banner" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122128 @validateThatInvalidFileNameSearchedUsingQuickSearchThenNoRecordFoundMsgShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering invalid text in quick search box, "No record found" is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "snehal" in "WorkspaceFiles" panel
+    Then I see "No Records Found" inside flex table with id "WorkspaceFilesUpload"
+
+  @122129 @validateThatNumericFileNameSearchedUsingQuickSearchThenRespectiveRecordShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering numeric text in quick search box, respective record is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "1123" in "WorkspaceFiles" panel
+    Then I see "Test Document 1123" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122130 @validateMessageBelowQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that message below quick search box is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    Then I see the text :
+      | Displays up to 1000 most recent files. Use the search option to find files if they are not in this recent list. |
+
+  @122131 @validateThatIfFilesHavingSpecialCharactersInNameAreSearchedUsingQuickSearchThenRespectiveRecordShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering special char name in quick search box, respective record is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "+" in "WorkspaceFiles" panel
+    Then I see "TestFileDNDWithSpecial+Char.xlsx" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122132 @validateThatTotalRecordCountLabelWithTop1000RecordsIsDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that top 1000 records displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    Then I see the text :
+      | Showing 1 to 5 of 1000 records |
+
+  @122133 @validateThatMax1000RecordsAreDisplayedInQuickSearchResultUnderUploadFileModal-RecordLevel
+  Scenario: Verify that max 1000 records displayed in search result under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "test" in "WorkspaceFiles" panel
+    Then I see the text :
+      | Showing 1 to 5 of 1000 records |
+
+  @122134 @validateThatDateTimeValueSearchedUsingQuickSearchThenNoRecordFoundMessageShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering date in quick search box, No record found message is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "11/1/2019, 11:44 PM" in "WorkspaceFiles" panel
+    Then I see "No Records Found" inside flex table with id "WorkspaceFilesUpload"
+
+  @122145 @validateThatQuickSearchUnderUploadFileModalIsNotCaseSensitive-RecordLevel
+  Scenario: Verify that if uppercase text entered in quick search box, then both upper and lower case matching records is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "PRODUCT" in "WorkspaceFiles" panel
+    Then I softly see "PRODUCT.xlsx" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I softly see "F-product-banner" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122553 @validateThatClassificationSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering classification value in quick search box, respective file having classification is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "Medical Reports" in "WorkspaceFiles" panel
+    Then I see "Medical Reports" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122554 @validateThatDescriptionSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering description value in quick search box, respective file having description is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "DND" in "WorkspaceFiles" panel
+    Then I see "test record DND	" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess
+  Scenario: Verify that file is visible to all internal user if sharing option as "Visible to internal With Record Access" is select at upload file modal
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to internal With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    #122136 - visible to internal user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122138 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
+  Scenario: Verify that file is visible to all internal user if sharing option as "Visible to anyone With Record Access" is select at upload file modal
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    #122138 - visible to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    #122138 - visible to internal user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122139 @validateThatFileIsNotVisibleToAnyUserIfSharingOptionIsSelectedAsPrivateRecord
+  Scenario: Verify that file is visible to all internal user if sharing option as "Private On Records" is select at upload file modal
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Private On Records" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    #122139 - not visible to internal user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
