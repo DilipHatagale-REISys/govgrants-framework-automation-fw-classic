@@ -154,8 +154,14 @@ public class LibraryFilesPage extends GovGrantsManager {
      *
      * @param tableValue
      */
-    public void assertValueShownInSearchTableAtFileUploadModal(String tableValue, String tableId) {
+    public void assertValueShownInSearchTableAtFileUploadModal(String usuage, String tableValue, String tableId) {
+
         Assert.assertTrue(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue, tableId));
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue, tableId));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue, tableId)).isTrue();
+        }
     }
 
     /**

@@ -4744,3 +4744,41 @@ Business Need: Logged Issues Scenarios
     And I click modal button "OK"
     And I refresh the page
     Then I softly do not see "Collab Phase temporary comment" inside flex table with id "---program:-:myFeedTableId---"
+
+  @121985    @verifyThatFileAttachedFromRecordLevelIsGettingDisplayedAtFilesList-HomePhase
+  Scenario: validate that file attached to any post from record level is displayed at files list tab at Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I softly do not see "Collab Phase temporary comment" inside flex table with id "---program:-:myFeedTableId---"
