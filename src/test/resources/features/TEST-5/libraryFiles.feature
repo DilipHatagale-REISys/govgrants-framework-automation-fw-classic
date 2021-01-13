@@ -2751,7 +2751,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "DND" in "WorkspaceFiles" panel
-    Then I see "test record DND	" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "test record DND" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file is visible to all internal user if sharing option as "Visible to internal With Record Access" is select at upload file modal
@@ -2814,7 +2814,7 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    #122138 - visible to external user
+  #122138 - visible to external user
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -2822,7 +2822,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    #122138 - visible to internal user
+  #122138 - visible to internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2837,8 +2837,8 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122139 @validateThatFileIsNotVisibleToAnyUserIfSharingOptionIsSelectedAsPrivateRecord
-  Scenario: Verify that file is visible to all internal user if sharing option as "Private On Records" is select at upload file modal
+  @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord
+  Scenario: Verify that file is not visible to any internal user if sharing option as "Private On Records" is select at upload file modal
     Given I have "customMetaData" configuration as below:
       | id                 | label              | booleanValue | customMetaDataApiName    |
       | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
@@ -2859,7 +2859,7 @@ Business Need: Library Files Component Scenarios
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    #122139 - not visible to internal user
+  #122139 - not visible to internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2879,4 +2879,302 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord
+  Scenario: Verify that file is not visible to any external user if sharing option as "Private On Records" is select at upload file modal
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Private On Records" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122140 - not visible to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122142 @validateThatFileDeletedByInternalUserIsAlsoDeletedForInternalUser
+  Scenario: Verify that file deleted by internal user is also deleted from the same record viewed by admin user
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  #122142 - file deleted by internal user is not visible to admin user
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122157 @validateThatFileNameEditedByAdminUserShouldBeVisibleInternalAndExternalUser
+  Scenario: Verify that if file name is edited by admin user then updated file name should be displayed to internal and external user on same record
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Edit" icon for "TestFileSharing.docx" inside table
+    When I enter value as "TestFileSharingUpdated.docx" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122157 - updated file name is displayed to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122157 - updated file name is displayed to internal user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestFileSharingUpdated.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly
+  Scenario: Verify that if sharing option changed from "Visible to anyone With Record Access" to "Private on record" then file is visible to owner only
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I select sharing option as "Private On Records" at upload file modal
+    When I click on "Save" button in send email modal
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122160 - private file not visible to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  #122160 - private file not visible to internal user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122169 @validateThatFileNameUploadedByInternalUserShouldNotBeEditableByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
+  Scenario: Verify that if file uploaded by internal user should not be editable to admin user when sharing option as "Visible to Anyone With Record Access"
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122169 - file is not editable to admin user
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestFileSharing.docx" inside table
+    When I click on "Save" button in send email modal
+    Then I softly see the following messages in the page details contains:
+      | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
+
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharingUpdated.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122172 @validateThatFileNameUploadedByInternalUserShouldNotBeDeletedByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
+  Scenario: Verify that if file uploaded by internal user should not be deleted by  admin user when sharing option as "Visible to Anyone With Record Access"
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #122172 - file is not deleted by admin user
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    Then I softly see the following messages in the page details :
+      | insufficient access rights on object id |
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharingUpdated.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
