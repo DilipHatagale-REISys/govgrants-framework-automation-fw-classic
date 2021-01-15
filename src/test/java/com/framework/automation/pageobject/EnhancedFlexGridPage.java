@@ -63,16 +63,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * click on help text inside enhanced grid table specific to internal
-     * organization column
-     *
-     * @param columnTitle
-     */
-    public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]")));
-    }
-
-    /**
      * click on text area and enter values for multiple rows for particular column
      * at enhanced grid
      *

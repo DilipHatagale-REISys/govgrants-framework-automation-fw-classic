@@ -585,7 +585,7 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
@@ -606,3 +606,14 @@ Business Need: collab Component Scenarios
    When I login as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab
+
+  @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
