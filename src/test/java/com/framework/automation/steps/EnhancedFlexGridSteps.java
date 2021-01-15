@@ -18,11 +18,6 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.getHelpTextAtParentFlexTableEnhancedGrid(blockTitle);
     }
 
-    @When("^I hovering mouse on help text icon inside \"([^\"]*)\" for enhanced grid table column$")
-    public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
-        enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
-    }
-
     @When("^I enter values \"([^\"]*)\" into textarea for table id \"([^\"]*)\"$")
     public void textAreaFieldAtEnhancedGrid(String enteredValue, String tableId) {
         enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
