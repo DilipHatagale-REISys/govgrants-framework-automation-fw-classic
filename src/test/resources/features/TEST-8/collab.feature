@@ -603,7 +603,7 @@ Business Need: collab Component Scenarios
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
-   When I login as "Admin" user
+    When I login as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab
 
