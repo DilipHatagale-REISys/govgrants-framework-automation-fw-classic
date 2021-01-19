@@ -578,10 +578,9 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if lookup field at parent level of ME grid is in view mode
-     *
      * @param lookupFieldNAme
      * @param type
+     * @return true if lookup field at parent level of ME grid is in view mode
      */
     private Boolean isLookupFieldComingInViewMode(String lookupFieldNAme, String type) {
         boolean flag = false;

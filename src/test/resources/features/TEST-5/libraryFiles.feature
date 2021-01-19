@@ -2069,6 +2069,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomationFile.csv" into library
+    When I select sharing option as "Select sharing options" at upload file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
 
@@ -3455,8 +3456,8 @@ Business Need: Library Files Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
@@ -3469,11 +3470,11 @@ Business Need: Library Files Component Scenarios
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122494 - visible to Admin user
-    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
@@ -3482,15 +3483,15 @@ Business Need: Library Files Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestFileSharing.docx" inside table
@@ -3510,8 +3511,8 @@ Business Need: Library Files Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
@@ -3530,11 +3531,11 @@ Business Need: Library Files Component Scenarios
     Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122495 - edited file is visible to Admin user
-    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
@@ -3543,15 +3544,15 @@ Business Need: Library Files Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestFileSharingUpdated.docx" inside table
@@ -3739,7 +3740,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
-  #122498 - edited file is visible to Admin user
+  #122498 - uploaded file is visible to Admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3749,7 +3750,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
-  #122498 - edited file is visible to internal user
+  #122498 - uploaded file is visible to internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3768,4 +3769,564 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @122135 @validateThatIfFilesHavingSpecialCharactersInDescriptionAreSearchedUsingQuickSearchThenRespectiveRecordShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering special char in quick search box, respective record from description column is displayed under upload file modal - record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "@#" in "WorkspaceFiles" panel
+    Then I see "test file for description @#" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @123905    @verifyThatFileAttachedByAdminUserFromRecordLevelCollabIsDisplayedToSPIAndPMUserBySelectingSharingOptionAsVisibleToAnyone  @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user to any post from record level is displayed to PM and spi user if sharing option set as visible to anyone
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:2 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:3 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:4 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:5 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Line                         |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Home Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123905 - attached file from home phase is visible to admin user at collab tab record level
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123905 - attached file at collab tab is visible to internal(PM) user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123905 - attached file at collab tab is visible to external(SPI) user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    Then I softly do not see "Home Phase sharing temporary comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTest.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @123914    @verifyThatFileAttachedFromRecordLevelCollabIsEditableAtAttachmentFilesBlockByAdminUserAndUpdatedFileDisplayedInsideCollabTab @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user to any post from record level is editable by admin user
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab sharing functionality check application" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+    And I refresh the page
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "SharingAtCollabTest.png" inside table
+    When I enter value as "SharingAtCollabTestUpdated.png" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    When I click on "×" icon at "File Edit" modal under Library
+    When I perform quick search for "SharingAtCollabTestUpdated.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTestUpdated.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "SharingAtCollabTestUpdated.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTestUpdated.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    Then I softly do not see "Collab Phase sharing temporary comment" inside flex table with id "---program:-:myFeedTableId---"
+
+  @123915    @verifyThatFileAttachedFromRecordLevelCollabByAdminUserIsNotEditableAtAttachmentFilesBlockByPMUserIfSahringOptionSetToVisibleToAnyone @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user to any post from record level is not editable by PM user from attachment files block if sharing option set to visible to anyone
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab sharing functionality check application" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123915 - attached file from collab tab is not editable by internal(PM) user at attachment files block
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "SharingAtCollabTest.png" inside table
+    Then I see alert message inside "---program:-:workSpaceFileEditId---" modal as follows :
+    """
+   {LongText:FileEditModalAlertMessageLong-Text}
+  """
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "SharingAtCollabTest.png" inside collab my feed
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTest.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @123917    @verifyThatFileAttachedFromRecordLevelCollabByAdminUserIsNotEditableAtAttachmentFilesBlockBySPIUserIfSahringOptionSetToVisibleToAnyone @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user to any post from record level is not editable by SPI user from attachment files block if sharing option set to visible to anyone
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab sharing functionality check application" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123917 - attached file from collab tab is not editable by external(SPI) user at attachment files block
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "SharingAtCollabTest.png" inside table
+    Then I see alert message inside "---program:-:workSpaceFileEditId---" modal as follows :
+    """
+   {LongText:FileEditModalAlertMessageLong-Text}
+  """
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "SharingAtCollabTest.png" inside collab my feed
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTest.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @123919    @verifyThatFileAttachedByAdminUserFromHomePhaseAndEditedAtRecordLevelAttachmentTabIsDisplayedToSPIAndPMUserWithUpdatedName  @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user to any post from home phase and edited from record level is displayed to PM and spi user with updated name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:2 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:3 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:4 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:5 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Line                         |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Home Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123919 - attached file from home phase is editable to admin user at attachment tab record level
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "SharingAtCollabTest.png" inside table
+    When I enter value as "SharingAtCollabTestUpdated1.png" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    When I click on "×" icon at "File Edit" modal under Library
+    When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTestUpdated1.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123919 -edited file name uploaded from home phase is visible to internal(PM) user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTestUpdated1.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123919 - edited file name uploaded from home phase is visible to external(SPI) user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTestUpdated1.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    Then I do not see attached file as "SharingAtCollabTestUpdated1.png" inside collab my feed
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTestUpdated1.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @123923    @verifyThatFileAttachedByAdminUserFromHomePhaseIsDisplayedToPMUserAndNotToExternalIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess  @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user from home phase is displayed to PM and not to spi user "Visible to internal With Record Access" is select
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:2 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:3 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:4 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:5 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Line                         |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Visible to Internal Users With Record Access" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Home Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123923 - attached file from home phase is displayed to admin user at attachment tab record level
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123923 - file uploaded from home phase is visible to internal(PM) user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123923 - file uploaded from home phase is not visible to external(SPI) user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    Then I do not see attached file as "SharingAtCollabTest.png" inside collab my feed
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTest.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @123936    @verifyThatFileAttachedByAdminUserFromHomePhaseIsNotDisplayedToExternalIfSharingOptionIsSelectedAsPrivateOnRecord  @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached by admin user from home phase is not displayed to spi user "Private On Records" is select
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:2 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:3 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:4 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:5 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Line                         |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
+      | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "SharingAtCollabTest.png" into library with sharing
+    When I select sharing option as "Private On Records" at upload file modal
+    When I enter value as "test sharing" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Home Phase sharing temporary comment" in my feed section and share the comment
+    Then I softly see "SharingAtCollabTest.png" inside flex table with id "---program:-:myFeedTableId---"
+
+  #123936 - attached file from home phase is displayed to admin user at attachment tab record level
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123936 - file uploaded from home phase is not visible to internal(PM) user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    And I pause execution
+    Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+  #123936 - file uploaded from home phase is not visible to external(SPI) user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
+    And I click modal button "OK"
+    Then I do not see attached file as "SharingAtCollabTest.png" inside collab my feed
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SharingAtCollabTest.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
