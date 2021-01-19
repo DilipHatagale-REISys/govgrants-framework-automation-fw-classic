@@ -4490,3 +4490,14 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     And I click on "Cancel" in the page details
     Then I see expected table with id "toggleFlexTablePrograms"
+
+  @112364    @verifyThatPMUserIsAbleToAccessChatterNativePage-gPlanning
+  Scenario Outline: verify that PM user is able to access chatter native page
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to url "<URL_Value>"
+    Then I see "chatterPage" page displayed
+
+    Examples:
+      | URL_Value                                                    |
+      | https://login.salesforce.com/_ui/core/chatter/ui/ChatterPage |

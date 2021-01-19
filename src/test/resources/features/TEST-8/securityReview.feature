@@ -130,7 +130,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePendingTasks"
+    Then I see expected table with id "toggleFlexTablePendingTasks"
 
   @106325    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from task menu then pending task assigned by me table displayed
@@ -138,7 +138,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePendingTasksBy"
+    Then I see expected table with id "toggleFlexTablePendingTasksBy"
 
   @106329    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenSubrecipientOrganizationDetailPageOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from task menu then Subrecipient Organization detail page displayed

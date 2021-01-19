@@ -575,6 +575,12 @@ Business Need: history Component Scenarios
 
   @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
   Scenario: validate approval history table is displayed at history tab when page is in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -586,6 +592,12 @@ Business Need: history Component Scenarios
 
   @121042    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageEditMode
   Scenario: validate approval history table is displayed at history tab when page is in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -616,5 +628,25 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see expected table with id "toggleApprovalHistory"
     Then I softly see expected table with id "toggleFlexTableHistory"
+    Then I softly see the text :
+      | Snapshot History |
+
+  @120545  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedInRecordEditMode
+  Scenario: validate that approval history table and snapshot history is displayed in record edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I softly see expected table with id "toggleApprovalHistory"
     Then I softly see the text :
       | Snapshot History |

@@ -4655,7 +4655,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "HomeCollabIframe"
+    And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -4676,7 +4676,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "HomeCollabIframe"
+    And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -4728,7 +4728,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "HomeCollabIframe"
+    And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -4762,7 +4762,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "HomeCollabIframe"
+    And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
