@@ -331,6 +331,16 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     /**
+     * @param title
+     * @param taskCount
+     * @return true if late task count as zero is displayed inside "Task Summary by due date" chart on home page
+     * @author ashwini.mahore
+     */
+    public void assertLateCountInsideTaskSummaryByDueDateChart(String taskCount, String title) {
+        Assert.assertTrue(isLateCountDisplayedInsideTaskSummaryByDueDateChart(taskCount, title));
+    }
+
+    /**
      * assert phase tab background color
      *
      * @param colorName
@@ -713,7 +723,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isHeaderActionButtonBackgroundColorChanged(String colorName) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-     WebElement actionButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//button[contains(@class,'secondaryBtn')]"));
+        WebElement actionButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//button[contains(@class,'secondaryBtn')]"));
 
         switch (colorName.toUpperCase()) {
             case "DARK BLUE":
@@ -859,6 +869,24 @@ public class PhaseConfigPage extends GovGrantsManager {
         if (getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
                 || getActiveTabAtWorkspace.getCssValue("background").contains("rgb(34, 34, 34)")) {
             flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * @param title
+     * @param taskCount
+     * @return true if late task count as zero is displayed inside "Task Summary by due date" chart on home page
+     * @author ashwini.mahore
+     */
+    private Boolean isLateCountDisplayedInsideTaskSummaryByDueDateChart(String taskCount, String title) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + title + "']/following-sibling::span[text()='" + taskCount + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            flag = false;
         }
         return flag;
     }

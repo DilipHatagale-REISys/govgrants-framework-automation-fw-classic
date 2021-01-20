@@ -4501,3 +4501,37 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | URL_Value                                                    |
       | https://login.salesforce.com/_ui/core/chatter/ui/ChatterPage |
+
+  @125231  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinksWithLabelAndValue
+  Scenario: validate that mini page layout is getting displayed properly on mouse hover at sidebar links with label and value
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I hover mouse on lookup link "AN-343-020"
+    Then I softly see "Title" shown inside mini page layout on hover
+    Then I softly see "Test Announcement For Automation" shown inside mini page layout on hover
+
+  @125229  @VerifyMiniPageLayoutShouldDisplayedWithUnBoldValueOnMouseHoverAtSidebarLinks
+  Scenario: validate that mini page layout is getting displayed without bold value on mouse hover at sidebar links
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I hover mouse on lookup link "AN-343-020"
+    Then I see mini page layout value is displayed in normal text with "500" font-weight
+
+  @125232  @VerifyMiniPageLayoutShouldDisplayedWithGreyBackgrounfOnMouseHoverAtSidebarLinks
+  Scenario: validate that mini page layout is getting displayed withgrey background on mouse hover at sidebar links
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I hover mouse on lookup link "AN-343-020"
+    Then I see mini page layout background is in grey color

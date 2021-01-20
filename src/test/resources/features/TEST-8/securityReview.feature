@@ -2763,3 +2763,20 @@ Business Need: security review Scenarios
     Examples:
       | Announcement Name                         | Application Name       | Award Name             | Grant Name             |
       | Automation Internal Announcement for flow | Automation Application | Automation Application | Automation Application |
+
+  @107315    @verifyThatMEIsDisplayedByLoginAsSPIUserAtRecordLevel
+  Scenario: validate flex table IsDisplayed by logged in as SPI user at record level inside budget tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-6730                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    Then I see expected table with id "toggleFGridRecipentGrantBudgetCategoryFlexGrid"

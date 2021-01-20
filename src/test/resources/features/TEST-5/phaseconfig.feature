@@ -175,3 +175,16 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "PG" records are present in Recently Viewed link in Sidebar
+
+  @118446    @validateThatZeroIsDisplayedInLateTaskInsideTaskSummaryByDueDateChart
+  Scenario: Check zero is displayed for late task inside Task Summary by due date chart on home page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Phase Config          | Is Phase  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Is Phase  | true          | GrantorPlanning    |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "0" at "Late" inside task summary by due date chart

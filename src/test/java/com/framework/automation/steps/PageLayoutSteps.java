@@ -682,4 +682,19 @@ public class PageLayoutSteps {
     public void iDoNotSeeAttachedFileAsInsideCollabMyFeed(String fileName) {
         pageLayoutPage.assertAttachedFileInsideCollabMyFeedSection(fileName);
     }
+
+    @Then("I see mini page layout value is displayed in normal text with {string} font-weight")
+    public void iSeeValueIsDisplayedInNormalTextWithFontWeight(String fontWeight) {
+        pageLayoutPage.assertValueIsDisplayedInNormalTextInsideMiniLayout(fontWeight);
+    }
+
+    @Then("I see mini page layout background is in grey color")
+    public void iSeeMiniPageLayoutBackgroundIsInGreyColor() {
+        pageLayoutPage.assertBackgroundColorInsideMiniLayout();
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" inside \"([^\"]*)\" menu at collab sidebar$")
+    public void iDoNotSeeSubMenuInsideMenuAtCollabSidebar(String usage, String subMenu, String mainMenu) {
+        pageLayoutPage.assertMenuAtCollabSidebar(usage, subMenu, mainMenu);
+    }
 }
