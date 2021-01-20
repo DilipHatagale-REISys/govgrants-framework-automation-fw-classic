@@ -1471,6 +1471,40 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if value under mini page layout is displayed in normal unbold format
+     *
+     * @param fontWeight
+     * @author ashwini.mahore
+     */
+    public void assertValueIsDisplayedInNormalTextInsideMiniLayout(String fontWeight) {
+        I.amPerforming().assertionsTo().assertThat(isValueAtMiniPageLayoutDisplayedInExpectedFontWeight(fontWeight)).isTrue();
+    }
+
+    /**
+     * return true if mini page layout is displayed in grey background color
+     *
+     * @author ashwini.mahore
+     */
+    public void assertBackgroundColorInsideMiniLayout() {
+        I.amPerforming().assertionsTo().assertThat(isMiniPageLayoutDisplayedInGreyBackgroundColor()).isTrue();
+    }
+
+    /**
+     * return true if expected sub-menu is displayed/not displayed inside collab sidebar
+     *
+     * @param subMenu
+     * @param mainMenu
+     * @author ashwini.mahore
+     */
+    public void assertMenuAtCollabSidebar(String usage, String subMenu, String mainMenu) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedMenuDisplayedInsideCollabSidebar(subMenu, mainMenu));
+        } else {
+            Assert.assertFalse(isExpectedMenuDisplayedInsideCollabSidebar(subMenu, mainMenu));
+        }
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2903,4 +2937,63 @@ public class PageLayoutPage extends GovGrantsManager {
         return flag;
     }
 
+    /**
+     * return true if value under mini page layout is displayed in normal un-bold format
+     *
+     * @param fontWeight
+     * @author ashwini.mahore
+     */
+    public Boolean isValueAtMiniPageLayoutDisplayedInExpectedFontWeight(String fontWeight) {
+        boolean flag = false;
+        WebElement getFontWeightOfValueAtMiniLayout = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='tooltipValue']"));
+        try {
+            if (getFontWeightOfValueAtMiniLayout.getCssValue("font-weight").equals(fontWeight)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if mini page layout is displayed in grey background color
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isMiniPageLayoutDisplayedInGreyBackgroundColor() {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getBackgroundColorAtMiniLayout = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='tooltipster-content']"));
+        try {
+            if (getBackgroundColorAtMiniLayout.getCssValue("background").contains("rgb(245, 243, 243)")
+                    || getBackgroundColorAtMiniLayout.getCssValue("background").contains("rgba(245, 243, 243, 1)")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected sub-menu is displayed/not displayed inside collab sidebar
+     *
+     * @param subMenu - displayed inside main menu at collab sidebar
+     * @param mainMenu - displayed inside collab sidebar
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedMenuDisplayedInsideCollabSidebar(String subMenu, String mainMenu) {
+        boolean flag = false;
+        List<Elements> getSubMenusFromCollabSidebar = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//a[text()='" + mainMenu + "']/following-sibling::div[@class='collabSubMenuOptions']//a"));
+        int count = getSubMenusFromCollabSidebar.size();
+        try {
+            for (int i = 0; i < count; i++) {
+                if (getSubMenusFromCollabSidebar.get(i).getText().equals(subMenu)) {
+                    flag = true;
+                }
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
 }

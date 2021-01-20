@@ -189,4 +189,9 @@ public class PhaseConfigSteps {
     public void activeTabHasBlackBackgroundColourAtMyWorkspaceSection() {
         phaseConfigPage.assertActiveTabBackgroundColorAtMyWorkspaceSection();
     }
+
+    @Then("I see {string} at {string} inside task summary by due date chart")
+    public void iSeeAtInsideTaskSummaryByDueDateChart(String taskCount, String title) {
+        phaseConfigPage.assertLateCountInsideTaskSummaryByDueDateChart(taskCount, title);
+    }
 }

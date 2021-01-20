@@ -7513,11 +7513,11 @@ Business Need: Expression Builder Component Scenarios
   @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid
   Scenario: Verify action column is hidden if all other row level actions are hidden using date time field value at enhanced grid child table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | View                       |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
@@ -7554,3 +7554,83 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @83342    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserTypeAsInternal
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user type as internal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserTypeInternal | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                         | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83343    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingContextAsView
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using context as View
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingContextInViewMode | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                          | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83344    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserAppAsStateAsGrantor
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user app as state as grantor
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserAppAsStateAsGrantor | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83340    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUsingProfileAsSystemAdministrator
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using Using Profile As System Administrator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProfileAsSystemAdministrator | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                     | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
