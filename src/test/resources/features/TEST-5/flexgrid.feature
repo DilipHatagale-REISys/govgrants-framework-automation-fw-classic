@@ -2479,3 +2479,57 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Edit" icon for "BP-01" inside table
     Then I see lookup field "ID" is in edit mode
+
+  @125138   @verifyLookupFieldIsDisplayedAsSelectPicklistInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsSelectDropdownFromConfig
+  Scenario: validate that lookup field is displayed as picklist in inline edit mode in ME Grid if render type = select dropdown
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table List       | Render Type | Autosuggest       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Render Type | Select dropdown | ApplicationBudgetPeriods | Name                      | FTC-1534                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-01" inside table
+    Then I see lookup field is rendered with picklist
+
+  @125394   @verifyLookupFieldIsDisplayedAsSelectPicklistInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsNoneFromConfig
+  Scenario: validate that lookup field is displayed as picklist in inline edit mode in ME Grid if render type = None
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table List       | Render Type |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Render Type |               | ApplicationBudgetPeriods | Name                      | FTC-1534                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-01" inside table
+    Then I see lookup field is rendered with picklist
+
+  @125393   @verifyLookupFieldIsDisplayedWithAutoSuggestionInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsAutosuggestFromConfig
+  Scenario: validate that lookup field is displayed with Autosuggestion in inline edit mode in ME Grid if render type = Autosuggest
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table List       | Render Type | Autosuggest       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Render Type | Autosuggest   | ApplicationBudgetPeriods | Name                      | FTC-1534                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-01" inside table
+    Then I see lookup field is rendered with Autosuggestion

@@ -288,4 +288,9 @@ public class EnhancedFlexGridSteps {
     public void iSeeShownAtMouseHoverInsideTable(String hoverText, String tableId) {
         enhancedFlexGrid.assertMouseHoverTextAtColumnValueInsideTableId(hoverText,tableId);
     }
+
+    @Then("I see border box is displayed at {string} table")
+    public void iSeeBorderBoxIsDisplayedAtTable(String tableId) {
+        enhancedFlexGrid.assertBorderBoxAtEnhancedGrid(tableId);
+    }
 }

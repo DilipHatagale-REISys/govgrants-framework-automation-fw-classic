@@ -417,3 +417,28 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" in the page details
     And I click on "Cancel" in the page details
     Then I see "Application" shown as over view header
+
+  @125579 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtFormsUnderEnhancedFormsTable
+  Scenario:validate that users should be warned when they click on Cancel button with unsaved data at forms under enhanced forms table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page" inside flex table with id "FormEnhancedTable"
+    When I enter value "test 1" into field "Subject__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @112163 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtFormsUnderBusinessFormsTable
+  Scenario:validate that users should be warned when they click on Cancel button with unsaved data at forms under business forms table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test" into field "SimpleQuestion1__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"

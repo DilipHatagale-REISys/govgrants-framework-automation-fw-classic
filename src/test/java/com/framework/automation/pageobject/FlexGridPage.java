@@ -347,6 +347,15 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if lookup field is rendered with select dropdown/autosuggestion box inside table in edit mode
+     *
+     * @author - ashwini.mahore
+     */
+    public void assertLookupFieldRenderedAsPicklistInsideTable(Boolean isPicklist) {
+        Assert.assertTrue(isLookupFieldRenderedAsPicklistOrAutosuggestionInsideTable(isPicklist));
+    }
+
+    /**
      * get overall total at me grid parent flex table
      *
      * @param tableId
@@ -803,6 +812,28 @@ public class FlexGridPage extends GovGrantsManager {
         numberInStandardFormat = "^\\d{1,3}(?:,\\d{3})*$";
         if (totalCurrency.matches(numberInStandardFormat)) {
             return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if lookup field is rendered with select dropdown/autosuggestion box inside table in edit mode
+     *
+     * @author- ashwini.mahore
+     */
+    private Boolean isLookupFieldRenderedAsPicklistOrAutosuggestionInsideTable(Boolean isPicklist) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        I.amPerforming().click().on(ByUsing.xpath("//td//span[@class='select2-arrow']"));
+        try {
+            if (isPicklist) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[not(contains(text(),'Please'))]/ancestor::div[@id='select2-drop']"))) {
+                    flag = true;
+                }
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[(contains(text(),'Please'))]/ancestor::div[@id='select2-drop']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
