@@ -176,4 +176,9 @@ public class FlexGridSteps {
     public void iSeeTotalAmountAtNumberFieldIsDisplayedInACorrectFormatInside(String fieldName, String tableId) {
     flexGridPage.assertNumberTotalWithoutDecimalIsDisplayed(fieldName, tableId);
     }
+
+    @Then("^I see lookup field is rendered with (picklist|Autosuggestion)$")
+    public void iSeeLookupFieldIsRenderedAsSelectPicklist(String uiType) {
+        flexGridPage.assertLookupFieldRenderedAsPicklistInsideTable(uiType.equalsIgnoreCase("picklist"));
+    }
 }

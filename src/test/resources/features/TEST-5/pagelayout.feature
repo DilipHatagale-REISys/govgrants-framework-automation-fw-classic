@@ -4535,3 +4535,14 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I hover mouse on lookup link "AN-343-020"
     Then I see mini page layout background is in grey color
+
+  @112159  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I enter value "Department of Children health" into field "fieldAccount__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"

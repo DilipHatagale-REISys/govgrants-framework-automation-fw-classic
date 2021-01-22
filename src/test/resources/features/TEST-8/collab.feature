@@ -618,9 +618,16 @@ Business Need: collab Component Scenarios
     Then I softly see tab label as "Upload File from Computer" at files library upload modal
     Then I softly see tab label as "Upload File from Library" at files library upload modal
 
-  @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebar
-  Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar
+  @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser
+  Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
     When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
+
+  @104324   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForPMUser
+  Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for PM user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar

@@ -2513,3 +2513,18 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "3" seconds
     And I download the file
     Then I see "*****" on page "1" of "govgrants" pdf file
+
+  @118781 @verifyThatMultipleSectionsPresentAtUIShouldDisplayedInsideDownloadedPDFAtFormLayout
+  Scenario:validate that  multiple sections present on UI should display inside downloaded pdf at form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Cover Page" program in flex table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "APPLICATION COVER PAGE" on page "1" of "govgrants" pdf file
+    Then I softly see "Monitoring Schedule For All Active Grants" on page "1" of "govgrants" pdf file

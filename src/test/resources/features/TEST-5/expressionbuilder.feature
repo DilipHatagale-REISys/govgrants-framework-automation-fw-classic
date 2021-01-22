@@ -7634,3 +7634,203 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
     Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83338    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserAppNotInAsStateAsGrantee
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user app not as as state as grantee
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserAppNotInStateAsGrantee | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                   | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83349    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingContextAsViewAndProgramIsInViewMode
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using context as View and program is in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProgramContextInViewMode | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                 | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83789    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingMultipleCondisionsAtParentObject
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using multiple conditions at parent object
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingGroupAtParentObj | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                         | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83347    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUsingUserAppAsStateAsGrantorForParentObject
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user app as state as granto for parent object
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserAppAsStateAsGrantorForParentObject | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                               | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83346    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserTypeAsInternalForParentObject
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user type as internal for parent object
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserTypeInternalForParentObject | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                        | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83345    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUsingProfileAsSystemAdministratorForParentObject
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using Using Profile As System Administrator for parent object
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProfileAsSystemAdministratorForParentObject | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                                    | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83350    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserRegex
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using user regex
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingUserRegex | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                  | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83348    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingContextAsViewAndProgramIsInEditMode
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using context as Edit and program is in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProgramContextInEditMode | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                 | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83791    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingMultipleConditions
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using multiple conditions
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingGroup | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                         | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table
+
+  @83790    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUsingProfileNotInSystemAdministrator
+  Scenario: validate expression JSON at attachment extension obj table by hiding action using Using Profile not in System Administrator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProfileNotInSystemAdministrator | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                     | NewAttachmentUndo  | Name                      | Edit                       |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Register.png" in "---program:-:AttachmentExtensionObjFlexTableId---" panel
+    Then I see "Edit" icon for "Register.png" is not displayed inside flex table

@@ -2582,3 +2582,14 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see cross icon is displayed at search box at "---program:-:flexGridEnhancedID---"
+
+  @121593    @verifyThatBorderIsDisplayedAtEnhancedGridForFirefoxBrowser @firefox
+  Scenario: validate that border box is displayed at enhanced grid when opens in firefox browser
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see border box is displayed at "TmpActiveGrantsGridFlexToggle" table

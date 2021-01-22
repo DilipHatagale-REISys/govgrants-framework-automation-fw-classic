@@ -559,6 +559,16 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isMouseHoverTextAtColumnValueDisplayedInsideTableId(text, tableId));
     }
 
+    /**
+     * return true if border box is displayed at enhanced grid table (firefox browser specific)
+     *
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    public void assertBorderBoxAtEnhancedGrid(String tableId) {
+        I.amPerforming().assertionsTo().assertThat(isBorderBoxDisplayedAtEnhancedGrid(tableId)).isTrue();
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1510,6 +1520,26 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@title='" + text + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if border box is displayed at enhanced grid table (firefox browser specific)
+     *
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    public Boolean isBorderBoxDisplayedAtEnhancedGrid(String tableId) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getBorderBoxCSS = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//table[contains(@class,'gridTable')]"));
+        System.out.println(getBorderBoxCSS.getCssValue("border-collapse"));
+        try {
+            if (getBorderBoxCSS.getCssValue("border-collapse").equals("separate")) {
                 flag = true;
             }
         } catch (Exception e) {
