@@ -4546,3 +4546,15 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I enter value "Department of Children health" into field "fieldAccount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @125696    @verifyByClickOnUserValueInEditModeItShouldRedirectedToRespectiveUserPageAtPageLayout-gPlanning
+  Scenario: validate by click on user value in edit mode , respective user page should get opens at page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click "Nauman Shahid" lookup link
+    Then I see "User" shown as over view header
