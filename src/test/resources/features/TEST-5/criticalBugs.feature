@@ -4496,6 +4496,12 @@ Business Need: Logged Issues Scenarios
 
   @121616    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtCollabPhase
   Scenario: validate that more actions dropdown is displayed at attached file at comment inside collab phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
@@ -4520,6 +4526,12 @@ Business Need: Logged Issues Scenarios
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Bubble                       |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes 1                  |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -4580,9 +4592,15 @@ Business Need: Logged Issues Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4640,19 +4658,25 @@ Business Need: Logged Issues Scenarios
 
   @121981    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromRecordLevel
   Scenario: validate that file attached to any post can be removed by click on cancel button at collab record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
@@ -4683,7 +4707,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
-  @121619    @verifyThatAttachedFileFromHomePhaseIsGettingDisplayedAtFilesList-HomePhase
+  @121619    @verifyThatAttachedFileFromHomePhaseIsGettingDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
   Scenario: validate that file attached to any post from home phase is displayed at files list tab at Home Phase
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -4712,9 +4736,9 @@ Business Need: Logged Issues Scenarios
     And I click on "Delete" action at "Temporary Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    Then I softly do not see "Temporary Comment" inside flex table with id "---program:-:myFeedTableId---"
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
 
-  @121621    @verifyThatFileAttachedFromCollabPhaseIsGettingDisplayedAtFilesList-HomePhase
+  @121621    @verifyThatFileAttachedFromCollabPhaseIsGettingDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
   Scenario: validate that file attached to any post from collab phase is displayed at files list tab at Home Phase
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -4743,23 +4767,29 @@ Business Need: Logged Issues Scenarios
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    Then I softly do not see "Collab Phase temporary comment" inside flex table with id "---program:-:myFeedTableId---"
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
 
-  @121985    @verifyThatFileAttachedFromRecordLevelIsGettingDisplayedAtFilesList-HomePhase
+  @121985    @verifyThatFileAttachedFromRecordLevelIsGettingDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
   Scenario: validate that file attached to any post from record level is displayed at files list tab at Home Phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
@@ -4775,10 +4805,220 @@ Business Need: Logged Issues Scenarios
     Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    Then I softly do not see "Collab Phase temporary comment" inside flex table with id "---program:-:myFeedTableId---"
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+
+  @125731    @verifyThatFileAttachedOnGroupPostFromCollabPhaseIsGettingDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached at group post from collab phase is displayed at files list tab at Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Automation Testing Group" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment group" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "CollabFileTemp.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    And I navigate to "Collab" tab
+    And I click on "Delete" action at "Collab Phase temporary comment group" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
+
+  @125735    @verifyThatFileAttachedFromRecordLevelAndDeletedFromRecordIsNotDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached to any post from record level and deleted from record is not displayed at files list tab at Home Phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @125734  @verifyThatFileAttachedFromRecordLevelIsDisplayedAtRecordLevelAndHomeAndCollabPhase @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file attached to any post from record level is displayed at Home Phase, Collab Phase And record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+
+  #125734 - file uploaded from record level is visible at home phase files list section
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  #125734 - file uploaded from record level is visible at collab phase files list section
+    And I navigate to "Collab" tab
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+
+  @125742    @verifyThatFileAttachedFromCollabPhaseOnRecordPostAndAlsoDeletedFromCollabPhaseIsNotDisplayedAtHomeAndRecordLevel @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file uploaded and deleted from collab phase at record level post is also removed from Home Phase and respective record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
+
+  #125742 - file uploaded and deleted from collab phase at record level post is also removed from respective record
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  #125742 - file uploaded and deleted from collab phase at record level post is also removed from respective record
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
+
+  @125744    @verifyThatFileAttachedFromCollabPhaseOnRecordPostAndDeletedFromRecordIsNotDisplayedAtHomeAndRecordLevel @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file uploaded from collab phase and deleted from record level is also removed from Home Phase and respective record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+
+  #125744 - file uploaded from collab phase and deleted from record level is also removed from respective record
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
+
+  #125744 - file uploaded from collab phase and deleted from record level is also removed from home phase
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"

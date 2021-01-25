@@ -49,23 +49,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if Library/File/Folder is Displayed under files library - Home phase
-     *
-     * @param libraryFileFolderName
-     */
-    public void assertLibraryFileFolderIsDisplayed(String usuage, String libraryFileFolderName) {
-        if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isLibraryFileFolderIsDisplayed(libraryFileFolderName));
-        } else if (usuage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isLibraryFileFolderIsDisplayed(libraryFileFolderName));
-        } else if (usuage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isTrue();
-        } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isFalse();
-        }
-    }
-
-    /**
      * assert true if dropdown options under respective Library/File/Folder is Displayed - Home phase
      *
      * @param dropDownOption
@@ -392,23 +375,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
-
-    /**
-     * return true if Library/File/Folder is Displayed under files library - Home phase
-     *
-     * @param libraryFileFolderName
-     * @return
-     */
-    private boolean isLibraryFileFolderIsDisplayed(String libraryFileFolderName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='WorkspaceFilesHierarchy']//div[contains(@class,'slds-tree__item')]//*[text()='" + libraryFileFolderName + "']"))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
 
     /**
      * return true if dropdown options under respective Library/File/Folder is Displayed - Home phase

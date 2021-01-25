@@ -631,3 +631,14 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
+
+  @125729    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtGroupPostAtCollabPhase
+  Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Internal Group for Testing" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly do not see tab label as "Upload File from Library" at files library upload modal
