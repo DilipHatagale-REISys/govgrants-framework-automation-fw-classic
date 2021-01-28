@@ -442,3 +442,52 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" in the page details
     And I enter value "test" into field "SimpleQuestion1__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @126480 @verifyThatByClickOnPreviewActionAtBusinessFormsItShouldGetOpensInNewTab-gApplications
+  Scenario:validate business form is getting opens in new tab by click on preview action on it
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    Then I see new tab is opened
+
+  @126481 @verifyHelpTextIsDisplayedByClickOnPreviewActionAtBusinessForms-gApplications
+  Scenario:validate help text at page block is displayed at business form by click on preview action on it
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    When I hovering mouse on help text icon inside "APPLICANTS ORGANIZATION INFORMATION"
+    Then I see "This section displays the information about applicants organization details." shown as help text
+
+  @126482 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyPageBlockTitlesShouldDisplayAndNotTheBlockDetails-gApplications
+  Scenario:validate at business form preview, only page block titles should display and not the block details fields
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    Then I softly see "Program Information Automation" page block displayed
+    Then I softly see "Application Title" is not displayed inside page block detail
+    Then I softly see "Application ID" is not displayed inside page block detail
+
+  @126483 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyStaticTextDisplayed-gApplications
+  Scenario:validate at business form preview, only static text displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    Then I see the text :
+      | I hereby certify that the information provided above is accurate and complete. |
+      | Acknowledgement:                                                               |

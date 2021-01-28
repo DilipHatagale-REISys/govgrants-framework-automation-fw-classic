@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
@@ -9,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SideBarPage extends GovGrantsManager {
 
@@ -29,8 +31,12 @@ public class SideBarPage extends GovGrantsManager {
      *
      * @param headerName
      */
-    public void assertRemovalOfSideBarHeader(String headerName) {
-        Assert.assertFalse(isTaskMenuDisabled(headerName));
+    public void assertRemovalOfSideBarHeader(String usage, String headerName) {
+        if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isTaskMenuDisabled(headerName));
+        } else if (usage.equalsIgnoreCase("softly see")){
+            I.amPerforming().assertionsTo().assertThat(isTaskMenuDisabled(headerName)).isTrue();
+        }
     }
 
     /**
@@ -99,6 +105,16 @@ public class SideBarPage extends GovGrantsManager {
      */
     public void assertIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
         Assert.assertTrue(isIconDisplayedAtAccordionHeader(iconCssValue,accodionHeaderName ));
+    }
+
+    /**
+     * assert if expected searched record id is displayed inside autosuggestion dropdown at global search
+     *
+     * @param recordId
+     * @author - ashwini.mahore
+     */
+    public void assertRecordInAutoSuggestedDropdownAtGlobalSearch(String recordId) {
+        I.amPerforming().assertionsTo().assertThat(isExpectedRecordIdDisplayedInAutoSuggestedDropdownAtGlobalSearch(recordId));
     }
 
     /*********
@@ -221,6 +237,24 @@ public class SideBarPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+accodionHeaderName+"']/preceding-sibling::span//i[@class='"+iconCssValue+"']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected searched record id is displayed inside autosuggestion dropdown at global search
+     *
+     * @param recordId
+     * @author - ashwini.mahore
+     */
+    private boolean isExpectedRecordIdDisplayedInAutoSuggestedDropdownAtGlobalSearch(String recordId) {
+        boolean flag = false;
+        List<Elements> getListOfRecordsFromDropdown = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//ul[contains(@class,'dropdown-menu')]//span[contains(@class,'sidebar-search-type-ahead-cls')]"));
+        try {
+            if (getListOfRecordsFromDropdown.contains(recordId)) {
                 flag = true;
             }
         } catch (Exception e) {

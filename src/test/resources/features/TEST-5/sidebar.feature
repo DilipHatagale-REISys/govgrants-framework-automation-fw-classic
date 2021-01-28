@@ -25,7 +25,7 @@ Business Need: Side bar Component Scenarios
       | Side Bar Header:General | Sidebar Component Sequence | Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    Then I see "Tasks" as disabled from sidebar
+    Then I do not see "Tasks" at sidebar
 
   @33879    @validateSidebarActivityMenuRemoval-gHome @smoke
   Scenario: validate disabling of activity menu from side bar
@@ -37,7 +37,7 @@ Business Need: Side bar Component Scenarios
       | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    Then I see "Activities" as disabled from sidebar
+    Then I do not see "Activities" at sidebar
 
   @33881    @validateLabelChangeOfAccordionContent-gHome @smoke
   Scenario: validate change of label in My tasks accordion content
@@ -461,7 +461,7 @@ Business Need: Side bar Component Scenarios
 
   @115097    @validateColorOfGlobalSearchBoxAtSidebar-gHome
   Scenario: validate color of global search box at sidebar
-   When I login as "Automation" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see sidebar global search box displayed in "blue"
 
@@ -488,3 +488,51 @@ Business Need: Side bar Component Scenarios
     And I navigate to "HOME" tab
     When I hover mouse on lookup link "Data table enhanced record"
     Then I see "Data table enhanced record" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
+
+  @126111    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfProgramIsSelected
+  Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if program is selected
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | false        | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | true         | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Program"
+    When I perform quick search inside global search "PG-343-008" without processing
+    Then I softly see record "PG-343-0083" is displayed inside autosuggestion dropdown at global search
+    Then I softly see record "PG-343-0080" is displayed inside autosuggestion dropdown at global search
+
+  @126114    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfAnnouncementIsSelected-gHome
+  Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if announcement is selected
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | false        | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | true         | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Announcement"
+    When I perform quick search inside global search "FOA-DOC" without processing
+    Then I softly see record "FOA-DOC-001" is displayed inside autosuggestion dropdown at global search
+    Then I softly see record "FOA-DOC-002" is displayed inside autosuggestion dropdown at global search
+
+  @126117    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfGrantIsSelected
+  Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if grant is selected-gGrant
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | false        | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                                                             | name                  |
+      | true         | 0            | a0b1500000HwJXYAA3 | Setting to set whether type ahead is to be performed for Sidebar Search | EnableSearchTypeAhead |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on global search and select "Grants"
+    When I perform quick search inside global search "GT-TMZDT" without processing
+    Then I softly see record "GT-TMZDT-001" is displayed inside autosuggestion dropdown at global search
+    Then I softly see record "GT-TMZDT-002" is displayed inside autosuggestion dropdown at global search

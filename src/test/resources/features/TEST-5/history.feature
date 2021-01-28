@@ -639,7 +639,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -650,3 +649,16 @@ Business Need: history Component Scenarios
     Then I softly see expected table with id "toggleApprovalHistory"
     Then I softly see the text :
       | Snapshot History |
+
+  @91687  @verifyAdvanceFilterAtFieldHistoryTableInRecordViewMode
+  Scenario: validate advance filter at field history table in record view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "History" sub tab
+    When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
+    When I enter advance filter values inside id "advfHistory"
+      | Changed Field | Equals to | Primary Applicant |
+    Then I see value "Primary Applicant" for title "Changed Field" inside table "---program:-:historyTableId---"

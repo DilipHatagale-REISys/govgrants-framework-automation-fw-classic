@@ -21,9 +21,9 @@ public class SideBarSteps {
         sidebarPage.assertSideBarHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
     }
 
-    @Then("^I see \"([^\"]*)\" as disabled from sidebar$")
-    public void assertRemovalOfSideBarHeader(String headerName) {
-        sidebarPage.assertRemovalOfSideBarHeader(headerName);
+    @Then("^I (softly see|do not see) \"([^\"]*)\" at sidebar$")
+    public void assertRemovalOfSideBarHeader(String usage, String headerName) {
+        sidebarPage.assertRemovalOfSideBarHeader(usage, headerName);
     }
 
     @Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
@@ -64,5 +64,10 @@ public class SideBarSteps {
     @Then("I see {string} icon displayed at {string} accordion header")
     public void iSeeIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
         sidebarPage.assertIconDisplayedAtAccordionHeader(iconCssValue, accodionHeaderName);
+    }
+
+    @Then("I softly see record {string} is displayed inside autosuggestion dropdown at global search")
+    public void iSeeRecordIsDisplayedInsideAutosuggestionDropdownAtGlobalSearch(String recordId) {
+        sidebarPage.assertRecordInAutoSuggestedDropdownAtGlobalSearch(recordId);
     }
 }
