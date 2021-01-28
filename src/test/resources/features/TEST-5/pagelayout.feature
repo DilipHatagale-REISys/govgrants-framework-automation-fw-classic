@@ -4558,3 +4558,70 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
+
+  @126061   @VerifyDisplayOfSidebarComponentAndLogoAtAdminUserIfAdminUserEntryIsDeletedFromUserPreferenceConfigCustomSetting
+  Scenario: Validating sidebar components, logo is rendering properly for ADMIN user even after deleting user entery from user preference config custom setting
+    Given I delete the record "Nauman Shahid" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+    Then I softly see "Tasks" at sidebar
+    Then I softly see "Activities" at sidebar
+    Then I softly see "Recently Viewed" at sidebar
+
+  @126059   @VerifyDisplayOfSidebarComponentAndLogoAtPMUserIfAdminUserEntryIsDeletedFromUserPreferenceConfigCustomSetting
+  Scenario: Validating sidebar components, logo is rendering properly for PM user even after deleting user entery from user preference config custom setting
+    Given I delete the record "Automation PM" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+    Then I softly see "Tasks" at sidebar
+    Then I softly see "Activities" at sidebar
+    Then I softly see "Recently Viewed" at sidebar
+
+  @126062   @VerifyDisplayOfSidebarComponentAndLogoAtExternalUserIfAdminUserEntryIsDeletedFromUserPreferenceConfigCustomSetting
+  Scenario: Validating sidebar components, logo is rendering properly for EXTERNAL user even after deleting user entery from user preference config custom setting
+    Given I delete the record "Automation spi" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+    Then I softly see "Tasks" at sidebar
+    Then I softly see "Activities" at sidebar
+    Then I softly see "Recently Viewed" at sidebar
+
+  @126069   @VerifyDisplayOfHistoryTabTablesAndFormsLayoutAtPMUserIfAdminUserEntryIsDeletedFromUserPreferenceConfigCustomSetting
+  Scenario: Validating history tables and forms under attachment tab are rendering properly for PM user even after deleting user entery from user preference config custom setting
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
+    Given I delete the record "Automation PM" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
+    When I navigate to "History" sub tab
+    Then I softly see expected table with id "toggleFlexTableHistory"
+    Then I softly see the text :
+      | Snapshot History |
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see the header is "Application Simple" in the page details
+
+  @125745    @verifyByClickOnUserValueInViewModeItShouldOpenInNewTabAtPageLayout-gPlanning
+  Scenario: validate by click on user value in view , it should open in new tab at page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click "Nauman Shahid" lookup link
+    Then I see new tab is opened

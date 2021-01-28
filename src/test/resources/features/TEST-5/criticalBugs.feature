@@ -5022,3 +5022,53 @@ Business Need: Logged Issues Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @125746    @verifyThatFileAttachedFromRecordLevelCollabTabAndDeletedFromHomePhaseFilesListIsNotDisplayedAtHomeAndRecordLevel @wip @facingIssueOfDuplicateFileUpload
+  Scenario: validate that file uploaded from collab tab and deleted from home files list is removed from Home Phase and respective record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I enter value "Collab Phase temporary comment" in my feed section and share the comment
+    Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+
+  #125746 - file uploaded from collab tab and deleted from home files list is removed from Home files list
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "CollabFileTemp.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    When I click on "Delete" icon for "CollabFileTemp.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "CollabFileTemp.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  #125746 - file uploaded from collab tab and deleted from home files list is also removed from record level
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    Then I do not see attached file as "CollabFileTemp.pdf" inside collab my feed
+
+  #125746 - file uploaded from collab tab and deleted from home files list is also removed from collab phase
+    And I navigate to "Collab" tab
+    Then I softly do not see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"

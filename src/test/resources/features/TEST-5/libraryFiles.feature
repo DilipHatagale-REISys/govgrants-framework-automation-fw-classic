@@ -3240,7 +3240,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122188 @validateThatFileNameUploadedByInternalUserShouldDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess @wip
+  @122188 @validateThatFileNameUploadedByInternalUserShouldDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that if file uploaded by internal user is displayed to admin and external when sharing option as "Visible to Anyone With Record Access"
     Given I have "customMetaData" configuration as below:
       | id                 | label              | booleanValue | customMetaDataApiName    |
@@ -3716,7 +3716,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122498 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToInternalUsersWithRecordAccess
+  @122498 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToInternalUsersWithRecordAccess @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to Internal Users With Record Access"
     Given I have "customMetaData" configuration as below:
       | id                 | label              | booleanValue | customMetaDataApiName    |

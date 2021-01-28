@@ -1555,3 +1555,56 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     Then I softly see attachment "testAutomationFileDND.png" is present in send email modal
     Then I softly see attachment "Automation Test Data File-DND.png" is present in send email modal
+
+  @125698    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForAdminUser
+  Scenario: validate Email Template rendering with body content at send invitation modal for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Eric FD" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Eric FD" inside table
+    Then I see the text :
+      | Hello Eric FD,                                                                                                                                                                                                            |
+      | You are invited to become an user.                                                                                                                                                                                        |
+      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+      | Sincerely,                                                                                                                                                                                                                |
+      | EGMS Team                                                                                                                                                                                                                 |
+
+  @126472    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForExternalUser
+  Scenario: validate Email Template rendering with body content at send invitation modal for external user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I navigate to "Organization Profile" content inside "Activities" subheader on left panel
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Michael Jones" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Michael Jones" inside table
+    Then I see the text :
+      | Hello Michael Jones,                                                                                                                                                                                                      |
+      | You are invited to become an user.                                                                                                                                                                                        |
+      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+      | Sincerely,                                                                                                                                                                                                                |
+      | EGMS Team                                                                                                                                                                                                                 |
+
+  @126469    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForInternalUser
+  Scenario: validate Email Template rendering with body content at send invitation modal for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Eric FD" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Eric FD" inside table
+    Then I see the text :
+      | Hello Eric FD,                                                                                                                                                                                                            |
+      | You are invited to become an user.                                                                                                                                                                                        |
+      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+      | Sincerely,                                                                                                                                                                                                                |
+      | EGMS Team                                                                                                                                                                                                                 |

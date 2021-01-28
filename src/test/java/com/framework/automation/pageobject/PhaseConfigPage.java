@@ -277,7 +277,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * assert govgrants logo and name
      */
     public void assertGovGrantsLogoAndNAme(String logo, String logoName) {
-        Assert.assertTrue(isGovGrantsLogoAndNameDisplayedOnPage(logo, logoName));
+        I.amPerforming().assertionsTo().assertThat(isGovGrantsLogoAndNameDisplayedOnPage(logo, logoName)).isTrue();
     }
 
     /**
