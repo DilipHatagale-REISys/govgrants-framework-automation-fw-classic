@@ -1385,6 +1385,99 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
 
+  @126930    @validateHideColumnsFieldAtFlexTableUsingEqualsOperator
+  Scenario: validate hide columns field at flex table using equals operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTable | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "AN-343-002" in "ActiveFundingOpportunities" panel
+    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
+  @126931    @validateHideColumnsFieldAtFlexTableUsingNotEqualsOperator
+  Scenario: validate hide columns field at flex table using not equals operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithNotEqualsOperator | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
+    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
+  @126938    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnNameField
+  Scenario: validate hide columns field at flex table using equals operator on name field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorOnNameField | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "AN-343-002" in "ActiveFundingOpportunities" panel
+    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
+  @126939    @validateHideColumnsFieldAtFlexTableUsingNotEqualsOperatorOnNameField
+  Scenario: validate hide columns field at flex table using not equals operator on name field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithNotEqualOperatorOnNameField | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
+    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
+  @126941    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnTwoDifferentField
+  Scenario: validate hide columns field at flex table using equals operator on 2 different fields field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorAndTwoFields | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    Then I do not see "Announcement Title" in program Outcomes flex table header with id "ActiveFundingOpportunities"
+
+  @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
+  Scenario: validate hide columns field at flex table using equals operator on multiple field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorOnMultipleFields | ActiveFundingOpportunities |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
+    Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+    When I perform quick search for "AN-343-001" in "ActiveFundingOpportunities" panel
+    Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+    When I perform quick search for "AN-755-297" in "ActiveFundingOpportunities" panel
+    Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

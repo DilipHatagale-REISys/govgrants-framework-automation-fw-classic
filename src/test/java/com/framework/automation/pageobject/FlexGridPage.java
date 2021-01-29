@@ -112,8 +112,12 @@ public class FlexGridPage extends GovGrantsManager {
      * @param columnTitleName
      * @param tableId
      */
-    public void assertProgramOutcomesFlexTableHeaderColumnName(String columnTitleName, String tableId) {
-        Assert.assertTrue(isProgramOutcomesFlexTableColumnHeaderName(columnTitleName, tableId));
+    public void assertProgramOutcomesFlexTableHeaderColumnName(String usage, String columnTitleName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isProgramOutcomesFlexTableColumnHeaderName(columnTitleName, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isProgramOutcomesFlexTableColumnHeaderName(columnTitleName, tableId));
+        }
     }
 
     /**

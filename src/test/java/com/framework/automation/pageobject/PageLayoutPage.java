@@ -291,9 +291,11 @@ public class PageLayoutPage extends GovGrantsManager {
     public void assertTopRightButtonDisplayed(String usage, String buttonName) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertFalse(isTopRightHeaderButtonDisplayed(buttonName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(isTopRightHeaderButtonDisplayed(buttonName));
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isFalse();
-        } else if (usage.equalsIgnoreCase("do not see")) {
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
             I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isTrue();
         }
     }
@@ -2977,7 +2979,7 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if expected sub-menu is displayed/not displayed inside collab sidebar
      *
-     * @param subMenu - displayed inside main menu at collab sidebar
+     * @param subMenu  - displayed inside main menu at collab sidebar
      * @param mainMenu - displayed inside collab sidebar
      * @author ashwini.mahore
      */

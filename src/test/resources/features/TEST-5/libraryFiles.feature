@@ -4301,7 +4301,6 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Announcement" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    And I pause execution
     Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #123936 - file uploaded from home phase is not visible to external(SPI) user

@@ -296,7 +296,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertActionButtonOfPagrLayoutDisplayed(buttonName);
     }
 
-    @Then("^I (see|softly see|do not see) \"([^\"]*)\" button is displayed$")
+    @Then("^I (see|softly see|do not see|softly do not see) \"([^\"]*)\" button is displayed$")
     public void assertTopRightHeaderButtonDisplayed(String usage, String buttonName) {
         pageLayoutPage.assertTopRightButtonDisplayed(usage, buttonName);
     }

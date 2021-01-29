@@ -820,3 +820,30 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Dynamic form"
     And I download the file
     Then I see "Dynamic Form" on page "1" of "govgrants" pdf file
+
+  @111908    @verifyThatByLoginAsAdminUserAllFormsTableDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as Admin user All Forms flex table enhanced displayed inside downloaded pdf
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableFormEnhancedTable"
+    And I select "Download as PDF" from parallel lines dropdown of "All Forms"
+    And I download the file
+    Then I see "Standard Assurances Form" on page "1" of "govgrants" pdf file
+
+  @111910    @verifyThatByLoginAsAdminUserAllFormsTableDisplayedInsideDownloadedPDFFromPageLayout
+  Scenario: validate by logged in as Admin user All Forms flex table enhanced displayed inside downloaded pdf from page layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "All Forms" on page "1" of "govgrants" pdf file
