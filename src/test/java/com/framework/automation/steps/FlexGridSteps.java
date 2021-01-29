@@ -60,9 +60,9 @@ public class FlexGridSteps {
         flexGridPage.assertAscendingORDescendingOrderOfTableColumnValueForMEGrid(text, order, tableId);
     }
 
-    @Then("^I see \"([^\"]*)\" in program Outcomes flex table header with id \"([^\"]*)\"$")
-    public void assertProgramOutcomesFlexTableHeaderName(String columnTitleName, String tableId) {
-        flexGridPage.assertProgramOutcomesFlexTableHeaderColumnName(columnTitleName, tableId);
+    @Then("^I (see|do not see) \"([^\"]*)\" in program Outcomes flex table header with id \"([^\"]*)\"$")
+    public void assertProgramOutcomesFlexTableHeaderName(String usage, String columnTitleName, String tableId) {
+        flexGridPage.assertProgramOutcomesFlexTableHeaderColumnName(usage, columnTitleName, tableId);
     }
 
     @Then("^I see \"([^\"]*)\" column inside Flex grid table id \"([^\"]*)\" of width \"([^\"]*)\"$")

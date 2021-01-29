@@ -491,3 +491,28 @@ Business Need: Forms Component Scenarios
     Then I see the text :
       | I hereby certify that the information provided above is accurate and complete. |
       | Acknowledgement:                                                               |
+
+  @126484 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyTableHeaderDisplayedAndNotRecordsDisplayed-gApplications
+  Scenario:validate at business form preview, only table header displayed and not record
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Budget Form" program in flex table
+    Then I softly do not see value "ASA-1327" for title "Name" inside table "ApplicationBudgetCategoriesbyBudgetPeriodFormFlexGrid"
+    Then I softly see "Budget Details" page block displayed
+
+  @126486 @verifyThatByClickOnPreviewActionAtBusinessFormsEditCancelAndSaveAcionsNotDisplayed-gApplications1
+  Scenario:validate at business form preview, edit, cancel, save actions are not displayed at form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    Then I softly do not see "Cancel" button is displayed
+    Then I softly do not see "Edit" button is displayed
+    Then I softly do not see "Save" button is displayed
