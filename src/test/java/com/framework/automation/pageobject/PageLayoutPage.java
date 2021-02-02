@@ -554,27 +554,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * hover on look up link at page block details
-     *
-     * @param lookUpLink
-     */
-    public void getLookUpLinkToHover(String lookUpLink, String uiType) {
-        if (uiType.contains("grid")) {
-            I.amPerforming().waitFor().makeThreadSleep(1000);
-            I.amPerforming().scroll().toMoveToElement(By.xpath("//td//a[@title='" + lookUpLink + "' and contains(@class,'tableRowLinks') and not(contains(@class,'ng-hide'))]"), false);
-
-        } else if (uiType.contains("table")) {
-            I.amPerforming().waitFor().makeThreadSleep(1000);
-            I.amPerforming().scroll().toMoveToElement(By.xpath("//td//*[text()='" + lookUpLink + "' and @ng-mouseover]"), true);
-
-        } else {
-            I.amPerforming().waitFor().makeThreadSleep(500);
-            I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "')] |" +
-                    " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')] | //span[text()='" + lookUpLink + "'] | //td//*[@title='" + lookUpLink + "' and @class='tableRowLinks']"), false);
-        }
-    }
-
-    /**
      * get Edit Button inside menu without waiting for presence.
      *
      * @return
@@ -863,8 +842,14 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * click on look up link at page
      */
-    public void performClickOnLookupLink(String lookupLink) {
-        I.amPerforming().click().on(By.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')]"));
+    public void performClickOnLookupLink(String usage, String lookupLink) {
+        if (usage.contains("contains")) {
+            TestingBlazeGlobal.setVariable("highlightElements", "off");
+            By getLookupLink = ByUsing.xpath("//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']//following-sibling::div//tr[1]//span[contains(text(),'" + lookupLink + "')]");
+            I.amPerforming().click().on(getLookupLink);
+        } else {
+            I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')]"));
+        }
     }
 
     /**
@@ -891,6 +876,20 @@ public class PageLayoutPage extends GovGrantsManager {
     public void clickOnButtonAtCollab(String buttonName) {
         WebElement getButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//a[text()='" + buttonName + "']"));
         I.amPerforming().click().on(getButtonAtCollabPhase);
+    }
+
+    /**
+     * click on previous/next icon at calendar component
+     *
+     * @param buttonName
+     */
+    public void clickNavigationButtonAtCalendar(String buttonName) {
+        if (buttonName.equalsIgnoreCase("Previous")) {
+            I.amPerforming().click().on(ByUsing.xpath("//*[@id='calendar']//*[contains(@class,'fa-chevron-left')]"));
+        }
+        if (buttonName.equalsIgnoreCase("Next")) {
+            I.amPerforming().click().on(ByUsing.xpath("//*[@id='calendar']//*[contains(@class,'fa fa-chevron-right')]"));
+        }
     }
 
     /**
@@ -1505,6 +1504,28 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertFalse(isExpectedMenuDisplayedInsideCollabSidebar(subMenu, mainMenu));
         }
     }
+
+
+    /**
+     * return true if calender displayed in expected format like (month/week/day)
+     *
+     * @param uiType
+     * @author ashwini.mahore
+     */
+    public void assertFormatOfCalenderDisplayedAtUI(String uiType) {
+        Assert.assertTrue(isCalenderDisplayedInExpectedFormat(uiType));
+
+    }
+
+    /**
+     * return true  if today's date is displayed by highlighting with light pink color inside calendar
+     *
+     * @author ashwini.mahore
+     */
+    public void assertBackgroundColorAtTodaysDate() {
+        Assert.assertTrue(isTodaysDateDisplayedWithExpectedBackgroundColorAtCalendar());
+    }
+
 
     /**
      * get owner organisation lookup modal complete content
@@ -2998,4 +3019,52 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * return true if calender displayed in expected format like (month/week/day)
+     *
+     * @param uiType
+     * @author ashwini.mahore
+     */
+    public Boolean isCalenderDisplayedInExpectedFormat(String uiType) {
+        boolean flag = true;
+        try {
+            if (uiType.equalsIgnoreCase("Month")) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'fc-month-view')]"))) {
+                    flag = true;
+                }
+            } else if (uiType.equalsIgnoreCase("Week")) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'fc-agendaWeek-view')]"))) {
+                    flag = true;
+                }
+            } else if (uiType.equalsIgnoreCase("Day")) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'fc-agendaDay-view')]"))) {
+                    flag = true;
+                }
+            }
+        } catch (
+                Exception e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if today's date is displayed by highlighting with light pink color inside calendar
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isTodaysDateDisplayedWithExpectedBackgroundColorAtCalendar() {
+        boolean flag = false;
+        WebElement getTodaysDateBackgroundColor = I.amPerforming().getElementReference().of(ByUsing.xpath("//td[not(contains(@class,'number')) and contains(@class,'fc-today')]"));
+        try {
+            if (getTodaysDateBackgroundColor.getCssValue("background").contains("rgb(252, 248, 227)")
+                    || getTodaysDateBackgroundColor.getCssValue("background").contains("rgba(252, 248, 227, 1)")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }

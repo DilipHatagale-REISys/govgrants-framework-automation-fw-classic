@@ -36,11 +36,6 @@ public class PageLayoutSteps {
         pageLayoutPage.getHelpTextAtPageBlock(blockTitle);
     }
 
-    @When("^I hover mouse on lookup link \"([^\"]*)\"(| at table| at grid)$")
-    public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink, String uiType) {
-        pageLayoutPage.getLookUpLinkToHover(lookUpLink, uiType);
-    }
-
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
     public void textAreaFieldAtEditAttachment(String enteredValue) {
         pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue);
@@ -76,9 +71,9 @@ public class PageLayoutSteps {
         pageLayoutPage.clickSVGArrowElementAtOwnerOrganisationLookUpModal(order);
     }
 
-    @When("^I click on lookup link \"([^\"]*)\"$")
-    public void clickOnLookupLinkAtPage(String lookupLink) {
-        pageLayoutPage.performClickOnLookupLink(lookupLink);
+    @When("^I click on lookup link (|contains )\"([^\"]*)\"$")
+    public void clickOnLookupLinkAtPage(String usage, String lookupLink) {
+        pageLayoutPage.performClickOnLookupLink(usage, lookupLink);
     }
 
     @When("^I select package type from Package selection for business forms$")
@@ -186,9 +181,19 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnButtonAtCollab(buttonName);
     }
 
+    @And("I click on {string} navigation button at calendar")
+    public void iClickOnNavigationButtonAtCalendar(String buttonName) {
+        pageLayoutPage.clickNavigationButtonAtCalendar(buttonName);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
+    }
+
+    @And("I click on {string} Button at calendar")
+    public void iClickOnButtonAtCalendar(String buttonName) {
+        pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
     }
 
     @Then("^I see \"([^\"]*)\" shown as over view header$")
@@ -696,5 +701,16 @@ public class PageLayoutSteps {
     @Then("^I (see|do not see) \"([^\"]*)\" inside \"([^\"]*)\" menu at collab sidebar$")
     public void iDoNotSeeSubMenuInsideMenuAtCollabSidebar(String usage, String subMenu, String mainMenu) {
         pageLayoutPage.assertMenuAtCollabSidebar(usage, subMenu, mainMenu);
+    }
+
+    @Then("I see calender displayed in {string} format")
+    public void iSeeCalenderDisplayedInFormat(String uiType) {
+        pageLayoutPage.assertFormatOfCalenderDisplayedAtUI(uiType);
+    }
+
+    @Then("I see today's Date is displayed with light pink background at calendar")
+    public void iSeeTodaySDateIsDisplayedWithLightPinkBackgroundAtCalendar() {
+        pageLayoutPage.assertBackgroundColorAtTodaysDate();
+
     }
 }
