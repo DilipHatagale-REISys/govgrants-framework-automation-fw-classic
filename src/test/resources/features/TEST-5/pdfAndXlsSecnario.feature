@@ -959,7 +959,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | defaultFieldsApi                                                         | newFieldsApi                                                                           |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
 
-  @79167    @verifyPicklistFieldValueIsShownInDownloadedPDFAtN2GGrid-gGrant @flexGrid @wip @bugLogged79177
+  @79167    @verifyPicklistFieldValueIsShownInDownloadedPDFAtN2GGrid-gGrant @flexGrid
   Scenario Outline:  validate a picklist field value is shown in downloaded pdf instead of picklist value API name at N2G Grid - gGrant
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1084,7 +1084,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as CSV" from parallel lines dropdown of "Field History"
     Then I see "Loan" in downloaded xls or csv file "govgrants"
 
-  @79173    @verifyPicklistFieldValueIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout @wip @bugLogged79177
+  @79173    @verifyPicklistFieldValueIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout
   Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at page detail
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2528,3 +2528,15 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I softly see "APPLICATION COVER PAGE" on page "1" of "govgrants" pdf file
     Then I softly see "Monitoring Schedule For All Active Grants" on page "1" of "govgrants" pdf file
+
+  @127468  @verifyDownloadAsPDFAtCasesTableAtHomePhase
+  Scenario: validate download as pdf at case table- gHome
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableCaseList"
+    And I select "Download as PDF" from parallel lines dropdown of "Open Cases"
+    And I pause execution for "3" seconds
+    And I download the file
+    Then I see "Automation_Script_Record" on page "1" of "govgrants" pdf file

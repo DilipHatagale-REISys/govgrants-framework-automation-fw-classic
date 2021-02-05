@@ -196,6 +196,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
     }
 
+    @And("I select {string} and click at {string}")
+    public void iSelectAndClickAt(String dropdownValue, String action) {
+        pageLayoutPage.selectValueAndClickAtFilter(dropdownValue, action);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view header$")
     public void assertOverViewHeaderDisplayed(String headerName) {
         pageLayoutPage.assertOverViewHeaderDisplayed(headerName);

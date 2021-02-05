@@ -230,6 +230,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Add New Folder" option at library/folder/file "testAutomationFolder1"
     When I enter value as "testAutomationFolderInFolder" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
+    When I click on expand icon at library/folder "testAutomationFolder1"
     Then I softly see library/folder/file "testAutomationFolderInFolder" is displayed under files library
     When I click on expand icon at library/folder "testAutomationFolder1"
     When I click on dropdown at library/folder/file "testAutomationFolderInFolder"
@@ -1214,7 +1215,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "DummyFile2_DND.jpg" under files library
+    When I perform quick search for "DummyFile2_DND.jpg" in "WorkspaceFiles" panel
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel
@@ -1675,6 +1676,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on SelectChange Folder in add file modal
+    And I pause execution for "2" seconds
     When I click on expand icon at library/folder "Department of Community Health"
     Then I see Default keyword "testAutomationDefaultFolder" at library/folder inside "modaltemp"
 
@@ -1811,7 +1813,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "AssetLibraryTestData.pdf" under files library
+    When I perform quick search for "AssetLibraryTestData.pdf" in "WorkspaceFiles" panel
     Then I see "AssetLibraryTestData.pdf" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
@@ -1898,8 +1900,9 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "ProgramRecordDoNotDelete.png" inside table
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Save" button in send email modal
-    Then I see the following messages in the page details contains:
-      | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
+    When I pause execution for "7" seconds
+    When I perform quick search for "ProgramRecordDoNotDelete.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "test Automation" for title "Description" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   @83170 @validateThatFileCanBeDragAndDropFromOneLibraryToOtherLibrary-gHome
   Scenario: Verify that file can be drag and droped from one library to another lbrary
@@ -2053,7 +2056,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
     Then I see asterisk mark at "Sharing Options" field
 
-  @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase
+  @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase @bugLogged127715
   Scenario: Verify that Upload button is disabled when user has not selected sharing options - home phase library
     Given I have "customMetaData" configuration as below:
       | id                 | label              | booleanValue | customMetaDataApiName    |
@@ -2090,7 +2093,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I select sharing option as "Select sharing options" at upload file modal
     When I enter value as "test Automation Description" in field "Description" at Library Files
-    Then I see the text containing :
+    Then I see the text :
       | Complete this field. |
 
   @101499 @validateThatShowOptionsSectionIsDisplayedAtEditFileModalIfCustomMetadataAtBooleanValueIsTrue-HomePhase
@@ -2189,7 +2192,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I select sharing option as "Select sharing options" at upload file modal
     When I enter value as "test Automation Description" in field "Description" at Library Files
-    Then I see the text containing :
+    Then I see the text :
       | Complete this field. |
 
   @101556 @validateThatDefaultSharingOptionIsDisplayUnderEditFileModal-RecordLevel
@@ -2410,7 +2413,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "asd.png" under files library
+    When I perform quick search for "asd.png" in "WorkspaceFiles" panel
     Then I see "asd.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
 
     Examples:
@@ -2436,7 +2439,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "SendEmailAttachment.png" under files library
+    When I perform quick search for "SendEmailAttachment.png" in "WorkspaceFiles" panel
     Then I see "No Records Found" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
 
     Examples:
@@ -2485,7 +2488,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "DuplicateFile.txt" under files library
+    When I perform quick search for "DuplicateFile.txt" in "WorkspaceFiles" panel
     When I upload file "DuplicateFile.txt" present in the flex table "WorkspaceFilesUpload" from library
     When I perform quick search for "DuplicateFile.txt" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I see value "DuplicateFile.txt" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"

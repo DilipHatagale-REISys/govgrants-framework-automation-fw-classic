@@ -4625,3 +4625,50 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see new tab is opened
+
+  @127792   @verifyThatUserCanFilterByPlanningPhaseUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using planning phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Planning" and click at "Apply Filter"
+    Then I softly see value "Internal Program Statistics" for title "Report Name" inside table "Reports"
+    Then I softly do not see value "Funding Decision Memo with Application" for title "Report Name" inside table "Reports"
+
+  @127793   @verifyThatUserCanFilterByAnnouncementPhaseUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using Announcement phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Announcements" and click at "Apply Filter"
+    Then I softly see value "Announcement Details" for title "Report Name" inside table "Reports"
+    Then I softly do not see value "Internal Program Statistics" for title "Report Name" inside table "Reports"
+
+  @127794   @verifyThatUserCanFilterByApplicationPhaseUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using Applications phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" and click at "Apply Filter"
+    Then I softly see value "Application Decision Report" for title "Report Name" inside table "Reports"
+    Then I softly do not see value "Internal Program Statistics" for title "Report Name" inside table "Reports"
+
+  @127795   @verifyThatUserCanFilterByApplicationAndGrantsBothPhasesUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using Applications and grants both phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" and click at "Apply Filter"
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" and click at "Apply Filter"
+    Then I softly see value "Application Decision Report" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Grantor Applications by Status"
+    Then I softly see value "Grantor Applications by Status" for title "Report Name" inside table "Reports"

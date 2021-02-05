@@ -225,6 +225,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
+    And I pause execution for "2" seconds
     And I click on "Delete" action from dropdown at "Test Automation collab Delete action by admin" comment inside my feed
     And I click modal button "OK"
     Then I do not see "Test Automation collab Delete action by admin" inside flex table with id "---program:-:myFeedTableId---"
@@ -303,21 +304,19 @@ Business Need: collab Component Scenarios
     When I click on "Menu" in the page details
     Then I see "All Users" option is displayed at collab menu
 
-  @112202    @verifyThatSPIUserCanSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
+  @112202    @verifyThatSPIUserCanNotSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
-    Then I see "To Me" option is displayed at collab menu
+    Then I see Menu Icon is not displayed at my feed section
 
-  @112217    @verifyThatSPIUserCanSeeAllUsersOptionInsideMenuAtHomePhase-MyFeedSection
+  @112217    @verifyThatSPIUserCanNotSeeAllUsersOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
-    Then I see "All Users" option is displayed at collab menu
+    Then I see Menu Icon is not displayed at my feed section
 
   @112219    @verifyThatPMUserCanClickOnAllUsersOptionInsideMenuAtHomePhaseThenAllUsersPostDisplayed
   Scenario: validate that by click on All users menu then, all users post/comment are displayed to PM user at home phase-my feed section
@@ -334,6 +333,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
+    And I pause execution for "3" seconds
     Then I do not see mention auto complete list is displayed at collab post
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
@@ -406,7 +406,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see "You and Automation PM likes this." inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115483    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToPMUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
@@ -415,7 +415,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see "You and Framework Admin likes this." inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "You and Framework Admin like this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
   Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
@@ -460,8 +460,9 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I click on "Comment" action at "Post at record level" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
+    And I pause execution for "3" seconds
     Then I see mention auto complete list is displayed at collab comment
 
   @115346    @verifyBurgerMenuIconIsNotDisplayedAtExternalUserCollabMyFeedSection-HomePhase

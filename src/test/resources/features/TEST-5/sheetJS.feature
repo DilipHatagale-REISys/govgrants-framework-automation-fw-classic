@@ -29,6 +29,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -57,6 +60,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -88,6 +94,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -104,7 +113,7 @@ Business Need: SheetJS Config Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
-      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @70101    @verifyUploadOfSheetJSFileWithFieldStatusAsBlank
   Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet getting loaded inside flex table with status as created (as status field value is blank).
@@ -119,6 +128,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -135,7 +147,7 @@ Business Need: SheetJS Config Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
-      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @70103    @verifyUploadOfSheetJSFileWithFieldFundedAmount
   Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet(Funded amount) getting loaded inside flex table record
@@ -150,6 +162,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -168,7 +183,7 @@ Business Need: SheetJS Config Component Scenarios
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
- @70107    @verifyUploadOfSheetJSFileWithFieldCFDANumberAsTrue
+  @70107    @verifyUploadOfSheetJSFileWithFieldCFDANumberAsTrue
   Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet getting loaded inside flex table with CFDA DATA as true.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
@@ -181,6 +196,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -212,6 +230,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -243,6 +264,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
@@ -274,6 +298,9 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
