@@ -352,6 +352,7 @@ Business Need: Calender Config Component Scenarios
 
   @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase
   Scenario: validate that admin user can create case and it is displayed inside 'Cases table' at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -362,5 +363,429 @@ Business Need: Calender Config Component Scenarios
     And I save the field labeled "Case #" as "savedValue"
     And I navigate to "HOME" tab
     When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
+
+  @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase
+  Scenario: validate that admin user can create case with medium priority and it is displayed inside 'Cases table' at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation1" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I navigate to "HOME" tab
+    And I click toggle button to select "Open Cases"
+    When I click on "tmpcase1FlexTable"
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
+
+  @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase
+  Scenario: validate that edit action opend in edit mode inside 'Cases table' at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation1" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
+    When I click on "Edit" icon for "{SavedValue:savedValue}" inside table
+    Then I see edit opens with "/apex/CaseEdit?Id="
+
+  @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase
+  Scenario: validate that admin user is able to edit and update existing case inside 'Cases table' at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation1" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
+    When I click on "Edit" icon for "{SavedValue:savedValue}" inside table
+    When I enter value "Feature Request" into field "Type__c"
+    And I click on "Save" in the page details
+    Then I see field "Type" as "Feature Request"
+
+  @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase
+  Scenario: validate advance filter inside 'Cases table' at home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    When I click on advance filter "#advfCaseList" of table id "CaseList"
+    When I enter advance filter values inside id "advfCaseList"
+      | Subject | Starts with | Test Automation |
+    Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
+
+  @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage
+  Scenario: validate assigned to field with value is displayed at cases detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
+    When I perform quick search for "Test Automation Data DND"
+    When I click on "View" icon for "Test Automation Data DND" inside table
+    Then I softly see field "Assigned To" as "Nauman Shahid"
+    When I click "Nauman Shahid" lookup link
+    Then I see the header is "User" in the page details
+
+  @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage
+  Scenario: validate Assign To User functionality at cases detail page
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Assign to User" in the page details
+    When I check "Swati" boxes in flex table with id "toggleFlexTableUserListForQueue"
+    And I click on top right button "Assign Case" in flex table with id "UserListForQueue"
+    Then I softly see field "Assigned To" as "Swati GGPTEST5"
+
+  @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage
+  Scenario: validate by click on close case action at detail pages case should get closed
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I click on "Close Case" in the page details
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I see "No Records Found" inside flex table with id "CaseList"
+
+  @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase
+  Scenario: validate that close case should be displayed inside closed cases table at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I click on "Close Case" in the page details
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Closed Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
+    When I click on "View" icon for "{SavedValue:savedValue}" inside table
+    Then I softly see field "Status" as "Closed"
+
+  @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase
+  Scenario: validate that close case should be editable inside closed cases table at home phase
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I click on "Close Case" in the page details
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Closed Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "Edit" icon for "{SavedValue:savedValue}" inside table
+    When I enter value "Question" into field "Type__c"
+    And I click on "Save" in the page details
+    Then I softly see field "Type" as "Question"
+
+  @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail
+  Scenario: validate by click at 'assigned toTier2' action, case status changes to Tier2 support
+    Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click on top right button "New" in flex table with id "CaseList"
+    When I enter "Creation" values from "Create_Case.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Case #" as "savedValue"
+    And I click on "Assign To Me" in the page details
+    And I click on "Assign To Tier2" in the page details
+    And I navigate to "HOME" tab
+    When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "View" icon for "{SavedValue:savedValue}" inside table
+    Then I see field "Status" as "Tier2 Support"
+
+  @127474    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForAdminUserAtRecordLevel
+  Scenario: validate that calender is displayed in month format if admin click on 'Month' button at record level calendar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Month" Button at calendar
+    Then I see calender displayed in "Month" format
+
+  @127475    @verifyByClickOnWeekButtonAtCalendarItIsRenderingInWeekFormatForAdminUserAtRecordLevel
+  Scenario: validate that calender is displayed in week format if admin click on 'Week' button at record level calendar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Week" Button at calendar
+    Then I see calender displayed in "Week" format
+
+  @127476    @verifyByClickOnDayButtonAtCalendarItIsRenderingInDayFormatForAdminUserAtRecordLevel
+  Scenario: validate that calender is displayed in Day format if admin click on 'Day' button at record level calendar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Day" Button at calendar
+    Then I see calender displayed in "Day" format
+
+  @127482  @verifyProgramIDDisplayedAtMonthWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
+  Scenario: validate that program ID is displayed at month wise calendar inside respective record detail page for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Month" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue} (Start Date) |
+
+  @127487   @verifyProgramIDDisplayedAtDayWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
+  Scenario: validate that program ID is displayed at day wise calendar inside respective record detail page for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Day" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue} (Start Date) |
+
+  @127485   @verifyProgramIDDisplayedAtWeekWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
+  Scenario: validate that program ID is displayed at week wise calendar inside respective record detail page for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Week" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue} (Start Date) |
+
+  @127489    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForInternalUser
+  Scenario: validate that Internal user is redirected to respective record detail page by click on record id at calendar layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on lookup link contains "{SavedValue:savedValue}"
+    Then I see the header is "Program" in the page details
+
+  @127488    @verifyByClickOnRecordIdDisplayedAtRecordLevelCalendarCalendarItShouldRedirectToRespectiveRecordDetailPageForInternalUser
+  Scenario: validate that Internal user is redirected to respective record detail page by click on record id at record detail
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Month" Button at calendar
+    And I click on lookup link contains "{SavedValue:savedValue}"
+    Then I see the header is "Program" in the page details
+
+  @127491    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarAtRecordDetailPageForAdminUser
+  Scenario: validate that mini page layout is displayed to admin user by hover on record id at page detail layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Month" Button at calendar
+    When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
+    Then I see the text :
+      | Department of Community Health                                  |
+      | {SavedValue:savedValue}                                         |
+      | Automation Internal Program for Approval and Snapshot scenarios |
+      | Created                                                         |
+
+  @127655    @verifyProgramIDIsDisplayedAtDayWiseCalendarForAdminUserAtHomePhase
+  Scenario: validate that program ID is displayed at day wise calendar at home phase to admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Day" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue} (Start Date) |
+
+  @127654    @verifyProgramIDIsDisplayedAtWeekWiseCalendarForAdminUserAtHomePhase
+  Scenario: validate that program ID is displayed at week wise calendar at home phase to admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Week" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue} (Start Date) |
+
+  @127490  @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForAdminUserAtRecordLevel
+  Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for admin user at record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Calendar" from dropdown
+    And I click on "Month" Button at calendar
+    And I click on "Next" navigation button at calendar
+    And I click on "Today" Button at calendar
+    Then I see today's Date is displayed with light pink background at calendar
+    Then I softly see field "Status" as "Submitted for Approval"

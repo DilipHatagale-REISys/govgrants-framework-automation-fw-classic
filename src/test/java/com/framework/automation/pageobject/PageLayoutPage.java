@@ -415,6 +415,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * select value at By Phase dropdown and click at action
+     *
+     * @param dropdownValue
+     * @param action
+     */
+    public void selectValueAndClickAtFilter(String dropdownValue,String action) {
+        I.amPerforming().click().on(ByUsing.xpath("//input[@aria-label='Select "+dropdownValue+"' and @type='checkbox']"));
+        I.amPerforming().click().on(ByUsing.xpath("//button[text()='"+action+"']"));
+    }
+
+    /**
      * click on any button on Download & upload wizard modal content
      *
      * @param buttonName
@@ -2657,7 +2668,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public Boolean isMenuOptionsUnderCollabDisplayed(String option) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[contains(@class,'dropdown-menu')]//*[text()='option']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[contains(@class,'dropdown-menu')]//*[text()='" + option + "']"))) {
             flag = true;
         }
         return flag;
