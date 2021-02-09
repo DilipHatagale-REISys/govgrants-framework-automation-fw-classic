@@ -228,7 +228,7 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                                 |
-      | {"objectField":"DND_Country__c","userField":"DND_Country__c","operator":"CONTAINS"} |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"CONTAINS"} |
 
   @103485 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using '!=' operator in filter criteria
@@ -595,8 +595,7 @@ Business Need: dnd Component Scenarios
     When I perform quick search inside global search "IND"
     And I pause execution for "3" seconds
     Then I softly see value "USA" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
-    When I perform quick search for "FPG-ED-0005"
-    Then I softly see value "US" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+    Then I softly see value "USA" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     | dndCriteria                                                                                 |

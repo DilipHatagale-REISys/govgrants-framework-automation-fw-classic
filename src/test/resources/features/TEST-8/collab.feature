@@ -382,18 +382,18 @@ Business Need: collab Component Scenarios
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
 
-  @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToAdminUser
-  Scenario: validate that No feed available is displayed at my feed-to me only section by login as admin user
-    When I login as "PM" user
+  @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToPMUser
+  Scenario: validate that No feed available is displayed at my feed-to me only section by login as PM user
+    When I login as "PM1" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "To Me" from dropdown
     Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
 
-  @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsAdminUser
-  Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as admin user
-    When I login as "PM" user
+  @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsPMUser
+  Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as PM user
+    When I login as "PM1" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel

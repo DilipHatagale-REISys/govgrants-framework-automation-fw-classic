@@ -2540,3 +2540,15 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "3" seconds
     And I download the file
     Then I see "Automation_Script_Record" on page "1" of "govgrants" pdf file
+
+  @81048  @VerifyActionsAreAlignedInsideEnhancedDataTable
+  Scenario: verify that actions are aligned inside enhanced data table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:GrantInsideEnhancedGrid}" in "---program:-:flexGridEnhancedDataTableId---" panel
+    Then I see actions under "---program:-:flexGridEnhancedDataTableId---" table are aligned and compared with "actionsAtEnhancedDataTable.png"

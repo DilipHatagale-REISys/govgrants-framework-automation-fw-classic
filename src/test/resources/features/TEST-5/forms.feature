@@ -193,7 +193,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon of form "General Application Form" program in flex table
-    Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
+    Then I see expected table with id "toggleFlexTableBudgetCategories"
 
   @103092 @verifyThatEnhancedGridIsDisplayedAtFormViewPage-gApplications
   Scenario:validate enhanced grid is displayed at forms view layout
@@ -475,7 +475,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon of form "General Application Form" program in flex table
-    Then I softly see "Program Information Automation" page block displayed
+    Then I softly see "PROJECT INFORMATION" page block displayed
     Then I softly see "Application Title" is not displayed inside page block detail
     Then I softly see "Application ID" is not displayed inside page block detail
 

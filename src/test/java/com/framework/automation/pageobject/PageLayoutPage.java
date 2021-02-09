@@ -2878,10 +2878,10 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (isTitle) {
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[@class='tooltipObjname']/..//div[@class='tooltipLabel']"))) {
+                if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//p[@class='tooltipObjname']/..//div[@class='tooltipLabel']"))) {
                     flag = true;
                 }
-            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='tooltipValue']"))) {
+            } else if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@class='tooltipValue']"))) {
                 flag = true;
             }
         } catch (Exception e) {

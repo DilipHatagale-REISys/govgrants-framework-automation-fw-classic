@@ -232,7 +232,6 @@ Business Need: Library Files Component Scenarios
     When I click on "Save" button in send email modal
     When I click on expand icon at library/folder "testAutomationFolder1"
     Then I softly see library/folder/file "testAutomationFolderInFolder" is displayed under files library
-    When I click on expand icon at library/folder "testAutomationFolder1"
     When I click on dropdown at library/folder/file "testAutomationFolderInFolder"
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolderInFolder"
     When I pause execution for "5" seconds
@@ -1900,6 +1899,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "ProgramRecordDoNotDelete.png" inside table
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Save" button in send email modal
+    When I click on "×" icon at "File Edit" modal under Library
     When I pause execution for "7" seconds
     When I perform quick search for "ProgramRecordDoNotDelete.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "test Automation" for title "Description" inside table "---program:-:ApplicationFilesFlexGridId---"
@@ -2231,11 +2231,11 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "Automation Test Data File-DND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
-    When I select sharing option as "Private on Records" at upload file modal
+    When I select sharing option as "Private On Records" at upload file modal
     When I click on "Save" button in send email modal
     When I perform quick search for "Automation Test Data File-DND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
-    Then I see sharing option as "Private on Records" at upload file modal
+    Then I see sharing option as "Private On Records" at upload file modal
 
   @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel
   Scenario: Verify that use can upload same file which is already present inside record - record level
@@ -3599,8 +3599,11 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I click on "Edit" icon for "TestFileSharing.docx" inside table
-    Then I softly see the following messages in the page details contains:
-      | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
+    And I pause execution for "3" seconds
+    Then I see alert message inside "---program:-:workSpaceFileEditId---" modal as follows :
+    """
+   {LongText:FileEditModalAlertMessageLong-Text}
+  """
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3647,6 +3650,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Edit" icon for "TestFileSharing.docx" inside table
+    And I pause execution for "3" seconds
     Then I see alert message inside "---program:-:workSpaceFileEditId---" modal as follows :
     """
    {LongText:FileEditModalAlertMessageLong-Text}

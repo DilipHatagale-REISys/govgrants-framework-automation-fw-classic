@@ -14,7 +14,7 @@ Business Need: enhanced Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
-    Then I see "Application" shown as over view header
+    Then I see "FN-00105" shown as over view header
 
   @112350 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByAdminUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as admin user
@@ -27,7 +27,7 @@ Business Need: enhanced Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
-    Then I see "Application" shown as over view header
+    Then I see "FN-00105" shown as over view header
 
   @112348 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageBySPIUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as SPI user
