@@ -549,17 +549,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * return true if text displayed on mouse hover at column value inside enhanced table/enhanced flex grid
-     *
-     * @param text
-     * @param tableId
-     * @author ashwini.mahore
-     */
-    public void assertMouseHoverTextAtColumnValueInsideTableId(String text, String tableId) {
-        Assert.assertTrue(isMouseHoverTextAtColumnValueDisplayedInsideTableId(text, tableId));
-    }
-
-    /**
      * return true if border box is displayed at enhanced grid table (firefox browser specific)
      *
      * @param tableId
@@ -1502,24 +1491,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'sortFieldMsg') and "
                     + I.amPerforming().sanityOfXpathTo().contains(".", label) + "]"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * return true if text displayed on mouse hover at column value inside enhanced table/enhanced flex grid
-     *
-     * @param text
-     * @param tableId
-     * @author ashwini.mahore
-     */
-    private boolean isMouseHoverTextAtColumnValueDisplayedInsideTableId(String text, String tableId) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@title='" + text + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

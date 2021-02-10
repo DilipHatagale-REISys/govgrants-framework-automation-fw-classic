@@ -284,11 +284,6 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertSortingLabelAtEnhancedGrid(usage, label, tableId);
     }
 
-    @Then("I see {string} shown at mouse hover inside {string} table")
-    public void iSeeShownAtMouseHoverInsideTable(String hoverText, String tableId) {
-        enhancedFlexGrid.assertMouseHoverTextAtColumnValueInsideTableId(hoverText,tableId);
-    }
-
     @Then("I see border box is displayed at {string} table")
     public void iSeeBorderBoxIsDisplayedAtTable(String tableId) {
         enhancedFlexGrid.assertBorderBoxAtEnhancedGrid(tableId);

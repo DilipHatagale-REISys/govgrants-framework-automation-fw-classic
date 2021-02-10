@@ -4557,7 +4557,7 @@ Business Need: Logged Issues Scenarios
 
     Examples:
       | newFieldsApi                                                                                            | defaultFieldsApi                                                            |
-      | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c,Test_multipicklist_field__c | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c |
+      | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c | Name,Award__c,RecordType__c,KeyPOC__c,Status__c |
 
   @121366    @hideExpressioJsonForRightOperandForUserType-Applicant-gAnnouncement
   Scenario: validate disabling of create button for user type Appplicant from Announcement-Program

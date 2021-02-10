@@ -4316,7 +4316,9 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Program Approver" inside table
     And I pause execution for "3" seconds
+    And I switch to iframe with id "ProgramRolesAndResponsibilitiesiframeContentId"
     When I hover mouse on lookup link "Automation PM"
+    And I pause execution for "2" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
@@ -4330,7 +4332,8 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedID---" panel
-    When I hover mouse on lookup link "Child Development Centre" at grid
+    When I hover mouse on lookup link "Child Development Centre" at table
+    And I pause execution for "2" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
@@ -4672,3 +4675,128 @@ Business Need: Page Layout Component Scenarios
     Then I softly see value "Application Decision Report" for title "Report Name" inside table "Reports"
     When I perform quick search for "Grantor Applications by Status"
     Then I softly see value "Grantor Applications by Status" for title "Report Name" inside table "Reports"
+
+  @127796   @verifyQuickSearchWorkingAtAnalyticsTabTable-gDashboard
+  Scenario: validate quick search working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" and click at "Apply Filter"
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" and click at "Apply Filter"
+    When I perform quick search for "Grantor Applications by Status"
+    Then I softly see value "Grantor Applications by Status" for title "Report Name" inside table "Reports"
+
+  @127797   @verifyThatUserCanFilterByMultiplePhasesUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using multiple phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" and click at "Apply Filter"
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" and click at "Apply Filter"
+    When I click on By phase dropdown at dashboard
+    And I select "Monitoring" and click at "Apply Filter"
+    When I click on By phase dropdown at dashboard
+    And I select "Closeout" and click at "Apply Filter"
+    When I perform quick search for "Application Decision Report"
+    Then I softly see value "Application Decision Report" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Grantor Applications by Status"
+    Then I softly see value "Grantor Applications by Status" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Closeout Request by Status"
+    Then I softly see value "Closeout Request by Status" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Grantor Progress Report Pending by Month"
+    Then I softly see value "Grantor Progress Report Pending by Month" for title "Report Name" inside table "Reports"
+
+  @127799   @verifyThatUserCanFilterByAllPhasesUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that User should able to filter by using ALL phase - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "All" and click at "Apply Filter"
+    When I perform quick search for "Application Decision Report"
+    Then I softly see value "Application Decision Report" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Grantor Applications by Status"
+    Then I softly see value "Grantor Applications by Status" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Closeout Request by Status"
+    Then I softly see value "Closeout Request by Status" for title "Report Name" inside table "Reports"
+    When I perform quick search for "Grantor Progress Report Pending by Month"
+    Then I softly see value "Grantor Progress Report Pending by Month" for title "Report Name" inside table "Reports"
+
+  @127821   @verifyTAdvanceFilterWorkingAtAnalyticsPhase-gDashboard
+  Scenario: validate advance filter working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on advance filter "#advfReports" of table id "Reports"
+    When I enter advance filter values inside id "advfReports"
+      | Report Name | Starts with | Application Decision |
+    Then I see value "Application Decision Report" for title "Report Name" inside table "Reports"
+
+  @127822   @verifyClearAllButtonWorkingAtAnalyticsPhase-gDashboard
+  Scenario: validate clear all button working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" and click at "Apply Filter"
+    When I perform quick search for "Grantor Award by Status"
+    Then I softly see "No Records Found" inside flex table with id "Reports"
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" and click at "Clear All"
+    When I perform quick search for "Grantor Award by Status"
+    Then I softly see value "Grantor Award by Status" for title "Report Name" inside table "Reports"
+
+  @127823   @verifyViewActionAtStandardReportRecordUnderAnalyticsTable-gDashboard
+  Scenario: validate view action is working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I perform quick search for "Grantor Award by Status"
+    When I click on "View" icon for "Grantor Award by Status" inside table
+    Then I see the text :
+      | Grantor Award by Status |
+
+  @127943   @verifyTAdvanceFilterWithNotEqualsOperatorWorkingAtAnalyticsPhase-gDashboard
+  Scenario: validate advance filter working with not equals operator at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
+    When I click on advance filter "#advfReports" of table id "Reports"
+    When I enter advance filter values inside id "advfReports"
+      | Format | Not equals to | Summary |
+    When I perform quick search for "Summary"
+    Then I see "No Records Found" inside flex table with id "Reports"
+
+  @127947   @verifyViewActionAtCustomReportRecordUnderAnalyticsTable-gDashboard
+  Scenario: validate view action at custom record is working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Custom Reports" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "testing" inside table
+    Then I see the text :
+      | testing |
+
+  @127946   @verifyEditActionAtCustomReportRecordUnderAnalyticsTable-gDashboard
+  Scenario Outline: validate edit action at custom record is working at analytics tab table - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I navigate to "View Custom Reports" content inside "Activities" subheader on left panel
+    When I click on "Edit" icon for "testing" inside table
+    Then I see "<EditPageURL>" in current url
+
+    Examples:
+      | EditPageURL                                                    |
+      | https://ggptest5-dev-ed.my.salesforce.com/00O1C000005x0MOUAY/e |
