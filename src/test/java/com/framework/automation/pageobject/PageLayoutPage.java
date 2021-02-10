@@ -411,7 +411,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
-        I.amPerforming().getElementReference().of(By.xpath("//button[text()='" + buttonName + "']")).click();
+        I.amPerforming().getElementReference().of(ByUsing.xpath("//button["+I.amPerforming().sanityOfXpathTo().equals("text()",buttonName)+"]")).click();
     }
 
     /**

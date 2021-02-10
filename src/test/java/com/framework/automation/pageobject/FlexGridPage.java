@@ -219,6 +219,8 @@ public class FlexGridPage extends GovGrantsManager {
             Assert.assertTrue(isTableLoadedProperlyWithTableId(tableId));
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isTableLoadedProperlyWithTableId(tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isTableLoadedProperlyWithTableId(tableId));
         }
     }
 
@@ -619,7 +621,7 @@ public class FlexGridPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class ='panel-body collapse in' and @id='" + tableId + "']"))) {
                 flag = true;
             }
-        } catch (Exception e) {
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

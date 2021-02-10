@@ -536,3 +536,332 @@ Business Need: Side bar Component Scenarios
     When I perform quick search inside global search "GT-TMZDT" without processing
     Then I softly see record "GT-TMZDT-001" is displayed inside autosuggestion dropdown at global search
     Then I softly see record "GT-TMZDT-002" is displayed inside autosuggestion dropdown at global search
+
+  @128291    @VerifyRecordReassignToUserFromReassignTaskSectionIsDisplayedToPendingTaskTableByLoggedInAsReassignedUser
+  Scenario: Validate record Reassigned to user from reassign task section is displayed to that user at pending task table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
+    Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Ref. ID" inside table "PendingTasks"
+
+  @128292    @VerifyRecordReassignToUserFromReassignTaskSectionShoulBeDisplayedAndApprovedByReassignedUser
+  Scenario: Validate record Reassigned to user from reassign task section is approved by reassigned user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
+    Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "Start" icon for "{SavedValue:savedValue}" inside table
+    And I "Approve" in the approval decision
+    Then I see status in Progress-bar is "Approved" and is "green"
+
+  @128293    @VerifyResetButtonWorkingAtReassignedTask
+  Scenario: Validate reset button working at reassigned task
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    And I click on "Reset" Button in Session Timeout dialogbox
+    Then I do not see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"
+
+  @128294    @VerifyQuickSearchWorkingAtReassignedUser
+  Scenario: Validate quick search working at reassigned user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+
+  @128334    @VerifyRecordReassignToUserFromReassignTaskSectionShoulBeDisplayedAndApprovedByReassignedUser
+  Scenario: Validate record Reassigned to user from reassign task section is approved by reassigned user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Approval and Snapshot scenarios 2" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+
+  #128334 create 2nd record
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I navigate to "Overview" sub tab
+    And I enter value "Automation Internal Program for Approval and Snapshot scenarios 2" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue1"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+
+  #128334 validate reassiged task at pending task table
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    When I check "{SavedValue:savedValue1}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
+    Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+    Then I softly do not see value "{SavedValue:savedValue1}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:savedValue}"
+    Then I softly see value "{SavedValue:savedValue}" for title "Ref. ID" inside table "PendingTasks"
+    When I perform quick search for "{SavedValue:savedValue1}"
+    Then I softly see value "{SavedValue:savedValue1}" for title "Ref. ID" inside table "PendingTasks"

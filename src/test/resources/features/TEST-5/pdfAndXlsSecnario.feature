@@ -2552,3 +2552,88 @@ Business Need: All pdf and xls related scenario including component and complete
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:GrantInsideEnhancedGrid}" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see actions under "---program:-:flexGridEnhancedDataTableId---" table are aligned and compared with "actionsAtEnhancedDataTable.png"
+
+  @128295    @VerifyDownloadAsPDFAtReassignedTask
+  Scenario: Validate download as PDF at reassigned task
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableTaskReassignment"
+    And I select "Download as PDF" from parallel lines dropdown of "All Tasks"
+    And I download the file
+    Then I see "All Tasks" on page "1" of "govgrants" pdf file
+
+  @128335    @VerifyDownloadAsPDFAtReassignedTaskpendingTaskTable
+  Scenario: Validate download as PDF at reassigned task-pending task table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    And I navigate to "HOME" tab
+    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    And I enter value "Automation PM" into field "s2id_autogen1"
+    And I select value from options
+    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value from options
+    And I pause execution for "3" seconds
+    When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
+    Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
+    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePhasePendingTasks"
+    And I select "Download as PDF" from parallel lines dropdown of "Pending Tasks (Assigned To Me)"
+    And I download the file
+    Then I see "Pending Tasks (Assigned To Me)" on page "1" of "govgrants" pdf file
