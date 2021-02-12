@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -717,5 +718,14 @@ public class PageLayoutSteps {
     public void iSeeTodaySDateIsDisplayedWithLightPinkBackgroundAtCalendar() {
         pageLayoutPage.assertBackgroundColorAtTodaysDate();
 
+    }
+
+    @Then("^I see below message at page detail in \"([^\"]*)\" color:$")
+    public void iSeeBelowMsgAtPageLayout(String colorName, List<String> list) {
+        Iterator var4 = list.iterator();
+        while (var4.hasNext()) {
+            String alertMessage = (String) var4.next();
+            pageLayoutPage.assertAlertMessageWithColorAtPageLayout(colorName, alertMessage);
+        }
     }
 }

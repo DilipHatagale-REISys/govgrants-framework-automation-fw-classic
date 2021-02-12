@@ -2559,10 +2559,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTaskReassignment"
     And I select "Download as PDF" from parallel lines dropdown of "All Tasks"
@@ -2622,10 +2620,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Submit For Approval" in the page details
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
