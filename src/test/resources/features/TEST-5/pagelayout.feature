@@ -4800,3 +4800,352 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | EditPageURL                                                    |
       | https://ggptest5-dev-ed.my.salesforce.com/00O1C000005x0MOUAY/e |
+
+  @128474    @verifySuccessMessageSetFromPageMessageConfirIsDisplayedAtViewPageLayoutInGreenColor
+  Scenario: validate success message set from page message config is displayed at view page layout in green color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0065                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Green" color:
+      | TEST PAGE SUCCESS MSG DND |
+
+  @128481    @verifySuccessMessageSetFromPageMessageConfirIsDisplayedAtEditPageLayoutInGreenColor
+  Scenario: validate success message set from page message config is displayed at edit page layout in green color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0065                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Green" color:
+      | TEST PAGE SUCCESS MSG DND |
+
+  @128496    @verifyInformationMessageSetFromPageMessageConfirIsDisplayedAtViewPageLayoutInBlueColor
+  Scenario: validate information message set from page message config is displayed at view page layout in blue color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Blue" color:
+      | TEST PAGE INFORMATION MSG DND |
+
+  @128491    @verifyAlertMessageSetFromPageMessageConfirIsDisplayedAtViewPageLayoutInBrownColor
+  Scenario: validate alert message set from page message config is displayed at view page layout in brown color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0064                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Brown" color:
+      | TEST PAGE ALERT MSG DND |
+
+  @128493    @verifyInformationMessageSetFromPageMessageConfirgIsNotDisplayedWhenHideForContextAsEditIsSelected
+  Scenario: validate information message set from page message config is not displayed when Hide for context as Edit is selected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User    | Internal          | ApiGeneratedId:0 |
+      | Page Message Config   | Hide For Context |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User    |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | Edit          | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE INFORMATION MSG DND |
+
+  @128510    @verifyInformationMessageSetFromPageMessageConfirgIsNotDisplayedWhenHideForContextAsViewIsSelected
+  Scenario: validate information message set from page message config is not displayed when Hide for context as View is selected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User    | Internal          | ApiGeneratedId:0 |
+      | Page Message Config   | Hide For Context |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User    |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | View          | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE INFORMATION MSG DND |
+
+  @128904    @verifyWarningMessageSetFromPageMessageConfirIsDisplayedAtViewPageLayoutInRedColor
+  Scenario: validate warning message set from page message config is displayed at view page layout in red color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0066                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Red" color:
+      | TEST PAGE WARNING MSG DND |
+
+  @128906    @verifyMultipleInformationMessageSetFromPageMessageConfirgIsIsDisplayedAtViewPageLayoutInBlueColor
+  Scenario: validate multiple information message set from page message config is is displayed at view page layout in blue color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0070                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I see below message at page detail in "Blue" color:
+      | TEST PAGE INFORMATION MSG DND   |
+      | TEST PAGE INFORMATION MSG DND 1 |
+
+  @128908    @verifyWarningMessageSetFromPageMessageConfirIsDisplayedAtEditPageLayoutInRedColor
+  Scenario: validate warning message set from page message config is displayed at edit page layout in red color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0066                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I see below message at page detail in "Red" color:
+      | TEST PAGE WARNING MSG DND |
+
+  @128910    @verifyErrorMessageSetFromPageMessageConfirIsDisplayedAtEditPageLayoutInPurpleColor
+  Scenario: validate error message set from page message config is displayed at edit page layout in purple color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I see below message at page detail in "Purple" color:
+      | TEST PAGE ERROR MSG DND |
+
+  @128911    @verifyErrorMessageSetFromPageMessageConfirIsNotDisplayedAtEditPageLayoutWhenHideForUserIsSelectedAsInternal
+  Scenario: validate error message set from page message config is not displayed at edit page layout when hide for user=iternal selected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE ERROR MSG DND |
+
+  @129066    @verifyErrorMessageSetFromPageMessageConfigIsNotDisplayedAtViewPageLayoutWhenHideForUserIsSelectedAsInternal
+  Scenario: validate error message set from page message config is not displayed at view page layout when hide for user=iternal selected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE ERROR MSG DND |
+
+  @129071    @verifyErrorMessageSetFromPageMessageConfigIsNotDisplayedAtViewPageLayoutWhenHideForProfileIsSelectedAsSysAdmin
+  Scenario: validate error message set from page message config is not displayed at view page layout when hide for profile = System Admin
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User    | Internal          | ApiGeneratedId:0 |
+      | Page Message Config   | Hide For Profile |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantee State Program | Name                      | LM-0067                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE ERROR MSG DND |
+
+  @129072    @verifyErrorMessageSetFromPageMessageConfigIsNotDisplayedAtEditPageLayoutWhenHideForProfileIsSelectedAsSysAdmin
+  Scenario: validate error message set from page message config is not displayed at edit page layout when hide for profile = System Admin
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I cannot see the following message in the page details :
+      | TEST PAGE ERROR MSG DND |
+
+  @128492    @verifySuccessMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInGreenColor
+  Scenario: validate success message set from page message config is displayed at edit page block in green color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Green" color:
+      | TEST PAGE BLOCK SUCCESS MSG DND |
+
+  @128495    @verifyInformationMessageSetFromPageMessageConfirIsDisplayedAtViewPageBlockInBlueColor
+  Scenario: validate information message set from page message config is displayed at view page block in blue color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0072                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Blue" color:
+      | TEST PAGE BLOCK INFORMATION MSG DND |
+
+  @128507    @verifyAlertMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInBrownColor
+  Scenario: validate alert message set from page message config is displayed at edit page block in brown color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0073                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Brown" color:
+      | TEST PAGE BLOCK ALERT MSG DND |
+
+  @128512    @verifyWarningMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInRedColor
+  Scenario: validate warning message set from page message config is displayed at edit page block in red color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0074                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Red" color:
+      | TEST PAGE BLOCK WARNING MSG DND |
+
+  @128515    @verifyErrorMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInPurpleColor
+  Scenario: validate error message set from page message config is displayed at edit page block in purple color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0075                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    Then I see below message at page detail in "Purple" color:
+      | TEST PAGE BLOCK ERROR MSG DND |
+
+  @128516    @verifyInstructionMessageSetFromPageMessageConfirIsDisplayedAtViewPageBlockInBlueColor
+  Scenario: validate instruction message set from page message config is displayed at view page block in blue color
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0076                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see below message at page detail in "Blue" color:
+      | TEST PAGE BLOCK INSTRUCTION MSG DND |

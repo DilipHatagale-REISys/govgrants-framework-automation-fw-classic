@@ -411,7 +411,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
-        I.amPerforming().getElementReference().of(ByUsing.xpath("//button["+I.amPerforming().sanityOfXpathTo().equals("text()",buttonName)+"]")).click();
+        I.amPerforming().getElementReference().of(ByUsing.xpath("//button[" + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName) + "]")).click();
     }
 
     /**
@@ -420,9 +420,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param dropdownValue
      * @param action
      */
-    public void selectValueAndClickAtFilter(String dropdownValue,String action) {
-        I.amPerforming().click().on(ByUsing.xpath("//input[@aria-label='Select "+dropdownValue+"' and @type='checkbox']"));
-        I.amPerforming().click().on(ByUsing.xpath("//button[text()='"+action+"']"));
+    public void selectValueAndClickAtFilter(String dropdownValue, String action) {
+        I.amPerforming().click().on(ByUsing.xpath("//input[@aria-label='Select " + dropdownValue + "' and @type='checkbox']"));
+        I.amPerforming().click().on(ByUsing.xpath("//button[text()='" + action + "']"));
     }
 
     /**
@@ -1537,6 +1537,16 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isTodaysDateDisplayedWithExpectedBackgroundColorAtCalendar());
     }
 
+    /**
+     * return true  if alert message displayed in an expected color
+     *
+     * @param desiredMessage
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public void assertAlertMessageWithColorAtPageLayout(String colorName, String desiredMessage) {
+        Assert.assertTrue(isAlertMessageDisplayedWithExpectedBackgroundColorAtPageLayout(colorName, desiredMessage));
+    }
 
     /**
      * get owner organisation lookup modal complete content
@@ -2790,7 +2800,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isSuggestionBoxDisplayedAtSendEmailModal() {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='listDropdownToScroll']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[contains(@class,'list-group-item')]/ancestor::div[@class='listDropdownTo']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -3078,4 +3088,50 @@ public class PageLayoutPage extends GovGrantsManager {
         return flag;
     }
 
+    /**
+     * return true  if alert message displayed in an expected color
+     *
+     * @param desiredMessage
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public Boolean isAlertMessageDisplayedWithExpectedBackgroundColorAtPageLayout(String colorName, String desiredMessage) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getAlertMessageBackgroundColor = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'alert alert-warning')]"));
+        WebElement getAlertMessageText = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'alert alert-warning')]//span[text()='" + desiredMessage + "']"));
+        switch (colorName.toUpperCase()) {
+            case "BLUE":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(217, 237, 247)")
+                        && getAlertMessageText.isDisplayed()) {
+                    flag = true;
+                }
+                break;
+            case "Brown":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(247, 221, 178)")
+                        && getAlertMessageText.isDisplayed()) {
+                    flag = true;
+                }
+                break;
+            case "GREEN":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(223, 240, 216)")
+                        && getAlertMessageText.isDisplayed()) {
+                    flag = true;
+                }
+                break;
+            case "Red":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(252, 248, 227)")
+                        && getAlertMessageText.isDisplayed()) {
+                    flag = true;
+                }
+                break;
+            case "Purple":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(242, 222, 222)")
+                        && getAlertMessageText.isDisplayed()) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
 }

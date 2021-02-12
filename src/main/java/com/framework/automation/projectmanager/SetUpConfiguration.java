@@ -125,6 +125,9 @@ public class SetUpConfiguration {
             case "NAME TEMPLATE SEQUENCE CONFIG":
                 stringPayload = new NameTemplateSequence().setNameTemplateSequenceConfig(fieldLabel, value, filterClause);
                 break;
+            case "PAGE MESSAGE CONFIG":
+                stringPayload = new PageLayout().setPageMessageConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

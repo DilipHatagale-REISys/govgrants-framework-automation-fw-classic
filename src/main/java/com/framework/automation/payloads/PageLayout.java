@@ -378,4 +378,40 @@ public class PageLayout {
         System.out.println(finalPayload);
         return finalPayload;
     }
+
+    /**
+     * setup configuration for page message config
+     *
+     * @param fieldLabel
+     * @param value
+     * @param filterClause
+     * @return
+     */
+    public String setPageMessageConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+            case "DISPLAY STYLE":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__MessageConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__MessageConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__StandardStyle__c), value);
+                break;
+            case "HIDE FOR CONTEXT":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__MessageConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__MessageConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+                break;
+            case "HIDE FOR USER":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__MessageConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__MessageConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+                break;
+            case "HIDE FOR PROFILE":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__MessageConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__MessageConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+                break;
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
 }
