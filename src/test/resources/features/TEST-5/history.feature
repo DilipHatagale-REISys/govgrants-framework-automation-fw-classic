@@ -41,6 +41,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -99,6 +100,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -156,6 +158,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -213,6 +216,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -271,6 +275,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -328,6 +333,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -421,6 +427,7 @@ Business Need: history Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab

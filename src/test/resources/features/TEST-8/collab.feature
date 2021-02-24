@@ -236,6 +236,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation collab admin to check post share access" in my feed section and share the post
+    And I pause execution for "2" seconds
     Then I softly see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action from dropdown at "Test Automation collab admin to check post share access" comment inside my feed
     And I click modal button "OK"

@@ -274,13 +274,12 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field          | Value |
-      | Rich Text Area |       |
-    When I click on "Save" in the page details
-    When I click on "Edit" in the page details
+    And I clear value from "Section 1" page block
+      | Field          |
+      | Rich Text Area |
     When I enter values into "Section 1" page block
       | Field          | Value                     |
+      | Written        | Test Automation           |
       | Rich Text Area | Test Automation Rich Text |
     When I click on "Save" in the page details
     Then I see for "Rich Text Area" field value is "Test Automation Rich Text" inside dynamic form
@@ -769,14 +768,14 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field          | Value |
-      | Rich Text Area |       |
+    And I clear value from "Section 1" page block
+      | Field          |
+      | Rich Text Area |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Rich Text Area is Required to save under Section 1. |
 
-  @89855    @validateQuestionApplicableFieldAsRequiredForSaveAtRadioNewFieldTypeAtDynamicFormLayout
+  @89855    @validateQuestionApplicableFieldAsRequiredForSaveAtRadioNewFieldTypeAtDynamicFormLayout @wip @changeInRequirement @invalidScenario
   Scenario: changing value of question applicable as required for save and checking error message for radio new field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -993,7 +992,7 @@ Business Need: dynamic forms Component Scenarios
       | Field    | Value |
       | Currency | abc   |
     When I click on "Save" in the page details
-    Then I see the following message in the page details :
+    Then I see the following message in the page details contains:
       | Please correct below errors. |
 
   @91998    @validateAlertMessageAtCurrencyFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
@@ -1404,7 +1403,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Help Text | Test Automation Radio Help | CI-0008            |                           |                            |
+      | Capture Item:General  | Question Help Text | Test Automation Radio Help | CI-0009            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -2211,7 +2210,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
 
-  @91190    @validateQuestionApplicableFieldAsRequiredForSaveAtPicklistFieldTypeAtDynamicFormLayout
+  @91190    @validateQuestionApplicableFieldAsRequiredForSaveAtPicklistFieldTypeAtDynamicFormLayout @wip @changeInRequirement @invalidScenario
   Scenario: changing value of question applicable as required for save and checking error message for picklist field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -2228,7 +2227,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" in the page details
-    Then I see the following message in the page details :
+    Then I see the following message in the page details contains:
       | Picklist(Required Field) is Required to save under Section 1. |
 
   @94563   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
@@ -2461,7 +2460,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Picklist" inside "Section 1" at dynamic form
 
-  @94697   @validateDependentQuestionJsonFieldByMakingPicklistFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  @94697   @validateDependentQuestionJsonFieldByMakingPicklistFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode @wip @changeInRequirement @invalidScenario
   Scenario: validate Dependent Question Json Field by making picklist field as required on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -2711,7 +2710,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
 
-  @94968   @validateDependentQuestionJsonFieldByMakingRadioFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  @94968   @validateDependentQuestionJsonFieldByMakingRadioFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode @wip @changeInRequirement @invalidScenario
   Scenario: validate Dependent Question Json Field by making radio field as required on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -3044,7 +3043,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Written" field is shown at position "1" in "Section 1"
+    Then I see "Written" field is shown at position "0" in "Section 1"
 
   @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
   Scenario: validate sort order field at capture items in dynamic form layout in edit mode
@@ -3301,7 +3300,6 @@ Business Need: dynamic forms Component Scenarios
       | Number is Required to save under Section 1.               |
       | Percent is Required to save under Section 1.              |
       | Written is Required to save under Section 1.              |
-      | Radio Required Field is Required to save under Section 2. |
 
   @96512   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioAndDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide and checkbox field as disabled on the basis of currency field value in form edit mode
@@ -3671,7 +3669,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Edit" button at "bottom" of  Modal window
+    And I pause execution for "7" seconds
+    Then I see "Edit" button at "Bottom" of  Modal window
 
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |

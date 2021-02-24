@@ -2321,7 +2321,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Activities" subheader on left panel
+    When I navigate to "Internal" content inside "Activities" subheader on left panel
     When I perform quick search for "Test Announcement For Automation"
     When I click on "view" icon for "Test Announcement For Automation" inside table
     Then I do not see "Program Information" page block displayed
@@ -4629,6 +4629,7 @@ Business Need: Expression Builder Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     When I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -7553,7 +7554,7 @@ Business Need: Expression Builder Component Scenarios
 
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,Name,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      | ProjectTitle__c,Name,Status__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @83342    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserTypeAsInternal
   Scenario: validate expression JSON at attachment extension obj table by hiding action using user type as internal

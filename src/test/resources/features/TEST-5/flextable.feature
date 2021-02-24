@@ -758,12 +758,14 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     When I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -800,7 +802,7 @@ Business Need: Flex Table Component Scenarios
     And I refresh the page
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I perform quick search for "{SavedValue:savedValue}"
     Then I see "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" is not displayed inside flex table
 
     Examples:
@@ -1364,8 +1366,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Department of Community Health"
-    Then I softly see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
+    Then I softly see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
 
   @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
   Scenario: validate that cross icon is displayed at flex table quick search box
@@ -1397,8 +1399,9 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-002" in "ActiveFundingOpportunities" panel
-    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+    When I perform quick search for "AN-343-002"
+    Then I see "Announcement Title" not displayed in enhanced grid table column title
+#    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
 
   @126931    @validateHideColumnsFieldAtFlexTableUsingNotEqualsOperator
   Scenario: validate hide columns field at flex table using not equals operator
@@ -1412,8 +1415,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
-    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+    When I perform quick search for "AN-343-020"
+    Then I see "Announcement Title" not displayed in enhanced grid table column title
 
   @126938    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnNameField
   Scenario: validate hide columns field at flex table using equals operator on name field
@@ -1427,7 +1430,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-002" in "ActiveFundingOpportunities" panel
+    When I perform quick search for "AN-343-002"
     Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
 
   @126939    @validateHideColumnsFieldAtFlexTableUsingNotEqualsOperatorOnNameField
@@ -1471,11 +1474,11 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
+    When I perform quick search for "AN-755-012"
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
-    When I perform quick search for "AN-343-001" in "ActiveFundingOpportunities" panel
+    When I perform quick search for "AN-343-001"
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
-    When I perform quick search for "AN-755-297" in "ActiveFundingOpportunities" panel
+    When I perform quick search for "AN-755-297"
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
 
 #  @flextablebug-test
