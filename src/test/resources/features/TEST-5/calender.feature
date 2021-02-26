@@ -379,8 +379,8 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I navigate to "HOME" tab
-    And I click toggle button to select "Open Cases"
     When I click on "tmpcase1FlexTable"
+    And I click toggle button to select "Open Cases"
     When I perform quick search for "{SavedValue:savedValue}"
     Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
 
@@ -788,4 +788,3 @@ Business Need: Calender Config Component Scenarios
     And I click on "Next" navigation button at calendar
     And I click on "Today" Button at calendar
     Then I see today's Date is displayed with light pink background at calendar
-    Then I softly see field "Status" as "Submitted for Approval"

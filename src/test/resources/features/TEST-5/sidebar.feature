@@ -562,6 +562,7 @@ Business Need: Side bar Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -590,10 +591,8 @@ Business Need: Side bar Component Scenarios
     When I click on "Submit For Approval" in the page details
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
@@ -629,6 +628,7 @@ Business Need: Side bar Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -657,10 +657,8 @@ Business Need: Side bar Component Scenarios
     When I click on "Submit For Approval" in the page details
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:savedValue}"
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
@@ -680,10 +678,8 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     And I click on "Reset" Button in Session Timeout dialogbox
     Then I do not see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"
@@ -713,6 +709,7 @@ Business Need: Side bar Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -741,10 +738,8 @@ Business Need: Side bar Component Scenarios
     When I click on "Submit For Approval" in the page details
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:savedValue}"
     Then I softly see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
@@ -775,6 +770,7 @@ Business Need: Side bar Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -817,6 +813,7 @@ Business Need: Side bar Component Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -847,10 +844,8 @@ Business Need: Side bar Component Scenarios
   #128334 validate reassiged task at pending task table
     And I navigate to "HOME" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I enter value "Automation PM" into field "s2id_autogen1"
-    And I select value from options
-    And I enter value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I select value from options
+    And I select value "Automation PM" into field "s2id_autogen1"
+    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:savedValue}"
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"

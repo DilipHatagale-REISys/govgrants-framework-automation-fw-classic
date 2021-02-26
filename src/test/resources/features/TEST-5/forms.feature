@@ -193,7 +193,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon of form "General Application Form" program in flex table
-    Then I see expected table with id "toggleFlexTableBudgetCategories"
+    Then I see expected table with id "TmpActiveGrantsGridFlexToggle"
 
   @103092 @verifyThatEnhancedGridIsDisplayedAtFormViewPage-gApplications
   Scenario:validate enhanced grid is displayed at forms view layout
@@ -371,7 +371,7 @@ Business Need: Forms Component Scenarios
     And I enter value "" into field "ProposedStartdate__c"
     When I click on "Save" button in right header
     Then I see the following message in the page details :
-      | Proposed Start Date : is required to save. |
+      | Proposed Start Date: is required to save. |
 
   @120398 @verifyErrorMessageIsNotDisplayedAtFormLayoutWhileClickOnSaveButton
   Scenario:validate error message is not displayed if user click on save button by changing form data

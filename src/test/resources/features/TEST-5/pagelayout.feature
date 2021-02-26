@@ -2646,7 +2646,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Project Period Start Date is required to save under Overview. |
+      | Project Period Start Date is required to save. |
 
   @113064    @requiredForSaveBehaviourAtPageBlockDetailForSPIUser-gPlanning
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for SPI user
@@ -2664,7 +2664,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "ProjectPeriodStartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Project Period Start Date is required to save under Overview. |
+      | Project Period Start Date is required to save. |
 
   @112010   @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for PM user

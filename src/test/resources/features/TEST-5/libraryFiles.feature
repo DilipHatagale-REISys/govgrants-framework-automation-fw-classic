@@ -2004,12 +2004,6 @@ Business Need: Library Files Component Scenarios
 
   @101098 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToSystemAdminUser-HomePhase
   Scenario: Verify show options section is displayed to admin user if custom metadat boolean value is set to true
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2040,12 +2034,6 @@ Business Need: Library Files Component Scenarios
 
   @101488 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-HomePhase
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - home phase
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2058,12 +2046,6 @@ Business Need: Library Files Component Scenarios
 
   @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase @bugLogged127715
   Scenario: Verify that Upload button is disabled when user has not selected sharing options - home phase library
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2078,12 +2060,6 @@ Business Need: Library Files Component Scenarios
 
   @101496 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisabledelowFiels-HomePhase
   Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - home phase library
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2098,12 +2074,6 @@ Business Need: Library Files Component Scenarios
 
   @101499 @validateThatShowOptionsSectionIsDisplayedAtEditFileModalIfCustomMetadataAtBooleanValueIsTrue-HomePhase
   Scenario: Verify show options section is displayed at edit file modal if custom metadat boolean value is set to true
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2117,12 +2087,6 @@ Business Need: Library Files Component Scenarios
 
   @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- home phase library
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2140,12 +2104,6 @@ Business Need: Library Files Component Scenarios
 
   @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel
   Scenario: Verify that sharing option is displayed at add/upload file modal - Record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2158,12 +2116,6 @@ Business Need: Library Files Component Scenarios
 
   @101550 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-RecordLevel
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2176,12 +2128,6 @@ Business Need: Library Files Component Scenarios
 
   @101554 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisplayedBelowField-ReordLevel
   Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2197,12 +2143,6 @@ Business Need: Library Files Component Scenarios
 
   @101556 @validateThatDefaultSharingOptionIsDisplayUnderEditFileModal-RecordLevel
   Scenario: Verify that default sharing option is displayed at edit file modal- record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2216,12 +2156,6 @@ Business Need: Library Files Component Scenarios
 
   @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2239,12 +2173,6 @@ Business Need: Library Files Component Scenarios
 
   @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel
   Scenario: Verify that use can upload same file which is already present inside record - record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2274,12 +2202,6 @@ Business Need: Library Files Component Scenarios
 
   @101559 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToPMUser-RecordPhase
   Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- record level
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2292,12 +2214,6 @@ Business Need: Library Files Component Scenarios
 
   @101560 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToPMUser-HomePhase
   Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- home phase
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2310,12 +2226,6 @@ Business Need: Library Files Component Scenarios
 
   @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase
   Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2448,9 +2358,6 @@ Business Need: Library Files Component Scenarios
 
   @101477 @validateThanMultipleFilesWithSameNameCanBeUploadedIntoLibrary-HomePhase
   Scenario: Verify that multiple files with same name can be uploaded in one library - home phase
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
       | id                 | label              | booleanValue | customMetaDataApiName    |
       | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
@@ -2759,12 +2666,6 @@ Business Need: Library Files Component Scenarios
 
   @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file is visible to all internal user if sharing option as "Visible to internal With Record Access" is select at upload file modal
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2796,12 +2697,6 @@ Business Need: Library Files Component Scenarios
 
   @122138 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file is visible to all internal user if sharing option as "Visible to anyone With Record Access" is select at upload file modal
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2843,12 +2738,6 @@ Business Need: Library Files Component Scenarios
 
   @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord
   Scenario: Verify that file is not visible to any internal user if sharing option as "Private On Records" is select at upload file modal
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2887,12 +2776,6 @@ Business Need: Library Files Component Scenarios
 
   @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord
   Scenario: Verify that file is not visible to any external user if sharing option as "Private On Records" is select at upload file modal
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2933,12 +2816,6 @@ Business Need: Library Files Component Scenarios
 
   @122142 @validateThatFileDeletedByInternalUserIsAlsoDeletedForInternalUser
   Scenario: Verify that file deleted by internal user is also deleted from the same record viewed by admin user
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2973,12 +2850,6 @@ Business Need: Library Files Component Scenarios
 
   @122157 @validateThatFileNameEditedByAdminUserShouldBeVisibleInternalAndExternalUser
   Scenario: Verify that if file name is edited by admin user then updated file name should be displayed to internal and external user on same record
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3028,12 +2899,6 @@ Business Need: Library Files Component Scenarios
 
   @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly
   Scenario: Verify that if sharing option changed from "Visible to anyone With Record Access" to "Private on record" then file is visible to owner only
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3088,12 +2953,6 @@ Business Need: Library Files Component Scenarios
 
   @122169 @validateThatFileNameUploadedByInternalUserShouldNotBeEditableByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by internal user should not be editable to admin user when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3139,12 +2998,6 @@ Business Need: Library Files Component Scenarios
 
   @122172 @validateThatFileNameUploadedByInternalUserShouldNotBeDeletedByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by internal user should not be deleted by  admin user when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3189,12 +3042,6 @@ Business Need: Library Files Component Scenarios
 
   @122182 @validateThatFileNameUploadedByInternalUserShouldNotDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by internal user is displayed to admin user but not to external when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3245,12 +3092,6 @@ Business Need: Library Files Component Scenarios
 
   @122188 @validateThatFileNameUploadedByInternalUserShouldDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that if file uploaded by internal user is displayed to admin and external when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3301,12 +3142,6 @@ Business Need: Library Files Component Scenarios
 
   @122469 @validateThatFileNameUploadedByAdminUserShouldBeDeletedByExternalUserAndRemovedFromBothAdminAndExternalUserRecordWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user can be deleted by external when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3350,12 +3185,6 @@ Business Need: Library Files Component Scenarios
 
   @122470 @validateThatFileNameUploadedByAdminUserShouldBeDeletedByInternalUserAndRemovedFromBothAdminAndInternalUserRecordWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user can be deleted by internal when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3400,12 +3229,6 @@ Business Need: Library Files Component Scenarios
 
   @122471 @validateThatFileNameUploadedByAdminUserCanBeDeletedByInternalUserAndRemovedFromBothAdminAndInternalUserRecordWhenSharinOptionAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file uploaded by admin user can be deleted by internal when sharing option as "Visible to Internal Users With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3450,12 +3273,6 @@ Business Need: Library Files Component Scenarios
 
   @122494 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -3505,12 +3322,6 @@ Business Need: Library Files Component Scenarios
 
   @122495 @validateThatFileEditedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file edited by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -3566,12 +3377,6 @@ Business Need: Library Files Component Scenarios
 
   @122161 @validateThatFileNameUploadedByAdminUserIsNotEditableByInternalUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user is not editable by internal user when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3619,12 +3424,6 @@ Business Need: Library Files Component Scenarios
 
   @122164 @validateThatFileNameUploadedByAdminUserIsNotEditableByExternalUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user is not editable by external user when sharing option as "Visible to Anyone With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3670,12 +3469,6 @@ Business Need: Library Files Component Scenarios
 
   @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -3725,12 +3518,6 @@ Business Need: Library Files Component Scenarios
 
   @122498 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToInternalUsersWithRecordAccess @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to Internal Users With Record Access"
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI2" user
     And I navigate to "Applications" tab
@@ -3805,9 +3592,6 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
@@ -3819,9 +3603,6 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -3889,15 +3670,9 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3938,15 +3713,9 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -4000,15 +3769,9 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -4069,9 +3832,6 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
@@ -4083,9 +3843,6 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -4166,9 +3923,6 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
@@ -4180,9 +3934,6 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -4258,9 +4009,6 @@ Business Need: Library Files Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
       | Charts Config         | Active    | false         | GrantorHome        | Name                      | Enhanced Dual Axes                    |
@@ -4272,9 +4020,6 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab

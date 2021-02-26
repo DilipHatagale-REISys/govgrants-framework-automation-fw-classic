@@ -1120,10 +1120,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
 
   @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+   Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:0 |
+      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top           | TmpGrantorActiveAwardsGrid | Name                      | View                       |
@@ -2160,7 +2160,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "06/05/2020 5:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
+    Then I see "06/05/2020 4:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
       | newFieldsApi                                         | defaultFieldsApi                                                                                                                                                                                                                   |

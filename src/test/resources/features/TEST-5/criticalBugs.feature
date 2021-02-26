@@ -409,6 +409,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -2151,6 +2152,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -2207,6 +2209,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -2263,6 +2266,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -2319,6 +2323,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -4083,6 +4088,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
@@ -4556,7 +4562,7 @@ Business Need: Logged Issues Scenarios
     Then I see "Test value 1" value in flex table id "toggleFlexTableGrantorAmendmentRequests"
 
     Examples:
-      | newFieldsApi                                                                                            | defaultFieldsApi                                                            |
+      | newFieldsApi                                                                | defaultFieldsApi                                |
       | Name,Award__c,RecordType__c,KeyPOC__c,Status__c,Test_multipicklist_field__c | Name,Award__c,RecordType__c,KeyPOC__c,Status__c |
 
   @121366    @hideExpressioJsonForRightOperandForUserType-Applicant-gAnnouncement
@@ -4652,6 +4658,8 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "HomeCollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
@@ -4682,6 +4690,8 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
