@@ -203,7 +203,7 @@ public class SideBarPage extends GovGrantsManager {
         boolean flag = false;
         WebElement getSidebarSubMenu = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Pending']/ancestor::li[contains(@class,'subMenuLink')]"));
         try {
-            if (getSidebarSubMenu.getCssValue("background-color").contains("rgb(242, 245, 249)") || getSidebarSubMenu.getCssValue("background-color").contains("rgba(242, 245, 249, 1)")) {
+            if (getSidebarSubMenu.getCssValue("background").contains("rgb(242, 245, 249)") || getSidebarSubMenu.getCssValue("background-color").contains("rgba(242, 245, 249, 1)")) {
                 flag = true;
             }
         } catch (Exception e) {

@@ -728,4 +728,9 @@ public class PageLayoutSteps {
             pageLayoutPage.assertAlertMessageWithColorAtPageLayout(colorName, alertMessage);
         }
     }
+
+    @Then("I see help text is displayed at bottom")
+    public void iSeeHelpTextIsRenderedAtBottom() {
+        pageLayoutPage.assertHelpTextIsRenderedAtBottom();
+    }
 }

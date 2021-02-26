@@ -356,7 +356,7 @@ public class DynamicFormPage extends GovGrantsManager {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         WebElement getTopRightActions = I.amPerforming().getElementReference().of(By.xpath("//b[text()='" + modalOverviewHeader + "']/ancestor::div//*[@title='" + actionName + "']/ancestor::div[@class='dropdown']"));
-        if (getTopRightActions.getAttribute("style").contains("visibility: hidden")) {
+        if (getTopRightActions.getAttribute("style").contains("display: none")) {
             return true;
         }
         return flag;

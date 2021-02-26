@@ -2593,3 +2593,27 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see border box is displayed at "TmpActiveGrantsGridFlexToggle" table
+
+  @130539    @helpTextDisplayedAtBottomOfHelpIconAtEnhancedGridInPageViewMode
+  Scenario: validate help text displayed at bottom of hekp icon at enhanced grid in page layout view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon inside "Monitoring Schedule For All Active Grants" for enhanced grid
+    Then I see help text is displayed at bottom
+
+  @130541    @helpTextDisplayedAtBottomOfHelpIconAtEnhancedGridInPageEditMode
+  Scenario: validate help text displayed at bottom of hekp icon at enhanced grid in page layout edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I hovering mouse on help text icon inside "Monitoring Schedule For All Active Grants" for enhanced grid
+    Then I see help text is displayed at bottom

@@ -1401,7 +1401,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "AN-343-002"
     Then I see "Announcement Title" not displayed in enhanced grid table column title
-#    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
 
   @126931    @validateHideColumnsFieldAtFlexTableUsingNotEqualsOperator
   Scenario: validate hide columns field at flex table using not equals operator
@@ -1480,6 +1479,28 @@ Business Need: Flex Table Component Scenarios
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
     When I perform quick search for "AN-755-297"
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
+
+  @130537    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageViewMode
+  Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Budget Period Details" for flex table
+    Then I see help text is displayed at bottom
+
+  @130538    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageEditMode
+  Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Budget Period Details" for flex table
+    Then I see help text is displayed at bottom
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
