@@ -274,7 +274,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    And I clear value from "Section 1" page block
+    And I clear value from "Section 1" page block :
       | Field          |
       | Rich Text Area |
     When I enter values into "Section 1" page block
@@ -768,7 +768,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    And I clear value from "Section 1" page block
+    And I clear value from "Section 1" page block :
       | Field          |
       | Rich Text Area |
     When I click on "Save" in the page details
@@ -3777,8 +3777,8 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
 
-  @97575   @validateEditButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
-  Scenario Outline: validate that Edit button is displayed at top right corner at dynamic form layout opens in modal
+  @97575   @validateValidateButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
+  Scenario Outline: validate that validate button is displayed at top right corner at dynamic form layout opens in modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
@@ -3933,7 +3933,7 @@ Business Need: dynamic forms Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select " Announcements - All"
+    And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
@@ -4412,27 +4412,6 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
-
-  @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
-  Scenario: validate by click on download as pdf it is getting open in new tab at dynamic form view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
-    When I perform quick search for "AnnouncementTest"
-    When I click on "View" icon for "AnnouncementTest" inside table
-    When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form" inside table
-    When I click on "Menu" in the page details
-    And I select "Download As PDF" from dropdown
-    And I download the file
-    Then I see new tab is opened
 
   @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as admin user

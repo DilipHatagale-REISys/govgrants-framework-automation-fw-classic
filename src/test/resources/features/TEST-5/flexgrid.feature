@@ -2533,3 +2533,51 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Edit" icon for "BP-01" inside table
     Then I see lookup field is rendered with Autosuggestion
+
+  @130542    @helpTextDisplayedAtBottomOfHelpIconAtMEGridInPageViewMode
+  Scenario: validate help text displayed at bottom of hekp icon at ME grid in page layout view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I hovering mouse on help text icon inside "Key Outcomes" for flex table
+    Then I see help text is displayed at bottom
+
+  @131661    @helpTextDisplayedAtBottomOfHelpIconAtMEGridInPageEditMode
+  Scenario: validate help text displayed at bottom of hekp icon at ME grid in page layout edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I hovering mouse on help text icon inside "Key Outcomes" for flex table
+    Then I see help text is displayed at bottom
+
+  @130544    @helpTextDisplayedAtBottomOfHelpIconAtN2GGridInPageViewMode
+  Scenario: validate help text displayed at bottom of help icon at N2G grid in page layout view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I hovering mouse on help text icon inside "Goals Objectives" for flex table
+    Then I see help text is displayed at bottom
+
+  @130545    @helpTextDisplayedAtBottomOfHelpIconAtN2GGridInPageEditMode
+  Scenario: validate help text displayed at bottom of hekp icon at N2G grid in page layout edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I hovering mouse on help text icon inside "Goals Objectives" for flex table
+    Then I see help text is displayed at bottom

@@ -1845,7 +1845,7 @@ Business Need: Page Layout Component Scenarios
 
   @82770    @verifyALinkIconPresentAtRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
   Scenario: validate that link icon is present at rich text area description field under page layout - gPlanning
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1856,7 +1856,7 @@ Business Need: Page Layout Component Scenarios
 
   @82786    @verifyHyperLinkIsPresentAtTextGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
   Scenario: validate that a hyperlink is present at display text in rich text area description field under page layout - gPlanning
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1870,7 +1870,7 @@ Business Need: Page Layout Component Scenarios
 
   @82775    @verifyHyperLinkIsPresentAtURLGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
   Scenario: validate that a hyperlink is present at URL in rich text area description field under page layout - gPlanning
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1926,7 +1926,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "PG-343-0034" into field "Program__c"
     When I enter value "abc" into field "FundingOpportunityURL__c"
     And I click modal button "Continue"
-    Then I see the following message in the page details :
+    Then I see the following message in the page details contains:
       | Please enter valid URL value. |
 
   @83323 @verifyURLFieldIsAcceptsCorrectURLEnteredOnModalWindow-gAnnouncement
@@ -2646,7 +2646,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Project Period Start Date is required to save. |
+      | *Project Period Start Date is required to save. |
 
   @113064    @requiredForSaveBehaviourAtPageBlockDetailForSPIUser-gPlanning
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for SPI user
@@ -2664,7 +2664,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "ProjectPeriodStartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Project Period Start Date is required to save. |
+      | *Project Period Start Date is required to save. |
 
   @112010   @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for PM user

@@ -105,7 +105,7 @@ Business Need: Logged Issues Scenarios
     When I click "Yes" on modal confirmation box
     And I click modal button "Ok"
     When I add notes records
-    Then I see the text containing :
+    Then I see the text :
       | Note saved Successfully. |
 
   @54898    @validateAttachmentEditActionWithFileUploadWorkingOrNot
@@ -374,7 +374,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
-    Then I see "Grantee Requested Amount" at axis "highcharts-xaxis" for chart "Applicationsbyrequestedamount1"
+    Then I see "Grantee Requested Amount" at axis "highcharts-yaxis" for chart "Applicationsbyrequestedamount1"
 
   @56623    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableTopLevelAction-gPlanning
   Scenario: Hide New top level action for from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -511,7 +511,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     And I click on "Save" in the page details
-    Then I see the text containing :
+    Then I see the text :
       | is required to save. |
       | Assigned to User     |
 
@@ -588,7 +588,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
+    When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "Edit" icon for "FOA--114" inside table
     When I click dropdown field "fieldAnnouncementType__c"
@@ -1029,9 +1029,10 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Budget" sub tab
     And I pause execution for "2" seconds
     And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
-    Then I see that "BP-05" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    Then I see the text containing :
+      | Page 2 |
 
-  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications
+  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications @wip @changeInRequirement
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1175,7 +1176,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
+    When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
@@ -3459,7 +3460,7 @@ Business Need: Logged Issues Scenarios
     When I click "Yes" on modal confirmation box
     When I close alertbox
     When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
-    And I click modal button "Save and Close Modal"
+    And I click modal button "Save and Close"
     Then I see table with header "Attachments" contains records "TestAutomation.txt"
 
   @97039    @validateByClickOnSaveButtonAtAddAttachmentModalAModalWindowShouldRemainsDisplayedOnPage
@@ -3532,7 +3533,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Default Value | 1             | TmpGrantorActiveAwardsGrid | Name                      | FTC-1526                   |
-    Given I delete the record "Award Created for default value testing" from the object "Award__c"
+    Given I delete the record "Award Created for default value testing" from the object "Award__c" with field "GrantAwardName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4511,7 +4512,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "More Actions" action at "Test Attachment comment DND" comment inside my feed
+    And I click on "More Options" action at "Test Attachment comment DND" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
 
   @121615    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtHomePhase
@@ -4543,7 +4544,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "More Actions" action at "Test Attachment comment DND" comment inside my feed
+    And I click on "More Options" action at "Test Attachment comment DND" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
 
   @121379    @vverifyThatQuickSearchIsWorkProperlyForMultiPicklistAtFlexTable-gMonitoring
@@ -4614,7 +4615,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "More Actions" action at "Test Attachment record level comment DND" comment inside my feed
+    And I click on "More Options" action at "Test Attachment record level comment DND" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
 
   @121310    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForAdminUser
@@ -4630,7 +4631,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantee"
     And I navigate to "HOME" tab
-    Then I softly see plus icon is displayed at "Search" menu inside sidebar
+    Then I softly see plus icon is displayed at "Useful Links" menu inside sidebar
     Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
 
   @121312    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForSPIUser
@@ -5082,3 +5083,23 @@ Business Need: Logged Issues Scenarios
   #125746 - file uploaded from collab tab and deleted from home files list is also removed from collab phase
     And I navigate to "Collab" tab
     Then I softly do not see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
+
+  @130574    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhase
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at collab phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileTemp.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Select sharing options" at upload file modal
+    Then I see "Upload" button is disabled at modal under library

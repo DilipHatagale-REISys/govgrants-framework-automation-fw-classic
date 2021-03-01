@@ -1548,6 +1548,17 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isAlertMessageDisplayedWithExpectedBackgroundColorAtPageLayout(colorName, desiredMessage));
     }
 
+
+    /**
+     * return true if help text rendered at bottom of help icon
+     *
+     * @author ashwini.mahore
+     */
+    public void assertHelpTextIsRenderedAtBottom() {
+        Assert.assertTrue(isHelpTextDisplayedAtBottomOfHelpIcon());
+    }
+
+
     /**
      * get owner organisation lookup modal complete content
      *
@@ -2932,7 +2943,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isMoreActionsDropdownWindowDisplayedAtMyFeedSection() {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='moreActions active']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(" //div[@class='moreActions active' or @class='active']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3131,6 +3142,24 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if help text rendered at bottom of help icon
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isHelpTextDisplayedAtBottomOfHelpIcon() {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'tooltipster-arrow-bottom')]"))
+            || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[contains(@class,'tooltipster-arrow-bottom')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

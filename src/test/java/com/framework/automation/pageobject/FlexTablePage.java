@@ -164,8 +164,8 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
-                + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
-                + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
+                + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')] " +
+                "| //div//a[@title='" + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
     }
 
     /**
@@ -966,7 +966,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isButtonsDisplayedAtModalWindow(String buttonName, String buttonPosition) {
         boolean flag = false;
         if (buttonPosition.equals("Top")) {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//*[(local-name()='button' or local-name()='input') and (@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "')]"))) {
                 flag = true;
             } else {
                 flag = false;

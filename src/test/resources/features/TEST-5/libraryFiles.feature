@@ -4081,3 +4081,47 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library
+    When I select sharing option as "Select sharing options" at upload file modal
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+
+  @130573 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtHomePhaseForPMUser
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at home phase for PM user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I select sharing option as "Select sharing options" at upload file modal
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+
+  @130576 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelAndCustomPermissionsAreEnabled
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at record level and custom permissions are enabled
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library with sharing
+    When I select sharing option as "Select sharing options" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
