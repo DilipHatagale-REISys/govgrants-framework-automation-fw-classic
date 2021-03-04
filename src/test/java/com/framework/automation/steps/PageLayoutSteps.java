@@ -237,11 +237,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSubTabButtonsNotDisplayed(subTabName);
     }
 
-    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside subtabs$")
-    public void assertSequenceOfAccordianContent(String subTabName, String number) {
-        pageLayoutPage.assertSortingOfSubTab(subTabName, Integer.parseInt(number));
-    }
-
     @Then("^I see \"([^\"]*)\" shown as header instruction text$")
     public void assertHeaderInstructionText(String headerText) {
         pageLayoutPage.assertHeaderInstructionText(headerText);
@@ -732,5 +727,10 @@ public class PageLayoutSteps {
     @Then("I see help text is displayed at bottom")
     public void iSeeHelpTextIsRenderedAtBottom() {
         pageLayoutPage.assertHelpTextIsRenderedAtBottom();
+    }
+
+    @Then("^I softly see \"([^\"]*)\" as \"([^\"]*)\" inside mini page layout$")
+    public void iSoftlySeeBelowTextInsideMiniPageLayout(String displayType, String value) {
+            pageLayoutPage.assertTypeAndTextInsideMiniPageLayout(displayType, value);
     }
 }

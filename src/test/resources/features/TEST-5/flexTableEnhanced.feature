@@ -455,3 +455,26 @@ Business Need: Flex Table enhanced Component Scenarios
     Examples:
       | new_helpText                           |
       | This is the test application for IE 11 |
+
+  @132268    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hover mouse on lookup link "SYSTEM" at table
+    Then I softly see "title" as "SYSTEM" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hover mouse on lookup link "SYSTEM" at table
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hover mouse on lookup link "SYSTEM" at table
+    Then I softly see "Value" as "9832" inside mini page layout

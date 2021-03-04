@@ -1246,26 +1246,6 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @96030     @VerifyAttachmentTableActionsAreAlignedProperly-gPlanning
-  Scenario: validate alignment of actions under attachment table - Planning phase
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "test send to owner 2"
-    When I click on "View Program Details " icon for "test send to owner 2" inside table
-    When I navigate to "Attachments" sub tab
-    Then I see actions are aligned at attachment
-
-  @80953   @VerifyFlexTableActionsAreAlignedProperly-gPlanning
-  Scenario: validate alignment of actions under flex table - Planning phase
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "test send to owner 2"
-    Then I see actions under "---program:-:programsTableId---" table are aligned and compared with "actionsAtFlexTable.png"
-
   @106401    @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTable
   Scenario: validate date inside value input box field is inserted successfully at flex table
     When I login as "Automation" user
@@ -1501,6 +1481,32 @@ Business Need: Flex Table Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Budget Period Details" for flex table
     Then I see help text is displayed at bottom
+
+  @130095    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFlexTable
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
+    When I hover mouse on lookup link "Christine GGPTEST5" at table
+    And I pause execution for "3" seconds
+    Then I softly see "title" as "Christine GGPTEST5" inside mini page layout
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
+    When I hover mouse on lookup link "Christine GGPTEST5" at table
+    And I pause execution for "3" seconds
+    Then I softly see "Label" as "Org" inside mini page layout
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
+    When I hover mouse on lookup link "Christine GGPTEST5" at table
+    And I pause execution for "3" seconds
+    Then I softly see "Value" as "Department of Children health" inside mini page layout
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed

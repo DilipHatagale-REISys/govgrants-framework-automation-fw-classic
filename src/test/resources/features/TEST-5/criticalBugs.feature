@@ -3340,17 +3340,6 @@ Business Need: Logged Issues Scenarios
     And I select "Refresh" from parallel lines dropdown of "Draft Programs"
     Then I see entire page is refreshing
 
-  @80890     @VerifyMeGridParentTableActionsAreAlignedProperly-gPlanning @flexGrid
-  Scenario: validate alignment of actions under me grid parent flex table - Planning phase
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table and compared with "actionsAtMeGridTable.png"
-
   @96567    @enableOverallTotalFieldAndRowGroupingAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
   Scenario Outline: validate enabling of overall total field and row grouping inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
@@ -4328,17 +4317,6 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field "Created By" as "Nauman Shahid"
 
-  @117758    @validateAlignmentOfValidateButtonAtFlexTableInsidePageLayout @pageLayout
-  Scenario: Validate alignment of validate button at flex table header inside page layout
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
-    When I navigate to "Attachments" sub tab
-    Then I see validate button is aligned at pannel header
-
   @118836    @validateQuickSearchDisplayedRelevantDataIfSearchPicklistValueAtFlexTableInsideModal  @pageLayout
   Scenario: Validate quickSearch displayed relevant data if searched picklist value at flex table inside modal
     When I login as "Automation" user
@@ -4350,19 +4328,6 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     Then I see value "Internal" for title "Type" inside table "---program:-:contactsTableId---"
-
-  @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow
-  Scenario: validate that mini page layout is displayed completely on hover at lookup field inside modal window
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Roles" sub tab
-    When I click on "View" icon for "Nauman Shahid" inside table
-    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
-    Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"
 
   @117577    @validateDecimalPlacesDisplayedAtPercentFieldInsideEGrid
   Scenario Outline: Validate decimal places displayed at percent field inside enhanced grid
@@ -5004,6 +4969,7 @@ Business Need: Logged Issues Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
@@ -5048,6 +5014,7 @@ Business Need: Logged Issues Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
@@ -5101,5 +5068,72 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Select sharing options" at upload file modal
+    Then I see "Upload" button is disabled at modal under library
+
+  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Custom Permission Enabled user - record level post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Select sharing options" at upload file modal
+    Then I see "Upload" button is disabled at modal under library
+
+  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Custom Permission Enabled user - record level post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Select sharing options" at upload file modal
+    Then I see "Upload" button is disabled at modal under library
+
+  @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options at collab phase when custom permission is enabled
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Custom Permission Enabled user - Collab phase post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library

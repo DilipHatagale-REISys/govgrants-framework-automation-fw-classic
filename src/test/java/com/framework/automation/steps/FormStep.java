@@ -45,4 +45,9 @@ public class FormStep {
     public void iSeeCheckboxesForFieldInsideForm(String fieldName) {
         formPage.assertRadioCheckboxesAtFieldsUnderForm(fieldName);
     }
+
+    @Then("^I (softly see|softly do not see) dropdown with selected value as \"([^\"]*)\" at form layout$")
+    public void iSeeDropdownWithSelectedValueAsAtFormLayout(String usage, String formName) {
+        formPage.assertFormDisplayedInsideDropdownAtFormLayout(usage, formName);
+    }
 }
