@@ -1120,10 +1120,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
 
   @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
-   Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:0 |
-      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top           | TmpGrantorActiveAwardsGrid | Name                      | View                       |
@@ -2424,18 +2424,6 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
-  @80889  @VerifyActionsAreAlignedInsideEnhancedGridTable
-  Scenario: verify that actions are aligned inside enhanced grid table
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"
-
   @104863  @VerifySortingLabelInsideEnhancedGridTable
   Scenario: verify that sorting label displayed inside enhanced grid table
     When I login as "Automation" user
@@ -2617,3 +2605,29 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I hovering mouse on help text icon inside "Monitoring Schedule For All Active Grants" for enhanced grid
     Then I see help text is displayed at bottom
+
+  @130097    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedGrid
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "title" as "Department of Higher Education" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Value" as "755" inside mini page layout

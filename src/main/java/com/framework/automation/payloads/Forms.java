@@ -38,6 +38,12 @@ public class Forms {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageTemplate__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__RedirectBehaviour__c), value);
                 break;
+            case "HIDE FROM DROPDOWN":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageTemplate__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageTemplate__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Hidefromdropdown__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;

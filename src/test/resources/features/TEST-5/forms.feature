@@ -516,3 +516,282 @@ Business Need: Forms Component Scenarios
     Then I softly do not see "Cancel" button is displayed
     Then I softly do not see "Edit" button is displayed
     Then I softly do not see "Save" button is displayed
+
+  @130102    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFormsLayout
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I hovering mouse on page block detail of label "Announcement ID" lookup field "AN-755-294"
+    And I pause execution for "3" seconds
+    Then I softly see "title" as "AN-755-294" inside mini page layout
+    And I refresh the page
+    When I hovering mouse on page block detail of label "Announcement ID" lookup field "AN-755-294"
+    And I pause execution for "3" seconds
+    Then I softly see "Label" as "Title" inside mini page layout
+    And I refresh the page
+    When I hovering mouse on page block detail of label "Announcement ID" lookup field "AN-755-294"
+    And I pause execution for "3" seconds
+    Then I softly see "Value" as "Demo_Title" inside mini page layout
+
+  @132393 @verifyFormOpensInViewModeForExternalUser
+  Scenario:validate that by click at View action, form displayed in view mode for external user - SPI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    Then I see "Application Budget" shown as over view header
+
+  @132393 @verifyFormOpensInViewModeForExternalUser
+  Scenario:validate that by click at View action, form displayed in view mode for external user - SPI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    Then I see "Application Budget" shown as over view header
+
+  @132394 @verifyFormOpensInEditModeForExternalUser
+  Scenario:validate that by click at Edit action, form displayed for external user - SPI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Budget Form" inside flex table with id "FormEnhancedTable"
+    Then I see "Application Budget" shown as over view header
+
+  @132423 @verifyFormOpensInViewModeForAdminUser
+  Scenario:validate that by click at View action, form displayed in view mode for admin user - SPI
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    Then I see "Application Budget" shown as over view header
+
+  @132425 @verifyFormOpensInEditModeForAdminUser
+  Scenario:validate that by click at Edit action, form displayed for admin user - SPI
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Budget Form" inside flex table with id "FormEnhancedTable"
+    Then I see "Application Budget" shown as over view header
+
+  @132406 @verifyFormOpensInViewModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUser
+  Scenario:validate that form opens in view mode even if hide from dropdown checkbox is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @132407 @verifyFormOpensInEditModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUser
+  Scenario:validate that form opens in edit mode even if hide from dropdown checkbox is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @132410 @verifyFormOpensInViewModeEvenIfHideFromDropdownCheckBoxIsCheckedForSPIUser
+  Scenario:validate that form opens in view mode even if hide from dropdown checkbox is checked for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @132412 @verifyFormOpensInEditModeEvenIfHideFromDropdownCheckBoxIsCheckedForSPIUser
+  Scenario:validate that form opens in edit mode even if hide from dropdown checkbox is checked for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @132413 @verifyFormOpensInViewModeAfterCheckingHideFromDropdownCheckBoxForMultipleFormsIsCheckedForAdminUser
+  Scenario:validate that form opens in view mode if hide from dropdown checkbox for multiple forms is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly see dropdown with selected value as "General Application Form" at form layout
+
+  @132418 @verifyFormOpensInEditModeAfterCheckingHideFromDropdownCheckBoxForMultipleFormsIsCheckedForAdminUser
+  Scenario:validate that form opens in edit mode if hide from dropdown checkbox for multiple forms is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly see dropdown with selected value as "General Application Form" at form layout
+
+  @132496 @verifyFormOpensInViewModeAfterCheckingHideFromDropdownCheckBoxForAllFormsIsCheckedForAdminUser
+  Scenario:validate that form opens in view mode if hide from dropdown checkbox for all forms is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Form        |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Form" at form layout
+
+  @132497 @verifyFormOpensInEditModeAfterCheckingHideFromDropdownCheckBoxForAllFormsIsCheckedForAdminUser
+  Scenario:validate that form opens in edit mode if hide from dropdown checkbox for all forms is checked for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Form        |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Form" at form layout
+
+
+  @132498 @verifyFormOpensInViewModeAfterCheckingHideFromDropdownCheckBoxForAllFormsIsCheckedForSPIUser
+  Scenario:validate that form opens in view mode if hide from dropdown checkbox for all forms is checked for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Form        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Form" at form layout
+
+  @132499 @verifyFormOpensInEditModeAfterCheckingHideFromDropdownCheckBoxForAllFormsIsCheckedForSPIUser
+  Scenario:validate that form opens in edit mode if hide from dropdown checkbox for all forms is checked for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:0 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:1 |
+      | Forms                 | Hide From Dropdown | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
+      | Forms:General         | Hide From Dropdown | true          | General Application Form        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
+    Then I softly do not see dropdown with selected value as "General Application Form" at form layout

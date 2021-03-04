@@ -2581,3 +2581,43 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Goals Objectives" for flex table
     Then I see help text is displayed at bottom
+
+  @130099    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtMEGrid
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at ME grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I hover mouse on lookup link "AP-755-213" at table
+    And I pause execution for "4" seconds
+    Then I softly see "title" as "AP-755-213" inside mini page layout
+    And I refresh the page
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I hover mouse on lookup link "AP-755-213" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Label" as "Title" inside mini page layout
+    And I refresh the page
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I hover mouse on lookup link "AP-755-213" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Value" as "Demo_Title" inside mini page layout
+
+  @132267    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtN2GGrid
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at N2G grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I perform quick search for "GT-MAC-1-001"
+    When I hover mouse on lookup link "Secretary of Education" at grid
+    Then I softly see "title" as "Secretary of Education" inside mini page layout
+    And I refresh the page
+    When I perform quick search for "GT-MAC-1-001"
+    When I hover mouse on lookup link "Secretary of Education" at grid
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I perform quick search for "GT-MAC-1-001"
+    When I hover mouse on lookup link "Secretary of Education" at grid
+    Then I softly see "Value" as "434" inside mini page layout

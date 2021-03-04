@@ -2634,3 +2634,90 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Pending Tasks (Assigned To Me)"
     And I download the file
     Then I see "Pending Tasks (Assigned To Me)" on page "1" of "govgrants" pdf file
+
+  @80889  @VerifyActionsAreAlignedInsideEnhancedGridTable @enhancedGrid
+  Scenario: verify that actions are aligned inside enhanced grid table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"
+
+  @80890     @VerifyMeGridParentTableActionsAreAlignedProperly-gPlanning @flexGrid
+  Scenario: validate alignment of actions under me grid parent flex table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table and compared with "actionsAtMeGridTable.png"
+
+  @80953   @VerifyFlexTableActionsAreAlignedProperly-gPlanning @flexTable
+  Scenario: validate alignment of actions under flex table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "test send to owner 2"
+    Then I see actions under "---program:-:programsTableId---" table are aligned and compared with "actionsAtFlexTable.png"
+
+  @96030     @VerifyAttachmentTableActionsAreAlignedProperly-gPlanning @flexTable
+  Scenario: validate alignment of actions under attachment table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "test send to owner 2"
+    When I click on "View Program Details " icon for "test send to owner 2" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see actions are aligned at attachment
+
+  @116105    @verifyWhiteSpaceIsNotPresentAtModalIfAnyFieldIsHiddenUsingHideExpressionJSON
+  Scenario: validate white space is not displayed at modal window if any field is hidden using hide expression json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Roles and Responsibilities 7    |                           |                            | ApiGeneratedId:0 |
+      | Flex Table Action                        | Modal Width          | 800               | ProgramRolesAndResponsibilities | Name                      | New                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideUserFieldUsingHideExpressionInsideRolesModalWindow | Roles and Responsibilities 7    | Name                      | PBD-8028                   |
+      | Flex Table Action                        | Modal Width          | 1200                                                                    | ProgramRolesAndResponsibilities | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
+    Then I see fields are displayed without white space in modal
+
+  @117758    @validateAlignmentOfValidateButtonAtFlexTableInsidePageLayout @pageLayout
+  Scenario: Validate alignment of validate button at flex table header inside page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see validate button is aligned at pannel header
+
+  @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow @pageLayout
+  Scenario: validate that mini page layout is displayed completely on hover at lookup field inside modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Nauman Shahid" inside table
+    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
+    Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"

@@ -144,14 +144,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @param subTabName
-     * @param number
-     */
-    public void assertSortingOfSubTab(String subTabName, int number) {
-        Assert.assertTrue(isSubTabSequence(subTabName, number));
-    }
-
-    /**
      * assert true if correct header instruction text is displayed
      */
     public void assertHeaderInstructionText(String headerText) {
@@ -1548,6 +1540,16 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isAlertMessageDisplayedWithExpectedBackgroundColorAtPageLayout(colorName, desiredMessage));
     }
 
+    /**
+     * return true if title, label and value is displayed at mini-page layout
+     *
+     * @param displayType
+     * @param value
+     * @author ashwini.mahore
+     */
+    public void assertTypeAndTextInsideMiniPageLayout(String displayType, String value) {
+            I.amPerforming().assertionsTo().assertThat(isTypeAndTextDisplayedInsideMiniPageLayout(displayType, value)).isTrue();
+        }
 
     /**
      * return true if help text rendered at bottom of help icon
@@ -1708,18 +1710,6 @@ public class PageLayoutPage extends GovGrantsManager {
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
-    }
-
-    /**
-     * Boolean status of Sub tab sorting order
-     *
-     * @param subTabName
-     */
-    private boolean isSubTabSequence(String subTabName, int number) {
-        if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
-            return true;
-        } else
-            return false;
     }
 
     /**
@@ -3156,10 +3146,29 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = true;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'tooltipster-arrow-bottom')]"))
-            || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[contains(@class,'tooltipster-arrow-bottom')]"))) {
+                    || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[contains(@class,'tooltipster-arrow-bottom')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if title, label and value is displayed at mini-page layout
+     *
+     * @param displayType
+     * @param value
+     * @author ashwini.mahore
+     */
+    public Boolean isTypeAndTextDisplayedInsideMiniPageLayout(String displayType, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(@class,'" + displayType + "') and text()='" + value + "']"), false)) {
+                flag = true;
+            }
+        } catch (
+                Exception e) {
         }
         return flag;
     }

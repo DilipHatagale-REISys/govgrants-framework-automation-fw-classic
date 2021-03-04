@@ -3751,26 +3751,6 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
 
-  @116105    @verifyWhiteSpaceIsNotPresentAtModalIfAnyFieldIsHiddenUsingHideExpressionJSON
-  Scenario: validate white space is not displayed at modal window if any field is hidden using hide expression json
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Roles and Responsibilities 7    |                           |                            | ApiGeneratedId:0 |
-      | Flex Table Action                        | Modal Width          | 800               | ProgramRolesAndResponsibilities | Name                      | New                        | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideUserFieldUsingHideExpressionInsideRolesModalWindow | Roles and Responsibilities 7    | Name                      | PBD-8028                   |
-      | Flex Table Action                        | Modal Width          | 1200                                                                    | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Roles" sub tab
-    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
-    Then I see fields are displayed without white space in modal
-
   @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
     When I login as "Automation" user
@@ -5034,11 +5014,13 @@ Business Need: Page Layout Component Scenarios
   @129072    @verifyErrorMessageSetFromPageMessageConfigIsNotDisplayedAtEditPageLayoutWhenHideForProfileIsSelectedAsSysAdmin
   Scenario: validate error message set from page message config is not displayed at edit page layout when hide for profile = System Admin
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User    | Internal          | ApiGeneratedId:0 |
+      | Page Message Config   | Hide For Profile |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0067                    |
+      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantee State Program | Name                      | LM-0067                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0067                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5149,3 +5131,74 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Blue" color:
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
+
+  @130096    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtPageLayout
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I hover mouse on lookup link "Department of Community Health"
+    And I pause execution for "3" seconds
+    Then I softly see "title" as "Department of Community Health" inside mini page layout
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I hover mouse on lookup link "Department of Community Health"
+    And I pause execution for "3" seconds
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I navigate to "Overview" sub tab
+    When I hover mouse on lookup link "Department of Community Health"
+    And I pause execution for "3" seconds
+    Then I softly see "Value" as "343" inside mini page layout
+
+  @130098    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtModalWindow
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Nauman Shahid" inside table
+    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
+    And I pause execution for "4" seconds
+    Then I softly see "title" as "Nauman Shahid" inside mini page layout
+    And I refresh the page
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Nauman Shahid" inside table
+    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
+    And I pause execution for "4" seconds
+    Then I softly see "Label" as "Org" inside mini page layout
+    And I refresh the page
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Nauman Shahid" inside table
+    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
+    And I pause execution for "4" seconds
+    Then I softly see "Value" as "Department of Community Health" inside mini page layout
+
+  @130293    @helpTextDisplayedAtBottomOfHelpIconAtPageLayoutInViewMode
+  Scenario: validate help text displayed at bottom of help icon at page layout view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside page block detail "Title"
+    Then I see help text is displayed at bottom
+
+  @130294    @helpTextDisplayedAtBottomOfHelpIconAtPageLayoutInEditMode
+  Scenario: validate help text displayed at bottom of help icon at page layout edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside page block detail "Title"
+    Then I see help text is displayed at bottom

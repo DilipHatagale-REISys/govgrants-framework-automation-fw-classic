@@ -304,14 +304,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * get list of sub tab inside main detail page like overview etc.
-     */
-    public List<Elements> getListSubTabsInsideMainDetailPage() {
-        I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabs']/ul/li/a"));
-        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='myTabs']/ul/li/a"));
-    }
-
-    /**
      * get list of page block and form sections inside detail page like overview page block and Section 1 in dynamic forms etc.
      */
     public List<Elements> getListPageBlockInsideMainDetailPage() {

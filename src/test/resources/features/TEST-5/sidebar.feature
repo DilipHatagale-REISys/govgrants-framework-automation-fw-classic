@@ -860,3 +860,24 @@ Business Need: Side bar Component Scenarios
     Then I softly see value "{SavedValue:savedValue}" for title "Ref. ID" inside table "PendingTasks"
     When I perform quick search for "{SavedValue:savedValue1}"
     Then I softly see value "{SavedValue:savedValue1}" for title "Ref. ID" inside table "PendingTasks"
+
+  @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at sidebar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I navigate to "HOME" tab
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "title" as "PG-343-0058" inside mini page layout
+    And I refresh the page
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "Label" as "ID" inside mini page layout
+    And I refresh the page
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "Value" as "PG-343-0058" inside mini page layout

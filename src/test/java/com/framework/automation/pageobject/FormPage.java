@@ -1,6 +1,7 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -87,6 +88,21 @@ public class FormPage extends GovGrantsManager {
      */
     public void assertRadioCheckboxesAtFieldsUnderForm(String fieldName) {
         Assert.assertTrue(isRadioCheckboxesDisplayedAtFieldsUnderForm(fieldName));
+    }
+
+    /**
+     * assert true if dropdown with formname as selected is displayed inside form layout
+     *
+     * @param formName
+     * @author ashwini.mahore
+     */
+    public void assertFormDisplayedInsideDropdownAtFormLayout(String usage, String formName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormDisplayedInsideDropdownAtFormLayout(formName)).isTrue();
+            Assert.assertTrue(isFormDisplayedInsideDropdownAtFormLayout(formName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormDisplayedInsideDropdownAtFormLayout(formName)).isFalse();
+        }
     }
 
     /*********
@@ -192,6 +208,24 @@ public class FormPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if dropdown with form-name as selected is displayed inside form layout
+     *
+     * @param formName
+     * @author ashwini.mahore
+     */
+    private boolean isFormDisplayedInsideDropdownAtFormLayout(String formName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//option[text()='" + formName + "']/parent::select"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
         }
         return flag;
