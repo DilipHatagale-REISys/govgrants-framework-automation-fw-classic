@@ -1072,6 +1072,7 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "testAutomationFileDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "3" seconds
     When I click on "Send" button in send email modal
     And I pause execution for "2" seconds
     Then I see attachment "testAutomationFileDND.png" is present in send email modal

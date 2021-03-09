@@ -374,7 +374,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
-    Then I see "Grantee Requested Amount" at axis "highcharts-yaxis" for chart "Applicationsbyrequestedamount1"
+    Then I see "Grante" at axis "highcharts-yaxis" for chart "Applicationsbyrequestedamount1"
 
   @56623    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableTopLevelAction-gPlanning
   Scenario: Hide New top level action for from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -4580,7 +4580,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "More Options" action at "Test Attachment record level comment DND" comment inside my feed
+    And I click on "More Options" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
 
   @121310    @verifyThatExpandCollapsedIconsDisplayedAtSidebarForAdminUser
@@ -4618,15 +4618,16 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
-    When I upload file "CollabFileVanish.pdf" into library
+    When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
@@ -4654,11 +4655,12 @@ Business Need: Logged Issues Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
-    When I upload file "CollabFileVanish.pdf" into library
+    When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
@@ -4677,9 +4679,10 @@ Business Need: Logged Issues Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
-    When I upload file "CollabFileVanish.pdf" into library
+    When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
@@ -5137,3 +5140,201 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
+
+  @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord
+  Scenario: Verify that if file uploaded on record level post from home phase-My feed section is displayed on respective record inside files table
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library with sharing
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Collab temp" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+ #130104 verify if the uploaded file is displayed at record detail page in attachment tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Delete" icon for "CollabFileVanish.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Collab temp" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I softly do not see "Collab temp" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+
+  @130106    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsEditableInsideFilesTableOnThatRecord
+  Scenario: Verify that if file uploaded on record level post from home phase-My feed section is editable on respective record inside files table
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Custom permission given user - record post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library with sharing
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Collab temp" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+ #130106 verify if the uploaded file is editable at record detail page in attachment tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Edit" icon for "CollabFileVanish.pdf" inside table
+    When I enter value as "CollabFileVanishUpdated.pdf" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    When I perform quick search for "CollabFileVanishUpdated.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "CollabFileVanishUpdated.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+ #130106 verify if updated file name is displayed at home - my feed section comment
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I softly see "CollabFileVanishUpdated.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Collab temp" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I softly do not see "Collab temp" comment inside "Custom permission given user - record post DND" post at collab
+
+  @129994   @validateMaximum5FilesCanBeUploadedMessageAtUploadFileMOodalAtCollabMyFeed-Home
+  Scenario: Verify that maximum 5 files can be uploaded msg at upload file modal at collab my feed - home
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Custom permission given user - record post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I click on "Upload File from Library" tab at files library upload modal
+    Then I do not see information as "Maximum of 5 files can be selected." at files library upload modal
+
+  @129993    @validateThatOnlyOneFileCanBeUploadedFromHomePhaseMyFeedSectionAtRecordLevelPost
+  Scenario: Verify that only one file can be uploaded on record level post from home phase-My feed section
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I enter value as "Collab File uploaded for multiple upload check DND" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+ #129993 Attach file from home phase and validate- my feed section
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "WorkspaceFiles" panel
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "WorkspaceFiles"
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
+    And I enter value "Collab Phase temporary comment delete" in my feed section and share the comment
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:myFeedTableId---"
+ #129993 delete comment from home phase -my feed section
+    And I click on "Delete" action at "Collab Phase temporary comment delete" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I softly do not see "Collab Phase temporary comment delete" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @129992  @validateThatOnlyOneFileCanBeUploadedFromCollabPhaseMyFeedSectionAtRecordLevelPost
+  Scenario: Verify that only one file can be uploaded on record level post from collab phase-My feed section
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I enter value as "Collab File uploaded for multiple upload check DND" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+ #129992 Attach file from collab phase and validate in collab my feed section
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "WorkspaceFiles" panel
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "WorkspaceFiles"
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
+    And I enter value "Collab Phase temporary comment delete" in my feed section and share the comment
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:myFeedTableId---"
+ #129992 delete comment from collab phase -my feed section
+    And I click on "Delete" action at "Collab Phase temporary comment delete" comment inside my feed
+    And I click modal button "OK"
+    Then I softly do not see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"

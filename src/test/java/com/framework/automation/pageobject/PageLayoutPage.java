@@ -3108,8 +3108,8 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
-            case "Brown":
-                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(247, 221, 178)")
+            case "BROWN":
+                if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(247, 221, 178")
                         && getAlertMessageText.isDisplayed()) {
                     flag = true;
                 }
@@ -3120,13 +3120,13 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
-            case "Red":
+            case "RED":
                 if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(252, 248, 227)")
                         && getAlertMessageText.isDisplayed()) {
                     flag = true;
                 }
                 break;
-            case "Purple":
+            case "PURPLE":
                 if (getAlertMessageBackgroundColor.getAttribute("style").contains("rgb(242, 222, 222)")
                         && getAlertMessageText.isDisplayed()) {
                     flag = true;

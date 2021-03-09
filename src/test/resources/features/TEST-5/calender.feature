@@ -141,6 +141,7 @@ Business Need: Calender Config Component Scenarios
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    And I pause execution for "3" seconds
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details

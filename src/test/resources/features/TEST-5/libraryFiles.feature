@@ -2018,7 +2018,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that show options select box is not displayed to SPI user at upload file modal
     Given I have "customMetaData" configuration as below:
       | id              | customMetaDataFullName | booleanValue | customSettingApiName |
-      | m031C000000XZY7 | ShowSharingPrivacy     | false        | KeyValueHolder__mdt  |
+      | m031C000000XZY7 | ShowSharingPrivacy     | true        | KeyValueHolder__mdt  |
     And I update custom metadata setting changes:
       | id              | customMetaDataFullName | booleanValue | customSettingApiName |
       | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
@@ -2358,9 +2358,6 @@ Business Need: Library Files Component Scenarios
 
   @101477 @validateThanMultipleFilesWithSameNameCanBeUploadedIntoLibrary-HomePhase
   Scenario: Verify that multiple files with same name can be uploaded in one library - home phase
-    And I update custom metadata setting changes:
-      | id                 | label              | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2519,7 +2516,6 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "F-product-banner" in "WorkspaceFiles" panel
-    Then I softly see "F-product-banner.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
     Then I softly see "F-product-banner" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @122128 @validateThatInvalidFileNameSearchedUsingQuickSearchThenNoRecordFoundMsgShouldGetDisplayedUnderUploadFileModal-RecordLevel
@@ -2561,8 +2557,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    Then I see the text :
-      | Displays up to 1000 most recent files. Use the search option to find files if they are not in this recent list. |
+    Then I see information as "Displays up to 1000 most recent files. Use the Search option to find files if they are not in this recent list." at files library upload modal
 
   @122131 @validateThatIfFilesHavingSpecialCharactersInNameAreSearchedUsingQuickSearchThenRespectiveRecordShouldGetDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by entering special char name in quick search box, respective record is displayed under upload file modal - record level
@@ -4199,3 +4194,16 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @129989 @validateMaximum5FilesCanBeUploadedMessageAtUploadFileMOodal-RecordLevel
+  Scenario: Verify that maximum 5 files can be uploaded msg at upload file modal-  record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    Then I see information as "Maximum of 5 files can be selected." at files library upload modal

@@ -2721,3 +2721,53 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "View" icon for "Nauman Shahid" inside table
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
     Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"
+
+
+  @130108    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsidePDFAtFilesTableOnThatRecord @libraryFiles
+  Scenario: Verify that if file uploaded on record level post from home phase-My feed section is displayed on respective record inside files table downloaded PDF
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "CollabFileVanish.pdf" into library with sharing
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Collab temp" in my feed section and share the comment
+    Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
+ #130108 verify if the uploaded file is displayed at record detail page in attachment tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+ #130108 verify if the uploaded file is displayed inside downloaded pdf
+    When I click on parallel lines menu bar with data target value "#PlanningFilesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Planning Files"
+    And I download the file
+    And I pause execution for "3" seconds
+    Then I softly see "CollabFileVanish.pdf" on page "1" of "govgrants" pdf file
+    And I switch to tab number "0"
+    When I click on "Delete" icon for "CollabFileVanish.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Collab temp" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    Then I softly do not see "Collab temp" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
