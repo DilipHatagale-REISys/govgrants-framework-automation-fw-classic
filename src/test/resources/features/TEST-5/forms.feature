@@ -370,7 +370,7 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     And I enter value "" into field "ProposedStartdate__c"
     When I click on "Save" button in right header
-    Then I see the following message in the page details :
+    Then I see the following message in the page details contains:
       | Proposed Start Date: is required to save. |
 
   @120398 @verifyErrorMessageIsNotDisplayedAtFormLayoutWhileClickOnSaveButton
@@ -476,8 +476,8 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon of form "General Application Form" program in flex table
     Then I softly see "PROJECT INFORMATION" page block displayed
-    Then I softly see "Application Title" is not displayed inside page block detail
-    Then I softly see "Application ID" is not displayed inside page block detail
+    Then I softly see "Demo_Title" is not displayed inside page block detail
+    Then I softly see "AP-755-213" is not displayed inside page block detail
 
   @126483 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyStaticTextDisplayed-gApplications
   Scenario:validate at business form preview, only static text displayed

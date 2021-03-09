@@ -265,6 +265,20 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * return true if information is displayed at upload file modal
+     *
+     * @param information
+     * @author ashwini.mahore
+     */
+    public void assertInformationAtFilesUploadModal(String usage, String information) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isInformationDisplayedAtFilesUploadModal(information)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isInformationDisplayedAtFilesUploadModal(information)).isFalse();
+        }
+    }
+
+    /**
      * get sharing options at upload file modal window - Library files Home phase/record level
      *
      * @param sharingOptions
@@ -666,6 +680,24 @@ public class LibraryFilesPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if information is displayed at upload file modal
+     *
+     * @param information
+     * @author ashwini.mahore
+     */
+    public Boolean isInformationDisplayedAtFilesUploadModal(String information) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(.,'" + information + "')]"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+            flag = false;
         }
         return flag;
     }

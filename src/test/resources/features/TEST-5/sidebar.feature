@@ -594,6 +594,7 @@ Business Need: Side bar Component Scenarios
     And I select value "Automation PM" into field "s2id_autogen1"
     And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
     And I pause execution for "3" seconds
+    When I perform quick search for "{SavedValue:savedValue}"
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
@@ -849,6 +850,7 @@ Business Need: Side bar Component Scenarios
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:savedValue}"
     When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
+    When I perform quick search for "{SavedValue:savedValue1}"
     When I check "{SavedValue:savedValue1}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"

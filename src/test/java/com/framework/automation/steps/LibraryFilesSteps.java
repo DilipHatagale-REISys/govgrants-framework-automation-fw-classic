@@ -134,4 +134,9 @@ public class LibraryFilesSteps {
     public void iSeeIsRequiredForSave(String fieldName) {
         libraryFilesPage.assertAsteriskMarkIsDisplayedAtRequiredFieldsAtUploadFileModal(fieldName);
     }
+
+    @Then("^I (see|do not see) information as \"([^\"]*)\" at files library upload modal$")
+    public void iSeeInformationAsAtFilesLibraryUploadModal(String usage, String information) {
+        libraryFilesPage.assertInformationAtFilesUploadModal(usage, information);
+    }
 }
