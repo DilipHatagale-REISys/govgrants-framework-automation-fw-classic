@@ -8,6 +8,7 @@ import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
@@ -415,6 +416,17 @@ public class PageLayoutPage extends GovGrantsManager {
     public void selectValueAndClickAtFilter(String dropdownValue, String action) {
         I.amPerforming().click().on(ByUsing.xpath("//input[@aria-label='Select " + dropdownValue + "' and @type='checkbox']"));
         I.amPerforming().click().on(ByUsing.xpath("//button[text()='" + action + "']"));
+    }
+
+    /**
+     * @param iconName select all text from input-box and click at icons inside CK-Editor (rich text editor) text box
+     * @author ashwini.mahore
+     */
+    public void selectAndClickAtIconToChangeTextFormatting(String iconName) {
+        String selectAll = Keys.chord(Keys.CONTROL, "a");
+        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//body[contains(@class,'cke_editable')]"));
+        I.amPerforming().textInput().in(ele, selectAll);
+        govgrants.perform().pageDetails().clickAtIconInRichTextAreaEditorMenuOptions(iconName);
     }
 
     /**
@@ -1548,8 +1560,46 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void assertTypeAndTextInsideMiniPageLayout(String displayType, String value) {
-            I.amPerforming().assertionsTo().assertThat(isTypeAndTextDisplayedInsideMiniPageLayout(displayType, value)).isTrue();
-        }
+        I.amPerforming().assertionsTo().assertThat(isTypeAndTextDisplayedInsideMiniPageLayout(displayType, value)).isTrue();
+    }
+
+    /**
+     * return true if rich text area field with ck-editor is displayed at page detail
+     *
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public void assertRichTextAreaFieldInsidePageDetail(String fieldName) {
+        I.amPerforming().assertionsTo().assertThat(isRichTextAreaFieldDisplayedInsidePageDetail(fieldName)).isTrue();
+    }
+
+    /**
+     * It will check color of ck-editor (rich text editor) text box
+     *
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public void assertColorOfRichTextEditorBox(String colorName) {
+        Assert.assertTrue(isExpectedColorOfRichTextEditorBoxDisplayed(colorName));
+    }
+
+    /**
+     * @param wordCount
+     * @return true if character count is displayed at bottom of CK-Editor (rich text editor) text box
+     * @author ashwini.mahore
+     */
+    public void assertCharacterCountDisplayedInsideCKEditorAtPageLayout(String wordCount) {
+        Assert.assertTrue(isCharacterCountDisplayedInsideCKEditor(wordCount));
+    }
+
+    /**
+     * @param textFormat
+     * @return true if text inside ck editor input box is displayed in an expected format  like bold,italic etc
+     * @author ashwini.mahore
+     */
+    public void assertTextFormattingInsideCKEditorInputBox(String value, String textFormat) {
+        Assert.assertTrue(isTextInsideCKEditorInputBoxDisplayedInAnExpectedFormat(value, textFormat));
+    }
 
     /**
      * return true if help text rendered at bottom of help icon
@@ -3169,6 +3219,103 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (
                 Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if rich text area field with ck-editor is displayed at page detail
+     *
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public Boolean isRichTextAreaFieldDisplayedInsidePageDetail(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
+                flag = true;
+            }
+        } catch (
+                Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * It will check color of ck-editor (rich text editor) text box
+     *
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedColorOfRichTextEditorBoxDisplayed(String colorName) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getCKEditorBox = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[@id='cke_1_top']"));
+        try {
+            if (colorName.equalsIgnoreCase("yellow") && (getCKEditorBox.getCssValue("background-color").equals("rgb(255, 255, 102)"))
+                    || getCKEditorBox.getCssValue("background-color").equals("rgba(255, 255, 102, 1)")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param wordCount
+     * @return true if character count is displayed at bottom of CK-Editor (rich text editor) text box
+     * @author ashwini.mahore
+     */
+    public Boolean isCharacterCountDisplayedInsideCKEditor(String wordCount) {
+        boolean flag = false;
+        WebElement getCountAtCKEditorBox = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[contains(@class,'cke_path_item')]"));
+        try {
+            if (getCountAtCKEditorBox.getText().contains(wordCount)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param textFormat
+     * @return true if text inside ck editor input box is displayed in an expected format like bold,italic etc
+     * @author ashwini.mahore
+     */
+    public Boolean isTextInsideCKEditorInputBoxDisplayedInAnExpectedFormat(String value, String textFormat) {
+        boolean flag = false;
+        switch (textFormat.toUpperCase()) {
+            case "BOLD":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//strong[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "ITALIC":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//em[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "UNDERLINE":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//u[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "PLAIN":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable') and text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "STRIKE THROUGH":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//s[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "ALL":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]/s/u/em/strong[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
         }
         return flag;
     }

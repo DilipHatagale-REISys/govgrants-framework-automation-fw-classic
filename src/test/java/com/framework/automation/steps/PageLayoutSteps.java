@@ -202,6 +202,11 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueAndClickAtFilter(dropdownValue, action);
     }
 
+    @And("I change formatting of all text to {string} inside CK editor")
+    public void iChangeFormattingOfAllTextToInsideCKEditor(String iconName) {
+        pageLayoutPage.selectAndClickAtIconToChangeTextFormatting(iconName);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view header$")
     public void assertOverViewHeaderDisplayed(String headerName) {
         pageLayoutPage.assertOverViewHeaderDisplayed(headerName);
@@ -732,5 +737,25 @@ public class PageLayoutSteps {
     @Then("^I softly see \"([^\"]*)\" as \"([^\"]*)\" inside mini page layout$")
     public void iSoftlySeeBelowTextInsideMiniPageLayout(String displayType, String value) {
             pageLayoutPage.assertTypeAndTextInsideMiniPageLayout(displayType, value);
+    }
+
+    @Then("I see {string} field is rendered as rich text area in page edit mode")
+    public void iSeeRichTextAreaFieldAsIsDisplayedAtPageDetail(String fieldName) {
+        pageLayoutPage.assertRichTextAreaFieldInsidePageDetail(fieldName);
+    }
+
+    @Then("I see CK editor box color changed to {string}")
+    public void iSeeRichTextEditerBoxColorChangedTo(String colorName) {
+        pageLayoutPage.assertColorOfRichTextEditorBox(colorName);
+    }
+
+    @Then("I softly see word count as {string} in ck editor at page layout")
+    public void iSoftlySeeWordCountAsInCkEditorAtPageLayout(String wordCount) {
+        pageLayoutPage.assertCharacterCountDisplayedInsideCKEditorAtPageLayout(wordCount);
+    }
+
+    @Then("I see {string} displayed in {string} format inside CK editor")
+    public void iSeeTextDisplayedInFormatInsideCKEditor(String value, String textFormat) {
+        pageLayoutPage.assertTextFormattingInsideCKEditorInputBox(value,textFormat);
     }
 }
