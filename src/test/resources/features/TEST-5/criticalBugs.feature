@@ -5338,3 +5338,21 @@ Business Need: Logged Issues Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @132366    @VerifyAttachmentShownInsideInboxWhileSendingInvitaion
+  Scenario:validate attachment shown inside inbox while sending invitation
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I perform quick search for "Henry PM" in "toggleFlexTableContactsByAccount" panel
+    When I click on "send invitation" icon for "Henry PM" inside table
+    When I enter value "qateamrei@yopmail.com" into field "Cc" on send email modal
+    When I upload file "CollabFileTemp.pdf" into library
+    When I click modal button "Send"
+    And I checkout to yopmail with mailid "qateamrei@yopmail.com"
+    And I pause execution for "120" seconds
+    And I refresh the page
+    Then I see the text :
+      | CollabFileTemp.pdf |
