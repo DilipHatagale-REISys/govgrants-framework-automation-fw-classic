@@ -3239,8 +3239,7 @@ public class PageLayoutPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
                 flag = true;
             }
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
         }
         return flag;
     }
