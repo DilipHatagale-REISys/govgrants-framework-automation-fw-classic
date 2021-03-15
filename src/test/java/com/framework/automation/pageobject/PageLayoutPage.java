@@ -820,7 +820,8 @@ public class PageLayoutPage extends GovGrantsManager {
             I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
             fieldOnSendEmailModal.sendKeys(value);
         } else {
-            WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']"));
+            WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']" +
+                    "| //label[contains(text(),'" + fieldLabel + "')]/parent::th/following-sibling::td//input[@type='text']"));
             I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
             fieldOnSendEmailModal.sendKeys(value);
         }
@@ -981,8 +982,12 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if expected field/element id disabled on edit page details
      */
-    public void assertExpectedFieldAtEditPageDetails(String fieldAPIName) {
-        Assert.assertTrue(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName));
+    public void assertExpectedFieldAtEditPageDetails(String usage, String fieldAPIName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName)).isTrue();
+        }
     }
 
     /**
@@ -2020,8 +2025,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldIsDisplayedOnEditPageDetails(String fieldApiName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath(
-                    "//div[@id='" + fieldApiName + "']//select[@disabled] | //span[@id='" + fieldApiName + "']//input[@disabled] "))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(
+                    "//div[@id='" + fieldApiName + "']//select[@disabled] | //span[@id='" + fieldApiName + "']//input[@disabled] | //span[@id='" + fieldApiName + "']//select[@disabled]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3217,8 +3222,7 @@ public class PageLayoutPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(@class,'" + displayType + "') and text()='" + value + "']"), false)) {
                 flag = true;
             }
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
         }
         return flag;
     }

@@ -339,9 +339,9 @@ public class PageLayoutSteps {
         }
     }
 
-    @Then("^I see field \"([^\"]*)\" is disabled$")
-    public void assertExpectedFieldIsDisabled(String fieldApiName) {
-        pageLayoutPage.assertExpectedFieldAtEditPageDetails(fieldApiName);
+    @Then("^I (see|softly see) field \"([^\"]*)\" is disabled$")
+    public void assertExpectedFieldIsDisabled(String usage, String fieldApiName) {
+        pageLayoutPage.assertExpectedFieldAtEditPageDetails(usage, fieldApiName);
     }
 
     @Then("^I see \"([^\"]*)\" options disabled from menu dropdown$")

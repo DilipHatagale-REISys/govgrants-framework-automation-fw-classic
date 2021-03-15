@@ -5656,7 +5656,7 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Applications      | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -5667,14 +5667,14 @@ Business Need: Page Layout Component Scenarios
       | Cancel |
       | Save   |
 
-    @133023   @verifyCurrencyFieldIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
+  @133023   @verifyCurrencyFieldIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
   Scenario: validate currency field is displayed at enhanced flex edit page layout to spi user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Applications      | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -5683,14 +5683,14 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "2,106.00" text enter in field "fieldInitialRequestedAmount__c"
 
-  @133024   @verifyDateFieldIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
+  @133027   @verifyDateFieldIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
   Scenario: validate date field is displayed at enhanced flex edit page layout to spi user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Applications      | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -5698,3 +5698,248 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit1" icon for "Test Automation Application DND" inside table
     When I navigate to "Overview" sub tab
     Then I see "6/30/2018" text enter in field "fieldProjectPeriodStartDate__c"
+
+  @133022   @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
+  Scenario: validate mini page layout is displayed at enhanced flex edit page layout to spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    When I navigate to "Overview" sub tab
+    When I hover mouse on lookup link "AN-603-055"
+    Then I softly see "title" as "AN-603-055" inside mini page layout
+
+  @133024  @verifyDataTableIsDisplayedAtEnhancedFlexEditLayoutForSPIUser
+  Scenario: validate data table is displayed at enhanced flex edit page layout for spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    When I navigate to "Roles" sub tab
+    Then I see expected table with id "toggleFlexTableGrantorApplicationRolesandResponsibilities"
+
+  @133030   @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayoutToSPIUser
+  Scenario: validate dateTime field is displayed at enhanced flex edit page layout to spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "6/19/2018 5:41 AM" text enter in field "fieldSubmittedOn__c"
+
+  @133032  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayoutToSPIUser
+  Scenario Outline: validate help text at field hover is displayed at enhanced flex edit page layout to spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text icon inside page block detail "Funding Opportunity ID"
+    Then I see "<helpText>" shown as help text
+
+    Examples:
+      | helpText                                                                                                                             |
+      | This is a notice of grant funding opportunity which allows the potential applicants (organizations) to apply for the grant or award. |
+
+  @133035 @verifyFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsAtEnhancedFlexEditLayoutToSPIUser
+  Scenario: validate field message displayed for required for save and submit Field at enhanced flex edit page layout to spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    Then I see field message with text as "Required to Save" and "Required to Submit"
+
+  @133037  @verifyQuickSearchWorkingAtEnhancedFlexEditLayoutAtSPIUser
+  Scenario: validate quick search working at enhanced flex edit page layout to spi user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "Edit1" icon for "Test Automation Application DND" inside table
+    When I navigate to "Roles" sub tab
+    When I perform quick search for "John Walker" in "toggleFlexTableGrantorApplicationRolesandResponsibilities" panel
+    Then I see value "John Walker" for title "Assigned to User" inside table "toggleFlexTableGrantorApplicationRolesandResponsibilities"
+
+  @132866  @verifyDisplayOfPickListFiedDropDownValueAtEnhancedFlexEditLayout
+  Scenario: validate picklist field dropdown values are displayed at enhanced flex edit page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click dropdown field "fieldProgramSubType__c"
+    Then I see only the following ordered options in dropdown field "fieldProgramSubType__c" :
+      | Project Grants  |
+      | Research Grants |
+
+  @133727  @verifyContinueActionAtCreateAnnouncementModalWindow
+  Scenario: validate continue action at create announcement modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on top right button "Create" in flex table with id "---program:-:AnnouncementTableId---"
+    When I enter value "PG-343-0034" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+    And I click modal button "Continue"
+    Then I see the header is "Create Funding Opportunity" in the page details
+
+  @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
+  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at sidebar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I navigate to "HOME" tab
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "title" as "PG-343-0058" inside mini page layout
+    And I navigate to "HOME" tab
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "Label" as "ID" inside mini page layout
+    And I navigate to "HOME" tab
+    When I hover mouse on lookup link "PG-343-0058"
+    And I pause execution for "3" seconds
+    Then I softly see "Value" as "PG-343-0058" inside mini page layout
+
+  @133875    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide date from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I see field "StartDate__c" is disabled
+
+  @133876    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide picklist from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I softly see field "StartDate__c" is disabled
+    Then I softly see field "ProgramType__c" is disabled
+
+  @133877    @verifyHideFieldJsonFieldByHidingTextFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide text from from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I see field "ProgramName__c" is disabled
+
+  @133879    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide currency field from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I see field "FundedAmount__c" is disabled
+
+  @133883    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfTextFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide date from Overview page block using text field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I softly see field "StartDate__c" is disabled
