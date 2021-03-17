@@ -5070,8 +5070,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0073                    |
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0073                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5087,8 +5087,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0074                    |
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0074                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5104,8 +5104,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0075                    |
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0075                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5943,3 +5943,262 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     Then I softly see field "StartDate__c" is disabled
+
+  @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide date, text and picklist from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideMultipleFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I softly see field "StartDate__c" is disabled
+    Then I softly see field "ProgramType__c" is disabled
+    Then I softly see field "ProgramName__c" is disabled
+
+  @133894    @verifyHideFieldJsonFieldByHidingTextFieldOnTheBasisOfDateFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide text from Overview page block using date field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I see field "ProgramName__c" is disabled
+
+  @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide picklist from Overview page block using date field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I see field "ProgramType__c" is disabled
+
+  @133896    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfDateFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide currency from Overview page block using date field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I see field "FundedAmount__c" is disabled
+
+  @134132    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide picklist using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                 | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I enter value "User" into field "UserType__c"
+    Then I see field "BusinessRole__c" is disabled
+
+  @134134    @verifyHideFieldJsonFieldByHidingURLFieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide URL using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I enter value "User" into field "UserType__c"
+    Then I see field "Test_URL__c" is disabled
+
+  @134135    @verifyHideFieldJsonFieldByHidingCheckboxieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide checkbox using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                 | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I enter value "User" into field "UserType__c"
+    Then I see field "Notify__c" is disabled
+
+  @134138    @verifyHideFieldJsonFieldByHidingCheckboxURLFieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide checkbox,URL using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxNdURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I enter value "User" into field "UserType__c"
+    Then I softly see field "Notify__c" is disabled
+    Then I softly see field "Test_URL__c" is disabled
+
+  @134150    @verifyHideFieldJsonFieldByHidingCheckboxURLAndPicklistFieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide checkbox,URL and picklist using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                              | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistNdURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I enter value "User" into field "UserType__c"
+    Then I softly see field "Notify__c" is disabled
+    Then I softly see field "Test_URL__c" is disabled
+    Then I softly see field "BusinessRole__c" is disabled
+
+  @134158    @verifyHideFieldJsonFieldByHidingCheckboxFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide checkbox from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I see field "CFDA_Data__c" is disabled
+
+  @134161    @verifyHideFieldJsonFieldByHidingCheckbox,Picklist,Date,CurrencyFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide checkbox,picklist,date &currency field  from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I softly see field "ProgramType__c" is disabled
+    Then I softly see field "StartDate__c" is disabled
+    Then I softly see field "CFDA_Data__c" is disabled
+    Then I softly see field "FundedAmount__c" is disabled
+
+  @134169    @verifyHideFieldJsonFieldByHidingLookupieldOnTheBasisOPicklistFieldValueOnModal
+  Scenario: Set up hide field json value to Hide lookup using picklist field value on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistOnModal | Announcement Create - Grantor | Name                      | PBD-6759                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+    Then I see field "Program__c" is disabled
+
+  @133880    @verifyHideFieldJsonFieldByHidingLookupFieldOnTheBasisOfPicklistFieldValueInEditMode
+  Scenario: Set up hide field json value to Hide lookup from Overview page block using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    Then I see field "Account__c" is disabled
+
+  @134480    @verifyByClickAtSaveActionOnModalAModalWindowIsGettingClosed
+  Scenario: verify by click at Save action on modal layout then modal is  getting closed automatically
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxNdURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
+    And I click modal button "Save"
+    Then I see "Edit" modal window with id "ProgramBudgetPeriodmodalDiv" is not displayed

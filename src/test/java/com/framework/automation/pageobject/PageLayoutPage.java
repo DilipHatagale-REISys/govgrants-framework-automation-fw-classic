@@ -1607,6 +1607,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * @return true if record label displayed in an expected color at calendar
+     *
+     * @param record
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public void isRecordDisplayedInExpectedColorAtCalendar(String record, String colorName) {
+        Assert.assertTrue(isRecordDisplayedInAnExpectedColorAtCalendar(record, colorName));
+    }
+
+    /**
      * return true if help text rendered at bottom of help icon
      *
      * @author ashwini.mahore
@@ -3316,6 +3327,38 @@ public class PageLayoutPage extends GovGrantsManager {
                 break;
             case "ALL":
                 if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]/s/u/em/strong[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if record label displayed in an expected color at calendar
+     *
+     * @param record
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public Boolean isRecordDisplayedInAnExpectedColorAtCalendar(String record, String colorName) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getRecordAtCalendar =I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='"+record+"']/ancestor::td[@class='fc-event-container']//a"));
+
+        switch (colorName.toUpperCase()) {
+            case "AQUA BLUE":
+                if (getRecordAtCalendar.getAttribute("style").contains("rgb(176, 206, 225)")) {
+                    flag = true;
+                }
+                break;
+            case "TEAL GREEN":
+                if (getRecordAtCalendar.getAttribute("style").contains("rgb(158, 234, 182)")) {
+                    flag = true;
+                }
+                break;
+            case "TURQUOISE":
+                if (getRecordAtCalendar.getAttribute("style").contains("rgb(167, 244, 243)")) {
                     flag = true;
                 }
                 break;

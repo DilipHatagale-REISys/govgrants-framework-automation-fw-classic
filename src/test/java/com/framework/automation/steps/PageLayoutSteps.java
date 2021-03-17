@@ -758,4 +758,9 @@ public class PageLayoutSteps {
     public void iSeeTextDisplayedInFormatInsideCKEditor(String value, String textFormat) {
         pageLayoutPage.assertTextFormattingInsideCKEditorInputBox(value,textFormat);
     }
+
+    @Then("I see {string} record is displayed in {string} color inside calendar")
+    public void iSeeRecordIsDisplayedInColorInsideCalendar(String record, String colorName) {
+        pageLayoutPage.isRecordDisplayedInExpectedColorAtCalendar(record,colorName);
+    }
 }
