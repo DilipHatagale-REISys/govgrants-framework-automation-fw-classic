@@ -789,3 +789,67 @@ Business Need: Calender Config Component Scenarios
     And I click on "Next" navigation button at calendar
     And I click on "Today" Button at calendar
     Then I see today's Date is displayed with light pink background at calendar
+
+  @127657    @verifyAdminUserCanSeeProgramIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
+  Scenario: validate admin User is able to see program ID in aqua blue color at month wise calendar-HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue                                      | filterId         |
+      | Calender Config       | Date Fields | govgrants_config:DefaultDateFieldsJsonAtCalendarConfig | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName   | fieldNewValue                                      | coreComponentField   |
+      | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtCalendarConfig | Grantor_Home_Program |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    Then I see "PG-755-0222 (DateandTime)" record is displayed in "aqua blue" color inside calendar
+
+  @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
+  Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName     | fieldOrignalValue                                                  | coreComponentField              | filterId         |
+      | Calender Config                          | Date Fields   | govgrants_config:DefaultDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active     | false                                                              | Annoucement Profile-Sole Source | ApiGeneratedId:1 |
+      | Calender Config                          | Filter Clause | <filterClause>                                                     | Grantor_Home_Announcement       | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName     | fieldNewValue                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Calender Config:General                  | Date Fields   | govgrants_config:NewDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       |                           |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active     | true                                                           | Annoucement Profile-Sole Source | Name                      | PBD-9244                   |
+      | Calender Config:General                  | Filter Clause |                                                                | Grantor_Home_Announcement       |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Non-NC-Sole Source"
+    When I click on "Edit" icon for "Non-NC-Sole Source" inside table
+    When I enter value "0" into field "AnnouncementAvailableDateTime__c"
+    When I click on "Save" in the page details
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    Then I see "AN-9832-070 (Test Date Time)" record is displayed in "teal green" color inside calendar
+
+    Examples:
+      | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
+      | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
+
+  @127667    @verifySPIUserCanSeeProgramIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
+  Scenario: validate SPI User is able to see program ID in aqua blue color at month wise calendar-HomePhase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I click toggle button to select "Draft Grants"
+    When I perform quick search for "Test Data DND"
+    When I click on "Edit" icon for "Test Data DND" inside table
+    When I enter value "0" into field "ProjectPeriodStartDate__c"
+    When I enter value "365" into field "ProjectPeriodEndDate__c"
+    When I click on "Save" in the page details
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    Then I see "GT-GT6OC-001(Test Date Time)" record is displayed in "turquoise" color inside calendar
