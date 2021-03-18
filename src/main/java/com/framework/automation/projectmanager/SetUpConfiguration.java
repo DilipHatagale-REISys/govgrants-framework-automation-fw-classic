@@ -128,6 +128,9 @@ public class SetUpConfiguration {
             case "PAGE MESSAGE CONFIG":
                 stringPayload = new PageLayout().setPageMessageConfig(fieldLabel, value, filterClause);
                 break;
+            case "ERROR MESSAGE CONFIG":
+                stringPayload = new ErrorMessageConfig().setErrorMessageConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

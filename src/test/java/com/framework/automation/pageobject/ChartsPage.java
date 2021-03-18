@@ -26,14 +26,6 @@ public class ChartsPage extends GovGrantsManager {
         return By.xpath("//div[@id='" + chartId + "']//*[local-name()='path'][contains(@class,'" + chartsType + "')]");
     }
 
-    public void assertChartTitleDisplayed(String usage, String title) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isChartTitleDisplayed(title));
-        } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isChartTitleDisplayed(title));
-        }
-    }
-
     /**
      * If correct text is displayed in enhanced charts for Y-Axix level on hover
      *
@@ -53,16 +45,6 @@ public class ChartsPage extends GovGrantsManager {
         }
     }
 
-    /**
-     * @param chartName
-     */
-    public void assertChartLegendNotDisplayed(String usage, String chartName) {
-        if (usage.contains("not")) {
-            Assert.assertFalse(isChartLegendNotDisplayed(chartName));
-        } else {
-            Assert.assertTrue(isChartLegendNotDisplayed(chartName));
-        }
-    }
 
     /**
      * If correct text is displayed in xhart. like xaxis label and prefix
@@ -221,40 +203,6 @@ public class ChartsPage extends GovGrantsManager {
 
 
     /********* "Local Methods with complete functionality - private" ******/
-
-    /**
-     * If correct chart title is displayed
-     *
-     * @param title
-     * @return true
-     */
-    private boolean isChartTitleDisplayed(String title) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.cssSelector("div#charts [title='" + title + "']"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * If chart legends not displayed
-     *
-     * @param title
-     * @return true
-     */
-    private boolean isChartLegendNotDisplayed(String title) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.cssSelector("div#" + title + "Id .highcharts-legend"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
 
     /**
      * return true if expected text is present only once in chart

@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
@@ -404,7 +405,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
-        I.amPerforming().getElementReference().of(ByUsing.xpath("//button[" + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName) + "]")).click();
+        I.amPerforming().getElementReference().of(ByUsing.xpath("//button[" + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName) + "] |" +
+                "//a[text()='" + buttonName + "']")).click();
     }
 
     /**
@@ -1607,14 +1609,22 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if record label displayed in an expected color at calendar
-     *
      * @param record
      * @param colorName
+     * @return true if record label displayed in an expected color at calendar
      * @author ashwini.mahore
      */
     public void isRecordDisplayedInExpectedColorAtCalendar(String record, String colorName) {
         Assert.assertTrue(isRecordDisplayedInAnExpectedColorAtCalendar(record, colorName));
+    }
+
+    /**
+     * @param monthName
+     * @return true if is expected month is displayed at calendar by click at prev/next arrow
+     * @author ashwini.mahore
+     */
+    public void isAcceptedMonthIsDisplayed(String monthName) {
+        Assert.assertTrue(isAcceptedMonthIsDisplayedAtCalender(monthName));
     }
 
     /**
@@ -3335,17 +3345,16 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if record label displayed in an expected color at calendar
-     *
      * @param record
      * @param colorName
+     * @return true if record label displayed in an expected color at calendar
      * @author ashwini.mahore
      */
     public Boolean isRecordDisplayedInAnExpectedColorAtCalendar(String record, String colorName) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getRecordAtCalendar =I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='"+record+"']/ancestor::td[@class='fc-event-container']//a"));
-
+        WebElement getRecordAtCalendar = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='" + record + "']/ancestor::td[@class='fc-event-container']//a"));
+        System.out.println(getRecordAtCalendar.getAttribute("style"));
         switch (colorName.toUpperCase()) {
             case "AQUA BLUE":
                 if (getRecordAtCalendar.getAttribute("style").contains("rgb(176, 206, 225)")) {
@@ -3362,7 +3371,37 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+            case "WHITE":
+                if (getRecordAtCalendar.getAttribute("style").contains("rgb(255, 255, 255)")) {
+                    flag = true;
+                }
+                break;
         }
         return flag;
     }
+
+
+    /**
+     * @return true if is expected month is displayed at calendar by click at prev/next arrow
+     *
+     * @param monthName
+     * @author ashwini.mahore
+     */
+    public Boolean isAcceptedMonthIsDisplayedAtCalender(String monthName) {
+        boolean flag = false;
+        String getMonthDisplayedAtCalendar = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'calendarDateAlignCenter')]//h2")).getText();
+        YearMonth current = YearMonth.now();
+        String previousMonths = current.minusMonths(1).format(DateTimeFormatter.ofPattern("MMMM yyyy"));
+        String nextMonths = current.plusMonths(1).format(DateTimeFormatter.ofPattern("MMMM yyyy"));
+        try {
+            if (monthName.equalsIgnoreCase("Previous") && previousMonths.equalsIgnoreCase(getMonthDisplayedAtCalendar)) {
+                flag = true;
+            } else if (monthName.equalsIgnoreCase("Next") && nextMonths.equalsIgnoreCase(getMonthDisplayedAtCalendar)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }
