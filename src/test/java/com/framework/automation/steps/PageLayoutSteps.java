@@ -763,4 +763,9 @@ public class PageLayoutSteps {
     public void iSeeRecordIsDisplayedInColorInsideCalendar(String record, String colorName) {
         pageLayoutPage.isRecordDisplayedInExpectedColorAtCalendar(record,colorName);
     }
+
+    @Then("I see {string} month is displayed")
+    public void iSeeMonthIsDisplayed(String monthName) {
+        pageLayoutPage.isAcceptedMonthIsDisplayed(monthName);
+    }
 }

@@ -6202,3 +6202,49 @@ Business Need: Page Layout Component Scenarios
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I click modal button "Save"
     Then I see "Edit" modal window with id "ProgramBudgetPeriodmodalDiv" is not displayed
+
+  @129075    @verifyErrorMessageWithSpecialCharactersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
+  Scenario Outline: verify error message with special characters is displayed at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Error Message Config  | Message   | <defaultMessage>  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue                   | coreComponentField                            |
+      | Error Message Config:General | Message   | Test Automation Error Message @ | An Approver is a required field for a program |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:TestProgramErrorMessageDnd}"
+    When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    Then I see the following messages in the page details contains:
+      | Test Automation Error Message @ |
+
+    Examples:
+      | defaultMessage                                                                                                         |
+      | 'Roles And Responsibility' Section Under 'Roles' Tab: A Program Approver Is Required To Be Associated With The Program |
+
+  @129099    @verifyErrorMessageWithNumbersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
+  Scenario Outline: verify error message with numbers are displayed at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Error Message Config  | Message   | <defaultMessage>  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
+      | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:TestProgramErrorMessageDnd}"
+    When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    Then I see the following messages in the page details contains:
+      | Test Automation Error Message 123 |
+
+    Examples:
+      | defaultMessage                                                                                                         |
+      | 'Roles And Responsibility' Section Under 'Roles' Tab: A Program Approver Is Required To Be Associated With The Program |

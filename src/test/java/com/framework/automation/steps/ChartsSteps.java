@@ -47,16 +47,6 @@ public class ChartsSteps {
         chartsPage.assertTitleOfModal(usage, titleName);
     }
 
-    @Then("^I (see|do not see) \"([^\"]*)\" displayed as chart title$")
-    public void assertDisplayedChartTitle(String usage, String title) {
-        chartsPage.assertChartTitleDisplayed(usage, title);
-    }
-
-    @Then("^I (see|do not see) chart legends are displayed for chart/enhanced Charts \"([^\"]*)\"$")
-    public void assertChartLegendsNotDisplayed(String usage, String chartName) {
-        chartsPage.assertChartLegendNotDisplayed(usage, chartName);
-    }
-
     @Then("^I (see|Softly see| do not see|Softly do not see) \"([^\"]*)\" at axis \"([^\"]*)\" for chart \"([^\"]*)\"$")
     public void assertSpecificTextForChart(String usage, String label, String axisName, String chartName) {
         chartsPage.assertCorrectTextDisplayed(usage, label, axisName, chartName);

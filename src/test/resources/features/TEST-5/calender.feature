@@ -840,16 +840,162 @@ Business Need: Calender Config Component Scenarios
       | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
       | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
 
-  @127667    @verifySPIUserCanSeeProgramIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
-  Scenario: validate SPI User is able to see program ID in aqua blue color at month wise calendar-HomePhase
+  @127667    @verifySPIUserCanSeeGrantIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
+  Scenario: validate SPI User is able to see grant ID in turquoise color at month wise calendar-HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue                                             | coreComponentField | filterId         |
+      | Calender Config       | Date Fields | govgrants_config:DefaultDateFieldsJsonAtGrantorCalendarConfig |                    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName   | fieldNewValue                                             | coreComponentField   | CoreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtGrantorCalendarConfig | Recipient_Home_Grant |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Manage Grants, Awards, Amendments" subheader on left panel
     And I click toggle button to select "Draft Grants"
     When I perform quick search for "Test Data DND"
     When I click on "Edit" icon for "Test Data DND" inside table
     When I enter value "0" into field "ProjectPeriodStartDate__c"
     When I enter value "365" into field "ProjectPeriodEndDate__c"
     When I click on "Save" in the page details
+    And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "GT-GT6OC-001(Test Date Time)" record is displayed in "turquoise" color inside calendar
+    Then I see "GT-GT6OC-001 (Test Date Time)" record is displayed in "turquoise" color inside calendar
+
+  @127666    @verifySPIUserCanSeeGrantIdInWhiteColorAtMonthWiseCalendarIfChangedColorCodeFromConfig-HomePhase
+  Scenario: validate SPI User is able to see grant ID in white color at month wise calendar if color code changed from config -HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue                                             | filterId         |
+      | Calender Config       | Date Fields | govgrants_config:DefaultDateFieldsJsonAtGrantorCalendarConfig | ApiGeneratedId:0 |
+      | Calender Config       | Color Code  | #a7f4f3                                                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName   | fieldNewValue                                             | coreComponentField   |
+      | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtGrantorCalendarConfig | Recipient_Home_Grant |
+      | Calender Config:General | Color Code  | #FFFFFF                                                   | Recipient_Home_Grant |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Manage Grants, Awards, Amendments" subheader on left panel
+    And I click toggle button to select "Draft Grants"
+    When I perform quick search for "Test Data DND"
+    When I click on "Edit" icon for "Test Data DND" inside table
+    When I enter value "0" into field "ProjectPeriodStartDate__c"
+    When I enter value "365" into field "ProjectPeriodEndDate__c"
+    When I click on "Save" in the page details
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    Then I see "GT-GT6OC-001 (Test Date Time)" record is displayed in "white" color inside calendar
+
+  @89805  @verifyByClickAtMoreOptionAllProgramRecordsDisplayedAtMonthlyCalendar
+  Scenario: validate by click at more option, all program records are displayed in month wise calendar
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "{Framework_recordUsed:programForCalendar2}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "{Framework_recordUsed:programForCalendar3}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "{Framework_recordUsed:programForCalendar4}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "{Framework_recordUsed:programForCalendar5}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "{Framework_recordUsed:programForCalendar6}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "ID" as "savedValue1"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program created for calendar2" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I save the field labeled "ID" as "savedValue2"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program created for calendar3" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I save the field labeled "ID" as "savedValue3"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program created for calendar4" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I save the field labeled "ID" as "savedValue4"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program created for calendar5" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I save the field labeled "ID" as "savedValue6"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program created for calendar5" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I save the field labeled "ID" as "savedValue6"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on "+1 more" Button at calendar
+    Then I see the text :
+      | {SavedValue:savedValue1} (Start Date) |
+      | {SavedValue:savedValue2} (Start Date) |
+      | {SavedValue:savedValue3} (Start Date) |
+
+  @127478  @verifyByClickAtPreviousArrowPreviousMonthIsDisplayedInMonthWiseCalendar
+  Scenario: validate by click at previous arrow, previous month is displayed in month wise calendar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on "Previous" navigation button at calendar
+    Then I see "Previous" month is displayed
+
+  @127028  @verifyByClickAtPreviousArrowNextMonthIsDisplayedInMonthWiseCalendar
+  Scenario: validate by click at previous arrow, next month is displayed in month wise calendar
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on "Next" navigation button at calendar
+    Then I see "Next" month is displayed
+
+  @127059  @verifyByClickAtPreviousArrowPreviousMonthIsDisplayedInMonthWiseCalendarForSPIUser
+  Scenario: validate by click at previous arrow, previous month is displayed in month wise calendar at spi user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on "Previous" navigation button at calendar
+    Then I see "Previous" month is displayed
+
+  @134965  @verifyByClickAtPreviousArrowNextMonthIsDisplayedInMonthWiseCalendarForSPIUser
+  Scenario: validate by click at previous arrow, Next month is displayed in month wise calendar at spi user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on "Next" navigation button at calendar
+    Then I see "Next" month is displayed
