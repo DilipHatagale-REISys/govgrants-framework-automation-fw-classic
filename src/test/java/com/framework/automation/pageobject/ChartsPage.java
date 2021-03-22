@@ -45,27 +45,6 @@ public class ChartsPage extends GovGrantsManager {
         }
     }
 
-
-    /**
-     * If correct text is displayed in xhart. like xaxis label and prefix
-     *
-     * @param title
-     * @param chartName
-     * @param axisName
-     */
-    public void assertCorrectTextDisplayed(String usage, String title, String axisName, String chartName) {
-        WebElement prefixSuffixElement = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[local-name()='g'][contains(@class,'" + axisName + "')]//*[contains(text(),'" + title + "')]"));
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
-        } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
-        } else if (usage.equalsIgnoreCase("Softly see")) {
-            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isTrue();
-        } else if (usage.equalsIgnoreCase("Softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isFalse();
-        }
-    }
-
     /**
      * If formatting at x/y axis is displayed in xhart.
      *

@@ -917,7 +917,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar2" into field "ProgramName__c"
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     And I save the field labeled "ID" as "savedValue2"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -942,23 +942,26 @@ Business Need: Calender Config Component Scenarios
     When I enter value "Program created for calendar5" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
-    And I save the field labeled "ID" as "savedValue6"
+    And I save the field labeled "ID" as "savedValue5"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    When I enter value "Program created for calendar5" into field "ProgramName__c"
+    When I enter value "Program created for calendar6" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "ID" as "savedValue6"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    And I click on "+1 more" Button at calendar
+    And I click on "+4 more" Button at calendar
     Then I see the text :
       | {SavedValue:savedValue1} (Start Date) |
       | {SavedValue:savedValue2} (Start Date) |
       | {SavedValue:savedValue3} (Start Date) |
+      | {SavedValue:savedValue4} (Start Date) |
+      | {SavedValue:savedValue5} (Start Date) |
+      | {SavedValue:savedValue6} (Start Date) |
 
   @127478  @verifyByClickAtPreviousArrowPreviousMonthIsDisplayedInMonthWiseCalendar
   Scenario: validate by click at previous arrow, previous month is displayed in month wise calendar

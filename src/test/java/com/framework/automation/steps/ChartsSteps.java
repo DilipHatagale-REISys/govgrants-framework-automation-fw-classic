@@ -47,11 +47,6 @@ public class ChartsSteps {
         chartsPage.assertTitleOfModal(usage, titleName);
     }
 
-    @Then("^I (see|Softly see| do not see|Softly do not see) \"([^\"]*)\" at axis \"([^\"]*)\" for chart \"([^\"]*)\"$")
-    public void assertSpecificTextForChart(String usage, String label, String axisName, String chartName) {
-        chartsPage.assertCorrectTextDisplayed(usage, label, axisName, chartName);
-    }
-
     @Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\" comes only once$")
     public void assertSpecificTextRenderedOnceForChart(String text, String chartName) {
         chartsPage.assertExpectedTextDisplayedForOnce(text, chartName);
