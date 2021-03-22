@@ -5356,3 +5356,154 @@ Business Need: Logged Issues Scenarios
     And I refresh the page
     Then I see the text :
       | CollabFileTemp.pdf |
+
+  @130103    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsPlanningFilesTable
+  Scenario: validate that file attached to any record level post is displayed inside attachment tab at respective record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "captureModalFields.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+ #130103 upload file from collab - home phase
+    Then I softly see "captureModalFields.png" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "captureModalFields.png" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130103 file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see value "captureModalFields.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+ #130103 file is deleted from - home phase
+    Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "captureModalFields.png" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130103 file deleted from home phase comment is also gets removed from attachment tab-  record detail page
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @130105    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsCollabTab
+  Scenario: validate that file attached to any record level post is displayed inside collab tab at respective record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "captureModalFields.png" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+ #130105 uploaded file from collab is displayed at collab tab - home phase
+    Then I softly see "captureModalFields.png" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    Then I softly see "captureModalFields.png" inside flex table with id "collabContainer"
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+ #130105 file is deleted from - home phase
+    Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "captureModalFields.png" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130105 file/comment deleted from home phase comment is also gets removed from collab tab-  record detail page
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "captureModalFields.png" in "WorkspaceFiles" panel
+    Then I softly see "No Records Found" inside flex table with id "WorkspaceFiles"
+
+  @130107    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAndDownloadedFromRecordLevelCollab
+  Scenario: validate that file attached to any record level post is displayed and can be downloaded from record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "AttachmentTesting.pdf" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+ #130107 file is uploaded from home phase - my feed section
+    Then I softly see "AttachmentTesting.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "AttachmentTesting.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130107 file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see value "AttachmentTesting.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Download" icon for "AttachmentTesting.pdf" inside table
+    And I download the file
+ #130107 file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see "Creating a Core Service Area" on page "1" of "govgrants" pdf file
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+ #130107 file uploaded from home phase is deleted from - home phase my feed section
+    Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab

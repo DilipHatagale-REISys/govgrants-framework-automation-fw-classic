@@ -2018,7 +2018,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that show options select box is not displayed to SPI user at upload file modal
     Given I have "customMetaData" configuration as below:
       | id              | customMetaDataFullName | booleanValue | customSettingApiName |
-      | m031C000000XZY7 | ShowSharingPrivacy     | true        | KeyValueHolder__mdt  |
+      | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
     And I update custom metadata setting changes:
       | id              | customMetaDataFullName | booleanValue | customSettingApiName |
       | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
@@ -4207,3 +4207,137 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     Then I see information as "Maximum of 5 files can be selected." at files library upload modal
+
+  @129987 @validateThatMaximum5FilesCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  Scenario: Verify that maximum 5 files can be uploaded from upload file from library tab-  record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+ #129987 upload multiple file from home phase
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND1.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND2.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND3.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND4.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND5.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+ #129987 verify if multiple files can be uploaded
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "MultipleFileUploadDND" in "WorkspaceFiles" panel
+    When I check "MultipleFileUploadDND1.png,MultipleFileUploadDND2.png,MultipleFileUploadDND3.png,MultipleFileUploadDND4.png,MultipleFileUploadDND5.png" boxes in flex table with id "WorkspaceFiles"
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
+    When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadDND1.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND2.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND3.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND4.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND5.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+ #129987 delete uploaded file
+    When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND1.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND2.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND2.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND3.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND3.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND4.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND4.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND5.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND5.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @129988 @validateThatUserIsNotAbleToUploadMoreThan5FilesIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  Scenario: Verify that user is not able to upload more than 5 files from upload file from library tab-  record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+ #129988 upload multiple file from home phase
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND1.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND2.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND3.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND4.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND5.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "MultipleFileUploadDND6.png" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+ #129988 verify if only max 5 files can be uploaded at record detail
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "MultipleFileUploadDND" in "WorkspaceFiles" panel
+    And I select value inside table "WorkspaceFiles" is "10"
+    When I check "MultipleFileUploadDND1.png,MultipleFileUploadDND2.png,MultipleFileUploadDND3.png,MultipleFileUploadDND4.png,MultipleFileUploadDND5.png" boxes in flex table with id "WorkspaceFiles"
+    Then I softly see checkbox at "MultipleFileUploadDND6.png" is disabled
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
+    When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadDND1.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND2.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND3.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND4.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see value "MultipleFileUploadDND5.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+ #129988 delete all uploaded file from respective record
+    When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND1.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND2.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND2.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND3.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND3.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND4.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND4.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND5.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadDND5.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"

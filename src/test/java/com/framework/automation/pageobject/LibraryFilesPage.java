@@ -278,6 +278,17 @@ public class LibraryFilesPage extends GovGrantsManager {
         }
     }
 
+
+    /**
+     * return true if checkbox at file under upload file modal is disabled
+     *
+     * @param fileName
+     * @author ashwini.mahore
+     */
+    public void assertCheckboxAtFileIsDisabledAtUploadFileModal(String fileName) {
+        I.amPerforming().assertionsTo().assertThat(isCheckboxIsDisabledAtFileUploadModal(fileName)).isTrue();
+    }
+
     /**
      * get sharing options at upload file modal window - Library files Home phase/record level
      *
@@ -694,6 +705,25 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(.,'" + information + "')]"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if checkbox at file under upload file modal is disabled
+     *
+     * @param fileName
+     * @author ashwini.mahore
+     */
+    public Boolean isCheckboxIsDisabledAtFileUploadModal(String fileName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='WorkspaceFiles']//th//*[text()='" + fileName + "']/ancestor::tr[1]//input[(@type='checkbox' or @type='radio') and @disabled]"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {

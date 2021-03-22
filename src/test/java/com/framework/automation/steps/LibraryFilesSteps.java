@@ -139,4 +139,9 @@ public class LibraryFilesSteps {
     public void iSeeInformationAsAtFilesLibraryUploadModal(String usage, String information) {
         libraryFilesPage.assertInformationAtFilesUploadModal(usage, information);
     }
+
+    @Then("I softly see checkbox at {string} is disabled")
+    public void iSoftlySeeCheckboxAtIsDisabled(String fileName) {
+        libraryFilesPage.assertCheckboxAtFileIsDisabledAtUploadFileModal(fileName);
+    }
 }
