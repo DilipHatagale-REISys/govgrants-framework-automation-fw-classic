@@ -177,11 +177,6 @@ public class PageLayoutSteps {
         pageLayoutPage.clickRefreshButtonAtCollabPhase();
     }
 
-    @And("I click on {string} button at collab")
-    public void iClickOnButtonAtCollab(String buttonName) {
-        pageLayoutPage.clickOnButtonAtCollab(buttonName);
-    }
-
     @And("I click on {string} navigation button at calendar")
     public void iClickOnNavigationButtonAtCalendar(String buttonName) {
         pageLayoutPage.clickNavigationButtonAtCalendar(buttonName);

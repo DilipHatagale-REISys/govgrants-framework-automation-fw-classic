@@ -14,11 +14,6 @@ public class LibraryFilesSteps {
         libraryFilesPage = new LibraryFilesPage();
     }
 
-    @When("^I click on \"([^\"]*)\" icon at \"([^\"]*)\" modal under Library$")
-    public void clickOnCloseIconAtLibraryModal(String icon, String modalTitle) {
-        libraryFilesPage.clickOnCloseIconAtLibraryFolderFileModal(icon, modalTitle);
-    }
-
     @When("^I drag the \"([^\"]*)\" file from \"([^\"]*)\" folder and drop in \"([^\"]*)\" folder at library$")
     public void dragTheFileFromFolderAndDropInAnotherFolderAtLibrary(String fileName, String sourceFolderName, String targetFolderName) {
         libraryFilesPage.dragAndDropFileFromOneFolderToAnother(fileName,sourceFolderName,targetFolderName);
@@ -140,8 +135,8 @@ public class LibraryFilesSteps {
         libraryFilesPage.assertInformationAtFilesUploadModal(usage, information);
     }
 
-    @Then("I softly see checkbox at {string} is disabled")
-    public void iSoftlySeeCheckboxAtIsDisabled(String fileName) {
-        libraryFilesPage.assertCheckboxAtFileIsDisabledAtUploadFileModal(fileName);
+    @Then("^I softly see checkbox/radio button at \"([^\"]*)\" is disabled$")
+    public void iSoftlySeeCheckboxOrRadioButtonAtIsDisabled(String fileName) {
+        libraryFilesPage.assertCheckboxOrRadioButtonAtFileIsDisabledAtUploadFileModal(fileName);
     }
 }

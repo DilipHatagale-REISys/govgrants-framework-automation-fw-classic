@@ -5298,7 +5298,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
-  @129992  @validateThatOnlyOneFileCanBeUploadedFromCollabPhaseMyFeedSectionAtRecordLevelPost
+  @129992  @validateThatOnlyOneFileCanBeUploadedFromCollabPhaseMyFeedSectionAtRecordLevelPost @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that only one file can be uploaded on record level post from collab phase-My feed section
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5461,8 +5461,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "captureModalFields.png" in "WorkspaceFiles" panel
     Then I softly see "No Records Found" inside flex table with id "WorkspaceFiles"
 
-  @130107    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAndDownloadedFromRecordLevelCollab
-  Scenario: validate that file attached to any record level post is displayed and can be downloaded from record level
+  @129996    @verifyThatOnlySingleFileCanBeUploadedFromMyFeedSectionRecordLevelPost
+  Scenario: validate that use can attach single file from library tab at record post present at home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -5477,33 +5477,94 @@ Business Need: Logged Issues Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+ #129996 upload file from home phase - files list
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "actionsAtEgrid.png" into library with sharing
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
     And I navigate to "HOME" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
-    When I upload file "AttachmentTesting.pdf" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "actionsAtEgrid" in "WorkspaceFiles" panel
+    When I check "actionsAtEgrid.png" boxes in flex table with id "WorkspaceFiles"
+ #129996 after selecting one radio button all others set to false/disabled
+    Then I softly see checkbox/radio button at "actionsAtEgrid1.png" is disabled
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
- #130107 file is uploaded from home phase - my feed section
-    Then I softly see "AttachmentTesting.pdf" inside flex table with id "---program:-:myFeedTableId---"
+ #129996 only single file is uploaded from home phase - my feed section
+    Then I softly see "actionsAtEgrid.png" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "AttachmentTesting.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
- #130107 file uploaded from home phase is displayed inside attachment tab - record detail
-    Then I softly see value "AttachmentTesting.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
-    When I click on "Download" icon for "AttachmentTesting.pdf" inside table
-    And I download the file
- #130107 file uploaded from home phase is displayed inside attachment tab - record detail
-    Then I softly see "Creating a Core Service Area" on page "1" of "govgrants" pdf file
+    When I perform quick search for "actionsAtEgrid.png" in "---program:-:PlanningFilesFlexGridId---" panel
+ #129996 single file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see value "actionsAtEgrid.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "HOME" tab
     And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
- #130107 file uploaded from home phase is deleted from - home phase my feed section
+ #129996 single file uploaded from home phase is deleted from - home phase my feed section
+    Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+
+  @130109    @verifyThatOnlySingleFileCanBeUploadedFromMyFeedSectionRecordLevelPost
+  Scenario: validate that use can attach single file from library tab at record post present at home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+ #130109 upload file from home phase - files list
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "actionsAtEgrid.png" into library with sharing
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "actionsAtEgrid" in "WorkspaceFiles" panel
+    When I check "actionsAtEgrid.png" boxes in flex table with id "WorkspaceFiles"
+ #130109 after selecting one radio button all others set to false/disabled
+    Then I softly see checkbox/radio button at "actionsAtEgrid1.png" is disabled
+    When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+ #130109 only single file is uploaded from home phase - my feed section
+    Then I softly see "actionsAtEgrid.png" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "actionsAtEgrid" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130109 single file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see value "actionsAtEgrid.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search for "actionsAtEgrid.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "actionsAtEgrid.png" inside table
+    When I click "Yes" on modal confirmation box
+    Then I softly see the following messages in the page details :
+     | File actionsAtEgrid.png deleted successfully. |
+    And I navigate to "HOME" tab
+ #130109 single file deleted from record level is deleted from - home phase my feed section
     Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab

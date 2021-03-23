@@ -2771,3 +2771,63 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click modal button "OK"
     And I refresh the page
     Then I softly do not see "Collab temp" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+
+  @130107    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAndDownloadedFromRecordLevelCollab
+  Scenario: validate that file attached to any record level post is displayed and can be downloaded from record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I upload file "AttachmentTesting.pdf" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+ #130107 file is uploaded from home phase - my feed section
+    Then I softly see "AttachmentTesting.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "AttachmentTesting.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+ #130107 file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see value "AttachmentTesting.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Download" icon for "AttachmentTesting.pdf" inside table
+    And I download the file
+ #130107 file uploaded from home phase is displayed inside attachment tab - record detail
+    Then I softly see "Creating a Core Service Area" on page "1" of "govgrants" pdf file
+    And I navigate to "HOME" tab
+    And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+ #130107 file uploaded from home phase is deleted from - home phase my feed section
+    Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+
+  @113190 @validateThatSPIUserCanDownloadFormDataTablePDFAtApplicationPhase
+  Scenario: Verify that SPI user can download form data table pdf at application phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableFormEnhancedTable"
+    And I select "Download as PDF" from parallel lines dropdown of "All Forms"
+    And I download the file
+    Then I see "General Application Form" on page "1" of "govgrants" pdf file

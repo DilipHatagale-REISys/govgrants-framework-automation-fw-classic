@@ -280,13 +280,13 @@ public class LibraryFilesPage extends GovGrantsManager {
 
 
     /**
-     * return true if checkbox at file under upload file modal is disabled
+     * return true if checkbox or radio button at file under upload file modal is disabled
      *
      * @param fileName
      * @author ashwini.mahore
      */
-    public void assertCheckboxAtFileIsDisabledAtUploadFileModal(String fileName) {
-        I.amPerforming().assertionsTo().assertThat(isCheckboxIsDisabledAtFileUploadModal(fileName)).isTrue();
+    public void assertCheckboxOrRadioButtonAtFileIsDisabledAtUploadFileModal(String fileName) {
+        I.amPerforming().assertionsTo().assertThat(isCheckboxOrRadioButtonIsDisabledAtFileUploadModal(fileName)).isTrue();
     }
 
     /**
@@ -308,16 +308,6 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public By dropdownOptionAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
         return By.xpath("//*[text()='" + libraryFileFolderName + "']//parent::div//*[text()='" + dropDownOption + "']");
-    }
-
-    /**
-     * perform click on close icon under add new folder/Edit Folder/upload File modal at library - home phase
-     *
-     * @param icon
-     * @param modalTitle
-     */
-    public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
-        I.amPerforming().click().on(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[(@aria-hidden)]//*[contains(normalize-space(text()),'" + icon + "')]"));
     }
 
     /**
@@ -715,15 +705,16 @@ public class LibraryFilesPage extends GovGrantsManager {
 
 
     /**
-     * return true if checkbox at file under upload file modal is disabled
+     * return true if checkbox or radio button at file under upload file modal is disabled
      *
      * @param fileName
      * @author ashwini.mahore
      */
-    public Boolean isCheckboxIsDisabledAtFileUploadModal(String fileName) {
+    public Boolean isCheckboxOrRadioButtonIsDisabledAtFileUploadModal(String fileName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='WorkspaceFiles']//th//*[text()='" + fileName + "']/ancestor::tr[1]//input[(@type='checkbox' or @type='radio') and @disabled]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='WorkspaceFiles']//th//*[text()='" + fileName + "']/ancestor::tr[1]//input[(@type='checkbox' or @type='radio') and @disabled] " +
+                    "| //div[@id='WorkspaceFiles']//*[text()='" + fileName + "']/ancestor::tr[@aria-selected='false']"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {
