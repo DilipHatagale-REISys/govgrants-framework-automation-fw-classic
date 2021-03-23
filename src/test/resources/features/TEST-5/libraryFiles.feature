@@ -4315,7 +4315,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "MultipleFileUploadDND" in "WorkspaceFiles" panel
     And I select value inside table "WorkspaceFiles" is "10"
     When I check "MultipleFileUploadDND1.png,MultipleFileUploadDND2.png,MultipleFileUploadDND3.png,MultipleFileUploadDND4.png,MultipleFileUploadDND5.png" boxes in flex table with id "WorkspaceFiles"
-    Then I softly see checkbox at "MultipleFileUploadDND6.png" is disabled
+    Then I softly see checkbox/radio button at "MultipleFileUploadDND6.png" is disabled
     When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
     When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see value "MultipleFileUploadDND1.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"

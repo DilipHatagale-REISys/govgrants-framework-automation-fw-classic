@@ -887,16 +887,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click on button at collab - my feed section
-     *
-     * @param buttonName
-     */
-    public void clickOnButtonAtCollab(String buttonName) {
-        WebElement getButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//a[text()='" + buttonName + "']"));
-        I.amPerforming().click().on(getButtonAtCollabPhase);
-    }
-
-    /**
      * click on previous/next icon at calendar component
      *
      * @param buttonName
