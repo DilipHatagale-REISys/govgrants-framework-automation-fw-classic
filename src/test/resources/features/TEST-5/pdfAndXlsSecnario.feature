@@ -2831,3 +2831,80 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "All Forms"
     And I download the file
     Then I see "General Application Form" on page "1" of "govgrants" pdf file
+
+  @79765    @validateHiddenValuesInChildLevelFlexTableIsDisplayedOnUIAndInsidePDF-MEGrid
+  Scenario: validate hidden values/masked values are displayed on ui and in pdf at child flex table me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                    | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtApplicationBudgetCategoryFlexTable | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+ # @79765 masked value displayed under downloaded pdf
+    Then I softly see that "*****" has been added in flextable with Id "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I softly see "*****" on page "1" of "govgrants" pdf file
+
+  @118057    @validateSubTotalIsDisplayedForHiddenValuesInChildFlexTableLevelFlexTableIsDisplayedOnUIAndInsidePDF-MEGrid
+  Scenario: validate total at hidden values are displayed on ui and in pdf at child flex table me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Hide Columns |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                           | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtTotalAtApplicationBudgetCategoryFlexTable | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I softly see that "$569430.00" has been added in flextable with Id "---program:-:applicationBudgetCategoryFlexGridTableId---"
+ # @118057 total value displayed under downloaded pdf
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I softly see "$569,430.00" on page "1" of "govgrants" pdf file
+
+  @118093    @validateSubTotalIsDisplayedForHiddenValuesInParentFlexTableLevelFlexTableIsDisplayedOnUIAndInsidePDF-MEGrid
+  Scenario Outline: validate total at hidden values are displayed on ui and in pdf at parent flex table me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Hide Columns        |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:2 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                    | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetParentTableMEGrid | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                                   | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Enable Total        | true                                                             | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
+      | Flex Table:General    | Enable Total Row    | true                                                             | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I softly see "$0.00" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |

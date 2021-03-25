@@ -248,7 +248,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void assertSharingOptionsDisplayedAtFileUploadModal(String usuage, String sharingOption) {
         if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isSharingOptionsDisplayedAtFileUploadModal(sharingOption));
+            I.amPerforming().assertionsTo().assertThat(isSharingOptionsDisplayedAtFileUploadModal(sharingOption)).isTrue();
         } else if (usuage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isSharingOptionsDisplayedAtFileUploadModal(sharingOption)).isFalse();
         }

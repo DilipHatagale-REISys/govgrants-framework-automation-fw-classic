@@ -1508,6 +1508,17 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see "Value" as "Department of Children health" inside mini page layout
 
+  @106402    @validateUserCanEnterDateManuallyAtAdvanceFilterAtFlexTable
+  Scenario: validate user can enter date manually at Advance filter at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Equals to | 09/16/2020 |
+    Then I see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

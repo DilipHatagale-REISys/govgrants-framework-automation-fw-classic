@@ -1429,8 +1429,12 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param modalTitle
      * @author ashwini.mahore
      */
-    public void assertLoadingIconAtModalWindow(String modalTitle) {
-        Assert.assertTrue(isLoadingIconDisplayedAtModalWindow(modalTitle));
+    public void assertLoadingIconAtModalWindow(String usage, String modalTitle) {
+        if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isLoadingIconDisplayedAtModalWindow(modalTitle));
+        } else if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLoadingIconDisplayedAtModalWindow(modalTitle));
+        }
     }
 
     /**
@@ -2938,6 +2942,8 @@ public class PageLayoutPage extends GovGrantsManager {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         try {
             if (I.amPerforming().getElementReference().of(ByUsing.xpath("//p[text()='" + modalTitle + "']/parent::div/following-sibling::div/div[@class='modalLoadIcon']")).getAttribute("style").contains("none")) {
+                flag = false;
+            } else if (I.amPerforming().getElementReference().of(ByUsing.xpath("//p[text()='" + modalTitle + "']/parent::div/following-sibling::div//img[@id='govGrantsPleaseWaitHolderId']")).isDisplayed()) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3372,9 +3378,8 @@ public class PageLayoutPage extends GovGrantsManager {
 
 
     /**
-     * @return true if is expected month is displayed at calendar by click at prev/next arrow
-     *
      * @param monthName
+     * @return true if is expected month is displayed at calendar by click at prev/next arrow
      * @author ashwini.mahore
      */
     public Boolean isAcceptedMonthIsDisplayedAtCalender(String monthName) {

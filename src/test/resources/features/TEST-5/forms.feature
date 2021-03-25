@@ -795,3 +795,79 @@ Business Need: Forms Component Scenarios
     Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
     Then I softly do not see dropdown with selected value as "General Application Budget Form" at form layout
     Then I softly do not see dropdown with selected value as "General Application Form" at form layout
+
+  @135993 @verifyThatByClickOnViewActionAtBusinessFormsItShouldGetOpensInNewTab-gApplications
+  Scenario:validate business form is getting opens in new tab by click on view action on it
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see new tab is opened
+
+  @135994 @verifyHelpTextIsDisplayedByClickOnViewActionAtBusinessForms-gApplications
+  Scenario:validate help text at page block is displayed at business form by click on view action on it
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I hovering mouse on help text icon inside "APPLICANTS ORGANIZATION INFORMATION"
+    Then I see "This section displays the information about applicants organization details." shown as help text
+
+  @135995 @verifyThatByClickOnViewActionAtBusinessFormsOnlyPageBlockTitlesShouldDisplayWithTheBlockDetails-gApplications
+  Scenario:validate at business form View, page block titles should display with the block details fields
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I softly see "PROJECT INFORMATION" page block displayed
+    Then I softly see field "Demo_Title" inside page block
+    Then I softly see field "AP-755-213" inside page block
+
+  @135996 @verifyThatByClickOnViewActionAtBusinessFormsBothTheStaticAndDynamicTextDisplayed-gApplications
+  Scenario:validate at business form view,both the static and dynamic text displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see the text :
+      | I hereby certify that the information provided above is accurate and complete. |
+      | Acknowledgement:                                                               |
+      | Bob Samuela                                                                    |
+
+  @135997 @verifyThatByClickOnViewActionAtBusinessFormsThenTableWithAllRecordsDisplayed-gApplications
+  Scenario:validate at business form view,table with records displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    Then I softly see value "ASA-1327" for title "Name" inside table "inlineEditGridApplicationBudgetCategoriesbyBudgetPeriodForm"
+    Then I softly see "Budget Details" page block displayed
+
+  @135998 @verifyThatByClickOnViewActionAtBusinessFormsCancelAndSaveAcionsNotDisplayedBytEditAndBackDisplayed-gApplications1
+  Scenario:validate at business form view cancel, save actions are not displayed but back and edit displayed at form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I softly do not see "Cancel" button is displayed
+    Then I softly see "Edit" button is displayed
+    Then I softly do not see "Save" button is displayed
+    Then I softly see "Back" button is displayed

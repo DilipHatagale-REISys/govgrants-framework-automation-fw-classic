@@ -4341,3 +4341,42 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @136660 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
+  Scenario: Verify that 'visible to internal users with Record access' is not Displayed for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
+
+  @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel
+  Scenario: Verify that 'visible to internal users with Record access' is not Displayed at edit file for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestFileSharing.docx" inside table
+ #136661 verify if sharing option is not displayed to external user
+    Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
+    When I click on "×" icon at "File Edit" modal under Library
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+ #136661 verify if record is not displayed to external user
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
