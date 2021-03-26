@@ -659,9 +659,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertHelpTextAtVisualIndicator(helpText);
     }
 
-    @Then("I do not see loading icon at {string} modal")
-    public void iDoNotSeeLoadingIconAtModal(String modalTitle) {
-        pageLayoutPage.assertLoadingIconAtModalWindow(modalTitle);
+    @Then("^I (see|do not see) loading icon at \"([^\"]*)\" modal$")
+    public void iDoNotSeeLoadingIconAtModal(String usage, String modalTitle) {
+        pageLayoutPage.assertLoadingIconAtModalWindow(usage, modalTitle);
     }
 
     @Then("^I softly see (title|value) at miniPageLayout is displayed as bold and left aligned$")
@@ -731,7 +731,7 @@ public class PageLayoutSteps {
 
     @Then("^I softly see \"([^\"]*)\" as \"([^\"]*)\" inside mini page layout$")
     public void iSoftlySeeBelowTextInsideMiniPageLayout(String displayType, String value) {
-            pageLayoutPage.assertTypeAndTextInsideMiniPageLayout(displayType, value);
+        pageLayoutPage.assertTypeAndTextInsideMiniPageLayout(displayType, value);
     }
 
     @Then("I see {string} field is rendered as rich text area in page edit mode")
@@ -751,12 +751,12 @@ public class PageLayoutSteps {
 
     @Then("I see {string} displayed in {string} format inside CK editor")
     public void iSeeTextDisplayedInFormatInsideCKEditor(String value, String textFormat) {
-        pageLayoutPage.assertTextFormattingInsideCKEditorInputBox(value,textFormat);
+        pageLayoutPage.assertTextFormattingInsideCKEditorInputBox(value, textFormat);
     }
 
     @Then("I see {string} record is displayed in {string} color inside calendar")
     public void iSeeRecordIsDisplayedInColorInsideCalendar(String record, String colorName) {
-        pageLayoutPage.isRecordDisplayedInExpectedColorAtCalendar(record,colorName);
+        pageLayoutPage.isRecordDisplayedInExpectedColorAtCalendar(record, colorName);
     }
 
     @Then("I see {string} month is displayed")

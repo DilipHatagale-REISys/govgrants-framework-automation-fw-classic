@@ -2631,3 +2631,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I hover mouse on lookup link "Department of Higher Education" at table
     And I pause execution for "4" seconds
     Then I softly see "Value" as "755" inside mini page layout
+
+  @82799    @validateLoadingIconIsDisplayedAtTmpActiveGrantsGridModalWindowAtEnhancedGridTopLevelAction
+  Scenario: validate loading icon is displayed at TmpActiveGrantsGrid modal window at enhancedGrid top level action
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Create" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see loading icon at "TmpActiveGrantsGrid" modal
