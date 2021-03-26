@@ -1431,9 +1431,9 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertLoadingIconAtModalWindow(String usage, String modalTitle) {
         if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isLoadingIconDisplayedAtModalWindow(modalTitle));
+            I.amPerforming().assertionsTo().assertThat(isLoadingIconDisplayedAtModalWindow(modalTitle)).isFalse();
         } else if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isLoadingIconDisplayedAtModalWindow(modalTitle));
+            I.amPerforming().assertionsTo().assertThat(isLoadingIconDisplayedAtModalWindow(modalTitle)).isTrue();
         }
     }
 
