@@ -6248,3 +6248,273 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | defaultMessage                                                                                                         |
       | 'Roles And Responsibility' Section Under 'Roles' Tab: A Program Approver Is Required To Be Associated With The Program |
+
+  @136938    @verifyDisplayOfMissingFieldMessageIfReqForSaveFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save picklist field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-2600                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @136938 verify that picklist field is hidden on the basis of program type field value
+    Then I softly see "Program Sub Type" is not displayed inside page block detail
+    When I click on "Save" in the page details
+ # @136938 verify that req field message is not displayed for hidden picklist field
+    Then I cannot see the following message in the page details contains:
+      | Program Sub Type is required to save under Overview. |
+
+  @137275    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save date field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9171                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137275 verify that date field is hidden on the basis of program type field value
+    Then I softly see "Published date" is not displayed inside page block detail
+    When I click on "Save" in the page details
+ # @137275 verify that req field message is not displayed for hidden date field
+    Then I cannot see the following message in the page details contains:
+      | Published date is required to save under Overview. |
+
+  @137281    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save URL field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantee State Program | Name                      | PBD-9222                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137281 verify that URL field is hidden on the basis of program type field value
+    Then I softly see "URL" is not displayed inside page block detail
+    When I click on "Save" in the page details
+ # @137281 verify that req field message is not displayed for hidden URL field
+    Then I cannot see the following message in the page details contains:
+      | URL is required to save under Overview. |
+
+  @137282    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save currency field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-9159                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137282 verify that currency field is hidden on the basis of program type field value
+    Then I softly see "Funded Amount" is not displayed inside page block detail
+    When I click on "Save" in the page details
+ # @137282 verify that req field message is not displayed for hidden currency field
+    Then I cannot see the following message in the page details contains:
+      | Funded Amount is required to save under Overview. |
+
+  @137283    @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save percent field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantee State Program | Name                      | PBD-9165                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137283 verify that percent field is hidden on the basis of program type field value
+    Then I softly see "Percent" is not displayed inside page block detail
+    When I click on "Save" in the page details
+ # @137283 verify that req field message is not displayed for hidden percent field
+    Then I cannot see the following message in the page details contains:
+      | Percent is required to save under Overview. |
+
+  @137286    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save time field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9167                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137286 verify that Time field is hidden on the basis of program type field value
+    Then I softly cannot see field "Time" inside page block
+    When I click on "Save" in the page details
+ # @137286 verify that req field message is not displayed for hidden Time field
+    Then I cannot see the following message in the page details contains:
+      | Time is required to save under Overview. |
+
+  @137288    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save Date and Time field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-9166                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137288 verify that Date/Time field is hidden on the basis of program type field value
+    Then I softly cannot see field "DateandTime" inside page block
+    When I click on "Save" in the page details
+ # @137288 verify that req field message is not displayed for hidden Date/Time field
+    Then I cannot see the following message in the page details contains:
+      | DateandTime is required to save under Overview. |
+
+  @137289    @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save Number field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantee State Program | Name                      | PBD-9161                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137289 verify that Number field is hidden on the basis of program type field value
+    Then I softly cannot see field "Number" inside page block
+    When I click on "Save" in the page details
+ # @137289 verify that req field message is not displayed for hidden Number field
+    Then I cannot see the following message in the page details contains:
+      | Number is required to save under Overview. |
+
+  @137290    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save lookup field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantee State Program | Name                      | PBD-3178                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137290 verify that lookup field is hidden on the basis of program type field value
+    Then I softly cannot see field "Owner Organization" inside page block
+    When I click on "Save" in the page details
+ # @137290 verify that req field message is not displayed for hidden lookup field
+    Then I cannot see the following message in the page details contains:
+      | Owner Organization is required to save under Overview. |
+
+  @137291    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSON
+  Scenario: verify missing field msg is not displayed if req for save text field is hidden using hide field json
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9162                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+ # @137291 verify that text field is hidden on the basis of program type field value
+    Then I softly cannot see field "Title" inside page block
+    When I click on "Save" in the page details
+ # @137291 verify that req field message is not displayed for hidden text field
+    Then I cannot see the following message in the page details contains:
+      | Title is required to save under Overview. |
