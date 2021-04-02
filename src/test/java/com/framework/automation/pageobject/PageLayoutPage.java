@@ -503,6 +503,16 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().click().on(getCollabSidebarMenu);
     }
 
+
+    /**
+     * close lightning modal
+     *
+     * @author ashwini.mahore
+     */
+    public void closeLightningModal() {
+        I.amPerforming().click().on(ByUsing.xpath("//a[@class='dialogClose']"));
+    }
+
     /**
      * select value from radio buttons at form layout
      *
@@ -866,7 +876,7 @@ public class PageLayoutPage extends GovGrantsManager {
             By getLookupLink = ByUsing.xpath("//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']//following-sibling::div//tr[1]//span[contains(text(),'" + lookupLink + "')]");
             I.amPerforming().click().on(getLookupLink);
         } else {
-            I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')]"));
+            I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')] | //div[@class='listBody']//span[text()='"+lookupLink+"']"));
         }
     }
 
