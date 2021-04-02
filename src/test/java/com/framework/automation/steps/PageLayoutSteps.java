@@ -157,6 +157,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnCollabSidebarMenu(menu);
     }
 
+    @And("I close lightning modal")
+    public void iCloseLightningModal() {
+        pageLayoutPage.closeLightningModal();
+    }
+
     @And("^I enter value \"([^\"]*)\" in the (post|comment) at collab$")
     public void iEnterValueInThePostAtMyFeedSection(String postOrComment, String sharingType) {
         pageLayoutPage.enterValueInsidePostOrCommentCollab(postOrComment, sharingType.equalsIgnoreCase("post"));

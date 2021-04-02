@@ -5658,9 +5658,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
     When I perform quick search for "Test Automation Application DND"
     When I click on "Edit1" icon for "Test Automation Application DND" inside table
     Then I see the following page detail buttons :
@@ -5755,7 +5754,6 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -5777,7 +5775,6 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -5793,7 +5790,7 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -6518,3 +6515,263 @@ Business Need: Page Layout Component Scenarios
  # @137291 verify that req field message is not displayed for hidden text field
     Then I cannot see the following message in the page details contains:
       | Title is required to save under Overview. |
+
+  @137783    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save text field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | PBD-9247                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | PBD-9247                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137783 verify that text field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Ann Group Code" inside page block
+    And I click modal button "Continue"
+ # @137783 verify that req field message is not displayed for hidden text field
+    Then I cannot see the following message in the page details contains:
+      | Ann Group Code is required to save under Overview. |
+
+  @137799    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save lookup field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-9248                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-9248                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137799 verify that lookup field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Program Approver" inside page block
+    And I click modal button "Continue"
+ # @137799 verify that req field message is not displayed for hidden lookup field
+    Then I cannot see the following message in the page details contains:
+      | Program Approver is required to save under Overview. |
+
+  @137803    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save currency field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9249                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9249                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137803 verify that currency field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Expected Total Award Amount" inside page block
+    And I click modal button "Continue"
+ # @137803 verify that req field message is not displayed for hidden currency field
+    Then I cannot see the following message in the page details contains:
+      | Expected Total Award Amount is required to save under Overview. |
+
+  @137807    @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save number field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-9250                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-9250                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137807 verify that number field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Expected Number of Awards" inside page block
+    And I click modal button "Continue"
+ # @137807 verify that req field message is not displayed for hidden number field
+    Then I cannot see the following message in the page details contains:
+      | Expected Number of Awards is required to save under Overview. |
+
+  @137815    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                            | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                        | Announcement Create - Grantor | Name                      | PBD-9251                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                     | Announcement Create - Grantor | Name                      | PBD-9251                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137815 verify that URL field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "External Announcement URL" inside page block
+    And I click modal button "Continue"
+ # @137815 verify that req field message is not displayed for hidden URL field
+    Then I cannot see the following message in the page details contains:
+      | External Announcement URL is required to save under Overview. |
+
+  @137818    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | PBD-9252                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | PBD-9252                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137818 verify that URL field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "FOA Publication Date" inside page block
+    And I click modal button "Continue"
+ # @137818 verify that req field message is not displayed for hidden URL field
+    Then I cannot see the following message in the page details contains:
+      | FOA Publication Date is required to save under Overview. |
+
+  @137821    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9253                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9253                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137821 verify that picklist field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Fiscal Year" inside page block
+    And I click modal button "Continue"
+ # @137821 verify that req field message is not displayed for hidden picklist field
+    Then I cannot see the following message in the page details contains:
+      | Fiscal Year is required to save under Overview. |
+
+  @137825    @verifyDisplayOfMissingFieldMessageIfReqForSaveCheckboxFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save checkbox field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCheckboxFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9254                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9254                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137825 verify that Checkbox field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Funding Plan Created" inside page block
+    And I click modal button "Continue"
+ # @137825 verify that req field message is not displayed for hidden Checkbox field
+    Then I cannot see the following message in the page details contains:
+      | Funding Plan Created is required to save under Overview. |
+
+  @137829    @verifyDisplayOfMissingFieldMessageIfReqForSaveDate/TimeFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save date/time field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9255                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9255                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137829 verify that date/time field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Letter Of Intent Due Date Time" inside page block
+    And I click modal button "Continue"
+ # @137829 verify that req field message is not displayed for hidden date/time field
+    Then I cannot see the following message in the page details contains:
+      | Letter Of Intent Due Date Time is required to save under Overview. |
+
+  @137835    @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSONOnModal
+  Scenario: verify missing field msg is not displayed on modal if req for save percent field is hidden using hide field json
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                            | Announcement Create - Grantor | Name                      | PBD-9256                   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                         | Announcement Create - Grantor | Name                      | PBD-9256                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+ # @137835 verify that percent field is hidden on the basis of announcement type field value
+    Then I softly cannot see field "Sub Recipient Match %" inside page block
+    And I click modal button "Continue"
+ # @137835 verify that req field message is not displayed for hidden percent field
+    Then I cannot see the following message in the page details contains:
+      | Sub Recipient Match % is required to save under Overview. |

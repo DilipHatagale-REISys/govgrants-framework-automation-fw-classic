@@ -669,3 +669,14 @@ Business Need: history Component Scenarios
     When I enter advance filter values inside id "advfHistory"
       | Changed Field | Equals to | Primary Applicant |
     Then I see value "Primary Applicant" for title "Changed Field" inside table "---program:-:historyTableId---"
+
+  @132112    @verifyHistoryTableIsDisplayedAtAccountStandardObject
+  Scenario: verify history table is present on account standard object
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to url "https://ggptest5-dev-ed.my.salesforce.com/001"
+    And I close lightning modal
+    And I click on lookup link "ABC"
+    When I navigate to "History" sub tab
+    Then I see expected table with id "toggleFlexTableHistory"
