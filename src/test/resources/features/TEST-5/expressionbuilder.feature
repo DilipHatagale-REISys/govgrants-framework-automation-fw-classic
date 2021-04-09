@@ -2320,8 +2320,8 @@ Business Need: Expression Builder Component Scenarios
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN_StateasGrantor_PM | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal" content inside "Activities" subheader on left panel
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "view" icon for "Test Announcement For Automation" inside table
     Then I do not see "Program Information" page block displayed
@@ -7466,12 +7466,10 @@ Business Need: Expression Builder Component Scenarios
   @117405  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridChildTable @enhancedGrid
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid child table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON       |                   | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
@@ -7553,7 +7551,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see "12.00%" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
-      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @83342    @hideExpressioJsonToHideActionAtAttachementExtensionObjectTableUsingUserTypeAsInternal
@@ -7803,9 +7801,9 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
       | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingGroup | NewAttachmentUndo  | Name                      | Edit                       |
-      | Flex Table Action     | Enable Parent Hide Logic | true                                                                         | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                              | NewAttachmentUndo  | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7823,9 +7821,9 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
       | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                | fieldNewValue                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideActionsAtAttachmentExtensionObjectUsingProfileNotInSystemAdministrator | NewAttachmentUndo  | Name                      | Edit                       |
-      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                     | NewAttachmentUndo  | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                        | NewAttachmentUndo  | Name                      | Edit                       |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

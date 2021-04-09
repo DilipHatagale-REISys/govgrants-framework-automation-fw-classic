@@ -503,7 +503,6 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().click().on(getCollabSidebarMenu);
     }
 
-
     /**
      * close lightning modal
      *
@@ -876,7 +875,7 @@ public class PageLayoutPage extends GovGrantsManager {
             By getLookupLink = ByUsing.xpath("//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']//following-sibling::div//tr[1]//span[contains(text(),'" + lookupLink + "')]");
             I.amPerforming().click().on(getLookupLink);
         } else {
-            I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')] | //div[@class='listBody']//span[text()='"+lookupLink+"']"));
+            I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')] | //div[@class='listBody']//span[text()='" + lookupLink + "']"));
         }
     }
 
@@ -1629,6 +1628,15 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void isAcceptedMonthIsDisplayed(String monthName) {
         Assert.assertTrue(isAcceptedMonthIsDisplayedAtCalender(monthName));
+    }
+
+
+    /**
+     * @return true if is external user registration page displayed
+     * @author ashwini.mahore
+     */
+    public void iSeeExternalUserRegistrationPageDisplayed() {
+        I.amPerforming().assertionsTo().assertThat(isExternalUserRegistrationPageDisplayed()).isTrue();
     }
 
     /**
@@ -3182,6 +3190,7 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement getAlertMessageBackgroundColor = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'alert alert-warning')]"));
+        System.out.println(getAlertMessageBackgroundColor.getAttribute("style"));
         WebElement getAlertMessageText = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'alert alert-warning')]//span[text()='" + desiredMessage + "']"));
         switch (colorName.toUpperCase()) {
             case "BLUE":
@@ -3263,7 +3272,8 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isRichTextAreaFieldDisplayedInsidePageDetail(String fieldName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))
+                    || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3409,4 +3419,19 @@ public class PageLayoutPage extends GovGrantsManager {
         return flag;
     }
 
+
+    /**
+     * @return true if is external user registration page displayed
+     * @author ashwini.mahore
+     */
+    public Boolean isExternalUserRegistrationPageDisplayed() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'bs external-login-page')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

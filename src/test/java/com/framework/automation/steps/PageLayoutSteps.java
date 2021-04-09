@@ -768,4 +768,9 @@ public class PageLayoutSteps {
     public void iSeeMonthIsDisplayed(String monthName) {
         pageLayoutPage.isAcceptedMonthIsDisplayed(monthName);
     }
+
+    @Then("I see external user registration page displayed")
+    public void iSeeExternalUserRegistrationPageDisplayed() {
+        pageLayoutPage.iSeeExternalUserRegistrationPageDisplayed();
+    }
 }

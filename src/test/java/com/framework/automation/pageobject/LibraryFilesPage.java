@@ -290,17 +290,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * get sharing options at upload file modal window - Library files Home phase/record level
-     *
-     * @param sharingOptions
-     * @author ashwini.mahore
-     */
-    public WebElement getSharingOptionsAtUploadFileModalUnderLibrary(String sharingOptions) {
-        By selectValueFromDropdown = By.xpath("//select[@name='SharingOptions']//option[text()='" + sharingOptions + "']");
-        return I.amPerforming().getElementReference().of(selectValueFromDropdown);
-    }
-
-    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName
@@ -354,23 +343,13 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * perform click on sharing options under upload file modal window - home/record level
-     *
-     * @param sharingOptions
-     * @author ashwini.mahore
-     */
-    public void selectSharingOptionsFromDropDownAtUploadFileModal(String sharingOptions) {
-        I.amPerforming().click().on(getSharingOptionsAtUploadFileModalUnderLibrary(sharingOptions));
-    }
-
-    /**
      * perform click on expand icon at flex table
      *
      * @param tableHeader
      * @author ashwini.mahore
      */
     public void clcikOnTableHeaderToExpand(String tableHeader) {
-        By flexTableExpandCollapseIconSelector = ByUsing.xpath("//*[@title='" + tableHeader + "']//span[contains(@class,'fa-caret-down')] | //*[text()='" + tableHeader + "']/..//span[contains(@class,'fa-caret-up')]");
+        By flexTableExpandCollapseIconSelector = ByUsing.xpath("//*[@title='" + tableHeader + "']//span[contains(@class,'fa-caret-down')] | //*["+I.amPerforming().sanityOfXpathTo().equals(".",tableHeader)+"]/..//span[contains(@class,'fa-caret-up')]");
         I.amPerforming().click().on(flexTableExpandCollapseIconSelector);
     }
 
@@ -661,7 +640,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isSharingOptionsDisplayedAtFileUploadModal(String sharingOption) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(getSharingOptionsAtUploadFileModalUnderLibrary(sharingOption))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().libraryFiles().getSharingOptionsAtUploadFileModalUnderLibrary(sharingOption))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

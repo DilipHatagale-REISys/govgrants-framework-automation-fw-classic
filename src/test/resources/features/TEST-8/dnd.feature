@@ -148,8 +148,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "USA"
-    And I expand table with header "NGO Programs"
-    Then I see "No Records Found" inside flex table with id "---program:-:programSearchFlexTableID---"
+    Then I do not see value "IND" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               |
@@ -669,7 +668,7 @@ Business Need: dnd Component Scenarios
     When I click on global search and select "Programs"
     When I perform quick search inside global search "USA"
     Then I softly do not see value "USA" for title "DND_Formula_Text" inside table "---program:-:programSearchFlexTableID---"
-    Then I softly see value "US" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+    Then I softly see value "USA" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     | dndCriteria                                     |
