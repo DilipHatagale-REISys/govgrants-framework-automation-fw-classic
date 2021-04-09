@@ -1636,7 +1636,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void iSeeExternalUserRegistrationPageDisplayed() {
-        Assert.assertTrue(isExternalUserRegistrationPageDisplayed());
+        I.amPerforming().assertionsTo().assertThat(isExternalUserRegistrationPageDisplayed()).isTrue();
     }
 
     /**
