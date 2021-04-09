@@ -17,7 +17,8 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "TPA01" shown as over view title in header "Program"
+    Then I see the header is "Program" in the page details
+    Then I see the sub-header is "TPA01" in the page details
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -2039,7 +2040,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I click on top right button "New" in flex table with id "---program:-:ActiveGrantsTableId---"
+    And I click on top right button "New" in flex table with id "ActiveGrants"
     And I enter value "Test Automation Grants Record" into field "fieldProjectTitle__c"
     And I enter value "Test" into field "fieldGrantAbbreviation__c"
     And I click modal button "Continue"
@@ -5095,7 +5096,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see below message at page detail in "Red" color:
+    Then I see below message at page detail in "RED" color:
       | TEST PAGE BLOCK WARNING MSG DND |
 
   @128515    @verifyErrorMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInPurpleColor
@@ -5598,6 +5599,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
+    And I enter value "Test" into field "fieldObjectives__c"
     And I clear the value from field "fieldObjectives__c"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Italic" inside CK editor
@@ -5620,6 +5622,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
+    And I enter value "Test" into field "fieldObjectives__c"
     And I clear the value from field "fieldObjectives__c"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Strike Through" inside CK editor
@@ -5641,6 +5644,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
+    And I enter value "Test" into field "fieldObjectives__c"
     And I clear the value from field "fieldObjectives__c"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Bold" inside CK editor
@@ -5815,6 +5819,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
+    And I enter value "Grant" into field "ProgramType__c"
     When I click dropdown field "fieldProgramSubType__c"
     Then I see only the following ordered options in dropdown field "fieldProgramSubType__c" :
       | Project Grants  |
@@ -5937,9 +5942,9 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
-    Then I softly see field "StartDate__c" is disabled
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see field "StartDate__c" is disabled
 
   @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide date, text and picklist from Overview page block using picklist field value in edit mode

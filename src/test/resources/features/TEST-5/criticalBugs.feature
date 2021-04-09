@@ -572,7 +572,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
-    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
+    When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "FOA--114" inside table
     When I click on "Menu" in the page details

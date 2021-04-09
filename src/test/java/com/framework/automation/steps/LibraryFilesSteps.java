@@ -36,12 +36,6 @@ public class LibraryFilesSteps {
         libraryFilesPage.clickOnDropdownOptionsAtLibraryFolderFile(dropDownOption, libraryFileFolderName);
     }
 
-    @Description("Select sharing option from dropdown under upload file modal window")
-    @When("I select sharing option as {string} at upload file modal")
-    public void iSelectSharingOptionAtUploadFileModal(String sharingOptions) {
-        libraryFilesPage.selectSharingOptionsFromDropDownAtUploadFileModal(sharingOptions);
-    }
-
     @And("I expand table with header {string}")
     public void iExpandTableWithHeader(String tableHeader) {
         libraryFilesPage.clcikOnTableHeaderToExpand(tableHeader);

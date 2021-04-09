@@ -768,6 +768,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field          | Value |
+      | Rich Text Area | Test  |
     And I clear value from "Section 1" page block :
       | Field          |
       | Rich Text Area |
@@ -3297,16 +3300,16 @@ Business Need: dynamic forms Component Scenarios
       | Written |       |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
-      | Number is Required to save under Section 1.               |
-      | Percent is Required to save under Section 1.              |
-      | Written is Required to save under Section 1.              |
+      | Number is Required to save under Section 1.  |
+      | Percent is Required to save under Section 1. |
+      | Written is Required to save under Section 1. |
 
   @96512   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioAndDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide and checkbox field as disabled on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
-      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:0 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:1 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
@@ -3315,8 +3318,8 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue                                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Number                                                                                                                     | CI-0023            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentWrittenPicklistRadioAndDisableCheckboxFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                                     | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                                                                   | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                                                    | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                                                    | CI-0018            |                           |                            |
