@@ -486,7 +486,9 @@ Business Need: Side bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I pause execution for "3" seconds
     When I hover mouse on lookup link "Data table enhanced record"
+    And I pause execution for "3" seconds
     Then I see "Data table enhanced record" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
 
   @126111    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfProgramIsSelected

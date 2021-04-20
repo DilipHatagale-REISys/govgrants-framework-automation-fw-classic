@@ -916,12 +916,14 @@ Business Need: Approval Process Component Scenarios
   Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Approve Email Template | ApiGeneratedId:1  | ApiGeneratedId:2 |
+      | Approval Process Steps Cache | Approve Email Template | ApiGeneratedId:0  | ApiGeneratedId:2 |
+      | Page Tabs Config             | Is Active              | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName              | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
-      | Approval Process Steps Cache:General | Approve Email Template | ApiGeneratedId:2                | Program_Manager_Approver        |                           |                            |
+      | Approval Process Steps Cache:General | Approve Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantee State Program           | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

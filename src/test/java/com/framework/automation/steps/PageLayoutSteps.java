@@ -32,11 +32,6 @@ public class PageLayoutSteps {
         pageLayoutPage.clickPageBlockDetailParticularElement();
     }
 
-    @When("^I hovering mouse on help text icon inside \"([^\"]*)\"$")
-    public void getHelpTextIconsAtPageBlock(String blockTitle) {
-        pageLayoutPage.getHelpTextAtPageBlock(blockTitle);
-    }
-
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
     public void textAreaFieldAtEditAttachment(String enteredValue) {
         pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue);

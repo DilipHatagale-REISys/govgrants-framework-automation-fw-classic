@@ -1490,7 +1490,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
     When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
     When I switch to tab number "1"
-    Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
+    Then I see the sub-header is "APP1- FOA for DHP" in the page details
+    Then I see the header is "Application" in the page details
 
   @71513    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedLineCharts
   Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced Line chart - enhanced view
@@ -1508,8 +1509,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
     When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
     When I switch to tab number "1"
-    Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
-
+    Then I see the sub-header is "APP1- FOA for DHP" in the page details
+    Then I see the header is "Application" in the page details
 
   @71735    @validateAll-axisPrefix-gGrants-EnhancedAreaSplineCharts
   Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside grants phase for Enhanced Area splineCharts-gGrants
@@ -1778,7 +1779,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
     When I click on "View" icon for "AR-0142" inside flex table with id "---program:-:EnhancedSplineModalID---"
     When I switch to tab number "1"
-    Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
+    Then I see the sub-header is "This is the test application for IE 11" in the page details
+    Then I see the header is "Amendment Request" in the page details
 
   @71928    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedSplineCharts
   Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - enhanced view
@@ -1796,7 +1798,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
     When I click on "View" icon for "AR-0142" inside flex table with id "---program:-:EnhancedSplineModalID---"
     When I switch to tab number "1"
-    Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
+    Then I see the sub-header is "This is the test application for IE 11" in the page details
+    Then I see the header is "Amendment Request" in the page details
 
   @71930    @validateEditDataTableQueryforAllDataFieldFromBurgerMenuIcon-gGrants-EnhancedSplineCharts
   Scenario Outline: Validate expected column from Enhanced spline chart modal(show all data from enhanced view icon) displayed/Not displayed - burger menu
