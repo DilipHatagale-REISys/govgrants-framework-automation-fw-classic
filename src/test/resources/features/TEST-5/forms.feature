@@ -289,6 +289,7 @@ Business Need: Forms Component Scenarios
     Then I select below checkbox options for field "Multi-Picklist Field"
       | Display 1 |
     When I click on "Save" in the page details
+    And I pause execution for "3" seconds
     Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage

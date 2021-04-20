@@ -343,8 +343,8 @@ Business Need: security review Scenarios
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Activities" subheader on left panel
     And I click toggle button to select "Pre-Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationForAutomation}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationForAutomation}" inside table
+    When I perform quick search for "{Framework_recordUsed:Pre-ApplicationForAutomation}"
+    When I click on "View" icon for "{Framework_recordUsed:Pre-ApplicationForAutomation}" inside table
     Then I see "Pre-Application" shown as over view header
 
   @107549   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenPreApplicationsTableOpened
@@ -615,6 +615,7 @@ Business Need: security review Scenarios
     When I navigate to "Overview" sub tab
     And I enter value "5000" into field "FundedAmount__c"
     And I click on "Save" in the page details
+    And I pause execution for "3" seconds
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -2673,7 +2674,6 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Notified" and is "green"
     When I click on "Conduct" in the page details
     Then I softly see status in Progress-bar is "In Progress" and is "green"
-
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel

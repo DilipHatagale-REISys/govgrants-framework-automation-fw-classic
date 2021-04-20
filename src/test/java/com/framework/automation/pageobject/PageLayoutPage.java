@@ -571,15 +571,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click on help text inside program information page block
-     *
-     * @param blockTitle
-     */
-    public void getHelpTextAtPageBlock(String blockTitle) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"));
-    }
-
-    /**
      * get Edit Button inside menu without waiting for presence.
      *
      * @return
@@ -1681,7 +1672,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isOverViewTitleWithHeaderDisplayed(String overViewHeaderName, String overViewTitleName) {
         boolean flag = false;
         if ((I.amPerforming().actionToGet().text(overViewHeader).contains(overViewHeaderName))
-                && (I.amPerforming().actionToGet().text(overViewTitle).contains(overViewTitleName))) {
+                && ((I.amPerforming().actionToGet().text(overViewHeader).contains(overViewTitleName))
+                || I.amPerforming().actionToGet().text(overViewTitle).contains(overViewTitleName))) {
             flag = true;
         }
         return flag;

@@ -697,7 +697,7 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description                           | name                |
       | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
     When I navigate to "Planning" tab
-    When I pause execution for "180" seconds
+    When I pause execution for "185" seconds
     Then I see "" "<Logout_URL>" page is displayed
     Examples:
       | Logout_URL                                |

@@ -17,8 +17,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see the header is "Program" in the page details
-    Then I see the sub-header is "TPA01" in the page details
+    Then I see "TPA01" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -4283,6 +4282,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Department of Community Health"
+    And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
@@ -4329,6 +4329,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "Framework QA" in "toggleFlexTableProgramContacts" panel
     When I hover mouse on lookup link "Framework QA" at table
+    And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
@@ -4360,6 +4361,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hover mouse on lookup link "AN-343-020"
+    And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
@@ -4495,6 +4497,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I hover mouse on lookup link "AN-343-020"
+    And I pause execution for "3" seconds
     Then I softly see "Title" shown inside mini page layout on hover
     Then I softly see "Test Announcement For Automation" shown inside mini page layout on hover
 
@@ -4507,6 +4510,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I hover mouse on lookup link "AN-343-020"
+    And I pause execution for "3" seconds
     Then I see mini page layout value is displayed in normal text with "500" font-weight
 
   @125232  @VerifyMiniPageLayoutShouldDisplayedWithGreyBackgrounfOnMouseHoverAtSidebarLinks
@@ -4518,6 +4522,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I hover mouse on lookup link "AN-343-020"
+    And I pause execution for "3" seconds
     Then I see mini page layout background is in grey color
 
   @112159  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtPageLayout
@@ -5353,6 +5358,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Christine GGPTEST5" at table
+    And I pause execution for "3" seconds
     Then I softly see "title" as "Christine GGPTEST5" inside mini page layout
 
   @132859  @verifyCurrencyFieldIsDisplayedAtEnhancedFlexEditLayout
@@ -5717,6 +5723,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit1" icon for "Test Automation Application DND" inside table
     When I navigate to "Overview" sub tab
     When I hover mouse on lookup link "AN-603-055"
+    And I pause execution for "3" seconds
     Then I softly see "title" as "AN-603-055" inside mini page layout
 
   @133024  @verifyDataTableIsDisplayedAtEnhancedFlexEditLayoutForSPIUser
@@ -5726,7 +5733,7 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
+      | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -5822,8 +5829,13 @@ Business Need: Page Layout Component Scenarios
     And I enter value "Grant" into field "ProgramType__c"
     When I click dropdown field "fieldProgramSubType__c"
     Then I see only the following ordered options in dropdown field "fieldProgramSubType__c" :
-      | Project Grants  |
-      | Research Grants |
+      | --None--         |
+      | Project Grants   |
+      | Research Grants  |
+      | Formula Grants   |
+      | Block Grant      |
+      | Earmark Grant    |
+      | Emergency Grants |
 
   @133727  @verifyContinueActionAtCreateAnnouncementModalWindow
   Scenario: validate continue action at create announcement modal window
@@ -5937,13 +5949,13 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantee State Program | Name                      | PBD-9162                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     Then I see field "StartDate__c" is disabled
 
   @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode

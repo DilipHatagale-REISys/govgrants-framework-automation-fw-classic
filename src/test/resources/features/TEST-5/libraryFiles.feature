@@ -1734,7 +1734,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I Select/Change Folder as "Library-Folder 1 DND" in add file modal
     When I click on "Save" button in send email modal
-    When I pause execution for "3" seconds
+    When I pause execution for "4" seconds
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -2017,11 +2017,11 @@ Business Need: Library Files Component Scenarios
   @101113 @validateThatShowOptionsSectionIsNotDisplayedForSPIUser-HomePhase
   Scenario: Verify that show options select box is not displayed to SPI user at upload file modal
     Given I have "customMetaData" configuration as below:
-      | id              | customMetaDataFullName | booleanValue | customSettingApiName |
-      | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
+      | id                 | customMetaDataFullName | booleanValue | customSettingApiName |
+      | m031C000000XZY7QAO | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
     And I update custom metadata setting changes:
-      | id              | customMetaDataFullName | booleanValue | customSettingApiName |
-      | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
+      | id                 | customMetaDataFullName | booleanValue | customSettingApiName |
+      | m031C000000XZY7QAO | ShowSharingPrivacy     | false        | KeyValueHolder__mdt  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -2423,8 +2423,8 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "Files"
-    When I perform quick search inside global search "RecordLevelDuplicateFile.pdf"
-    Then I see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search inside global search "ProgramRecordDoNotDelete.png"
+    Then I see value "ProgramRecordDoNotDelete.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @106618 @validateThatUserCanSearchFilesInGlobalSearchUnderAllTableByLoginAsPMUser-HomePhase
   Scenario: Verify that if file name is searched in global search-All table then, it is displayed in files table by PM user
@@ -2432,8 +2432,8 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "All"
-    When I perform quick search inside global search "RecordLevelDuplicateFile.pdf"
-    Then I see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search inside global search "ProgramRecordDoNotDelete.png"
+    Then I see value "ProgramRecordDoNotDelete.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @106622 @validateThatUserCanSearchPhaseLevelFilesInGlobalSearchUnderFilesTableByLoginAsPMUser-HomePhase
   Scenario: Verify that if phase level file name is searched in global search-Files table then, it is displayed in files table by PM user
@@ -2991,8 +2991,8 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122172 @validateThatFileNameUploadedByInternalUserShouldNotBeDeletedByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
-  Scenario: Verify that if file uploaded by internal user should not be deleted by  admin user when sharing option as "Visible to Anyone With Record Access"
+  @122172 @validateThatFileNameUploadedByInternalUserShouldBeDeletedByAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
+  Scenario: Verify that if file uploaded by internal user should be deleted by  admin user when sharing option as "Visible to Anyone With Record Access"
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3010,7 +3010,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
-  #122172 - file is not deleted by admin user
+  #122172 - file is  deleted by admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3020,19 +3020,6 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestFileSharing.docx" inside table
     When I click "Yes" on modal confirmation box
-    Then I softly see the following messages in the page details :
-      | insufficient access rights on object id |
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
-    And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
-    When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
-    When I click "Yes" on modal confirmation box
-    When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122182 @validateThatFileNameUploadedByInternalUserShouldNotDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
@@ -3467,8 +3454,8 @@ Business Need: Library Files Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
@@ -3484,8 +3471,8 @@ Business Need: Library Files Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
@@ -3494,15 +3481,15 @@ Business Need: Library Files Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Announcement"
-    When I click on "View" icon for "Test Announcement" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestFileSharing.docx" inside table

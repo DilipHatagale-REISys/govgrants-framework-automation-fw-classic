@@ -603,6 +603,7 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "AttachmentTesting.pdf" in send email modal
     When I upload attachment "TestAutomation.txt" in send email modal
     When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
+    And I pause execution for "3" seconds
     Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
 
   @90397 @validateDisplayOfRequiredFieldvalidationMessageInSendEmailModal @sendEmail
