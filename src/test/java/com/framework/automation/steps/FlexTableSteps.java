@@ -218,11 +218,6 @@ public class FlexTableSteps {
         flexTablePage.assertTextMessageOnConfirmationAlert(message);
     }
 
-    @Then("^I see table with header \"([^\"]*)\" contains records \"([^\"]*)\"$")
-    public void assertMultipleRecordsInsideTable(String flexTableHeader, String recordsName) {
-        flexTablePage.assertExpectedRecordsInsideTable(flexTableHeader, recordsName);
-    }
-
     @Then("^I see take snap shot getting saved with \"([^\"]*)\"$")
     public void assertTakeSnapshotGettingSaved(String text) {
         flexTablePage.assertTakeSnapshotFunctionalityWorkingCorrectly(text);
