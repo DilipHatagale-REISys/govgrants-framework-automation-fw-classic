@@ -46,11 +46,6 @@ public class SideBarSteps {
         sidebarPage.assertAccordianContentSequence(accordianHeaderName, Integer.parseInt(number), headerName);
     }
 
-    @Then("^I see \"([^\"]*)\" in new tab$")
-    public void assertNewTabOpensForAccordionContent(String pageTitle) {
-        sidebarPage.assertAccordionContentWithNewTab(pageTitle);
-    }
-
     @Then("^I see sidebar sub menu has light grey background colour$")
     public void assertSidebarSubMenuHasBackgroundColour() {
         sidebarPage.asserSidebarBackgroundColor();

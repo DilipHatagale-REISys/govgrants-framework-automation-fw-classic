@@ -454,15 +454,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if expected multiple record inside table is displayed
-     *
-     * @param recordsName
-     */
-    public void assertExpectedRecordsInsideTable(String flexTableHeader, String recordsName) {
-        Assert.assertTrue(isExpectedRecordsDisplayedInsideTable(flexTableHeader, recordsName.split(",")));
-    }
-
-    /**
      * return true if actions are aligned at flex table
      */
     public void assertActionsAreAlignedAtAttachment() throws IOException {
@@ -869,27 +860,6 @@ public class FlexTablePage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
-    }
-
-    /**
-     * return true if expected records displayed inside table
-     *
-     * @param recordsName
-     * @return
-     */
-    private boolean isExpectedRecordsDisplayedInsideTable(String flexTableHeader, String... recordsName) {
-        Boolean isRecordsDisplayed = false;
-        for (String expectedRecords : recordsName) {
-            if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm a").withLocale(Locale.US)));
-                I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
-                isRecordsDisplayed = true;
-            } else {
-                I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
-                isRecordsDisplayed = true;
-            }
-        }
-        return isRecordsDisplayed;
     }
 
     /**

@@ -74,15 +74,6 @@ public class SideBarPage extends GovGrantsManager {
     }
 
     /**
-     * assert if accordion content open in new tab or not
-     *
-     * @param Pagetitle
-     */
-    public void assertAccordionContentWithNewTab(String Pagetitle) {
-        Assert.assertTrue(isNewTabOpens(Pagetitle));
-    }
-
-    /**
      * assert sidebar background color
      */
     public void asserSidebarBackgroundColor() {
@@ -174,26 +165,6 @@ public class SideBarPage extends GovGrantsManager {
             return true;
         } else
             return false;
-    }
-
-    /**
-     * Boolean status of Accordion Content opens in another tab
-     *
-     * @param pageTitle:
-     * @return
-     */
-    private Boolean isNewTabOpens(String pageTitle) {
-        ArrayList<String> tabHandles = new ArrayList<String>(I.amPerforming().switchTo().getWindowsHandlers());
-        boolean myNewTabFound = false;
-        for (int index = 0; index < tabHandles.size(); index++) {
-            I.amPerforming().switchTo().windowHandler(index);
-            I.amPerforming().waitFor().makeThreadSleep(2000);
-            if (I.amPerforming().browserOperationsTo().getPageTitle().equalsIgnoreCase(pageTitle)) {
-                myNewTabFound = true;
-                break;
-            }
-        }
-        return myNewTabFound;
     }
 
     /**
