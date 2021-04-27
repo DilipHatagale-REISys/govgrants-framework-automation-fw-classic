@@ -5348,7 +5348,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "Secretary of Health" inside table
     When I perform quick search for "Henry PM" in "toggleFlexTableContactsByAccount" panel
     When I click on "send invitation" icon for "Henry PM" inside table
-    When I enter value "qateamrei@yopmail.com" into field "Cc" on send email modal
+    When I enter value "qateamrei@yopmail.com" into field "{testData:CcField}" on send email modal
     When I upload file "CollabFileTemp.pdf" into library
     When I click modal button "Send"
     And I checkout to yopmail with mailid "qateamrei@yopmail.com"
