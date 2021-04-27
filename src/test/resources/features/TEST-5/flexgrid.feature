@@ -2612,12 +2612,16 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     When I perform quick search for "GT-MAC-1-001"
     When I hover mouse on lookup link "Secretary of Education" at grid
+    And I pause execution for "3" seconds
     Then I softly see "title" as "Secretary of Education" inside mini page layout
     And I refresh the page
     When I perform quick search for "GT-MAC-1-001"
+    And I pause execution for "3" seconds
     When I hover mouse on lookup link "Secretary of Education" at grid
+    And I pause execution for "3" seconds
     Then I softly see "Label" as "Code" inside mini page layout
     And I refresh the page
     When I perform quick search for "GT-MAC-1-001"
     When I hover mouse on lookup link "Secretary of Education" at grid
+    And I pause execution for "3" seconds
     Then I softly see "Value" as "434" inside mini page layout

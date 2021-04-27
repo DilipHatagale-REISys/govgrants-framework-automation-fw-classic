@@ -467,14 +467,17 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
     Then I softly see "title" as "SYSTEM" inside mini page layout
     And I refresh the page
     When I navigate to "Financials" sub tab
     When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
     Then I softly see "Label" as "Code" inside mini page layout
     And I refresh the page
     When I navigate to "Financials" sub tab
     When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
     Then I softly see "Value" as "9832" inside mini page layout

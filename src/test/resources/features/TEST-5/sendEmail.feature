@@ -167,8 +167,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "Cc" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
@@ -193,8 +193,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "Cc" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
@@ -219,9 +219,9 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I click on "Cc" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "Cc" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName       |
       | Automation PM  |
@@ -289,8 +289,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "Cc" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
@@ -316,8 +316,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "Cc" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
   @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
@@ -343,9 +343,9 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I click on "Cc" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "Cc" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName       |
       | Automation PM  |
@@ -400,10 +400,10 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field
-    Then I softly see "CC" email search by field contains dropdown value as "Internal"
-    Then I softly see "CC" email search by field contains dropdown value as "External"
-    Then I softly see "CC" email search by field contains dropdown value as "Groups"
+    When I click on "Cc" email Search By field
+    Then I softly see "Cc" email search by field contains dropdown value as "Internal"
+    Then I softly see "Cc" email search by field contains dropdown value as "External"
+    Then I softly see "Cc" email search by field contains dropdown value as "Groups"
 
   @89615 @validateEmailSubjectWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
   Scenario: Validate special characters present under subject in sent email view modal are displayed properly
@@ -1342,8 +1342,8 @@ Business Need: Send Email Component Scenarios
     When I click on "To" email Search By field and select dropdown value as "External"
     When I enter value "Automation spi" into field "To" on send email modal
     When I select value "Automation spi" with iconName "fa fa-user" into field on send email modal
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "Cc" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -1402,8 +1402,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "Cc" on send email modal
     When I select value "Automation Testing Group" with iconName "fa fa-users" into field on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -1440,8 +1440,8 @@ Business Need: Send Email Component Scenarios
     When I click on "To" email Search By field and select dropdown value as "External"
     When I enter value "ExternalP User 1" into field "To" on send email modal
     When I select value "ExternalP User 1" with iconName "fa fa-user" into field on send email modal
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Bob PM" into field "CC" on send email modal
+    When I click on "Cc" email Search By field and select dropdown value as "Internal"
+    When I enter value "Bob PM" into field "Cc" on send email modal
     When I select value "Bob PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Mail Body" into field "Body Content" on send email modal

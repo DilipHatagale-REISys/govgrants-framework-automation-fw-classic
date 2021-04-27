@@ -700,8 +700,8 @@ Business Need: New API related scenarios temporary
     When I pause execution for "185" seconds
     Then I see "" "<Logout_URL>" page is displayed
     Examples:
-      | Logout_URL                                |
-      | https://ggptest5-dev-ed.my.salesforce.com |
+      | Logout_URL                                   |
+      | //ggptest5-developer-edition.na69.force.com/ |
 
   @61434   @VerifySessionTimeoutPopUpAppears
   Scenario: Verify session timeout pop-up appears after 2 min of session login

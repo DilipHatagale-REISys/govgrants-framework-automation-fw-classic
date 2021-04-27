@@ -288,8 +288,9 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I select below checkbox options for field "Multi-Picklist Field"
       | Display 1 |
-    When I click on "Save" in the page details
     And I pause execution for "3" seconds
+    When I click on "Save" in the page details
+    And I pause execution for "7" seconds
     Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage
@@ -340,8 +341,8 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     And I enter value "" into field "SimpleQuestion1__c"
     When I click on "Save" button in right header
-    Then I see the following message in the page details :
-      | 1. Describe In Detail The Applicant’s Overall Plan To Focus On The Key Priorities For This Program. is required to save. |
+    Then I see the following message in the page details contains:
+      | *1. Describe In Detail The Applicant’s Overall Plan To Focus On The Key Priorities For This Program. is required to save. |
 
   @119860  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtFormEdit-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at form edit

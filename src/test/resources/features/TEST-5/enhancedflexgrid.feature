@@ -1812,7 +1812,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "Department of Higher Education" icon for "Demo_Title" inside table
     Then I see "Organization" shown as over view header
 
-  @79675    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtEnhancedGrid-gPlanning
+  @79675    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtEnhancedGrid-gPlanning @BugId=144971
   Scenario Outline: validate by click on user value in table , respective user page should get opens at EnhancedGrid - gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

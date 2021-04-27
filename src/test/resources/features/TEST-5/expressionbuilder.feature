@@ -6247,11 +6247,13 @@ Business Need: Expression Builder Component Scenarios
   @83515    @verifyHideExpressionJSONAtEnhancedGridChildTableByHidingRowLevelActionsOnTheBasisOfParentObject-EGrid @enhancedGrid
   Scenario: Verify Hide expression JSON By hiding row level action on the basis of parent object at child flex table - enhanced grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_childTable_row_level_action_Hide_using_parent_Object_Fields | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName                | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:Hide_Expression_EnhancedGrid_childTable_row_level_action_Hide_using_parent_Object_Fields | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Enable Parent Hide Logic | false                                                                                                     | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7153,6 +7155,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I pause execution for "3" seconds
     Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
 
     Examples:
@@ -7512,13 +7515,17 @@ Business Need: Expression Builder Component Scenarios
   @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid
   Scenario: Verify action column is hidden if all other row level actions are hidden using date time field value at enhanced grid child table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:2 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName                | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | false                                                                                 | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Enable Parent Hide Logic | false                                                                                 | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
