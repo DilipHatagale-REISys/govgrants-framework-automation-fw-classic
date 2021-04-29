@@ -1521,6 +1521,84 @@ Business Need: Flex Table Component Scenarios
       | Start Date | Equals to | 09/16/2020 |
     Then I see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
 
+  @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
+  Scenario Outline: Validate comma separated  value should be display on the Number field at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "12345678" into field "Number__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "12345678" for title "Number" inside table "---program:-:programsTableId---"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @144829    @validateCommaSeparatedValueIsDisplayedOnFlexTableForCurrencyField
+  Scenario Outline: Validate comma separated  value should be display on the currency field at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "12345678" into field "FundedAmount__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I softly see value "$12,345,678" for title "Funded Amount" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:programsTableId---"
+
+    Examples:
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,FundedAmount__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @144830    @validateCommaSeparatedValueIsDisplayedOnFlexTableForPercentField
+  Scenario Outline: Validate comma separated  value should be display on the Percent field at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "90000" into field "Percent__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I softly see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
+
+    Examples:
+      | newFieldsApi                             | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Percent__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user
