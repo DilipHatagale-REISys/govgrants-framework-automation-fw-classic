@@ -340,15 +340,6 @@ public class PhaseConfigPage extends GovGrantsManager {
         Assert.assertTrue(isLateCountDisplayedInsideTaskSummaryByDueDateChart(taskCount, title));
     }
 
-    /**
-     * assert phase tab background color
-     *
-     * @param colorName
-     */
-    public void asserPhaseTabBackgroundColor(String colorName) {
-        Assert.assertTrue(isPhaseTabBackgroundColorChanged(colorName));
-    }
-
 
     /********* "Local Methods with complete functionality - private" *********/
 
@@ -805,41 +796,6 @@ public class PhaseConfigPage extends GovGrantsManager {
             case "VERY DARK CYAN":
                 if (getSidebar.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
                         || getSidebar.getCssValue("color").contains("rgb(10, 49, 54)")) {
-                    flag = true;
-                }
-                break;
-        }
-        return flag;
-    }
-
-    /**
-     * @return true if phase tab background color is displayed as expected
-     */
-    private Boolean isPhaseTabBackgroundColorChanged(String colorName) {
-        boolean flag = false;
-        WebElement getPhaseTab = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'navMenuHeader')]"));
-        switch (colorName.toUpperCase()) {
-            case "VERY DARK BLUE":
-                if (getPhaseTab.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
-                        || getPhaseTab.getCssValue("color").contains("rgb(0, 57, 107)")) {
-                    flag = true;
-                }
-                break;
-            case "VERY DARK BLUE 1":
-                if (getPhaseTab.getCssValue("background-color").contains("rgba(7, 53, 74, 1)")
-                        || getPhaseTab.getCssValue("color").contains("rgb(7, 53, 74)")) {
-                    flag = true;
-                }
-                break;
-            case "BLACK":
-                if (getPhaseTab.getCssValue("background-color").contains("rgba(17, 17, 17, 1)")
-                        || getPhaseTab.getCssValue("color").contains("rgb(17, 17, 17)")) {
-                    flag = true;
-                }
-                break;
-            case "VERY DARK CYAN":
-                if (getPhaseTab.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
-                        || getPhaseTab.getCssValue("color").contains("rgb(10, 49, 54)")) {
                     flag = true;
                 }
                 break;

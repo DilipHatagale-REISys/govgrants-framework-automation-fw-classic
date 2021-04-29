@@ -61,7 +61,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "testautomation@gmail.com" into field "To" on send email modal
+    When I enter value "testautomation@gmail.com" into field "{testData:ToField}" on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details contains:
@@ -89,8 +89,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
@@ -115,8 +115,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "{testData:ToField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
@@ -141,8 +141,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "{testData:ToField}" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
 
   @69214 @validateIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
@@ -167,8 +167,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
@@ -193,8 +193,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
@@ -219,9 +219,9 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName       |
       | Automation PM  |
@@ -258,8 +258,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "Test automation mail subject 1" inside table
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -289,8 +289,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
@@ -316,8 +316,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
   @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
@@ -343,9 +343,9 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I click on "CC" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName       |
       | Automation PM  |
@@ -373,10 +373,10 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field
-    Then I softly see "To" email search by field contains dropdown value as "Internal"
-    Then I softly see "To" email search by field contains dropdown value as "External"
-    Then I softly see "To" email search by field contains dropdown value as "Groups"
+    When I click on "{testData:ToField}" email Search By field
+    Then I softly see "{testData:ToField}" email search by field contains dropdown value as "Internal"
+    Then I softly see "{testData:ToField}" email search by field contains dropdown value as "External"
+    Then I softly see "{testData:ToField}" email search by field contains dropdown value as "Groups"
 
   @89269 @validateTheItemsPresentInSearByFieldDropDownAtCCEmailFieldAtSendEmailModal @sendEmail
   Scenario: Validate the options present under search by field dropdown at CC email field at send email modal
@@ -400,10 +400,10 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field
-    Then I softly see "CC" email search by field contains dropdown value as "Internal"
-    Then I softly see "CC" email search by field contains dropdown value as "External"
-    Then I softly see "CC" email search by field contains dropdown value as "Groups"
+    When I click on "{testData:CcField}" email Search By field
+    Then I softly see "{testData:CcField}" email search by field contains dropdown value as "Internal"
+    Then I softly see "{testData:CcField}" email search by field contains dropdown value as "External"
+    Then I softly see "{testData:CcField}" email search by field contains dropdown value as "Groups"
 
   @89615 @validateEmailSubjectWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
   Scenario: Validate special characters present under subject in sent email view modal are displayed properly
@@ -430,8 +430,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
     When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
@@ -468,8 +468,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
     When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
@@ -565,8 +565,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -595,8 +595,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -655,9 +655,9 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation" into field "To" on send email modal
-    Then I see search item display box size at "To" field is proper for "greater than 5" results
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
+    Then I see search item display box size at "{testData:ToField}" field is proper for "greater than 5" results
 
   @90388 @validateToEmailSuggestionBoxSizeIfLessThan5RecordAreSuggestedInSendEmailModal @sendEmail
   Scenario: Validate suggested email's box size at To field if less than 5 records are suggested inside send email modal
@@ -681,9 +681,9 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "David PM" into field "To" on send email modal
-    Then I see search item display box size at "To" field is proper for "Less than 5" results
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "David PM" into field "{testData:ToField}" on send email modal
+    Then I see search item display box size at "{testData:ToField}" field is proper for "Less than 5" results
 
   @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
   Scenario: Validate if reply email is sent then alert message is displayed on send email modal
@@ -743,7 +743,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "DND-Test Automation Record" inside table
-    Then I do not see asterisk mark at "To" field is displayed at send email modal
+    Then I do not see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
@@ -768,7 +768,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    Then I see asterisk mark at "To" field is displayed at send email modal
+    Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for IST time zone
@@ -1066,8 +1066,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "Test data select file" inside table
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test data select file" into field "Subject" on send email modal
     And I click modal button "Select Files"
@@ -1103,8 +1103,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "DND Email Created To Check Date" inside table
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "DND Email Created To Check Date" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -1262,7 +1262,7 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "dipak.pawar@reisystems.in;test@gmail.com" into field "To" on send email modal
+    When I enter value "dipak.pawar@reisystems.in;test@gmail.com" into field "{testData:ToField}" on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -1271,7 +1271,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
-    When I enter value "test@gmail.com" into field "To" on send email modal
+    When I enter value "test@gmail.com" into field "{testData:ToField}" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
@@ -1303,8 +1303,8 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "{testData:ToField}" on send email modal
     When I select value "Automation spi" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -1339,11 +1339,11 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "Automation spi" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation spi" into field "{testData:ToField}" on send email modal
     When I select value "Automation spi" with iconName "fa fa-user" into field on send email modal
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -1384,8 +1384,8 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "{testData:ToField}" on send email modal
     When I select value "Automation Testing Group" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -1402,8 +1402,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
-    When I click on "CC" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "{testData:CcField}" on send email modal
     When I select value "Automation Testing Group" with iconName "fa fa-users" into field on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -1437,11 +1437,11 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "ExternalP User 1" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "ExternalP User 1" into field "{testData:ToField}" on send email modal
     When I select value "ExternalP User 1" with iconName "fa fa-user" into field on send email modal
-    When I click on "CC" email Search By field and select dropdown value as "Internal"
-    When I enter value "Bob PM" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Bob PM" into field "{testData:CcField}" on send email modal
     When I select value "Bob PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Mail Body" into field "Body Content" on send email modal
@@ -1487,11 +1487,11 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "ExternalP User 1" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "ExternalP User 1" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
     When I select value "ExternalP User 1" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Dipak@gmail.com" into field "To" on send email modal
+    When I enter value "Dipak@gmail.com" into field "{testData:ToField}" on send email modal
     Then I softly do not see user suggestion box displayed at send email modal
 
   @118790 @validateEmailIsSentSuccessfullyToMultipleGroupsAndIsDisplayedInToFieldAtSendEmailModal
@@ -1518,8 +1518,8 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1;test group 2" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1;test group 2" into field "{testData:ToField}" on send email modal
     When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal

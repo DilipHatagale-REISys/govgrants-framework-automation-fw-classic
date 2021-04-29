@@ -175,11 +175,6 @@ public class PhaseConfigSteps {
         phaseConfigPage.asserSidebarBackgroundColor(colorName);
     }
 
-    @Then("^I see phase tab has \"([^\"]*)\" background color$")
-    public void assertPhaseTabBackgroundColor(String colorName) {
-        phaseConfigPage.asserPhaseTabBackgroundColor(colorName);
-    }
-
     @Then("I see active tab has White background colour")
     public void assertActiveTabHasBackgroundColour() {
         phaseConfigPage.assertActiveTabHasBackgroundColour();

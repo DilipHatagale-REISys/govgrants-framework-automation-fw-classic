@@ -1361,7 +1361,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Save" in the page details
     Then I see field "Number" as "(123.00)"
 
-  @59893    @standardFieldShouldShowUserNameAtEnhancedGridParentColumn
+  @59893    @standardFieldShouldShowUserNameAtEnhancedGridParentColumn @BugId=144971
   Scenario Outline: validate standard field of enhanced grid column should show User Name instead of ID
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3532,7 +3532,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    When I click on top right button "New Action    " in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I click on top right button "test" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     When I enter value "Award Created for default value testing" into field "GrantAwardName__c"
     When I enter value "Activated" into field "Status__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
@@ -5339,7 +5339,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
-  @132366    @VerifyAttachmentShownInsideInboxWhileSendingInvitaion
+  @132366    @VerifyAttachmentShownInsideInboxWhileSendingInvitaion @captchaIssue
   Scenario:validate attachment shown inside inbox while sending invitation
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -5348,7 +5348,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "Secretary of Health" inside table
     When I perform quick search for "Henry PM" in "toggleFlexTableContactsByAccount" panel
     When I click on "send invitation" icon for "Henry PM" inside table
-    When I enter value "qateamrei@yopmail.com" into field "Cc" on send email modal
+    When I enter value "qateamrei@yopmail.com" into field "{testData:CcField}" on send email modal
     When I upload file "CollabFileTemp.pdf" into library
     When I click modal button "Send"
     And I checkout to yopmail with mailid "qateamrei@yopmail.com"

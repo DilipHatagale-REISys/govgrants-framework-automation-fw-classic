@@ -410,8 +410,8 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "CC" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
 
   @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts
@@ -570,9 +570,9 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "To" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName       |
       | Automation PM  |
