@@ -2908,3 +2908,64 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @145541    @validateDecimalValueIsDisplayedOnFlexTableForNumberFieldInDownloadedPDF
+  Scenario Outline: Validate decimal value should be display on the Number field at flex table In Downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "12345678" into field "Number__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I download the file
+    Then I softly see "12345678.00" on page "17" of "govgrants" pdf file
+    Then I softly cannot see "12,345,678.00" on page "17" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @145546    @validateDecimalValueIsDisplayedOnFlexGridEnhancedForNumberFieldInDownloadedPDF
+  Scenario: Validate decimal value should be display on the Number field at flex grid enhanced In Downloaded PDF
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I softly see "93.847" on page "1" of "govgrants" pdf file
+
+  @145566    @validateDecimalValueIsDisplayedOnMEGridForNumberFieldInDownloadedPDF
+  Scenario: Validate decimal value should be display on the Number field at ME Grid In Downloaded PDF
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Plan" sub tab
+    Then I softly see value "123,456.00" for title "Target" inside table "---program:-:programOutComesTableId---"
+    When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
+    And I select "Download as PDF" from parallel lines dropdown of "Key Outcomes"
+    And I download the file
+    Then I softly see "123,456.00" on page "1" of "govgrants" pdf file
