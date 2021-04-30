@@ -481,3 +481,18 @@ Business Need: Flex Table enhanced Component Scenarios
     When I hover mouse on lookup link "SYSTEM" at table
     And I pause execution for "4" seconds
     Then I softly see "Value" as "9832" inside mini page layout
+
+  @145488  @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTableEnhanced
+  Scenario: validate Advance filter  with does not contain operator At Flex Table Enhanced
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
+    When I enter advance filter values inside id "advfEnhancedDataTable"
+      | Project Title | does not contain | test |
+    Then I softly see value "Exploratory Team-Research BRAIN Circuit Programs_0" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
+    Then I softly do not see value "Applicationg test88888" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"

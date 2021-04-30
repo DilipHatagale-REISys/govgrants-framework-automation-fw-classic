@@ -5339,7 +5339,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
-  @132366    @VerifyAttachmentShownInsideInboxWhileSendingInvitaion @captchaIssue
+  @132366    @VerifyAttachmentShownInsideInboxWhileSendingInvitaion
   Scenario:validate attachment shown inside inbox while sending invitation
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

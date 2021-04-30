@@ -6799,8 +6799,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideStartDateFieldForProfileAsAdmin | Grantee State Program | Name                      | PBD-584                    |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantee State Program | Name                      | PBD-584                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6815,8 +6815,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideStartDateFieldForUserTypeAsInternal | Grantee State Program | Name                      | PBD-584                    |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantee State Program | Name                      | PBD-584                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6831,8 +6831,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | PBD-584                    |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | PBD-584                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6847,8 +6847,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideStartDateFieldForUserAppAsStateAsGrantor | Grantee State Program | Name                      | PBD-584                    |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | PBD-584                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6858,12 +6858,12 @@ Business Need: Page Layout Component Scenarios
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145661    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_AdminInEditMode
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin in edit mode
+  Scenario: Hide OVERVIEW Tab for Profile Admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -6895,8 +6895,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | TAB-029                    |
+      | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6904,3 +6904,185 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
+
+  @145664    @verifyHideExpressionJsonFieldByHidingTabUsingUserAppAsAGrantorInEditMode
+  Scenario: Hide OVERVIEW Tab for user app state as Grantor in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I cannot see "Overview" sub tab at view detail page
+
+  @145666    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserTypeAsInternalInEditMode
+  Scenario: Set up hide expression json value to Hide page block using user type as Internal in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
+
+  @145667    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserAppAsAGrantorInEditMode
+  Scenario: Set up hide expression json value to Hide page block using user app state as Grantor in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
+
+  @145668    @verifyHideExpressionJsonFieldByHidingPageBlockUsingContextAsEditInEditMode
+  Scenario: Set up hide expression json value to Hide page block using using context as Edit in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
+
+  @145669    @verifyHideExpressionJsonFieldByHidingPageBlockUsingProfileAdminInEditMode
+  Scenario: Set up hide expression json value to Hide page block for Profile Admin in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
+
+  @145672    @hide_expression_Overview_TabUsingFieldOperatorInEditMode
+  Scenario: Hide OVERVIEW Tab using picklist field value in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I cannot see "Overview" sub tab at view detail page
+
+  @145836    @verifyHideExpressioJsonByHidingFieldsUsingPicklistFieldValueInEditMode
+  Scenario: validate hide expression by hiding date field using field as picklist in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingPicklistWithOperatorEqualsTo | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I see "Project Period Start Date" is not displayed inside page block detail
+
+  @145839    @verifyHideExpressioJsonByHidingFieldsUsingUserOperatoreInEditMode
+  Scenario: validate hide expression by hiding date field using user operator in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I see "Project Period Start Date" is not displayed inside page block detail
+
+  @145844    @verifyHideExpressioJsonByHidingTabUsingUserOperatoreInEditMode
+  Scenario: validate hide expression by hiding tab using user operator in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    Then I cannot see "Overview" sub tab at view detail page
+
+  @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
+  Scenario: validate hide expression by hiding page block using picklist field value operator in edit mode
+  Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
+
+  @145847    @verifyHideExpressioJsonByHidingPageBlockUsingUserOperatorInEditMode
+  Scenario: validate hide expression by hiding page block using user operator in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Program Information" page block displayed
