@@ -1599,6 +1599,18 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                             | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Percent__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
+  @145475    @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTable
+  Scenario: validate Advance filter search with does not contain operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Program Name | Does not contains | test |
+    Then I softly do not see value "Test Program For Automation - Expression Builder 2" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I softly see value "Road Construction" for title "Program Name" inside table "---program:-:programsTableId---"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

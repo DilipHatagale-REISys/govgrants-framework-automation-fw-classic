@@ -1478,7 +1478,6 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Download" icon for "SheetJSFileUpload.xlsx" inside table
     Then I softly see "Organization" in downloaded xls or csv file "govgrants"
 
-
   @83182 @validateThatAdminUserCanDownloadTheLibraryAndAllFilesInItAtAssetLibrary-HomePhase @libraryFiles
   Scenario: Verify that admin user can download library and it's files at  asset library
     When I login as "Automation" user
