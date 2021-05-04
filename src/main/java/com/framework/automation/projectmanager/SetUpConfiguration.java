@@ -108,10 +108,10 @@ public class SetUpConfiguration {
                 stringPayload = new PageBlock().setUid(fieldLabel, value, filterClause);
                 break;
             case "AUTO SNAPSHOT":
-                stringPayload = new SnapShot().setSobjectAutoSnapshotConfig(fieldLabel, value, filterClause);
+                stringPayload = new SobjectConfig().setSobjectAutoSnapshotConfig(fieldLabel, value, filterClause);
                 break;
             case "AUTO SNAPSHOT ON APPROVAL":
-                stringPayload = new SnapShot().setApprovalDecisionAutoSnapshotConfig(fieldLabel, value, filterClause);
+                stringPayload = new SobjectConfig().setApprovalDecisionAutoSnapshotConfig(fieldLabel, value, filterClause);
                 break;
             case "CAPTURE FORM":
                 stringPayload = new DynamicForm().setDynamicFormCaptureFormConfig(fieldLabel, value, filterClause);
@@ -130,6 +130,9 @@ public class SetUpConfiguration {
                 break;
             case "ERROR MESSAGE CONFIG":
                 stringPayload = new ErrorMessageConfig().setErrorMessageConfig(fieldLabel, value, filterClause);
+                break;
+            case "NOTES AND ATTACHMENT ACTION SOBJECT CONFIG":
+                stringPayload = new SobjectConfig().setSobjectNotesAttachmentActionConfig(fieldLabel, value, filterClause);
                 break;
         }
         System.out.println("final payload is " + stringPayload);

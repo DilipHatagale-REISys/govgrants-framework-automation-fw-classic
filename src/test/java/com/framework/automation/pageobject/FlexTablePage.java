@@ -362,7 +362,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param headerName
      */
     public void assertActionButtonInsideFlexTableIsNotDisplayed(String buttonName, String headerName) {
-        Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
+        I.amPerforming().assertionsTo().assertThat(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName)).isFalse();
     }
 
     /**

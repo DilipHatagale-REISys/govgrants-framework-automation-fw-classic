@@ -32,9 +32,9 @@ public class PageLayoutSteps {
         pageLayoutPage.clickPageBlockDetailParticularElement();
     }
 
-    @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
-    public void textAreaFieldAtEditAttachment(String enteredValue) {
-        pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue);
+    @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment(| and save)$")
+    public void textAreaFieldAtEditAttachment(String enteredValue, String usage) {
+        pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue,usage);
     }
 
     @When("^I close alertbox$")
@@ -734,9 +734,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertTypeAndTextInsideMiniPageLayout(displayType, value);
     }
 
-    @Then("I see {string} field is rendered as rich text area in page edit mode")
-    public void iSeeRichTextAreaFieldAsIsDisplayedAtPageDetail(String fieldName) {
-        pageLayoutPage.assertRichTextAreaFieldInsidePageDetail(fieldName);
+    @Then("^I see \"([^\"]*)\" field is rendered as (rich|long) text area$")
+    public void iSeeRichTextAreaFieldAsIsDisplayedAtPageDetail(String fieldName,String usage) {
+        pageLayoutPage.assertRichTextAreaFieldInsidePageDetail(fieldName,usage.equalsIgnoreCase("rich"));
     }
 
     @Then("I see CK editor box color changed to {string}")

@@ -5339,7 +5339,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Description" field is rendered as rich text area in page edit mode
+    Then I see "Description" field is rendered as rich text area
 
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate mini page layout is displayed at enhanced flex edit page layout
@@ -6995,7 +6995,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -7055,11 +7055,11 @@ Business Need: Page Layout Component Scenarios
 
   @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
   Scenario: validate hide expression by hiding page block using picklist field value operator in edit mode
-  Given I have "default" configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | PB-110                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -7076,7 +7076,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory        | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | PB-110                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -7086,3 +7086,214 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
+
+  @146387    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingUserTypeOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "user type"
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserTypeOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146388    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingProfileOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "profile "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146389    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingContext!=ViewOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as  "Context "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingContextOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146390    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingUserAppOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "User App "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserAppOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146391    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingFieldValueOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "Field "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146395    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsing$UserOperator
+  Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "$user"
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146396    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserTypeOperator
+  Scenario: validate hide the ADD action on notes page block by using SObject hide logic as "user type"
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserTypeOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146397    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingProfileOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "profile "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146398    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingContext!=ViewOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as  "Context "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingContextOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146400    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserAppOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "User App "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserAppOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146401    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingFieldValueOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "Field "
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146402    @verifyHideExpressioJsonByHidingAddActionAtNotesUsing$UserOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "$user"
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146404    @verifyHideExpressioJsonByHidingAddActionAtBothNotesAndAttachmentUsingProfileOperator
+  Scenario: validate hide the ADD action on both Notes and Attachment page block by using SObject hide logic as "profile"
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I see "Add" button inside "Attachments" flex table not displayed
