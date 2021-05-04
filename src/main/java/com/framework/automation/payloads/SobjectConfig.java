@@ -1,11 +1,11 @@
 package com.framework.automation.payloads;
 
-public class SnapShot {
+public class SobjectConfig {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
     private ApiUtilities apiUtilities;
 
-    public SnapShot() {
+    public SobjectConfig() {
         apiUtilities = new ApiUtilities();
     }
 
@@ -72,4 +72,35 @@ public class SnapShot {
         System.out.println(finalPayload);
         return finalPayload;
     }
+
+    /**
+     * Set pay load for Notes and Attachment action config
+     *
+     * @param fieldLabel
+     * @param value
+     * @param filterClause
+     * @return
+     */
+    public String setSobjectNotesAttachmentActionConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+            case "ATTACHMENT ADD HIDE EXPRESSION JSON":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__SobjectConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__AttachmentAddHideExpressionJSON__c), value);
+                break;
+            case "NOTE ADD HIDE EXPRESSION JSON":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__SobjectConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__NoteAddHideExpressionJSON__c), value);
+                break;
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
+
 }

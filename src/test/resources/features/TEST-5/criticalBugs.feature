@@ -45,7 +45,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Receipt" inside table
-    When I enter values "Test Automation" into textarea description field for Edit Attachment
+    When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
     Then I see "Test Automation" has been added in "Attachments" flex table
 
@@ -88,7 +88,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Check Edit Behaviour" inside table
-    When I enter values "Checked" into textarea description field for Edit Attachment
+    When I enter values "Checked" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
     Then I see "Checked" has been added in "Notes" flex table
 
@@ -5568,3 +5568,56 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
  #130109 single file deleted from record level is deleted from - home phase my feed section
     Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
+
+  @146274    @validateSaveActionAtAddNotesModalAfterEnteringTextBeyondVisibleLimitAtDescriptionField
+  Scenario: validate Add action displayed at add Notes modal after entering data in Description field beyond the visible limit
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
+    Then I see "Save" at bottom of Attachment Modal
+
+  @146276    @validateSaveActionAtAddAttachmentModalAfterEnteringTextBeyondVisibleLimitAtDescriptionField
+  Scenario: validate save action displayed at add attachment modal after entering data in Description field beyond the visible limit
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
+    When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
+    Then I see "Save" at bottom of Attachment Modal
+
+
+  @146444    @validateDescriptionFieldIsRenderedAsLonfTextIfEnteredTextBeyondVisibleLimitAtDescriptionFieldAtAddAttachment
+  Scenario: validate description field is rendered as long text field after entering text beyond the visible limit at add attachment
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
+    When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
+    Then I see "Description" field is rendered as long text area
+
+  @146439    @validateDescriptionFieldIsRenderedAsLongfTextIfEnteredTextBeyondVisibleLimitAtDescriptionFieldAtAddNotes
+  Scenario: validate description field is rendered as long text field after entering text beyond the visible limit at add notes
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
+    Then I see "Description" field is rendered as long text area

@@ -749,11 +749,13 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param enteredValue
      */
-    public void enterValueForTextareaDescriptionFieldUnderEditAttachment(String enteredValue) {
+    public void enterValueForTextareaDescriptionFieldUnderEditAttachment(String enteredValue, String usage) {
         WebElement saveAndCloseButton = I.amPerforming().getElementReference().of(editAttachmentSaveButton);
         I.amPerforming().textInput().toClear(By.xpath("//div[@id='modaltemp']//textarea"));
         I.amPerforming().textInput().in(By.xpath("//div[@id='modaltemp']//textarea"), enteredValue);
-        I.amPerforming().click().on(saveAndCloseButton);
+        if (usage.contains("save")) {
+            I.amPerforming().click().on(saveAndCloseButton);
+        }
     }
 
     /**
@@ -1566,12 +1568,12 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * return true if rich text area field with ck-editor is displayed at page detail
-     *
+     * return true if long text are with scroll bar is displayed at page detail
      * @param fieldName
      * @author ashwini.mahore
      */
-    public void assertRichTextAreaFieldInsidePageDetail(String fieldName) {
-        I.amPerforming().assertionsTo().assertThat(isRichTextAreaFieldDisplayedInsidePageDetail(fieldName)).isTrue();
+    public void assertRichTextAreaFieldInsidePageDetail(String fieldName, Boolean fieldType) {
+        I.amPerforming().assertionsTo().assertThat(isRichOrLongTextAreaFieldDisplayedInsidePageDetail(fieldType, fieldName)).isTrue();
     }
 
     /**
@@ -3261,11 +3263,15 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param fieldName
      * @author ashwini.mahore
      */
-    public Boolean isRichTextAreaFieldDisplayedInsidePageDetail(String fieldName) {
+    public Boolean isRichOrLongTextAreaFieldDisplayedInsidePageDetail(Boolean fieldType, String fieldName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))
-                    || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
+            if (fieldType) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))
+                        || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
+                    flag = true;
+                }
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[text()='"+fieldName+"']/ancestor::div//textarea"))) {
                 flag = true;
             }
         } catch (Exception e) {
