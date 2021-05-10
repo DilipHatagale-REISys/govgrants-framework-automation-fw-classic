@@ -128,9 +128,9 @@ public class FlexTableSteps {
         flexTablePage.assertFlexTabelPageSizeEnabled(text, tableId);
     }
 
-    @Then("^I (see|do not see) \"([^\"]*)\" with pagination arrow at \"([^\"]*)\"$")
-    public void assertFlexTablePaginationEnabled(String usage, String text, String tableId) {
-        flexTablePage.assertFlexTabelPaginationEnabled(usage, text, tableId);
+    @Then("^I (see|do not see) \"([^\"]*)\" with pagination arrow at \"([^\"]*)\" at \"([^\"]*)\"$")
+    public void assertFlexTablePaginationEnabled(String usage, String text, String tableId,String uiType) {
+        flexTablePage.assertFlexTabelPaginationEnabled(usage, text, tableId, uiType.equalsIgnoreCase("Top"));
     }
 
     @Then("^I see \"([^\"]*)\" records inside flex table id \"([^\"]*)\"$")

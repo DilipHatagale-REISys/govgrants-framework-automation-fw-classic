@@ -2643,3 +2643,28 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I click on top right button "Create" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see loading icon at "TmpActiveGrantsGrid" modal
+
+  @146545    @verifyPaginationDisplayedAtBothTopAndBottomAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate pagination at top and bottom inside enhanced flex grid planning-Program enhanced flex grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedID---" at "Top"
+    Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedID---" at "Bottom"
+
+  @146571 @verifyPaginationDisplayedAtBothTopAndBottomAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate pagination at top and bottom inside enhanced flex grid planning-Program enhanced flex grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Active Awards" content inside "Activities" subheader on left panel
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "Fiscal Year(2019-2019)"
+    Then I see "Page" with pagination arrow at "AwardBudgetCategoryFlexGridgrid" at "Top"
+    Then I see "Page" with pagination arrow at "AwardBudgetCategoryFlexGridgrid" at "Bottom"

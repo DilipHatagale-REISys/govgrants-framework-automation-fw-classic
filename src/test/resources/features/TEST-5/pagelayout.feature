@@ -7297,3 +7297,218 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Attachments" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
     Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "123" into field "ProgramName__c"
+    And I click on back arrow
+    Then I softly see alert confirmation box with body "Changes that you made may not be saved." is displayed
+
+  @147904    @verifyByClickAtSaveActionAtPageLayoutARecordIsGettingSavedWithChangedData
+  Scenario: validate by click at save action at page layout, a record is getting saved with changed data
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I enter value "XYZ" into field "Authorization__c"
+    When I click on "Save" in the page details
+    Then I see "XYZ" text enter in field "fieldAuthorization__c"
+    When I click on "Edit" in the page details
+    And I enter value "ABC" into field "Authorization__c"
+    When I click on "Save" in the page details
+    Then I see "ABC" text enter in field "fieldAuthorization__c"
+
+  @147920    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingMultipleOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @147921    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingAndOrOperator
+  Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple And, Or operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @147923    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingMultipleOperator
+  Scenario: validate hide the ADD action on Attachment page block by using SObject hide logic using multiple operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @147924    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsUsingAndOrOperator
+  Scenario: validate hide the ADD action on Attachments page block by using SObject hide logic using multiple And, Or operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @147925    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsAndNotesUsingAndOrOperator
+  Scenario: validate hide the ADD action on Attachments and notes page block by using SObject hide logic using multiple And, Or operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @147926    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingMultipleOperator
+  Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using multiple operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @147930    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsUsingOROperator
+  Scenario: validate hide the ADD action on Attachments page block by using SObject hide logic using Or operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+
+  @147931    @verifyHideExpressionJsonByHidingAddActionAtNotesUsingOROperator
+  Scenario: validate hide the ADD action on notes page block by using SObject hide logic using Or operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                     | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @147932    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingOROperator
+  Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using OR operators
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | Note Add Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName                           | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
+    Then I see "Add" button inside "Notes" flex table not displayed
+
+  @146837    @validateNotesViewActionWorkingOrNot
+  Scenario: validate Notes View action working correctly at programs-planning
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I add notes records
+    When I close modal by clicking the top right x button
+    When I click on "View" icon for "Notes Record" inside table
+    Then I see the text :
+      | Notes Record |
+
+  @146931    @validateEditNotesModalOpensByClickAtEditActionAtNotes
+  Scenario: validate Notes edit modal opens by click at Edit action at programs-planning
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I add notes records
+    When I close modal by clicking the top right x button
+    When I click on "Edit" icon for "Notes Record" inside table
+    Then I see "Edit Notes" modal window is displayed

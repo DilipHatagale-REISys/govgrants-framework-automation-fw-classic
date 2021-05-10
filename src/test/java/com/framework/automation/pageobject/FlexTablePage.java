@@ -176,13 +176,16 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert true if pagination is enabled at program flex table
+     * @param text
+     * @param tableId
+     * @param position
+     * @return true if pagination is displayed at top and bottom of flex table
      */
-    public void assertFlexTabelPaginationEnabled(String usage, String text, String tableId) {
+    public void assertFlexTabelPaginationEnabled(String usage, String text, String tableId, Boolean position) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isFlexTableBottomElementEnabled(text, tableId));
+            I.amPerforming().assertionsTo().assertThat(isFlexTableTopAndBottomPaginationEnabled(text, tableId, position)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isFlexTableBottomElementEnabled(text, tableId));
+            I.amPerforming().assertionsTo().assertThat(isFlexTableTopAndBottomPaginationEnabled(text, tableId, position)).isFalse();
         }
     }
 
@@ -1055,6 +1058,29 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param text
+     * @param tableId
+     * @param position
+     * @return true if pagination is displayed at top and bottom of flex table
+     */
+    private boolean isFlexTableTopAndBottomPaginationEnabled(String text, String tableId, Boolean position) {
+        I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
+        boolean flag = false;
+        try {
+            if (position && I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'showEntries')]//span[contains(text(),'Showing')]/../following-sibling::div//span[contains(text(),'"+text+"')] " +
+                    "| //div[@id='" + tableId + "']//*[contains(text(),'Showing')]/../../following-sibling::div//*[contains(text(),'" + text + "')]"))) {
+                flag = true;
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'showEntries')]//span[text()='Show']/../following-sibling::div//span[contains(text(),'" + text + "')] " +
+                    "| //div[@id='" + tableId + "']//*[text()='Show']/../../following-sibling::div//*[contains(text(),'"+text+"')]"))
+            ) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

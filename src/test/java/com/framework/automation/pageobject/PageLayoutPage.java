@@ -820,9 +820,18 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void enterValueInSendEmailModalFields(String value, String fieldLabel) {
         if (fieldLabel.equalsIgnoreCase("Body Content")) {
-            WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//textarea"));
-            I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
-            fieldOnSendEmailModal.sendKeys(value);
+            By fieldWrapperLocator = ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]//following-sibling::div");
+            WebElement fieldWrapper = I.amPerforming().getElementReference().of(fieldWrapperLocator);
+
+            By inputBoxSelector = By.xpath("//html//body[@contenteditable='true']");
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().switchTo().frame(I.amPerforming().getElementReference().ofNested(fieldWrapper, (By.xpath(".//iframe"))));
+            try {
+                I.amPerforming().textInput().toClear(I.amPerforming().getElementReference().ofNested(fieldWrapper, inputBoxSelector));
+            } catch (Exception e) {
+            }
+            I.amPerforming().textInput().in(inputBoxSelector, value);
+            I.amPerforming().switchTo().parentFrame();
         } else {
             WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']" +
                     "| //label[contains(text(),'" + fieldLabel + "')]/parent::th/following-sibling::td//input[@type='text']"));
@@ -1569,6 +1578,7 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if rich text area field with ck-editor is displayed at page detail
      * return true if long text are with scroll bar is displayed at page detail
+     *
      * @param fieldName
      * @author ashwini.mahore
      */
@@ -3271,7 +3281,7 @@ public class PageLayoutPage extends GovGrantsManager {
                         || I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//textarea[contains(@class,'ckeditor')]"))) {
                     flag = true;
                 }
-            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[text()='"+fieldName+"']/ancestor::div//textarea"))) {
+            } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[text()='" + fieldName + "']/ancestor::div//textarea"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3325,32 +3335,32 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         switch (textFormat.toUpperCase()) {
             case "BOLD":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//strong[text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
             case "ITALIC":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//em[text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//em[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
             case "UNDERLINE":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//u[text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//u[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
             case "PLAIN":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable') and text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
             case "STRIKE THROUGH":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]//s[text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//s[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
             case "ALL":
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//body[contains(@class,'cke_editable')]/s/u/em/strong[text()='" + value + "']"))) {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//s/u/em/strong[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;
