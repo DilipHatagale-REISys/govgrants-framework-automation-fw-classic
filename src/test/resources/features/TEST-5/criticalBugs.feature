@@ -3659,7 +3659,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    Then I see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---" at "Top"
 
   @96574  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode @pageLayout
   Scenario Outline: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
@@ -3692,7 +3692,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
-    Then I do not see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    Then I do not see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---" at "Top"
 
   @97682    @enablingQuickSearchFromConfigAndFromCustomSetting-gPlanning @flexTable
   Scenario: validate enabling of quick search in flex table of programs from custom setting config-planning
@@ -3758,7 +3758,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Refresh" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedTableId---"
+    Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedTableId---" at "Top"
 
   @98282    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
   Scenario: validate quick search refresh behaviour at enhanced grid at sidebar - home phase
@@ -3799,7 +3799,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
     And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
-    Then I see "Page 2" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    Then I see "Page 2" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---" at "Top"
 
   @91800    @VerifyOverallTotalIsNotDisplayedAtChildFlexTableInsideMEGrid-gGrant @flexGrid
   Scenario Outline: Validating overall total is not displayed at child flex table under ME Grid
@@ -5564,7 +5564,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Delete" icon for "actionsAtEgrid.png" inside table
     When I click "Yes" on modal confirmation box
     Then I softly see the following messages in the page details :
-     | File actionsAtEgrid.png deleted successfully. |
+      | File actionsAtEgrid.png deleted successfully. |
     And I navigate to "HOME" tab
  #130109 single file deleted from record level is deleted from - home phase my feed section
     Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
@@ -5620,4 +5620,56 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
+    Then I see "Description" field is rendered as long text area
+
+  @147222 @validateThatModalSaveActionWorkingForRowLevelActionEdit-RecordLevel
+  Scenario: Verify that if user edited the record then modal is getting closed by click at Save action
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    And I switch to iframe with id "PlanningFilesiframeContentId"
+    When I click on "Save" button in send email modal
+    When I pause execution for "3" seconds
+    Then I see "File Edit" modal is closed
+
+  @147223 @validateThatModalCancelActionWorkingForRowLevelActionEdit-RecordLevel
+  Scenario: Verify that if user edited the record then modal is getting closed by click at cancel action
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    And I switch to iframe with id "PlanningFilesiframeContentId"
+    When I click on "Cancel" button in send email modal
+    When I pause execution for "3" seconds
+    Then I see "File Edit" modal is closed
+
+  @147365  @verifyRichTextAreaFieldIsDisplayedAtPageLayoutIfPermissionsAreEnabledForAdminUser
+  Scenario: validate rich text area field is displayed at page layout if permissions are enabled for admin user
+   When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Description" field is rendered as rich text area
+
+  @147375  @verifyLongTextAreaFieldIsDisplayedAtPageLayoutIfPermissionsAreDisabledForFrameworkQAUser
+  Scenario: validate long text area field is displayed at page layout if permissions are disabled for framework qa user
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Description" field is rendered as long text area

@@ -400,7 +400,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Page" with pagination arrow at "---program:-:programsTableId---"
+    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
@@ -1635,6 +1635,21 @@ Business Need: Flex Table Component Scenarios
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @146548    @verifyPaginationIsDisplayedAtTopAndBottomOfFlexTable-gPlanning
+  Scenario: validate pagination is displayed attop and bottom in flex table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
+    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Bottom"
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
