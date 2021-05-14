@@ -2625,3 +2625,45 @@ Business Need: Flex Grid Component Scenarios
     When I hover mouse on lookup link "Secretary of Education" at grid
     And I pause execution for "3" seconds
     Then I softly see "Value" as "434" inside mini page layout
+
+  @148331    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridParentTable
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see value "12,344.0000" for title "NumberDecimal" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                            | defaultFieldsApi                                                                       |
+      | Id,NumberDecimal__c,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @148363    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridParentTableOverallTotal
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid parent table overall total
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    Then I see the text :
+      | 12,344.0000 |
+
+    Examples:
+      | newFieldsApi                                                                                            | defaultFieldsApi                                                                       |
+      | Id,NumberDecimal__c,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |

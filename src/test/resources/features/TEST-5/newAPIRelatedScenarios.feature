@@ -1,670 +1,6 @@
 @NewAPIRelatedScenarios @regression-test5
 Business Need: New API related scenarios temporary
 
-  @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "#Grants" in flex table header "custom_lookupAccount__c"
-
-  @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,IsGrantingAgency__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Granting Agency" in flex table header "custom_lookupAccount__c"
-
-  @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Division__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Division" in flex table header "custom_lookupAccount__c"
-
-  @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Contact__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Contact" in flex table header "custom_lookupAccount__c"
-
-  @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,BillingState__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Billing State" in flex table header "custom_lookupAccount__c"
-
-  @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,DateTime__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "DateTime" in flex table header "custom_lookupAccount__c"
-
-  @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check @wip
-  Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Date__c  | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Date" in flex table header "custom_lookupAccount__c"
-
-  @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check @wip
-  Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "<fieldDisplayNames>" in flex table header "custom_lookupAccount__c"
-
-    Examples:
-      | fieldDisplayNames | newFieldApi                                                                         | defaultApi |
-      | Account Name      | Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Date              | Date__c,Name,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | DateTime          | DateTime__c,Name,Date__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Billing State     | BillingState__c,Name,Date__c,DateTime__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Contact           | Contact__c,Name,Date__c,DateTime__c,BillingState__c,Division__c,IsGrantingAgency__c | Name       |
-      | Division          | Division__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,IsGrantingAgency__c | Name       |
-      | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
-
-  @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @wip
-  Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Program for testing"
-    When I click on "Edit" icon for "Test Program for testing" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    When I click on svg arrow inside lookup modal for "Ascending"
-    Then I see content inside lookup modal in "Ascending" order
-
-  @59142    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @wip
-  Scenario: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c    | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "EIN Text" in flex table header "custom_lookupAccount__c"
-
-  @59043    @lookUpHeaderTextFieldWithExpirationDateAndDateTimeAtPageBlockDetail-gPlanning  @wip
-  Scenario Outline: Adding column header with DUNS SAMS Expiration date and DateTime Field API to lookup modal from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "<fieldDisplayNames>" in flex table header "custom_lookupAccount__c"
-
-    Examples:
-      | fieldDisplayNames         | newFieldApi                            | defaultApi |
-      | DUNS/SAMS Expiration Date | DUNSExpirationDate__c,Name,DateTime__c | Name       |
-      | DateTime                  | DUNSExpirationDate__c,Name,DateTime__c | Name       |
-
-  @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @wip
-  Scenario: Validate user is able to select particular organization and it should get saved properly.
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    And I select value "Department of Community Health" from lightning lookup table
-    When I click on "Save" in the page details
-    Then I see field "Owner Organization" as "Department of Community Health"
-
-  @54748    @isLookupSearchIsWorkingWihDateOrDateTimeField @smoke @wip
-  Scenario Outline: Validate lookup search is working fine with data and date time field
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I enter value "Health" into field "custom_lookupAccount__c"
-    Then I see data table box for lookup
-
-    Examples:
-      | oldLookupFilter                                                                    | newLookupFilter | newLookupDisplayName |
-      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Date__c != null | Name,Date__c         |
-
-  @59038    @dataTableShouldRenderedProperlyWithOrganizationNameAtLightningLookup-gPlanning @wip
-  Scenario: Validate after entering text inside lightning lookup search table should rendered properly with organization name while passing formula fiels at lookup dispaly field
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | OrganizationName__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I enter value "Health" into field "custom_lookupAccount__c"
-    Then I see data table box for lookup
-
-  @59060    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @wip
-  Scenario Outline: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By             | Name              | Grantee State Program | ApiGeneratedId:3 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c        | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter> | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By             | EINText__c        | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see that svg arrow is in "ascending" order
-
-    Examples:
-      | oldLookupFilter                                                                    | newLookupFilter                                                                    |
-      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |
-
-  @60540    @errorMessageForInvalidInputAtLookupSearch @wip
-  Scenario: Validate lookup search throwing error message for invalid input
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I enter value "'''" into field "custom_lookupAccount__c"
-    Then I see error message "No Records Found" for invalid input at "custom_lookupAccount__c"
-
-  @64956    @VerifylookUpDisplayFieldNameToOverrideLabelOfFieldsAtPageBlockDetail-gPlanning @wip
-  Scenario: Adding display field Names as Name to override the labels at lookup modal from PB config and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue           | coreComponentField    | coreComponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | govgrants_config:Lookup | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Test Automation" in flex table header "custom_lookupAccount__c"
-
-  @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning @wip
-  Scenario Outline: Validate lookup filter criteria is working fine by displaying all Active records in lookup window
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Active" status in Lookup window
-
-    Examples:
-      | oldLookupFilter                                                                    | newLookupFilter     | newLookupDisplayName |
-      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Status__c ='Active' | Name,Status__c       |
-
-  @65027    @VerifylookupSortByToSortRecordsUnderNameColumnInAscOrderInLookupWindowAtPageBlockDetail-gPlanning @wip
-  Scenario: Validate lookup sort by is working fine by sorting all records in ascending order under lookup window
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC           | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see content inside lookup modal in "Ascending" order
-
-  @65040    @VerifylookupSortByToSortRecordsUnderNameColumnInDescOrderInLookupWindowAtPageBlockDetail-gPlanning @wip
-  Scenario: Validate lookup sort by is working fine by sorting all records in descending order under lookup window
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | DESC          | Grantee State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see content inside lookup modal in "Descending" order
-
-  @65042    @VerifyHideFieldJSONToHideFieldAccordingToSelectedLookupFieldValueAtPageBlockDetail-gPlanning @wip
-  Scenario: Validate Hide Fields JSON is working fine by Hiding Program SubType Field if owner organization is Department of Community Health
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:Lookup_Hide_Decision_Field | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description              | name                  |
-      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    And I select value "Department of Community Health" from lightning lookup table
-    When I click on "Save" in the page details
-    When I click on "Edit" in the page details
-    Then I see "Program Sub Type" is not displayed inside page block detail
-
-  @59888    @VerifyCurrencyLocalToDisplayIDRSymbolInCurrencyField @needCurrencyLocalAPIs @wip
-  Scenario: Validate Currency Local is working fine by displaying IDR in Expected Future Funding currency field at Page Layout
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I softly see field "Expected Future Funding" as "IDR500,000"
-
-  @59984    @verifyThatIDRCurrencyUnitIsDisplayedInsideTotalAmountAtFlexTable-gPlanning @needCurrencyLocalAPIs @wip
-  Scenario: verify that IDR is displayed under Total Amount displayed inside flex table of programs-planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Total | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Total     | true          | Programs           | Name                      | FTC-1018                   |
-      | Flex Table:General    | Enable Total Row | true          | Programs           |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    Then I see "IDR" is displayed under total amount in flex table
-
-  @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheck  @AfterBugFix @needCurrencyLocalAPIs @wip
-  Scenario: Verify that double dollar symbol($$) is not shown inside Total Label in MEGrid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Row | true          | ApplicationBudgetCategoryFlexTable |                           |                            |
-      | Flex Table:General    | Enable Total Row | false         | ApplicationBudgetPeriods           |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "Total" inside rows of child grid id "---program:-:applicationBudgetCategoryFlexGridTableId---"
-
-  @59979    @verifyDollarSymbolIsNotPresentInSubTotalLabelAtMEGrid @needCurrencyLocalAPIs @wip
-  Scenario: Verify that dollar symbol($) is not shown inside SubTotal Label in MEGrid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Total Row    | true              | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Row    | true          | ApplicationBudgetCategoryFlexTable |                           |                            |
-      | Flex Table:General    | Enable Row Grouping | true          | ApplicationBudgetCategoryFlexTable | Name                      | FTC-1078                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "SubTotal" inside rows of enhanced grid id "---program:-:applicationBudgetCategoryFlexGridTableId---"
-
-  @59978   @CheckCurrencySymbolInTotalAmountAtApplicationBudgetCategoryFlexTableChild-gApplications @needCurrencyLocalAPIs @wip
-  Scenario Outline: Validate Currency Unit (IDR) is present under Grantor Share column Total Amount at Application budget flex table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <olddisplayfields> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue      | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newdisplayfields> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "IDR" currency unit is present in "Total" Amount at "---program:-:applicationBudgetCategoryFlexGridTableId---" Flex Grid
-
-    Examples:
-      | olddisplayfields                                                                                     | newdisplayfields                                          |
-      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
-
-  @59978   @CheckCurrencySymbolInSubTotalAmountAtApplicationBudgetCategoryFlexTableChild-gApplications @needCurrencyLocalAPIs @wip
-  Scenario Outline: Validate Currency Unit (IDR) is present under Grantor Share column SubTotal Amount at Application budget flex table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <olddisplayfields> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue      | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newdisplayfields> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "IDR" currency unit is present in "SubTotal" Amount at "---program:-:applicationBudgetCategoryFlexGridTableId---" Flex Grid
-
-    Examples:
-      | olddisplayfields                                                                                     | newdisplayfields                                          |
-      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
-
-  @67157   @VerifyDownloadAsPDFButtonOnModal @wip
-  Scenario: Validate download as PDF button on modal window in view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide Pdf Download | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide Pdf Download | false         | Roles and Responsibilities 2 |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
-    When I navigate to "Roles" sub tab
-    When I click on "View" icon for "Owner" to save inside subtab
-    Then I see "Download As PDF" button is present on Modal
-
   @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab
   Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
     Given I have "lightening" configuration as below:
@@ -696,6 +32,12 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                           | name                |
       | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description               | name                      |
+      | true         | 1            | a0b1C00000LaBhVQAV | SessionDialogTimeoutLimit | SessionDialogTimeoutLimit |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description              | name                   |
+      | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     When I navigate to "Planning" tab
     When I pause execution for "185" seconds
     Then I see "" "<Logout_URL>" page is displayed
@@ -811,3 +153,98 @@ Business Need: New API related scenarios temporary
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
     Then I see Session Timeout dialogbox with button "Test Log Out"
+
+  @148203   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValueForSPIUser
+  Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed for SPI User
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                           | name                |
+      | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I pause execution for "185" seconds
+    Then I see "" "<Logout_URL>" page is displayed
+
+    Examples:
+      | Logout_URL                                                       |
+      | https://granteeportal-ggptest5-developer-edition.na69.force.com |
+
+  @148208   @VerifySessionTimeoutPopUpAppearsOnFormLayout
+  Scenario: Verify session timeout pop-up appears after 1 min of session login on form layout
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description               | name                      |
+      | true         | 1            | a0b1C00000LaBhVQAV | SessionDialogTimeoutLimit | SessionDialogTimeoutLimit |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description              | name                   |
+      | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Cover Page" program in flex table
+    When I pause execution for "120" seconds
+    Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
+
+  @148207   @VerifySessionTimeoutPopUpAppearsOnFormLayoutForSPIUser
+  Scenario: Verify session timeout pop-up appears after 1 min of session login on form layout for spi user
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description               | name                      |
+      | true         | 1            | a0b1C00000LaBhVQAV | SessionDialogTimeoutLimit | SessionDialogTimeoutLimit |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description              | name                   |
+      | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    When I pause execution for "120" seconds
+    Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
+
+  @148205   @VerifySessionTimeoutPopUpAppearsOnModalLayoutForSPIUser
+  Scenario: Verify session timeout pop-up appears after 1 min of session login on modal layout for spi user
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description               | name                      |
+      | true         | 1            | a0b1C00000LaBhVQAV | SessionDialogTimeoutLimit | SessionDialogTimeoutLimit |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description              | name                   |
+      | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
+    When I pause execution for "120" seconds
+    Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed

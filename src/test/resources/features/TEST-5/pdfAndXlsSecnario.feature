@@ -2968,3 +2968,292 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Key Outcomes"
     And I download the file
     Then I softly see "123,456.00" on page "1" of "govgrants" pdf file
+
+  @148335    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridParentTableInsidePDF
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid parent table inside pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "12,344.0000" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                            | defaultFieldsApi                                                                       |
+      | Id,NumberDecimal__c,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @148339    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridParentTableInsideXLS
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid parent table inside xls
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I see "12,344.0000" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                                                                            | defaultFieldsApi                                                                       |
+      | Id,NumberDecimal__c,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @145753    @validateDecimalValueIsDisplayedOnFlexTableForNumberFieldInDownloadedCSV
+  Scenario Outline: Validate decimal value should be display on the Number field at flex table In Downloaded CSV
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "12345678" into field "Number__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as CSV" from parallel lines dropdown of "Draft Programs"
+    Then I softly see "12345678.00" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @145754 @validateDecimalValueIsDisplayedOnFlexGridEnhancedForNumberFieldInDownloadedXLS
+  Scenario: Validate decimal value should be display on the Number field at flex grid enhanced In Downloaded XLS
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (xls / csv) | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I softly see "93.847" in downloaded xls or csv file "govgrants"
+
+  @145750    @validateDecimalValueIsDisplayedOnMEGridForNumberFieldInDownloadedCSV
+  Scenario: Validate decimal value should be display on the Number field at ME Grid In Downloaded CSV
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Plan" sub tab
+    Then I softly see value "11.80" for title "Target" inside table "---program:-:programOutComesTableId---"
+    When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
+    And I select "Download as XLS" from parallel lines dropdown of "Key Outcomes"
+    Then I softly see "11.80" in downloaded xls or csv file "govgrants"
+
+  @148351    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTableInsidePDF
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "12,344.0000" on page "30" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                    | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @148353    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTableInsidePDF
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "12,344.0000" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                    | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @148509  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTableInsidePDF
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table inside PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "2,323.0,000" on page "30" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @148510  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTableInsideXLS
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table inside XLS
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "2,323.0,000" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @147028    @validateAttachmentDownloadAction
+  Scenario: validate by click at Attachment download action a file is getting downloaded
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    And I upload attachment "DynamicLayoutExport.pdf" from workspace
+    When I click on "Download" icon for "DynamicLayoutExport.pdf" inside table
+    And I download the file
+    Then I see "SF424: Application For Federal Assistance Form" on page "1" of "govgrants" pdf file
+
+  @147031    @validateAttachmentIsGettingDownloadedByClickAtAttachmentNameHyperlink
+  Scenario: validate by click at Attachment name hyperlink, a file is getting downloaded
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    And I upload attachment "DynamicLayoutExport.pdf" from workspace
+    And I click on hyperlink containing value "DynamicLayoutExport.pdf"
+    And I download the file
+    Then I see "SF424: Application For Federal Assistance Form" on page "1" of "govgrants" pdf file
+
+  @148295    @verifyFieldHistoryTableInDownloadedXLSAtHistoryTable @history
+  Scenario: validate field history table is display with title in xls
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active                 | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as CSV" from parallel lines dropdown of "Field History"
+    Then I see "Field History" in downloaded xls or csv file "govgrants"
+
+  @148292    @verifyFieldHistoryTableInDownloadedPDFAtHistoryTable @history
+  Scenario: validate field history table is display with title in PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "Field History" on page "1" of "govgrants" pdf file

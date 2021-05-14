@@ -1460,7 +1460,7 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
     When I click on "Send" button in send email modal
-    Then I softly see "From: nauman.shahid@reisystems.com" as "Body Content" on send email modal
+    Then I softly see "From: ashwini.mahore@yopmail.com" as "Body Content" on send email modal
     Then I softly see "To: govgrantsuser@gmail.com" as "Body Content" on send email modal
 
   @116304 @validateIfUserRemovesNameFromToEmailThenAutoSuggestionBoxDisappearsFromToEmailField
