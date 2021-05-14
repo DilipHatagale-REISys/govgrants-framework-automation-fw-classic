@@ -5656,7 +5656,7 @@ Business Need: Logged Issues Scenarios
 
   @147365  @verifyRichTextAreaFieldIsDisplayedAtPageLayoutIfPermissionsAreEnabledForAdminUser
   Scenario: validate rich text area field is displayed at page layout if permissions are enabled for admin user
-   When I login as "Automation" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5673,3 +5673,126 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Description" field is rendered as long text area
+
+  @148379    @verifyCancelButtonWorkingAtAddFileModalAtCollabPhase
+  Scenario: Verify cancel button working at add file modal at collab Phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I click on "Cancel" button in send email modal
+    Then I see "Add Files" modal window with id "collabModalDiv" is not displayed
+
+  @148376    @verifyCancelButtonWorkingAtAddFileModalAtHomePhaseMyFeed
+  Scenario: Verify cancel button working at add file modal at home Phase- my feed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "HomeCollabIframe"
+    When I click on "Cancel" button in send email modal
+    Then I see "Add Files" modal window with id "collabModalDiv" is not displayed
+
+  @148378    @verifyCancelButtonWorkingAtAddFileModalAtRecordLevelCollabTab
+  Scenario: Verify cancel button working at add file modal at record level collab tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    And I switch to iframe with id "CollabIframe"
+    When I click on "Cancel" button in send email modal
+    Then I see "Add Files" modal window with id "collabModalDiv" is not displayed
+
+  @146997    @validateAttachmentAddActionWorkingWhileUploadingFromComputer
+  Scenario: validate Attachment add action working correctly while uploading attachment from computer
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
+    And I click modal button "Save"
+    Then I see the following messages in the page details contains:
+      | Attachement added successfully. |
+
+  @146998    @validateAttachmentAddActionWorkingWhileUploadingFromWorkspace
+  Scenario: validate Attachment add action working correctly while uploading attachment from workspace
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    And I upload attachment "DynamicLayoutExport.pdf" from workspace
+    Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf"
+
+  @147033    @validateEditActionAtAttachmentIsWorkingForAttachmentUploadedFromComputer
+  Scenario: validate that user can Edit an Attachment record by clicking on Edit icon if it is Uploaded from Computer
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    And I upload attachment "DynamicLayoutExport.pdf" from workspace
+    When I click on "Edit" icon for "DynamicLayoutExport.pdf" inside table
+    When I upload file "TestFileSharing.docx" into library
+    When I enter values "Test Automation" into textarea description field for Edit Attachment and save
+    When I close modal by clicking the top right x button
+    Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf"

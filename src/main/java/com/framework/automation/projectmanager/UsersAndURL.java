@@ -55,7 +55,7 @@ public class UsersAndURL implements UsersController {
         String password;
         switch (userType.toUpperCase()) {
             case "AUTOMATION":
-                password = "test@123456";
+                password = "Automation@123";
                 break;
             case "AUTOMATION-EXE":
                 password = "Automation@12345";
@@ -79,7 +79,7 @@ public class UsersAndURL implements UsersController {
                 password = "test@123456";
                 break;
             default:
-                password = "Automation@12345";
+                password = "Automation@123";
         }
 
         return password;

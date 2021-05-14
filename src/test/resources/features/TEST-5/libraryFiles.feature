@@ -4367,3 +4367,30 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
  #136661 verify if record is not displayed to external user
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @148728 @validateCancelButtonWorkingAtEditFileModalAtRecordLevel
+  Scenario: Verify modal gets closed by lick on cancel button under edit file modal at record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "CollabTestFileDNDRecordLevel.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "CollabTestFileDNDRecordLevel.pdf" inside table
+    When I click on "Cancel" button in send email modal
+    Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
+
+  @148727 @validateCancelButtonWorkingAtAddFileModalAtRecordLevel
+  Scenario: Verify modal gets closed by lick on cancel button under add file modal at record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Cancel" button in send email modal
+    Then I see "PlanningFiles" modal window with id "---program:-:PlanningFilesModalId---" is not displayed

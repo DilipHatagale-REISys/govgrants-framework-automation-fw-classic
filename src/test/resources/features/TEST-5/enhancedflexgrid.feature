@@ -2668,3 +2668,70 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2019-2019)"
     Then I see "Page" with pagination arrow at "AwardBudgetCategoryFlexGridgrid" at "Top"
     Then I see "Page" with pagination arrow at "AwardBudgetCategoryFlexGridgrid" at "Bottom"
+
+  @148349    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "12,344.0000" for title "NumberDecimal" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @148362    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see the text :
+      | 12,345.0,000 |
+
+    Examples:
+      | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @148507  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTable
+  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "2,323.0,000" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

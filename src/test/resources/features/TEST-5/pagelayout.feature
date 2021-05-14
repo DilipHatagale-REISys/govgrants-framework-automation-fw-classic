@@ -7512,3 +7512,62 @@ Business Need: Page Layout Component Scenarios
     When I close modal by clicking the top right x button
     When I click on "Edit" icon for "Notes Record" inside table
     Then I see "Edit Notes" modal window is displayed
+
+  @148171    @verifyHideFieldJSONWorkingForLongTextAreaFieldInEditMode
+  Scenario: verify hide field json working for long text area fields in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantee State Program | Name                      | PBD-646                    |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+
+  @148172    @verifyHideFieldJSONWorkingForLongTextAreaFieldInViewMode
+  Scenario: verify hide field json working for long text area fields in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantee State Program | Name                      | PBD-646                    |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    When I click on "Save" in the page details
+    Then I softly see "Project Goals" is not displayed inside page block detail
+
+  @148319    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtPageLayout
+  Scenario: verify number field is displayed with 4 decimal places at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true             | Grantee State Program | Name                      | PBD-9261                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "12344" into field "Removenumber__c"
+    And I click on "Save" in the page details
+    Then I see field "Removenumber" as "12,344.0000"
