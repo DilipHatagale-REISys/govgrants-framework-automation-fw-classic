@@ -5720,7 +5720,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
     When I click on "Cancel" button in send email modal
-    Then I see "Add Files" modal window with id "collabModalDiv" is not displayed
+    Then I see "Add Files" modal window with id "homeCollabModalDiv" is not displayed
 
   @148378    @verifyCancelButtonWorkingAtAddFileModalAtRecordLevelCollabTab
   Scenario: Verify cancel button working at add file modal at record level collab tab
@@ -5763,7 +5763,7 @@ Business Need: Logged Issues Scenarios
     When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
     And I click modal button "Save"
     Then I see the following messages in the page details contains:
-      | Attachement added successfully. |
+      | Attachement added Successfully. |
 
   @146998    @validateAttachmentAddActionWorkingWhileUploadingFromWorkspace
   Scenario: validate Attachment add action working correctly while uploading attachment from workspace
@@ -5795,4 +5795,4 @@ Business Need: Logged Issues Scenarios
     When I upload file "TestFileSharing.docx" into library
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
-    Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf"
+    Then I see table with header "Attachments" contains records "TestFileSharing.docx"

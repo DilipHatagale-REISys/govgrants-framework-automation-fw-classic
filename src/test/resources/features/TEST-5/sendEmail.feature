@@ -1777,3 +1777,203 @@ Business Need: Send Email Component Scenarios
     And I change formatting of all text to "Remove Format" inside CK editor
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting" displayed in "Plain" format inside CK editor
+
+  @147337  @verifyTextInsideCkEditorInputBoxIsDisplayedAsNumberedListInsideSendEmailModal
+  Scenario: validate text inside ck editor input box is displayed as "Numbered List" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Insert/Remove Numbered List" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "NUMBERED LIST" format inside CK editor
+
+  @147358  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsNumberedListButAsNormalInsideSendEmailModal
+  Scenario: validate text inside ck editor input box is not displayed as "Numbered List" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Insert/Remove Numbered List" inside CK editor
+    And I change formatting of all text to "Insert/Remove Numbered List" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "PLAIN" format inside CK editor
+
+  @147455  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBulletedListInsideSendEmailModal
+  Scenario: validate text inside ck editor input box is displayed as "Bulleted List" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Insert/Remove Bulleted List" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "BULLETED LIST" format inside CK editor
+
+  @147374  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsBulletedListButAsNormalInsideSendEmailModal
+  Scenario: validate text inside ck editor input box is not displayed as "Bulleted List" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Insert/Remove Bulleted List" inside CK editor
+    And I change formatting of all text to "Insert/Remove Bulleted List" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "PLAIN" format inside CK editor
+
+  @147909  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBlockQuoteInsideSendEmailModal
+  Scenario: validate text inside ck editor input box is displayed as "Block Quote" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Block Quote" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "Block Quote" format inside CK editor
+
+  @147374  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsBlockQuoteButAsNormalInsideSendEmailModal @wip
+  Scenario: validate text inside ck editor input box is not displayed as "Block Quote" text at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Formatting Styles" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "PLAIN" format inside CK editor

@@ -1651,6 +1651,97 @@ Business Need: Flex Table Component Scenarios
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Bottom"
 
+  @148305    @validateQuickSearchWorkingForPartialValueFromPicklistFieldAtFlexTable
+  Scenario: Validate quick search working for picklist partial value at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Create"
+    Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
+    Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
+
+  @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
+  Scenario: Validate quick search working containg numeric value followed by space at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation 8 for"
+    Then I see "Test program for automation 8 for number DND" value in flex table id "---program:-:programsTableId---"
+
+  @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
+  Scenario: Validate quick search working containing special character followed by space at flex table
+    Given I delete the record "Program @@/ created for special char" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program @@/ created for special char" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Program @@/ created"
+    And I pause execution for "3" seconds
+    Then I see "Program @@/ created for special char" value in flex table id "---program:-:programsTableId---"
+
+  @148894    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndNumericValueAtFlexTable
+  Scenario: Validate quick search working containing space between alpha and numeric value at flex table
+    Given I delete the record "Program 1 Created for numeric value" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program 1 Created for numeric value" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Program 1 Created"
+    And I pause execution for "3" seconds
+    Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
+
+  @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
+  Scenario: Validate quick search working containing space between alpha and special character at flex table
+    Given I delete the record "Program @@/ Created for special value" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program @@/ Created for special value" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Program @@/ Created"
+    And I pause execution for "3" seconds
+    Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
+
+  @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
+  Scenario: Validate quick search working containing space between numeric and special character at flex table
+    Given I delete the record "Program @@/ 1 Created for special value" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Program @@/ 1 Created for special value" into field "ProgramName__c"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Program @@/ 1 Created"
+    And I pause execution for "3" seconds
+    Then I see "Program @@/ 1 Created for special value" value in flex table id "---program:-:programsTableId---"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

@@ -3248,6 +3248,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "3" seconds
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "Loan" into field "ProgramType__c"
@@ -3255,5 +3256,32 @@ Business Need: All pdf and xls related scenario including component and complete
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "Field History" on page "1" of "govgrants" pdf file
+
+  @148315    @verifyFieldHistoryTableInDownloadedPDFAtPageLayout @BugLogged=149597 @wip
+  Scenario: validate field history table is display with title in page layout PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Field History" on page "1" of "govgrants" pdf file
