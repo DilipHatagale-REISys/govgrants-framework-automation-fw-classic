@@ -2685,7 +2685,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see value "12,344.0000" for title "NumberDecimal" inside table "---program:-:flexGridEnhancedID---"
+    Then I see value "12,344.0,000" for title "NumberDecimal" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |

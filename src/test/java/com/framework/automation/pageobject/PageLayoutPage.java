@@ -3364,6 +3364,22 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+
+            case "NUMBERED LIST":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ol/li[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "BULLET LIST":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul/li[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "BLOCK QUOTE":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//blockquote//p[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
         }
         return flag;
     }
