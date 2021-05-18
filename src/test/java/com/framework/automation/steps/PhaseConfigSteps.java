@@ -130,9 +130,9 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertStickyNotesTextNotDisplayed(stickyTitle, text);
     }
 
-    @Then("^I see alert popup box$")
-    public void assertPopUpBoxForGlobalSearch() {
-        phaseConfigPage.assertAlertPopUpBoxDisplayed();
+    @Then("^I (see|do not see) alert popup box$")
+    public void assertPopUpBoxForGlobalSearch(String usage) {
+        phaseConfigPage.assertAlertPopUpBoxDisplayed(usage);
     }
 
     @Then("^I see current date on sticky Notes$")

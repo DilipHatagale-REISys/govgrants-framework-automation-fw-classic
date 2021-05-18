@@ -7309,7 +7309,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
-    Then I softly see alert confirmation box with body "Changes that you made may not be saved." is displayed
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+#    Then I softly see alert confirmation box with body "Changes that you made may not be saved." is displayed
 
   @147904    @verifyByClickAtSaveActionAtPageLayoutARecordIsGettingSavedWithChangedData
   Scenario: validate by click at save action at page layout, a record is getting saved with changed data

@@ -107,7 +107,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Row | true              | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total     | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total     | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
@@ -1741,6 +1741,71 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "Program @@/ 1 Created"
     And I pause execution for "3" seconds
     Then I see "Program @@/ 1 Created for special value" value in flex table id "---program:-:programsTableId---"
+
+  @149995    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet1AtFlexTable
+  Scenario: Validate quick search working for picklist partial value as "nge Req" at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "nge Req"
+    Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
+
+  @149992    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet2AtFlexTable
+  Scenario: Validate quick search working for picklist partial value as "Requested" at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Requested"
+    Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
+
+  @150000    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet3AtFlexTable
+  Scenario: Validate quick search working for picklist partial value as "mitt" at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "mitt"
+    And I pause execution for "3" seconds
+    Then I softly see "Submitted for Approval" value in flex table id "---program:-:programsTableId---"
+
+  @150003    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet4AtFlexTable
+  Scenario: Validate quick search working for picklist partial value as "rea" at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "rea"
+    Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
+
+  @150054    @validate4DecimalValueIsDisplayedOnFlexTableForNumberFieldTotal
+  Scenario Outline: Validate 4 decimal value should be display on the Number field at flex table total
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9261                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I enter value "1" into field "Number_Test__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I pause execution
+    Then I see the text :
+      | 1,235.0000 |
+
+    Examples:
+      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed

@@ -1977,3 +1977,46 @@ Business Need: Send Email Component Scenarios
     And I change formatting of all text to "Formatting Styles" inside CK editor
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting" displayed in "PLAIN" format inside CK editor
+
+  @149357 @validateThatFilesUploadedFromSelectFileSectionIsDisplayedIntoToReceiversEmail
+  Scenario: validate that files uploaded from select files section is displayed in to receivers email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click modal button "Select Files"
+    When I check "testAutomationFileDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I enter value "ashwini.mahore@yopmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation Email1" into field "Subject" on send email modal
+    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I checkout to yopmail with mailid "ashwini.mahore@yopmail.com"
+    And I pause execution for "120" seconds
+    And I refresh the page
+    Then I see the text :
+      | testAutomationFileDND.png |
