@@ -8,7 +8,6 @@ import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebElement;
 
 import java.time.format.DateTimeFormatter;
@@ -270,7 +269,6 @@ public class PhaseConfigPage extends GovGrantsManager {
      * assert pop up alert box for global search
      */
     public void assertAlertPopUpBoxDisplayed(String usage) {
-        try {
             if (usage.equalsIgnoreCase("do not see")) {
                 I.amPerforming().waitFor().makeThreadSleep(2000);
                 I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().popupPresent()).isFalse();
@@ -280,8 +278,6 @@ public class PhaseConfigPage extends GovGrantsManager {
                 I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().popupPresent()).isTrue();
                 I.amPerforming().waitFor().makeThreadSleep(2000);
             }
-        } catch (UnhandledAlertException E) {
-        }
     }
 
 
