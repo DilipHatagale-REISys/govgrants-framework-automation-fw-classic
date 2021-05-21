@@ -1056,7 +1056,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "Pre-Screen Review Panel" inside table
     And I click on top right button "Associate Internal user" in flex table with id "RelatedTemplateReviewers"
     And I click on expand collapse icon for panel heading "Internal Review Panel Users"
-    Then I see "Internal Review Panel Users" is collapsed
+    Then I see "Internal Review Panel Users" block is collapsed
 
   @58956    @formsPrevievLinkShouldOpensFormsCorrectly
   Scenario: validate preview lookup link is working correctly on click at forms modal

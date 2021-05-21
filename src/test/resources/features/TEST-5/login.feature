@@ -2,7 +2,7 @@
 Business Need: Login Scenarios
   Test all login based scenarios
 
-  @validlogin @smoke
+  @validlogin
   Scenario Outline: User enters correct username and password to login and reaches homepage
     Given I enter my user "<username>"
     #And I enter my password "<password>"

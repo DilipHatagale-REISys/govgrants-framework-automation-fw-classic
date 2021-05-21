@@ -1750,8 +1750,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I softly do not see "Section: Section 1" is collapsed
-    Then I softly do not see "Section: Section 4" is collapsed
+    Then I softly do not see "Section: Section 1" block is collapsed
+    Then I softly do not see "Section: Section 4" block is collapsed
 
   @93780   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInViewMode
   Scenario: validate sections are expanded by default inside dynamic form in view mode
@@ -1763,8 +1763,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I softly do not see "Section: Section 1" is collapsed
-    Then I softly do not see "Section: Section 4" is collapsed
+    Then I softly do not see "Section: Section 1" block is collapsed
+    Then I softly do not see "Section: Section 4" block is collapsed
 
   @94223   @validateDependentQuestionJsonFieldAndProvidingUniqueFieldNameInQuestionIdentifierFieldByDisablingFieldInsideDynamicFormInViewMode
   Scenario: validate Dependent Question Json Field by disabling currency field on the basis of written field value and providing unique field name in Question Identifier in form view mode
@@ -3697,8 +3697,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I softly do not see "Section: Section 1" is collapsed
-    Then I softly do not see "Section: Section 4" is collapsed
+    Then I softly do not see "Section: Section 1" block is collapsed
+    Then I softly do not see "Section: Section 4" block is collapsed
 
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |

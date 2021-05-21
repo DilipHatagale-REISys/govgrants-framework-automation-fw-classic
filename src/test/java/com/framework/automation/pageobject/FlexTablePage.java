@@ -114,13 +114,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if Edit icon open in new tab or not
-     */
-    public void assertEditWithNewTab() {
-        Assert.assertTrue(isNewTabOpensForEdit());
-    }
-
-    /**
      * assert if Edit icon open in same tab or not
      */
     public void assertEditOpenInSameTab() {
@@ -671,18 +664,6 @@ public class FlexTablePage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
-    }
-
-    /**
-     * Boolean status of Edit icon opens in another tab
-     *
-     * @return
-     */
-    private Boolean isNewTabOpensForEdit() {
-        boolean myNewTabFound = false;
-        if (I.amPerforming().switchTo().getWindowsHandlers().size() > 1)
-            myNewTabFound = true;
-        return myNewTabFound;
     }
 
     /**

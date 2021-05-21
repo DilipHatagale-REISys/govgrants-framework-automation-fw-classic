@@ -119,7 +119,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
-    When I click on "PG-343-0056" icon for "Test Announcement For Automation" inside table
+    And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "ActiveFundingOpportunities"
+    When I click on "{SavedValue:SaveID}" icon for "Test Announcement For Automation" inside table
     Then I see "Planning" tab is highlighted for particular program
 
   @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @smoke

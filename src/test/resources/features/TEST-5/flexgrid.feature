@@ -739,6 +739,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "Automation Help" as title for "App 786" inside flex table action
 
   @50338    @viewActionOpensInNewWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -767,6 +768,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see no new tab is opened
 
@@ -781,6 +783,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see "View" opens in overLay window
 
@@ -797,6 +800,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see edit opens with "<newActionUrl>"
 
@@ -830,6 +834,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "View" icon for "App 786" is displayed inside flex table
 
   @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke
@@ -843,6 +848,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
@@ -859,6 +865,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
@@ -941,6 +948,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see external link icon as "App 786" for "Edit" inside flex table action
 
   @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
@@ -954,6 +962,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "Test Automation" as title for "App 786" inside flex table action
 
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
