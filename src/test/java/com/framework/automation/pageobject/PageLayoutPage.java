@@ -345,13 +345,13 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if expand collapse working correctly
      */
-    public void assertFunctionalityOfExpandCollapse(String usage, String blockName) {
+    public void assertFunctionalityOfExpandCollapse(String usage, String blockName, Boolean isTable) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isExpandCollapseWorkingAsExpected(blockName));
+            Assert.assertTrue(isExpandCollapseWorkingAsExpected(blockName, isTable));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isExpandCollapseWorkingAsExpected(blockName));
+            Assert.assertFalse(isExpandCollapseWorkingAsExpected(blockName, isTable));
         } else if (usage.equalsIgnoreCase("softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isExpandCollapseWorkingAsExpected(blockName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isExpandCollapseWorkingAsExpected(blockName, isTable)).isFalse();
         }
 
     }
@@ -2113,9 +2113,13 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean isExpandCollapseWorkingAsExpected(String blockName) {
+    private boolean isExpandCollapseWorkingAsExpected(String blockName, Boolean isTable) {
         boolean flag = false;
-        if (I.amPerforming().actionToGet().attribute(By.xpath("//div[@class='panel-heading']//a[@title='" + blockName + "']"), "class").equalsIgnoreCase("collapsed")) {
+        if (isTable) {
+            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@class ='panel-body collapse' and @id='" + blockName + "']"))) {
+                flag = true;
+            }
+        } else if (I.amPerforming().actionToGet().attribute(By.xpath("//div[@class='panel-heading']//a[@title='" + blockName + "']"), "class").equalsIgnoreCase("collapsed")) {
             flag = true;
         }
         return flag;

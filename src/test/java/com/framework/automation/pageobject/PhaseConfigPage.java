@@ -268,9 +268,14 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * assert pop up alert box for global search
      */
-    public void assertAlertPopUpBoxDisplayed() {
-
-        Assert.assertFalse(I.amPerforming().checkToSee().popupPresent());
+    public void assertAlertPopUpBoxDisplayed(String usage) {
+        if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().popupPresent()).isFalse();
+        } else {
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().popupPresent()).isTrue();
+        }
+        I.amPerforming().waitFor().makeThreadSleep(2000);
+        I.amPerforming().switchTo().acceptAlert();
     }
 
     /**

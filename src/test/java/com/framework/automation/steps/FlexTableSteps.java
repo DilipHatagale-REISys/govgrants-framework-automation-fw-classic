@@ -98,11 +98,6 @@ public class FlexTableSteps {
         flexTablePage.assertnewAddedLastRowLabelName(flexTablelastRowName);
     }
 
-    @Then("^I see new tab is opened$")
-    public void assertNewTabOpenOnEditClick() {
-        flexTablePage.assertEditWithNewTab();
-    }
-
     @Then("^I see no new tab is opened$")
     public void assertNoNewTabOpensOnEditClick() {
         flexTablePage.assertEditOpenInSameTab();

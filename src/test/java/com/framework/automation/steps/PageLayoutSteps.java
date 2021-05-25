@@ -364,9 +364,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSVGArrowOrderForLightningLookUp(order);
     }
 
-    @Then("^I (see|do not see|softly do not see) \"([^\"]*)\" is collapsed$")
-    public void assertExpandCollapseWorking(String usage, String blockName) {
-        pageLayoutPage.assertFunctionalityOfExpandCollapse(usage, blockName);
+    @Then("^I (see|do not see|softly do not see) \"([^\"]*)\" (table|block) is collapsed$")
+    public void assertExpandCollapseWorking(String usage, String blockName, String uiType) {
+        pageLayoutPage.assertFunctionalityOfExpandCollapse(usage, blockName,uiType.contains("table"));
     }
 
     @Then("^I see error message \"([^\"]*)\" for invalid input at \"([^\"]*)\"$")

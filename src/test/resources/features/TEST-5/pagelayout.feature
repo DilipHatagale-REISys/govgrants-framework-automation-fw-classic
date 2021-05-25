@@ -7298,8 +7298,8 @@ Business Need: Page Layout Component Scenarios
     Then I see "Add" button inside "Notes" flex table not displayed
     Then I see "Add" button inside "Attachments" flex table not displayed
 
-  @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedDataAtPageLayout
-  Scenario: validate the alert message is displayed for unsaved data by click on browser navigation arrow
+  @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPicklistFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved picklist field data by click on browser navigation arrow
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7307,9 +7307,11 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "Tax Credit" into field "ProgramType__c"
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
-    Then I softly see alert confirmation box with body "Changes that you made may not be saved." is displayed
+    And I pause execution for "3" seconds
+    Then I see alert popup box
 
   @147904    @verifyByClickAtSaveActionAtPageLayoutARecordIsGettingSavedWithChangedData
   Scenario: validate by click at save action at page layout, a record is getting saved with changed data
@@ -7557,11 +7559,11 @@ Business Need: Page Layout Component Scenarios
   @148319    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtPageLayout
   Scenario: verify number field is displayed with 4 decimal places at page layout
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true             | Grantee State Program | Name                      | PBD-9261                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9261                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7571,3 +7573,316 @@ Business Need: Page Layout Component Scenarios
     And I enter value "12344" into field "Removenumber__c"
     And I click on "Save" in the page details
     Then I see field "Removenumber" as "12,344.0000"
+
+  @146261    @verifyInternalContactTableIsCollapsedByClickAtCollapsedArrow
+  Scenario: validate that Internal Contacts Table is collapsing by click at expand collapse as expected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
+    And I click toggle button to select "Internal"
+    And I refresh the page
+    And I expand table with header "Internal"
+    Then I see "toggleFlexTableflexTableRandomID" table is collapsed
+
+  @146267    @verifyRecipientContactTableIsCollapsedByClickAtCollapsedArrow
+  Scenario: validate that recipient Contacts Table is collapsing by click at expand collapse as expected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
+    And I click toggle button to select "Recipient"
+    And I expand table with header "Recipient"
+    Then I see "toggleFlexTableflexTableRandomID" table is collapsed
+
+  @149193    @verifyInternalContactTableIsExpandedByClickAtExpandArrow
+  Scenario: validate that Internal Contacts Table is expanded by click at expand collapse as expected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
+    And I click toggle button to select "Internal"
+    Then I see expected table with id "toggleFlexTableflexTableRandomID"
+
+  @149197   @verifyInternalRecipientTableIsExpandedByClickAtExpandArrow
+  Scenario: validate that recipient Contacts Table is expanded by click at expand collapse as expected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
+    And I click toggle button to select "Internal"
+    Then I see expected table with id "toggleFlexTableflexTableRandomID"
+
+  @149175    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberField
+  Scenario: verify missing field msg is displayed for phone no field if req for save is set
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "Phone_Field__c"
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Phone Field is required to save under Overview. |
+
+  @150972    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldOnModal
+  Scenario: verify missing field msg is displayed for phone no field if req for save is set at modal
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Roles and Responsibilities 7 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    When I clear the value from field "phonetest__c"
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | phonetest is required to save |
+
+  @151109    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldInCreateMode
+  Scenario: verify missing field msg is displayed for phone no field if req for save is set at newly created record
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "4" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9263                   |
+    And I click on "Edit" in the page details
+    When I clear the value from field "Phone_Field__c"
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Phone Field is required to save under Overview. |
+
+  @151138    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldOnModal
+  Scenario: verify missing field msg is displayed for phone no field if req for save is set at modal
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Roles and Responsibilities 7 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I navigate to "Roles" sub tab
+    When I click on "Edit" icon for "Owner" inside table
+    When I clear the value from field "phonetest__c"
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | phonetest is required to save |
+
+  @149695    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved text field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "123" into field "ProgramName__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149678    @verifyAnAlertMessageIsDisplayedForUnsavedTextFieldDataIfPageRefreshedAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved text field data by click on browser refresh
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "123" into field "ProgramName__c"
+    And I refresh the page
+    And I pause execution for "3" seconds
+    Then I see alert popup box
+
+  @149700    @verifyThatUserCanSaveAnUnsavedDataIfPageRefreshedAtPageLayout
+  Scenario: validate the user can save unsaved data by click on save button at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "123" into field "ProjectGoals__c"
+    And I click on "Save" in the page details
+    Then I see field "Project Goals" as "123"
+
+  @148392  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I enter value "" into field "ProjectGoals__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148393    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedNumberFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved number field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Number__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148394    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedNumberFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved number field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Number__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148395  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInNumberFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in number field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Number__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148398    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedCurrencyFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "fieldFundedAmount__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148397    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedCurrencyFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "fieldFundedAmount__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148399  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInCurrencyFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Currency field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "fieldFundedAmount__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148400    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPercentFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Percent__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148401    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPercentFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Percent__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148402  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInPercentFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Percent field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "Percent__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148466    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedURLFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved url field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1" into field "URL__c"
+    And I click on back arrow
+    And I pause execution for "www.google.com" seconds
+    Then I see alert popup box

@@ -314,6 +314,9 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Test Application For Automation" inside table
     When I navigate to "Attachments" sub tab
     When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Edit" in the page details
+    And I enter value "$@#" into field "fieldAcknowledgment2__c"
+    When I click on "Save" button in right header
     Then I see for "Acknowledgment2" field value is "$@#" inside dynamic form
 
   @112036 @verifySpecialCharacterArAcceptedAtFormLayoutInEdit
@@ -886,3 +889,97 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" in the page details
     Then I softly see "Save" button at "Top" of  Modal window
     Then I softly see "Save" button at "Bottom" of  Modal window
+
+  @148221 @verifyFormDropdownIsHiddenInEditModeIfHideFromDropdownCheckBoxIsCheckedForAdminUser
+  Scenario:validate that form dropdown is hidden in edit mode if custom setting checkbox is checked for admin user
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+
+  @148222 @verifyFormDropdownIsHiddenInEditModeIfHideFromDropdownCheckBoxIsCheckedForSPIUser
+  Scenario:validate that form dropdown is hidden in edit mode if custom setting checkbox is checked for SPI user
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page" inside flex table with id "FormEnhancedTable"
+    Then I softly do not see dropdown with selected value as "General Application Cover Page" at form layout
+
+  @149711 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtForms
+  Scenario:validate that users should be warned when they click on browser back button with unsaved data at forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I click on back arrow
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+
+  @149711 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtForms
+  Scenario:validate that users should be warned when they click on browser back button with unsaved data at forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I click on back arrow
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+
+  @149714 @verifyThatUnsavedDataAtFormsCanBeSavedSuccessfullyByClickAtSaveButton
+  Scenario:validate that unsaved data can be saved by click on form's Save Button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "Test" into field "fieldAcknowledgment2__c"
+    When I click on "Save" button in right header
+    And I pause execution for "3" seconds
+    Then I see for "Acknowledgment2" field value is "Test" inside dynamic form
+
+  @149712 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserRefreshWithUnsavedDataAtForms
+  Scenario:validate that users should be warned when they click on browser refresh button with unsaved data at forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I refresh the page
+    And I pause execution for "4" seconds
+    Then I see alert popup box

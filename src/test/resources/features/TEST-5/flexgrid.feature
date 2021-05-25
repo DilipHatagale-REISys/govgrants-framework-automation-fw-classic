@@ -739,6 +739,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "Automation Help" as title for "App 786" inside flex table action
 
   @50338    @viewActionOpensInNewWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -767,6 +768,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see no new tab is opened
 
@@ -781,6 +783,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see "View" opens in overLay window
 
@@ -797,6 +800,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table
     Then I see edit opens with "<newActionUrl>"
 
@@ -830,6 +834,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "View" icon for "App 786" is displayed inside flex table
 
   @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke
@@ -843,6 +848,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
@@ -859,6 +865,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
@@ -941,6 +948,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see external link icon as "App 786" for "Edit" inside flex table action
 
   @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
@@ -954,6 +962,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786"
     Then I see "Test Automation" as title for "App 786" inside flex table action
 
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
@@ -2667,3 +2676,50 @@ Business Need: Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                                                            | defaultFieldsApi                                                                       |
       | Id,NumberDecimal__c,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @150007    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridChildTable
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see value "1,234.0000" for title "testnumber" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
+  @150016    @verifyNumberFieldTotalIsDisplayedWithFourDecimalPlacesAtMEGridChildTable
+  Scenario Outline: verify number field total is displayed with 4 decimal places at ME Grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see the text :
+      | 2,468.0000 |
+
+    Examples:
+      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |

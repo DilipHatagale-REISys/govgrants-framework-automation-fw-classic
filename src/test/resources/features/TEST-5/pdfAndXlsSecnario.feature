@@ -3285,3 +3285,132 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Field History" on page "1" of "govgrants" pdf file
+
+  @150008    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridChildTableInsidePDF
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid child table pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "1,234.0000" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
+  @150011    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtMEGridChildTableInsideXLS
+  Scenario Outline: verify number field is displayed with 4 decimal places at ME Grid child table XLS
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I see "1234" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
+  @150053    @verifyNumberFieldTotalIsDisplayedWithFourDecimalPlacesAtMEGridChildTableInsidePDF
+  Scenario Outline: verify number field total is displayed with 4 decimal places at ME Grid child table pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "2,468.0000" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
+  @150597    @verifyDisplayFieldsAndValuesInsideEnhancedGridChildFlexTableDownloadedPDF-gPlanning
+  Scenario Outline: validate given display fields and values are displayed on enhanced grid of programs-planning chid table pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    When I enter value "122" into field "Amendments__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
+    And I download the file
+    Then I softly see "122" on page "31" of "govgrants" pdf file
+    Then I softly see "Amendments" on page "31" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                               |
+      | Amendments__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c |
+
+  @150602    @verifyDisplayFieldsAndValuesInsideEnhancedGridChildFlexTableDownloadedXLS-gPlanning
+  Scenario Outline: validate given display fields and values are displayed on enhanced grid of programs-planning chid table XLS
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue       | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsChildApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi>      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsChildApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>      | TmpActiveGrantsGrid        |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    When I enter value "122" into field "Amendments__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
+    Then I softly see "122" in downloaded xls or csv file "govgrants"
+    Then I softly see "Amendments" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsChildApi                                                                                                                                            | defaultFieldsChildApi                                                                                                                          | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Amendments__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | ProjectTitle__c,Status__c,Name | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
