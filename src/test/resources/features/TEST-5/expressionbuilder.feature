@@ -793,8 +793,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Accounts" flex table not displayed
 
@@ -827,8 +827,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Accounts" flex table not displayed
 
@@ -861,8 +861,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Accounts" flex table not displayed
 
@@ -2322,8 +2322,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "view" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}"
+    When I click on "view" icon for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}" inside table
     Then I do not see "Program Information" page block displayed
 
   @45853    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FunderType__c_Federal_OR_ProgramType__c_Grant

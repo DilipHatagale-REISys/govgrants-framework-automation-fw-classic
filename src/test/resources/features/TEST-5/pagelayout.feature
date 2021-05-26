@@ -1077,8 +1077,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     When I click on Manage Attachments inside page block details
     Then I see "Test1:Test2" inside Type selectbox
@@ -2065,8 +2065,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2230,8 +2230,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Application Deadline" as "11/05/2020 2:57 AM"
 
@@ -2247,8 +2247,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Application Deadline" as "05/11/2020 2:57 AM"
 
@@ -2264,8 +2264,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Application Deadline" as "5/11/2020 1:27 PM"
 
@@ -2281,8 +2281,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "FOA Release Date" as "11/04/2020"
 
@@ -2298,8 +2298,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "FOA Release Date" as "04/11/2020"
 
@@ -2315,8 +2315,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "FOA Release Date" as "4/11/2020"
 
@@ -4354,13 +4354,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I hover mouse on lookup link "AN-343-020"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    And I save the field labeled "ID" as "savedValue"
+    When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
@@ -4494,12 +4491,13 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
-    When I hover mouse on lookup link "AN-343-020"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    And I save the field labeled "ID" as "savedValue"
+    When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see "Title" shown inside mini page layout on hover
-    Then I softly see "Test Announcement For Automation" shown inside mini page layout on hover
+    Then I softly see "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" shown inside mini page layout on hover
 
   @125229  @VerifyMiniPageLayoutShouldDisplayedWithUnBoldValueOnMouseHoverAtSidebarLinks
   Scenario: validate that mini page layout is getting displayed without bold value on mouse hover at sidebar links
@@ -4507,9 +4505,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
-    When I hover mouse on lookup link "AN-343-020"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    And I save the field labeled "ID" as "savedValue"
+    When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I see mini page layout value is displayed in normal text with "500" font-weight
 
@@ -4519,9 +4518,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
-    When I hover mouse on lookup link "AN-343-020"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    And I save the field labeled "ID" as "savedValue"
+    When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I see mini page layout background is in grey color
 
@@ -7882,7 +7882,147 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    When I enter value "1" into field "URL__c"
+    When I enter value "www.google.com" into field "URL__c"
     And I click on back arrow
-    And I pause execution for "www.google.com" seconds
+    And I pause execution for "2" seconds
     Then I see alert popup box
+
+  @148467    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedURLFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved url field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "www.google.com" into field "URL__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148468  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInURLFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in url field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "www.google.com" into field "URL__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148469    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedLongTextAreaFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "fieldProjectGoals__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "fieldProjectGoals__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148471  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInLongTextAreaFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in long text area field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "fieldProjectGoals__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148473    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextAreaFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved text area field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "Authorization__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148474    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedTextAreaFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved text area field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "Authorization__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148475  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextAreaFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text area field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test" into field "Authorization__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @148501    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedMultiPicklistFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser navigation arrow
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I enter value "Other" into field "EligibleApplicantTypes__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148503    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedMultiPicklistFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser refresh button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I enter value "Other" into field "EligibleApplicantTypes__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @148505  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInMultiPicklistFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in multi-picklist field at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I enter value "Other" into field "EligibleApplicantTypes__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"

@@ -21,7 +21,7 @@ Business Need: New API related scenarios temporary
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
   @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue
-  Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
+  Scenario: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -40,10 +40,7 @@ Business Need: New API related scenarios temporary
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     When I navigate to "Planning" tab
     When I pause execution for "185" seconds
-    Then I see "" "<Logout_URL>" page is displayed
-    Examples:
-      | Logout_URL                                   |
-      | //ggptest5-developer-edition.na69.force.com/ |
+    Then I see "Logout" in current url
 
   @61434   @VerifySessionTimeoutPopUpAppears
   Scenario: Verify session timeout pop-up appears after 2 min of session login
@@ -155,7 +152,7 @@ Business Need: New API related scenarios temporary
     Then I see Session Timeout dialogbox with button "Test Log Out"
 
   @148203   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValueForSPIUser
-  Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed for SPI User
+  Scenario: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed for SPI User
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -171,11 +168,7 @@ Business Need: New API related scenarios temporary
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I pause execution for "185" seconds
-    Then I see "" "<Logout_URL>" page is displayed
-
-    Examples:
-      | Logout_URL                                                       |
-      | https://granteeportal-ggptest5-developer-edition.na69.force.com |
+    Then I see "Logout" in current url
 
   @148208   @VerifySessionTimeoutPopUpAppearsOnFormLayout
   Scenario: Verify session timeout pop-up appears after 1 min of session login on form layout

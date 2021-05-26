@@ -1876,7 +1876,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Body formatting" into field "Body Content" on send email modal
     And I change formatting of all text to "Insert/Remove Bulleted List" inside CK editor
     When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "BULLETED LIST" format inside CK editor
+    Then I see "Test Body formatting" displayed in "BULLET LIST" format inside CK editor
 
   @147374  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsBulletedListButAsNormalInsideSendEmailModal
   Scenario: validate text inside ck editor input box is not displayed as "Bulleted List" text at send email modal

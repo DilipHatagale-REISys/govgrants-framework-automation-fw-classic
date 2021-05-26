@@ -740,6 +740,7 @@ Business Need: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I perform quick search for "App 786"
+    And I pause execution for "2" seconds
     Then I see "Automation Help" as title for "App 786" inside flex table action
 
   @50338    @viewActionOpensInNewWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -2306,7 +2307,8 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    Then I see value "01/06/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    And I save the value from row "1" for column name "DateTime" as "SaveDate" from flex table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    Then I see value "{SavedValue:SaveDate}" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @84703    @verifyDateAndTimeFieldFormatForLocalAsISTUnderMEGridParentFlexTable
   Scenario: validate the date and time field format under ME Grid parent flex table with respective to IST Local
@@ -2323,7 +2325,8 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    Then I see value "1/6/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    And I save the value from row "1" for column name "DateTime" as "SaveDate" from flex table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    Then I see value "{SavedValue:SaveDate}" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @84815    @verifyDateFieldFormatForLocalAsESTUnderMEGridParentFlexTable
   Scenario: validate the date field format under ME Grid parent flex table with respective to EST Local

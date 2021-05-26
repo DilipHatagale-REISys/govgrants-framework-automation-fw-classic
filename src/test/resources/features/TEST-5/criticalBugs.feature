@@ -691,8 +691,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I click "program__c" lookup link
     Then I see "Planning" tab is highlighted for particular program
 
@@ -4464,6 +4464,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Plan" sub tab
+
     Then I see "No Records Found" inside flex table with id "---program:-:programOutComesTableId---"
 
   @121616    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtCollabPhase
