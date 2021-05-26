@@ -274,6 +274,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "3" seconds
     And I clear value from "Section 1" page block :
       | Field          |
       | Rich Text Area |
@@ -771,6 +772,7 @@ Business Need: dynamic forms Component Scenarios
     When I enter values into "Section 1" page block
       | Field          | Value |
       | Rich Text Area | Test  |
+    And I pause execution for "3" seconds
     And I clear value from "Section 1" page block :
       | Field          |
       | Rich Text Area |

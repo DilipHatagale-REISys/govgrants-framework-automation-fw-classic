@@ -65,7 +65,7 @@ Business Need: Custom App Config Component Scenarios
       | Custom App Config    | Sequence   | 5                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory    | fieldName  | fieldNewValue  | coreComponentField|
-      | Custom App Config:General| Sequence   | 4              | Admin             |
+      | Custom App Config:General| Sequence   | 2              | Admin             |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As an Administrator" option of custom App is at position "2"

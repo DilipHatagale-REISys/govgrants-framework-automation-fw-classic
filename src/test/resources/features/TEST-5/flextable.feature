@@ -100,6 +100,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    And I pause execution for "3" seconds
     Then I see select check box enabled in flex table
 
   @34030    @disablingAmountTotalForFlex-gPlanning
@@ -1396,7 +1397,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-020"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     Then I see "Announcement Title" not displayed in enhanced grid table column title
 
   @126938    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnNameField
@@ -1426,7 +1427,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "AN-343-020" in "ActiveFundingOpportunities" panel
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" in "ActiveFundingOpportunities" panel
     Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunities"
 
   @126941    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnTwoDifferentField
@@ -1799,7 +1800,6 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I pause execution
     Then I see the text :
       | 1,235.0000 |
 
