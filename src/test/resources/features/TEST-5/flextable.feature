@@ -1807,6 +1807,27 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
+  @151627    @validateIsSearchWorkingForLongTextSearchedInFlexTableQuickSearchBox
+  Scenario: Validate search is working for long text searched in flex table quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I pause execution for "3" seconds
+    Then I softly see "{Framework_recordUsed:programInCreatedModeOnly}" value in flex table id "---program:-:programsTableId---"
+
+  @151631    @validateIsSearchWorkingForShortTextSearchedInFlexTableQuickSearchBox
+  Scenario: Validate search is working for short text searched in flex table quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program"
+    And I pause execution for "3" seconds
+    Then I softly see "{Framework_recordUsed:programInCreatedModeOnly}" value in flex table id "---program:-:programsTableId---"
+
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

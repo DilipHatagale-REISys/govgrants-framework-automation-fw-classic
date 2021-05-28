@@ -941,8 +941,8 @@ Business Need: Forms Component Scenarios
     And I pause execution for "4" seconds
     Then I see alert popup box
 
-  @149711 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtForms
-  Scenario:validate that users should be warned when they click on browser back button with unsaved data at forms
+  @149711 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtBusinessForms
+  Scenario:validate that users should be warned when they click on browser back button with unsaved data at business forms
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -981,6 +981,68 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon of form "General Application Form" program in flex table
     When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I refresh the page
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+
+  @148989 @verifyThatUnsavedDataAlertMessageDisplayedOnBrowserRefreshShouldGetDisappearedByClickAtCancelButtonAtForms
+  Scenario:validate that alert msg  displayed on browser refresh for unsaved data is disappeared by click at Cancel button at forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I refresh the page
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+    When I click alert button "Cancel"
+    Then I do not see alert popup box
+
+  @146714 @verifyThatUnsavedDataAlertMessageDisplayedOnBrowserBackShouldGetDisappearedByClickAtCancelButtonAtForms
+  Scenario:validate that alert msg displayed on browser back for unsaved data is disappeared by click at Cancel button at forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I click on back arrow
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+    When I click alert button "Cancel"
+    Then I do not see alert popup box
+
+  @149110 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtAllForms
+  Scenario:validate that users should be warned when they click on browser back button with unsaved data at ALL forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I click on back arrow
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+
+  @146713 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserRefreshButtonWithUnsavedDataAtAllForms
+  Scenario:validate that users should be warned when they click on browser refresh button with unsaved data at ALL forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     And I enter value "test123" into field "SimpleQuestion1__c"
     And I refresh the page
     And I pause execution for "4" seconds

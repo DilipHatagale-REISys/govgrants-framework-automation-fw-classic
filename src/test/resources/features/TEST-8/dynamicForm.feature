@@ -4460,3 +4460,20 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
+
+  @149135    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedFieldDataAtDynamicFormLayout
+  Scenario: validate the alert message is displayed for unsaved field data, by click on browser refresh button at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value      |
+      | Written | Test Value |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
