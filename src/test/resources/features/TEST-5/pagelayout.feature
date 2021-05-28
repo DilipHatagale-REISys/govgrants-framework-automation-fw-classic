@@ -8026,3 +8026,168 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Announcement for email notification check" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @149127    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedEmailFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved email field data by click on browser navigation arrow
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test@yopmail.com" into field "testemail__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149123    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedEmailFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved email field data by click on browser refresh button
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test@yopmail.com" into field "testemail__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149131  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInEmailFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Email field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "test@yopmail.com" into field "testemail__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @149156    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPhoneFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Phone field data by click on browser refresh button
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "9987" into field "Phone_Field__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149159    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPhoneFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Phone field data by click on browser navigation arrow
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "9987" into field "Phone_Field__c"
+    And I click on back arrow
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149158  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInPhoneFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Phone field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "9987" into field "Phone_Field__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @146707    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPicklistFieldDataAtPageLayout
+  Scenario: validate the alert message is displayed for unsaved Picklist field data by click on browser refresh button
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I enter value "9987" into field "Phone_Field__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @146708  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInPicklistFieldAtPageLayout
+  Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Picklist field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I enter value "9987" into field "Phone_Field__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @151016   @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtPageLayout
+  Scenario: verify that user gets he validation message with the field name by entering invalid data in url field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "http://www.example.com:8800/" into field "URL__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | URL : Please enter valid URL value. |

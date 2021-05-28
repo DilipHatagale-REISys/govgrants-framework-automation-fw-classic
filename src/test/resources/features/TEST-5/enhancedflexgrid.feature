@@ -2735,3 +2735,55 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @146709 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserRefreshButtonWithUnsavedDataInEnhancedGrid
+  Scenario: validate that users should be warned when they click on browser refresh button with unsaved data in enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    When I enter value "Draft" into field "Status__c"
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see alert popup box
+
+  @149148 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnCancelButtonWithUnsavedDataInEnhancedGrid
+  Scenario: validate that users should be warned when they click on cancel button with unsaved data in enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    When I enter value "Draft" into field "Status__c"
+    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+
+  @150691 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedOnUiAtEnhancedGrid
+  Scenario Outline: validate that reference date field value is displayed as expected in enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see value "05/28/2021" for title "Change Request Due Date" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

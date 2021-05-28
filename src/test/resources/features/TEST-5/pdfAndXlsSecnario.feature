@@ -92,7 +92,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I cannot see "ID Title" on page "1" of "govgrants" pdf file
 
@@ -110,7 +110,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see "ID Title" on page "1" of "govgrants" pdf file
 
@@ -3412,5 +3412,52 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "Amendments" in downloaded xls or csv file "govgrants"
 
     Examples:
-      | newFieldsChildApi                                                                                                                                            | defaultFieldsChildApi                                                                                                                          | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsChildApi                                                                                                                                            | defaultFieldsChildApi                                                                                                                          | newFieldsApi                   | defaultFieldsApi                                                                                                                                                                                                                   |
       | Amendments__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | ProjectTitle__c,Status__c,Name | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @150693 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedInDownloadedXLSAtEnhancedGrid
+  Scenario Outline: validate that reference date field value is displayed as expected in downloaded xls at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I softly see "05/28/2021" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @150692 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedInDownloadedPDFAtEnhancedGrid
+  Scenario Outline: validate that reference date field value is displayed as expected in downloaded PDF at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I softly see "122" on page "31" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
