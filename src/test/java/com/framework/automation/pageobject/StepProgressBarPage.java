@@ -25,8 +25,12 @@ public class StepProgressBarPage extends GovGrantsManager {
     /**
      * assert if step progress bar is not displayed
      */
-    public void assertStepProgressBarForCustomApp() {
-        Assert.assertTrue(isStepProgressBarIsNotDisplayed());
+    public void assertStepProgressBarForCustomApp(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isStepProgressBarIsNotDisplayed()).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isStepProgressBarIsNotDisplayed()).isFalse();
+        }
     }
 
     /**
@@ -88,10 +92,10 @@ public class StepProgressBarPage extends GovGrantsManager {
      * @return: true if it is not displayed
      */
     private boolean isStepProgressBarIsNotDisplayed() {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(stepProgressBar)) {
-                flag = false;
+                flag = true;
             }
         } catch (Exception e) {
         }

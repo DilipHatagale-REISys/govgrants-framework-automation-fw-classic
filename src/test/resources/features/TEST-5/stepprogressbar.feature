@@ -17,7 +17,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see step progress bar is not displayed
+    Then I do not see step progress bar is displayed
 
     Examples:
       | defaultcustomApp |
@@ -37,7 +37,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see step progress bar is not displayed
+    Then I do not see step progress bar is displayed
 
     Examples:
       | defaultuser |
@@ -185,3 +185,162 @@ Business Need: Step Progress Bar Component Scenarios
     Examples:
       | textInsideStatus   |
       | By : Nauman Shahid |
+
+  @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
+  Scenario: validate step progress bar is displayed at page layout for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see step progress bar is displayed
+
+  @151276  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectorUserTypeOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using user type operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserTypeOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151278  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectorProfileOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using profile operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151280  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingContextOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using context=view operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingContextAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151281  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingUserAppOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using user app operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAppAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151284  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsing$UserOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using $user operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsing$UserAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151287  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingFieldOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using Field operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151290  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingFieldAndProfileOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using Field and profile operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151291  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingUserAndProfileOperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using user and profile operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151293  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingProfileWithOROperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using profile with OR operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar
+
+  @151294  @validateExpressionJSONAtStepProgressBarDetailConfigOnStandardObjectUsingFieldProfileAndUserTypeWithOROperator
+  Scenario: validate Hide expression JSON on step progress bar detail config for standard object using field,profile and user type with OR operator
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldProfileAndUserTypeWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    Then I see "Level 1" is not displayed inside step progress bar

@@ -8191,3 +8191,35 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see the following message in the page details :
       | URL : Please enter valid URL value. |
+
+  @148176    @verifyDisplayOfPicklistFieldDropdownValuesInsidePageLayout
+  Scenario: validate that dropdown values under picklist field are displayed properly at edit page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click dropdown field "fieldIsProjectServiceAreaneeded__c"
+    Then I see only the following ordered options in dropdown field "fieldIsProjectServiceAreaneeded__c" :
+      | --None-- |
+      | Yes      |
+      | No       |
+
+  @151531    @verifyByApplyingHideFieldJsonOnPageLayoutThenRecordGetsSavedSuccessfully
+  Scenario: verify if applied hide field json on text field and click on save button then record is getting saved successfully
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldUsingHideFiledJSON | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    Then I see "ProgramView" in current url

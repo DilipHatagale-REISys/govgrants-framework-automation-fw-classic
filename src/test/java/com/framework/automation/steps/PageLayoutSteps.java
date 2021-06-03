@@ -152,6 +152,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnCollabSidebarMenu(menu);
     }
 
+    @And("I hovering mouse on help text icon at {string} inside send email modal")
+    public void iHoveringMouseOnHelpTextIconAtInsideSendEmailModal(String fieldLabel) {
+        pageLayoutPage.hoverOnFieldAtSendEmailModal(fieldLabel);
+    }
+
     @And("I close lightning modal")
     public void iCloseLightningModal() {
         pageLayoutPage.closeLightningModal();
@@ -767,5 +772,10 @@ public class PageLayoutSteps {
     @Then("I see external user registration page displayed")
     public void iSeeExternalUserRegistrationPageDisplayed() {
         pageLayoutPage.iSeeExternalUserRegistrationPageDisplayed();
+    }
+
+    @Then("I see value {string} for label {string}")
+    public void iSeeValueForLabelInSendEmailModal(String fieldValue, String fieldLabel) {
+        pageLayoutPage.assertFieldValueUsingFieldLabel(fieldValue,fieldLabel);
     }
 }

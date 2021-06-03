@@ -504,6 +504,16 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * mouse hover on fields under send email modal using field label
+     *
+     * @param fieldLabel
+     * @author ashwini.mahore
+     */
+    public void hoverOnFieldAtSendEmailModal(String fieldLabel) {
+        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]"));
+    }
+
+    /**
      * close lightning modal
      *
      * @author ashwini.mahore
@@ -1641,6 +1651,17 @@ public class PageLayoutPage extends GovGrantsManager {
     public void iSeeExternalUserRegistrationPageDisplayed() {
         I.amPerforming().assertionsTo().assertThat(isExternalUserRegistrationPageDisplayed()).isTrue();
     }
+
+    /**
+     * @return true if value is displayed in an expected field on send email modal
+     * @param fieldValue
+     * @param fieldLabel
+     * @author ashwini.mahore
+     */
+    public void assertFieldValueUsingFieldLabel(String fieldValue, String fieldLabel) {
+        I.amPerforming().assertionsTo().assertThat(isFieldValueDisplayedInExpectedFieldLabel(fieldValue,fieldLabel)).isTrue();
+    }
+
 
     /**
      * return true if help text rendered at bottom of help icon
@@ -3456,6 +3477,23 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'bs external-login-page')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if value is displayed in an expected field on send email modal
+     * @param fieldValue
+     * @param fieldLabel
+     * @author ashwini.mahore
+     */
+    public Boolean isFieldValueDisplayedInExpectedFieldLabel(String fieldValue,String fieldLabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'"+fieldLabel+"')]/following-sibling::div[text()='"+fieldValue+"']"))) {
                 flag = true;
             }
         } catch (Exception e) {
