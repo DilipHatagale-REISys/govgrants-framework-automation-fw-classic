@@ -15,9 +15,9 @@ public class StepProgressBarSteps {
 		stepProgressBarPage.getHoveringContentOfStepProgressBar(statusName);
 	}
 
-	@Then("^I see step progress bar is not displayed$")
-	public void assertStepProgressBar() {
-		stepProgressBarPage.assertStepProgressBarForCustomApp();
+	@Then("^I (see|do not see) step progress bar is displayed$")
+	public void assertStepProgressBar(String usage) {
+		stepProgressBarPage.assertStepProgressBarForCustomApp(usage);
 	}
 
 	@Then("^I see \"([^\"]*)\" is not displayed inside step progress bar$")
