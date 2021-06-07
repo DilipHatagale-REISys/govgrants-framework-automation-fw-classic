@@ -288,4 +288,14 @@ public class EnhancedFlexGridSteps {
     public void iSeeBorderBoxIsDisplayedAtTable(String tableId) {
         enhancedFlexGrid.assertBorderBoxAtEnhancedGrid(tableId);
     }
+
+    @Then("I see pagination is displayed at the top and bottom right of table {string}")
+    public void iSeePaginationIsDisplayedAtTheTopAndBottomRightOfTable(String tableId) {
+        enhancedFlexGrid.assertPositionOfPaginationBar(tableId);
+    }
+
+    @Then("I see {string} column inside Enhanced grid id {string} of width {string}")
+    public void iSeeColumnInsideEnhancedGridIdOfWidth(String columnName, String tableId, String width) {
+        enhancedFlexGrid.assertColumnWidthOfEnhancedGridSpecificColumn(columnName, tableId, width);
+    }
 }

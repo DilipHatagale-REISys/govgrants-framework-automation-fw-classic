@@ -2787,3 +2787,129 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @145510    @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGrid
+  Scenario: verify position of pagination bar displayed at top and bottom right corner of enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see pagination is displayed at the top and bottom right of table "TmpActiveGrantsGridFlexToggle"
+
+  @150171    @verifyWidthEnhancedGridColumnIfFieldWidthEnhancedIsConfiguredAs50Percent
+  Scenario Outline: verify width of enhanced grid column if Field width enhanced is configured as 50 %
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Field width Enhanced |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field width Enhanced | 50%            | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | Flex Grid:General     | Display Field Names  | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
+
+    Examples:
+      | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @150251    @verifyWidthEnhancedGridChildTableColumnIfFieldWidthEnhancedIsConfiguredAs50Percent
+  Scenario: verify width of enhanced grid child table column if Field width enhanced is configured as 50 %
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field width Enhanced |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field width Enhanced | 50%           | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Status" column inside Enhanced grid id "TmpGrantorActiveAwardsGridFlexToggle" of width "50%"
+
+  @151174 @verifyEnhancedDataTableValueDoNotDisapperWhenUserEditRecordAndSaveAgainOnFormLayout
+  Scenario:validate that enhanced data table values do not disappear when the user edit a record on forms
+    Given I delete the record "{Framework_recordUsed:GrantTempRecordInActiveState}" from the object "Grant__c" with field "ProjectTitle__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "{Framework_recordUsed:GrantTempRecordInActiveState}" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "{Framework_recordUsed:GrantTempRecordInActiveState}" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:GrantTempRecordInActiveState}" inside table
+    When I enter value "temp data" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "{Framework_recordUsed:GrantTempRecordInActiveState}" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "temp data" for title "Program Contact Address" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly see the following messages in the page details :
+      | Saved Successfully! |
+
+  @151183 @verifyEnhancedDataTableValueDoNotDisapperWhenUserEditPicklistFieldValueRecordAndSaveAgainOnFormLayout
+  Scenario Outline:validate that enhanced data table values do not disappear when the user edit picklist field value from record on forms
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:GrantTempRecordInActiveState}" from the object "Grant__c" with field "ProjectTitle__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "{Framework_recordUsed:GrantTempRecordInActiveState}" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "{Framework_recordUsed:GrantTempRecordInActiveState}" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:GrantTempRecordInActiveState}" inside table
+    When I enter value "Project Grants" into field "GrantType__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "{Framework_recordUsed:GrantTempRecordInActiveState}" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "Project Grants" for title "Grant Type" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly see the following messages in the page details :
+      | Saved Successfully! |
+
+    Examples:
+      | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @151610 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedGrid
+  Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    When I enter value "Test Automation123" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "Test Automation123" for multiple cells at column "AddressProgramContact__c"

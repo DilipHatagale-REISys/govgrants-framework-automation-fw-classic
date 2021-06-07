@@ -2726,3 +2726,77 @@ Business Need: Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
       | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
+  @148233    @verifyNoneValueCanBeSavedUnderPicklistFieldValueAtMEGrid
+  Scenario Outline: validate that None value is accepted at picklist field under ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    And I edit the following rows inline in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
+      | Support Year | BudgetAvailable |
+      | BP-01        | --None--        |
+    Then I see the following messages in the page details :
+      | Record Saved Successfully. |
+
+    Examples:
+      | defaultFieldsApi                                                                       | newFieldsApi                                                                           |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @149668    @verifyAlertMsgDisplayedByEnteringLongValueInTextFieldAtMEGrid
+  Scenario Outline: validate alert msg displayed by entering long value inside text field at me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
+      | Support Year | testText              |
+      | BP-01        | ttttttrtrytytygftdtsr |
+    Then I see the following messages in the page details :
+      | testText : data value too large |
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                  |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,testText__c |
+
+  @150695    @verifyAlertMsgDisplayedByEnteringLongValueInTextFieldAtMEGridChildTable
+  Scenario: validate alert msg displayed by entering long value inside text field at me grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Decision Field | HideApplicationEditDelete__c | AppLineItems       | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Decision Field |               | AppLineItems       | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
+    And I edit the following rows inline in flex table with id "inlineEditGridAppLineItem" by clicking "Edit" :
+      | Title       | Grantor Share %     |
+      | Demo Line 1 | 1000000000000007777 |
+    Then I see the following messages in the page details :
+      | Grantor Share : value outside of valid range on numeric field |

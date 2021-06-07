@@ -8223,3 +8223,52 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
     Then I see "ProgramView" in current url
+
+  @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode
+  Scenario: validate that mini page layout at lookup field is getting displayed properly on mouse hover at page detail in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I hover mouse on lookup link "Kate PM"
+    And I pause execution for "3" seconds
+    Then I softly see title at miniPageLayout is displayed as bold and left aligned
+    Then I softly see value at miniPageLayout is displayed as bold and left aligned
+
+  @148753    @requiredForSaveMessageAtPageBlockDetailForRichTextAreaFieldByLoginAsAdminUser-gPlanning @wip
+  Scenario: validate required for save message is displayed for rich text field at page layout for ADINuser
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I pause execution for "3" seconds
+    And I clear the value from field "fieldObjectives__c"
+    When I enter value "" into field "fieldObjectives__c"
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | *Description is required to save. |
+
+  @151008    @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtModal
+  Scenario: verify that user gets he validation message with the field name by entering invalid data in url field at modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-343-0034" into field "Program__c"
+    When I enter value "dummytextummytextdummytextdummytext" into field "FundingOpportunityURL__c"
+    And I click modal button "Continue"
+    Then I see the following message in the page details contains:
+      | Funding Opportunity Web Address: Please enter valid URL value. |

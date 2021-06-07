@@ -3461,3 +3461,16 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @148214    @verifyApostropheIsShownInDownloadedPDFAtPageLayout
+  Scenario: validate a apostrophe is shown in downloaded pdf at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementWithSpecialCharacter}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementWithSpecialCharacter}" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "{Framework_recordUsed:AnnouncementWithSpecialCharacter}" on page "1" of "govgrants" pdf file
