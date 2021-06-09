@@ -763,7 +763,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
     When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
     When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
-    Then I see "ty" status in lookup modal table
+    Then I see "Active" status in lookup modal table
 
   @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation @wip
   Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
@@ -963,7 +963,7 @@ Business Need: Logged Issues Scenarios
   Scenario: Validate page blocks of history sub tab should rendered properly on UI
     When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
-    Then I see page is in "Light Blue" color
+    Then I see page is in "VERY DARK DESATURATED CYAN" color
 
   @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage @smoke
   Scenario: Hide edit button for Profile and System Admin using hide expression Json -gPlanning
@@ -1160,6 +1160,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I navigate to "Contacts" content inside "Activities" subheader on left panel
+    And I perform quick search for "Emily PO"
     When I click on "View" icon for "Emily PO" inside table
     And I see the text :
       | Contact Information  |
@@ -2491,7 +2492,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramTestSendToOwnerForNumberFieldValue}"
-    Then I see value "20" for title "Number Test" inside table "---program:-:programsTableId---"
+    Then I see value "20.0000" for title "Number Test" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -3659,7 +3660,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---" at "Top"
+    Then I see the text containing :
+      | Page 1 of |
 
   @96574  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode @pageLayout
   Scenario Outline: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
@@ -3799,7 +3801,8 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
     And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
-    Then I see "Page 2" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---" at "Top"
+    Then I see the text containing :
+      | Page 2 of |
 
   @91800    @VerifyOverallTotalIsNotDisplayedAtChildFlexTableInsideMEGrid-gGrant @flexGrid
   Scenario Outline: Validating overall total is not displayed at child flex table under ME Grid
@@ -3980,6 +3983,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Delete" icon for "BP-08" inside table
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
@@ -4007,6 +4011,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Delete" icon for "BP-08" inside table
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
@@ -5596,7 +5601,6 @@ Business Need: Logged Issues Scenarios
     When I enter values "{LongText:TextMoreThan250Characters}" into textarea description field for Edit Attachment
     Then I see "Save" at bottom of Attachment Modal
 
-
   @146444    @validateDescriptionFieldIsRenderedAsLonfTextIfEnteredTextBeyondVisibleLimitAtDescriptionFieldAtAddAttachment
   Scenario: validate description field is rendered as long text field after entering text beyond the visible limit at add attachment
     When I login as "Automation" user
@@ -5764,7 +5768,7 @@ Business Need: Logged Issues Scenarios
     When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
     And I click modal button "Save"
     Then I see the following messages in the page details contains:
-      | Attachement added Successfully. |
+      | Attachment added Successfully. |
 
   @146998    @validateAttachmentAddActionWorkingWhileUploadingFromWorkspace
   Scenario: validate Attachment add action working correctly while uploading attachment from workspace

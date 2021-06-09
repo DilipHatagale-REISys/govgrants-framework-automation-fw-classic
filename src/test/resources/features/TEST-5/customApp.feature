@@ -68,4 +68,4 @@ Business Need: Custom App Config Component Scenarios
       | Custom App Config:General| Sequence   | 2              | Admin             |
     When I login as "Automation" user
     When I click CustomApp select dropdown
-    Then I see "As an Administrator" option of custom App is at position "2"
+    Then I see "As an Administrator" option of custom App is at position "1"

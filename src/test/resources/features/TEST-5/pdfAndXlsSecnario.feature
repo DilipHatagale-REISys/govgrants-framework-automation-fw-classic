@@ -1730,7 +1730,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I see "20" on page "25" of "govgrants" pdf file
+    Then I see "20.0000" on page "25" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |

@@ -778,4 +778,9 @@ public class PageLayoutSteps {
     public void iSeeValueForLabelInSendEmailModal(String fieldValue, String fieldLabel) {
         pageLayoutPage.assertFieldValueUsingFieldLabel(fieldValue,fieldLabel);
     }
+
+    @Then("I see modal with id {string} displayed properly")
+    public void iSeeModalWithIdDisplayedProperly(String modalID) {
+        pageLayoutPage.assertModalSizeAtNotesAndAttachment(modalID);
+    }
 }

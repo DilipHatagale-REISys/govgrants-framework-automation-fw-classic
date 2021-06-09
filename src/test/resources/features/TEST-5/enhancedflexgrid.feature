@@ -2766,10 +2766,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "Draft" into field "Status__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @150691 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedOnUiAtEnhancedGrid
+  @150691 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedOnUiAtEnhancedGrid @BugLogged=154733
   Scenario Outline: validate that reference date field value is displayed as expected in enhanced grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | configurationCategoryd | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2788,7 +2788,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @145510    @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGrid
+  @145510   @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGrid
   Scenario: verify position of pagination bar displayed at top and bottom right corner of enhanced grid
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2913,3 +2913,33 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation123" for multiple cells at column "AddressProgramContact__c"
+
+  @146002 @verifyThatUserEditingTheExistingRecordAndClickOnSaveThenDataGettingSavedSuccessFullyInEnhancedGrid
+  Scenario: validate that PUser editing the existing record & click on save  button then data will be saved in enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    When I enter value "Test Automation updated record" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "Test Automation updated record" for title "Program Contact Address" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly see the following messages in the page details :
+      | Saved Successfully! |
+
+  @145997  @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGridChildTable
+  Scenario: verify position of pagination bar displayed at top and bottom right corner of enhanced grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Active Awards" content inside "Activities" subheader on left panel
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "Fiscal Year(2019-2019)"
+    Then I see pagination is displayed at the top and bottom right of table "AwardBudgetCategoryFlexTableFlexToggle"

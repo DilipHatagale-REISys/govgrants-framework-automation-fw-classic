@@ -2099,3 +2099,18 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     And I pause execution for "3" seconds
     Then I see value "ashwini.mahore@yopmail.com" for label "{testData:CcField}"
+
+  @147387    @validateSingleAttachmentCanBeAttachedAtSendInvitationModalForAdminUser
+  Scenario: validatesingle attachment can be attached at send invitation modal for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Eric FD" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Eric FD" inside table
+    When I upload file "CollabFileTemp.pdf" into library
+    When I click modal button "Send"
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully |
