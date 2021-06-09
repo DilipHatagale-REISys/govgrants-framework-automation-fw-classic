@@ -558,6 +558,28 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         I.amPerforming().assertionsTo().assertThat(isBorderBoxDisplayedAtEnhancedGrid(tableId)).isTrue();
     }
 
+
+    /**
+     * return true if pagination is displayed at the top and bottom right of table
+     *
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    public void assertPositionOfPaginationBar(String tableId) {
+        I.amPerforming().assertionsTo().assertThat(isPaginationDisplayedAtRightSideOfEnhancedGrid(tableId)).isTrue();
+    }
+
+    /**
+     * @return true if expected width of specified column is displayed for enhanced grid
+     * @param columnName
+     * @param tableId
+     * @param width
+     */
+    public void assertColumnWidthOfEnhancedGridSpecificColumn(String columnName, String tableId, String width) {
+        I.amPerforming().assertionsTo().assertThat(isExpectedWidthDisplayedAtColumnOfEnhancedGrid(columnName, tableId, width)).isTrue();
+    }
+
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1514,6 +1536,41 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if pagination is displayed at the top and bottom right of table
+     *
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    private boolean isPaginationDisplayedAtRightSideOfEnhancedGrid(String tableId) {
+        List<Elements> getPositionOfPagination = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='" + tableId + "']//*[contains(@class,'table-pager')]"));
+        boolean flag = false;
+        for (int i = 1; i < getPositionOfPagination.size(); i++) {
+            System.out.println(getPositionOfPagination.size());
+            if (getPositionOfPagination.get(i).getAttributes("class").contains("pull-right")) {
+                System.out.println(i);
+                flag = true;
+            }
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected width of specified column is displayed for enhanced grid
+     * @param columnName
+     * @param tableId
+     * @param width
+     */
+    private Boolean isExpectedWidthDisplayedAtColumnOfEnhancedGrid(String columnName, String tableId, String width) {
+        boolean flag = false;
+        WebElement columnWidth = I.amPerforming().getElementReference().of((By.xpath("//div[@id='" + tableId + "']" +
+                "//span[contains(text(),'" + columnName + "')]/ancestor::thead/following-sibling::tbody//td[@width='" + width + "']")));
+        if (I.amPerforming().checkToSee().isDisplayed(columnWidth)) {
+            flag = true;
         }
         return flag;
     }

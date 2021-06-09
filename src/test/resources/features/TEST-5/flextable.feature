@@ -1827,6 +1827,15 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see "{Framework_recordUsed:programInCreatedModeOnly}" value in flex table id "---program:-:programsTableId---"
 
+  @148905    @validateIsSearchWorkingForSpecialCharNumberAndAlphabetsTogetherSearchedInFlexTableQuickSearchBox
+  Scenario: Validate search is working for special char,number,alphabets searched in flex table quick search box
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}"
+    And I pause execution for "3" seconds
+    Then I softly see "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}" value in flex table id "ActiveFundingOpportunities"
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
