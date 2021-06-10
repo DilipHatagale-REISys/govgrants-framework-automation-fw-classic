@@ -1914,7 +1914,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "PG-343-0034" into field "Program__c"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Funding Opportunity Web Address is required to save. |
+      | Funding Opportunity Web Address is required to save |
 
   @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
   Scenario: validate alert message for enetering incorrect data at url field on modal
@@ -2233,7 +2233,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "Application Deadline" as "11/05/2020 2:57 AM"
+    And I save the field labeled "Application Deadline" as "saveDate"
+    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
 
   @84765   @verifyDateAndTimeFieldFormatForLocalAsEDTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to EDT Local
@@ -2250,7 +2251,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "Application Deadline" as "05/11/2020 2:57 AM"
+    And I save the field labeled "Application Deadline" as "saveDate"
+    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
 
   @84766   @verifyDateAndTimeFieldFormatForLocalAsISTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to IST Local
@@ -2267,7 +2269,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "Application Deadline" as "5/11/2020 1:27 PM"
+    And I save the field labeled "Application Deadline" as "saveDate"
+    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
 
   @86802   @verifyDateFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date field format under page layout in view mode with respective to EST Local
@@ -2284,7 +2287,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "FOA Release Date" as "11/04/2020"
+    And I save the field labeled "FOA Release Date" as "saveDate"
+    Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
 
   @86808   @verifyDateFieldFormatForLocalAsEDTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date field format under page layout in view mode with respective to EDT Local
@@ -2301,7 +2305,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "FOA Release Date" as "04/11/2020"
+    And I save the field labeled "FOA Release Date" as "saveDate"
+    Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
 
   @86809   @verifyDateFieldFormatForLocalAsISTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date field format under page layout in view mode with respective to IST Local
@@ -2318,7 +2323,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see field "FOA Release Date" as "4/11/2020"
+    And I save the field labeled "FOA Release Date" as "saveDate"
+    Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
 
   @84732 @verifyThatBlackColorIsDisplayedForActiveTabAtWorkspaceLibrary-gHome
   Scenario: verify that black color is displayed at background for active tab at workspace library section
@@ -2646,7 +2652,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | *Project Period Start Date is required to save. |
+      | Project Period Start Date is required to save under Overview. |
 
   @113064    @requiredForSaveBehaviourAtPageBlockDetailForSPIUser-gPlanning
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for SPI user
@@ -2664,7 +2670,7 @@ Business Need: Page Layout Component Scenarios
     When I clear the value from field "ProjectPeriodStartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | *Project Period Start Date is required to save. |
+      | Project Period Start Date is required to save under Overview. |
 
   @112010   @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for PM user
@@ -3779,7 +3785,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Program ID is required to save. |
+      | Program ID is required to save under Overview. |
 
   @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
@@ -5500,7 +5506,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "<enterText>" into field "fieldObjectives__c"
     Then I see "<enterText>" text enter in field "fieldObjectives__c"
     Then I softly see word count as "Characters: 99 Characters Left: 9901" in ck editor at page layout
@@ -5542,7 +5548,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Bold" inside CK editor
     Then I see "Test Automation" displayed in "Bold" format inside CK editor
@@ -5563,7 +5569,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Underline" inside CK editor
     Then I see "Test Automation" displayed in "Underline" format inside CK editor
@@ -5584,7 +5590,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Italic" inside CK editor
     Then I see "Test Automation" displayed in "Italic" format inside CK editor
@@ -5606,7 +5612,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "fieldObjectives__c"
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Italic" inside CK editor
     And I change formatting of all text to "Remove Format" inside CK editor
@@ -5629,7 +5635,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "fieldObjectives__c"
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Strike Through" inside CK editor
     Then I see "Test Automation" displayed in "Strike Through" format inside CK editor
@@ -5651,7 +5657,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "fieldObjectives__c"
-    And I clear the value from field "fieldObjectives__c"
+    And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "fieldObjectives__c"
     And I change formatting of all text to "Bold" inside CK editor
     And I change formatting of all text to "Italic" inside CK editor
@@ -6225,6 +6231,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue                   | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message @ | An Approver is a required field for a program |
+      | Program                      | Status    | Created                         | Test Automation Program for error message dnd |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6248,6 +6255,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
+      | Program                      | Status    | Created                           | Test Automation Program for error message dnd |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7323,11 +7331,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I enter value "XYZ" into field "Authorization__c"
     When I click on "Save" in the page details
-    Then I see "XYZ" text enter in field "fieldAuthorization__c"
+    Then I softly see field "Authorization" as "XYZ"
+#    Then I see "XYZ" text enter in field "fieldAuthorization__c"
     When I click on "Edit" in the page details
     And I enter value "ABC" into field "Authorization__c"
     When I click on "Save" in the page details
-    Then I see "ABC" text enter in field "fieldAuthorization__c"
+    Then I softly see field "Authorization" as "ABC"
+#    Then I see "ABC" text enter in field "fieldAuthorization__c"
 
   @147920    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingMultipleOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple operators
@@ -7999,6 +8009,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for email notification check"
     When I click on "Edit" icon for "Announcement for email notification check" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
+    When I enter value "test" into field "Authorization__c"
+    And I pause execution for "2" seconds
     And I click on back arrow
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8222,7 +8234,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
-    Then I see "ProgramView" in current url
+    Then I see "Programview" in current url
 
   @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode
   Scenario: validate that mini page layout at lookup field is getting displayed properly on mouse hover at page detail in edit mode
@@ -8239,7 +8251,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
-  @148753    @requiredForSaveMessageAtPageBlockDetailForRichTextAreaFieldByLoginAsAdminUser-gPlanning @wip
+  @148753    @requiredForSaveMessageAtPageBlockDetailForRichTextAreaFieldByLoginAsAdminUser-gPlanning
   Scenario: validate required for save message is displayed for rich text field at page layout for ADINuser
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -8247,18 +8259,17 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-584                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForDescriptionScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "CreationWithoutDescription" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     And I pause execution for "3" seconds
-    And I clear the value from field "fieldObjectives__c"
-    When I enter value "" into field "fieldObjectives__c"
-    When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | *Description is required to save. |
+      | Description is required to save under Overview. |
 
   @151008    @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtModal
   Scenario: verify that user gets he validation message with the field name by entering invalid data in url field at modal
@@ -8272,3 +8283,74 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
       | Funding Opportunity Web Address: Please enter valid URL value. |
+
+  @148795  @VerifyRecordsShouldDisplayOnLookupModalAsPerGivenFilterCriteriaInLookupFilterCriteriaFieldUsingANDConditionWindow
+  Scenario Outline: validate that lookup filter criteria field using AND operator
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName              | fieldOrignalValue | coreComponentField       | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <oldLookupFilter> | GrantIntermediateLayout2 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName              | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <newLookupFilter> | GrantIntermediateLayout2 | Name                      | PBD-8040                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
+    When I click on "×" icon at "Organization" modal under Library
+    When I click search icon for lookup "Internal Organization Lookup (New Window)"
+    Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
+    Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
+
+    Examples:
+      | newLookupFilter                                                           | oldLookupFilter                                   |
+      | RecordType.Name = 'Internal' AND Id != '{!OrgId}' AND Status__c ='Active' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
+
+  @148802  @VerifyRecordsShouldDisplayOnLookupModalAsPerGivenFilterCriteriaInLookupFilterCriteriaFieldUsingORConditionWindow
+  Scenario Outline: validate that lookup filter criteria field using OR operator
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName              | fieldOrignalValue | coreComponentField       | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <oldLookupFilter> | GrantIntermediateLayout2 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName              | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <newLookupFilter> | GrantIntermediateLayout2 | Name                      | PBD-8040                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
+    When I click search icon for lookup "Internal Organization Lookup (New Window)"
+    When I click on "×" icon at "Organization" modal under Library
+    When I click search icon for lookup "Internal Organization Lookup (New Window)"
+    Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
+    Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
+
+    Examples:
+      | newLookupFilter                                                          | oldLookupFilter                                   |
+      | RecordType.Name = 'Internal' AND Id != '{!OrgId}' OR Status__c ='Active' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
+
+  @148732 @verifyThatAddNotesModalWindowIsDisplayedProperlyInSize
+  Scenario: verify that add notes modal window is displayed properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    Then I see modal with id "addAtt" displayed properly
+
+  @148734 @verifyThatEditNotesModalWindowIsDisplayedProperlyInSize
+  Scenario: verify that edit notes modal window is displayed properly
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I add notes records
+    When I close modal by clicking the top right x button
+    When I click on "Edit" icon for "Notes Record" inside table
+    Then I see modal with id "addAtt" displayed properly

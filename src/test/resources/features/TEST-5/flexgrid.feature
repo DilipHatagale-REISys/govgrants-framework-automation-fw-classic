@@ -1034,7 +1034,8 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "Page" with pagination arrow at "---program:-:toggleFlexGridMonitoringTableId---" at "Top"
+    Then I see the text containing :
+      | Page 1 of |
 
   @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disabling of menu icon from Monitoring schedule for all active grant flex table at Monitoring phase

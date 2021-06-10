@@ -1653,15 +1653,24 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if value is displayed in an expected field on send email modal
      * @param fieldValue
      * @param fieldLabel
+     * @return true if value is displayed in an expected field on send email modal
      * @author ashwini.mahore
      */
     public void assertFieldValueUsingFieldLabel(String fieldValue, String fieldLabel) {
-        I.amPerforming().assertionsTo().assertThat(isFieldValueDisplayedInExpectedFieldLabel(fieldValue,fieldLabel)).isTrue();
+        I.amPerforming().assertionsTo().assertThat(isFieldValueDisplayedInExpectedFieldLabel(fieldValue, fieldLabel)).isTrue();
     }
 
+
+    /**
+     * @param modalId
+     * @return true if notes/attachment add modal size is displayed as expected
+     * @author ashwini.mahore
+     */
+    public void assertModalSizeAtNotesAndAttachment(String modalId) {
+        I.amPerforming().assertionsTo().assertThat(isModalSizeDisplayedAsExpectedAtNotesAndAttachment(modalId)).isTrue();
+    }
 
     /**
      * return true if help text rendered at bottom of help icon
@@ -3485,18 +3494,35 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if value is displayed in an expected field on send email modal
      * @param fieldValue
      * @param fieldLabel
+     * @return true if value is displayed in an expected field on send email modal
      * @author ashwini.mahore
      */
-    public Boolean isFieldValueDisplayedInExpectedFieldLabel(String fieldValue,String fieldLabel) {
+    public Boolean isFieldValueDisplayedInExpectedFieldLabel(String fieldValue, String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'"+fieldLabel+"')]/following-sibling::div[text()='"+fieldValue+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div[text()='" + fieldValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param modalId
+     * @return true if notes/attachment add modal size is displayed as expected
+     * @author ashwini.mahore
+     */
+    public Boolean isModalSizeDisplayedAsExpectedAtNotesAndAttachment(String modalId) {
+        boolean flag = false;
+        List<Elements> getModalStyle = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//div[@id='" + modalId + "']//tr//span[contains(@class,'control-label')]/parent::td"));
+        for (int i = 1; i < getModalStyle.size(); i++) {
+            if (getModalStyle.get(i).getAttributes("style").equalsIgnoreCase("width: 120px;")) {
+                System.out.println(i);
+                flag = true;
+            }
         }
         return flag;
     }

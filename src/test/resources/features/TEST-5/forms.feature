@@ -378,7 +378,7 @@ Business Need: Forms Component Scenarios
     And I enter value "" into field "ProposedStartdate__c"
     When I click on "Save" button in right header
     Then I see the following message in the page details contains:
-      | Proposed Start Date: is required to save. |
+      | Proposed Start Date : is required to save. |
 
   @120398 @verifyErrorMessageIsNotDisplayedAtFormLayoutWhileClickOnSaveButton
   Scenario:validate error message is not displayed if user click on save button by changing form data
