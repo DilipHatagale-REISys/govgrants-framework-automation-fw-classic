@@ -1047,3 +1047,18 @@ Business Need: Forms Component Scenarios
     And I refresh the page
     And I pause execution for "4" seconds
     Then I see alert popup box
+
+  @151586 @verifyThatPageIsNotRefreshedAfterClickAtCancelButtonAtConfirmationPop-UpAppearsOnFormLayoutForUnsavedData
+  Scenario:validate that page is no refreshing by performing Cancel action at confirmation pop-up appears on form layout for unsaved data
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Cover Page" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test data" into field "fieldSubject__c"
+    When I select "General Application Form" from dropdown at forms
+    When I click alert button "Cancel"
+    Then I see "test data" text enter in field "fieldSubject__c"

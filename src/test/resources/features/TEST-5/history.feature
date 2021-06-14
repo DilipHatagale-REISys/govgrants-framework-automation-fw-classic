@@ -680,3 +680,14 @@ Business Need: history Component Scenarios
     And I click on lookup link "ABC"
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleFlexTableHistory"
+
+  @151866  @verifyCustomFieldsOnStandardObjectsAreDisplayedUnderHistoryTable
+  Scenario: validate custom fields on standard object are display inside field history table
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see the text :
+      | Email Address |

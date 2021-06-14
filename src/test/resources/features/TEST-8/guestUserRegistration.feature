@@ -119,3 +119,24 @@ Business Need: guest user registration flow based Scenarios
     When I enter value as "1234" into "Vendor ID" on old form
     When I click on "Save and Continue" in the page details
     Then I see the header is "Create External Registration" in the page details
+
+  @139179    @validateGuestUserIsAbleToSeeCaptchaInputBox
+  Scenario: validate guest user is able to see captcha input box
+    Given I am on "SUBPORTAL" portal
+    And I click modal button "Register"
+    And I expand table with header "Organization"
+    And I click on "Begin Registration" button
+    When I click on "Agree" in the page details
+    When I click on "Agree" in the page details
+    When I enter value as "468792992" into "Employer Identification Number (EIN)" on old form
+    When I enter value as "468792992" into "Data Universal Number System (DUNS) Number" on old form
+    When I enter value as "1234" into "Vendor ID" on old form
+    When I click on "Save and Continue" in the page details
+    And I navigate to "Organization Profile" sub tab
+    And I enter "Organization_Information" values from "UserRegistrationOrganization.xlsx"
+    And I enter "Organization_Address" values from "UserRegistrationOrganization.xlsx"
+    And I enter "Payment_Address" values from "UserRegistrationOrganization.xlsx"
+    When I click on "Save" in the page details
+    And I enter "Authorized_Representative_Info" values from "UserRegistrationOrganization.xlsx"
+    When I click on "Save" in the page details
+    Then I see the ReCaptcha input box

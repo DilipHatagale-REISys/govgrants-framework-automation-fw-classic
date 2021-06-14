@@ -2801,3 +2801,31 @@ Business Need: Flex Grid Component Scenarios
       | Demo Line 1 | 1000000000000007777 |
     Then I see the following messages in the page details :
       | Grantor Share : value outside of valid range on numeric field |
+
+  @148762 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInN2GGrid
+  Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced grid
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Context | Edit              | ProgramStrategicGoals | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Context |               | ProgramStrategicGoals | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    And I clear the value from field "cke_1_contents"
+    When I enter value "test temp data" into field "fieldObjectives__c"
+    And I navigate to "Plan" sub tab
+    And I click on top right button "New" in flex table with id "inlineEditGridProgramPerformanceMgmtGridView"
+    And I enter value "fieldDueDate__c" into field "fieldDescription__c"
+    And I enter value "test data" into field "fieldTitle__c"
+    And I enter value "1" into field "fieldDueDate__c"
+    And I click modal button "Save"
+    Then I see "test temp data" text enter in field "fieldObjectives__c"

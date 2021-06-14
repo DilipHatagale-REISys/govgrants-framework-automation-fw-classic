@@ -3474,3 +3474,71 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I softly see "{Framework_recordUsed:AnnouncementWithSpecialCharacter}" on page "1" of "govgrants" pdf file
+
+  @153953    @verifyAllColumnNamesAreDisplayedInDownloadedPDFAtMEGridParentTable
+  Scenario: validate all column name are displayed in downloaded pdf at ME Grid parent table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I softly see "Support Year" on page "1" of "govgrants" pdf file
+    Then I softly see "DateTime" on page "1" of "govgrants" pdf file
+    Then I softly see "Start Date" on page "1" of "govgrants" pdf file
+    Then I softly see "Notes" on page "1" of "govgrants" pdf file
+    Then I softly see "ID" on page "1" of "govgrants" pdf file
+
+  @153955    @verifyAllColumnNamesAreDisplayedInDownloadedXLSAtAtMEGridParentTable
+  Scenario: validate all column name are displayed in downloaded xls at ME Grid parent table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I softly see "Support Year" in downloaded xls or csv file "govgrants"
+    Then I softly see "DateTime" in downloaded xls or csv file "govgrants"
+    Then I softly see "Start Date" in downloaded xls or csv file "govgrants"
+    Then I softly see "Notes" in downloaded xls or csv file "govgrants"
+    Then I softly see "ID" in downloaded xls or csv file "govgrants"
+
+  @153958    @verifyAllColumnNamesAreDisplayedInDownloadedPDFAtMEGridChildTable
+  Scenario: validate all column name are displayed in downloaded pdf at ME Grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I softly see "Service Area" on page "1" of "govgrants" pdf file
+    Then I softly see "Budget Category" on page "1" of "govgrants" pdf file
+    Then I softly see "Grantor Share" on page "1" of "govgrants" pdf file
+    Then I softly see "Grantee Share" on page "1" of "govgrants" pdf file
+    Then I softly see "Total" on page "1" of "govgrants" pdf file
+    Then I softly see "Grantee Share %" on page "1" of "govgrants" pdf file
+
+  @153957  @verifyAllColumnNamesAreDisplayedInDownloadedXLSAtMEGridChildTable
+  Scenario: validate all column name are displayed in downloaded xls at ME Grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I softly see "Service Area" in downloaded xls or csv file "govgrants"
+    Then I softly see "Budget Category" in downloaded xls or csv file "govgrants"
+    Then I softly see "Grantor Share" in downloaded xls or csv file "govgrants"
+    Then I softly see "Grantee Share" in downloaded xls or csv file "govgrants"
+    Then I softly see "Total" in downloaded xls or csv file "govgrants"
+    Then I softly see "Grantee Share %" in downloaded xls or csv file "govgrants"

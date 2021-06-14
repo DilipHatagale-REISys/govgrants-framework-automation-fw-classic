@@ -8354,3 +8354,54 @@ Business Need: Page Layout Component Scenarios
     When I close modal by clicking the top right x button
     When I click on "Edit" icon for "Notes Record" inside table
     Then I see modal with id "addAtt" displayed properly
+
+  @152777  @VerifyThatPageDoesNotRefreshAfterClickingOnOKAtConfirmationMsgAtPageLayout
+  Scenario: validate that page does not refresh after click at confirmation pop-up action "OK" at page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Overview" sub tab
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Test data" into field "fieldObjectives__c"
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    When I enter value "Test Automation123" into field "AddressProgramContact__c"
+    And I click on "Save" in the page details
+    When I click "Yes" on modal confirmation box
+    Then I see field "Description" as "Test Automation123"
+
+  @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
+  Scenario: Validate currency field value accepts the numbers inside page block detail in view mode
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    When I enter value "900000" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see field "Funded Amount" as "$900,000"
+
+  @155304    @validatePercentFieldValueAcceptTheNumbersInPageBlockDetail
+  Scenario: Validate percent field value accepts the numbers inside page block detail in view mode
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    When I enter value "1234" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    Then I see field "Percent" as "1,234%"
