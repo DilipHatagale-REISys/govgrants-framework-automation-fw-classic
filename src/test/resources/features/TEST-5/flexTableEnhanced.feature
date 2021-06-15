@@ -496,3 +496,21 @@ Business Need: Flex Table enhanced Component Scenarios
       | Project Title | does not contain | test |
     Then I softly see value "Exploratory Team-Research BRAIN Circuit Programs_0" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
     Then I softly do not see value "Applicationg test88888" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
+
+  @151054 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedDataTable
+  Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced data table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I clear the value from field "cke_1_contents"
+    When I enter value "test temp data" into field "fieldObjectives__c"
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-HRGr-001" in "---program:-:EnhancedDataTableId---" panel
+    When I click on "Edit" icon for "GT-HRGr-001" inside table
+    When I enter value "Test" into field "GrantAbbreviation__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I navigate to "Overview" sub tab
+    Then I see "test temp data" text enter in field "fieldObjectives__c"

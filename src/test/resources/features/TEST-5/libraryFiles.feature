@@ -4394,3 +4394,124 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on "Cancel" button in send email modal
     Then I see "PlanningFiles" modal window with id "---program:-:PlanningFilesModalId---" is not displayed
+
+  @118593 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
+  Scenario: Verify that file uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see expected table with id "---program:-:myFeedTableId---"
+    When I click on "Menu" in the page details
+    Then I see "To Me" option is displayed at collab menu
+
+  @153235 @validateAdvanceFilterWorkingUsingContainsOperatorAtFilesListTable
+  Scenario: Verify that advance filter is working using contains operator at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Title | contains | DummyFile1_DND |
+    Then I softly see value "DummyFile1_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @153236 @validateAdvanceFilterWorkingUsingDoesNotContainsOperatorAtFilesListTable
+  Scenario: Verify that advance filter is working using "does not contain" operator at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Title | does not contain | DummyFile1_DND |
+    Then I softly see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile1_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @153237 @validateAdvanceFilterWorkingUsingStartsWithOperatorAtFilesListTable
+  Scenario: Verify that advance filter is working using "starts with" operator at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Title | starts with | DummyFile |
+    Then I softly see value "DummyFile1_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "F-logo-black" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @153238 @validateAdvanceFilterWorkingUsingEndsWithOperatorAtFilesListTable
+  Scenario: Verify that advance filter is working using "ends with" operator at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Title | ends with | DND.jpg |
+    Then I softly see value "DummyFile1_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "F-logo-black" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @155372 @validateAdvanceFilterWorkingUsingContainsOperatorForDescriptionFieldAtFilesListTable
+  Scenario: Verify that advance filter is working using contains operator for description field at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Description | contains | File uploaded |
+    Then I softly see value "DummyFile1_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @155373 @validateAdvanceFilterWorkingUsingContainsOperatorForFileTypeFieldAtFilesListTable
+  Scenario: Verify that advance filter is working using contains operator for file type field at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | File Type | contains | PNG |
+    Then I softly see value "DragAndDropFileDND.png" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @155374 @validateAdvanceFilterWorkingUsingContainsOperatorForExtensionFieldAtFilesListTable
+  Scenario: Verify that advance filter is working using contains operator for Extension field at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Extension | contains | png |
+    Then I softly see value "DragAndDropFileDND.png" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @155375 @validateAdvanceFilterWorkingUsingContainsOperatorForClassificationFieldAtFilesListTable
+  Scenario: Verify that advance filter is working using contains operator for Classification field at files list table - homePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
+    When I enter advance filter values inside id "advfWorkSpaceFiles"
+      | Classification | contains | Medical Reports |
+    Then I softly see value "Automation Test Data File-DND.png" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+    Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
