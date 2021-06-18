@@ -5742,6 +5742,7 @@ Business Need: Logged Issues Scenarios
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -5801,3 +5802,58 @@ Business Need: Logged Issues Scenarios
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
     Then I see table with header "Attachments" contains records "TestFileSharing.docx"
+
+  @136664    @verifyThatAlertMessageDisplayedIfUserClickCommentWithoutEnteringCommentInIt-HomePhase
+  Scenario: validate that alert message splayed if user click comment without entering comment at Home Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I enter value "" in my feed section and share the comment
+    Then I see confirmation box with body "Comment is Required." is displayed
+
+  @136665    @verifyThatAlertMessageDisplayedIfUserClickCommentWithoutEnteringCommentInIt-CollabPhase
+  Scenario: validate that alert message displayed if user click comment without entering comment at collab Phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "" in my feed section and share the comment
+    Then I see confirmation box with body "Comment is Required." is displayed
+
+  @136668    @verifyThatAlertMessageDisplayedIfUserClickCommentWithoutEnteringCommentInIt-RecordLevelCollabTab
+  Scenario: validate that alert message displayed if user click comment without entering comment at record level collab tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I enter value "" in my feed section and share the comment
+    Then I see confirmation box with body "Comment is Required." is displayed

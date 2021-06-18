@@ -621,7 +621,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * return true if given buttonName is displayed under session timeout dialog box
      */
     public void assertSessionTimeoutDialogboxButtons(String buttonName) {
-        Assert.assertTrue(IsButtonDisplayedUnderDialogBox(buttonName));
+        I.amPerforming().assertionsTo().assertThat(IsButtonDisplayedUnderDialogBox(buttonName)).isTrue();
     }
 
     /**
@@ -990,17 +990,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void AssertFieldValueIsPresentInFlexTable(String valueToBeSearch, String flexTableHeader) {
         Assert.assertTrue(isTextDisplayedInsideEditAttachmentTable(valueToBeSearch, flexTableHeader));
-    }
-
-    /**
-     * return true if expected field/element id disabled on edit page details
-     */
-    public void assertExpectedFieldAtEditPageDetails(String usage, String fieldAPIName) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName));
-        } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName)).isTrue();
-        }
     }
 
     /**
@@ -2083,24 +2072,6 @@ public class PageLayoutPage extends GovGrantsManager {
             return false;
     }
 
-    /**
-     * return true if expected field on edit page detail is displayed
-     *
-     * @param fieldApiName
-     * @return
-     */
-    private boolean isExpectedFieldIsDisplayedOnEditPageDetails(String fieldApiName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(
-                    "//div[@id='" + fieldApiName + "']//select[@disabled] | //span[@id='" + fieldApiName + "']//input[@disabled] | //span[@id='" + fieldApiName + "']//select[@disabled]"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return flag;
-    }
 
     /**
      * return true if content appears in Ascending/Descending order for look up modal
@@ -2268,7 +2239,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean IsButtonDisplayedUnderDialogBox(String buttonName) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + buttonName + "']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + buttonName + "'] " +
+                "| //button[@title='" + buttonName + "']"))) {
             flag = true;
         }
         return flag;

@@ -219,7 +219,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see no "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
+    Then I do not see "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
@@ -2770,7 +2770,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
   Scenario Outline: validate that reference date field value is displayed as expected in enhanced grid
     Given I have "default" configuration as below:
       | configurationCategoryd | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid              | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
@@ -2895,7 +2895,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Saved Successfully! |
 
     Examples:
-      | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsApi                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,GrantType__c,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @151610 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedGrid
@@ -2943,3 +2943,23 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2019-2019)"
     Then I see pagination is displayed at the top and bottom right of table "AwardBudgetCategoryFlexTableFlexToggle"
+
+  @153948    @validateTotalRecordCountAndShowingRecordIfPerformedQuickSearchAtEnhancedGrid
+  Scenario: validate total row count and showing record is displayed if performed quick search at enhanced flex grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Total Records Count | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
+    Then I softly see the text :
+      | Showing 1 to 1 of 1 records |

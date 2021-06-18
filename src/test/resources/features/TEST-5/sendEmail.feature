@@ -1262,7 +1262,7 @@ Business Need: Send Email Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "dipak.pawar@reisystems.in;test@gmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "test@123.com;test@gmail.com" into field "{testData:ToField}" on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -2101,7 +2101,7 @@ Business Need: Send Email Component Scenarios
     Then I see value "ashwini.mahore@yopmail.com" for label "{testData:CcField}"
 
   @147387    @validateSingleAttachmentCanBeAttachedAtSendInvitationModalForAdminUser
-  Scenario: validatesingle attachment can be attached at send invitation modal for admin user
+  Scenario: validate single attachment can be attached at send invitation modal for admin user
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2114,3 +2114,47 @@ Business Need: Send Email Component Scenarios
     When I click modal button "Send"
     Then I softly see the following messages in the page details :
       | Email Sent Successfully |
+
+  @155307    @validateToEmailIsAutoPopulatedAtSendInvitationModalWindowForAdminUser
+  Scenario: validate To email field value is auto populated at send invitation modal for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Eric FD" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Eric FD" inside table
+    Then I see the text :
+      | govgrantsuser@gmail.com |
+
+  @141604    @validateSuccessMsgDisplayedBySendingEmailSuccessFullyByLoginAsAdminUser
+  Scenario: validate success msg displayed by sucessfully sending of email by admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "test@gmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation Email1" into field "Subject" on send email modal
+    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I see the following messages in the page details :
+      | Email sent succesfully. |
