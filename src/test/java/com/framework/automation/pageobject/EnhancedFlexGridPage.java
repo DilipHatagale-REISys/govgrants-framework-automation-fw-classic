@@ -111,11 +111,17 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * assert true if total row calculation is disabled in enhanced grid
      */
-    public void assertEnhancedFlexGridTabelRowCountDisabled(String text, String tableId) {
+    public void assertEnhancedFlexGridTabelRowCountDisabled(String usage, String text, String tableId) {
         try {
             I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         } catch (Exception e) {
         }
+        if (usage.equalsIgnoreCase("see")){
+            I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridRowsCountDisabled(text, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")){
+            I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridRowsCountDisabled(text, tableId)).isFalse();
+        }
+
         Assert.assertFalse(isEnhancedFlexGridRowsCountDisabled(text, tableId));
     }
 

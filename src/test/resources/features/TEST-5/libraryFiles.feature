@@ -2012,7 +2012,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I see sharing option as "Select sharing options" at upload file modal
+    Then I see sharing option as "Select visibility options" at upload file modal
 
   @101113 @validateThatShowOptionsSectionIsNotDisplayedForSPIUser-HomePhase
   Scenario: Verify that show options select box is not displayed to SPI user at upload file modal
@@ -2030,7 +2030,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I do not see sharing option as "Select sharing options" at upload file modal
+    Then I do not see sharing option as "Select visibility options" at upload file modal
 
   @101488 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-HomePhase
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - home phase
@@ -2085,7 +2085,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit File" option at library/folder/file "SendEmailAttachment.png"
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
 
-  @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase
+  @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase @needToUpdate
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- home phase library
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2112,7 +2112,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I see sharing option as "Select sharing options" at upload file modal
+    Then I see sharing option as "Select visibility options" at upload file modal
 
   @101550 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-RecordLevel
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - record level
@@ -2154,7 +2154,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "testAutomationFileDND.png" inside table
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
 
-  @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel
+  @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel @needToUpdate
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2171,7 +2171,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
     Then I see sharing option as "Private On Records" at upload file modal
 
-  @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel
+  @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel @needToUpdate
   Scenario: Verify that use can upload same file which is already present inside record - record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2210,7 +2210,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I see sharing option as "Select sharing options" at upload file modal
+    Then I see sharing option as "Select visibility options" at upload file modal
 
   @101560 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToPMUser-HomePhase
   Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- home phase
@@ -2222,9 +2222,9 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I see sharing option as "Select sharing options" at upload file modal
+    Then I see sharing option as "Select visibility options" at upload file modal
 
-  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase
+  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase @needToUpdate
   Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2731,7 +2731,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord
+  @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord @needToUpdate
   Scenario: Verify that file is not visible to any internal user if sharing option as "Private On Records" is select at upload file modal
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -2769,7 +2769,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord
+  @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord @needToUpdate
   Scenario: Verify that file is not visible to any external user if sharing option as "Private On Records" is select at upload file modal
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -2892,7 +2892,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly
+  @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly @needToUpdate
   Scenario: Verify that if sharing option changed from "Visible to anyone With Record Access" to "Private on record" then file is visible to owner only
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -3449,7 +3449,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords
+  @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @needToUpdate
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -3978,7 +3978,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @123936    @verifyThatFileAttachedByAdminUserFromHomePhaseIsNotDisplayedToExternalIfSharingOptionIsSelectedAsPrivateOnRecord  @wip @facingIssueOfDuplicateFileUpload
+  @123936    @verifyThatFileAttachedByAdminUserFromHomePhaseIsNotDisplayedToExternalIfSharingOptionIsSelectedAsPrivateOnRecord  @wip @facingIssueOfDuplicateFileUpload @needToUpdate
   Scenario: validate that file attached by admin user from home phase is not displayed to spi user "Private On Records" is select
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4395,7 +4395,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Cancel" button in send email modal
     Then I see "PlanningFiles" modal window with id "---program:-:PlanningFilesModalId---" is not displayed
 
-  @118593 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
+  @152209 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
   Scenario: Verify that file uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -4515,3 +4515,207 @@ Business Need: Library Files Component Scenarios
       | Classification | contains | Medical Reports |
     Then I softly see value "Automation Test Data File-DND.png" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
     Then I softly do not see value "DummyFile2_DND.jpg" for title "Title" inside table "---program:-:flexGridWorkSpaceFilesId---"
+
+  @155562 @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromFilesListTab-HomePhase
+  Scenario: Verify that show visibility options is displayed to admin user while uploading file from files list tab
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    Then I see the text :
+      | Visibility Options |
+
+  @148282 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedAtFileUploadModalForInternalUser-RecordLevel
+  Scenario: Verify that private on record sharing option is displayed at add/upload file modal for internal user - Record level
+    When I login as "Automation-PO" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @148534 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedAtFileUploadModalForAdminUser-RecordLevel
+  Scenario: Verify that private on record sharing option is not displayed at add/upload file modal for admin user - Record level
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155493 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromMyFeed-HomePhase
+  Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from my feed- home phase
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155494 @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromCollabPhase
+  Scenario: Verify that show visibility options is displayed to admin user while uploading file from collab phase
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I see the text :
+      | Visibility Options |
+
+  @155495 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromCollabPhase
+  Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from collab phase
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155498    @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromCollabTab-RecordLevel
+  Scenario: Verify that show visibility options is displayed to admin user while uploading file from collab tab - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I see the text :
+      | Visibility Options |
+
+  @155499    @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromCollabTab-RecordLevel
+  Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from collab tab - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155500 @validateThatShowOptionsSectionIsDisplayedAtFileUploadModalForExternalUserCollabTab-RecordLevel
+  Scenario: Verify that show visibility options is displayed at add/upload file modal for EXTERNAL user at collab tab - Record level
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I see the text :
+      | Visibility Options |
+
+  @155840 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromFilesLibraryTab-HomePhase
+  Scenario: Verify that show options select box is displayed to SPI user while uploading file from files library tab
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
+    Then I see the text :
+      | Visibility Options |
+
+  @148277 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromAttachmentTab-RecordLevel
+  Scenario: Verify that show options select box is displayed to SPI user while uploading file from attachment tab - record level
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I see the text :
+      | Visibility Options |
+
+  @148553 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedAtFileUploadModalForExternalUser-RecordLevel
+  Scenario: Verify that private on record sharing option is not displayed at add/upload file modal for EXTERNAL user - Record level
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI2" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155501 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedAtFileUploadModalForExternalUserCollabTab-RecordLevel
+  Scenario: Verify that private on record sharing option is not displayed at add/upload file modal for EXTERNAL user at collab tab - Record level
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI2" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Post by Automation SPI-2 user - DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @155568 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromFilesLibraryTab-HomePhase
+  Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from files library tab
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    Then I do not see sharing option as "Private On Record" at upload file modal
+
+  @149352 @validateThatPreviousAndNextNavigationButtonIsDisplayedAtFilesLibraryTab-HomePhase
+  Scenario: Verify that Previous and Next navigation buttons are displayed at files library tab
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Asset Library"
+    Then I see button "Previous"
+    Then I see button "Next"

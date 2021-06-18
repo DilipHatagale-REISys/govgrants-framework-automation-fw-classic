@@ -339,11 +339,6 @@ public class PageLayoutSteps {
         }
     }
 
-    @Then("^I (see|softly see) field \"([^\"]*)\" is disabled$")
-    public void assertExpectedFieldIsDisabled(String usage, String fieldApiName) {
-        pageLayoutPage.assertExpectedFieldAtEditPageDetails(usage, fieldApiName);
-    }
-
     @Then("^I see \"([^\"]*)\" options disabled from menu dropdown$")
     public void assertSpecificMenuBarOptionsDisabled(String option) {
         pageLayoutPage.assertSubmitForApprovalOptionDisabled(option);
@@ -419,7 +414,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSessionTimeoutDialogboxDisplayed(usage, headerText);
     }
 
-    @Then("^I see Session Timeout dialogbox with button \"([^\"]*)\"$")
+    @Then("^I see button \"([^\"]*)\"$")
     public void assertSessionTimeoutDialogboxWithButtons(String buttonName) {
         pageLayoutPage.assertSessionTimeoutDialogboxButtons(buttonName);
     }

@@ -141,7 +141,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see no "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
+    Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
 
   @77183    @disablingMenuFieldForAtEnhancedDataTable-gPlanning
   Scenario: validate disabling of burger menu icon in enhanced flex table planning

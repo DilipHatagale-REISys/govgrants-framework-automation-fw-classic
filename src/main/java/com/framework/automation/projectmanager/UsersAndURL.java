@@ -70,13 +70,16 @@ public class UsersAndURL implements UsersController {
                 password = "Automation@12345";
                 break;
             case "AUTOMATION-SPI":
-                password = "Automation@12345678";
+                password = "Automation@12345";
                 break;
             case "AUTOMATION-ADMIN":
                 password = "Automation@12345";
                 break;
             case "AUTOMATION-SPI2":
-                password = "test@123456";
+                password = "Automation@123456";
+                break;
+            case "AUTOMATION-PO":
+                password = "Automation@12345";
                 break;
             default:
                 password = "Automation@123";
@@ -119,6 +122,9 @@ public class UsersAndURL implements UsersController {
                 break;
             case "AUTOMATION-SPI2":
                 username = "automation-spi@ggp.test5";
+                break;
+            case "AUTOMATION-PO":
+                username = "automationpo.test5@yopmail.com";
                 break;
             default:
                 username = "qa_automation@ggp.test5";

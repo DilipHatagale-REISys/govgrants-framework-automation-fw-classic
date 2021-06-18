@@ -136,7 +136,7 @@ Business Need: New API related scenarios temporary
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
-    Then I see Session Timeout dialogbox with button "Test Logged In"
+    Then I see button "Test Logged In"
 
   @68377   @VerifySessionTimeoutDialogBoxWithTestLoggedOutButton  @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box text
@@ -149,7 +149,7 @@ Business Need: New API related scenarios temporary
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
-    Then I see Session Timeout dialogbox with button "Test Log Out"
+    Then I see button "Test Log Out"
 
   @148203   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValueForSPIUser
   Scenario: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed for SPI User
