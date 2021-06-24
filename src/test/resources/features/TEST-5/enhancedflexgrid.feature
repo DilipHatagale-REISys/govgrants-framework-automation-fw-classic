@@ -2963,3 +2963,31 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
     Then I softly see the text :
       | Showing 1 to 1 of 1 records |
+
+  @100210    @verifyCurrencyValuesAreEditableAtASameTimeAtParentFlexTableAtEnhancedGrid-gPlanning
+  Scenario: verify that if multiple records are edited and enter value at urreny field then records are getting saved successfully at enhanced grid
+    Given I delete the record "Temp Grant 1" from the object "Grant__c" with field "ProjectTitle__c"
+    Given I delete the record "Temp Grant 2" from the object "Grant__c" with field "ProjectTitle__c"
+    Given I delete the record "Temp Grant 3" from the object "Grant__c" with field "ProjectTitle__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I enter the following values into flex table with id "---program:-:flexGridEnhancedID---" by clicking "New" :
+      | Project Title | Status |
+      | Temp Grant 1  | Active |
+      | Temp Grant 2  | Active |
+      | Temp Grant 3  | Active |
+    When I perform quick search for "Temp Grant" in "---program:-:flexGridEnhancedID---" panel
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
+      | Project Title | Total Adjusted Amount |
+      | Temp Grant 1  | 10000                 |
+      | Temp Grant 2  | 10000                 |
+      | Temp Grant 3  | 10000                 |
+    When I perform quick search for "Temp Grant" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 1" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 2" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 3" inside table "---program:-:flexGridEnhancedID---"

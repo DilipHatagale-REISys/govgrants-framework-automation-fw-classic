@@ -2827,5 +2827,6 @@ Business Need: Flex Grid Component Scenarios
     And I enter value "fieldDueDate__c" into field "fieldDescription__c"
     And I enter value "test data" into field "fieldTitle__c"
     And I enter value "1" into field "fieldDueDate__c"
+    When I navigate to "Overview" sub tab
     And I click modal button "Save"
     Then I see "test temp data" text enter in field "fieldObjectives__c"
