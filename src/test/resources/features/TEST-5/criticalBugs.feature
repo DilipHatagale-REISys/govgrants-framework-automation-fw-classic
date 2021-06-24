@@ -189,6 +189,8 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "AD-FIN.2--00" inside table
     When I enter value "Test Automation" into field "Agreement1__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "GT-FIN.2-001" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-FIN.2-001"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -1004,6 +1006,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-00" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Delete" icon for "BP-00" inside table
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year |
@@ -1160,8 +1163,8 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I navigate to "Contacts" content inside "Activities" subheader on left panel
-    And I perform quick search for "Emily PO"
-    When I click on "View" icon for "Emily PO" inside table
+    And I perform quick search for "Emily spandana garikipati"
+    When I click on "View" icon for "Emily spandana garikipati" inside table
     And I see the text :
       | Contact Information  |
       | Personal Information |
@@ -2743,6 +2746,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "MDH Test Application # 1" inside table
     When I enter value "300" into field "CumulativeAwardedAmount__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see over all total for "CumulativeAwardedAmount__c" at enhanced grid
 
     Examples:
@@ -2773,6 +2777,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "MDH Test Application # 1" inside table
     When I enter value "300" into field "NUMBER__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see over all total for "NUMBER__c" at enhanced grid
 
     Examples:
@@ -2803,6 +2808,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "MDH Test Application # 1" inside table
     When I enter value "30" into field "PercentTest__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see over all total for "PercentTest__c" at enhanced grid
 
     Examples:
@@ -3180,6 +3186,9 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "AD-test--04" inside table
     When I enter value "0" into field "ProjectPeriodEndDate__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "GT-test-003" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-test-003"
+    When I perform quick search for "AD-test--04" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see field value is current date for "ProjectPeriodEndDate__c" at enhanced grid
 
     Examples:
@@ -3537,6 +3546,8 @@ Business Need: Logged Issues Scenarios
     When I enter value "Award Created for default value testing" into field "GrantAwardName__c"
     When I enter value "Activated" into field "Status__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
     When I perform quick search for "Award Created for default value testing" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see value "1" for multiple cells at column "Agreement1__c"
 
@@ -3744,6 +3755,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "AP-755-214"
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-07" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I click on "Delete" icon for "BP-07" inside table
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year |
@@ -4265,6 +4277,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-MAC-1-001" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "GT-MAC-1-001" inside table
     Then I see lookup field "*****" is in view mode
 
@@ -4469,7 +4482,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Plan" sub tab
-
+    When I perform quick search for "Demo_Title" in "---program:-:programOutComesTableId---" panel
     Then I see "No Records Found" inside flex table with id "---program:-:programOutComesTableId---"
 
   @121616    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtCollabPhase

@@ -410,6 +410,7 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "3" seconds
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
     When I enter value "Automation Testing Group" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal

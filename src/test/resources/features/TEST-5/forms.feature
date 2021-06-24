@@ -1062,3 +1062,25 @@ Business Need: Forms Component Scenarios
     When I select "General Application Form" from dropdown at forms
     When I click alert button "Cancel"
     Then I see "test data" text enter in field "fieldSubject__c"
+
+  @148228 @verifyFormOpensInEditModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUserForFirefox @firefox
+  Scenario:validate that form opens in edit mode even if hide from dropdown checkbox is checked for admin user on firefox
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @148227 @verifyFormOpensInViewModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUserForFirefox @firefox
+  Scenario:validate that form opens in view mode even if hide from dropdown checkbox is checked for admin user on firefox
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I softly see dropdown with selected value as "General Application Budget Form" at form layout

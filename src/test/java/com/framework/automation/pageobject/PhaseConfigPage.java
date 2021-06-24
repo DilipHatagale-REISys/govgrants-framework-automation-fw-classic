@@ -709,6 +709,12 @@ public class PhaseConfigPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+            case "VERY DARK DESATURATED CYAN":
+                if (pageColor.getCssValue("background-color").contains("rgba(34, 71, 76, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(34, 71, 76)")) {
+                    flag = true;
+                }
+                break;
         }
         return flag;
     }

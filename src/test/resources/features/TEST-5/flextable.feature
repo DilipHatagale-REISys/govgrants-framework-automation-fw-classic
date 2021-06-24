@@ -1837,8 +1837,8 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}" value in flex table id "ActiveFundingOpportunities"
 
-  @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedGrid
-  Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced grid
+  @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable
+  Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1856,6 +1856,7 @@ Business Need: Flex Table Component Scenarios
     And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
     And I click modal button "Save"
+    When I navigate to "Overview" sub tab
     Then I see "test temp data" text enter in field "fieldObjectives__c"
 
   @136004    @validateCommasAreDisplayedIn4DecimalValueOnFlexTableForNumberFieldTotal
@@ -1880,6 +1881,7 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     Then I see the text :
       | 1,235.0000 |
 
@@ -1913,13 +1915,7 @@ Business Need: Flex Table Component Scenarios
       | Name,ProgramName__c,Percent__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @155301    @validateIfUserSearchRecordAtQuickSearchThenRecordCountIsDisplayedCorrectlyUnderFlexTableShowRecord
-  Scenario: Validate if user search any record hen total record count should display correctly under showing total records
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+  Scenario: Validate if user search any record then total record count should display correctly under showing total records
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

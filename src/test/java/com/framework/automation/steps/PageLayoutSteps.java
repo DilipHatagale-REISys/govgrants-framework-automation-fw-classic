@@ -778,4 +778,9 @@ public class PageLayoutSteps {
     public void iSeeModalWithIdDisplayedProperly(String modalID) {
         pageLayoutPage.assertModalSizeAtNotesAndAttachment(modalID);
     }
+
+    @Then("I see field {string} is vertically resized")
+    public void iSeeFieldIsVerticallyResized(String fieldAPIName) {
+        pageLayoutPage.assertFieldAlignmentAtPageLayout(fieldAPIName);
+    }
 }

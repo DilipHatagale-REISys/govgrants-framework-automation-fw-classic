@@ -3785,7 +3785,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Program ID is required to save under Overview. |
+      | Program ID is required to save |
 
   @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
@@ -4363,6 +4363,10 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     And I save the field labeled "ID" as "savedValue"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
@@ -4514,6 +4518,10 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     And I save the field labeled "ID" as "savedValue"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I see mini page layout value is displayed in normal text with "500" font-weight
@@ -8296,7 +8304,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
-    When I click on "×" icon at "Organization" modal under Library
+    When I click on "×" icon at "New ISA Grant" modal under Library
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
     Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
@@ -8318,7 +8326,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
-    When I click on "×" icon at "Organization" modal under Library
+    When I click on "×" icon at "New ISA Grant" modal under Library
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
     Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
@@ -8372,6 +8380,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Test Automation123" into field "AddressProgramContact__c"
     And I click on "Save" in the page details
     When I click "Yes" on modal confirmation box
+    When I navigate to "Overview" sub tab
     Then I see field "Description" as "Test Automation123"
 
   @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
@@ -8405,3 +8414,14 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1234" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see field "Percent" as "1,234%"
+
+  @148368  @VerifyTextAreaFieldDisplaysVerticallyAndDoesNotOverLappedOnOtherFieldsAtPageDetailInEditMode
+  Scenario: validate that textarea field is displayed vertically alligned and not overlapped on other fields at page detail in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see field "ProjectGoals__c" is vertically resized

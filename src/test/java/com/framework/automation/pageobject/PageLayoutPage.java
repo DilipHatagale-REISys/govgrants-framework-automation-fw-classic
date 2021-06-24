@@ -1661,6 +1661,16 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().assertionsTo().assertThat(isModalSizeDisplayedAsExpectedAtNotesAndAttachment(modalId)).isTrue();
     }
 
+
+    /**
+     * @param fieldAPIName
+     * @return true if field is aligned vertically at page layout
+     * @author ashwini.mahore
+     */
+    public void assertFieldAlignmentAtPageLayout(String fieldAPIName) {
+        I.amPerforming().assertionsTo().assertThat(isFieldAlignmentVerticallyAtPageLayout(fieldAPIName)).isTrue();
+    }
+
     /**
      * return true if help text rendered at bottom of help icon
      *
@@ -2374,7 +2384,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isHyperlinkPresentAtRichTextArea(String textOrURLValue) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//body/a[text()='" + textOrURLValue + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//body//a[text()='" + textOrURLValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -2497,7 +2507,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldValueDisplayedAtSendEmailModal(String value, String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]/..//span[contains(text(),'" + value + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]/..//*[contains(text(),'" + value + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3492,10 +3502,28 @@ public class PageLayoutPage extends GovGrantsManager {
         List<Elements> getModalStyle = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//div[@id='" + modalId + "']//tr//span[contains(@class,'control-label')]/parent::td"));
         for (int i = 1; i < getModalStyle.size(); i++) {
             if (getModalStyle.get(i).getAttributes("style").equalsIgnoreCase("width: 120px;")) {
-                System.out.println(i);
                 flag = true;
             }
         }
         return flag;
+    }
+
+    /**
+     * @param fieldAPIName
+     * @return true if field is aligned vertically at page layout
+     * @author ashwini.mahore
+     */
+    public Boolean isFieldAlignmentVerticallyAtPageLayout(String fieldAPIName) {
+        boolean flag = false;
+        WebElement getFieldToCheckAlignment = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//textarea"));
+        {
+            try {
+                if (getFieldToCheckAlignment.getCssValue("resize").equals("vertical")) {
+                    flag = true;
+                }
+            } catch (Exception e) {
+            }
+            return flag;
+        }
     }
 }
