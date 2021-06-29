@@ -5073,7 +5073,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Collab" tab
     Then I softly do not see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
-  @130574    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhase
+  @130574    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhase @libraryFiles
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at collab phase
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5081,7 +5081,7 @@ Business Need: Logged Issues Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
@@ -5090,10 +5090,10 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
-  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled
+  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled @wip @functionalityDeprecated
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5117,7 +5117,7 @@ Business Need: Logged Issues Scenarios
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
-  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled
+  @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled @libraryFiles
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5141,7 +5141,7 @@ Business Need: Logged Issues Scenarios
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
-  @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled
+  @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled @needToUpdate @libraryFiles
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at collab phase when custom permission is enabled
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5160,7 +5160,7 @@ Business Need: Logged Issues Scenarios
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
-  @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord
+  @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord @libraryFiles
   Scenario: Verify that if file uploaded on record level post from home phase-My feed section is displayed on respective record inside files table
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5202,7 +5202,7 @@ Business Need: Logged Issues Scenarios
     And I refresh the page
     Then I softly do not see "Collab temp" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
 
-  @130106    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsEditableInsideFilesTableOnThatRecord
+  @130106    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsEditableInsideFilesTableOnThatRecord @libraryFiles
   Scenario: Verify that if file uploaded on record level post from home phase-My feed section is editable on respective record inside files table
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5376,7 +5376,7 @@ Business Need: Logged Issues Scenarios
     Then I see the text :
       | CollabFileTemp.pdf |
 
-  @130103    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsPlanningFilesTable
+  @130103    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsPlanningFilesTable @libraryFiles
   Scenario: validate that file attached to any record level post is displayed inside attachment tab at respective record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5427,7 +5427,7 @@ Business Need: Logged Issues Scenarios
  #130103 file deleted from home phase comment is also gets removed from attachment tab-  record detail page
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
-  @130105    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsCollabTab
+  @130105    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsCollabTab @libraryFiles
   Scenario: validate that file attached to any record level post is displayed inside collab tab at respective record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
