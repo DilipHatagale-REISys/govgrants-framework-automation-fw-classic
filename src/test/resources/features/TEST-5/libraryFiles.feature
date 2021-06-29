@@ -365,7 +365,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Secretary of Health"
     When I click on dropdown at library/folder/file "AuthorFolder1"
     When I click on "Upload File" option at library/folder/file "AuthorFolder1"
-    When I upload file "SendEmailAttachment.pdf" into library
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
     When I enter value as "test Automation Description" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "AuthorFolder1"
@@ -421,7 +421,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Secretary of Health"
     When I click on dropdown at library/folder/file "AuthorFolder1"
     When I click on "Upload File" option at library/folder/file "AuthorFolder1"
-    When I upload file "TestAutomation.txt" into library
+    When I upload file "TestAutomation.txt" into library with sharing
     When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "AuthorFolder1"
     Then I softly see library/folder/file "TestAutomation.txt" is displayed under files library
@@ -446,7 +446,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
@@ -470,14 +470,14 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
@@ -533,6 +533,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder2"
     When I click on dropdown at library/folder/file "SheetJSFileUpload (8).xlsx"
     When I click on "Delete File" option at library/folder/file "SheetJSFileUpload (8).xlsx"
     Then I see the following messages in the page details contains:
@@ -544,8 +545,8 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "SendEmailAttachment.pdf" into library
     When I enter value as "test Automation Description" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -570,15 +571,15 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
@@ -592,15 +593,15 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomationFile.docx" into library
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "TestAutomationFile.docx" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomationFile.docx"
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.docx"
@@ -619,8 +620,9 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -649,8 +651,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "SheetJSFileUploadDateTime.xlsx" into library
     When I enter value as "test Automation Description xlsx upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -658,7 +660,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SheetJSFileUploadDateTime.xlsx" is displayed under files library
     When I click on dropdown at library/folder/file "SheetJSFileUploadDateTime.xlsx"
     When I click on "Delete File" option at library/folder/file "SheetJSFileUploadDateTime.xlsx"
@@ -672,8 +674,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomationFile.zip" into library
     When I enter value as "test Automation Description zip file upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -681,7 +683,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "TestAutomationFile.zip" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomationFile.zip"
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.zip"
@@ -695,8 +697,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomation.txt" into library
     When I enter value as "test Automation Description text file upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -704,7 +706,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "TestAutomation.txt" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomation.txt"
     When I click on "Delete File" option at library/folder/file "TestAutomation.txt"
@@ -718,8 +720,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "SendEmailAttachment.pdf" into library
     When I enter value as "test Automation Description PDF upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -727,7 +729,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
@@ -741,8 +743,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomationFile.pptx" into library
     When I enter value as "test Automation Description Pptx upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -750,7 +752,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "TestAutomationFile.pptx" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomationFile.pptx"
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.pptx"
@@ -764,8 +766,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "TestAutomationFile.jpg" into library
     When I enter value as "test Automation Description jpg upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -773,7 +775,7 @@ Business Need: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
@@ -1082,8 +1084,9 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1143,7 +1146,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomation.txt" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
@@ -1167,7 +1170,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.jpg" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
@@ -1314,8 +1317,9 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1341,8 +1345,9 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -2102,7 +2107,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
     Then I see sharing option as "Private On Records" at upload file modal
 
-  @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel
+  @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel @needToUpdate
   Scenario: Verify that sharing option is displayed at add/upload file modal - Record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2731,7 +2736,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord @needToUpdate
+  @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord @wip @functionalityDeprecated
   Scenario: Verify that file is not visible to any internal user if sharing option as "Private On Records" is select at upload file modal
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -2769,7 +2774,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord @needToUpdate
+  @122140 @validateThatFileIsNotVisibleToAnyExternalUserIfSharingOptionIsSelectedAsPrivateRecord @wip @functionalityDeprecated
   Scenario: Verify that file is not visible to any external user if sharing option as "Private On Records" is select at upload file modal
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -2892,7 +2897,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharingUpdated.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly @needToUpdate
+  @122160 @validateThatIfSharingOptionIsEditedFromVisibleToAnyoneWithRecordAccessToPrivateOnRecordThenThatFileShouldBeVisibleToOwnerOnly @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that if sharing option changed from "Visible to anyone With Record Access" to "Private on record" then file is visible to owner only
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
@@ -3449,7 +3454,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @needToUpdate
+  @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @wip @functionalityDeprecated
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -3978,7 +3983,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @123936    @verifyThatFileAttachedByAdminUserFromHomePhaseIsNotDisplayedToExternalIfSharingOptionIsSelectedAsPrivateOnRecord  @wip @facingIssueOfDuplicateFileUpload @needToUpdate
+  @123936    @verifyThatFileAttachedByAdminUserFromHomePhaseIsNotDisplayedToExternalIfSharingOptionIsSelectedAsPrivateOnRecord  @wip @functionalityDeprecated
   Scenario: validate that file attached by admin user from home phase is not displayed to spi user "Private On Records" is select
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4064,7 +4069,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel
+  @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel @needToUpdate
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4075,20 +4080,21 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
 
   @130573 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtHomePhaseForPMUser
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at home phase for PM user
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
     When I click on "Upload File" option at library/folder/file "Department of Community Health"
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I upload file "TestAutomationFile.csv" into library
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
 
@@ -4104,7 +4110,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
 
@@ -4195,7 +4201,7 @@ Business Need: Library Files Component Scenarios
     And I click on "Upload File from Library" tab at files library upload modal
     Then I see information as "Maximum of 5 files can be selected." at files library upload modal
 
-  @129987 @validateThatMaximum5FilesCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  @129987 @validateThatMaximum5FilesCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @needToUpdate
   Scenario: Verify that maximum 5 files can be uploaded from upload file from library tab-  record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4259,7 +4265,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
-  @129988 @validateThatUserIsNotAbleToUploadMoreThan5FilesIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  @129988 @validateThatUserIsNotAbleToUploadMoreThan5FilesIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @needToUpdate
   Scenario: Verify that user is not able to upload more than 5 files from upload file from library tab-  record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4329,7 +4335,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "MultipleFileUploadDND" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
-  @136660 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
+  @136660 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel @needToUpdate
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed for SPI profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -4340,7 +4346,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
 
-  @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel
+  @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel @needToUpdate
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed at edit file for SPI profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
