@@ -400,16 +400,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click on session time out dialog box button
-     *
-     * @param buttonName
-     */
-    public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
-        I.amPerforming().getElementReference().of(ByUsing.xpath("//button[" + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName) + "] |" +
-                "//a[text()='" + buttonName + "']")).click();
-    }
-
-    /**
      * select value at By Phase dropdown and click at action
      *
      * @param dropdownValue
@@ -1611,16 +1601,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertTextFormattingInsideCKEditorInputBox(String value, String textFormat) {
         Assert.assertTrue(isTextInsideCKEditorInputBoxDisplayedInAnExpectedFormat(value, textFormat));
-    }
-
-    /**
-     * @param record
-     * @param colorName
-     * @return true if record label displayed in an expected color at calendar
-     * @author ashwini.mahore
-     */
-    public void isRecordDisplayedInExpectedColorAtCalendar(String record, String colorName) {
-        Assert.assertTrue(isRecordDisplayedInAnExpectedColorAtCalendar(record, colorName));
     }
 
     /**
@@ -3393,42 +3373,6 @@ public class PageLayoutPage extends GovGrantsManager {
                 break;
             case "BLOCK QUOTE":
                 if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//blockquote//p[text()='" + value + "']"))) {
-                    flag = true;
-                }
-                break;
-        }
-        return flag;
-    }
-
-    /**
-     * @param record
-     * @param colorName
-     * @return true if record label displayed in an expected color at calendar
-     * @author ashwini.mahore
-     */
-    public Boolean isRecordDisplayedInAnExpectedColorAtCalendar(String record, String colorName) {
-        boolean flag = false;
-        TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getRecordAtCalendar = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='" + record + "']/ancestor::td[@class='fc-event-container']//a"));
-        System.out.println(getRecordAtCalendar.getAttribute("style"));
-        switch (colorName.toUpperCase()) {
-            case "AQUA BLUE":
-                if (getRecordAtCalendar.getAttribute("style").contains("rgb(176, 206, 225)")) {
-                    flag = true;
-                }
-                break;
-            case "TEAL GREEN":
-                if (getRecordAtCalendar.getAttribute("style").contains("rgb(158, 234, 182)")) {
-                    flag = true;
-                }
-                break;
-            case "TURQUOISE":
-                if (getRecordAtCalendar.getAttribute("style").contains("rgb(167, 244, 243)")) {
-                    flag = true;
-                }
-                break;
-            case "WHITE":
-                if (getRecordAtCalendar.getAttribute("style").contains("rgb(255, 255, 255)")) {
                     flag = true;
                 }
                 break;

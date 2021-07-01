@@ -87,11 +87,6 @@ public class PageLayoutSteps {
         pageLayoutPage.hoverMouseOnExpectedLookupField(label, lookupField);
     }
 
-    @When("I click on \"([^\"]*)\" Button in Session Timeout dialogbox$")
-    public void clickOnButtonInSessionTimeoutDialogbox(String buttonName) {
-        pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
-    }
-
     @When("^I enter value \"([^\"]*)\" into field \"([^\"]*)\" on send email modal$")
     public void enterValueInSendEmailModal(String value, String fieldLabel) {
         pageLayoutPage.enterValueInSendEmailModalFields(value, fieldLabel);
@@ -192,10 +187,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
     }
 
-    @And("I click on {string} Button at calendar")
-    public void iClickOnButtonAtCalendar(String buttonName) {
-        pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
-    }
 
     @And("I select {string} and click at {string}")
     public void iSelectAndClickAt(String dropdownValue, String action) {
@@ -752,11 +743,6 @@ public class PageLayoutSteps {
     @Then("I see {string} displayed in {string} format inside CK editor")
     public void iSeeTextDisplayedInFormatInsideCKEditor(String value, String textFormat) {
         pageLayoutPage.assertTextFormattingInsideCKEditorInputBox(value, textFormat);
-    }
-
-    @Then("I see {string} record is displayed in {string} color inside calendar")
-    public void iSeeRecordIsDisplayedInColorInsideCalendar(String record, String colorName) {
-        pageLayoutPage.isRecordDisplayedInExpectedColorAtCalendar(record, colorName);
     }
 
     @Then("I see {string} month is displayed")
