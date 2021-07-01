@@ -820,6 +820,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -843,6 +844,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -900,9 +902,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I perform quick search for "Test" under files library
-    Then I softly see Label/Count as "Folders - 4" is displayed
-    Then I softly see Label/Count as "Files - 4" is displayed
+    When I perform quick search for "testAutomationFileDND.png" under files library
+    Then I softly see Label/Count as "Files - 1" is displayed
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under planning files table - Home Phase
@@ -919,6 +920,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -943,6 +945,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -967,6 +970,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -991,6 +995,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1029,6 +1034,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     And I navigate to "HOME" tab
@@ -1062,6 +1068,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1148,6 +1155,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomation.txt" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1172,6 +1180,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1196,6 +1205,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1220,7 +1230,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "DummyFile2_DND.jpg" in "WorkspaceFiles" panel
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
-  @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel
+  @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel @needToUpdate
   Scenario: Verify that by click on Last navigation arrow , last page is displayed under upload file modal - record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1247,7 +1257,9 @@ Business Need: Library Files Component Scenarios
     And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
     When I click on page navigation arrow "First" at table with id "WorkspaceFilesUpload" under upload file modal
-    Then I see "AssetLibraryTestData.pdf" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+#    Then I see "AssetLibraryTestData.pdf" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I softly see the text containing :
+      | Showing 1 to |
 
   @70746 @validateThatByClickOnPagesDropdownAndBySelecting2ndPageThenRecordsFrom2ndPageAreDisplayed-RecordLevel
   Scenario: Verify that by click on pages dropdown and selecting 2nd page then 2nd page record is displayed under upload file modal - record level
@@ -1277,6 +1289,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
@@ -1549,7 +1562,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
     Then I see pre-selected library/folder as "testAutomationDefaultFolder" is displayed at add file modal
 
-  @81525 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel
+  @81525 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - Planing Phase
     Given I have "customMetaData" configuration as below:
       | id                 | label            | booleanValue | customMetaDataApiName    |
@@ -1566,7 +1579,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
 
-  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel
+  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel @wip @functionalityDeprecated
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - home Phase
     Given I have "customMetaData" configuration as below:
       | id                 | label            | booleanValue | customMetaDataApiName    |
@@ -1593,7 +1606,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "testAutomationFolder2"
     Then I see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder2"
 
-  @81592 @validateThatAuthorCannotEditFileUploadedByOtherUser-HomePhase
+  @81592 @validateThatAuthorCannotEditFileUploadedByOtherUser-HomePhase @needToUpdate
   Scenario: Verify that author cannot see the edit option at file uploaded by other users
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
@@ -1663,7 +1676,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     Then I see Default keyword "UnitedHealth Group" at library/folder inside "modaltemp"
 
-  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
+  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that default keyword is Displayed at folder at select or change folder modal for GovGrant Admin profile -Record level
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1696,11 +1709,12 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "testAutomationBlankData.docx" into library
     When I enter value as "test Automation blank file upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     Then I see the following messages in the page details contains:
       | Please verify that the file can be readable |
 
-  @81515 @validateThatUserCanEditFileAndChangeFolderOfExistingFile-RecordLevel
+  @81515 @validateThatUserCanEditFileAndChangeFolderOfExistingFile-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that user is able to edit existing file and change folder of that file - record level
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1917,12 +1931,21 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I drag the "asd.png" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I drag the "SendEmailAttachment.pdf" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
     When I pause execution for "3" seconds
     When I click on expand icon at library/folder "Department of Community Health"
-    When I drag the "asd.png" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
+    When I drag the "SendEmailAttachment.pdf" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
-    Then I see file "asd.png" is displayed under "UnitedHealth Group" library or folder
+    Then I see file "SendEmailAttachment.pdf" is displayed under "UnitedHealth Group" library or folder
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome
   Scenario: Verify that file can be drag from assert library and droped into another library
@@ -1963,20 +1986,21 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "Duplicate"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
     Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    Then I softly do not see library/folder/file "DuplicateFile.txt" is displayed under files library
 
   @101476 @validateThatMultipleFilesWithSameNameAreDisplayedUnderOneFolder-HomePhase
   Scenario: Verify that admin user can add file with same name multiple times under same folder
@@ -1986,26 +2010,27 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "Duplicate"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
     Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    Then I softly do not see library/folder/file "DuplicateFile.txt" is displayed under files library
 
   @101098 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToSystemAdminUser-HomePhase
   Scenario: Verify show options section is displayed to admin user if custom metadat boolean value is set to true
@@ -2035,7 +2060,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I do not see sharing option as "Select visibility options" at upload file modal
+    Then I see sharing option as "Select visibility options" at upload file modal
 
   @101488 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-HomePhase
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - home phase
@@ -2047,32 +2072,32 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I see asterisk mark at "Sharing Options" field
+    Then I see asterisk mark at "Visibility Options" field
 
   @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase @bugLogged127715
   Scenario: Verify that Upload button is disabled when user has not selected sharing options - home phase library
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "UnitedHealth Group"
-    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
-    When I upload file "TestAutomationFile.csv" into library
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Upload File" option at library/folder/file "Asset Library"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
 
   @101496 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisabledelowFiels-HomePhase
   Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - home phase library
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "UnitedHealth Group"
-    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Upload File" option at library/folder/file "Asset Library"
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation Description" in field "Description" at Library Files
     Then I see the text :
       | Complete this field. |
@@ -2090,7 +2115,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit File" option at library/folder/file "SendEmailAttachment.png"
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
 
-  @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase @needToUpdate
+  @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase @wip @functionalityDeprecated
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- home phase library
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2129,11 +2154,11 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I see asterisk mark at "Sharing Options" field
+    Then I see asterisk mark at "Visibility Options" field
 
   @101554 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisplayedBelowField-ReordLevel
   Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - record level
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2141,7 +2166,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation Description" in field "Description" at Library Files
     Then I see the text :
       | Complete this field. |
@@ -2159,7 +2184,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "testAutomationFileDND.png" inside table
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
 
-  @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel @needToUpdate
+  @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2176,7 +2201,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
     Then I see sharing option as "Private On Records" at upload file modal
 
-  @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel @needToUpdate
+  @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that use can upload same file which is already present inside record - record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2229,7 +2254,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
     Then I see sharing option as "Select visibility options" at upload file modal
 
-  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase @needToUpdate
+  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase
   Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2237,22 +2262,23 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "Duplicate"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "DuplicateFile.txt"
-    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I upload file "DuplicateFile.txt" into library
-    When I select sharing option as "Private On Records" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I click on dropdown at library/folder/file "Duplicate"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
-    When I select sharing option as "Private On Records" at upload file modal
-    When I upload file "DuplicateFile.txt" into library
-    When I click on "Upload" button in send email modal
     Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    Then I softly do not see library/folder/file "DuplicateFile.txt" is displayed under files library
 
   @101686 @validateThatFilterGivenLibraryIsDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
   Scenario Outline: Verify that filter given library is displayed at add file modal as per filter claus given at key value map - record level
@@ -2383,7 +2409,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload" button in send email modal
     Then I see files "duplicateFileInFolder.png" is displayed under "UnitedHealth Group" folder
 
-  @101484 @validateThatMultipleFilesWithSameNameCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  @101484 @validateThatMultipleFilesWithSameNameCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that multiple files with same name can be uploaded from upload file from library tab-  record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4069,7 +4095,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
-  @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel @needToUpdate
+  @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel @wip @functionalityDeprecated
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4091,9 +4117,9 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Upload File" option at library/folder/file "Department of Community Health"
-    When I upload file "TestAutomationFile.csv" into library
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Upload File" option at library/folder/file "Asset Library"
+    When I upload file "TestAutomationFile.csv" into library with sharing
     When I select sharing option as "Select visibility options" at upload file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
@@ -4725,3 +4751,18 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Asset Library"
     Then I see button "Previous"
     Then I see button "Next"
+
+  @157354 @validateThatIfSharingOptionIsDisabledThenUploadButtonIsDisplayedAtRecordLevel
+  Scenario: Verify that Upload button is displayed when visibility options is disabled for user at record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    Then I see "Upload" button is displayed

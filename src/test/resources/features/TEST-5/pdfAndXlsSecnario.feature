@@ -1472,6 +1472,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel

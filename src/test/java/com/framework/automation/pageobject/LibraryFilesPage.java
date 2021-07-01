@@ -228,7 +228,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryOrFolderName
      */
     public void assertFileDisplayedUnderExpectedLibrary(String fileName, String libraryOrFolderName) {
-        Assert.assertTrue(isFileDisplayedUnderExpectedLibrary(fileName, libraryOrFolderName));
+        I.amPerforming().assertionsTo().assertThat(isFileDisplayedUnderExpectedLibrary(fileName, libraryOrFolderName)).isTrue();
     }
 
     /**
@@ -238,7 +238,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param folderName
      */
     public void assertFilesWithSameNameDisplayedInFolder(String fileName, String folderName) {
-        Assert.assertTrue(isSameNameFileDisplayedUnderExpectedFolder(fileName, folderName));
+        I.amPerforming().assertionsTo().assertThat(isSameNameFileDisplayedUnderExpectedFolder(fileName, folderName)).isTrue();
     }
 
     /**

@@ -30,13 +30,6 @@ public class PhaseConfigPage extends GovGrantsManager {
     /******* "Key Methods with complete functionality - public" *****************/
 
     /**
-     * click on global search all
-     */
-    public void clickOnGlobalSearchAll(String dropDownValue) {
-        I.amPerforming().click().on(By.xpath("//select[@id='selectSearchId']/option[text()='" + dropDownValue + "']"));
-    }
-
-    /**
      * click on global search box only
      */
     public void clickOnGlobalSearchTextBox() {
