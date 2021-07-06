@@ -1417,8 +1417,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder2"
-    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
-    When I click on "Download File" option at library/folder/file "automationTestingOfFiles.xls"
+    When I click on dropdown at library/folder/file "FilePresentInsideFolderDND.xls"
+    When I click on "Download File" option at library/folder/file "FilePresentInsideFolderDND.xls"
     Then I see "First Name" in downloaded xls or csv file "govgrants"
 
   @70409 @validateThatFileShouldGetDownloadFromFolderForAuthorProfileHomePhase @libraryFiles
@@ -1430,8 +1430,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder2"
-    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
-    When I click on "Download" option at library/folder/file "automationTestingOfFiles.xls"
+    When I click on dropdown at library/folder/file "FilePresentInsideFolderDND.xls"
+    When I click on "Download" option at library/folder/file "FilePresentInsideFolderDND.xls"
     Then I see "First Name" in downloaded xls or csv file "automationTestingOfFiles"
 
   @70367 @validateThatWhenClickOnDownloadFileAtLibraryThenFilesFromThatLibraryGetsDownloadedAtHomePhase @libraryFiles
@@ -1454,8 +1454,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
-    When I click on "Download" icon for "automationTestingOfFiles.xls" inside table
+    When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Download" icon for "FilePresentInsideFolderDND.xls" inside table
     Then I see "First Name" in downloaded xls or csv file "govgrants"
 
   @70729 @validateThatUserCanDownloadFileFromPlanningFilesTableAtAttachmentTab-RecordLevel @wip @NeedDeleteAPI @libraryFiles

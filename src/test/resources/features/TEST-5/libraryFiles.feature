@@ -534,10 +534,10 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder2"
-    When I click on dropdown at library/folder/file "SheetJSFileUpload (8).xlsx"
-    When I click on "Delete File" option at library/folder/file "SheetJSFileUpload (8).xlsx"
+    When I click on dropdown at library/folder/file "FileAssociateWithRecordDND.xlsx"
+    When I click on "Delete File" option at library/folder/file "FileAssociateWithRecordDND.xlsx"
     Then I see the following messages in the page details contains:
-      | You can not delete File SheetJSFileUpload (8).xlsx, as it is associated with business records. |
+      | You can not delete File FileAssociateWithRecordDND.xlsx, as it is associated with business records. |
 
   @70495 @validateThatFileUploadedFromLibraryFilesIsDisplayedUnderFilesListTab-HomePhase-FileList @NeedDeleteAPI
   Scenario: Verify that file uploaded from LibraryFiles tab is displayed under files list tab - Home phase
@@ -789,8 +789,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
-    When I click on "Edit" icon for "automationTestingOfFiles.xls" inside table
+    When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Edit" icon for "FilePresentInsideFolderDND.xls" inside table
     When I click on "×" icon at "File Edit" modal under Library
     Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
@@ -801,8 +801,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
-    When I click on "Edit" icon for "automationTestingOfFiles.xls" inside table
+    When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Edit" icon for "FilePresentInsideFolderDND.xls" inside table
     When I click on "Cancel" button in send email modal
     Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
@@ -893,7 +893,7 @@ Business Need: Library Files Component Scenarios
     Then I softly see library/folder/file as "testAutomationFolder1" highlighted with color
     Then I softly see library/folder/file as "testAutomationFolder2" highlighted with color
     Then I softly see library/folder/file as "TestSubFolder1-DND" highlighted with color
-    Then I softly see library/folder/file as "automationTestingOfFiles.xls" highlighted with color
+    Then I softly see library/folder/file as "FilePresentInsideFolderDND.xls" highlighted with color
 
   @71528 @validateThatQuickSearchResultCountIsDisplayed-HomePhase
   Scenario: Verify that quick search result count is displayed under library files - Home Phase
@@ -1822,7 +1822,7 @@ Business Need: Library Files Component Scenarios
 
   @83078 @validateThatAuthorCanSeeFilesPresentUnderAssetLibraryAtUploadFileModal-RecordLevel
   Scenario: Verify that author can see files from asset library at upload file from library modal- record level
-    When I login as "AUTOMATION-APPLICANT" user
+    When I login as "Automation-Applicant" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1836,7 +1836,7 @@ Business Need: Library Files Component Scenarios
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
   Scenario: Verify that only asset library is displayed to the user who have access of only asset library at upload file from library modal window - record level
-    When I login as "AUTOMATION-APPLICANT" user
+    When I login as "Automation-Applicant" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2124,17 +2124,17 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder2"
-    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
-    When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
+    When I click on dropdown at library/folder/file "FilePresentInsideFolderDND.xls"
+    When I click on "Edit File" option at library/folder/file "FilePresentInsideFolderDND.xls"
     When I select sharing option as "Private On Records" at upload file modal
     When I click on "Save" button in send email modal
-    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
-    When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
+    When I click on dropdown at library/folder/file "FilePresentInsideFolderDND.xls"
+    When I click on "Edit File" option at library/folder/file "FilePresentInsideFolderDND.xls"
     Then I see sharing option as "Private On Records" at upload file modal
 
-  @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel @needToUpdate
+  @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel
   Scenario: Verify that sharing option is displayed at add/upload file modal - Record level
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2254,7 +2254,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
     Then I see sharing option as "Select visibility options" at upload file modal
 
-  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase
+  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase @needToUpdate @wip
   Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2354,8 +2354,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "asd.png" in "WorkspaceFiles" panel
-    Then I see "asd.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
+    When I perform quick search for "DragAndDropFileDND.png" in "WorkspaceFiles" panel
+    Then I see "DragAndDropFileDND.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
 
     Examples:
       | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
@@ -2395,10 +2395,6 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
-    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
-    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
-    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "duplicateFileInFolder.png" into library
@@ -2408,6 +2404,12 @@ Business Need: Library Files Component Scenarios
     When I upload file "duplicateFileInFolder.png" into library
     When I click on "Upload" button in send email modal
     Then I see files "duplicateFileInFolder.png" is displayed under "UnitedHealth Group" folder
+    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
+    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
+    And I pause execution for "3" seconds
+    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
+    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
+    Then I softly do not see library/folder/file "duplicateFileInFolder.png" is displayed under files library
 
   @101484 @validateThatMultipleFilesWithSameNameCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that multiple files with same name can be uploaded from upload file from library tab-  record level
@@ -2522,7 +2524,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "Asset Library"
     Then I see pre-selected library/folder as "Asset Library" is displayed at add file modal
 
-  @118594 @validateThatErrorMessageIsNotDisplayedInsideSelectChangeFolderAtAddFileModal-ApplicationPhaseRecordLevel
+  @118594 @validateThatErrorMessageIsNotDisplayedInsideSelectChangeFolderAtAddFileModal-ApplicationPhaseRecordLevel @wip @functionalityDeprecated
   Scenario: Verify that error message should not displayed at selectChange folder modal at file uploaded from record level
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -2735,6 +2737,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -2852,8 +2855,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -2888,6 +2891,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -2989,8 +2993,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3034,8 +3038,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3065,8 +3069,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3167,6 +3171,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3210,6 +3215,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3254,6 +3260,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Internal Users With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3297,6 +3304,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3346,6 +3354,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -3399,6 +3408,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I select Classification as "Medical Reports" at upload file modal
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
@@ -3449,6 +3459,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -4154,6 +4165,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Internal Users With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -4187,6 +4199,7 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -4372,7 +4385,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
 
-  @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel @needToUpdate
+  @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed at edit file for SPI profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -4383,8 +4396,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
     When I upload file "TestFileSharing.docx" into library with sharing
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
@@ -4412,7 +4425,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "CollabTestFileDNDRecordLevel.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "CollabTestFileDNDRecordLevel.pdf" inside table
     When I click on "Cancel" button in send email modal
-    Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
+    Then I see "File Edit" modal window with id "---program:-:PlanningFilesModalId---" is not displayed
 
   @148727 @validateCancelButtonWorkingAtAddFileModalAtRecordLevel
   Scenario: Verify modal gets closed by lick on cancel button under add file modal at record level
@@ -4427,8 +4440,8 @@ Business Need: Library Files Component Scenarios
     When I click on "Cancel" button in send email modal
     Then I see "PlanningFiles" modal window with id "---program:-:PlanningFilesModalId---" is not displayed
 
-  @152209 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
-  Scenario: Verify that file uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
+  @152209 @validateThatHomePhaseMyFeedSectionRendersProperlyEvenWhen1000FilesArePresent-HomePhase
+  Scenario: Verify that home phase my feed section is displayed when more than 1000 files are present in workspace
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -4438,7 +4451,7 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see expected table with id "---program:-:myFeedTableId---"
+    And I pause execution for "3" seconds
     When I click on "Menu" in the page details
     Then I see "To Me" option is displayed at collab menu
 
@@ -4587,13 +4600,21 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from my feed- home phase
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I do not see sharing option as "Private On Record" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I navigate to "Collab" tab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @155494 @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromCollabPhase
   Scenario: Verify that show visibility options is displayed to admin user while uploading file from collab phase
@@ -4606,19 +4627,31 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
-    Then I see the text :
+    Then I softly see the text :
       | Visibility Options |
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @155495 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromCollabPhase
   Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from collab phase
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     Then I do not see sharing option as "Private On Record" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @155498    @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromCollabTab-RecordLevel
   Scenario: Verify that show visibility options is displayed to admin user while uploading file from collab tab - record level
@@ -4765,4 +4798,175 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestAutomationFile.csv" into library
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
-    Then I see "Upload" button is displayed
+    Then I do not see "Upload" button is disabled at modal under library
+
+  @157781 @validateClassificationsPresentUnderDropDownAtRecordLevelCollabTabAtUploadFileModalByLoginAsAutomationPMUser
+  Scenario: Verify classifications present under dropdown at upload file modal at record level collab tab by login as PM user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail        | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+      | Page Tabs Config:Page Layout Action | Is Active                  | true                                     | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157794 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationPMUser
+  Scenario: Verify classifications added from config is not present in upload file modal at collab phase by login as PM user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail        | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+      | Page Tabs Config:Page Layout Action | Is Active                  | true                                     | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157842 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtHomePhaseUploadFileModal-ByLoginAsAutomationPMUser
+  Scenario: Verify classifications added from config is not present in upload file modal at HOME phase by login as PM user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157886 @validateClassificationsPresentUnderDropDownAtRecordLevelCollabTabAtUploadFileModalByLoginAsAutomationADMINUser
+  Scenario: Verify classifications present under dropdown at upload file modal at record level collab tab by login as ADMIN user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail        | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+      | Page Tabs Config:Page Layout Action | Is Active                  | true                                     | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157903 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationADMINUser
+  Scenario: Verify classifications added from config is not present in upload file modal at collab phase by login as ADMIN user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail        | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+      | Page Tabs Config:Page Layout Action | Is Active                  | true                                     | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157924 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtHomePhaseUploadFileModal-ByLoginAsAutomationADMINUser
+  Scenario: Verify classifications added from config is not present in upload file modal at HOME phase by login as ADMIN user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Attachment Classifications | Other; Medical Reports; Clinical Budgets | Grantee State Program | GNT__PageBlockTitle__c    | Collab                     |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I navigate to "Collab" tab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"

@@ -5141,7 +5141,7 @@ Business Need: Logged Issues Scenarios
     When I select sharing option as "Select sharing options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
-  @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled @needToUpdate @libraryFiles
+  @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled @libraryFiles
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at collab phase when custom permission is enabled
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5157,7 +5157,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
   @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord @libraryFiles
@@ -5564,6 +5564,7 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "HomeCollabIframe"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "actionsAtEgrid" in "WorkspaceFiles" panel
+    And I pause execution for "5" seconds
     When I check "actionsAtEgrid.png" boxes in flex table with id "WorkspaceFiles"
  #130109 after selecting one radio button all others set to false/disabled
     Then I softly see checkbox/radio button at "actionsAtEgrid1.png" is disabled
