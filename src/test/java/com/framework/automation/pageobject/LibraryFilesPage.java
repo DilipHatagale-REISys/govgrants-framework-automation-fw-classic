@@ -290,6 +290,22 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * return true if post/comment is displayed inside collab - my feed container
+     *
+     * @param text
+     * @param sectionId
+     * @author ashwini.mahore
+     */
+    public void assertTextAtMyFeedSectionWithId(String usage, String text, String sectionId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isFalse();
+
+        }
+    }
+
+    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName
@@ -701,4 +717,25 @@ public class LibraryFilesPage extends GovGrantsManager {
         }
         return flag;
     }
+
+
+    /**
+     * return true if post/comment is displayed inside collab - my feed container
+     *
+     * @param text
+     * @param sectionId
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedTextDisabledAtMyFeedSection(String text, String sectionId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + sectionId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "]"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 }

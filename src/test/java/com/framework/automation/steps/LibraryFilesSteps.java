@@ -133,4 +133,9 @@ public class LibraryFilesSteps {
     public void iSoftlySeeCheckboxOrRadioButtonAtIsDisabled(String fileName) {
         libraryFilesPage.assertCheckboxOrRadioButtonAtFileIsDisabledAtUploadFileModal(fileName);
     }
+
+    @Then("^I (softly see|softly do not see) \"([^\"]*)\" at my feed container with id \"([^\"]*)\"$")
+    public void iDoNotSeeAtMyFeedSectionContainerWithId(String usage,String text, String sectionId) {
+        libraryFilesPage.assertTextAtMyFeedSectionWithId(usage,text,sectionId);
+    }
 }
