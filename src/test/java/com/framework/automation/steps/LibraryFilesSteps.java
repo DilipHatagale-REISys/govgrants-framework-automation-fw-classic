@@ -138,4 +138,9 @@ public class LibraryFilesSteps {
     public void iDoNotSeeAtMyFeedSectionContainerWithId(String usage,String text, String sectionId) {
         libraryFilesPage.assertTextAtMyFeedSectionWithId(usage,text,sectionId);
     }
+
+    @Then("I see visibility option is disabled with default value as {string}")
+    public void iSeeSharingOptionAsIsDisabled(String visibilityOption) {
+        libraryFilesPage.assertVisibilityOptionIsDisabledAtUploadFileModal(visibilityOption);
+    }
 }

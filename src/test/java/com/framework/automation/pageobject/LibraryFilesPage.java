@@ -261,7 +261,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @author - ashwini.mahore
      */
     public void assertAsteriskMarkIsDisplayedAtRequiredFieldsAtUploadFileModal(String fieldName) {
-        Assert.assertTrue(isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(fieldName));
+        I.amPerforming().assertionsTo().assertThat(isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(fieldName)).isTrue();
     }
 
     /**
@@ -303,6 +303,16 @@ public class LibraryFilesPage extends GovGrantsManager {
             I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isFalse();
 
         }
+    }
+
+    /**
+     * return true if visibility option is disabled and value is displayed
+     *
+     * @param visibilityOption
+     * @author ashwini.mahore
+     */
+    public void assertVisibilityOptionIsDisabledAtUploadFileModal(String visibilityOption) {
+        I.amPerforming().assertionsTo().assertThat(isVisibilityOptionIsDisabled(visibilityOption)).isTrue();
     }
 
     /**
@@ -737,5 +747,24 @@ public class LibraryFilesPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * return true if visibility option is disabled and default selected value is displayed
+     *
+     * @param visibilityOption
+     * @author ashwini.mahore
+     */
+    public Boolean isVisibilityOptionIsDisabled(String visibilityOption) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//select[@name='SharingOptions' and @disabled='true']//option[text()='" + visibilityOption + "']"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 
 }
