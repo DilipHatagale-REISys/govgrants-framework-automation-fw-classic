@@ -4970,3 +4970,390 @@ Business Need: Library Files Component Scenarios
     And I click modal button "OK"
     When I pause execution for "5" seconds
     Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158145 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationSPIUser
+  Scenario: Verify classifications added from config is not present in upload file modal at collab phase by login as SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | ApplicationView    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Attachment Classifications | Other; Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Collab                     |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see Classification as "Other" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157931 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationPMUser
+  Scenario: Verify Upload button is disabled and asterisk mark is displayed at classification at upload file modal - record collab tab by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+    Then I see asterisk mark at "Classification" field
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157935 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtCollabPhaseByLoginAsAutomationPMUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-collab phase by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158159 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtHOMEPhaseByLoginAsAutomationPMUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-HOME phase by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158169 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationADMINUser
+  Scenario: Verify Upload button is disabled and asterisk mark is displayed at classification at upload file modal - record collab tab by ADMIN account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+    Then I see asterisk mark at "Classification" field
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158174 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtCollabPhaseByLoginAsADMINUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-collab phase by ADMIN account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158189 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtHOMEPhaseByLoginAsAdminUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-HOME phase by ADMIN account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I navigate to "Collab" tab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158193 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationPMUser
+  Scenario: Verify Upload button is disabled and asterisk mark is displayed at classification at upload file modal - record collab tab by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+    Then I see asterisk mark at "Classification" field
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158198 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtCollabPhaseByLoginAsPMUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-collab phase by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158202 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtHOMEPhaseByLoginAsPMUser
+  Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-HOME phase by PM account
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField    | filterId         |
+      | Page Tabs Config             | Is Active                  | false                             |                       | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
+    Then I softly do not see Classification as "Select file classification" at upload file modal
+    When I click on "×" icon at "Add Files" modal under Library
+    And I navigate to "Collab" tab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
+  @157841 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationADMINUser
+  Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by ADMIN user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "SendEmailAttachment.pdf" into library
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+
+  @157843 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationSPIUser
+  Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+
+  @157354 @validateAdminUserCanSeeUploadButtonActiveWithoutSharingOptionAndCanUploadFileFromRecord
+  Scenario: Verify ADMIN user can upload file from record without selecting sharing option
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @157880 @validateSharingOptionSelectAtUploadFileModalIsDisplayedUnderFilesTableAtRecordDetailByLoginAsAutomationSPIUser
+  Scenario: Verify select sharing option is displayed at files table at attachment tab by SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue                 | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | ApplicationView    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Application Files          |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "Visible to Internal Users With Record Access" for title "Sharing Option" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
