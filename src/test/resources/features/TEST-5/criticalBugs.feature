@@ -1061,7 +1061,7 @@ Business Need: Logged Issues Scenarios
     And I click on expand collapse icon for panel heading "Internal Review Panel Users"
     Then I see "Internal Review Panel Users" block is collapsed
 
-  @58956    @formsPrevievLinkShouldOpensFormsCorrectly
+  @58956    @formsPrevievLinkShouldOpensFormsCorrectly @bugLogged_160311 @wip
   Scenario: validate preview lookup link is working correctly on click at forms modal
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1967,7 +1967,7 @@ Business Need: Logged Issues Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @66949 @verifyEditSelectedAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning  @checkAfterBugFixed
+  @66949 @verifyEditSelectedAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning
   Scenario Outline: validate Edit Selected functionality for parent flex table for required fields at enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
@@ -1981,6 +1981,7 @@ Business Need: Logged Issues Scenarios
       | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table:General        | Enable Record Selection | true                        | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General         | Required Fields         | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:GrantRecordCreatedTemporary}" from the object "Grant__c" with field "ProjectTitle__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1988,15 +1989,20 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I check "Road Construction Annoumsment" boxes in flex table with id "---program:-:flexGridEnhancedID---"
-    When I click on top right button "Edit Selected" in flex table with id "---program:-:flexGridEnhancedID---"
-    When I enter value "Test Automation" into field "AddressProgramContact__c"
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "{Framework_recordUsed:GrantRecordCreatedTemporary}" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I enter value "Test Address for Automation New" into field "AddressProgramContact__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
-    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "---program:-:flexGridEnhancedID---"
+    When I check "{Framework_recordUsed:GrantRecordCreatedTemporary}" boxes in flex table with id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Edit Selected" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "Test Address for Automation" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see value "Test Address for Automation" for title "Program Contact Address" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
-      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
-      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                                      |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Test Automation Temp grant Record%' |
 
   @88651 @validateAllClassificationsPresentUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel @libraryFiles
   Scenario: Verify all classifications present under select classification field dropdown at add file modal - Planing Phase
@@ -3544,10 +3550,11 @@ Business Need: Logged Issues Scenarios
     When I expand nested table containing column value "Demo_Title"
     When I click on top right button "test" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     When I enter value "Award Created for default value testing" into field "GrantAwardName__c"
-    When I enter value "Activated" into field "Status__c"
+    When I enter value "Created" into field "Status__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I click toggle button to select "All Awards"
     When I perform quick search for "Award Created for default value testing" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see value "1" for multiple cells at column "Agreement1__c"
 
@@ -3904,7 +3911,7 @@ Business Need: Logged Issues Scenarios
       | newFieldsApi                                                                  | defaultFieldsApi                                                                                                            |
       | Id,ProgramServiceArea__c,BudgetPeriod__c,Name,UnsecuredAmount__c,Narration__c | Id,ProgramServiceArea__c,BudgetPeriod__c,SourceType__c,Name,UnsecuredAmount__c,SecuredAmount__c,TotalAmount__c,Narration__c |
 
-  @100501    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfPicklistValueIsChanged
+  @100501    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfPicklistValueIsChanged @wip @BugLogged_159864
   Scenario: validate if picklist value is changed and taken a snapshot then snapshot is getting generated inside history tab
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
@@ -3919,6 +3926,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
+    And I pause execution for "4" seconds
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
@@ -4496,8 +4504,22 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "More Options" action at "Test Attachment comment DND" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
+    And I click on "More Options" action at "Temp Post Automation" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @121615    @verifyThatMoreActionsDropdownDisplayedAtAttachedFileAtCommentAtHomePhase
   Scenario: validate that more actions dropdown is displayed at attached file at comment inside home phase
@@ -4525,11 +4547,28 @@ Business Need: Logged Issues Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
+    Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
     And I navigate to "HOME" tab
-    When I click on "Menu" in the page details
-    And I select "All Users" from dropdown
-    And I click on "More Options" action at "Test Attachment comment DND" comment inside my feed
+    When I pause execution for "3" seconds
+    And I click on "More Options" action at "Temp Post Automation" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
+    And I navigate to "Collab" tab
+    And I pause execution for "3" seconds
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
 
   @121379    @vverifyThatQuickSearchIsWorkProperlyForMultiPicklistAtFlexTable-gMonitoring
   Scenario Outline: validate that quick search is working for multi picklist field at flex table
@@ -4636,19 +4675,27 @@ Business Need: Logged Issues Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
     When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I click on "×" icon at "Add Files" modal under Library
+    And I pause execution for "3" seconds
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+    And I navigate to "Collab" tab
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
+
 
   @121981    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromRecordLevel
   Scenario: validate that file attached to any post can be removed by click on cancel button at collab record level
@@ -4676,7 +4723,6 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I click on "×" icon at "Add Files" modal under Library
@@ -4694,7 +4740,8 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
@@ -4704,6 +4751,10 @@ Business Need: Logged Issues Scenarios
     When I click on "×" icon at "Add Files" modal under Library
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @121619    @verifyThatAttachedFileFromHomePhaseIsGettingDisplayedAtFilesList-HomePhase @wip @facingIssueOfDuplicateFileUpload
   Scenario: validate that file attached to any post from home phase is displayed at files list tab at Home Phase
@@ -4723,6 +4774,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Temporary Comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I refresh the page
@@ -4754,6 +4806,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "HOME" tab
@@ -4829,6 +4882,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment group" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "HOME" tab
@@ -4869,6 +4923,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
@@ -4908,6 +4963,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -4955,6 +5011,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
@@ -5001,6 +5058,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -5046,6 +5104,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
+    When I click on "×" icon at "Add Files" modal under Library
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -5084,7 +5143,8 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
@@ -5092,6 +5152,11 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled @wip @functionalityDeprecated
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
@@ -5114,7 +5179,7 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
   @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled @libraryFiles
@@ -5138,7 +5203,7 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Select sharing options" at upload file modal
+    When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
 
   @130578    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtCollabPhaseWhenCustomPermissionIsEnabled @libraryFiles
@@ -5149,18 +5214,24 @@ Business Need: Logged Issues Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Custom Permission Enabled user - Collab phase post DND" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
-  @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord @libraryFiles
+  @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord @libraryFiles @wip @needToUpdate @classificationMissing
   Scenario: Verify that if file uploaded on record level post from home phase-My feed section is displayed on respective record inside files table
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5177,7 +5248,6 @@ Business Need: Logged Issues Scenarios
     And I switch to iframe with id "HomeCollabIframe"
     When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
-    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I click on "×" icon at "Add Files" modal under Library
@@ -5202,7 +5272,7 @@ Business Need: Logged Issues Scenarios
     And I refresh the page
     Then I softly do not see "Collab temp" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
 
-  @130106    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsEditableInsideFilesTableOnThatRecord @libraryFiles
+  @130106    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsEditableInsideFilesTableOnThatRecord @libraryFiles @wip @needToUpdate @classificationMissing
   Scenario: Verify that if file uploaded on record level post from home phase-My feed section is editable on respective record inside files table
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5271,7 +5341,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Upload File from Library" tab at files library upload modal
     Then I do not see information as "Maximum of 5 files can be selected." at files library upload modal
 
-  @129993    @validateThatOnlyOneFileCanBeUploadedFromHomePhaseMyFeedSectionAtRecordLevelPost
+  @129993    @validateThatOnlyOneFileCanBeUploadedFromHomePhaseMyFeedSectionAtRecordLevelPost @wip @needToUpdate
   Scenario: Verify that only one file can be uploaded on record level post from home phase-My feed section
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
@@ -5376,7 +5446,7 @@ Business Need: Logged Issues Scenarios
     Then I see the text :
       | CollabFileTemp.pdf |
 
-  @130103    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsPlanningFilesTable @libraryFiles
+  @130103    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsPlanningFilesTable @libraryFiles @wip @needToUpdate @classificationMissing
   Scenario: validate that file attached to any record level post is displayed inside attachment tab at respective record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5427,7 +5497,7 @@ Business Need: Logged Issues Scenarios
  #130103 file deleted from home phase comment is also gets removed from attachment tab-  record detail page
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
-  @130105    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsCollabTab @libraryFiles
+  @130105    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAtRespectiveRecordDetailsCollabTab @libraryFiles @wip @needToUpdate @classificationMissing
   Scenario: validate that file attached to any record level post is displayed inside collab tab at respective record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5585,6 +5655,10 @@ Business Need: Logged Issues Scenarios
     When I click "Yes" on modal confirmation box
     Then I softly see the following messages in the page details :
       | File actionsAtEgrid.png deleted successfully. |
+    And I navigate to "Collab" tab
+    And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
     And I navigate to "HOME" tab
  #130109 single file deleted from record level is deleted from - home phase my feed section
     Then I softly do not see "Automation file upload at record post collab" comment inside "Test Automation Post For collab attachment functionality check - record level" post at collab
@@ -5843,9 +5917,15 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check" comment inside my feed
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "" in my feed section and share the comment
-    Then I see confirmation box with body "Comment is Required." is displayed
+    Then I softly see confirmation box with body "Comment is Required." is displayed
+    And I refresh the page
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @136668    @verifyThatAlertMessageDisplayedIfUserClickCommentWithoutEnteringCommentInIt-RecordLevelCollabTab
   Scenario: validate that alert message displayed if user click comment without entering comment at record level collab tab
