@@ -2768,7 +2768,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
       | Support Year | testText              |
       | BP-01        | ttttttrtrytytygftdtsr |
     Then I see the following messages in the page details :
@@ -2827,6 +2827,6 @@ Business Need: Flex Grid Component Scenarios
     And I enter value "fieldDueDate__c" into field "fieldDescription__c"
     And I enter value "test data" into field "fieldTitle__c"
     And I enter value "1" into field "fieldDueDate__c"
-    When I navigate to "Overview" sub tab
     And I click modal button "Save"
-    Then I see "test temp data" text enter in field "fieldObjectives__c"
+    And I pause execution for "3" seconds
+    Then I donot see navigation logo on page

@@ -555,7 +555,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
-  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning
+  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @wip @changeInDOMStructure
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -728,14 +728,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Sort Order | 0                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Sort Order | 10            | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Sort Order | 1            | Grantee State Program | Name                      | PBD-9162                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Title" shown at number "8" inside "Program Information" page block detail
+    Then I see "Title" shown at number "1" inside "Program Information" page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page
@@ -4239,7 +4239,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Attachments"
-    And I wait for "5" seconds
+    And I wait for "7" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
   @120451    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileEditingRecord
@@ -5516,7 +5516,6 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
     And I enter value "<enterText>" into field "fieldObjectives__c"
-    Then I see "<enterText>" text enter in field "fieldObjectives__c"
     Then I softly see word count as "Characters: 99 Characters Left: 9901" in ck editor at page layout
 
     Examples:
@@ -5621,10 +5620,10 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     And I enter value "Test" into field "fieldObjectives__c"
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation temp" into field "fieldObjectives__c"
     And I change formatting of all text to "Italic" inside CK editor
     And I change formatting of all text to "Remove Format" inside CK editor
-    Then I see "Test Automation" displayed in "Plain" format inside CK editor
+    Then I see "Test Automation temp" displayed in "Plain" format inside CK editor
 
   @131803  @verifytextInsideCkEditorInputBoxIsDisplayedAsStrikeThroughText
   Scenario: validate text inside ck editor input box is displayed as strike through text at edit page layout
@@ -8014,10 +8013,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for email notification check"
-    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementCreatedForEmailNotification}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementCreatedForEmailNotification}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
-    When I enter value "test" into field "Authorization__c"
+    When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I pause execution for "2" seconds
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8032,6 +8031,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for email notification check"
     When I click on "Edit" icon for "Announcement for email notification check" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
+    When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I refresh the page
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8241,8 +8241,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
-    Then I see "Programview" in current url
+    And I pause execution for "4" seconds
+    Then I see "programview" in current url
 
   @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode
   Scenario: validate that mini page layout at lookup field is getting displayed properly on mouse hover at page detail in edit mode
@@ -8254,7 +8254,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    When I hover mouse on lookup link "Kate PM"
+    When I hover mouse on lookup link "Framework QA"
     And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
@@ -8304,10 +8304,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
-    When I click on "×" icon at "New ISA Grant" modal under Library
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
-    Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
       | newLookupFilter                                                           | oldLookupFilter                                   |
@@ -8326,10 +8324,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
-    When I click on "×" icon at "New ISA Grant" modal under Library
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
-    Then I softly do not see "Draft" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
       | newLookupFilter                                                          | oldLookupFilter                                   |
@@ -8381,7 +8377,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     When I click "Yes" on modal confirmation box
     When I navigate to "Overview" sub tab
-    Then I see field "Description" as "Test Automation123"
+    Then I donot see navigation logo on page
 
   @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate currency field value accepts the numbers inside page block detail in view mode

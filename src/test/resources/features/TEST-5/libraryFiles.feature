@@ -544,6 +544,7 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
@@ -5352,8 +5353,227 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "Visible to Internal Users With Record Access" for title "Sharing Option" inside table "---program:-:ApplicationFilesFlexGridId---"
-    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click on "Delete" icon for "TestAutomationFile.docx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @160557 @validateThatAdminUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that admin user can upload file from record level if visibility option is disabled and default option is selected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.docx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.docx" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @160586 @validateThatAdminUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that admin user can upload file from Home- files library if visibility option is disabled and default option is selected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "SendEmailAttachment.pdf" into library
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+
+  @160587 @validateThatAdminUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that admin user can upload file from Home- files list if visibility option is disabled and default option is selected
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @160634 @validateThatPMUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that PM user can upload file from record level if visibility option is disabled and default option is selected
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.docx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.docx" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @160639 @validateThatPMUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that PM user can upload file from Home- files library if visibility option is disabled and default option is selected
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "SendEmailAttachment.pdf" into library
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+
+  @160642 @validateThatPMUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that PM user can upload file from Home- files list if visibility option is disabled and default option is selected
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @160806 @validateThatSPIUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that SPI user can upload file from record level if visibility option is disabled and default option is selected
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library with sharing
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @160817 @validateThatSPIUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that SPI user can upload file from Home- files library if visibility option is disabled and default option is selected
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+
+  @160828 @validateThatSPIUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  Scenario: Verify that SPI user can upload file from Home- files list if visibility option is disabled and default option is selected
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "UnitedHealth Group" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"

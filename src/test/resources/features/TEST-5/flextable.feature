@@ -1268,9 +1268,10 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Greater than | 09/16/2020 |
+      | Start Date   | Greater than | 09/16/2020                                      |
+      | Program Name | Contains     | Test program for automation - Created mode only |
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "11/30/2021" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
@@ -1280,9 +1281,10 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Less than | 09/16/2020 |
-    Then I softly do not see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date   | Less than | 03/01/2022                                      |
+      | Program Name | Contains  | Test program for automation - Created mode only |
+    Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "11/30/2021" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
@@ -1293,10 +1295,11 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Greater than or Equal to | 09/16/2020 |
-    Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date   | Greater than or Equal to | 11/30/2020                                      |
+      | Program Name | Contains                 | Test program for automation - Created mode only |
+    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "11/30/2020" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with less than or Equal to operator at flex table
@@ -1659,6 +1662,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
+    And I pause execution for "4" seconds
     Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
@@ -1856,8 +1860,7 @@ Business Need: Flex Table Component Scenarios
     And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
     And I click modal button "Save"
-    When I navigate to "Overview" sub tab
-    Then I see "test temp data" text enter in field "fieldObjectives__c"
+    Then I donot see navigation logo on page
 
   @136004    @validateCommasAreDisplayedIn4DecimalValueOnFlexTableForNumberFieldTotal
   Scenario Outline: Validate commas are displayed in 4 decimal value at Number field at flex table total
@@ -1923,6 +1926,71 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see the text :
       | Showing 1 to 3 of 3 records |
+
+  @148809     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
+  Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Los_Angeles |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than or Equal to | 06/30/2025 |
+    Then I see value "06/30/2025" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @148810     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
+  Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Los_Angeles |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Less than or Equal to | 01/01/2017 |
+    Then I see value "01/01/2017" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @148812 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
+  Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Los_Angeles |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than | 06/30/2025 |
+    Then I see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @148813 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
+  Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Los_Angeles |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Less than | 01/01/2017 |
+    Then I see value "07/01/2016" for title "Start Date" inside table "---program:-:programsTableId---"
+
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
