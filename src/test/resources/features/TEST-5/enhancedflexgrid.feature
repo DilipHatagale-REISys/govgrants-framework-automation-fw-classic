@@ -1593,6 +1593,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Edit Selected" in flex table with id "---program:-:enhancedGridTableId---"
     When I enter value "10" into field "AmountDirectAssistance__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
     Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "---program:-:enhancedGridTableId---"
 
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
@@ -1640,6 +1642,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Edit All" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -2160,7 +2164,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "06/05/2020 4:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
+    And I save the value from row "1" for column name "Test Date and Time" as "SaveDate" from flex table "---program:-:flexGridEnhancedID---"
+    Then I see "{SavedValue:SaveDate}" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
       | newFieldsApi                                         | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -2960,12 +2965,17 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
     Then I softly see the text :
       | Showing 1 to 1 of 1 records |
 
   @100210    @verifyCurrencyValuesAreEditableAtASameTimeAtParentFlexTableAtEnhancedGrid-gPlanning
-  Scenario: verify that if multiple records are edited and enter value at urreny field then records are getting saved successfully at enhanced grid
+  Scenario Outline: verify that if multiple records are edited and enter value at urreny field then records are getting saved successfully at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
     Given I delete the record "Temp Grant 1" from the object "Grant__c" with field "ProjectTitle__c"
     Given I delete the record "Temp Grant 2" from the object "Grant__c" with field "ProjectTitle__c"
     Given I delete the record "Temp Grant 3" from the object "Grant__c" with field "ProjectTitle__c"
@@ -2991,3 +3001,75 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 1" inside table "---program:-:flexGridEnhancedID---"
     Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 2" inside table "---program:-:flexGridEnhancedID---"
     Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 3" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,BudgetPeriodEndDate__c,Status__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @159529 @VerifyInAdvanceFilterOnEgridWhenWeSelectAnyPickListDataTypeFieldSelectPickListValueThenValueReturnedByLoginAsAAdminUser @vaibhavC
+  Scenario: Verify In Advance Filter On E Grid When We Select Any Pick List Data Type Field Select Pick List Value Then Value Returned
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Plan" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:enhancedGridTableId---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Status | equals to | Active |
+    Then I see value "Active" for title "Status" inside table "---program:-:enhancedGridTableId---"
+
+  @160641 @VerifytopLevelActionNewAreHideByUsingMultipleHideLogic @vaibhavC
+  Scenario: Verify top Level Action New Are Hide By Using Multiple Hide Logic
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideNewFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @160797    @verifyEGridTopLevelActionNewAreHideByUsingMultipleAND/ORLogic @abhishekS
+  Scenario: validate E-grid-To,top-level action 'New' are hide by using multiple AND/OR hide logic
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | New                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideNewFieldAtEnhancedGridTopLevelANDORLogic | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @160801    @verifyEGridTopLevelActionPreviewAreHideByUsingMultipleAND/ORLogic @abhishekS
+  Scenario: validate E-grid-To,top-level action 'Preview' are hide by using multiple AND/OR hide logic
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | Preview                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HidePreviewFieldAtEnhancedGridRowLevelANDORLogic | TmpActiveGrantsGrid | Name                      | Preview                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see no "Preview" button inside "Monitoring Schedule For All Active Grants" enhanced grid
