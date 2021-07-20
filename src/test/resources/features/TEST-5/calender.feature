@@ -1004,16 +1004,13 @@ Business Need: Calender Config Component Scenarios
   @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC
   Scenario: verify user click on program ID from home phase calendar then open owner record page if Modal Page Url is provided
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Calender Config       | Modal Page Url |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField   |
-      | Calender Config:General | Modal Page Url | /{!OwnerId}   | Grantor_Home_Program |
-    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+      | Calender Config       | Modal Page Url    |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
@@ -1047,5 +1044,6 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I click on lookup link contains "{SavedValue:savedValue}"
     Then I see the text :
-      | {SavedValue:savedValue} (Start Date) |
+      | {SavedValue:savedValue} |
