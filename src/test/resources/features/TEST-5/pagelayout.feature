@@ -728,7 +728,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Sort Order | 0                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Sort Order | 1            | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Sort Order | 1             | Grantee State Program | Name                      | PBD-9162                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8421,3 +8421,202 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Overview" sub tab
     Then I see field "ProjectGoals__c" is vertically resized
+
+  @150747 @VerifyUserSendsRecordsToApproveUserForwardRecordAnotherUserThenRejectOptionAvailable @vaibhavC
+  Scenario: Verify User Sends Records To Approve User Forward Record Another User Then Reject Option Available
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "Start" icon for "{SavedValue:savedValue}" inside table
+    When I "Reassign" to user "Automation PO" in the approval decision
+    When I re-login to "As a Grantor" app as "AUTOMATION-PO" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "Start" icon for "{SavedValue:savedValue}" inside table
+    Then I can see the radio button "Reject" in the approval decision
+
+  @159242 @VerifyUserClickOnSubmitForApprovalActionErroMessageDisplayedOnViewMode @vaibhavC
+  Scenario: Verify User Click On submit For Approval Action Error Message Displayed On View Mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
+    When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
+    When I enter value "Yes" into field "fieldIsWBSRequired__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    When I click on "Submit For Approval" in the page details
+    Then I see the following message in the page details contains:
+      | 'Financials' Tab - 'Budget Category' Section : Program Must Have At Least One Budget Category To Be Associated.         |
+      | 'Financials' Tab - 'Funding Account Information' Section: Provide At Least One Funding Account.                         |
+      | 'Roles' Tab - 'Roles And Responsibility' Section: A Key POC Is Required To Be Associate With The Program.               |
+      | 'Roles And Responsibility' Section Under 'Roles' Tab: A Program Approver Is Required To Be Associated With The Program  |
+      | 'Program Contacts' Section: Provide At Least One Program Contact.                                                       |
+      | 'Log' Tab - 'Program Service Areas' Section: Provide At Least One Project/Service Area For This Program                 |
+      | 'Log' Tab - 'Related Federal Programs' Section: Provide At Least One Federal Or NGO Program With This Internal Program. |
+
+  @159299 @VerifyAfterClickingEditButtonAllerrorMessageDisplayedOnViewModeCarryForwardedToEditMode @vaibhavC
+  Scenario: Verify After Clicking Edit Button All error Message Displayed On View Mode Carry Forwarded To Edit Mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
+    When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
+    When I enter value "Yes" into field "fieldIsWBSRequired__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    When I click on "Submit For Approval" in the page details
+    When I click on "Edit" in the page details
+    Then I see the following message in the page details contains:
+      | 'Financials' Tab - 'Budget Category' Section : Program Must Have At Least One Budget Category To Be Associated.         |
+      | 'Financials' Tab - 'Funding Account Information' Section: Provide At Least One Funding Account.                         |
+      | 'Roles' Tab - 'Roles And Responsibility' Section: A Key POC Is Required To Be Associate With The Program.               |
+      | 'Roles And Responsibility' Section Under 'Roles' Tab: A Program Approver Is Required To Be Associated With The Program  |
+      | 'Program Contacts' Section: Provide At Least One Program Contact.                                                       |
+      | 'Log' Tab - 'Program Service Areas' Section: Provide At Least One Project/Service Area For This Program                 |
+      | 'Log' Tab - 'Related Federal Programs' Section: Provide At Least One Federal Or NGO Program With This Internal Program. |
+
+  @160606 @VerifySubjectAndBodyFieldsAreAutoPopulatedWithAlreadyProvidedInvitationData  @vaibhavC
+  Scenario: Verify Subject And Body Fields Are Auto Populated With Already Provided Invitation Data
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Secretary of Health" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Pranit Shinde" in "ContactsByAccount" panel
+    When I click on "send invitation" icon for "Pranit Shinde" inside table
+    Then I see the text :
+      | Subject:                                                                                                                                                                                                                  |
+      | Invite Primary Users for Child Organizations                                                                                                                                                                              |
+      | Hello Pranit Shinde,                                                                                                                                                                                                      |
+      | You are invited to become an user.                                                                                                                                                                                        |
+      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+      | Sincerely,                                                                                                                                                                                                                |
+      | EGMS Team                                                                                                                                                                                                                 |
+
+  @160855    @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithEqualToOpratorInEditMode @abhishekS
+  Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Equal to oprator in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
+      | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
+      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
+      | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:EGMSID}"
+    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "Unchecked" into field "URL__c"
+    Then I see "URL" is not displayed inside page block detail
+
+  @160934    @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithEqualToOpratorInViewMode @abhishekS
+  Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Equal to oprator in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
+      | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
+      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
+      | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:EGMSID}"
+    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "Checked" into field "URL__c"
+    Then I see "URL" is not displayed inside page block detail
