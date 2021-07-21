@@ -3543,3 +3543,71 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "Grantee Share" in downloaded xls or csv file "govgrants"
     Then I softly see "Total" in downloaded xls or csv file "govgrants"
     Then I softly see "Grantee Share %" in downloaded xls or csv file "govgrants"
+
+  @161001  @validateToProvideLocaleSupportInAdvanceFilterOfDataTableInISTTimeZoneForLessThanOrEqualToOperator. @abhishekS
+  Scenario: validate that to provide local support in Advance filter of data table in IST Time zone for less than or equal to operator by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
+    When I enter advance filter values inside id "advfAppReviewList"
+      | Project Period Start Date | Less than or Equal to | 1/3/2017 |
+    Then I see value "1/1/2017" for title "Project Period Start Date" inside table "---program:-:appReviewListTableId---"
+
+  @160998     @validateToProvideLocaleSupportInAdvanceFilterOfDataTableInISTTimeZoneForGreaterThanOrEqualToOperator. @abhishekS
+  Scenario: validate that to provide local support in Advance filter of data table in IST Time zone for greater than or equal to operator by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
+    When I enter advance filter values inside id "advfAppReviewList"
+      | Project Period Start Date | Greater than or Equal to | 1/3/2020 |
+    Then I see value "1/3/2020" for title "Project Period Start Date" inside table "---program:-:appReviewListTableId---"
+
+  @155465     @validateToProvideLocaleSupportInAdvanceFilterOfDataTableInISTTimeZoneForLessThanOperator. @abhishekS
+  Scenario: validate that to provide local support in Advance filter of data table in IST Time zone for less than operator by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
+    When I enter advance filter values inside id "advfAppReviewList"
+      | Project Period Start Date | Less than | 1/3/2017 |
+    Then I see value "1/1/2017" for title "Project Period Start Date" inside table "---program:-:appReviewListTableId---"
+
+  @160838     @validateToProvideLocaleSupportInAdvanceFilterOfDataTableInISTTimeZoneForGreaterThanOperator. @abhishekS
+  Scenario: validate that to provide local support in Advance filter of data table in IST Time zone for greater than operator by login as admin user
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
+    When I enter advance filter values inside id "advfAppReviewList"
+      | Project Period Start Date | Greater than | 03/09/2018 |
+    Then I see value "01/02/2019" for title "Project Period Start Date" inside table "---program:-:appReviewListTableId---"

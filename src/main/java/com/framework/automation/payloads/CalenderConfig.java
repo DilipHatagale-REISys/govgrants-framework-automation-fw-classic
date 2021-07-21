@@ -48,6 +48,12 @@ public class CalenderConfig {
 								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__CalendarConfig__c), filterClause),
 						String.valueOf(SObjectAPIs.GNT__FilterClause__c), value);
 				break;
+			case "MODAL PAGE URL":
+				finalPayload = String.format(
+						payloadForStringValue, String.valueOf(SObjectAPIs.GNT__CalendarConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__CalendarConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__ModalPageUrl__c), value);
+				break;
 		}
 		System.out.println("method for finalpayload " + finalPayload);
 		return finalPayload;

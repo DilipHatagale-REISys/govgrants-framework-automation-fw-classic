@@ -93,7 +93,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
-  @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
+  @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -171,7 +171,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
-  @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
+  @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If External checkbox is checked At CC Field then only external user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -197,7 +197,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation spi" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
-  @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
+  @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If Internal+ External checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -293,7 +293,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
-  @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
+  @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -320,7 +320,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation spi" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
 
-  @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox
+  @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -494,16 +494,21 @@ Business Need: Send Email Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "test@123.com" into field "{testData:ToField}" on send email modal
+    When I enter value "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
     When I navigate to "Collab" sub tab
     When I perform quick search for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
@@ -632,7 +637,7 @@ Business Need: Send Email Component Scenarios
     Then I see the following messages in the page details contains:
       | Enter To Email Address. |
 
-  @90390 @validateToEmailSuggestionBoxSizeIfGreaterThan5RecordAreSuggestedInSendEmailModal @sendEmail
+  @90390 @validateToEmailSuggestionBoxSizeIfGreaterThan5RecordAreSuggestedInSendEmailModal @sendEmail @needToUpdateLogic
   Scenario: Validate suggested email's box size at To field if more than 5 records are suggested inside send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1114,7 +1119,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "DND Email Created To Check Date" inside table
     Then I see current date is displayed in "Send Date" on send email modal
 
-  @102240 @validateDisplayOfHypelinkInsertedAtSelectFileSectionWhileSendingEmil
+  @102240 @validateDisplayOfHypelinkInsertedAtSelectFileSectionWhileSendingEmil @wip @functionalityDeprecated
   Scenario: Validate if email is sent by inserting link then a hyperlink is displayed inside message table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1278,7 +1283,7 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Re: Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     Then I see "Re: Test Automation Email1" value in flex table id "---program:-:communicationHistoryTableId---"
 
-  @116290 @validateNameIsDisplayedForExternalUserSelectedInToFieldInViewMode
+  @116290 @validateNameIsDisplayedForExternalUserSelectedInToFieldInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field then name of user is displayed in view modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1314,7 +1319,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "Test Automation Email1" inside table
     Then I softly see "Automation spi" on html page
 
-  @116243 @validateNameIsDisplayedForSelectedUserInToFieldAtReplyMailWhenOpenInViewMode
+  @116243 @validateNameIsDisplayedForSelectedUserInToFieldAtReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field at reply email then name of user is displayed in view modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1359,8 +1364,8 @@ Business Need: Send Email Component Scenarios
     Then I softly see "Automation spi" on html page
     Then I softly see "Automation PM" on html page
 
-  @116299 @validateGroupNameIsDisplayedForSelectedGroupInToAndCCFieldAtViewAndReplyMailWhenOpenInViewMode
-  Scenario: Validate if group is selected in TO field at email and reply email modal then name of group is displayed in view modal
+  @116299 @validateGroupNameIsDisplayedForSelectedGroupInToAndCCFieldAtViewAndReplyMailWhenOpenInViewMode  @wip @BugLogged_161456
+  Scenario: Validate if group is selected in TO field at email and reply email modal then name of group is dsplayed in view modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -1412,7 +1417,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "Re: Test Automation Email1" inside table
     Then I softly see "Automation Testing Group" on html page
 
-  @116300 @validateToAndCCUserNameIsDisplayedInsideBodyFieldAtViewAndReplyMailWhenOpenInViewMode
+  @116300 @validateToAndCCUserNameIsDisplayedInsideBodyFieldAtViewAndReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate that TO and CC email displayed properly inside body field at reply and email modal in view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1462,7 +1467,7 @@ Business Need: Send Email Component Scenarios
     Then I softly see "From: ashwini.mahore@yopmail.com" as "Body Content" on send email modal
     Then I softly see "To: govgrantsuser@gmail.com" as "Body Content" on send email modal
 
-  @116304 @validateIfUserRemovesNameFromToEmailThenAutoSuggestionBoxDisappearsFromToEmailField
+  @116304 @validateIfUserRemovesNameFromToEmailThenAutoSuggestionBoxDisappearsFromToEmailField @needToUpdate
   Scenario: Validate if user remove name from To email and keep the To email field blank then auto suggestion box disappears
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1772,7 +1777,7 @@ Business Need: Send Email Component Scenarios
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation" into field "Subject" on send email modal
     When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Strike Through" inside CK editor
+    And I change formatting of all text to "Underline" inside CK editor
     And I change formatting of all text to "Remove Format" inside CK editor
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting" displayed in "Plain" format inside CK editor

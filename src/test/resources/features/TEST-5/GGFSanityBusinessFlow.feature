@@ -549,7 +549,7 @@ Business Need: Sanity check for all Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
 
-  @69095 @validateIfInternal+ExternalCheckboxCheckedAtToFieldThenBothUserIsShownInAutoSuggestionBox @sendEmail
+  @69095 @validateIfInternal+ExternalCheckboxCheckedAtToFieldThenBothUserIsShownInAutoSuggestionBox @sendEmail @needToUpdate
   Scenario: Validate If Internal+ External checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

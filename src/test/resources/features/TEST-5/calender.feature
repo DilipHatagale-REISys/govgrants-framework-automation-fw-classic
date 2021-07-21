@@ -1000,3 +1000,50 @@ Business Need: Calender Config Component Scenarios
     And I click on "Month" Button at calendar
     And I click on "Next" navigation button at calendar
     Then I see "Next" month is displayed
+
+  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC
+  Scenario: verify user click on program ID from home phase calendar then open owner record page if Modal Page Url is provided
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Calender Config       | Modal Page Url    |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on lookup link contains "{SavedValue:savedValue}"
+    Then I see the text containing :
+      | Nauman Shahid |
+
+  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC
+  Scenario: verify user click on program ID from home phase calendar then open record page
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    And I click on "Month" Button at calendar
+    And I click on lookup link contains "{SavedValue:savedValue}"
+    Then I see the text :
+      | {SavedValue:savedValue} |
