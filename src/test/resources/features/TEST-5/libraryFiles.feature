@@ -4192,8 +4192,8 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
@@ -4208,8 +4208,8 @@ Business Need: Library Files Component Scenarios
   #130416 - visible to external user
     When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
@@ -4217,8 +4217,8 @@ Business Need: Library Files Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
@@ -5577,3 +5577,64 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+
+  @130418 @validateThatFileIsEditableToSPIUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccessAndCustomSettingIsEnabled
+  Scenario: Verify that file added by admin user can be edited by SPI user if sharing option as "Visible to anyone With Record Access" is select at upload file modal and custom setting is enabled
+    When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    And I switch to iframe with id "ApplicationFilesiframeContentId"
+    When I upload file "TestFileSharing.docx" into library with sharing
+    When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
+    When I enter value as "sharing options test" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+  #130418 - visible to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Edit" icon for "TestFileSharing.docx" inside table
+    When I enter value as "test Automation update" in field "Description" at Library Files
+    When I click on "Save" button in send email modal
+    When I click on "×" icon at "File Edit" modal under Library
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "test Automation update" for title "Description" inside table "---program:-:ApplicationFilesFlexGridId---"
+  #130418 - record deleted by internal user
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @157844 @validateThatUploadFileButtonIsActiveEvenIfVisibilityOptionIsDisabledForSPIUser
+  Scenario: Verify that Upload button is active even if visibility option is disabled for SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    Then I do not see "Upload" button is disabled at modal under library
