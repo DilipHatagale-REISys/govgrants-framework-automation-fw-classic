@@ -8589,10 +8589,10 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "Unchecked" into field "URL__c"
+    And I enter value "Unchecked" into field "CFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
 
-  @160934    @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithEqualToOpratorInViewMode @abhishekS
+  @160862    @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithEqualToOpratorInViewMode @abhishekS
   Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Equal to oprator in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
@@ -8600,10 +8600,10 @@ Business Need: Page Layout Component Scenarios
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
       | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
-      | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantee State Program | Name                      | TAB-409                    |
+      | Flex Table Action                        | Hide Decision Field |                                                                                                        | Programs              | Name                      | Edit1                      |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8618,5 +8618,191 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "Checked" into field "URL__c"
+    And I enter value "Checked" into field "CFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
+
+  @160923 @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithNotEqualToOpratorInEditMode @abhishekS
+  Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Not Equal to oprator in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
+      | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
+      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
+      | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:EGMSID}"
+    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "Checked" into field "CFDA_Data__c"
+    Then I see "URL" is not displayed inside page block detail
+
+  @160934 @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithNotEqualToOpratorInViewMode @abhishekS
+  Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Not Equal to oprator in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
+      | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
+      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
+      | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:EGMSID}"
+    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "Unchecked" into field "CFDA_Data__c"
+    Then I see "URL" is not displayed inside page block detail
+
+  @161381    @verifyQueueLookupFieldIsDisableOnPBDJsonExpressionUsingEqualToOprator @abhishekS
+  Scenario: Set up BPD JSON expression of Queue lookup feild to Disable using 'Equal To' operator the Queue look up feild is disable on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    When I enter value "User" into field "UserType__c"
+    Then I see field "QueueId__c" is disabled
+
+  @161387    @verifyQueueLookupFieldIsDisableOnPBDJsonExpressionUsingNotEqualToOprator @abhishekS
+  Scenario: Set up BPD JSON expression of Queue lookup feild to Disable using 'Not Equal To' operator the Queue look up feild is disable on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    When I enter value "Queue" into field "UserType__c"
+    Then I see field "QueueId__c" is disabled
+
+  @161413 @VerifyIfWeDisabledOwnerOrganizationFieldOnPBDJsonExpressionUsingEqualToOperatorThenOwnerOrganizationFieldDisabled @vaibhavC
+  Scenario: Verify If We Disabled Owner Organization Field On PBD Json Expression Using Equal To Operator Then Owner Organization Field Disabled
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    Then I see field "Owner Orgnization" is disabled
+
+  @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
+  Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    Then I see field "Owner Orgnization" inside page block
+
+  @161475 @VerifyOnViewModeDisableQueuedLookupFieldOnPBDJsonExpressionUsingEqualToOperatorThenQueuedLookupFieldIsDisable @vaibhavC
+  Scenario: Verify On View Mode Disable Queued Lookup Field On PBD Json Expression Using Equal To Operator Then Queued Lookup Field Is Disable
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeDisableQueuedLookupUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "User" into field "UserType__c"
+    Then I see field "QueueId__c" is disabled
+
+  @161484 @VerifyOnViewModeEnableQueuedLookupFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenQueuedLookupFieldIsDisable @vaibhavC
+  Scenario: Verify On View Mode Enable Queued Lookup Field On PBD Json Expression Using Not Equal To Operator Then Queued Lookup Field Is Disable
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeEnableQueuedLookupUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "User" into field "UserType__c"
+    Then I see field "QueueId__c" is disabled
