@@ -6036,13 +6036,11 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     And I navigate to "Collab" sub tab
-    When I pause execution
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
-    When I pause execution
     Then I see "Upload" button is disabled at modal under library
     When I click on "×" icon at "Add Files" modal under Library
     And I click on "More Options" action at "Temp Post Automation" comment inside my feed
