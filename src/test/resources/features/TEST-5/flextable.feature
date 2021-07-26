@@ -1991,6 +1991,67 @@ Business Need: Flex Table Component Scenarios
       | Start Date | Less than | 01/01/2017 |
     Then I see value "07/01/2016" for title "Start Date" inside table "---program:-:programsTableId---"
 
+  @159944    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshTheGrid  @abhishekS
+  Scenario: validate flex table refresh behaviour-to refresh the grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
+    And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
+    When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
+    And I click modal button "Save"
+    Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+
+  @159986    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModelAndRefreshGrid @abhishekS
+  Scenario: validate flex table refresh behaviour-Close modal and refresh grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Close modal and refresh grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
+    And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
+    When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
+    And I click modal button "Save"
+    Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+
+  @159863    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage @abhishekS
+  Scenario: validate flex table refresh behaviour-to refresh entire page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the entire page | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "Edit" icon for "Owner" to save inside subtab
+    And I click on "Save" in the page details
+    Then I see entire page is refreshing
+
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed

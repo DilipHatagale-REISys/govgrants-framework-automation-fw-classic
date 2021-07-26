@@ -5951,3 +5951,102 @@ Business Need: Logged Issues Scenarios
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I enter value "" in my feed section and share the comment
     Then I see confirmation box with body "Comment is Required." is displayed
+
+  @160568    @verifyThatUserAbleToSeeClassificationRequiredOnSaveForExternalUsersOnCollabHomePhase  @abhishekS
+  Scenario: validate that external user is able to see Classiication reqiured on Save on collab home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    Then I see "Upload" button is disabled at modal under library
+
+  @160572    @verifyThatUserNotAbleToSeeClassificationRequiredOnSaveForExternalUsersOnCollabHomePhase  @abhishekS
+  Scenario: validate that external user is not able to see Classiication reqiured on Save on collab home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | false         | GNT__KeyValueHolder__mdt |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    Then I do not see "Upload" button is disabled at modal under library
+
+  @160564    @verifyThatUserAbleToSeeAttachmentClassificationRequireOnSaveOnRecordLevelCollabTab  @abhishekS
+  Scenario: validate that external user is able to see Attachment Classiication reqiured on Save on record level collab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    And I navigate to "Collab" sub tab
+    When I pause execution
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I pause execution
+    Then I see "Upload" button is disabled at modal under library
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "More Options" action at "Temp Post Automation" comment inside my feed
+    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
+    And I click modal button "OK"
+    When I pause execution for "5" seconds
+    Then I softly do not see "Automation SPI" at my feed container with id "---program:-:myFeedTableId---"
