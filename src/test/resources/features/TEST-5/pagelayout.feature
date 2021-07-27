@@ -8806,3 +8806,23 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "User" into field "UserType__c"
     Then I see field "QueueId__c" is disabled
+
+  @161568    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingJsonExpEqualToOpreatorThenFeildIsDoNotShowOnPageLayout   @abhishekS
+  Scenario: verify Owner organization field is not displayed if user is not displayed using hide field json on Page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
+    When I enter value "242018" into field "FederalProgramCFDA__c"
+    And I enter value "Grant" into field "ProgramType__c"
+    Then I softly cannot see field "Owner Organization" inside page block
