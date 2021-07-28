@@ -8841,9 +8841,9 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see the following message in the page details contains:
+    Then I softly see the following message in the page details contains:
       | TEST PAGE BLOCK SUCCESS MSG DND |
-    Then I see "null" is not displayed inside page block detail
+    Then I softly see "null" is not displayed inside page block detail
 
   @158907 @verifyMultiPicklistFieldIsRenderedAsChekboxThenWeAreAddingSelectAllOption
   Scenario: To validate that if there is multi picklist field is rendred as checkbox then add extra checkbox as Select All Option
@@ -8854,7 +8854,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see field "Types Of Assistance" inside page block
     Then I see below checkbox options for field "TypesOfAssistance__c"
       | Select All |
 
