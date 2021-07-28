@@ -8915,4 +8915,4 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
-    Then I cannot see field "Queue Lookup" inside page block
+    Then I softly cannot see field "Queue Lookup" inside page block
