@@ -8826,3 +8826,93 @@ Business Need: Page Layout Component Scenarios
     When I enter value "242018" into field "FederalProgramCFDA__c"
     And I enter value "Grant" into field "ProgramType__c"
     Then I softly cannot see field "Owner Organization" inside page block
+
+  @162122    @verifySuccessMessageSetFromPageMessageOnPageBlockAndNoNullTextIsDisplay
+  Scenario: validate success message set from page message config is displayed at view page block and no null text is display
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see the following message in the page details contains:
+      | TEST PAGE BLOCK SUCCESS MSG DND |
+    Then I see "null" is not displayed inside page block detail
+
+  @158907 @verifyMultiPicklistFieldIsRenderedAsChekboxThenWeAreAddingSelectAllOption
+  Scenario: To validate that if there is multi picklist field is rendred as checkbox then add extra checkbox as Select All Option
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see field "Types Of Assistance" inside page block
+    Then I see below checkbox options for field "TypesOfAssistance__c"
+      | Select All |
+
+  @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
+  Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see below checkbox options for field "TypesOfAssistance__c"
+      | Select All |
+
+  @161670    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingPBDJsonExpNOTEqualToOpreatorThenFeildIsDoNotDisplayOnPageLayout   @abhishekS
+  Scenario: verify Owner organization field is not displayed if user is not displayed using hide field PBD json exp Not Equal To operator on Page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
+    When I enter value "242018" into field "FederalProgramCFDA__c"
+    And I enter value "Grant" into field "ProgramType__c"
+    Then I softly cannot see field "Owner Organization" inside page block
+
+  @161571    @verifyQueueLookupFieldIsDisableOnPBDJsonExpressionUsingEqualToOpratorWhenUserDoNotShow @abhishekS
+  Scenario: Set up BPD JSON expression of Queue lookup feild to Disable using 'Equal To' operator the Queue look up feild is disable on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:ShowQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperatorWhenUserNotShow | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    When I enter value "User" into field "UserType__c"
+    Then I cannot see field "Queue Lookup" inside page block
