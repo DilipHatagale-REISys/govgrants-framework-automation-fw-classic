@@ -1673,9 +1673,10 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * This function will return us list of users present in suggestion box under send email modal
+     * @modifier vaibhav.chandratre- modified xpath for auto suggestion box
      */
     public List<Elements> getCompleteContentForSendEmailSuggestionBox() {
-        List<Elements> element = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='listDropdownToScroll']//ul//li//b"));
+        List<Elements> element = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='listDropdownToScroll' or @class='listDropdownTo']//ul//li//b"));
         return element;
     }
 
