@@ -912,7 +912,7 @@ Business Need: Approval Process Component Scenarios
       | oldProfiles                                                                                                         | newProfiles                                                                                                     |
       | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoke
+  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoke @BugId_163309
   Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
@@ -977,7 +977,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Rejected_Email_Template"
 
-  @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
+  @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs @BugId_163309
   Scenario: Setup email setting in configuration and validate that program owner receiving email for rejection with approve email template for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName             | fieldOrignalValue | filterId         |

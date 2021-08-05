@@ -3041,10 +3041,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
   @160797    @verifyEGridTopLevelActionNewAreHideByUsingMultipleAND/ORLogic @abhishekS
   Scenario: validate E-grid-To,top-level action 'New' are hide by using multiple AND/OR hide logic
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | New                  |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideNewFieldAtEnhancedGridTopLevelANDORLogic | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3059,11 +3059,11 @@ Business Need: Enhanced Flex Grid Component Scenarios
   @160801    @verifyEGridTopLevelActionPreviewAreHideByUsingMultipleAND/ORLogic @abhishekS
   Scenario: validate E-grid-To,top-level action 'Preview' are hide by using multiple AND/OR hide logic
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | Preview                  |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | Preview                    |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HidePreviewFieldAtEnhancedGridRowLevelANDORLogic | TmpActiveGrantsGrid | Name                      | Preview                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HidePreviewFieldAtEnhancedGridRowLevelANDORLogic | TmpActiveGrantsGrid | Name                      | Preview                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3073,3 +3073,62 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     Then I see no "Preview" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @159809    @verifyEGridRowLevelActionRefreshBehaviourAsRefreshTheEntirePage
+  Scenario: validate E-grid refresh behaviour "Refresh the entire page" at Edit action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action                   | Refresh Behavior  | Refresh the entire page | TmpActiveGrantsGrid   | Name                      | Edit                       |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | false                   | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "Grant Created for default value testing" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "Grant Created for default value testing" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "Grant Created for default value testing" inside table
+    When I enter value "Test Automation updated record" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see entire page is refreshing
+
+  @159823    @verifyEGridRowLevelActionRefreshBehaviourAsRefreshTheEntirePage
+  Scenario: validate E-grid refresh behaviour "Refresh the grid" at Edit action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action                   | Refresh Behavior  | Refresh the grid | TmpActiveGrantsGrid   | Name                      | Edit                       |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | false            | Grantee State Program | Name                      | TAB-409                    |
+    Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "Grant Created for default value testing" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "Grant Created for default value testing" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "Grant Created for default value testing" inside table
+    When I enter value "Test Automation address" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Grant Created for default value testing" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "Test Automation address" for title "Program Contact Address" inside table "---program:-:enhancedGridTableId---"

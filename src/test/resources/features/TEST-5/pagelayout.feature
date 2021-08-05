@@ -8324,7 +8324,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
-    When I click search icon for lookup "Internal Organization Lookup (New Window)"
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
@@ -8720,8 +8719,8 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    When I enter value "Queue" into field "UserType__c"
-    Then I see field "QueueId__c" is disabled
+    When I enter value "User" into field "UserType__c"
+    Then I see field "Queue Lookup" inside page block
 
   @161413 @VerifyIfWeDisabledOwnerOrganizationFieldOnPBDJsonExpressionUsingEqualToOperatorThenOwnerOrganizationFieldDisabled @vaibhavC
   Scenario: Verify If We Disabled Owner Organization Field On PBD Json Expression Using Equal To Operator Then Owner Organization Field Disabled
@@ -8742,7 +8741,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    Then I see field "Owner Orgnization" is disabled
+    Then I see field "Account__c" is disabled
 
   @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
   Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
@@ -8763,7 +8762,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    Then I see field "Owner Orgnization" inside page block
+    Then I see field "Owner Organization" inside page block
 
   @161475 @VerifyOnViewModeDisableQueuedLookupFieldOnPBDJsonExpressionUsingEqualToOperatorThenQueuedLookupFieldIsDisable @vaibhavC
   Scenario: Verify On View Mode Disable Queued Lookup Field On PBD Json Expression Using Equal To Operator Then Queued Lookup Field Is Disable

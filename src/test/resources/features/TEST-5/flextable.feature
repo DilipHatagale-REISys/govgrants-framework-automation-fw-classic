@@ -1268,10 +1268,11 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date   | Greater than | 09/16/2020                                      |
-      | Program Name | Contains     | Test program for automation - Created mode only |
+      | Start Date | Greater than | 09/16/2020 |
+    When I enter advance filter values inside id "advfPrograms"
+      | Program Name | Contains | Test program for automation - Created mode only |
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "11/30/2021" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "11/30/2020" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
@@ -1281,10 +1282,11 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date   | Less than | 03/01/2022                                      |
-      | Program Name | Contains  | Test program for automation - Created mode only |
+      | Start Date | Less than | 03/01/2022 |
+    When I enter advance filter values inside id "advfPrograms"
+      | Program Name | Contains | Test program for automation - Created mode only |
     Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "11/30/2021" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "11/30/2020" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
@@ -1934,7 +1936,7 @@ Business Need: Flex Table Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
+      | locale | timeZone            |
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1950,7 +1952,7 @@ Business Need: Flex Table Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
+      | locale | timeZone            |
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1966,7 +1968,7 @@ Business Need: Flex Table Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
+      | locale | timeZone            |
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1982,7 +1984,7 @@ Business Need: Flex Table Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
+      | locale | timeZone            |
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

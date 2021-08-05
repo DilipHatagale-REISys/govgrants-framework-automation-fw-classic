@@ -1007,7 +1007,6 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Calender Config       | Modal Page Url    |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
