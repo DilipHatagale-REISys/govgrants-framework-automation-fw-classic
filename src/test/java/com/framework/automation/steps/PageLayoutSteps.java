@@ -102,11 +102,6 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueInSendEmailModalFields(userName, iconName);
     }
 
-    @When("^I upload attachment \"([^\"]*)\" in send email modal$")
-    public void uploadAttachmentOnSendEmailModal(String attachmentName) {
-        pageLayoutPage.uploadAttachmentInSendEmailModal(attachmentName);
-    }
-
     @When("^I select \"([^\"]*)\" from dropdown at History Table$")
     public void selectValueFromDropdownInHistory(String objectName) {
         pageLayoutPage.selectValueFromDropdownInHistory(objectName);

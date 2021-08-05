@@ -943,15 +943,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * complete steps to upload attachment on send email modal window
-     */
-    public void uploadAttachmentInSendEmailModal(String attachmentName) {
-        By attachmentChooseFilePath = By.xpath("//div//input[@id='fileselect']");
-        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
-    }
-
-    /**
      * click on user/group from suggestion box appears by entering text in To/CC fields on send email modal window
      */
     public void selectValueFromDropdownInHistory(String objectName) {
