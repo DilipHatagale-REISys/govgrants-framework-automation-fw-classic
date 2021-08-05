@@ -241,3 +241,19 @@ Business Need: New API related scenarios temporary
     And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
+
+  @164290 @ValidateUserPerformClickOnTheOneTabThenSessionTimeoutCountdownRestarts @vaibhavC
+  Scenario: Validate User Perform Click On The One Tab Then Session Timeout Countdown Restarts
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I pause execution for "60" seconds
+    Then I see session timeout remainder as "01" countdown is shown in browser tab
