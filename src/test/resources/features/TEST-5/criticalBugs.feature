@@ -435,6 +435,7 @@ Business Need: Logged Issues Scenarios
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    And I pause execution for "4" seconds
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
@@ -3320,6 +3321,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "test" in "---program:-:flexGridEnhancedID---" panel
     And I select value inside table "---program:-:enhancedGridTableId---" is "10"
+    And I pause execution for "3" seconds
     Then I see sequence of column "#" is in correct order inside table "---program:-:enhancedGridTableId---" with startvalue "1"
 
   @84726 @verifyThatBlueColorIsDisplayedAtSidebarScrollForLoggedInUser-StateAsAGrantor @sidebar
@@ -4514,7 +4516,7 @@ Business Need: Logged Issues Scenarios
     When I click on "×" icon at "Add Files" modal under Library
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
-    And I click on "More Options" action at "Temp Post Automation" comment inside my feed
+    And I click on "More Options" action at "Collab Phase sharing temporary comment" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
@@ -4560,7 +4562,7 @@ Business Need: Logged Issues Scenarios
     And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
     And I navigate to "HOME" tab
     When I pause execution for "3" seconds
-    And I click on "More Options" action at "Temp Post Automation" comment inside my feed
+    And I click on "More Options" action at "Collab Phase sharing temporary comment" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     And I navigate to "Collab" tab
     And I pause execution for "3" seconds
@@ -4583,7 +4585,8 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Activities" subheader on left panel
     When I perform quick search for "Test value 1"
-    Then I see "Test value 1" value in flex table id "toggleFlexTableGrantorAmendmentRequests"
+    Then I see the text :
+      | Test value 1 |
 
     Examples:
       | newFieldsApi                                                                | defaultFieldsApi                                |

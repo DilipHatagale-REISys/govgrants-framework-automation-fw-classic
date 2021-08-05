@@ -1128,7 +1128,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
 
         try {
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//td//span//*[@field-name='" + fieldApiName + "']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//td//span[not(contains(@ng-if,'== true'))]//*[@field-name='" + fieldApiName + "']//span"));
             String sumStr = rows_table.get(rows_table.size() - 1).getText();
             double sum = 0.00;
             for (int row = 0; row < rows_table.size() - 1; row++) {

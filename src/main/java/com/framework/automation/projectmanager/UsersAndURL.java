@@ -152,9 +152,9 @@ public class UsersAndURL implements UsersController {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "test@12345678");
         password.put("EXE", "test@12345");
-        password.put("PM", "test@1234567");
+        password.put("PM", "test@12345678");
         password.put("FO", "test@12345");
-        password.put("SPI", "test@1234567");
+        password.put("SPI", "test@12345678");
         password.put("PM1", "test@1234567");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
