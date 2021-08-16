@@ -209,6 +209,20 @@ public class FlexTable {
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__FieldWidthEnhanced__c), value);
                 break;
+            case "ENABLE COLUMN SUBTOTAL PERCENTAGE CHANGE":
+                finalPayload = String
+                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__EnableColumnSubtotalPercentage__c), value);
+                break;
+            case "COLUMN SUBTOTAL PERCENTAGE JSON":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__ColumnSubtotalPercentageJSON__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

@@ -912,6 +912,14 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * To perform scroll on page layout
+     */
+    public void andIScrollPageLayout() {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//span[contains(@class,'footer-links')]"));
+
+    }
+
+    /**
      * click on close/search for lightning look up modal at page block detail
      */
     public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {

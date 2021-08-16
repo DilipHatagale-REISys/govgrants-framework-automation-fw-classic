@@ -267,4 +267,9 @@ public class FlexTableSteps {
     public void iSeeCrossIconAtSearchBoxIsDisplayed(String tableId) {
         flexTablePage.assertCrossIconAtQuickSearchBox(tableId);
     }
+
+    @Then("I see {string} is displayed inside History table dropdown menu")
+    public void iSeeIsDisplayedInsideHistoryTableDropdownMenu(String dropdownOptions) {
+        flexTablePage.assertOptionsInDropdownAtHistoryTable(dropdownOptions);
+    }
 }

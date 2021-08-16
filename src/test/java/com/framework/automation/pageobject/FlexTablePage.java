@@ -494,6 +494,15 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
+     * return true if expected option is displayed inside history table dropdown
+     *
+     * @param dropdownOptions
+     */
+    public void assertOptionsInDropdownAtHistoryTable(String dropdownOptions) {
+        I.amPerforming().assertionsTo().assertThat(isOptionsDisplyedInDropdownAtHistoryTable(dropdownOptions)).isTrue();
+    }
+
+    /**
      * perform click and select value inside show entries dropdown
      *
      * @param flexTableId
@@ -1053,11 +1062,11 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (position && I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'showEntries')]//span[contains(text(),'Showing')]/../following-sibling::div//span[contains(text(),'"+text+"')] " +
+            if (position && I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'showEntries')]//span[contains(text(),'Showing')]/../following-sibling::div//span[contains(text(),'" + text + "')] " +
                     "| //div[@id='" + tableId + "']//*[contains(text(),'Showing')]/../../following-sibling::div//*[contains(text(),'" + text + "')]"))) {
                 flag = true;
             } else if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'showEntries')]//span[text()='Show']/../following-sibling::div//span[contains(text(),'" + text + "')] " +
-                    "| //div[@id='" + tableId + "']//*[text()='Show']/../../following-sibling::div//*[contains(text(),'"+text+"')]"))
+                    "| //div[@id='" + tableId + "']//*[text()='Show']/../../following-sibling::div//*[contains(text(),'" + text + "')]"))
             ) {
                 flag = true;
             }
@@ -1065,4 +1074,23 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * return true if expected option is displayed inside history table dropdown
+     *
+     * @param dropdownOptions
+     */
+    private boolean isOptionsDisplyedInDropdownAtHistoryTable(String dropdownOptions) {
+        boolean flag = false;
+        I.amPerforming().click().on(ByUsing.xpath("//select[@aria-label='DropDown Menu']"));
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//select[@aria-label='DropDown Menu']//option[" + I.amPerforming().sanityOfXpathTo().equals("text()", dropdownOptions) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+
+    }
+
 }

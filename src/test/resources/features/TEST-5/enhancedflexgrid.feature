@@ -3132,3 +3132,236 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "Grant Created for default value testing" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation address" for title "Program Contact Address" inside table "---program:-:enhancedGridTableId---"
+
+  @164810   @verifyThatPercentageCalculationForPercentTypeFieldWhenCalculateValueNegative
+  Scenario Outline: To verify Percentage change calculation for percent type field when the CalCulated value is negative.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1552                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1550                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid            | Name                      | FTC-1551                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1551                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GGREI-001" inside table
+    When I enter value "1999" into field "PercentTest__c"
+    When I enter value "10" into field "Test_Percentage2__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "-99.50%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @164811   @verifyThatPercentageCalculationForPercentTypeFieldWhenCalculateValuePositive
+  Scenario Outline: To verify Percentage change calculation for percent type field when the CalCulated value is positive.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1552                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1550                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid            | Name                      | FTC-1551                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1551                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GGREI-001" inside table
+    When I enter value "25" into field "PercentTest__c"
+    When I enter value "55" into field "Test_Percentage2__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "120.00%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @163536   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValueNegative
+  Scenario Outline: To verify Percentage change calculation for Numbertype field when the CalCulated value is negative.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1548                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid | Name                      | FTC-1549                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1549                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GT007-001" inside table
+    When I enter value "0" into field "Test_Number__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "(100.00)" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @164795   @verifyThatPercentageCalculationForCurrencyTypeFeildWhenCalculateValueNegative
+  Scenario Outline: To verify Percentage change calculation for currency type field when the CalCulated value is negative.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1545                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid | Name                      | FTC-1547                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1547                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GGREI-001" inside table
+    When I enter value "0" into field "Test_Currency__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "($100.00)" for title "testtotalcurrency" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+
+
+  @164808   @verifyThatPercentageCalculationForCurrencytypeFeildWhenCalculateValuePositive
+  Scenario Outline: To verify Percentage change calculation for Curency field when the CalCulated value is positive.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1546                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid | Name                      | FTC-1547                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1547                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GGREI-001" inside table
+    When I enter value "7,000,00" into field "Test_Currency__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "$3,400.00" for title "testtotalcurrency" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+
+  @164809   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValuePositive
+  Scenario Outline: To verify Percentage change calculation for Numbertype field when the CalCulated value is positive.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                                | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Row Grouping                      | false              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Sub Total                         | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Column Subtotal Percentage JSON          |                    | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | false              | ApiGeneratedId:4 |
+      | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1548                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | TmpActiveGrantsGrid | Name                      | FTC-1549                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                   | TmpActiveGrantsGrid | Name                      | FTC-1549                   |
+      | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "GT-GT007-001" inside table
+    When I enter value "100" into field "Test_Number__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see value "9,900.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

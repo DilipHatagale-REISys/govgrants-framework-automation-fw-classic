@@ -8914,3 +8914,22 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
     Then I softly cannot see field "Queue Lookup" inside page block
+
+  @165045   @verifyWhenUserApplyJSONOnHistoryObjectThenFieldHistoryDropdownShowForGrantee
+  Scenario: To verify that When User apply JSON on history object then Field History dropdown show  child records for grantee
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName      | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | History Objects |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName      | fieldNewValue                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForDropdownHideConfigForText | Announcement__c    |                           |                             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Opportunities" tab
+    When I perform quick search for "FOA-USAID-004"
+    When I click on "View" icon for "FOA-USAID-004" inside table
+    When I navigate to "History" sub tab
+    When I softly see expected table with id "toggleFlexTableHistory"
+    When I softly see the text :
+      | Field History |
+    Then I see "text" is displayed inside History table dropdown menu
