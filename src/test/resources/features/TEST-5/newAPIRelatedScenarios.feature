@@ -257,3 +257,49 @@ Business Need: New API related scenarios temporary
     When I click on "View" icon for "Demo_Title" inside table
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
+
+  @161158  @verifyThatWhenUserPerformClickOnThePageLayoutThenSessionTimeoutCountdownShouldRestarts
+  Scenario: To verify that user perform click on the page layout then session timeout coundown shoild restarts
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I perform quick search for "Demo_Title"
+    When I pause execution for "60" seconds
+    Then I see session timeout remainder as "01" countdown is shown in browser tab
+
+  @161159  @verifyThatWhwnUserPerformScrollUpword/DownwordThenSessionTimeoutCountdownShouldRestarts
+  Scenario: To verify that user perform scrollupupword/downword then session timeout coundown shoild restarts
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I perform scroll on page layout
+    When I pause execution for "60" seconds
+    Then I see session timeout remainder as "01" countdown is shown in browser tab
+
+  @161161  @verifyThatWhwnUserPerformScrollMouseMoveThenSessionTimeoutCountdownShouldRestarts
+  Scenario: To verify that user perform Mouse move then session timeout coundown shoild restarts
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text icon inside "Test's September Program"
+    When I pause execution for "120" seconds
+    Then I see session timeout remainder as "01" countdown is shown in browser tab
+

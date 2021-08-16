@@ -98,6 +98,13 @@ public class SobjectConfig {
                                         String.valueOf(SObjectAPIs.GNT__SobjectConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__NoteAddHideExpressionJSON__c), value);
                 break;
+            case "HISTORY OBJECTS":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__SobjectConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__HistoryObjects__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

@@ -177,6 +177,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickNavigationButtonAtCalendar(buttonName);
     }
 
+    @And("I perform scroll on page layout")
+    public void iPerformScroll() {
+        pageLayoutPage.andIScrollPageLayout();
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
