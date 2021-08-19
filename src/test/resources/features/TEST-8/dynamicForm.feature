@@ -4477,3 +4477,72 @@ Business Need: dynamic forms Component Scenarios
     And I refresh the page
     And I pause execution for "2" seconds
     Then I see alert popup box
+
+  @164803 @ValidateSectionColumnAsVerticalEditModeWhenScoreCommentsEnableForQuestion
+  Scenario: Validate Section Column As Vertical Edit Mode When Score Comments Enable For Question
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Horizontal        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Vertical      | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see section column is "vertically" aligned
+  @164802 @ValidateSectionColumnAsVerticalViewModeWhenScoreCommentsEnableForQuestion
+  Scenario: Validate Section Column As Vertical View Mode When Score Comments Enable For Question
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Horizontal        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Vertical      | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see section column is "vertically" aligned
+  @164805 @ValidateSectionColumnAsHorizontalViewModeWhenScoreCommentsEnableForQuestion
+  Scenario: Validate Section Column As Horizontal View Mode When Score Comments Enable For Question
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Horizontal        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Horizontal    | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see section column is "horizontally" aligned
+  @164804 @ValidateSectionColumnAsHorizontalEditModeWhenScoreCommentsEnableForQuestion
+  Scenario: Validate Section Column As Horizontal Edit Mode When Score Comments Enable For Question
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Horizontal        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Horizontal    | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see section column is "horizontally" aligned

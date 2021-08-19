@@ -769,4 +769,9 @@ public class PageLayoutSteps {
     public void iSeeFieldIsVerticallyResized(String fieldAPIName) {
         pageLayoutPage.assertFieldAlignmentAtPageLayout(fieldAPIName);
     }
+
+    @Then("I see checkbox is displayed for field {string}")
+    public void iSeeCheckboxIsDisplayedForField(String fieldAPIName) {
+        pageLayoutPage.assertCheckboxIsDisplayedForField(fieldAPIName);
+    }
 }

@@ -239,7 +239,7 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isAlignmentOfSectionColumnDisplayedAsExpected(String columnAlignment) {
         boolean flag = false;
         if (columnAlignment.equalsIgnoreCase("vertically")
-                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-12')]"))) {
+                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-6')]"))) {
             return true;
         } else if (columnAlignment.equalsIgnoreCase("horizontally")
                 && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-4')]"))) {

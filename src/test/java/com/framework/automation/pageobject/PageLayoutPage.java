@@ -364,6 +364,15 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * @param fieldAPIName
+     * @return true displayed the single checkbox
+     * @author vaibhav.chandratre
+     */
+    public void assertCheckboxIsDisplayedForField(String fieldAPIName) {
+        I.amPerforming().assertionsTo().assertThat(isCheckboxIsDisplayedForField(fieldAPIName)).isTrue();
+    }
+
+    /**
      * return true if mini page layout postion is displayed as expected
      */
     public void assertMiniPAgeLayoutDisplayedAsExpected() throws IOException {
@@ -3469,5 +3478,22 @@ public class PageLayoutPage extends GovGrantsManager {
             }
             return flag;
         }
+    }
+
+    /**
+     * @param fieldAPIName
+     * @return true displayed the single checkbox
+     * @author vaibhav.chandratre
+     */
+    private boolean isCheckboxIsDisplayedForField(String fieldAPIName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked]")))
+            {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }
