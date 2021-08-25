@@ -8812,7 +8812,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8833,7 +8833,7 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                  |
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8859,11 +8859,11 @@ Business Need: Page Layout Component Scenarios
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true | Grantee State Program | Name                      | PBD-9258                   |
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8880,7 +8880,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8900,7 +8900,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:ShowQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperatorWhenUserNotShow | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8918,11 +8918,11 @@ Business Need: Page Layout Component Scenarios
   @165045   @verifyWhenUserApplyJSONOnHistoryObjectThenFieldHistoryDropdownShowForGrantee
   Scenario: To verify that When User apply JSON on history object then Field History dropdown show  child records for grantee
     Given I have "default" configuration as below:
-      | configurationCategory                      | fieldName      | fieldOrignalValue | filterId         |
+      | configurationCategory                      | fieldName       | fieldOrignalValue | filterId         |
       | Notes And Attachment Action Sobject Config | History Objects |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                              | fieldName      | fieldNewValue                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForDropdownHideConfigForText | Announcement__c    |                           |                             |
+      | configurationCategory                              | fieldName       | fieldNewValue                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForDropdownHideConfigForText | Announcement__c    |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
@@ -8933,3 +8933,75 @@ Business Need: Page Layout Component Scenarios
     When I softly see the text :
       | Field History |
     Then I see "text" is displayed inside History table dropdown menu
+
+  @158470 @ValidateTypeOfAssistanceInTheMultiselectPicklistReadOnlyForThePageLayoutConfig
+  Scenario: Validate Type Of Assistance In The Multiselect Picklist Read Only For The Page Layout Config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see that "TypesOfAssistance__c" rendered in view mode only
+
+
+  @163994 @ValidateLoggingInInternalUserHomePageUiIsNotBreakingAndRenderingProperly
+  Scenario: Validate Logging In Internal User Home Page Ui Is Not Breaking And Rendering Properly
+    Given I have "customMetaData" configuration as below:
+      | id                 | label   | booleanValue | customMetaDataApiName    |
+      | m036O000000k9wRQAQ | BaseURL | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label   | booleanValue | customMetaDataApiName    |
+      | m036O000000k9wRQAQ | BaseURL | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see "HOME" phase
+
+  @158464 @ValidateEditLayoutMultipickListTypeOfInstanceOnUiDisplayProperly
+  Scenario: Validate Edit Layout Multipick List Type Of Instance On Ui Display Properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I navigate to "Overview" sub tab
+    Then I see field "Eligible Applicant Types" inside page block
+
+  @153789 @ValidateSingleCheckboxIsDisplayedForCheckboxField
+  Scenario: Validate Single Checkbox Is Displayed For Checkbox Field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see checkbox is displayed for field "fieldCFDA_Data__c"
+
+  @165040 @ValidateUserApplyJsonOnHistoryObjectThenHistoryDropdownShowChildRecord
+  Scenario: Validate User Apply Json On History Object Then History Dropdown Show Child Record
+    Given I have "default" configuration as below:
+      | configurationCategory                      | fieldName       | fieldOrignalValue | filterId         |
+      | Notes And Attachment Action Sobject Config | History Objects |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                              | fieldName       | fieldNewValue                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForHistoryObjectForChildGrantee | Announcement__c    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForPMUserInClosedState}" inside table
+    When I navigate to "History" sub tab
+    When I softly see expected table with id "toggleFlexTableHistory"
+    When I softly see the text :
+      | Field History |
+    Then I see "Budget Period" is displayed inside History table dropdown menu
