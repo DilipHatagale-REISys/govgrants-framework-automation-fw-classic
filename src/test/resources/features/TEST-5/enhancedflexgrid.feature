@@ -3365,3 +3365,35 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
       | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @166740   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualToOprator
+  Scenario:  E-grid-To verify in advanced filter when user select the picklist data type field then correct result display with equal to operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Status | equals to | Active |
+    Then I see value "Active" for multiple cells at column "Status__c"
+
+  @166743   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualNotToOprator
+  Scenario:  E-grid-o verify in advanced filter when user select the picklist data type field then correct result display with not equal to operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Draft Grants"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Status | not equals to | Active |
+    Then I see value "draft" for multiple cells at column "Status__c"
