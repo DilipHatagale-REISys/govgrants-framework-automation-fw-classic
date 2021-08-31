@@ -177,7 +177,7 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Planning" tab
     Then I see "PG" records are present in Recently Viewed link in Sidebar
 
-  @118446    @validateThatZeroIsDisplayedInLateTaskInsideTaskSummaryByDueDateChart
+  @118446    @validateThatZeroIsDisplayedInLateTaskInsideTaskSummaryByDueDateChart    @wip @bugLogged
   Scenario: Check zero is displayed for late task inside Task Summary by due date chart on home page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

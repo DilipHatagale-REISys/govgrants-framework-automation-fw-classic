@@ -395,7 +395,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities " flex table not displayed
 
-  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection
+  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection  @bugLogged-167391 @wip
   Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation-PM" user
@@ -1186,7 +1186,6 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "application1" inside table
-    When I click "Yes" on modal confirmation box
     And I click on top right button "New" in flex table with id "AnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
@@ -4516,7 +4515,7 @@ Business Need: Logged Issues Scenarios
     When I click on "×" icon at "Add Files" modal under Library
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
-    And I click on "More Options" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click on "More Actions" action at "Collab Phase sharing temporary comment" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
@@ -4562,7 +4561,7 @@ Business Need: Logged Issues Scenarios
     And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
     And I navigate to "HOME" tab
     When I pause execution for "3" seconds
-    And I click on "More Options" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click on "More Actions" action at "Collab Phase sharing temporary comment" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     And I navigate to "Collab" tab
     And I pause execution for "3" seconds
