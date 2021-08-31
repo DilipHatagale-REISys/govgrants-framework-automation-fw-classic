@@ -3288,7 +3288,6 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Name,ProjectTitle__c,Status__c,Test_Currency__c,Test_Number__c,Test_Number_Result__c,Test_Percentage1__c,Test_Percentage2__c,Test_Percentage_Result__c,testtotalcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
 
-
   @164808   @verifyThatPercentageCalculationForCurrencytypeFeildWhenCalculateValuePositive
   Scenario Outline: To verify Percentage change calculation for Curency field when the CalCulated value is positive.
     Given I have "default" configuration as below:
@@ -3397,3 +3396,101 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Status | not equals to | Active |
     Then I see value "draft" for multiple cells at column "Status__c"
+
+  @168723 @VerifyIfCurruncyReferenceFeildIsAvailableOnTheTableItDispalyDollerSignForEditLayout
+  Scenario Outline: : E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the Edit layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "$0.00" for title "testcurrency" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @168722 @VerifyIfCurruncyReferenceFeildIsAvailableOnTheTableItDispalyDollerSignForViewLayout
+  Scenario Outline: : E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the View layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "$0.00" for title "testcurrency" inside table "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @68727 @VerifyCurrencyFieldIsAvailableOnTheTableItDisplaysDollerSignforPDF
+  Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General    | Enable Export (PDF) | true          | TmpActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "$0.00" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @68726 @VerifyCurrencyFieldIsAvailableOnTheTableItDisplaysDollerSignforCSV
+  Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the CSV
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General    | Enable Export (XLS / CSV) | true          | TmpActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "$0.00" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
