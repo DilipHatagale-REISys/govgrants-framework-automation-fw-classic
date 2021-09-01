@@ -2073,34 +2073,7 @@ Business Need: Flex Table Component Scenarios
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:rolesAndResponsibilitiesTableId---"
 
     Examples:
-      | newFieldsApi             | defaultFieldsApi                           |
-      | Agency__r.testcurrency__c | Name1__c,BusinessRole__c,Responsibility__c |
-
-  @168748 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForPDF
-  Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
-      | Flex Grid:General    | Enable Export (PDF) | true          | ProgramRolesAndResponsibilities   |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Roles" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilities"
-    And I select "Download as PDF" from parallel lines dropdown of "Roles And Responsibilities"
-    And I download the file
-    Then I see "$0" on page "1" of "govgrants" pdf file
-
-    Examples:
-      | newFieldsApi             | defaultFieldsApi                           |
+      | newFieldsApi              | defaultFieldsApi                           |
       | Agency__r.testcurrency__c | Name1__c,BusinessRole__c,Responsibility__c |
 
   @168904 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForEditlayout
@@ -2123,7 +2096,7 @@ Business Need: Flex Table Component Scenarios
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:rolesAndResponsibilitiesTableId---"
 
     Examples:
-      | newFieldsApi             | defaultFieldsApi                           |
+      | newFieldsApi              | defaultFieldsApi                           |
       | Agency__r.testcurrency__c | Name1__c,BusinessRole__c,Responsibility__c |
 
 #  @flextablebug-test
