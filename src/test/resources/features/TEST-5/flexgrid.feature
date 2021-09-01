@@ -2830,3 +2830,23 @@ Business Need: Flex Grid Component Scenarios
     And I click modal button "Save"
     And I pause execution for "3" seconds
     Then I donot see navigation logo on page
+
+  @168908 @VerifyCurrencyReferenceFieldIsAvailableOnTableDsisplaysDollerSignForViewMode
+  Scenario Outline: ME-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the View layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Budget" sub tab
+    Then I see value "$0.00" for title "testcurrency" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                  |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Application__r.testcurrency__c|
