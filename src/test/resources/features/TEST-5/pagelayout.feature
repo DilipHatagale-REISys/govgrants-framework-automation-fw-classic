@@ -9005,3 +9005,87 @@ Business Need: Page Layout Component Scenarios
     When I softly see the text :
       | Field History |
     Then I see "Budget Period" is displayed inside History table dropdown menu
+
+  @170110 @tejal
+  Scenario: verify Relationship fields  should be shown as text in View layout when 'show link as text' checkbox is check
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see field "Show Link as Text" as "GT-HRGr-001"
+    Then I softly do not see link "GT-HRGr-001" inside Page block
+
+  @170111 @tejal
+  Scenario: verify Relationship fields  should be shown as text in Edit  layout when 'show link as text' checkbox is check
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see field "Show Link as Text" as "GT-HRGr-001"
+    Then I softly do not see link "GT-HRGr-001" inside Page block
+
+  @170112 @tejal
+  Scenario: Verify Relationship fields  should be shown as Hyperlink not a text  in Edit  layout when 'show link as text' checkbox is uncheck
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see field "Show Link as Text" as "GT-HRGr-001"
+    Then I softly see link "GT-HRGr-001" inside Page block
+
+  @170113 @tejal
+  Scenario: Verify Relationship fields  should be shown as Hyperlink not a text  in view   layout when 'show link as text' checkbox is uncheck
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see field "Show Link as Text" as "GT-HRGr-001"
+    Then I softly see link "GT-HRGr-001" inside Page block
+
+  @170159 @tejal
+  Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    Then I see take snap shot getting saved with "Todays Date"
