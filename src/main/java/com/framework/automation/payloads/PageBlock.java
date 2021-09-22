@@ -413,6 +413,14 @@ public class PageBlock {
                                         String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__DisableSelectAll__c), value);
                 break;
+            case "SHOW LINK AS TEXT":
+                finalPayload = String
+                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__ShowLinkAsText__c), value);
+                break;
+
         }
         System.out.println(finalPayload);
         return finalPayload;

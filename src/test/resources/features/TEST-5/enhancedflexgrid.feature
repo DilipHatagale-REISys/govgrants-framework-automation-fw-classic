@@ -3440,3 +3440,19 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @170496 @tejal
+  Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the View layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grant              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grant              | Name                      | PBD-9138                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Active Grants"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
+    Then I softly see field "Show Link as Text" as "$50,000"
