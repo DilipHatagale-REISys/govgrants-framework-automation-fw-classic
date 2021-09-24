@@ -5969,10 +5969,10 @@ Business Need: Logged Issues Scenarios
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I have "customMetaData" configuration as below:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
-      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
       | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -5998,11 +5998,11 @@ Business Need: Logged Issues Scenarios
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I have "customMetaData" configuration as below:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
-      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
-      | m036O000000oLvmQAE | classificationRequired | false         | GNT__KeyValueHolder__mdt |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -6027,10 +6027,10 @@ Business Need: Logged Issues Scenarios
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I have "customMetaData" configuration as below:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
-      | m036O000000oLvmQAE | classificationRequired | true        | GNT__KeyValueHolder__mdt |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
-      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
       | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -6050,3 +6050,150 @@ Business Need: Logged Issues Scenarios
     And I click modal button "OK"
     When I pause execution for "5" seconds
     Then I softly do not see "Automation SPI" at my feed container with id "---program:-:myFeedTableId---"
+
+  @158211 @tejal
+  Scenario: Verify user able to see Attachment Classification not required on Save on record level collab tab for External Users.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | true         | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label                  | booleanValue | customMetaDataApiName    |
+      | m036O000000oLvmQAE | classificationRequired | false        | GNT__KeyValueHolder__mdt |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
+    And I navigate to "Collab" sub tab
+    And I enter value "Automation SPI" in my feed section and share the post
+    And I click on "Comment" action at "Automation SPI" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
+    Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
+    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    Then I do not see "Upload" button is disabled at modal under library
+    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "More Options" action at "Automation SPI" comment inside my feed
+    And I click on "Delete" action from dropdown at "Automation SPI" comment inside my feed
+    And I click modal button "OK"
+
+  @170128 @tejal
+  Scenario: Verify On record level collab tab  @ mention user then user page is getting opened in tab for admin user
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I navigate to "Collab" sub tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    And I click on hyperlink containing value "@Automation PM"
+    Then I see new tab is opened
+
+  @170130 @tejal
+  Scenario: Verify On collab phase @ mention user then user page is getting opened in tab for admin user
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    And I click on hyperlink containing value "@Automation PM"
+    Then I see new tab is opened
+
+  @170132 @tejal
+  Scenario:  Verify On record level collab tab @ mention user then user page is getting opened in tab for  Internal user
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I navigate to "Collab" sub tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    And I click on hyperlink containing value "@Automation PM"
+    Then I see new tab is opened
+
+  @170134 @tejal
+  Scenario: Verify On collab phase @ mention user then user page is getting opened in tab for  Internal user
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "Hello @Bob PM" in my feed section and share the post
+    And I click on hyperlink containing value "@Bob PM"
+    Then I see new tab is opened
+
+  @170135 @tejal
+  Scenario: Verify On record level collab tab @ mention user then user page is getting opened in tab for External user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
+    And I navigate to "Collab" sub tab
+    And I enter value "hii @Framework Dev" in my feed section and share the post
+    And I click on hyperlink containing value "@Framework Dev"
+    Then I see new tab is opened
