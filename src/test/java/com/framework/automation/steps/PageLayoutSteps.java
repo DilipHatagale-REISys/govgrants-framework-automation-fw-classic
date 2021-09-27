@@ -34,7 +34,7 @@ public class PageLayoutSteps {
 
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment(| and save)$")
     public void textAreaFieldAtEditAttachment(String enteredValue, String usage) {
-        pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue,usage);
+        pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue, usage);
     }
 
     @When("^I close alertbox$")
@@ -357,7 +357,7 @@ public class PageLayoutSteps {
 
     @Then("^I (see|do not see|softly do not see) \"([^\"]*)\" (table|block) is collapsed$")
     public void assertExpandCollapseWorking(String usage, String blockName, String uiType) {
-        pageLayoutPage.assertFunctionalityOfExpandCollapse(usage, blockName,uiType.contains("table"));
+        pageLayoutPage.assertFunctionalityOfExpandCollapse(usage, blockName, uiType.contains("table"));
     }
 
     @Then("^I see error message \"([^\"]*)\" for invalid input at \"([^\"]*)\"$")
@@ -726,8 +726,8 @@ public class PageLayoutSteps {
     }
 
     @Then("^I see \"([^\"]*)\" field is rendered as (rich|long) text area$")
-    public void iSeeRichTextAreaFieldAsIsDisplayedAtPageDetail(String fieldName,String usage) {
-        pageLayoutPage.assertRichTextAreaFieldInsidePageDetail(fieldName,usage.equalsIgnoreCase("rich"));
+    public void iSeeRichTextAreaFieldAsIsDisplayedAtPageDetail(String fieldName, String usage) {
+        pageLayoutPage.assertRichTextAreaFieldInsidePageDetail(fieldName, usage.equalsIgnoreCase("rich"));
     }
 
     @Then("I see CK editor box color changed to {string}")
@@ -757,7 +757,7 @@ public class PageLayoutSteps {
 
     @Then("I see value {string} for label {string}")
     public void iSeeValueForLabelInSendEmailModal(String fieldValue, String fieldLabel) {
-        pageLayoutPage.assertFieldValueUsingFieldLabel(fieldValue,fieldLabel);
+        pageLayoutPage.assertFieldValueUsingFieldLabel(fieldValue, fieldLabel);
     }
 
     @Then("I see modal with id {string} displayed properly")
@@ -773,5 +773,10 @@ public class PageLayoutSteps {
     @Then("I see checkbox is displayed for field {string}")
     public void iSeeCheckboxIsDisplayedForField(String fieldAPIName) {
         pageLayoutPage.assertCheckboxIsDisplayedForField(fieldAPIName);
+    }
+
+    @Then("I see text as {string} on reply email modal")
+    public void iSeeAsOnModal(String value) {
+        pageLayoutPage.assertFieldOnModal(value);
     }
 }

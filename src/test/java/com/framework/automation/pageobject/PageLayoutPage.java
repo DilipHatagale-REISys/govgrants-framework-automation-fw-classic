@@ -1681,11 +1681,22 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * This function will return us list of users present in suggestion box under send email modal
+     *
      * @modifier vaibhav.chandratre- modified xpath for auto suggestion box
      */
     public List<Elements> getCompleteContentForSendEmailSuggestionBox() {
         List<Elements> element = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='listDropdownToScroll' or @class='listDropdownTo']//ul//li//b"));
         return element;
+    }
+
+    /**
+     * return true if text is displayed on reply email modal
+     *
+     * @param value
+     * @author tejal.gadewar
+     */
+    public void assertFieldOnModal(String value) {
+        I.amPerforming().assertionsTo().assertThat(isFieldDisplayedOnModal(value)).isTrue();
     }
 
     /*********
@@ -3488,12 +3499,21 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isCheckboxIsDisplayedForField(String fieldAPIName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked]")))
-            {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked]"))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
+    }
+
+    /**
+     * return true if text is displayed on reply email modal
+     *
+     * @param value
+     * @author tejal.gadewar
+     */
+    private boolean isFieldDisplayedOnModal(String value) {
+        return I.amPerforming().getElementReference().of(By.xpath("//p[contains(text(),'reply the mail')]//following-sibling::p[2]")).getText().contains(value);
     }
 }
