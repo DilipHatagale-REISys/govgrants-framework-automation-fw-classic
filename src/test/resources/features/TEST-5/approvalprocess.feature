@@ -1243,6 +1243,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "Decription" into field "toggleBlocka0k1500000LTNC2AAP"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -1523,6 +1524,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "Decription" into field "toggleBlocka0k1500000LTNC2AAP"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
