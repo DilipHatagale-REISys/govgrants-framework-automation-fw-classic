@@ -2,7 +2,10 @@ package com.framework.automation.steps;
 
 
 import com.framework.automation.pageobject.ApprovalProcessPage;
+import com.testingblaze.register.I;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 
 public class ApprovalProcessSteps {
     ApprovalProcessPage approvalProcesPage;
@@ -34,5 +37,11 @@ public class ApprovalProcessSteps {
     @Then("I see reassigned select box at approval decision section is aligned properly")
     public void iSeeReassignedSelectBoxAIsAlignedProperly() {
         approvalProcesPage.assertReassignedSelectBoxIsAlignedProperly();
+    }
+
+    @And("I enter value {string} into field of Details")
+    public void iEnterValueIntoField(String value) {
+        By word=By.xpath("//span[@id='Objectives__c']//textarea");
+        I.amPerforming().textInput().in(word,value);
     }
 }
