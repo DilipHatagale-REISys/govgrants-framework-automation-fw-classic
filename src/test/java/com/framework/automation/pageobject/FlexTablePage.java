@@ -534,6 +534,20 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().textInput().in(attachmentFilePath, defaultFilePath + fileName);
     }
 
+    /**
+     * return true if field is required displayed in edit mode
+     *
+     * @param fieldApiName
+     */
+
+    public void assertFieldIsRequired(String usage, String fieldApiName) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFieldIsRequired(fieldApiName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFieldIsRequired(fieldApiName)).isFalse();
+        }
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1093,4 +1107,18 @@ public class FlexTablePage extends GovGrantsManager {
 
     }
 
+    /**
+     * return true if field is required displayed in edit mode
+     * @param fieldApiName
+     */
+    private boolean assertFieldIsRequired(String fieldApiName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field[@field-name='" + fieldApiName + "']//span[contains(text(),'Field is required')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

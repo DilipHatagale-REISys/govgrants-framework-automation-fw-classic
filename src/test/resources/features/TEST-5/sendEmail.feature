@@ -5699,3 +5699,47 @@ Business Need: Send Email Component Scenarios
     Then I see "Name" as "Attachments" on send email modal
     Then I see "Action" as "Attachments" on send email modal
     Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+
+  @173457 @tejal
+  Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
+
+  @171798 @tejal
+  Scenario: Verify if User edits a existing Id  row level lookup field (Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
+    When I click on "Edit" icon for "GT-FIN.1-001" inside table
+    Then I softly see "ExternalOrganization__c" field is required
