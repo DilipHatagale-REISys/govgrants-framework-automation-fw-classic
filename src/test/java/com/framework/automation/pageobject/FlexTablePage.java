@@ -1114,7 +1114,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean assertFieldIsRequired(String fieldApiName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field[@field-name='" + fieldApiName + "']//span[contains(text(),'Field is required')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field[@field-name='" + fieldApiName + "']//span//b[contains(text(),'|')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
