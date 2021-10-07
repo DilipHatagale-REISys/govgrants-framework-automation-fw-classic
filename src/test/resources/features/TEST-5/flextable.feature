@@ -1855,8 +1855,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Overview" sub tab
     And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab

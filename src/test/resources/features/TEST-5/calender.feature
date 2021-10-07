@@ -92,6 +92,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
@@ -99,7 +100,8 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:savedValue}"
-    Then I see the header is "Program" in the page details
+    And I wait for "5" seconds
+    Then I softly see field "ID" as "{SavedValue:savedValue}"
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
