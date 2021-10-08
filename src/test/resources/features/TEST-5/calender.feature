@@ -99,7 +99,8 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:savedValue}"
-    Then I see the header is "Program" in the page details
+    And I wait for "5" seconds
+    Then I softly see field "ID" as "{SavedValue:savedValue}"
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout

@@ -1192,8 +1192,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020 5:00 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
+    Then I see value "03/17/2021 4:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1217,8 +1217,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020 6:00 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
+    Then I see value "03/17/2021 5:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1242,8 +1242,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "1/12/2020 3:30 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
+    Then I see value "18/3/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1850,8 +1850,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details

@@ -955,7 +955,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on user/group from suggestion box appears by entering text in To/CC fields on send email modal window
      */
     public void selectValueInSendEmailModalFields(String userName, String iconName) {
-        By selectValueFromSuggestionBox = By.xpath("//span[@class='" + iconName + "']/following-sibling::b[contains(text(),'" + userName + "')]");
+        By selectValueFromSuggestionBox = By.xpath("//span[@class='" + iconName + "']/following-sibling::b[contains(text(),'" + userName + "')]/parent::h5/following-sibling::p");
         I.amPerforming().click().on(selectValueFromSuggestionBox);
     }
 
