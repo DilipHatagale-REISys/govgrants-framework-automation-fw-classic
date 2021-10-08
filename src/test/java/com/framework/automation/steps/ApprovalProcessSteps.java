@@ -2,10 +2,8 @@ package com.framework.automation.steps;
 
 
 import com.framework.automation.pageobject.ApprovalProcessPage;
-import com.testingblaze.register.I;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
+
 
 public class ApprovalProcessSteps {
     ApprovalProcessPage approvalProcesPage;
