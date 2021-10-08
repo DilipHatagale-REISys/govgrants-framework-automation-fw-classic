@@ -124,7 +124,7 @@ public class FlexTableSteps {
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" with pagination arrow at \"([^\"]*)\" at \"([^\"]*)\"$")
-    public void assertFlexTablePaginationEnabled(String usage, String text, String tableId,String uiType) {
+    public void assertFlexTablePaginationEnabled(String usage, String text, String tableId, String uiType) {
         flexTablePage.assertFlexTabelPaginationEnabled(usage, text, tableId, uiType.equalsIgnoreCase("Top"));
     }
 
@@ -230,7 +230,7 @@ public class FlexTableSteps {
 
     @Then("^I (see|softly see) \"([^\"]*)\" button at \"([^\"]*)\" of  Modal window$")
     public void buttonsAtModalWindow(String usage, String buttonName, String buttonPosition) {
-        flexTablePage.assertButtonsIsDisplayedAtModalWindow(usage,buttonName,buttonPosition);
+        flexTablePage.assertButtonsIsDisplayedAtModalWindow(usage, buttonName, buttonPosition);
     }
 
     @Then("I see actions are aligned at attachment")
@@ -240,7 +240,7 @@ public class FlexTableSteps {
 
     @Then("I see placeholder for quick search box as {string} inside {string} table")
     public void placeholderForQuickSearchBoxInsideTable(String placeholder, String tableId) {
-        flexTablePage.assertQuickSearchBoxPlaceHolder(placeholder,tableId);
+        flexTablePage.assertQuickSearchBoxPlaceHolder(placeholder, tableId);
     }
 
     @Then("I see advance filter with data target value {string} displayed at right side of table {string}")
@@ -271,5 +271,10 @@ public class FlexTableSteps {
     @Then("I see {string} is displayed inside History table dropdown menu")
     public void iSeeIsDisplayedInsideHistoryTableDropdownMenu(String dropdownOptions) {
         flexTablePage.assertOptionsInDropdownAtHistoryTable(dropdownOptions);
+    }
+
+    @Then("^I (softly see|softly do not see) \"([^\"]*)\" field is required$")
+    public void iSeeFieldIsRequired(String usage, String fieldApiName) {
+        flexTablePage.assertFieldIsRequired(usage, fieldApiName);
     }
 }
