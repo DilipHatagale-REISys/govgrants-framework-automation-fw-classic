@@ -760,7 +760,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
@@ -1687,7 +1686,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     When I enter value "Program @@/ created for special char" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -1706,7 +1704,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     When I enter value "Program 1 Created for numeric value" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -1725,7 +1722,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     When I enter value "Program @@/ Created for special value" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -1744,7 +1740,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     When I enter value "Program @@/ 1 Created for special value" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -1857,7 +1852,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on "Edit" icon for "PG-501-0034" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
@@ -2074,7 +2068,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:rolesAndResponsibilitiesTableId---"
@@ -2097,7 +2090,6 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I enter value "Discription" into field of Details
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab

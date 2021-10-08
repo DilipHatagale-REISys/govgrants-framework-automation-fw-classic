@@ -38,10 +38,4 @@ public class ApprovalProcessSteps {
     public void iSeeReassignedSelectBoxAIsAlignedProperly() {
         approvalProcesPage.assertReassignedSelectBoxIsAlignedProperly();
     }
-
-    @And("I enter value {string} into field of Details")
-    public void iEnterValueIntoField(String value) {
-        By word=By.xpath("//span[@id='Objectives__c']//textarea");
-        I.amPerforming().textInput().in(word,value);
-    }
 }
