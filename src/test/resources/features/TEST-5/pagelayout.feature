@@ -5115,7 +5115,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see below message at page detail in "RED" color:
+    Then I softly see the following messages in the page details contains:
       | TEST PAGE BLOCK WARNING MSG DND |
 
   @128515    @verifyErrorMessageSetFromPageMessageConfirIsDisplayedAtEditPageBlockInPurpleColor

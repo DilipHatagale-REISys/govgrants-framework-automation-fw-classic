@@ -4470,6 +4470,103 @@ Business Need: Send Email Component Scenarios
     Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
     Then I see text as "Subject: test" on reply email modal
 
+  @160296 @jyoti
+  Scenario: Send Email-To verify,  For Reply action show only Contacts from 'Cc' field whose Account Record Type Name is not Internal, No user records will be shown for external
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Neelima" into field "{testData:ToField}" on send email modal
+    When I select value "Neelima Shetty" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160284 @jyoti
+  Scenario: Send Email-To Verify,When For Reply action User select 'Internal'  from Cc field only users records should be visible not a contact record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
+    When I select value "Shambhavi Burge" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160261 @jyoti
+  Scenario: Send EMail-To Verify If user select the group from 'Cc' field  then  email get received to all group members Internal & External.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160256 @jyoti
+  Scenario: Send Email-To Verify, When user select Internal/External From 'Cc' field only internal users display and External Contacts display.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    When I select value "Bhushan GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
   @169810 @tejal
   Scenario: Verify User reply email from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
@@ -4785,6 +4882,138 @@ Business Need: Send Email Component Scenarios
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
     Then I softly do not see user suggestion box displayed at send email modal
 
+  @159970 @jyoti
+  Scenario: Send Email-To verify , When user select Active Internal user & Active External user from 'To' field then for Internal user record  & for External  contact should be visible.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+    When I enter value "Shambhavi" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160198 @jyoti
+  Scenario: Send Mail-To Verify, for Reply action When user select the group From 'TO' field email get received to all group members(Internal/External)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I enter value "test" into field "Subject" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160141 @jyoti
+  Scenario: Send Email- To Verify, when user select the group  from 'To' field then  email get received to all group members Internal & External.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I enter value "test" into field "Subject" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160313 @jyoti
+  Scenario: Send Email- To Verify, For Relpy  action When user select the group from 'Cc' field  the email get received to all group members as a External & Internal.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test grop 1" into field "{testData:CcField}" on send email modal
+    When I enter value "test" into field "Subject" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160300 @jyoti
+  Scenario: Send Email-To Verify, For Reply action select the both Internal/External from 'Cc' field only Internal users display and External Contacts display.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Neelima GGPTEST5" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @159887 @jyoti
+  Scenario: Send Email-To Verify,When User select 'Internal' from 'TO' field only users records should be visible.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "shambhavi" into field "{testData:ToField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
   @160468 @jyoti
   Scenario: Send Email- To Verify,For Reply action  When user select Internal/External from 'To' field Only internal user and external contact should be visible
     Given I have "default" configuration as below:
@@ -4807,6 +5036,119 @@ Business Need: Send Email Component Scenarios
     Then I softly see user suggestion box displayed at send email modal
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @159937 @jyoti
+  Scenario: Send Email-To Verify, When user select external from  'To'  field whose Account Record Type Name is not Internal then only contact should be display  user records should not be visible
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160226 @jyoti
+  Scenario:  Send EMail-To Verify,  when user select External from 'Cc'  field then show only Contacts whose Account Record Type Name is not Internal  No user records will be shown.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    And I wait for "2" seconds
+    When I select value "Bhushan GGPTEST5" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160207 @jyoti
+  Scenario: Send Email-To Verify,When User select 'Internal' from 'CC' field only users records should be visible & contact record should not be display
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    When I select value "Bhushan GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "shambhavi" into field "{testData:CcField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160177 @jyoti
+  Scenario: Send Mail-To Verify, for Reply action  when user select the external from 'To' field then show only contact whose record type is not internal and also user records should not shown
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Jai" into field "{testData:ToField}" on send email modal
+    Then I softly see user suggestion box displayed at send email modal
+
+  @160159 @jyoti
+  Scenario: Send Email To Verify, For Reply action when user select the internal from 'To' field then It will show only Active Internal Users no contact record should be visible.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Nauman" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @169708 @tejal
@@ -4883,3 +5225,840 @@ Business Need: Send Email Component Scenarios
     Then I see "test reply 2" as "Body Content" on send email modal
     Then I see the text containing :
       | Attachments |
+
+  @169832 @tejal
+  Scenario: Verify user reply the email from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "FirstName LastName" into field "{testData:ToField}" on send email modal
+    When I select value "FirstName LastName" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "FirstName LastName" into field "{testData:CcField}" on send email modal
+    When I select value "FirstName LastName" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external 2" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external 2" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on "Reply" icon for "reply for to &cc external 2" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on "View" icon for "RE: reply for to &cc external 2" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: email@email.com" on reply email modal
+    Then I see text as "Subject: reply for to &cc external 2" on reply email modal
+    Then I see "reply for to &cc external 2" as "Body Content" on send email modal
+
+  @169825 @tejal
+  Scenario: Verify user reply the email with files&attachment  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply TO& CC internal" into field "Subject" on send email modal
+    When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "Reply" icon for "reply TO& CC internal" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on "View" icon for "RE: reply TO& CC internal" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+    Then I see text as "Subject: reply TO& CC internal" on reply email modal
+    Then I see "reply TO& CC internal" as "Body Content" on send email modal
+
+  @169823 @tejal
+  Scenario: Verify user reply the email with files  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply TO& CC internal" into field "Subject" on send email modal
+    When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    And I pause execution for "2" seconds
+    When I click on "Reply" icon for "reply TO& CC internal" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "View" icon for "RE: reply TO& CC internal" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+    Then I see text as "Subject: reply TO& CC internal" on reply email modal
+    Then I see "reply TO& CC internal" as "Body Content" on send email modal
+
+  @169822 @tejal
+  Scenario: Verify user reply the email with attachment from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply TO& CC internal" into field "Subject" on send email modal
+    When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "Reply" icon for "reply TO& CC internal" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on "View" icon for "RE: reply TO& CC internal" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+    Then I see text as "Subject: reply TO& CC internal" on reply email modal
+    Then I see "reply TO& CC internal" as "Body Content" on send email modal
+    Then I see "Name" as "Attachments" on send email modal
+    Then I see "Action" as "Attachments" on send email modal
+    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+
+  @169818 @tejal
+  Scenario: Verify user reply the email from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply TO& CC internal" into field "Subject" on send email modal
+    When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "Reply" icon for "reply TO& CC internal" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on "View" icon for "RE: reply TO& CC internal" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+    Then I see text as "Subject: reply TO& CC internal" on reply email modal
+    Then I see "reply TO& CC internal" as "Body Content" on send email modal
+
+  @169813 @tejal
+  Scenario: Verify user reply email with attachment& files from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomation.txt" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply group with attachment & files" into field "Subject" on send email modal
+    When I enter value "reply group with attachment & files" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "TestAutomation.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "Reply" icon for "reply group with attachment & files" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "TestAutomation.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "View" icon for "RE: reply group with attachment & files" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Subject: reply group with attachment & files" on reply email modal
+    Then I see "reply group with attachment & files" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
+    Then I see "TestAutomation.txt" as "Body Content" on send email modal
+    Then I see "Name" as "Attachments" on send email modal
+    Then I see "Action" as "Attachments" on send email modal
+    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+    Then I see "actionsAtEgrid.png" as "Attachments" on send email modal
+    Then I see "captureModalFields.png" as "Attachments" on send email modal
+
+  @169804 @tejal
+  Scenario: Verify user reply email with files previously send fromTO field as 'Group' with multiple files and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomation.txt" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply group with files" into field "Subject" on send email modal
+    When I enter value "reply group with files" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "TestAutomation.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "Reply" icon for "reply group with files" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "TestAutomation.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "View" icon for "RE: reply group with files" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Subject: reply group with files" on reply email modal
+    Then I see "reply group with files" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
+    Then I see "TestAutomation.txt" as "Body Content" on send email modal
+
+  @169803 @tejal
+  Scenario: Verify user reply email  previously send fromTO field as 'Group' with multiple files and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomation.txt" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply group with files" into field "Subject" on send email modal
+    When I enter value "reply group with files" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "TestAutomation.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "Reply" icon for "reply group with files" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I click on "View" icon for "RE: reply group with files" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Subject: reply group with files" on reply email modal
+    Then I see "reply group with files" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
+    Then I see "TestAutomation.txt" as "Body Content" on send email modal
+
+  @169802 @tejal
+  Scenario: Verify user reply email with attachments that previously send from TO field as 'Group' with multiple attachment and click on  View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "test group for attachment" into field "Subject" on send email modal
+    When I enter value "test group for attachment" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "Reply" icon for "test group for attachment" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "View" icon for "RE: test group for attachment" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Subject: test group for attachment" on reply email modal
+    Then I see "test group for attachment" as "Body Content" on send email modal
+    Then I see "Name" as "Attachments" on send email modal
+    Then I see "Action" as "Attachments" on send email modal
+    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+    Then I see "actionsAtEgrid.png" as "Attachments" on send email modal
+    Then I see "captureModalFields.png" as "Attachments" on send email modal
+
+  @169801 @tejal
+  Scenario: Verify user reply email that previously send from TO field as 'Group' with multiple attachment and click on  View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "test group for attachment" into field "Subject" on send email modal
+    When I enter value "test group for attachment" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "Reply" icon for "test group for attachment" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I close modal by clicking the top right x button
+    When I click on "View" icon for "RE: test group for attachment" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Subject: test group for attachment" on reply email modal
+    Then I see "test group for attachment" as "Body Content" on send email modal
+
+  @169710 @tejal
+  Scenario: Verify reply email with attachment & files that previously send from TO& CC field as 'internal' with attachment & files and click on reply View action on that mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    And I pause execution for "3" seconds
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "test reply" into field "Subject" on send email modal
+    When I enter value "test reply" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "Reply" icon for "test reply" inside table
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "MultipleFileUploadCollabDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I refresh the page
+    When I click on "View" icon for "RE: test reply" inside table
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+    Then I see text as "Subject: test reply" on reply email modal
+    Then I see "test reply" as "Body Content" on send email modal
+    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
+    Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
+    Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
+    Then I see "Name" as "Attachments" on send email modal
+    Then I see "Action" as "Attachments" on send email modal
+    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+
+  @173457 @tejal
+  Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal

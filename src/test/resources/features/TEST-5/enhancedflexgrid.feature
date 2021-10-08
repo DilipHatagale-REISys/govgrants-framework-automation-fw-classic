@@ -3472,3 +3472,176 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
     When I click on "Edit" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
     Then I softly see field "Show Link as Text" as "$1,200,000"
+
+  @171798 @tejal
+  Scenario: Verify if User edits a existing Id  row level lookup field (Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
+    When I click on "Edit" icon for "GT-FIN.1-001" inside table
+    Then I softly see "ExternalOrganization__c" field is required
+
+  @171801 @tejal
+  Scenario: Verify if User remove the data fromlookup field(Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
+    When I click on "Edit" icon for "GT-FIN.1-001" inside table
+    And I enter value "biological technologies office" into field "ExternalOrganization__c"
+    Then I softly see "ExternalOrganization__c" field is required
+
+  @171800 @tejal
+  Scenario: Verify if User create a new  record on table  for  lookup field (Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---"
+    Then I softly see "ExternalOrganization__c" field is required
+
+  @171870 @tejal
+  Scenario: Verify if User edits a row level lookup field on child table  (Required to Save) then mandatory icon should display
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Required Fields |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields | Account__c    | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
+    When I click on "Edit" icon for "AD-ITSGT--00" inside table
+    Then I softly see "Account__c" field is required
+
+  @171871 @tejal
+  Scenario: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Required Fields |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields | Account__c    | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
+    And I click on top right button "test" in flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I softly see "Account__c" field is required
+
+  @172133 @tejal
+  Scenario: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
+      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid        | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid        |                           |                            |
+      | Flex Grid:General         | Required Fields | Account__c              | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "GT-ITSGT-001"
+    And I click on "Edit" icon for "GT-ITSGT-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I softly see "Account__c" field is required
+    Then I softly see "ExternalOrganization__c" field is required
+
+  @172150 @tejal
+  Scenario: Verify If User edits a Row level lookup field on parent table  (field is not Required to Save) then mandatory icon should not  display for lookup field
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    When I click on "Edit" icon for "GT-ITSGT-001" inside table
+    Then I softly do not see "ExternalOrganization__c" field is required
+
+  @172148 @tejal
+  Scenario: Verify If User edits a Row level lookup field on child  table  (field is not Required to Save) then mandatory icon should not  display for lookup field
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    And I pause execution for "2" seconds
+    When I expand nested table containing column value "GT-ITSGT-001"
+    And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I softly do not see "Account__c" field is required
