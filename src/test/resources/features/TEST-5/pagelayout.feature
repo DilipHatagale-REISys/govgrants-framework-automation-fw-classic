@@ -17,7 +17,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "TPA01" shown as over view title in header "Program"
+    Then I see "1231232222" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -2046,7 +2046,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     And I navigate to "Overview" sub tab
     And I enter value "PG-755-0229" into field "fieldProgram__c"
-    And I enter value "Test" into field "fieldGrantDescription__c"
+    And I enter value "Test" into field "fieldTEXTAREAGrantDescription__c"
     And I enter value "UnitedHealth Group" into field "fieldInternalOrganization__c"
     And I enter value "0" into field "fieldProjectPeriodStartDate__c"
     And I enter value "365" into field "fieldProjectPeriodEndDate__c"
@@ -5515,7 +5515,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
-    And I enter value "<enterText>" into field "fieldObjectives__c"
+    And I enter value "<enterText>" into field "cke_1_contents"
     Then I softly see word count as "Characters: 99 Characters Left: 9901" in ck editor at page layout
 
     Examples:
@@ -5536,7 +5536,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "fieldObjectives__c"
+    And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
     Then I see CK editor box color changed to "yellow"
 
   @131798  @verifytextInsideCkEditorInputBoxIsDisplayedInAnExpectedFormat
@@ -5556,7 +5556,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation" into field "cke_1_contents"
     And I change formatting of all text to "Bold" inside CK editor
     Then I see "Test Automation" displayed in "Bold" format inside CK editor
 
@@ -5577,7 +5577,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation" into field "cke_1_contents"
     And I change formatting of all text to "Underline" inside CK editor
     Then I see "Test Automation" displayed in "Underline" format inside CK editor
 
@@ -5598,7 +5598,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation" into field "cke_1_contents"
     And I change formatting of all text to "Italic" inside CK editor
     Then I see "Test Automation" displayed in "Italic" format inside CK editor
 
@@ -5618,9 +5618,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I enter value "Test" into field "fieldObjectives__c"
+    And I enter value "Test" into field "cke_1_contents"
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation temp" into field "fieldObjectives__c"
+    And I enter value "Test Automation temp" into field "cke_1_contents"
     And I change formatting of all text to "Italic" inside CK editor
     And I change formatting of all text to "Remove Format" inside CK editor
     Then I see "Test Automation temp" displayed in "Plain" format inside CK editor
@@ -5641,9 +5641,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I enter value "Test" into field "fieldObjectives__c"
+    And I enter value "Test" into field "cke_1_contents"
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation" into field "cke_1_contents"
     And I change formatting of all text to "Strike Through" inside CK editor
     Then I see "Test Automation" displayed in "Strike Through" format inside CK editor
 
@@ -5663,9 +5663,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
-    And I enter value "Test" into field "fieldObjectives__c"
+    And I enter value "Test" into field "cke_1_contents"
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test Automation" into field "fieldObjectives__c"
+    And I enter value "Test Automation" into field "cke_1_contents"
     And I change formatting of all text to "Bold" inside CK editor
     And I change formatting of all text to "Italic" inside CK editor
     And I change formatting of all text to "Underline" inside CK editor
@@ -7756,11 +7756,12 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    When I enter value "123" into field "ProjectGoals__c"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}" inside table
+    And I clear the value from field "fieldProgramName__c"
+    When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
-    Then I see field "Project Goals" as "123"
+    Then I see field "Title" as "Test"
 
   @148392  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text field at page layout
@@ -8853,8 +8854,11 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see below checkbox options for field "TypesOfAssistance__c"
-      | Select All |
+    Then I see below checkbox options for field "fieldTypesOfAssistance__c"
+      | Select All        |
+      | Project Grants    |
+      | checkbox 1        |
+      | Project Grants123 |
 
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
