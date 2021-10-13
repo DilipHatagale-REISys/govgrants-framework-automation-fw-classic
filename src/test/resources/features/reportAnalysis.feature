@@ -1,3 +1,4 @@
+@ReportAnalysis
 Feature: Report Analysis
 
   @copyfile

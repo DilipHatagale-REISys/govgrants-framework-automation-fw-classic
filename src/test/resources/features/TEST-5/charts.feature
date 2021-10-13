@@ -193,8 +193,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I pause execution for "5" seconds
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | Announcement Title     | Announcement Type |
-      | Test application..1234 | Competitive       |
+      | Announcement Title                       | Announcement Type         |
+      | Sole Source/Formula grants verification  | Sole Source/Formula       |
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |

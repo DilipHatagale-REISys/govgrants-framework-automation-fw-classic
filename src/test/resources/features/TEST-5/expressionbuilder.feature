@@ -1996,8 +1996,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_NOT_Equals_FunderType__c_Federal | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_FederalProgramCFDA__c_CONTAINS_TPA01 | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2006,7 +2006,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block displayed
 
-  @45846    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
+  @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Not Equals( Account__r.Name != Department of Community Health )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |

@@ -1104,7 +1104,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see column "# Awards" value is in "Descending" order for table id "---program:-:toggleFlexGridMonitoringTableId---"
+    Then I see column "# Awards" value is in "Descending" order for table id "---program:-:MonitoringScheduleForAllActiveGrant---"
 
   @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate disabling of PDF download from menu option at inside Monitoring schedule for all active grant flex table
