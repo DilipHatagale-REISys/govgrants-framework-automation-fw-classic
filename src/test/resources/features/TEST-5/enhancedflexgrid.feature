@@ -3543,13 +3543,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I softly see "ExternalOrganization__c" field is required
 
   @171870 @tejal
-  Scenario: Verify if User edits a row level lookup field on child table  (Required to Save) then mandatory icon should display
+  Scenario Outline: Verify if User edits a row level lookup field on child table  (Required to Save) then mandatory icon should display
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Grid:General     | Required Fields |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Required Fields | Account__c    | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3560,18 +3562,23 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "GT-FIN.1-001"
+    When I expand nested table containing column value "GT-ITSGT-001"
     When I click on "Edit" icon for "AD-ITSGT--00" inside table
     Then I softly see "Account__c" field is required
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @171871 @tejal
-  Scenario: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
+  Scenario Outline: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Grid:General     | Required Fields |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Required Fields | Account__c    | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3585,19 +3592,25 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "GT-FIN.1-001"
     And I click on top right button "test" in flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
     Then I softly see "Account__c" field is required
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
-  @172133 @tejal
-  Scenario: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
+  @172133 @172143 @tejal
+  Scenario Outline: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
+  |Verify if User edits the record  and simultaneously added new record  for  lookup field on child table (Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
-      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
-      | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | true               | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields     |                    | ApiGeneratedId:1 |
+      | Flex Grid:General         | Required Fields     |                    | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true                    | TmpActiveGrantsGrid        | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Required Fields | ExternalOrganization__c | TmpActiveGrantsGrid        |                           |                            |
-      | Flex Grid:General         | Required Fields | Account__c              | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true                    | TmpActiveGrantsGrid        | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields     | ExternalOrganization__c | TmpActiveGrantsGrid        |                           |                            |
+      | Flex Grid:General         | Required Fields     | Account__c              | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>          | TmpGrantorActiveAwardsGrid |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3613,6 +3626,9 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
     Then I softly see "Account__c" field is required
     Then I softly see "ExternalOrganization__c" field is required
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @172150 @tejal
   Scenario: Verify If User edits a Row level lookup field on parent table  (field is not Required to Save) then mandatory icon should not  display for lookup field
@@ -3645,3 +3661,67 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "GT-ITSGT-001"
     And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
     Then I softly do not see "Account__c" field is required
+
+  @171805 @tejal
+  Scenario Outline: Verify if User remove the data from child table lookup field(Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "GT-ITSGT-001"
+    When I click on "Edit" icon for "AD-ITSGT--00" inside table
+    And I clear the value from field "Account__c"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    When I click on "Edit" icon for "AD-ITSGT--00" inside table
+    Then I softly see "Account__c" field is required
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @172144 @tejal
+  Scenario Outline: Verify If User new record on child & parent  table  lookup fieldon child table  (Required to Save) then mandatory icon should display for lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | true               | ApiGeneratedId:0 |
+      | Flex Grid:General         | Required Fields     |                    | ApiGeneratedId:1 |
+      | Flex Grid:General         | Required Fields     |                    | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true                    | TmpActiveGrantsGrid        | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields     | ExternalOrganization__c | TmpActiveGrantsGrid        |                           |                            |
+      | Flex Grid:General         | Required Fields     | Account__c              | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>          | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---"
+    When I expand nested table containing column value "GT-ITSGT-001"
+    And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    And I click on top right button "test" in flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I softly see "Account__c" field is required
+    Then I softly see "ExternalOrganization__c" field is required
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
