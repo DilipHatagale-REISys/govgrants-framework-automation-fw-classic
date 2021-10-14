@@ -506,11 +506,11 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I clear the value from field "cke_1_contents"
-    When I enter value "test temp data" into field "fieldObjectives__c"
+    When I enter value "test temp data" into field "cke_1_contents"
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-HRGr-001" in "---program:-:EnhancedDataTableId---" panel
     When I click on "Edit" icon for "GT-HRGr-001" inside table
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see "test temp data" text enter in field "fieldObjectives__c"
+    Then I see "test temp data" text enter in field "cke_1_contents"

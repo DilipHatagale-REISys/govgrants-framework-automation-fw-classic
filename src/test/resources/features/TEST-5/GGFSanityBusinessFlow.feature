@@ -115,7 +115,7 @@ Business Need: Sanity check for all Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
-    Then I see cell subtotal for obligated amount at child table of enhanced grid
+    Then I see field "Total Obligated Amount : 300" inside page block
 
   @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal @expressionBuilder
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
@@ -412,8 +412,9 @@ Business Need: Sanity check for all Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "3" seconds
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
+    When I enter value "test group" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-users" with user "test group 1" is displayed on send email modal
+    Then I see iconName "fa fa-users" with user "test group 2" is displayed on send email modal
 
   @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts
   Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
@@ -575,9 +576,12 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName       |
-      | Automation PM  |
-      | Automation spi |
+      | userName                      |
+      | Automation PM                 |
+      | Automation-Applicant GGPTEST5 |
+      | Automation PO                 |
+      | Automation EXE                |
+      | Automation-Reviewer GGPTEST5  |
 
   @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI @libraryFiles
   Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level

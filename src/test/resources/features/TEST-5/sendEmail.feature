@@ -142,8 +142,9 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "Automation Testing Group" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
+    When I enter value "test group" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-users" with user "test group 1" is displayed on send email modal
+    Then I see iconName "fa fa-users" with user "test group 2" is displayed on send email modal
 
   @69214 @validateIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
@@ -517,9 +518,9 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I softly see "Re: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
+    When I perform quick search for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I softly see "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
     Then I softly see "body @&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
 
   @89743 @validateReplyModalTitleAtSendEmail @sendEmail
@@ -660,7 +661,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation" into field "{testData:ToField}" on send email modal
+    When I enter value "test" into field "{testData:ToField}" on send email modal
     Then I see search item display box size at "{testData:ToField}" field is proper for "greater than 5" results
 
   @90388 @validateToEmailSuggestionBoxSizeIfLessThan5RecordAreSuggestedInSendEmailModal @sendEmail
@@ -1003,6 +1004,8 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "testAutomationFileDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "10" seconds
+    When I close modal by clicking the top right x button
     Then I see attachment "testAutomationFileDND.png" is present in send email modal
 
   @102238 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtSelectectFileInSendEmailModal @sendEmail
@@ -1464,8 +1467,11 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
     When I click on "Send" button in send email modal
-    Then I softly see "From: ashwini.mahore@yopmail.com" as "Body Content" on send email modal
-    Then I softly see "To: govgrantsuser@gmail.com" as "Body Content" on send email modal
+    When I close modal by clicking the top right x button
+    And I click on "View" icon for "RE: Test Automation Email1" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "Body Content" as "Body Content" on send email modal
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
 
   @116304 @validateIfUserRemovesNameFromToEmailThenAutoSuggestionBoxDisappearsFromToEmailField @needToUpdate
   Scenario: Validate if user remove name from To email and keep the To email field blank then auto suggestion box disappears
@@ -2028,6 +2034,10 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "4" seconds
     When I click on "Send" button in send email modal
+    And I pause execution for "3" seconds
+    When I close modal by clicking the top right x button
+    And I pause execution for "3" seconds
+    When I close modal by clicking the top right x button
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
@@ -3951,7 +3961,6 @@ Business Need: Send Email Component Scenarios
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    And I pause execution for "10" seconds
     And I click on "View" icon for "RE: reply TO& CC with internal & external" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Body Content" as "Body Content" on send email modal
     Then I see "Sender:" as "Body Content" on send email modal
@@ -3964,6 +3973,11 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
+    And I pause execution for "1000" seconds
+    Then I see "reply TO& CC with internal & external" as "Body Content" on send email modal
 
   @169876 @jyoti
   Scenario:Send Email-To verify,User reply the email with files& attachment  from TO&CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
@@ -4271,9 +4285,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
-    And I pause execution for "10" seconds
     When I close modal by clicking the top right x button
-    And I pause execution for "5" seconds
     And I click on "View" icon for "RE: reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Body Content" as "Body Content" on send email modal
     Then I see "Sender:" as "Body Content" on send email modal
@@ -4286,6 +4298,11 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
+    Then I see text as "Subject: reply for to &cc external" on reply email modal
+    Then I see "reply for to &cc external" as "Body Content" on send email modal
 
   @169844 @jyoti
   Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -4355,6 +4372,11 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
+    Then I see text as "Subject: reply for to &cc external" on reply email modal
+    Then I see "reply for to &cc external" as "Body Content" on send email modal
 
   @169874 @jyoti
   Scenario: Send Email-To verify,User reply the email with attachment  from TO  & CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
