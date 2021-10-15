@@ -3692,3 +3692,91 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | newFieldsApi              | defaultFieldsApi                           |
       | Agency__r.testcurrency__c | Name1__c,BusinessRole__c,Responsibility__c |
+
+  @172134 @tejal
+  Scenario: Verify if User  added lookup field on parent  table  (Required to Save) & save the record then mandatory icon should display for lookup field saved data is display on PDF
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "ACC-APG-Detrick" on page "29" of "govgrants" pdf file
+
+  @172135 @tejal
+  Scenario: Verify if User  added lookup field on parent  table  (Required to Save) & save the record then mandatory icon should display for lookup field saved data is display on XLS
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I pause execution for "2" seconds
+    Then I see "Department of Transportation" in downloaded xls or csv file "govgrants"
+
+  @171817 @tejal
+  Scenario Outline: Verify if User  added lookup field  (Required to Save)  on child table  & save the record then mandatory icon should display for lookup field saved data is display on XLS
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    And I pause execution for "2" seconds
+    When I expand nested table containing column value "GT-ITSGT-001"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
+    And I pause execution for "2" seconds
+    Then I see "Department of Transportation" in downloaded xls or csv file "govgrants"
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,Account__c,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @171816 @tejal
+  Scenario Outline: Verify if User  added lookup field (Required to Save)  on child table   & save the record then mandatory icon should display for lookup field saved data is display on PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
+    And I pause execution for "2" seconds
+    When I expand nested table containing column value "GT-ITSGT-001"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
+    And I download the file
+    Then I see "25Th Air Force" on page "28" of "govgrants" pdf file
+    Examples:
+      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
+      | Name,Account__c,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
