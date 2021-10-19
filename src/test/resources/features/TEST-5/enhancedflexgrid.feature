@@ -1542,7 +1542,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
-    Then I see cell subtotal for obligated amount at child table of enhanced grid
+    Then I see field "TmpActiveGrantsGridresizable" inside page block
 
   @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -1594,8 +1594,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "10" into field "AmountDirectAssistance__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "GT-FIN.1-001"
-    Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "---program:-:enhancedGridTableId---"
+    Then I see edited value inside textarea is "$390,800.00" for column value "AD-FIN.1-BP01-00" of table "---program:-:enhancedGridTableId---"
 
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -1639,11 +1638,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
-    When I click on top right button "Edit All" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
-    When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I click on top right button "Edit All" in flex table with id "---program:-:tmpGrantorActiveAwardsGRIDtABLEiD1---"
+    When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGRIDtABLEiD1---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "GT-FIN.1-001"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -3391,7 +3389,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
-    And I click toggle button to select "Monitoring Schedule For All Draft Grants"
+    And I click toggle button to select "Monitoring Schedule For All  Draft Grants"
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Status | not equals to | Active |
