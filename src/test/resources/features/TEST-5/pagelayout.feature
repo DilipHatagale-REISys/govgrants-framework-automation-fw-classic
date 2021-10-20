@@ -9079,6 +9079,20 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
+  @171509 @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldObjectives__c"
+      | YES |
+
   @170159 @tejal
   Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
