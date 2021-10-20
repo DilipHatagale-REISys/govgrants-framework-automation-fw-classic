@@ -3785,7 +3785,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Program ID is required to save |
+      | Announcement Type is required to save. |
 
   @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
@@ -5424,7 +5424,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "3/10/2030" text enter in field "fieldPublisheddate__c"
+    Then I see "15/10/2021 05:13 PM" text enter in field "fieldPublisheddate__c"
 
   @132863  @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate date time field is displayed at enhanced flex edit page layout
@@ -5537,7 +5537,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
-    Then I see CK editor box color changed to "yellow"
+    Then I see CK editor box color changed to "green"
 
   @131798  @verifytextInsideCkEditorInputBoxIsDisplayedInAnExpectedFormat
   Scenario: validate text inside ck editor input box is displayed in bold format at edit page layout
@@ -8589,7 +8589,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "Unchecked" into field "CFDA_Data__c"
+    And I enter value "Unchecked" into field "fieldCFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
 
   @160862    @verifyHideFieldJsonFieldByHidingUrlFieldOnTheEnhancedFlexEditLayoutWithEqualToOpratorInViewMode @abhishekS
@@ -8804,7 +8804,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "User" into field "UserType__c"
+    And I select "User" from dropdown
     Then I see field "QueueId__c" is disabled
 
   @161568    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingJsonExpEqualToOpreatorThenFeildIsDoNotShowOnPageLayout   @abhishekS
@@ -8822,6 +8822,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
+    And I pause execution for "1000" seconds
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
     And I enter value "Grant" into field "ProgramType__c"

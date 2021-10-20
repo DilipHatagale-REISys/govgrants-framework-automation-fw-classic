@@ -195,6 +195,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title                       | Announcement Type         |
       | Sole Source/Formula grants verification  | Sole Source/Formula       |
+      |Sole Source/Formula announcement..        |Sole Source/Formula        |
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
@@ -229,6 +230,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
@@ -250,6 +252,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
@@ -661,6 +664,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "10" seconds
     Then I see "($)" at axis "highcharts-yaxis" for chart "Testing_Column"
     Then I see "(@)" at axis "highcharts-xaxis" for chart "Testing_Column"
 
@@ -798,6 +802,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on enhanced charts id "---program:-:AnnouncementStatusFundingID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
@@ -2333,6 +2338,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on specific enhanced charts id "---program:-:EnhancedLineID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see ",000" shown inside enhanced charts on hover

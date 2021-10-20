@@ -288,8 +288,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
@@ -315,8 +315,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "ashwini M" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-phone" with user "ashwini M" is displayed on send email modal
@@ -342,8 +342,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Au" into field "{testData:CcField}" on send email modal
@@ -544,8 +544,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     Then I see "Reply" opens in overLay window
 
   @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
@@ -711,19 +711,19 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: DND-Test Automation Record" inside table
+    When I perform quick search for "RE: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "RE: DND-Test Automation Record" inside table
     When I pause execution for "2" seconds
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     When I enter value "test body content" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    Then I see "Re: DND-Test Automation Record" value in flex table id "---program:-:communicationHistoryTableId---"
+    When I perform quick search for "Re: Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    Then I see "Re: Test data select file" value in flex table id "---program:-:communicationHistoryTableId---"
 
   @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
@@ -746,8 +746,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test data select file" inside table
     Then I do not see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
@@ -771,8 +771,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Test data select file" inside table
     Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
@@ -796,9 +796,9 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "DND-Test Automation Record" inside table
-    Then I softly see "4/9/2020 3:35 pm" on html page
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test data select file" inside table
+    Then I softly see "10/10/2021 6:42 pm" on html page
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EDT time zone
@@ -821,9 +821,9 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "DND-Test Automation Record" inside table
-    Then I softly see "04/09/2020 6:05 AM" on html page
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test data select file" inside table
+    Then I softly see "10/10/2021 9:12 AM" on html page
 
   @101042 @validateSentDateOfEmailInESTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EST time zone
@@ -846,9 +846,9 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "DND-Test Automation Record" inside table
-    Then I softly see "9/4/2020 5:05 AM" on html page
+    When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test data select file" inside table
+    Then I softly see "10/10/2021 8:12 AM" on html page
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal
@@ -1039,7 +1039,10 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "testAutomationFileDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "10" seconds
+    When I close modal by clicking the top right x button
     When I click on cross icon at "testAutomationFileDND.png" attachment inside send email modal
+    And I pause execution for "10" seconds
     Then I see attached file "testAutomationFileDND.png" is deleted successfully inside send email modal
 
   @102239 @validateThatFileUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInViewMode
@@ -6063,6 +6066,150 @@ Business Need: Send Email Component Scenarios
     Then I see "Name" as "Attachments" on send email modal
     Then I see "Action" as "Attachments" on send email modal
     Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+
+  @168932 @SendEmail-Toverify,UserreplytheemailwithattachmentfromTO&CCfieldExternalandclickonViewactiononthatreplymailthenaddedfieldsEmailBodystructureareseeninthemailbody @jyoti
+  Scenario: Send Email-To verify,User reply the email with attachment  from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
+    And I click on "View" icon for "RE: reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "Body Content" as "Body Content" on send email modal
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
+    Then I see text as "Subject: reply for to &cc external" on reply email modal
+    Then I see "reply for to &cc external" as "Body Content" on send email modal
+
+  @169843
+  Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label        | booleanValue | customMetaDataApiName    |
+      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    And I click modal button "Select Files"
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "5" seconds
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
+    Then I see "Body Content" as "Body Content" on send email modal
+    Then I see "Sender:" as "Body Content" on send email modal
+    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
+    Then I see "Sender Organization:" as "Body Content" on send email modal
+    Then I see the text containing :
+      | Department of Community Health |
+    Then I see "Internal Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
+    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+    Then I see text as "Sent:" on reply email modal
+    Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
+    Then I see text as "Subject: reply for to &cc external" on reply email modal
+    Then I see "reply for to &cc external" as "Body Content" on send email modal
+    Then I see "Name" as "Attachments" on send email modal
 
   @173457 @tejal
   Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
