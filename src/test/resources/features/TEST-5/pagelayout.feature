@@ -9079,6 +9079,156 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
+  @171511 @sprint19 @169581userstory @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User checked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
+      | Project Grants    |
+      | checkbox 1        |
+      | Project Grants123 |
+    Then I do not see below checkbox options for field "fieldTypesOfAssistance__c"
+      | Select All |
+
+  @171512 @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the checkbox when Hide Select All Checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9283                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldObjectives__c"
+      | YES |
+
+  @174383 @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User unchecked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
+      | Select All |
+
+  @171596 @jyoti
+  Scenario: To verify,alternate rendering is configured for text   field, the admin  user should be able to check the checkbox
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldProjectGoals__c"
+      | YES |
+
+  @171518 @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is unchecked
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:1  |
+      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantee State Program | ApiGeneratedId: 2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9283                   |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldObjectives__c"
+      | YES |
+    Then I select below checkbox options for field "fieldProjectGoals__c"
+      | YES |
+
+  @171517 @jyoti
+  Scenario:page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:1  |
+      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantee State Program | ApiGeneratedId: 2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9283                   |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldObjectives__c"
+      | YES |
+    Then I select below checkbox options for field "fieldProjectGoals__c"
+      | YES |
+
+  @171509 @jyoti
+  Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    Then I select below checkbox options for field "fieldObjectives__c"
+      | YES |
+
   @170159 @tejal
   Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
