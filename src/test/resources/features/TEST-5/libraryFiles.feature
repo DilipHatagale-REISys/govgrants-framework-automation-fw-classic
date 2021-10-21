@@ -790,8 +790,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
-    When I click on "Edit" icon for "FilePresentInsideFolderDND.xls" inside table
+    When I perform quick search for "Test Document 1" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Edit" icon for "Test Document 1" inside table
     When I click on "×" icon at "File Edit" modal under Library
     Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
@@ -802,8 +802,8 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
-    When I click on "Edit" icon for "FilePresentInsideFolderDND.xls" inside table
+    When I perform quick search for "Test Document 2" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Edit" icon for "Test Document 2" inside table
     When I click on "Cancel" button in send email modal
     Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
@@ -903,7 +903,7 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I perform quick search for "testAutomationFileDND.png" under files library
+    When I perform quick search for "TestDND3.png" under files library
     Then I softly see Label/Count as "Files - 1" is displayed
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
@@ -1614,10 +1614,9 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Secretary of Health"
-    When I click on expand icon at library/folder "AdminCreatedFolder1"
-    When I click on dropdown at library/folder/file "AdminCreatedFile.txt"
-    Then I see "Edit File" option is present at library/folder/file "AdminCreatedFile.txt"
+    When I click on expand icon at library/folder "Asset Library"
+    When I click on dropdown at library/folder/file "MultipleFileUploadCollabDND.png"
+    Then I see "Edit File" option is present at library/folder/file "MultipleFileUploadCollabDND.png"
 
   @81593 @validateThatAuthorCannotDeleteFileUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the Delete option at file uploaded by other users
