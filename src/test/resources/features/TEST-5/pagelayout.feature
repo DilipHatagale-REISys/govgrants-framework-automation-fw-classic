@@ -9244,3 +9244,135 @@ Business Need: Page Layout Component Scenarios
     When I click alert button "OK"
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Todays Date"
+
+  @172301 @tejal
+  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Planning phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Planning" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "GrantorPlanning"
+
+  @172303 @tejal
+  Scenario: When Admin users select  Announcement Phase from Filter's dropdown, then they should see only Announcement phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Announcements" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "FundingOpportunity"
+
+  @172304 @tejal
+  Scenario: When Admin users select Application Phase from Filter's dropdown, then they should see only Application phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "Application"
+
+  @172305 @tejal
+  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Grants phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" from dropdown inside page block
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "Grants"
+
+  @172306 @tejal
+  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Planning and Announcement phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Planning" from dropdown
+    And I select "Announcements" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "GrantorPlanning"
+    Then I softly see filter by phase "FundingOpportunity"
+
+  @172307 @tejal
+  Scenario: When Admin users select Planning and Application Phase from Filter's dropdown, then they should see only Planning and Application phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Planning" from dropdown
+    And I select "Applications" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "GrantorPlanning"
+    Then I softly see filter by phase "Application"
+
+  @172308 @tejal
+  Scenario: When Admin users select Planning and Grants Phase from Filter's dropdown, then they should see only Planning and Grants phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" from dropdown inside page block
+    And I select "Planning" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "GrantorPlanning"
+    Then I softly see filter by phase "Grants"
+
+  @172310 @tejal
+  Scenario: When Admin users select Announcement and Application Phase from Filter's dropdown, then they should see only Announcement and Application phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Applications" from dropdown
+    And I select "Announcements" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "Application"
+    Then I softly see filter by phase "FundingOpportunity"
+
+  @172312 @tejal
+  Scenario: Admin users select Announcement and Grants Phase from Filter's dropdown, then they should see only Announcement and Grants phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" from dropdown inside page block
+    And I select "Announcements" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "Grants"
+    Then I softly see filter by phase "FundingOpportunity"
+
+  @172313 @tejal
+  Scenario: When Admin users select Application and Grants Phase from Filter's dropdown, then they should see only Application and Grants phase's tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I click on By phase dropdown at dashboard
+    And I select "Grants" from dropdown inside page block
+    And I select "Applications" from dropdown
+    Then I softly see filter by phase "Phase Name"
+    Then I softly see filter by phase "contains"
+    Then I softly see filter by phase "Grants"
+    Then I softly see filter by phase "Application"

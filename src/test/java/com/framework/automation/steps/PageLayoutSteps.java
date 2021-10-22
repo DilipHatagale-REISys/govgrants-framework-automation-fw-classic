@@ -107,9 +107,9 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueInSendEmailModalFields(userName, iconName);
     }
 
-    @When("^I select \"([^\"]*)\" from dropdown at History Table$")
-    public void selectValueFromDropdownInHistory(String objectName) {
-        pageLayoutPage.selectValueFromDropdownInHistory(objectName);
+    @When("^I select \"([^\"]*)\" from dropdown inside page block$")
+    public void selectValueFromDropdown(String objectName) {
+        pageLayoutPage.selectValueFromDropdown(objectName);
     }
 
     @When("I click on button {string} on download & upload wizard modal")
@@ -789,5 +789,10 @@ public class PageLayoutSteps {
     public void iValidateThatFollowingReplyBackContentIsAlignedProperly(List<String> replyContent) {
         pageLayoutPage.assertThatFollowingReplyBackContentIsAlignedProperly(replyContent);
 
+    }
+
+    @Then("^I (softly see|softly do not see) filter by phase \"([^\"]*)\"$")
+    public void iSeeFilterByPhaseValue(String usage, String value) {
+        pageLayoutPage.assertFilterByPhaseValue(usage, value);
     }
 }

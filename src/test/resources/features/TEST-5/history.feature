@@ -16,7 +16,7 @@ Business Need: history Component Scenarios
     When I perform quick search for "Test Program specific for History"
     When I click on "View Program Details" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
-    When I select "Program" from dropdown at History Table
+    When I select "Program" from dropdown inside page block
     Then I softly see "PG-755-0205" value in flex table id "---program:-:historyTableId---"
 
   @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
@@ -376,7 +376,7 @@ Business Need: history Component Scenarios
     When I perform quick search for "Test Program specific for History"
     When I click on "View Program Details" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
-    When I select "Program" from dropdown at History Table
+    When I select "Program" from dropdown inside page block
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
     And I download the file
     Then I see "Entity Name" on page "1" of "govgrants" pdf file
