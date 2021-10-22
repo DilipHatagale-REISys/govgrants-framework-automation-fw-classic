@@ -444,7 +444,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on -By phase- drop-down at refine filter section in Dashboard
      */
     public void clickOnByPhaseDropdownAtDashboard() {
-        By ByPhaseButton = By.xpath("//button[contains(text(),'By Phase')]");
+        By ByPhaseButton = By.xpath("//button[contains(text(),'By Phase')]|//div[@id='toggleFlexTablePendingTasks']//select[@aria-label='DropDown Menu']");
         I.amPerforming().click().on(ByPhaseButton);
     }
 
@@ -962,8 +962,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * click on user/group from suggestion box appears by entering text in To/CC fields on send email modal window
      */
-    public void selectValueFromDropdownInHistory(String objectName) {
-        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'" + objectName + "')]");
+    public void selectValueFromDropdown(String objectName) {
+        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'" + objectName + "')]|//select[@aria-label='DropDown Menu']//option[contains(text(),'"+objectName+"')]");
         I.amPerforming().click().on(selectValueFromDropdown);
     }
 
@@ -1697,6 +1697,21 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertFieldOnModal(String value) {
         I.amPerforming().assertionsTo().assertThat(isFieldDisplayedOnModal(value)).isTrue();
+    }
+
+    /**
+     * return true if filter by phase is displayed
+     *
+     * @param usage
+     * @param value
+     * @author tejal.gadewar
+     */
+    public void assertFilterByPhaseValue(String usage, String value) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isFilterByPhaseValueDisplayed(value)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFilterByPhaseValueDisplayed(value)).isFalse();
+        }
     }
 
     /*********
@@ -3519,8 +3534,26 @@ public class PageLayoutPage extends GovGrantsManager {
 
     public void assertThatFollowingReplyBackContentIsAlignedProperly(List<String> replyContent) {
         String actualReplyContent = I.amPerforming().actionToGet().text(By.xpath("//html//body[@contenteditable='true']//p[3]"));
-        for(String individualReplyContent : replyContent) {
+        for (String individualReplyContent : replyContent) {
             I.amPerforming().assertionsTo().assertThat(actualReplyContent).contains(individualReplyContent);
         }
     }
+
+    /**
+     * return true if filter by phase is displayed
+     *
+     * @param value
+     * @author tejal.gadewar
+     */
+    private boolean isFilterByPhaseValueDisplayed(String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='btn btn-primary']//span[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }

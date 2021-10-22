@@ -2105,3 +2105,20 @@ Business Need: Flex Table Component Scenarios
 #    And I navigate to "Planning" tab
 #    When I perform sequence of actions on flex table for "120" minute
 #    Then I do not see "Bad Message 431" error
+
+  @176190 @tejal
+  Scenario Outline: Verify Record Type field  is display as a normal text on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see value "Internal Program" for title "Record Type ID" inside table "---program:-:programsTableId---"
+    Examples:
+      | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                     |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,RecordType.Name |

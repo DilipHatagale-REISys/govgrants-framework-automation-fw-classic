@@ -1708,7 +1708,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Test Program specific for History"
     When I click on "View Program Details" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
-    When I select "Program" from dropdown at History Table
+    When I select "Program" from dropdown inside page block
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
     And I download the file
