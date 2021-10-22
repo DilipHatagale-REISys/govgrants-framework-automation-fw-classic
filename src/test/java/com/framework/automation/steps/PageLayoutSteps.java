@@ -1,14 +1,19 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.PageLayoutPage;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PageLayoutSteps {
     PageLayoutPage pageLayoutPage;
@@ -778,5 +783,11 @@ public class PageLayoutSteps {
     @Then("I see text as {string} on reply email modal")
     public void iSeeAsOnModal(String value) {
         pageLayoutPage.assertFieldOnModal(value);
+    }
+
+    @Then("I validate that following reply back content is aligned properly:")
+    public void iValidateThatFollowingReplyBackContentIsAlignedProperly(List<String> replyContent) {
+        pageLayoutPage.assertThatFollowingReplyBackContentIsAlignedProperly(replyContent);
+
     }
 }
