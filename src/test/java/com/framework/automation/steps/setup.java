@@ -22,8 +22,9 @@ import java.io.IOException;
 public class setup {
     private TestSetupController userController;
     private static CSS report;
+    private ProjectWebServices projectWebServices;
 
-    public setup(TestSetupController userController) {
+    public setup(TestSetupController userController, ProjectWebServices projectWebServices) {
         this.userController = userController;
         if(report == null) {
             this.report = new CSS();

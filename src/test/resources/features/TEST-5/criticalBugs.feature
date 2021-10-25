@@ -395,7 +395,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities " flex table not displayed
 
-  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection  @bugLogged-167391 @wip
+  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection
   Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation-PM" user
@@ -1185,12 +1185,11 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "application1" inside table
     And I click on top right button "New" in flex table with id "AnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
     When I click modal button "Save"
-    When I click on "View" icon for "application1" inside table
+    And I click on "View" icon for "application1" inside flex table with id "---program:-:ApplicationTablIdForTestApplication---"
     Then I see the text :
       | Forms |
 
@@ -1428,7 +1427,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see subtotal value "0.00" for null record values
+    Then I see subtotal value "$0.00" for null record values
 
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -5154,6 +5153,7 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
+    And I pause execution for "1000" seconds
     When I click on "×" icon at "Add Files" modal under Library
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
@@ -6197,3 +6197,16 @@ Business Need: Logged Issues Scenarios
     And I enter value "hii @Framework Dev" in my feed section and share the post
     And I click on hyperlink containing value "@Framework Dev"
     Then I see new tab is opened
+
+  @167391 @jyoti  @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection56624
+    Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:PendingTaskSubmitforapprovalid}" in "---program:-:ProgramPendingTaskByMeId---" panel
+    When I click on "View" icon for "{Framework_recordUsed:PendingTaskSubmitforapprovalid}" inside table
+    Then I see the text containing :
+      | Description        |
+      | Attachment         |
+      | System Information |

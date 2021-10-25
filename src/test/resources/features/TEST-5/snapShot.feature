@@ -78,7 +78,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see table with header "Snapshot History" contains records "Date Taken"
 
   @70016    @verifyAutoSnapShotFileNameWithSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chages after making changes inside field SnapShot File Name at config page
