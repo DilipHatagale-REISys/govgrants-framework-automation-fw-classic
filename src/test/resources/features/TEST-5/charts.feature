@@ -192,6 +192,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I pause execution for "5" seconds
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
+    And I pause execution for "10" seconds
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title                       | Announcement Type         |
       | Sole Source/Formula grants verification  | Sole Source/Formula       |
@@ -1039,6 +1040,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on enhanced charts id "---program:-:Enhanced_FunnelID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
@@ -1060,6 +1062,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on enhanced charts id "---program:-:Enhanced_FunnelID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
@@ -2560,7 +2563,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedBarChartId---" on modal
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedBarModalID---" :
       | AwardCeiling |
-      | $200000      |
+      | $300000      |
 
   @71501    @validateDataTableHeaders-gHome-EnhancedLineChart
   Scenario:  Change chart data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
@@ -2574,6 +2577,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    And I pause execution for "10" seconds
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedLineChartId---" on modal
     Then I see "Test Automation Application" displayed in modal
 

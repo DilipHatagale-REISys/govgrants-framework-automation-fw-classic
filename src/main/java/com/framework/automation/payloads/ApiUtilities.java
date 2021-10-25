@@ -124,6 +124,10 @@ public class ApiUtilities {
                 filterClause = String.valueOf(SObjectAPIs.GNT__FlexTableConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
                         + "' and" + " " + fieldName + "=" + "'" + value + "'";
                 break;
+            case "FLEX TABLE DETAIL CONFIG":
+                filterClause = String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c) + ".Name=" + "'" + ComponentCoreFieldName
+                        + "' and" + " " + fieldName + "=" + "'" + value + "'";
+                break;
             case "FLEX TABLE ACTION":
                 filterClause = fieldName + "=" + "'" + value + "'" + " and" + " "
                         + String.valueOf(SObjectAPIs.GNT__DataTableConfig__r) + ".Name=" + "'" + ComponentCoreFieldName

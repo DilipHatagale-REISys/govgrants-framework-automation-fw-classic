@@ -7,7 +7,7 @@ public enum SObjectAPIs {
     GNT__AccordionSubHeader__r, GNT__AccordionContent__c, GNT__AccordionContent__r,
     GNT__PhaseConfig__r, GNT__CustomAppConfig__c, GNT__BodyTable__c, GNT__PhaseConfig__c,
     GNT__AccordionHeader__c, GNT__AccordionHeader__r, GNT__PhaseType__c, GNT__DataTableConfig__c, GNT__DataTableAction__c,
-    GNT__PageLayoutConfig__r, GNT__PageLayoutActionConfig__c, GNT__ApprovalDecisionActionConfig__c, GNT__FlexTableConfig__r, GNT__DataTableConfig__r,
+    GNT__PageLayoutConfig__r, GNT__PageLayoutActionConfig__c, GNT__ApprovalDecisionActionConfig__c, GNT__FlexTableConfig__r, GNT__DataTableDetailConfig__r, GNT__DataTableConfig__r,
     Program__c, GNT__ApprovalProcessStepCache__c, GNT__SobjectActionConfig__c, GNT__TaskAction__c, GNT__ProgressbarHeaderConfig__r, GNT__ChartConfig__c, GNT__ChartDetailConfig__c,
     GNT__ChartConfig__r, GNT__PageTemplate__c, GNT__PageBlockConfig__c, GNT__TabLayoutConfig__r, GNT__TabConfig__c, GNT__PageBlockDetailConfig__c, GNT__EmailTemplateConfig__c,
     GNT__DataTableDetailConfig__c, GNT__SObjectPhaseConfig__c, GNT__CustomApp__c, GNT__CalendarConfig__c, GNT__SobjectActionConfig__r, GNT__SObjectAutoSnapshot__c, GNT__CaptureForm__c, GNT__CaptureSection__c,

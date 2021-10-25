@@ -2053,6 +2053,41 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     Then I see entire page is refreshing
 
+  @174406 @sprint19 @jyoti
+  Scenario:Data Table - To verify,lookup  fields should not  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Roles" sub tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
+    Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
+
+  @174403 @jyoti
+  Scenario: To verify,lookup  fields should not be displayed as text in on edit  modal , when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Roles" sub tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
+    Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
+
+  @174394 @jyoti
+  Scenario: Data Table - To verify,lookup  fields should not  be displayed as text in on modal , when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
+    Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
+
   @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
   Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the view layout
     Given I have "default" configuration as below:

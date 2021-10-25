@@ -186,10 +186,10 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.2-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.2-001"
-    When I click on "Edit" icon for "AD-FIN.2--00" inside table
+    When I click on "Edit" icon for "---program:-:MoniototringScheduleActiveAwardTableId---" inside table
     When I enter value "Test Automation" into field "Agreement1__c"
-    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
-    When I perform quick search for "GT-FIN.2-001" in "---program:-:flexGridEnhancedID---" panel
+    When I click on top right button "Save" in flex table with id "---program:-:TmpGrantorActiveAwardsGridresizable---"
+    When I perform quick search for "GT-FIN.2-001" in "---program:-:TmpGrantorActiveAwardsGridresizable---" panel
     When I expand nested table containing column value "GT-FIN.2-001"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
@@ -395,7 +395,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities " flex table not displayed
 
-  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection  @bugLogged-167391 @wip
+  @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection
   Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation-PM" user
@@ -1185,12 +1185,11 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "application1" inside table
     And I click on top right button "New" in flex table with id "AnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
     When I click modal button "Save"
-    When I click on "View" icon for "application1" inside table
+    And I click on "View" icon for "application1" inside flex table with id "---program:-:ApplicationTablIdForTestApplication---"
     Then I see the text :
       | Forms |
 
@@ -1428,7 +1427,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see subtotal value "0.00" for null record values
+    Then I see subtotal value "$0.00" for null record values
 
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -2815,7 +2814,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "30" into field "PercentTest__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see over all total for "PercentTest__c" at enhanced grid
+    Then I see over all total for "TmpActiveGrantsGridresizable" at enhanced grid
 
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                             | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                  |
@@ -3554,7 +3553,6 @@ Business Need: Logged Issues Scenarios
     When I enter value "Created" into field "Status__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "Demo_Title"
     And I click toggle button to select "All Awards"
     When I perform quick search for "Award Created for default value testing" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see value "1" for multiple cells at column "Agreement1__c"
@@ -4550,7 +4548,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I pause execution for "5" seconds
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -4680,7 +4679,8 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I pause execution for "10" seconds
+    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
@@ -4727,7 +4727,6 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
@@ -5337,7 +5336,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "Comment" action at "Custom permission given user - record post DND" comment inside my feed
+    And I click on "Comment" action at "Hello @Automation PM" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I click on "Upload File from Library" tab at files library upload modal
@@ -5442,6 +5441,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "qateamrei@yopmail.com" into field "{testData:CcField}" on send email modal
     When I upload file "CollabFileTemp.pdf" into library
     When I click modal button "Send"
+    When I close modal by clicking the top right x button
     And I checkout to yopmail with mailid "qateamrei@yopmail.com"
     And I pause execution for "120" seconds
     And I refresh the page
@@ -5786,10 +5786,9 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     And I navigate to "Planning" tab
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I click on "Comment" action at "Hello @Automation PM" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "CollabIframe"
     When I click on "Cancel" button in send email modal
     Then I see "Add Files" modal window with id "collabModalDiv" is not displayed
 
@@ -5982,6 +5981,19 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     Then I see "Upload" button is disabled at modal under library
+
+  @167391 @jyoti  @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection56624
+  Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:PendingTaskSubmitforapprovalid}" in "---program:-:ProgramPendingTaskByMeId---" panel
+    When I click on "View" icon for "{Framework_recordUsed:PendingTaskSubmitforapprovalid}" inside table
+    Then I see the text containing :
+      | Description        |
+      | Attachment         |
+      | System Information |
 
   @160572    @verifyThatUserNotAbleToSeeClassificationRequiredOnSaveForExternalUsersOnCollabHomePhase  @abhishekS
   Scenario: validate that external user is not able to see Classiication reqiured on Save on collab home phase
