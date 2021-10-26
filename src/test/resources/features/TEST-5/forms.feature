@@ -224,8 +224,8 @@ Business Need: Forms Component Scenarios
       | id                 | Type  | Name                 |
       | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     And I update custom Dynamic Field setting changes:
-      | id                 | Type  | Name                 |
-      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+      | id                 | Type     | Name                 |
+      | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -233,9 +233,9 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
-    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
+    When I select value as "Select All" inside "fieldMulti_Picklist_Field__c" radio field
     When I click on "Save" in the page details
-    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Select All" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
   Scenario:validate that radio button displayed at multipicklist field inside form layout
@@ -287,12 +287,11 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I select below checkbox options for field "Multi-Picklist Field"
-      | Display 1 |
+      | Select All |
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
     And I pause execution for "7" seconds
-    And I refresh the page
-    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Select All" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage
   Scenario:validate that by click on form layout, it is re-directed to application detail page

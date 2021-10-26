@@ -1025,6 +1025,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I pause execution for "10" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
 
@@ -1045,6 +1046,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I pause execution for "10" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
 
@@ -1065,6 +1067,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I pause execution for "10" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see no new tab is opened
 
@@ -1115,6 +1118,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I pause execution for "10" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:tmpGrantorActiveAwardsGridTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
@@ -1542,6 +1546,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
+    And I pause execution for "10" seconds
     Then I see field "TmpActiveGrantsGridresizable" inside page block
 
   @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
@@ -2583,6 +2588,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
+    And I pause execution for "10" seconds
     Then I see border box is displayed at "TmpActiveGrantsGridFlexToggle" table
 
   @130539    @helpTextDisplayedAtBottomOfHelpIconAtEnhancedGridInPageViewMode
@@ -3393,7 +3399,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Status | not equals to | Active |
-    Then I see value "draft" for multiple cells at column "Status__c"
+    And I pause execution for "5" seconds
+    Then I see value "Draft" for multiple cells at column "Status__c"
 
   @168723 @VerifyIfCurruncyReferenceFeildIsAvailableOnTheTableItDispalyDollerSignForEditLayout
   Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the Edit layout

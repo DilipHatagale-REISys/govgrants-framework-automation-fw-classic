@@ -1446,6 +1446,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
+    And I pause execution for "10" seconds
     Then I do not see "Announcement Title" in program Outcomes flex table header with id "ActiveFundingOpportunities"
 
   @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
