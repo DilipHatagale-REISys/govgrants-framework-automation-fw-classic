@@ -2089,6 +2089,31 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
 
+  @173830 @jyoti
+  Scenario: Data Table Enhanced - To verify, Relationship fields of a record in Data table Enhanced should displayed as hyperlink when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    Then I see "Applicant Organization" inside flex table with id "---program:-:EnhancedDataTableId---"
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+
+  @173831 @jyoti
+  Scenario:Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+
   @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
   Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the view layout
     Given I have "default" configuration as below:

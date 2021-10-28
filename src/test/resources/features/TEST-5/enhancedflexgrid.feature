@@ -1025,7 +1025,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
 
@@ -1046,7 +1046,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
 
@@ -1067,7 +1067,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see no new tab is opened
 
@@ -1118,7 +1118,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:tmpGrantorActiveAwardsGridTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
@@ -1546,7 +1546,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     Then I see field "TmpActiveGrantsGridresizable" inside page block
 
   @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
@@ -2588,7 +2588,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     Then I see border box is displayed at "TmpActiveGrantsGridFlexToggle" table
 
   @130539    @helpTextDisplayedAtBottomOfHelpIconAtEnhancedGridInPageViewMode

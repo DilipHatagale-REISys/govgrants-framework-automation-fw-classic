@@ -7,6 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -794,5 +796,10 @@ public class PageLayoutSteps {
     @Then("^I (softly see|softly do not see) filter by phase \"([^\"]*)\"$")
     public void iSeeFilterByPhaseValue(String usage, String value) {
         pageLayoutPage.assertFilterByPhaseValue(usage, value);
+    }
+
+    @And("I click on button {string} under collab for comment box")
+    public void iClickOnInsideMyFeed(String buttonName) {
+        I.amPerforming().click().on(By.xpath("//div[@id='CollabPostBottomBar']//input[@value='"+buttonName+"']"));
     }
 }
