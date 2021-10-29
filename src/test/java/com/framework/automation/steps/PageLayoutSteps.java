@@ -800,6 +800,11 @@ public class PageLayoutSteps {
 
     @And("I click on button {string} under collab for comment box")
     public void iClickOnInsideMyFeed(String buttonName) {
-        I.amPerforming().click().on(By.xpath("//div[@id='CollabPostBottomBar']//input[@value='"+buttonName+"']"));
+        pageLayoutPage.ClickOnInsideMyFeed(buttonName);
+    }
+
+    @Then("I see lookup link inside page block")
+    public void iSeeLookupLinkInsidePageBlock() {
+        pageLayoutPage.assertLookupLinkInsidePageBlock();
     }
 }

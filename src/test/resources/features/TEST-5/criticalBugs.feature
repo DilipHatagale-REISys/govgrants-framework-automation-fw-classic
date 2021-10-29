@@ -6266,6 +6266,32 @@ Business Need: Logged Issues Scenarios
     And I enter value "Hello @Automation PM" in my feed section and share the post
     Then I do not see alert popup box
 
+  @176821 @jyoti
+  Scenario: Collab - To verify, on record level Collab if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I navigate to "Collab" sub tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    Then I do not see alert popup box
+
   @170135 @tejal
   Scenario: Verify On record level collab tab @ mention user then user page is getting opened in tab for External user
     Given I have "default" configuration as below:

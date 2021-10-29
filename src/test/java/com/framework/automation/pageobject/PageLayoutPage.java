@@ -1714,6 +1714,15 @@ public class PageLayoutPage extends GovGrantsManager {
         }
     }
 
+    public void assertLookupLinkInsidePageBlock() {
+        By lookUpString = By.xpath("//input[" + I.amPerforming().sanityOfXpathTo().equals("@title", "Owner Organization") + "]");
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(lookUpString)).isTrue();
+    }
+
+    public void ClickOnInsideMyFeed(String buttonName) {
+        I.amPerforming().click().on(By.xpath("//div[@id='CollabPostBottomBar']//input[@value='" + buttonName + "']"));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
