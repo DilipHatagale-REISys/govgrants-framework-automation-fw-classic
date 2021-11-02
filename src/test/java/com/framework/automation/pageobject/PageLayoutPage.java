@@ -1714,8 +1714,8 @@ public class PageLayoutPage extends GovGrantsManager {
         }
     }
 
-    public void assertLookupLinkInsidePageBlock() {
-        By lookUpString = By.xpath("//input[" + I.amPerforming().sanityOfXpathTo().equals("@title", "Owner Organization") + "]");
+    public void assertLookupLinkInsidePageBlock(String name) {
+        By lookUpString = By.xpath("//input[" + I.amPerforming().sanityOfXpathTo().equals("@title", name) + "]");
         I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(lookUpString)).isTrue();
     }
 

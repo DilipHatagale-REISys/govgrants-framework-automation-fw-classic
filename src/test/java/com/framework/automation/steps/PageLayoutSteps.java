@@ -803,8 +803,8 @@ public class PageLayoutSteps {
         pageLayoutPage.ClickOnInsideMyFeed(buttonName);
     }
 
-    @Then("I see lookup link inside page block")
-    public void iSeeLookupLinkInsidePageBlock() {
-        pageLayoutPage.assertLookupLinkInsidePageBlock();
+    @Then("I see lookup link {string} inside page block")
+    public void iSeeLookupLinkInsidePageBlock(String name) {
+        pageLayoutPage.assertLookupLinkInsidePageBlock(name);
     }
 }

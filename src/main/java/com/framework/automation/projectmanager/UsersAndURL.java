@@ -152,7 +152,7 @@ public class UsersAndURL implements UsersController {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "test1234");
         password.put("EXE", "test@1234567");
-        password.put("PM", "test@12345678");
+        password.put("PM", "test@123456789");
         password.put("FO", "test@123456");
         password.put("SPI", "test@12345678");
         password.put("PM1", "test@12345986");

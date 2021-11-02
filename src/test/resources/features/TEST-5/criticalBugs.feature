@@ -6315,3 +6315,19 @@ Business Need: Logged Issues Scenarios
     And I enter value "hii @Framework Dev" in my feed section and share the post
     And I click on hyperlink containing value "@Framework Dev"
     Then I see new tab is opened
+
+  @176819 @jyoti
+  Scenario: Collab - To verify, on Collab phase if the user clicks on 'Share' button without entering any text in the Comment/Post-box, the alert message should display "A comment is required"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I click on button "Share" under collab for comment box
+    Then I see alert message "A comment is required"
+
+  @176820 @Jyoti
+  Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collab" tab
+    And I enter value "hii @Framework Dev" in my feed section and share the post
+    Then I do not see alert popup box

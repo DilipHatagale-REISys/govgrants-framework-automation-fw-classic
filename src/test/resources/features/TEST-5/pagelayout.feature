@@ -9388,7 +9388,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link inside page block
+    Then I see lookup link "Owner Organization" inside page block
 
   @172215 @jyoti
   Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
@@ -9408,9 +9408,9 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link inside page block
+    Then I see lookup link "Owner Organization" inside page block
 
-  @172178 @jyoti @needtorun
+  @172178 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9428,18 +9428,91 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link inside page block
+    Then I see lookup link "Owner Organization" inside page block
 
-    @172212 @jyoti
-    Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "Creation" values from "Program_Field_Values.xlsx"
-      And I click on "Save" in the page details
-      And I click on "Edit" in the page details
-      And I navigate to "Overview" sub tab
-      And I hover mouse on text with id "Account__c"
-      Then I see lookup link inside page block
+  @172212 @jyoti
+  Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172179 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172154 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the object level  side
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Owner Organization | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Organization" inside page block
+
+  @172213 @jyoti
+  Scenario:Page layout-To verify User fill the lookup field ( Required for save ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172155 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon on (Required Behavior-required to save)  modal   then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
+    And I hover mouse on text with id "Program__c"
+    Then I see lookup link " Program ID" inside page block
