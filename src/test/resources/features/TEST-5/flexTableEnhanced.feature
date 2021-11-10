@@ -466,6 +466,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    And I pause execution for "7" seconds
     When I hover mouse on lookup link "SYSTEM" at table
     And I pause execution for "4" seconds
     Then I softly see "title" as "SYSTEM" inside mini page layout

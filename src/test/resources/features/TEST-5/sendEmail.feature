@@ -5378,7 +5378,6 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "Links to Additional Attachments " as "Body Content" on send email modal
-    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal

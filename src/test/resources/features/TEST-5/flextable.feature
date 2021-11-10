@@ -2183,3 +2183,57 @@ Business Need: Flex Table Component Scenarios
     Examples:
       | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                     |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,RecordType.Name |
+
+  @180701 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180704 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Program"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180719 @jyoti
+  Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180705 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Announcement"
+    When I perform quick search inside global search "AN-343-028"
+    Then I see value "10/20/2021 2:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+
+  @180717 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Application"
+    When I perform quick search inside global search "AP-755-214"
+    Then I see value "11/27/2018 6:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+
+  @181411 @jyoti
+  Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Active Grants"
+    When I perform quick search for "Sub Awards"
+    Then I see value "Sub Awards" for title "Spend Type" inside table "flexTableDivId"
