@@ -120,7 +120,7 @@ Business Need: Phase Config Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
     And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
-    When I click on "{SavedValue:SaveID}" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     Then I see "Planning" tab is highlighted for particular program
 
   @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @smoke

@@ -5515,17 +5515,17 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @160817 @validateThatSPIUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI

@@ -1535,10 +1535,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     public Boolean isBorderBoxDisplayedAtEnhancedGrid(String tableId) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getBorderBoxCSS = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//table[contains(@class,'gridTable')]"));
-        System.out.println(getBorderBoxCSS.getCssValue("border-collapse"));
+        WebElement getBorderBoxCSS = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='TmpActiveGrantsGridFlexToggle']//table[contains(@class,'gridTable')]//preceding-sibling::div[@class='tableScrollArrow leftTableScroll']"));
+        I.amPerforming().scroll().toMoveToElement(getBorderBoxCSS);
+        I.amPerforming().actionToGet().attribute(getBorderBoxCSS,"style");
         try {
-            if (getBorderBoxCSS.getCssValue("border-collapse").equals("separate")) {
+            if (I.amPerforming().actionToGet().attribute(getBorderBoxCSS,"style").contains("block")) {
                 flag = true;
             }
         } catch (Exception e) {

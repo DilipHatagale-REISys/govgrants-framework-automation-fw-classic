@@ -1446,6 +1446,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
+    And I pause execution for "10" seconds
     Then I do not see "Announcement Title" in program Outcomes flex table header with id "ActiveFundingOpportunities"
 
   @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
@@ -2088,6 +2089,31 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
 
+  @173830 @jyoti
+  Scenario: Data Table Enhanced - To verify, Relationship fields of a record in Data table Enhanced should displayed as hyperlink when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    Then I see "Applicant Organization" inside flex table with id "---program:-:EnhancedDataTableId---"
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+
+  @173831 @jyoti
+  Scenario:Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+
   @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
   Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the view layout
     Given I have "default" configuration as below:
@@ -2157,3 +2183,57 @@ Business Need: Flex Table Component Scenarios
     Examples:
       | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                     |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,RecordType.Name |
+
+  @180701 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180704 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Program"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180719 @jyoti
+  Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+
+  @180705 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Announcement"
+    When I perform quick search inside global search "AN-343-028"
+    Then I see value "10/20/2021 2:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+
+  @180717 @jyoti
+  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Application"
+    When I perform quick search inside global search "AP-755-214"
+    Then I see value "11/27/2018 6:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+
+  @181411 @jyoti
+  Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Active Grants"
+    When I perform quick search for "Sub Awards"
+    Then I see value "Sub Awards" for title "Spend Type" inside table "flexTableDivId"

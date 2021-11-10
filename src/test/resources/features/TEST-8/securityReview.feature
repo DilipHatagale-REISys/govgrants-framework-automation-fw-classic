@@ -2090,7 +2090,6 @@ Business Need: security review Scenarios
 
   @110500  @VerifyDirectGrantCreationAndSubAwardActivation
   Scenario Outline: Verify grant creation and grant, sub-award activation
-    Given I delete the record "Automation Direct Grant" from the object "Award__c" with field "GrantAwardName__c"
     Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab

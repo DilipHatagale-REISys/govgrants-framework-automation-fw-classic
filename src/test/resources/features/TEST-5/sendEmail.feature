@@ -1244,7 +1244,7 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Email Created To Check Attached File Link" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "Email Created To Check Attached File Link	" inside table
     Then I see hyperlink at value "ProgramRecordDoNotDelete.png" inside "sendEmail" modal
 
@@ -2037,10 +2037,9 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "4" seconds
     When I click on "Send" button in send email modal
-    And I pause execution for "3" seconds
+    And I pause execution for "10" seconds
     When I close modal by clicking the top right x button
-    And I pause execution for "3" seconds
-    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
@@ -5379,7 +5378,6 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "Links to Additional Attachments " as "Body Content" on send email modal
-    Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
@@ -5501,6 +5499,7 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "actionsAtAttachment.png" in send email modal
     When I click on "Send" button in send email modal
     And I pause execution for "2" seconds
+    And I close modal by clicking the top right x button
     When I click on "View" icon for "RE: reply TO& CC internal" inside table
     Then I see "Sender:" as "Body Content" on send email modal
     Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal

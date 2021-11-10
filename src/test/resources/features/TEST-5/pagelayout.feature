@@ -2338,7 +2338,6 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
@@ -2505,7 +2504,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "www.google.com" into field "URL__c"
+    And I enter value "www.google.com" into field "fieldURL__c"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I softly see link "www.google.com" inside Page block
@@ -2525,7 +2524,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "http://www.example.com:8800/" into field "URL__c"
+    And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
@@ -2545,7 +2544,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "URL__c"
+    And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "fieldURL__c"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I softly see link "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" inside Page block
@@ -3782,10 +3781,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I click on top right button "Create" in flex table with id "flexTableDivId"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Announcement Type is required to save. |
+      | Required to Save |
 
   @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
@@ -5334,7 +5333,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see the following page detail buttons :
       | Cancel |
       | Save   |
@@ -5352,7 +5351,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Description" field is rendered as rich text area
 
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout
@@ -5368,7 +5367,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Christine GGPTEST5" at table
@@ -5388,7 +5387,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "40,000" text enter in field "fieldFundedAmount__c"
 
@@ -5405,7 +5404,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see expected table with id "toggleFlexTableProgramContacts"
 
@@ -5422,7 +5421,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "15/10/2021 05:13 PM" text enter in field "fieldPublisheddate__c"
 
@@ -5456,7 +5455,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<helpText>" shown as help text
 
@@ -5477,7 +5476,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
     Then I see value "Christine GGPTEST5" for title "Full Name" inside table "toggleFlexTableProgramContacts"
@@ -5495,7 +5494,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @131795  @verifyCharacterCountDisplayedInsideCKEditorBoxAtRichTextAreaFieldInsideEditPageLayout
@@ -5837,7 +5836,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Grant" into field "ProgramType__c"
     When I click dropdown field "fieldProgramSubType__c"
@@ -8208,7 +8207,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "http://www.example.com:8800/" into field "URL__c"
+    And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
       | URL : Please enter valid URL value. |
@@ -8587,7 +8586,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
-    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Unchecked" into field "fieldCFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
@@ -8616,7 +8615,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
-    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Checked" into field "CFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
@@ -8645,7 +8644,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
-    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Checked" into field "CFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
@@ -8674,7 +8673,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
-    When I click on "Edit1" icon for "{SavedValue:EGMSID}" inside table
+    When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Unchecked" into field "CFDA_Data__c"
     Then I see "URL" is not displayed inside page block detail
@@ -9376,3 +9375,144 @@ Business Need: Page Layout Component Scenarios
     Then I softly see filter by phase "contains"
     Then I softly see filter by phase "Grants"
     Then I softly see filter by phase "Application"
+
+  @172151 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172215 @jyoti
+  Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |         --None--  | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172178 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |         --None--  | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172212 @jyoti
+  Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172179 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172154 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the object level  side
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Owner Organization | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Organization" inside page block
+
+  @172213 @jyoti
+  Scenario:Page layout-To verify User fill the lookup field ( Required for save ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I navigate to "Overview" sub tab
+    And I hover mouse on text with id "Account__c"
+    Then I see lookup link "Owner Organization" inside page block
+
+  @172155 @jyoti
+  Scenario: Page layout-To verify User hover over the lookup field icon on (Required Behavior-required to save)  modal   then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
+    And I hover mouse on text with id "Program__c"
+    Then I see lookup link " Program ID" inside page block
