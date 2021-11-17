@@ -466,7 +466,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
-    And I pause execution for "7" seconds
+    And I pause execution for "10" seconds
     When I hover mouse on lookup link "SYSTEM" at table
     And I pause execution for "4" seconds
     Then I softly see "title" as "SYSTEM" inside mini page layout
@@ -508,10 +508,11 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I clear the value from field "cke_1_contents"
     When I enter value "test temp data" into field "cke_1_contents"
+    And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-HRGr-001" in "---program:-:EnhancedDataTableId---" panel
     When I click on "Edit" icon for "GT-HRGr-001" inside table
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see "test temp data" text enter in field "cke_1_contents"
+    Then I see field "Description" as "test temp data"

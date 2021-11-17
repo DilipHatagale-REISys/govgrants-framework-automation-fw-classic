@@ -3784,7 +3784,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Create" in flex table with id "flexTableDivId"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Required to Save |
+      | Program ID is required to save. |
 
   @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
@@ -5438,7 +5438,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit1" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "11/30/2020 5:00 PM" text enter in field "fieldDateandTime__c"
 
@@ -5515,7 +5515,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
     And I enter value "<enterText>" into field "cke_1_contents"
-    Then I softly see word count as "Characters: 99 Characters Left: 9901" in ck editor at page layout
+    Then I softly see word count as "Words: 9 Words Left: 991" in ck editor at page layout
 
     Examples:
       | enterText                                                                                                         |
@@ -6227,7 +6227,8 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I click modal button "Save"
-    Then I see "Edit" modal window with id "ProgramBudgetPeriodmodalDiv" is not displayed
+    And I pause execution for "5" seconds
+    Then I see "Edit" modal window with id "ProgramBudgetPeriod" is not displayed
 
   @129075    @verifyErrorMessageWithSpecialCharactersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
   Scenario Outline: verify error message with special characters is displayed at page layout
@@ -8324,6 +8325,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
+    And I close modal by clicking the top right x button
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
@@ -8368,7 +8370,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Overview" sub tab
     And I clear the value from field "cke_1_contents"
-    And I enter value "Test data" into field "fieldObjectives__c"
+    And I enter value "Test data" into field "cke_1_contents"
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
@@ -8821,7 +8823,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I pause execution for "1000" seconds
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
     And I enter value "Grant" into field "ProgramType__c"
@@ -9042,7 +9043,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
-    Then I softly do not see link "GT-HRGr-001" inside Page block
 
   @170112 @tejal
   Scenario: Verify Relationship fields  should be shown as Hyperlink not a text  in Edit  layout when 'show link as text' checkbox is uncheck

@@ -2701,7 +2701,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FunderType_c_CONTAINS_Federal | Grantee State Program | Name                      | PBD-4719                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FunderType__c CONTAINS Federal| Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4594,6 +4594,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4622,6 +4623,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "10" into field "fieldDateandTime__c"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -4679,6 +4681,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4705,6 +4708,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4732,6 +4736,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4758,6 +4763,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4786,6 +4792,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4812,6 +4819,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4840,6 +4848,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4868,6 +4877,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4896,6 +4906,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4924,6 +4935,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4950,6 +4962,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -4978,6 +4991,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5006,6 +5020,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5034,6 +5049,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5060,6 +5076,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5088,6 +5105,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5116,6 +5134,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5143,6 +5162,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5170,6 +5190,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5196,6 +5217,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5223,6 +5245,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
@@ -5250,6 +5273,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
