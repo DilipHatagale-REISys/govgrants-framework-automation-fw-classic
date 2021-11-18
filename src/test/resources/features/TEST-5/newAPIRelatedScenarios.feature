@@ -299,6 +299,7 @@ Business Need: New API related scenarios temporary
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I pause execution for "10" seconds
     When I hovering mouse on help text icon inside "Test's September Program"
     When I pause execution for "120" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab

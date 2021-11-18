@@ -1089,6 +1089,7 @@ Business Need: Flex Table Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                                                              | name                           |
       | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
+    And I pause execution for "5" seconds
     When I navigate to "Planning" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2098,7 +2099,6 @@ Business Need: Flex Table Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
-    Then I see "Applicant Organization" inside flex table with id "---program:-:EnhancedDataTableId---"
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
     Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
 

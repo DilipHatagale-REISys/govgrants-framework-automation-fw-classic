@@ -241,9 +241,9 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "www"
+    And I pause execution for "10" seconds
     When I perform quick search for "FPG-HHS-NIH11-0001"
-    Then I see value "Google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
-
+    Then I softly see value "Google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
     Examples:
       | DNDFilterClause1                                                               |
       | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"!="} |
@@ -261,7 +261,6 @@ Business Need: dnd Component Scenarios
     When I click on global search and select "Programs"
     When I perform quick search inside global search ".com"
     Then I softly see value "Google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
-    Then I softly see value "www.google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     |
@@ -798,8 +797,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "URL"
-    Then I see value "FPG-USDOJ-OJP-0005" for title "EGMS ID" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search ".com"
+    Then I softly see value "Google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                        | dndCriteria                              |

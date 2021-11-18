@@ -44,6 +44,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
+    And I pause execution for "5" seconds
     When I click on "Edit" icon for "Receipt" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
@@ -162,6 +163,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
+    And I pause execution for "2" seconds
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "GT-test-003" inside table
     When I enter value "Test Automation" into field "AddressProgramContact__c"
@@ -1445,7 +1447,7 @@ Business Need: Logged Issues Scenarios
     When I click alert button "OK"
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see take snap shot getting saved with "Todays Date"
+    Then I see take snap shot getting saved with "Date Taken"
 
   @59357    @historySnapShotActionEnableFieldAtPageLayoutAction
   Scenario: validate snapshot should work properly for submit for approval action
@@ -3192,7 +3194,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "0" into field "ProjectPeriodEndDate__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-test-003" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "GT-test-003"
+    And I pause execution for "5" seconds
     When I perform quick search for "AD-test--04" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see field value is current date for "ProjectPeriodEndDate__c" at enhanced grid
 
@@ -5729,6 +5731,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "testAutomationFileDND.png" inside table
     And I switch to iframe with id "PlanningFilesiframeContentId"
+    And I close modal by clicking the top right x button
     When I click on "Save" button in send email modal
     When I pause execution for "3" seconds
     Then I see "File Edit" modal is closed
@@ -6142,6 +6145,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Collab" tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     And I click on hyperlink containing value "@Automation PM"
+    And I pause execution for "3" seconds
     Then I see new tab is opened
 
   @170132 @tejal
