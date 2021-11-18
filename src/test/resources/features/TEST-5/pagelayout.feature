@@ -9516,3 +9516,34 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
     And I hover mouse on text with id "Program__c"
     Then I see lookup link " Program ID" inside page block
+
+  @172177 @sprint19
+  Scenario: Page layout-To verify User hover over the lookup field icon on modal   then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
+    And I hover mouse on text with id "Program__c"
+    Then I see lookup link " Program ID" inside page block
+
+  @172175 @sprint19
+  Scenario: Page layout-To verify User hover over the lookup field icon (Required Behavior-required to save) on modal   then it should display the Field label override name from the GovGrants side.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
+    And I hover mouse on text with id "Program__c"
+    Then I see lookup link " Program ID" inside page block
+
+  @181120 @Toverifyifanyfieldisrequiredtosaveanduserclickonsavebuttonthenitshowsthevalidationmessageonmodal,notredirectingtotheeditlayout
+  Scenario: To verify, if any field is required to save and user click on save button then it shows the validation message on modal, not redirecting to the edit layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "flexTableDivId"
+    And I click modal button "Continue"
+    Then I see the following message in the page details contains:
+      | Program ID is required to save. |

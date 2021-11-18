@@ -1083,3 +1083,39 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
     Then I softly see dropdown with selected value as "General Application Budget Form" at form layout
+
+  @174502 @OldForms-ToverifythatinFormEditmode,theDynamicFormTitlesshouldnotbeconfigured @sprint20
+  Scenario:  Old Forms - To verify that in Form Edit mode, the Dynamic Form Titles should not be configured
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I see the header is "Application Cover Page 12" in the page details
+
+  @174499 @OldForms-ToverifythatinViewmodeofForm,theDynamicFormTitlesshouldnotbeconfigurable @sprint20
+  Scenario: Old Forms - To verify that in View mode of Form, the Dynamic Form Titles should not be configurable
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I see the header is "Application Cover Page 12" in the page details
+
+  @174501 @OldForms-ToverifythatinPreviewmodeofForm,theDynamicFormTitlesshouldbeconfigured
+    Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I see the header is "test old form - Preview" in the page details
