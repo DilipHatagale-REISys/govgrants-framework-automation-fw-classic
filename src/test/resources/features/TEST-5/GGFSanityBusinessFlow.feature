@@ -664,10 +664,11 @@ Business Need: Sanity check for all Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
     When I click on "View Program Details" icon for "AutomationSheetJSUploadForStatusAsBlank" inside table
+    And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I softly see value "PG-343-164" for title "ID" inside table "---program:-:programTableDivId---"
+    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
