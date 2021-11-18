@@ -2669,7 +2669,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Date Required in Section Section 1 question not answered |
+      | Written Section 2 in Section Section 2 question not answered|
 
   @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode

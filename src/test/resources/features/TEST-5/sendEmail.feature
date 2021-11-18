@@ -711,6 +711,17 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "DND-Test Automation Record" into field "Subject" on send email modal
+    When I enter value "DND-Test Automation Record" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "DND-Test Automation Record" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
     When I perform quick search for "RE: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "RE: DND-Test Automation Record" inside table
     When I pause execution for "2" seconds
@@ -1457,7 +1468,6 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Mail Body" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    And I refresh the page
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "Test Automation Email1" inside table
@@ -5377,7 +5387,6 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
-    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
@@ -5559,7 +5568,7 @@ Business Need: Send Email Component Scenarios
     When I click on "Reply" icon for "reply TO& CC internal" inside table
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    And I pause execution for "2" seconds
+    And I pause execution for "10" seconds
     When I click on "View" icon for "RE: reply TO& CC internal" inside table
     Then I see "Sender:" as "Body Content" on send email modal
     Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
