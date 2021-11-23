@@ -2237,3 +2237,232 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Active Grants"
     When I perform quick search for "Sub Awards"
     Then I see value "Sub Awards" for title "Spend Type" inside table "flexTableDivId"
+
+  @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout
+  Scenario: ME-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Budget" sub tab
+    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176532 @ME-grid-Toverify,whenuserdouble-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout
+  Scenario: ME-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Budget" sub tab
+    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    And I pause execution for "3" seconds
+    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176531 @sprint20
+  Scenario: ME-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I navigate to "Budget" sub tab
+    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176527 @sprint20
+  Scenario: E-grid - To verify, when user more than single  -click on top level action button on child table  then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176519 @jyoti @sprint20
+  Scenario:E-grid - To verify, when user single-click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176522 @sprint20
+  Scenario: E-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176526 @sprint20
+  Scenario: E-grid - To verify, when user  double -click on top level action button on child table  then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    And I pause execution for "5" seconds
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    And I pause execution for "4" seconds
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176524 @sprint20
+  Scenario: E-grid - To verify, when user  single -click on top level action button on child table  then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @176520 @sprint20
+  Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
+      | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    And I pause execution for "5" seconds
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    And I pause execution for "4" seconds
+    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+    Then I see confirmation box with body "Automation" is displayed

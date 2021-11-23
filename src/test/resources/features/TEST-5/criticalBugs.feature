@@ -48,7 +48,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "Receipt" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
-    Then I see "Test Automation" has been added in "Attachments" flex table
+    Then I see "Test Automation" has been added in "Description" flex table
 
   @54847    @validateAttachmentDeleteActionWorkingOrNot
   Scenario: validate Attachment Delete action working correctly while deleting attachment records of programs-planning
