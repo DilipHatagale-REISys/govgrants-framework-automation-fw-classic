@@ -3730,3 +3730,122 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @181124 @sprint20
+  Scenario Outline: To verify, Hover over multiselect picklist in view mode then Value should be shown  on child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
+    And I navigate to "Financials" tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
+    Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @181122 @sprint20
+  Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown  on child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
+    And I pause execution for "10" seconds
+    And I navigate to "Financials" tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
+    Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @181115 @sprint20
+  Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown on child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-501-0034" in "---program:-:programsTableId---" panel
+    When I click on "View Program Details" icon for "PG-501-0034" inside table
+    And I navigate to "Financials" tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
+    Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @181112 @sprint20
+  Scenario Outline: E-grid - To verify, Hover over multiselect picklist in view mode then Value should be shown
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
+    And I navigate to "Financials" tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
+    Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+    @181116 @sprint20
+    Scenario Outline:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
+      Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
+    And I navigate to "Financials" tab
+    When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
+    And I click on "Edit" icon for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" inside flex table with id "---program:-:flexGridEnhancedID---"
+    Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
