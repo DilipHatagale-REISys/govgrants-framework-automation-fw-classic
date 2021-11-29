@@ -20,7 +20,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
 
-  @34668    @validateAllDataHeaders-gPlannging
+  @34668    @validateAllDataHeaders-gPlannging @training
   Scenario: Changing chart menu button config to "Funding Opportunity Automation" for 'AnnouncementByAdminBureauUnit' chart  in configuratin and validating inside planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue    | filterId         |
