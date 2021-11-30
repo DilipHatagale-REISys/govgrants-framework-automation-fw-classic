@@ -6723,117 +6723,117 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-    @183895 @sprint23
-      Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-        | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-      Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "Creation" values from "Program_Field_Values.xlsx"
-      And I click on "Save" in the page details
-      When I navigate to "Attachments" sub tab
-      When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-      When I upload file "TestAutomationFile.csv" into library with sharing
-      When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-      When I select Classification as "Medical Reports" at upload file modal
-      When I click on "Upload" button in send email modal
-      When I pause execution for "5" seconds
-      And I refresh the page
-      When I navigate to "Collab" sub tab
-      When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-      When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-      When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-      When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-      When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
-      When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
-      When I enter value "test" into field "Body Content" on send email modal
-      And I pause execution for "5" seconds
-      When I upload attachment "TestAutomationFile.csv" in send email modal
-      When I upload attachment "TestAutomationFile.csv" in send email modal
-      When I click on "Send" button in send email modal
-      When I close modal by clicking the top right x button
-      Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+  @183895 @sprint23
+  Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    And I pause execution for "5" seconds
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-      @183842 @sprint23
-     Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO (internal &External) field that attachment is dispalyed in the column on the messages page block
-        Given I have "default" configuration as below:
-          | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-          | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-        Given I setup test configuration as below:
-          | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-          | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-        Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-        When I login as "Automation" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-        When I enter "Creation" values from "Program_Field_Values.xlsx"
-        And I click on "Save" in the page details
-        When I navigate to "Attachments" sub tab
-        When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-        When I upload file "TestAutomationFile.csv" into library with sharing
-        When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-        When I select Classification as "Medical Reports" at upload file modal
-        When I click on "Upload" button in send email modal
-        When I pause execution for "5" seconds
-        And I refresh the page
-        When I navigate to "Collab" sub tab
-        When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-        When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-        When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-        When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-        When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-        When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
-        When I enter value "test" into field "Body Content" on send email modal
-        And I pause execution for "5" seconds
-        When I upload attachment "TestAutomationFile.csv" in send email modal
-        When I upload attachment "TestAutomationFile.csv" in send email modal
-        When I click on "Send" button in send email modal
-        When I close modal by clicking the top right x button
-        Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+  @183842 @sprint23
+  Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO (internal &External) field that attachment is dispalyed in the column on the messages page block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    And I pause execution for "5" seconds
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-        @183830 @sprint23
-          Scenario: Send Email -To verify , When user reply an Email with an multiple Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-          Given I have "default" configuration as below:
-            | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-            | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-          Given I setup test configuration as below:
-            | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-            | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-          Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-          When I login as "Automation" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Planning" tab
-          And I click toggle button to select "Draft Programs"
-          And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-          When I enter "Creation" values from "Program_Field_Values.xlsx"
-          And I click on "Save" in the page details
-          When I navigate to "Attachments" sub tab
-          When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-          When I upload file "TestAutomationFile.csv" into library with sharing
-          When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-          When I select Classification as "Medical Reports" at upload file modal
-          When I click on "Upload" button in send email modal
-          When I pause execution for "5" seconds
-          And I refresh the page
-          When I navigate to "Collab" sub tab
-          When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-          When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-          When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-          When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
-          When I enter value "test" into field "Body Content" on send email modal
-          And I pause execution for "5" seconds
-          When I upload attachment "TestAutomationFile.csv" in send email modal
-          When I upload attachment "TestAutomationFile.csv" in send email modal
-          When I click on "Send" button in send email modal
-          When I close modal by clicking the top right x button
-          Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+  @183830 @sprint23
+  Scenario: Send Email -To verify , When user reply an Email with an multiple Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    And I pause execution for "5" seconds
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
