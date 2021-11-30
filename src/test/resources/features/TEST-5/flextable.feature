@@ -545,6 +545,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action     | Location                   | Top           | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action     | Header Action Display Type | Button        | ProgramRolesAndResponsibilities | Name                      | Edit                       |
     When I login as "Automation" user
+    And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -563,6 +564,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location  | Row           | ProgramRolesAndResponsibilities | Name                      | New                        |
     When I login as "Automation" user
+    And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1448,7 +1450,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     And I pause execution for "10" seconds
-    Then I do not see "Announcement Title" in program Outcomes flex table header with id "ActiveFundingOpportunities"
+    When I perform quick search for "{Framework_recordUsed:HideExpressionId}" in "ActiveFundingOpportunities" panel
+    Then I softly see value "*****" for title "Announcement Title" inside table "---program:-:programTableDivId---"
 
   @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
   Scenario: validate hide columns field at flex table using equals operator on multiple field
@@ -1666,7 +1669,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
-    Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Test's September Program" value in flex table id "---program:-:programsTableId---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
@@ -2297,7 +2300,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table

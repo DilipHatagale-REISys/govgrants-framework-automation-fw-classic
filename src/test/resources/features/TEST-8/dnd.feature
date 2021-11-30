@@ -14,9 +14,9 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | (NOT DND_Text2__c Like '%{!searchVal}%') | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Text Text"
+    When I perform quick search inside global search "Test"
     And I pause execution for "3" seconds
-    Then I see value "Text Text" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+    Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               |
@@ -240,9 +240,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | (NOT DND_URL__c Like '%{!searchVal}%') | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "www"
+    When I perform quick search inside global search ".com"
     And I pause execution for "10" seconds
-    When I perform quick search for "FPG-HHS-NIH11-0001"
     Then I softly see value "Google.com" for title "DND_URL" inside table "---program:-:programSearchFlexTableID---"
     Examples:
       | DNDFilterClause1                                                               |
@@ -444,7 +443,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
-    Then I see value "Text Text" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+    Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               | dndCriteria                                                                                 |
@@ -703,8 +702,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search ".abc"
-    Then I softly see value "abc@abc.com" for title "DND_Email" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search "test"
+    Then I softly see value "test48@example.com" for title "DND_Email" inside table "---program:-:programSearchFlexTableID---"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "IND"
     Then I softly do not see value "IND" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
@@ -1168,8 +1167,9 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Text"
-    Then I see value "Text Text" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search "Test"
+    And I pause execution for "3" seconds
+    Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               | dndCriteria                                      |
