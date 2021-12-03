@@ -593,30 +593,28 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "SendEmailAttachment.pdf" into library
-    When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
-    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    Then I softly see library/folder/file "TestAutomationFile.csv" is displayed under files library
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @77285    @enableFormulaFieldAtFlexTableForEnhanced-gPlanning
