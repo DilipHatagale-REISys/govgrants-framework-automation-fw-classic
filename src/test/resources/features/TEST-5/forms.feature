@@ -287,11 +287,13 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I select below checkbox options for field "Multi-Picklist Field"
-      | Select All |
+      |  Display 1 |
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
     And I pause execution for "7" seconds
-    Then I see value as "Select All" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Display 2" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Display 3" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage
   Scenario:validate that by click on form layout, it is re-directed to application detail page

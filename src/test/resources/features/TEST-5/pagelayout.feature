@@ -5515,7 +5515,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
     And I enter value "<enterText>" into field "cke_1_contents"
-    Then I softly see word count as "Words: 9 Words Left: 991" in ck editor at page layout
+    Then I softly see word count as "Words: 15 Words Left: 985" in ck editor at page layout
 
     Examples:
       | enterText                                                                                                         |
@@ -8421,7 +8421,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Overview" sub tab
-    Then I see field "ProjectGoals__c" is vertically resized
+    Then I see field "fieldProjectGoals__c" is vertically resized
 
   @150747 @VerifyUserSendsRecordsToApproveUserForwardRecordAnotherUserThenRejectOptionAvailable @vaibhavC
   Scenario: Verify User Sends Records To Approve User Forward Record Another User Then Reject Option Available

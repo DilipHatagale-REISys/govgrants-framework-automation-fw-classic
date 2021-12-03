@@ -788,8 +788,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordToCheckSnapshotOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordToCheckSnapshotOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecord}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecord}" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"

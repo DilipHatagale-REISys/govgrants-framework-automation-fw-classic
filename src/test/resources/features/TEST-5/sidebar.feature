@@ -267,7 +267,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
-    Then I see "11" records inside enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "10" records inside enhanced grid id "---program:-:enhancedGridTableId---"
 
   @77620    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrderAtSidebar-gHome
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome

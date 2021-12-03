@@ -39,7 +39,7 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     When I navigate to "Planning" tab
-    When I pause execution for "185" seconds
+    When I pause execution for "200" seconds
     Then I see "Logout" in current url
 
   @61434   @VerifySessionTimeoutPopUpAppears
