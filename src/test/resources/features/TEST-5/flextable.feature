@@ -1854,7 +1854,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    When I click on "Edit" icon for "PG-343-019" inside table
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab

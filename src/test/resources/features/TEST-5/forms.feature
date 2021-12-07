@@ -1057,8 +1057,7 @@ Business Need: Forms Component Scenarios
     When I perform quick search for "Test Application For Automation"
     When I click on "View" icon for "Test Application For Automation" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon of form "General Application Cover Page" program in flex table
-    When I click on "Edit" in the page details
+    When I click on "Edit" icon of form "General Application Cover Page" program in flex table
     And I enter value "test data" into field "fieldSubject__c"
     When I select "General Application Form" from dropdown at forms
     When I click alert button "Cancel"
