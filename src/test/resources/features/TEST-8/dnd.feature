@@ -223,7 +223,7 @@ Business Need: dnd Component Scenarios
     When I click on global search and select "Programs"
     When I perform quick search inside global search "US"
     And I pause execution for "3" seconds
-    Then I see "US" value in flex table id "---program:-:programSearchFlexTableID---"
+    Then I see "USA" value in flex table id "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     |
