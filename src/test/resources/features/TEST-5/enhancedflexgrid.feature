@@ -3930,7 +3930,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Current Budget Period End Date | less than | 05/15/2020 |
     Then I softly see value "04/27/2020" for title "Current Budget Period End Date" inside table "---program:-:EnhancedDataTableId---"
 
-  @185938 @sprint23 @done
+  @185938 @sprint23
   Scenario: Data table Enhanced-To verify,  advanced filter should work for the date field with 'Equal to ' operator
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3946,7 +3946,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Test Date and Time | equals to | 06/03/2020 12:36 AM |
     Then I softly see value "06/03/2020 12:36 AM" for title "Test Date and Time" inside table "---program:-:EnhancedDataTableId---"
 
-  @185945 @sprint23 @done
+  @185945 @sprint23
   Scenario:Data table Enhanced-To verify,  advanced filter should work for the date time   field with 'less  than or equal to  ' operator
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3962,7 +3962,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Test Date and Time | less than or equal to | 06/03/2020 12:36 AM |
     Then I softly see value "06/03/2020 12:36 AM" for title "Test Date and Time" inside table "---program:-:EnhancedDataTableId---"
 
-  @185944 @sprint23 @done
+  @185944 @sprint23
   Scenario: Data table Enhanced-To verify,  advanced filter should work for the date  time  field with 'greater than or equal to  ' operator
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3994,7 +3994,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Test Date and Time | less than | 12/31/2020 9:48 AM |
     Then I softly see value "12/31/2020 9:48 AM" for title "Test Date and Time" inside table "---program:-:EnhancedDataTableId---"
 
-  @185940 @sprint23 @done
+  @185940 @sprint23
   Scenario: Data table Enhanced-To verify,  advanced filter should work for the date time  field with 'greater than ' operator
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
