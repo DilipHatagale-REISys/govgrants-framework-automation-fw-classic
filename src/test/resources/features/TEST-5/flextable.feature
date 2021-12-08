@@ -2482,3 +2482,14 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
+
+  @184082 @sprint23 @userstoryid_174108
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with 'Contains' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | ID | Contains | AN-343-030 |
+    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
