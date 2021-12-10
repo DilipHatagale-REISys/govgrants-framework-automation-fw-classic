@@ -2581,3 +2581,36 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Greater than | $1,000 |
     Then I softly see value "$2,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+
+  @184087 @sprint23 @dnyaneshwari
+  Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' start with ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | ID | Starts with | AN-343 |
+    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+
+  @184234 @sprint23 @dnyaneshwari
+  Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'Equals to ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Award Ceiling | Equals to | $1,000 |
+    Then I softly see value "$1,000" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+
+  @184085 @sprint23 @dnyaneshwari
+  Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | ID | Does not Contains | AN-343-030 |
+    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
