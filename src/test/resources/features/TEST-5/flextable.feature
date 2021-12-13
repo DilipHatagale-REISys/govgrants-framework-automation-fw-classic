@@ -2439,6 +2439,94 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
+  @184286 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist field with 'not Equals to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Status | Not equals to | Approved |
+    Then I softly do not see value "Approved" for title "Status" inside table "---program:-:programTableDivId---"
+
+  @184285 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist field with 'Equals to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Status | Equals to | Approved |
+    Then I softly see value "Approved" for title "Status" inside table "---program:-:programTableDivId---"
+
+  @184284 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with 'less  than or equal to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Application Deadline | Less than or Equal to | 11/23/2021 1:56 AM |
+    Then I softly see value "11/23/2021 1:56 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+
+  @184283 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Application Deadline | Greater than or Equal to | 11/26/2021 |
+    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+
+  @184250 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Application Deadline | Less than | 11/26/2021 |
+    Then I softly see value "11/15/2021 2:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+
+  @184242 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Application Deadline | Greater than | 11/26/2021 |
+    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+
+  @184239 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Award Ceiling | Greater than or Equal to | $1,000 |
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+
+  @184240 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less than or equal to   ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Award Ceiling | Less than or Equal to | $1,000 |
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+
   @176520 @sprint20
   Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
     Given I have "default" configuration as below:
