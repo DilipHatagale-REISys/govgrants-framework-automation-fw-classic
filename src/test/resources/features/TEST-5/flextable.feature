@@ -2702,3 +2702,39 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | ID | Does not Contains | AN-343-030 |
     Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+
+  @187565 @sprint23
+  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:NewProgramCreatedId}" inside table
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see field "Description" inside page block
+
+  @184238 @sprint23
+  Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less  than or eual to ' Operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Award Ceiling | Less than or Equal to | $1,000 |
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+
+  @184238 @sprint23
+  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see field "Description" inside page block
