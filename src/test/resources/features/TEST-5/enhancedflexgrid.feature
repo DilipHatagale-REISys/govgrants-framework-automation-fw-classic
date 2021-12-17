@@ -4090,7 +4090,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181513 @sprint23
+  @181513 @sprint24 @userstory_179175
   Scenario: Data table Enhanced-To verify, Downloaded XLS picklist column should not displayWhen Hide column at picklist field   with user type  and profile  operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4107,5 +4107,125 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @185950 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced-To verify, Downloaded XLS picklist column should not displayWhen Hide column at picklist field   with user type  and profile  operand
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:JsonStatusColoumFieldUsingLogicalOprator | EnhancedDataTable  | Name                      | FTC-1560                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @181511 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced-To verify, Downloaded PDF rendering properly when Hide column with two operand   at Data table Enhanced  with   user type  & profile operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | EnhancedDataTable  | Name                      | FTC-1524                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @181525 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced-To verify, Downloaded PDF   rendering properly when Hide column with two field  at Data table Enhanced  with    user type  & profile operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | EnhancedDataTable  | Name                      | FTC-1524                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @181510 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced- To verify, In Downloaded PDF Currency column should not display When Hide column at currency field  with profile operand
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhancedDataTable  | Name                      | FTC-1524                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @181522 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced-To verify, In Downloaded PDF picklist column should not displayWhen Hide column at picklist field   with user type operand
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal | EnhancedDataTable  | Name                      | FTC-1560                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
+    When I click alert button "Yes"
+    Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
+
+  @181518 @sprint24 @userstory_179175
+  Scenario: Data table Enhanced-To verify, In Downloaded pdf  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideJsonDownloadPdfAtColoumShouldNotDisplay | EnhancedDataTable  | Name                      | FTC-1560                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from dropdown
     When I click alert button "Yes"
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
