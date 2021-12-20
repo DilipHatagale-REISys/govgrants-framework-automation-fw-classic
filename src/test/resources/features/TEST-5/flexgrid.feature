@@ -2820,7 +2820,7 @@ Business Need: Flex Grid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I clear the value from field "cke_1_contents"
+    And I clear the value from field "Objectives__c"
     When I enter value "test temp data" into field "fieldObjectives__c"
     And I navigate to "Plan" sub tab
     And I click on top right button "New" in flex table with id "inlineEditGridProgramPerformanceMgmtGridView"

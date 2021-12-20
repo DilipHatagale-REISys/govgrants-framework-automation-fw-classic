@@ -2703,7 +2703,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "TestAutomationFile.csv" into library with sharing
     When I select sharing option as "Visible to Internal Users With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
@@ -2720,7 +2720,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Delete" icon for "TestFileSharing.docx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122138 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
@@ -2734,7 +2734,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "TestAutomationFile.csv" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
@@ -2762,7 +2762,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Delete" icon for "TestFileSharing.docx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122139 @validateThatFileIsNotVisibleToAnyInternalUserIfSharingOptionIsSelectedAsPrivateRecord @wip @functionalityDeprecated

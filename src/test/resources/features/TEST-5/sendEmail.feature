@@ -2502,8 +2502,10 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-501-0034"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     Then I softly see the text containing :
       | this record |
@@ -4570,9 +4572,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Neelima" into field "{testData:ToField}" on send email modal
     When I select value "Neelima Shetty" with iconName "fa fa-phone" into field on send email modal
@@ -4593,9 +4609,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
     When I select value "Shambhavi Burge" with iconName "fa fa-user" into field on send email modal
@@ -4944,9 +4974,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
     Then I softly do not see user suggestion box displayed at send email modal
 
@@ -4963,7 +5007,10 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
@@ -4982,7 +5029,10 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -5005,9 +5055,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "test group 1" into field "{testData:ToField}" on send email modal
     When I enter value "test" into field "Subject" on send email modal
@@ -5026,7 +5090,10 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5047,9 +5114,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "test group 1" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -5070,9 +5151,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Neelima GGPTEST5" into field "{testData:ToField}" on send email modal
@@ -5115,9 +5210,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
@@ -5212,9 +5321,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Jai" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
@@ -5232,9 +5355,23 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on "Edit" icon for "PG-501-0034" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "RE: testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:ToField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "Surya N" into field "{testData:CcField}" on send email modal
+    When I select value "Surya N" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "reply for to &cc external" into field "Subject" on send email modal
+    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Nauman" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
