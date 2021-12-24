@@ -406,7 +406,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
-    When I enter advance filter values inside id "advfEnhancedDataTable"
+    When I enter advance filter values inside id "---program:-:enhancedGridTableId---"
       | Project Period | contains | 1/2/2019--1/25/2023 |
     Then I see label containing value as "1/2/2019--1/25/2023" inside advance filter
 
@@ -506,8 +506,8 @@ Business Need: Flex Table enhanced Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    And I clear the value from field "cke_1_contents"
-    When I enter value "test temp data" into field "cke_1_contents"
+    And I clear the value from field "Objectives__c"
+    When I enter value "test temp data" into field "Objectives__c"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-HRGr-001" in "---program:-:EnhancedDataTableId---" panel

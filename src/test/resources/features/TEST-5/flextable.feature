@@ -2738,3 +2738,54 @@ Business Need: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see field "Description" inside page block
+
+  @174393 @sprint20 @needtocheckshowlinknotrevertall
+  Scenario: Data Table - To verify, Relationship fields of a record in Data table should not be displayed as text when 'Show link as Text' checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
+      | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see value "Gauravsingh GGPTEST5" for title "Full Name" inside table "---program:-:ProgramContactsTableId---"
+
+  @173822 @sprint20
+  Scenario: Data Table - To verify, Lookup  fields of a record in Data table should be displayed as text when 'Show link as Text' checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
+      | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Attachments" sub tab
+    Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
+
+  @173826 @sprint20
+  Scenario: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
+      | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    Then I see field "Applicant Organization" inside page block

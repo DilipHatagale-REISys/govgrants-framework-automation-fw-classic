@@ -3,6 +3,7 @@ package com.framework.automation.payloads;
 public class FlexTable {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
+    private String payloadForBoolean = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%b}\"}";
     private ApiUtilities apiUtilities;
 
     public FlexTable() {
@@ -222,6 +223,12 @@ public class FlexTable {
                                 apiUtilities.getComponentCoreFieldId(
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__ColumnSubtotalPercentageJSON__c), value);
+                break;
+            case "SHOW LINK AS TEXT":
+                finalPayload = String
+                        .format(payloadForBoolean, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__ShowLinkAsText__c), Boolean.parseBoolean(value));
                 break;
         }
         System.out.println(finalPayload);

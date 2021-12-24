@@ -478,8 +478,8 @@ Business Need: history Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
-    Then I softly see "06/04/2020 3:00 PM" shown inside "New Value" column in history table
-    Then I softly see "06/03/2020 1:00 PM" shown inside "Old Value" column in history table
+    Then I softly see "06/04/2020 10:00 AM" shown inside "New Value" column in history table
+    Then I softly see "06/03/2020 8:00 AM" shown inside "Old Value" column in history table
 
   @84568  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderHistoryTable
   Scenario: validate the date and time field format under field history table with respective to EDT Local
@@ -514,8 +514,8 @@ Business Need: history Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
-    Then I softly see "4/6/2020 3:00 PM" shown inside "New Value" column in history table
-    Then I softly see "3/6/2020 1:00 PM" shown inside "Old Value" column in history table
+    Then I softly see "4/6/2020 8:30 PM" shown inside "New Value" column in history table
+    Then I softly see "3/6/2020 6:30 PM" shown inside "Old Value" column in history table
 
   @114727  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column

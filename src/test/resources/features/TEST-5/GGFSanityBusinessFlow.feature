@@ -660,12 +660,16 @@ Business Need: Sanity check for all Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    When I click on "View Program Details" icon for "AutomationSheetJSUploadForStatusAsBlank" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
+    When I perform quick search for "Automation Internal Program for Approval and Snapshot scenarios"
+    When I click on "View Program Details" icon for "Automation Internal Program for Approval and Snapshot scenarios" inside table
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
+    When I perform quick search for "Automation Internal Program for Approval and Snapshot scenarios"
     Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
 
     Examples:
