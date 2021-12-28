@@ -7057,3 +7057,559 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186124 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to "true" when select file is attached to "TO- External " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    And I pause execution for "5" seconds
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186685 @sprint24 @dnyaneshwari
+  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO- group" reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186684 @sprint24 @dnyaneshwari
+  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO- internal" reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186681 @sprint24 @dnyaneshwari
+  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO-external" reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186677 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO- internal " reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186678 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- external " reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186294 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- Internal " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Testing Email" into field "Subject" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186295 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- External " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Testing Email" into field "Subject" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186297 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see " " when user did not select any attached to "TO- Internal " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Testing Email" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186298 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "" when user did not select any attached to "TO- External " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Testing Email" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186300 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see " " when user did not select any attached to "TO- Group " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186296 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- group   " email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for  To & cc group" into field "Subject" on send email modal
+    When I enter value "reply for  To & cc group" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    And I click modal button "Select Files"
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @186679 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- group " reply email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187614 @sprint24 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- internal " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply for  To & cc " into field "Subject" on send email modal
+    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    And I click modal button "Select Files"
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187627 @sprint26 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- group " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    And I click modal button "Select Files"
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187630 @sprint26 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- external " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply for  To & cc " into field "Subject" on send email modal
+    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187635 @sprint26 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- internal " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply for  To & cc " into field "Subject" on send email modal
+    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187636 @sprint26 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- external " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "reply for  To & cc " into field "Subject" on send email modal
+    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @187639 @sprint26 @dnyaneshwari
+  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- group " reply  email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on "Edit" icon for "PG-755-0280" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
+    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    Then I softly see value "" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
