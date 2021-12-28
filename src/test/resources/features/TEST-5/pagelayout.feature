@@ -9517,6 +9517,136 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Program__c"
     Then I see lookup link " Program ID" inside page block
 
+  @186950 @sprint26
+  Scenario: To verify, all the Multiselect picklist fields (Selected/Unselected) should be displayed on the UI in View Mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Types Of Assistance" inside page block
+
+  @189071 @sprint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Hide Label' from page layout config, then its Label should not be visible on Page layout in Edit mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Types Of Assistance" inside page block
+
+  @189072 @sprint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Hide Label' from page layout config, then its Label should not be visible on Page layout in View mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Types Of Assistance" inside page block
+
+  @189074 @sprint26
+  Scenario: To verify, Multiselect picklist field's lable is overriden with 'Field Label Override' config, then it should be visible on Page layout in Edit mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Automation" inside page block
+
+  @189075 @sprint26
+  Scenario: To verify, Multiselect picklist field's lable is overriden with 'Field Label Override' config, then it should be visible on Page layout in View mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Automation" inside page block
+
+  @189077 @spriint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Is Hidden Field' from page layout config, then it should not be visible on Page layout in Edit mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Types Of Assistance" inside page block
+
+  @189078 @sprint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Is Hidden Field' from page layout config, then it should not be visible on Page layout in View mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Types Of Assistance" inside page block
+
+  @189082 @sprint26
+  Scenario: To verify, if "Disable Select All' config is checked, then 'Select all' is not displayed on Page layout in Edit mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Select all" inside page block
+
   @172177 @sprint19
   Scenario: Page layout-To verify User hover over the lookup field icon on modal   then it should display the Field label override name from the GovGrants side.
     When I login as "Automation" user

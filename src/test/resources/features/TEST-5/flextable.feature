@@ -1315,7 +1315,6 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than or Equal to | 09/16/2020 |
     Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106409    @validateAdvanceFilterValueForDateFieldAtFlexTable
@@ -1859,7 +1858,7 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I clear the value from field "cke_1_contents"
+    And I clear the value from field "Objectives__c"
     When I enter value "test temp data" into field "fieldObjectives__c"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -2281,8 +2280,7 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
-    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
+    And I close modal by clicking the top right x button
     And I pause execution for "3" seconds
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
@@ -2690,7 +2688,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Equals to | $1,000 |
-    Then I softly see value "$1,000" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184085 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
@@ -2701,7 +2699,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | ID | Does not Contains | AN-343-030 |
-    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+    Then I softly do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table

@@ -577,8 +577,9 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Changed Field | Equals to | Program Type |
-    Then I see value "Program Type" for title "Changed Field" inside table "---program:-:historyTableId---"
+      | Changed Field | Equals to | Program Name |
+    When I perform quick search for "Program Name"
+    Then I see value "Program Name" for title "Changed Field" inside table "---program:-:historyTableId---"
 
   @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
   Scenario: validate approval history table is displayed at history tab when page is in view mode

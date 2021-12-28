@@ -386,8 +386,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I click on "Edit" icon for "Applicationg test88888" inside table
+    When I perform quick search for "GT-GDHP-001" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "Edit" icon for "GT-GDHP-001" inside table
     Then I see "--None--:Active:Expired:Terminated:Draft:Closed/Completed" inside selectbox field "Status__c"
 
   @106413  @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTableEnhanced
@@ -407,8 +407,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:enhancedGridTableId---"
-      | Project Period | contains | 1/2/2019--1/25/2023 |
-    Then I see label containing value as "1/2/2019--1/25/2023" inside advance filter
+      | Project Period | contains | 10/9/2017--10/11/2017|
+    Then I see label containing value as "10/9/2017--10/11/2017" inside advance filter
 
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
