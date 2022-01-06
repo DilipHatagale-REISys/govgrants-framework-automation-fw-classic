@@ -388,8 +388,8 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I click on "View" icon for "Applicationg test88888" inside table
+    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "View" icon for "APP2- FOA for DHP12" inside table
     Then I see "Grant View" shown as over view header
 
   @78068    @validateEditActionAtEnhancedDataTableAtSideBar-gHOME
@@ -404,11 +404,11 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I click on "Edit" icon for "Applicationg test88888" inside table
+    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "Edit" icon for "APP2- FOA for DHP12" inside table
     When I enter values "Test Automation sidebar 1" into textarea for table id "---program:-:flexGridEnhancedDataTableId---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedDataTableId---"
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see value "Test Automation sidebar 1" for multiple cells at column "AddressProgramContact__c"
 
     Examples:

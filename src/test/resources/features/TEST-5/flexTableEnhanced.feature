@@ -406,7 +406,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
-    When I enter advance filter values inside id "---program:-:enhancedGridTableId---"
+    When I enter advance filter values inside id "advfEnhancedDataTable"
       | Project Period | contains | 10/9/2017--10/11/2017|
     Then I see label containing value as "10/9/2017--10/11/2017" inside advance filter
 
@@ -495,7 +495,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "advfEnhancedDataTable"
       | Project Title | does not contain | test |
-    Then I softly see value "Exploratory Team-Research BRAIN Circuit Programs_0" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
+    Then I softly see value "Educational Pro" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
     Then I softly do not see value "Applicationg test88888" for title "Project Title" inside table "---program:-:EnhancedDataTableId---"
 
   @151054 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedDataTable
