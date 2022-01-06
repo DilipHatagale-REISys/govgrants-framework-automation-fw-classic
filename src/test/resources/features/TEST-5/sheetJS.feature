@@ -74,7 +74,7 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUpload"
+    When I perform quick search for "Road Construction"
     Then I softly see value "GovGrant" for title "Organization" inside table "---program:-:programTableDivId---"
 
     Examples:
@@ -108,7 +108,7 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUpload"
+    When I perform quick search for "Test Prog"
     Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
 
     Examples:
@@ -142,7 +142,7 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
+    When I perform quick search for "Test Prog"
     Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
 
     Examples:
@@ -210,8 +210,8 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I see value "true" for title "CFDA Data" against the value "GovGrant" inside table "Programs"
+    When I perform quick search for "Package Testing"
+    Then I see value "true" for title "CFDA Data" against the value "Package Testing" inside table "flexTableDivId"
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -244,8 +244,8 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank1"
-    Then I see value "false" for title "CFDA Data" against the value "GovGrant" inside table "Programs"
+    When I perform quick search for "Test Prog"
+    Then I see value "false" for title "CFDA Data" against the value "Test Prog" inside table "flexTableDivId"
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -345,8 +345,8 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUploadDateTime.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUpload"
-    Then I see value "7/3/2021 7:37 AM" for title "DateandTime" inside table "---program:-:programTableDivId---"
+    When I perform quick search for "Test's September Program"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |

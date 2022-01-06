@@ -390,6 +390,11 @@ public class FlexTable {
                                 apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__HideColumnsText__c), value);
                 break;
+            case "ORDER BY":
+                finalPayload = String.format(
+                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__OrderBy__c), value);
         }
         System.out.println(finalPayload);
         return finalPayload;

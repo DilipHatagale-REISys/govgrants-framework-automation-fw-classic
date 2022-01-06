@@ -1930,7 +1930,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see the text :
-      | Showing 1 to 3 of 3 records |
+      | Showing 1 to 4 of 4 records |
 
   @148809     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
   Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
@@ -2787,3 +2787,44 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     Then I see field "Applicant Organization" inside page block
+
+  @189254 @sprint26
+  Scenario Outline: To verify, when the user make some incorrect changes to any 'Display Field Names' of the Flex table, the error message is displayed on the Page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramBudgetPeriod |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see the following message in the page details contains:
+      | Error creating table:Field ProgramName__c not found for sobject BudgetPeriod__c : table:a0I1500000ITVOSEA5 |
+
+    Examples:
+      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                    |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,SequenceNumber__c |
+
+  @189257 @sprint26
+  Scenario Outline: To verify, when the user make some incorrect changes to any 'Display Field Names' of the Search table, the error message is displayed on the Page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | SearchGrantorProgram |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search inside global search "Test"
+    Then I see the following message in the page details contains:
+      | Error creating table:Field not found for sobject Program__c : table:a0I1500000ITVFEEA5 |
+
+    Examples:
+      | newFieldsApi                                                                                             | defaultFieldsApi                                                                  |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,DateandTime__c,Number__c |

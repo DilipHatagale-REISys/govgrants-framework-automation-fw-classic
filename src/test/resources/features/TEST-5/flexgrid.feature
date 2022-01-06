@@ -1826,7 +1826,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     When I hovering mouse on help text icon inside "Grantee Share %" for flex table column
     Then I see "<new_helpText>" shown as help text
 
@@ -1850,7 +1850,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see "Test Automation" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @51556    @displayFieldNameFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
@@ -1869,7 +1869,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
     Examples:
@@ -1960,7 +1960,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see "#" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @51414    @enableTotalRecordsCountFieldAtApplicationBudgetCategoryFlexTable-gApplications
@@ -1979,7 +1979,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see no "Total Records" count in "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @34335    @hideForProfileFieldForPPMGVflexTable-Programs
@@ -2058,7 +2058,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see column "Budget Category" value is in "Descending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid
 
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
@@ -2079,7 +2079,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see column "Budget Category" value is in "Ascending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid
 
   @78303    @verifyByClickOnLookupValueItShouldRedirectedToRespectiveRecordPageAtMEGrid-gApplications
@@ -2220,7 +2220,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     And I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-02"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     When I click on "Bob Samuela" icon for "Equipment" inside table
     Then I see "Community User" shown as over view header
 
@@ -2396,7 +2396,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see subtotal amount at "Grantor Share" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
     Examples:
@@ -2697,7 +2697,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see value "1,234.0000" for title "testnumber" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
     Examples:
@@ -2720,7 +2720,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     Then I see the text :
       | 2,468.0000 |
 
@@ -2794,7 +2794,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I expand nested table containing column value "Test Automation"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     And I edit the following rows inline in flex table with id "inlineEditGridAppLineItem" by clicking "Edit" :
       | Title       | Grantor Share %     |
