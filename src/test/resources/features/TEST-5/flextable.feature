@@ -2828,3 +2828,42 @@ Business Need: Flex Table Component Scenarios
     Examples:
       | newFieldsApi                                                                                             | defaultFieldsApi                                                                  |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,DateandTime__c,Number__c |
+
+  @189255 @sprint26
+  Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Flextable, the error message is displayed on the Page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
+      | Flex Table:General    | Order By  | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Order By  | <newFieldsApi> | ProgramBudgetPeriod |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see the following message in the page details contains:
+      | Error creating table:unexpected token: 'ASC' |
+    Examples:
+      | newFieldsApi                       | defaultFieldsApi   |
+      | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
+
+  @190090 @sprint26
+  Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
+      | Flex Table:General    | Order By  | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Order By  | <newFieldsApi> | SearchGrantorProgram |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search inside global search "Test"
+    Then I see the following message in the page details contains:
+      | Error creating table:unexpected token: 'ASC' |
+    Examples:
+      | newFieldsApi                           | defaultFieldsApi |
+      | NameName,Id,ProgramName__c,Account__c, | Name             |
