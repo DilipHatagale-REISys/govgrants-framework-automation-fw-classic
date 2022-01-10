@@ -9716,3 +9716,71 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:CreatedRecordForPendingTask}"
     Then I softly see value "test 171385" for title "Organization Name" inside table "---program:-:programTableDivId---"
+
+  @186955 @sprint26
+  Scenario: To verify, 'Select All' option out of Multiselect picklist fields should not be displayed in Edit Layout the UI in View Mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Select All" inside page block
+
+  @189066 @sprint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in Edit mode (but 'Select All' option should be visible)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Types Of Assistance" inside page block
+
+  @189068 @sprint26
+  Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in View mode (without 'Select All' option)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Types Of Assistance" inside page block
+
+  @189083 @sprint26
+  Scenario: To verify, if "Disable Select All' config is checked, then 'Select all' is not displayed on Page layout in View mode.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly cannot see field "Select All" inside page block
