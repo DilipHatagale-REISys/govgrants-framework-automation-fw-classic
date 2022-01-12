@@ -768,7 +768,7 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    When I pause execution for "3" seconds
+    When I pause execution for "7" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
@@ -1668,7 +1668,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
-    Then I softly see "Test's September Program" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Test Program For Automation - Expression Builder 2" value in flex table id "---program:-:programsTableId---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
@@ -1677,8 +1677,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation 8 for"
-    Then I see "Test program for automation 8 for number DND" value in flex table id "---program:-:programsTableId---"
+    When I perform quick search for "edu 2 program"
+    Then I see "edu 2 program" value in flex table id "---program:-:programsTableId---"
 
   @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containing special character followed by space at flex table
@@ -2280,9 +2280,6 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
-    And I close modal by clicking the top right x button
-    And I pause execution for "3" seconds
-    And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 

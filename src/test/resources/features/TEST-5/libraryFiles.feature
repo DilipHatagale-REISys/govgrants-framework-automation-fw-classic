@@ -1933,7 +1933,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
-    When I upload file "SendEmailAttachment.pdf" into library
+    When I upload file "TestAutomationFile.docx" into library
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
     When I drag the "SendEmailAttachment.pdf" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
@@ -1945,7 +1945,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
     When I pause execution for "7" seconds
-    Then I softly do not see library/folder/file "TestAutomationFile.csv" is displayed under files library
+    Then I softly do not see library/folder/file "TestAutomationFile.docx" is displayed under files library
 
   @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome
   Scenario: Verify that file can be drag from assert library and droped into another library
@@ -2874,7 +2874,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122157 @validateThatFileNameEditedByAdminUserShouldBeVisibleInternalAndExternalUser
@@ -3257,14 +3257,14 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I select sharing option as "Visible to Internal Users With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122471 - file uploaded by admin user can be deleted by internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
@@ -3273,12 +3273,12 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I click on "Delete" icon for "TestFileSharing.docx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   #122471 - file deleted by internal user can be removed from admin user
@@ -3288,7 +3288,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122494 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
@@ -3301,13 +3301,13 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122494 - visible to Admin user
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
@@ -3455,14 +3455,14 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122164 - file uploaded by admin user can not be edited by external user
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
@@ -3483,11 +3483,11 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @wip @functionalityDeprecated
@@ -4394,21 +4394,21 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestFileSharing.docx" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    When I click on "Edit" icon for "TestFileSharing.docx" inside table
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "MultipleFileUploadCollabDND.png" inside table
  #136661 verify if sharing option is not displayed to external user
     Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
     When I click on "×" icon at "File Edit" modal under Library
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
  #136661 verify if record is not displayed to external user
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
@@ -5035,11 +5035,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158159 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtHOMEPhaseByLoginAsAutomationPMUser
   Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-HOME phase by PM account
@@ -5064,11 +5059,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158169 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationADMINUser
   Scenario: Verify Upload button is disabled and asterisk mark is displayed at classification at upload file modal - record collab tab by ADMIN account
@@ -5230,11 +5220,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158202 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtHOMEPhaseByLoginAsPMUser
   Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-HOME phase by PM account
@@ -5260,12 +5245,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
-    And I navigate to "Collab" tab
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @157841 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationADMINUser
   Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by ADMIN user
@@ -5505,17 +5484,17 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     And I switch to iframe with id "ApplicationFilesiframeContentId"
-    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+    When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @160817 @validateThatSPIUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
