@@ -4514,7 +4514,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see the text containing :
       | Page 1 of 23 |
 
-  @192567 @sprint1 @userstory_184938 @passed @wip
+  @192567 @sprint1 @userstory_184938 @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "Profile"operand  then that column is not displayed in the pdf  as well as in the UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4531,9 +4531,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @192569 @sprint1 @userstory_184938 @passed @wip
+  @192569 @sprint1 @userstory_184938 @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "Profile"operand  then that column is not displayed in the page layout PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4550,9 +4551,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @192570 @sprint1 @userstory_184938 @passed @wip
+  @192570 @sprint1 @userstory_184938  @skipOnJenkins
   Scenario:E-grid To verify,Hide column using "Userapp"operand  then that column is not displayed in the page layout PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4569,9 +4571,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @192572 @sprint1 @userstory_184938 @passed @wip
+  @192572 @sprint1 @userstory_184938  @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "Userapp"operand  then that column is not displayed in the page layout PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4588,9 +4591,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @192573 @sprint1 @userstory_184938 @passed @wip
+  @192573 @sprint1 @userstory_184938  @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "User Type" operand  then that column is not displayed in the PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4607,9 +4611,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @192575 @@sprint1 @userstory_184938 @passed @wip
+  @192575 @@sprint1 @userstory_184938  @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "User Type" operand  then that column is not displayed in the page layout PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4626,4 +4631,5 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from dropdown
+    And I pause execution for "5" seconds
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
