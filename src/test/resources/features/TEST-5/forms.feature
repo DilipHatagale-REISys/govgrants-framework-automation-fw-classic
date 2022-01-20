@@ -1049,6 +1049,52 @@ Business Need: Forms Component Scenarios
     And I pause execution for "4" seconds
     Then I see alert popup box
 
+  @191191 @sprint1 @userstory_184403
+  Scenario:To verify, if the user views a Form in an Application record and then refreshes the page, the same correct phase should be highlighted
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    And I click on "View" icon for "General Application Budget Form" inside flex table with id "---program:-:programTableDivId---"
+    And I refresh the page
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191193 @sprint1 @userstory_184403
+  Scenario: To verify, if the user edits a Form in an Application record, the same correct phase should be highlighted
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    And I click on "Edit" icon for "General Application Cover Page" inside flex table with id "---program:-:programTableDivId---"
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191198 @sprint2  @userstory_184403
+  Scenario: To verify, if the user views a Form in an Application record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    And I click on "Edit" icon for "General Application Cover Page" inside flex table with id "---program:-:programTableDivId---"
+    And I refresh the page
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191188 @sprint2  @userstory_184403
+  Scenario:  To verify, if the user views a Form in an Application record, the same correct phase should be highlighted
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    And I click on "View" icon for "General Application Budget Form" inside flex table with id "---program:-:programTableDivId---"
+    Then I see "Applications" tab is highlighted for particular program
+
   @151586 @verifyThatPageIsNotRefreshedAfterClickAtCancelButtonAtConfirmationPop-UpAppearsOnFormLayoutForUnsavedData
   Scenario:validate that page is no refreshing by performing Cancel action at confirmation pop-up appears on form layout for unsaved data
     When I login as "Automation" user
