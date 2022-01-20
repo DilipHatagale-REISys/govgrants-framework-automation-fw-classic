@@ -1072,7 +1072,7 @@ Business Need: Forms Component Scenarios
     And I click on "Edit" icon for "General Application Cover Page" inside flex table with id "---program:-:programTableDivId---"
     Then I see "Applications" tab is highlighted for particular program
 
-  @191198 @sprint2  @userstory_184403
+  @191198 @sprint1  @userstory_184403
   Scenario: To verify, if the user views a Form in an Application record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1084,7 +1084,7 @@ Business Need: Forms Component Scenarios
     And I refresh the page
     Then I see "Applications" tab is highlighted for particular program
 
-  @191188 @sprint2  @userstory_184403
+  @191188 @sprint1  @userstory_184403
   Scenario:  To verify, if the user views a Form in an Application record, the same correct phase should be highlighted
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
