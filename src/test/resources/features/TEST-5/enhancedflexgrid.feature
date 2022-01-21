@@ -3747,7 +3747,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
@@ -3772,7 +3772,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "id"
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
@@ -3818,7 +3818,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
@@ -3842,7 +3842,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+      When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
     And I click on "Edit" icon for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" inside flex table with id "---program:-:flexGridEnhancedID---"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
@@ -3860,7 +3860,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Current Budget Period End Date | equals to | 05/15/2020 |
@@ -3876,7 +3876,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Current Budget Period End Date | greater than | 05/15/2020 |
@@ -3892,7 +3892,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Current Budget Period End Date | less than or equal to | 05/15/2020 |
@@ -3908,7 +3908,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Current Budget Period End Date | greater than or equal to | 05/15/2020 |
@@ -3924,7 +3924,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Current Budget Period End Date | less than | 05/15/2020 |
@@ -3940,7 +3940,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Test Date and Time | equals to | 06/03/2020 12:36 AM |
@@ -3956,7 +3956,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Test Date and Time | less than or equal to | 06/03/2020 12:36 AM |
@@ -3972,7 +3972,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Test Date and Time | greater than or equal to | 06/03/2020 12:36 AM |
@@ -3988,7 +3988,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Test Date and Time | less than | 12/31/2020 9:48 AM |
@@ -4004,7 +4004,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    And I navigate to "Financials" tab
+    When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "---program:-:EnhancedDataTableId---"
       | Test Date and Time | greater than | 06/03/2020 12:36 AM |
