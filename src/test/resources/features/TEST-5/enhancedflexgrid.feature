@@ -3826,9 +3826,9 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,multiselecttest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-    @181116 @sprint20
-    Scenario Outline:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
-      Given I have "default" configuration as below:
+  @181116 @sprint20
+  Scenario Outline:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3842,7 +3842,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-      When I navigate to "Financials" sub tab
+    When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
     And I click on "Edit" icon for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" inside flex table with id "---program:-:flexGridEnhancedID---"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:flexGridEnhancedID---"
@@ -4394,6 +4394,30 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see the text containing :
       | Page 1 of 23 |
 
+  @190159 @sprint25
+  Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the grid), they remain on the same page after Modal closing
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Refresh the grid | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal            | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    And I click on "Edit" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I refresh the page
+    And I navigate to "Financials" sub tab
+    Then I see entire page is refreshing
+    Then I see the text containing :
+      | Page 1 of 23 |
+
   @190165 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Close modal and refresh grid), they remain on the same page after Modal closing
     Given I have "default" configuration as below:
@@ -4476,6 +4500,102 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName                | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior         | Refresh the Grid | TmpActiveGrantsGrid | Name                      | View                       |
       | Flex Table Action     | Single Row Edit Behavior | Modal            | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    And I click on "View" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I refresh the page
+    And I navigate to "Financials" sub tab
+    Then I see entire page is refreshing
+    Then I see the text containing :
+      | Page 1 of 23 |
+
+  @190161 @sprint25
+  Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Refresh all flextables | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal                  | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    And I click on "Edit" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I refresh the page
+    And I navigate to "Financials" sub tab
+    Then I see entire page is refreshing
+    Then I see the text containing :
+      | Page 1 of 23 |
+
+  @190162 @sprint25
+  Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Refresh parent page | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal               | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    And I click on "Edit" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I refresh the page
+    And I navigate to "Financials" sub tab
+    Then I see entire page is refreshing
+    Then I see the text containing :
+      | Page 1 of 23 |
+
+  @190163 @sprint25
+  Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Refresh parent page | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal               | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    And I click on "View" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I refresh the page
+    And I navigate to "Financials" sub tab
+    Then I see entire page is refreshing
+    Then I see the text containing :
+      | Page 1 of 23 |
+
+  @190164 @sprint25
+  Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour:Close modal and refresh grid), they remain on the same page after Modal closing
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Close modal and refresh grid | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal                        | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
