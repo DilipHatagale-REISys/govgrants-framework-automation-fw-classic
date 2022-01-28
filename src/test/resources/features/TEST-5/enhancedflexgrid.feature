@@ -4635,19 +4635,17 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
   @192950 @sprint1 @userstory_176992
-  Scenario Outline: E-grid- To verify , Number  field should restrict the field limit
+  Scenario: E-grid- To verify , Number  field should restrict the field limit
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
@@ -4659,7 +4657,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Page 1 of 23 |
 
   @190160 @sprint25
-  Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
+  Scenario Outline: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
