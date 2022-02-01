@@ -167,7 +167,7 @@ Business Need: New API related scenarios temporary
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
-    When I pause execution for "185" seconds
+    When I pause execution for "200" seconds
     Then I see "Logout" in current url
 
   @148208   @VerifySessionTimeoutPopUpAppearsOnFormLayout
@@ -301,6 +301,6 @@ Business Need: New API related scenarios temporary
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     When I hovering mouse on help text icon inside "Test's September Program"
-    When I pause execution for "120" seconds
+    When I pause execution for "200" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
