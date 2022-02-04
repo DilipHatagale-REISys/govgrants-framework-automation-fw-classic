@@ -553,10 +553,12 @@ Business Need: history Component Scenarios
     When I navigate to "Overview" sub tab
     And I enter value "$300,000.00" into field "DecimalCurrency__c"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "$200,000.50" into field "DecimalCurrency__c"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     Then I softly see "$200,000.50" shown inside "New Value" column in history table
     Then I softly see "$300,000.00" shown inside "Old Value" column in history table
@@ -634,6 +636,7 @@ Business Need: history Component Scenarios
     When I navigate to "Overview" sub tab
     And I enter value "$300,000.00" into field "DecimalCurrency__c"
     And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "History" sub tab
     Then I softly see expected table with id "toggleApprovalHistory"
     Then I softly see expected table with id "toggleFlexTableHistory"

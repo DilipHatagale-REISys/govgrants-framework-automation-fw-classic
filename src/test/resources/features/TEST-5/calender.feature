@@ -236,6 +236,8 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    When I enter value "10" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -808,7 +810,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "PG-755-0222 (DateandTime)" record is displayed in "aqua blue" color inside calendar
+    Then I see "PG-755-0221 (End Date)" record is displayed in "aqua blue" color inside calendar
 
   @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
   Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
