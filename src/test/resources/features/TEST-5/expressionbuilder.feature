@@ -844,8 +844,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Non-NC-Sole Source"
-    When I click on "View" icon for "Non-NC-Sole Source" inside table
+    When I perform quick search for "AN-755-232"
+    When I click on "View" icon for "AN-755-232" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Accounts" flex table not displayed
 
@@ -878,8 +878,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Non-NC-Sole Source"
-    When I click on "View" icon for "Non-NC-Sole Source" inside table
+    When I perform quick search for "AN-755-232"
+    When I click on "View" icon for "AN-755-232" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Accounts" flex table not displayed
 
@@ -4626,7 +4626,7 @@ Business Need: Expression Builder Component Scenarios
     And I enter value "10" into field "fieldDateandTime__c"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "Program Contacts"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     When I pause execution for "3" seconds
@@ -7488,7 +7488,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpActiveGrantsGridTableId---"
+    Then I do not see "Actions" in enhanced flex grid header "Monitoring Schedule For All Active Grants"
 
   @117405  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridChildTable @enhancedGrid
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid child table
