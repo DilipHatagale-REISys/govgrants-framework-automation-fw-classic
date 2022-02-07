@@ -60,13 +60,13 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     public void assertFieldsDisplayedInExpectedSectionAtDynamicForm(String usage, String fieldName, String sectionName) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+            Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName,false));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+            Assert.assertFalse(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName,true));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName,false)).isTrue();
         } else if (usage.equalsIgnoreCase("softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName,true)).isFalse();
         }
     }
 
@@ -205,12 +205,19 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param fieldName
      * @param sectionName
      */
-    private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
+    private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName, boolean isDoNotSee) {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"))) {
-                return true;
+            if (isDoNotSee){
+                if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"),false)) {
+                    return true;
+                }
+            } else {
+
+                if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"))) {
+                    return true;
+                }
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }

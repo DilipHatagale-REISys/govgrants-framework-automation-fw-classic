@@ -2677,7 +2677,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Written Section 2 in Section Section 2 question not answered|
+      | Written Section 2 in Section Section 2 question not answered |
 
   @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode
@@ -3203,6 +3203,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "12" into field "Currency"
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
     Then I softly see "Number" field inside "Section 1" is disabled
     Then I softly see "Percent" field inside "Section 1" is disabled
     Then I softly see "Written" field inside "Section 1" is disabled
@@ -3237,11 +3240,12 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I softly see "Number" field inside "Section 1" is hidden
-    Then I softly see "Percent" field inside "Section 1" is hidden
-    Then I softly see "Written" field inside "Section 1" is hidden
-    Then I softly see "Picklist" field inside "Section 1" is hidden
-    Then I softly see "Radio" field inside "Section 1" is hidden
+    When I pause execution for "5" seconds
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+    Then I softly do not see "Picklist" inside "Section 1" at dynamic form
+    Then I softly do not see "Radio" inside "Section 1" at dynamic form
 
   @96399   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide on the basis of currency field value in form edit mode
@@ -3270,7 +3274,8 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I pause execution for "5" seconds
     Then I softly do not see "Number" inside "Section 1" at dynamic form
     Then I softly do not see "Percent" inside "Section 1" at dynamic form
     Then I softly do not see "Written" inside "Section 1" at dynamic form
@@ -3344,11 +3349,11 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I softly see "Number" field inside "Section 1" is hidden
-    Then I softly see "Percent" field inside "Section 1" is hidden
-    Then I softly see "Written" field inside "Section 1" is hidden
-    Then I softly see "Picklist" field inside "Section 1" is hidden
-    Then I softly see "Radio" field inside "Section 1" is hidden
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+    Then I softly do not see "Picklist" inside "Section 1" at dynamic form
+    Then I softly do not see "Radio" inside "Section 1" at dynamic form
     Then I softly see "Checkbox" field inside "Section 1" is disabled
 
   @96518   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioAndDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -3380,7 +3385,10 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "12" into field "Currency"
+    When I click on "Save" in the page details
+    And I pause execution for "5" seconds
     Then I softly do not see "Number" inside "Section 1" at dynamic form
     Then I softly do not see "Percent" inside "Section 1" at dynamic form
     Then I softly do not see "Written" inside "Section 1" at dynamic form
@@ -4528,6 +4536,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see section column is "vertically" aligned
+
   @164802 @ValidateSectionColumnAsVerticalViewModeWhenScoreCommentsEnableForQuestion
   Scenario: Validate Section Column As Vertical View Mode When Score Comments Enable For Question
     Given I have "default" configuration as below:
@@ -4545,6 +4554,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see section column is "vertically" aligned
+
   @164805 @ValidateSectionColumnAsHorizontalViewModeWhenScoreCommentsEnableForQuestion
   Scenario: Validate Section Column As Horizontal View Mode When Score Comments Enable For Question
     Given I have "default" configuration as below:
@@ -4562,6 +4572,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see section column is "horizontally" aligned
+
   @164804 @ValidateSectionColumnAsHorizontalEditModeWhenScoreCommentsEnableForQuestion
   Scenario: Validate Section Column As Horizontal Edit Mode When Score Comments Enable For Question
     Given I have "default" configuration as below:
