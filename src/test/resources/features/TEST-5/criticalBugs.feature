@@ -578,8 +578,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA--114"
-    When I click on "View" icon for "FOA--114" inside table
+    When I perform quick search for "FOA-USAID-004"
+    When I click on "View" icon for "FOA-USAID-004" inside table
     When I click on "Menu" in the page details
     And I select without accepting alert "Take Snapshot" from dropdown
     Then I see alert message "<message>"
@@ -594,8 +594,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA--114"
-    When I click on "Edit" icon for "FOA--114" inside table
+    When I perform quick search for "FOA-USAID-004"
+    When I click on "Edit" icon for "FOA-USAID-004" inside table
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
       | --None-- | Competitive | Sole Source/Directed |
@@ -653,8 +653,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Financials" sub tab
     When I click dropdown field "fieldDetailedBudgetingRequired__c"
     Then I see only the following ordered options in dropdown field "DetailedBudgetingRequired__c" :
@@ -765,8 +765,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Active" status in lookup modal table
 
@@ -2155,9 +2155,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -4099,7 +4098,7 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "Program Contacts"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
@@ -4441,13 +4440,6 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     Then I softly see "Overview" sub tab is displayed at view detail page
-    Then I softly see "Plan" sub tab is displayed at view detail page
-    Then I softly see "Roles" sub tab is displayed at view detail page
-    Then I softly see "Financials" sub tab is displayed at view detail page
-    Then I softly see "Terms & Conditions" sub tab is displayed at view detail page
-    Then I softly see "Log" sub tab is displayed at view detail page
-    Then I softly see "Attachments" sub tab is displayed at view detail page
-    Then I softly see "History" sub tab is displayed at view detail page
 
   @121203  @verifyThatTopRightEditActionIsWorkingAtPageDetails
   Scenario: validate that if user clicks on edit action at page detail then edit page opens
@@ -4551,7 +4543,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I pause execution for "5" seconds
-    And I click on "Comment" action at "Automation Test Data - Post DND" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -4729,7 +4721,6 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
 
   @121624    @verifyThatAttachedFileIsGettingRemovedFromMyFeedSectionIfClickOnCancelButtonAfterFileUploadedFromCollabPhase
@@ -5338,7 +5329,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "Comment" action at "Hello @Automation PM" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I click on "Upload File from Library" tab at files library upload modal
@@ -5789,7 +5780,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     And I navigate to "Planning" tab
     And I navigate to "Collab" tab
-    And I click on "Comment" action at "Hello @Automation PM" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I click on "Cancel" button in send email modal
@@ -5979,7 +5970,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -6021,7 +6012,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -6143,7 +6134,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
-    And I enter value "Hello @Automation PM" in my feed section and share the post
+    And I enter value "Temp Post Automation" in my feed section and share the post
     And I click on hyperlink containing value "@Automation PM"
     And I pause execution for "3" seconds
     Then I see new tab is opened

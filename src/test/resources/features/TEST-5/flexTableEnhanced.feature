@@ -124,7 +124,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "6" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
+    Then I see "5" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
 
   @77113    @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
   Scenario: validate disabling of total row count in enhanced flex table planning
@@ -176,7 +176,6 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see Menu icon is disabled from planning flex table "Grants Enhanced Table"
-
 
   @77220    @orderBySortByFieldAtEnhancedDataTable-gPlanning @Smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside  enhanced flex table planning
@@ -448,8 +447,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I hovering mouse on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-IE11G-001"
+    When I perform quick search for "GT-Grant-005" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-Grant-005"
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
@@ -515,4 +514,4 @@ Business Need: Flex Table enhanced Component Scenarios
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see field "Description" as "test temp data"
+    Then I see field "Description" as "test temp datatest temp datatest temp datatest temp data"

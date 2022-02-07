@@ -1953,8 +1953,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -3804,8 +3804,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3835,8 +3835,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "View" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3866,8 +3866,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3898,8 +3898,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "View" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3928,8 +3928,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3958,8 +3958,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "View" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -3988,8 +3988,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "View" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4018,8 +4018,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4882,8 +4882,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -4955,8 +4955,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4972,8 +4972,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE ERROR MSG DND |
 
@@ -4989,8 +4989,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5044,8 +5044,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5129,8 +5129,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE BLOCK ERROR MSG DND |
 
@@ -5298,8 +5298,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-019"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -7757,8 +7757,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{PG-343-019}"
-    When I click on "Edit" icon for "{PG-343-019}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
@@ -8015,8 +8015,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134""
-    When I click on "Edit" icon for "AN-734-134"" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I pause execution for "2" seconds
@@ -8030,8 +8030,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I refresh the page
@@ -8044,8 +8044,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-734-134"
-    When I click on "Edit" icon for "AN-734-134" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8388,8 +8388,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-501-0039"
-    When I click on "View Program Details" icon for "PG-501-0039" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "900000" into field "fieldFundedAmount__c"
@@ -8403,8 +8403,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-501-0039"
-    When I click on "View Program Details" icon for "PG-501-0039" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "1234" into field "fieldPercent__c"
@@ -9226,8 +9226,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-501-0039"
-    When I click on "View Program Details" icon for "PG-501-0039" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
