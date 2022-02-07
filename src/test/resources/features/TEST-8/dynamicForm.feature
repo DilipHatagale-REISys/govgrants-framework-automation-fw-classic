@@ -1917,6 +1917,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I see "Written" field inside "Section 1" is hidden
 
   @94417   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -1961,6 +1965,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I see "Written" field inside "Section 1" is disabled
 
   @94228   @validateDependentQuestionJsonFieldByDisablingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -3999,6 +4007,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Currency" field inside "Section 1" is disabled
     Then I softly see "Currency Section 3" field inside "Section 3" is disabled
 
@@ -4032,6 +4044,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Written" field inside "Section 1" is hidden
     Then I softly see "Number" field inside "Section 1" is hidden
     Then I softly see "Written Section 3" field inside "Section 3" is hidden
@@ -4067,6 +4083,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Currency" field inside "Section 1" is disabled
     Then I softly see "Percent" field inside "Section 1" is hidden
     Then I softly see "Currency Section 3" field inside "Section 3" is disabled
@@ -4102,6 +4122,11 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    And I click on "edit" in the page details
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly do not see "Percent" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
@@ -4137,6 +4162,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Percent" field inside "Section 1" is hidden
     Then I softly see "Percent Section 3" field inside "Section 3" is hidden
     When I enter values into "Section 1" page block
@@ -4180,6 +4209,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I enter value "sdf" into field "Written"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "edit" in the page details
     Then I softly see "Written" field inside "Section 1" is disabled
     Then I softly see "Number" field inside "Section 1" is disabled
     Then I softly see "Written Section 3" field inside "Section 3" is disabled
