@@ -4440,6 +4440,13 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     Then I softly see "Overview" sub tab is displayed at view detail page
+    Then I softly see "Plan" sub tab is displayed at view detail page
+    Then I softly see "Roles" sub tab is displayed at view detail page
+    Then I softly see "Financials" sub tab is displayed at view detail page
+    Then I softly see "Terms & Conditions" sub tab is displayed at view detail page
+    Then I softly see "Log" sub tab is displayed at view detail page
+    Then I softly see "Attachments" sub tab is displayed at view detail page
+    Then I softly see "History" sub tab is displayed at view detail page
 
   @121203  @verifyThatTopRightEditActionIsWorkingAtPageDetails
   Scenario: validate that if user clicks on edit action at page detail then edit page opens
