@@ -1953,8 +1953,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2487,7 +2487,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see value "11/30/2020 5:00 PM" of "DateandTime" field is not changed on page scroll
+    Then I see value "10/15/2021 7:43 AM" of "DateandTime" field is not changed on page scroll
 
   @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
   Scenario: verify that user can enter and save value in url field in a valid format when URL Validation Regex is set to true from custom metadata config
@@ -3804,8 +3804,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3835,8 +3835,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3866,8 +3866,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3898,8 +3898,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3928,8 +3928,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3958,8 +3958,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -3988,8 +3988,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4018,8 +4018,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4882,8 +4882,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -4955,8 +4955,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4972,8 +4972,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE ERROR MSG DND |
 
@@ -4989,8 +4989,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5044,8 +5044,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5129,8 +5129,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE BLOCK ERROR MSG DND |
 
@@ -5298,8 +5298,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -6247,6 +6247,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     Then I see the following messages in the page details contains:
       | Test Automation Error Message @ |
 
@@ -7676,14 +7677,6 @@ Business Need: Page Layout Component Scenarios
 
   @151109    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldInCreateMode
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at newly created record
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    And I pause execution for "4" seconds
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
@@ -7692,6 +7685,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "4" seconds
     And I click on "Edit" in the page details
     When I clear the value from field "Phone_Field__c"
     When I click on "Save" in the page details
@@ -7756,8 +7757,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
@@ -8014,8 +8015,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementCreatedForEmailNotification}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementCreatedForEmailNotification}" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I pause execution for "2" seconds
@@ -8029,8 +8030,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for email notification check"
-    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I refresh the page
@@ -8043,8 +8044,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for email notification check"
-    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8387,9 +8388,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "900000" into field "fieldFundedAmount__c"
@@ -8403,9 +8403,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "1234" into field "fieldPercent__c"
@@ -8696,8 +8695,8 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
-    And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
+    And I click on "Edit" in the page details
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
     Then I see field "QueueId__c" is disabled
@@ -8726,27 +8725,12 @@ Business Need: Page Layout Component Scenarios
 
   @161413 @VerifyIfWeDisabledOwnerOrganizationFieldOnPBDJsonExpressionUsingEqualToOperatorThenOwnerOrganizationFieldDisabled @vaibhavC
   Scenario: Verify If We Disabled Owner Organization Field On PBD Json Expression Using Equal To Operator Then Owner Organization Field Disabled
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    And I save the field labeled "ID" as "EGMSID"
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
-    When I navigate to "Overview" sub tab
-    And I click on "Edit" in the page details
-    Then I see field "Account__c" is disabled
-
-  @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
-  Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8756,12 +8740,27 @@ Business Need: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    Then I see field "Account__c" is disabled
+
+  @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
+  Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "EGMSID"
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     Then I see field "Owner Organization" inside page block
@@ -8916,6 +8915,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
+    And I click on "Edit" in the page details
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
     Then I softly cannot see field "Queue Lookup" inside page block
@@ -8975,8 +8975,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for email notification check"
-    When I click on "Edit" icon for "Announcement for email notification check" inside table
+    When I perform quick search for "AN-755-232"
+    When I click on "View" icon for "AN-755-232" inside table
     When I navigate to "Overview" sub tab
     Then I see field "Eligible Applicant Types" inside page block
 
@@ -9226,14 +9226,13 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
     When I navigate to "History" sub tab
-    Then I see take snap shot getting saved with "Todays Date"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @172301 @tejal
   Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Planning phase's tasks

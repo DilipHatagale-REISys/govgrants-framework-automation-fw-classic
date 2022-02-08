@@ -176,7 +176,7 @@ Business Need: security review Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Setup" sub tab
-    Then I see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"
+    Then I see expected table with id "Field History"
 
   @106308    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
   Scenario: validate flex table at phase level is rendered properly by admin user
@@ -203,7 +203,7 @@ Business Need: security review Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Setup" sub tab
-    Then I see expected table with id "GrantorServiceAreasProgramFlexToggle"
+    Then I see expected table with id "Peer Reviewers"
 
   @106323    @verifyThatEnhancedGridIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced grid IsDisplayed by logged in as SPI user

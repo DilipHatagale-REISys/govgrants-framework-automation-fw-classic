@@ -1080,9 +1080,8 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I save the field labeled "ID" as "id"
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
@@ -1099,6 +1098,7 @@ Business Need: Send Email Component Scenarios
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test data select file" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
     When I perform quick search for "Test data select file" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "Test data select file" inside table
     When I pause execution for "2" seconds
@@ -1110,6 +1110,7 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I close modal by clicking the top right x button
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     And I pause execution for "2" seconds
@@ -1396,9 +1397,8 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7005,9 +7005,8 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -7023,7 +7022,6 @@ Business Need: Send Email Component Scenarios
     When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
-    When I upload attachment "TestAutomationFile.csv" in send email modal
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -7086,7 +7084,7 @@ Business Need: Send Email Component Scenarios
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186685 @sprint24 @dnyaneshwari
-  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO- group" reply email
+  Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- group" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7113,10 +7111,10 @@ Business Need: Send Email Component Scenarios
     When I click on "Reply" icon for "send email select file attachment	" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186684 @sprint24 @dnyaneshwari
-  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO- internal" reply email
+  Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- internal" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7143,10 +7141,10 @@ Business Need: Send Email Component Scenarios
     When I click on "Reply" icon for "send email select file attachment	" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186681 @sprint24 @dnyaneshwari
-  Scenario: Send Email -To verify , User should be able to see " " when select file is does not attached to "TO-external" reply email
+  Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO-external" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7173,7 +7171,7 @@ Business Need: Send Email Component Scenarios
     When I click on "Reply" icon for "send email select file attachment	" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186677 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO- internal " reply email
@@ -7290,7 +7288,7 @@ Business Need: Send Email Component Scenarios
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186297 @sprint24 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see " " when user did not select any attached to "TO- Internal " email
+  Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Internal " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7311,10 +7309,10 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186298 @sprint24 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see "" when user did not select any attached to "TO- External " email
+  Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- External " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7335,10 +7333,10 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186300 @sprint24 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see " " when user did not select any attached to "TO- Group " email
+  Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Group " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7361,7 +7359,7 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186296 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- group   " email
@@ -7520,7 +7518,7 @@ Business Need: Send Email Component Scenarios
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187635 @sprint26 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- internal " reply  email
+  Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- internal " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7548,10 +7546,10 @@ Business Need: Send Email Component Scenarios
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187636 @sprint26 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- external " reply  email
+  Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- external " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7579,10 +7577,10 @@ Business Need: Send Email Component Scenarios
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value " " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187639 @sprint26 @dnyaneshwari
-  Scenario:Send Email -To verify , User should be able to see " " mark when select file is attached to "TO & CC- group " reply  email
+  Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- group " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -7608,8 +7606,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "reply for  To group" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    Then I softly see value "" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
