@@ -1184,8 +1184,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA--114"
-    When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
+    When I perform quick search for "FOA-USAID-004"
+    When I click on "View" icon for "Family Planning and Reproductive Health Methods APS" inside table
     When I navigate to "Attachments" sub tab
     And I click on top right button "New" in flex table with id "AnnoucementPackages"
     When I select package type from Package selection for business forms

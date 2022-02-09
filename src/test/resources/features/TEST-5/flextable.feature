@@ -2280,7 +2280,6 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
-    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @176531 @sprint20
