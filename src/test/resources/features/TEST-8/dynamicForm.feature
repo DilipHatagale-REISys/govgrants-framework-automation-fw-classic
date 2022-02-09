@@ -258,9 +258,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field    | Value |
-      | Picklist | YES   |
+    And I select "YES" from dropdown
     When I click on "Save" in the page details
     Then I see for "Picklist" field value is "YES" inside dynamic form
 
@@ -1603,6 +1601,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter value "sdf" into field "Currency"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Currency" field inside "Section 1" is hidden
 
   @94014   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldOnTheBasisOfWrittenFieldInsideDynamicFormInViewMode
@@ -1668,7 +1669,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
       | Field    | Value |
       | Currency |       |
@@ -1809,7 +1810,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
       | Field    | Value |
       | Currency |       |
@@ -1839,6 +1840,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+
     Then I softly see "Currency" field inside "Section 1" is hidden
     Then I softly see "Number" field inside "Section 1" is disabled
 
@@ -1921,6 +1923,9 @@ Business Need: dynamic forms Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I click on "edit" in the page details
+    When I enter value "12" into field "Currency"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Written" field inside "Section 1" is hidden
 
   @94417   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -1965,10 +1970,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    And I enter value "sdf" into field "Written"
+    When I enter value "12" into field "Currency"
     And I click on "Save" in the page details
-    And I pause execution for "5" seconds
-    And I click on "edit" in the page details
+    And I click on "Edit" in the page details
     Then I see "Written" field inside "Section 1" is disabled
 
   @94228   @validateDependentQuestionJsonFieldByDisablingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -2040,6 +2044,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter value "12" into field "Number"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Written" field inside "Section 1" is hidden
 
   @94455   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingNumberFieldValueInsideDynamicFormInViewMode
@@ -2084,6 +2091,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter value "12" into field "Number"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Written" field inside "Section 1" is disabled
 
   @94457   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingNumberFieldValueInsideDynamicFormInViewMode
@@ -2155,6 +2165,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter value "12" into field "Percent"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Currency" field inside "Section 1" is hidden
 
   @94538   @validateDependentQuestionJsonFieldByHidingCurrencyFieldUsingPercentFieldValueInsideDynamicFormInViewMode
@@ -2177,6 +2190,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    And I click on "Edit" in the page details
+    When I enter value "12" into field "Percent"
+    And I click on "Save" in the page details
     Then I do not see "Currency" inside "Section 1" at dynamic form
 
   @94548   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingPercentFieldValueInsideDynamicFormInEditMode
@@ -2199,6 +2215,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter value "12" into field "Percent"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     Then I see "Currency" field inside "Section 1" is disabled
 
   @94550   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingPercentFieldValueInsideDynamicFormInViewMode
@@ -2350,7 +2369,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
       | Field    | Value |
       | Currency |       |
