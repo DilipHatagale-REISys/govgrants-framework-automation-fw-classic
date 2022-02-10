@@ -1166,3 +1166,47 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
     Then I see the header is "test old form - Preview" in the page details
+
+  @191194 @sprint1
+  Scenario: To verify, if the user edits a Form in an Application record and then refreshes the page, the same correct phase should be highlighte
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Budget Form	" inside flex table with id "FormEnhancedTable"
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191197 @sprint1
+  Scenario: To verify, if the user in an Application record and edit a Form and change the from name from dropdown then  the same correct phase should be highlighted
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Budget Form	" inside flex table with id "FormEnhancedTable"
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191371 @sprint1
+  Scenario: To verify, if the user in an Application record and edit the form and change the from name from dropdown and save the form then  the same correct phase should be highlighted
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form	" inside flex table with id "FormEnhancedTable"
+    Then I see "Applications" tab is highlighted for particular program
+
+  @191381 @sprint1
+  Scenario:  To verify, if the user in an Application record and edit the form and change the from name from dropdown and save the form then  the same correct phase should be highlighte
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    Then I see "Applications" tab is highlighted for particular program
