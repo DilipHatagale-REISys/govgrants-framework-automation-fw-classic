@@ -376,7 +376,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
-    And I enter value "" into field "ProposedStartdate__c"
+    And I enter value "" into field "fieldProposedStartdate__c"
     When I click on "Save" button in right header
     Then I see the following message in the page details contains:
       | Proposed Start Date : is required to save. |

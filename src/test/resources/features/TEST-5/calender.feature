@@ -854,15 +854,15 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Manage Grants, Awards, Amendments" subheader on left panel
     And I click toggle button to select "Draft Grants"
-    When I perform quick search for "Test Data DND"
-    When I click on "Edit" icon for "Test Data DND" inside table
+    When I perform quick search for "test"
+    When I click on "Edit" icon for "test" inside table
     When I enter value "0" into field "ProjectPeriodStartDate__c"
     When I enter value "365" into field "ProjectPeriodEndDate__c"
     When I click on "Save" in the page details
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "GT-GT6OC-001 (Test Date Time)" record is displayed in "turquoise" color inside calendar
+    Then I see "GT-final-001 (Budget Period End Date)" record is displayed in "turquoise" color inside calendar
 
   @127666    @verifySPIUserCanSeeGrantIdInWhiteColorAtMonthWiseCalendarIfChangedColorCodeFromConfig-HomePhase
   Scenario: validate SPI User is able to see grant ID in white color at month wise calendar if color code changed from config -HomePhase
@@ -879,15 +879,15 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Manage Grants, Awards, Amendments" subheader on left panel
     And I click toggle button to select "Draft Grants"
-    When I perform quick search for "Test Data DND"
-    When I click on "Edit" icon for "Test Data DND" inside table
+    When I perform quick search for "test"
+    When I click on "Edit" icon for "test" inside table
     When I enter value "0" into field "ProjectPeriodStartDate__c"
     When I enter value "365" into field "ProjectPeriodEndDate__c"
     When I click on "Save" in the page details
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "GT-GT6OC-001 (Test Date Time)" record is displayed in "white" color inside calendar
+    Then I see "GT-final-001 (Budget Period End Date)" record is displayed in "white" color inside calendar
 
   @89805  @verifyByClickAtMoreOptionAllProgramRecordsDisplayedAtMonthlyCalendar
   Scenario: validate by click at more option, all program records are displayed in month wise calendar
