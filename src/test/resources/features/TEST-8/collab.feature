@@ -440,7 +440,7 @@ Business Need: collab Component Scenarios
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @Automation" in the comment at collab
+    And I enter value "Hello @AutomationPM" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
 
   @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
@@ -449,7 +449,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @Automation" in the comment at collab
+    And I enter value "Hello @AutomationPM" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
 
   @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab
@@ -587,6 +587,8 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -614,6 +616,8 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds

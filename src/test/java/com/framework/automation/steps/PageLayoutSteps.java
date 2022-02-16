@@ -808,9 +808,4 @@ public class PageLayoutSteps {
         pageLayoutPage.assertLookupLinkInsidePageBlock(name);
     }
 
-    @And("I press {string} key")
-    public void iPressKey(String keyBoardKey) {
-        pageLayoutPage.pressKeyFromkeyboard(keyBoardKey);
-    }
-
 }

@@ -1725,9 +1725,6 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().click().on(By.xpath("//div[@id='CollabPostBottomBar']//input[@value='" + buttonName + "']"));
     }
 
-    public void pressKeyFromkeyboard(String keyBoardKey) {
-        I.amPerforming().addOnsTo().getKeyBoard();
-    }
 
 
     /*********
