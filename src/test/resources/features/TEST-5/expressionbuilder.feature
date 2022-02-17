@@ -3710,7 +3710,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
@@ -3748,7 +3748,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47329    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
@@ -3805,7 +3805,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47332    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
@@ -3824,7 +3824,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47333    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
@@ -3862,7 +3862,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
@@ -3900,7 +3900,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "Edit" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @47337    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
@@ -4625,8 +4625,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I enter value "10" into field "fieldDateandTime__c"
     And I click on "Save" in the page details
+    And I pause execution for "7" seconds
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "Program Contacts"
+    And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     When I pause execution for "3" seconds
@@ -4993,7 +4994,9 @@ Business Need: Expression Builder Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
+    And I pause execution for "5" seconds
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5696,6 +5699,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I click toggle button to select "Active Awards"
     Then I see "Edit All" button inside "Active Awards" enhanced grid
 
   @53010    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator
@@ -5734,6 +5738,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
+    And I click toggle button to select "Active Awards"
     Then I see "Edit All" button inside "Active Awards" enhanced grid
 
   @53012    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -5934,6 +5939,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    And I click toggle button to select "Active Awards"
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @82065    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtTopLevelActions-EGrid @enhancedGrid
@@ -6296,7 +6302,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForMonitoringTable               | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6304,8 +6310,8 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+    When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Demo"
 
   @83693    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfGroup-EGrid @enhancedGrid @sanity
   Scenario: Verify Hide cell JSON By hiding cell on the basis of group - enhanced grid
@@ -7144,7 +7150,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonUsingDateFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideJsonForMonitoringTable               | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                            | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -7153,8 +7159,8 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+    When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Demo"
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                                    | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -7295,7 +7301,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
+    Then I see "Edit" icon for "AD-GG PJ--01" is displayed inside flex table
 
   @97484    @validateHideExpressionJsonForLookupRelationalFieldInCreateMode-gPlanning
   Scenario: validate hide expression json at lookup relational field in create program page
@@ -7409,7 +7415,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--01"
 
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |

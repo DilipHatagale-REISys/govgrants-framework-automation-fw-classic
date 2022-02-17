@@ -1601,9 +1601,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    When I enter value "sdf" into field "Currency"
-    And I click on "Save" in the page details
-    And I click on "Edit" in the page details
     Then I see "Currency" field inside "Section 1" is hidden
 
   @94014   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldOnTheBasisOfWrittenFieldInsideDynamicFormInViewMode
@@ -1919,13 +1916,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    And I enter value "sdf" into field "Written"
-    And I click on "Save" in the page details
-    And I pause execution for "5" seconds
-    And I click on "edit" in the page details
-    When I enter value "12" into field "Currency"
-    And I click on "Save" in the page details
-    And I click on "Edit" in the page details
     Then I see "Written" field inside "Section 1" is hidden
 
   @94417   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
@@ -3486,7 +3476,7 @@ Business Need: dynamic forms Component Scenarios
   Scenario: changing value of question applicable as required for save and checking error message for written field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Capture Item          | Question Applicable ? |                   | ApiGeneratedId:0 |
+      | Capture Item          | Question Applicable ? | --None--          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0032            |                           |                            |
@@ -4112,10 +4102,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    And I enter value "sdf" into field "Written"
-    And I click on "Save" in the page details
-    And I pause execution for "5" seconds
-    And I click on "edit" in the page details
     Then I softly see "Written" field inside "Section 1" is hidden
     Then I softly see "Number" field inside "Section 1" is hidden
     Then I softly see "Written Section 3" field inside "Section 3" is hidden
@@ -4277,8 +4263,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    And I enter value "sdf" into field "Written"
-    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I click on "edit" in the page details
     Then I softly see "Written" field inside "Section 1" is disabled
