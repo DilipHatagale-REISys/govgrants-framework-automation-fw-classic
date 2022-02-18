@@ -240,7 +240,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJSONFieldAtEnhancedDataTable | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn| EnhancedDataTable  | Name                      | FTC-1511                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -248,8 +248,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Applicationg test88888"
+    When I perform quick search for "Educational Pro" in "---program:-:flexGridEnhancedDataTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
 
   @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Hiding specific column value of enhanced data table from config and validating it inside enhanced data table -planning
@@ -406,8 +406,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "advfEnhancedDataTable"
-      | Project Period | contains | 10/9/2017--10/11/2017|
-    Then I see label containing value as "10/9/2017--10/11/2017" inside advance filter
+      | Project Period | contains | 10/1/2017--10/1/2018|
+    Then I see label containing value as "10/1/2017--10/1/2018" inside advance filter
 
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
@@ -448,7 +448,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-Grant-005" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-Grant-005"
+#    When I on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-Grant-005"
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
@@ -514,4 +514,4 @@ Business Need: Flex Table enhanced Component Scenarios
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see field "Description" as "test temp datatest temp datatest temp datatest temp data"
+    Then I see field "Description" as "test temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp data"
