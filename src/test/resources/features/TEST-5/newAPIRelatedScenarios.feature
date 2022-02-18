@@ -270,7 +270,7 @@ Business Need: New API related scenarios temporary
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I perform quick search for "Demo_Title"
-    When I pause execution for "60" seconds
+    When I pause execution for "70" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
   @161159  @verifyThatWhwnUserPerformScrollUpword/DownwordThenSessionTimeoutCountdownShouldRestarts

@@ -424,8 +424,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Text"
-    Then I see value "Text Text" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search "Health"
+    Then I see value "Test111Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     | dndCriteria                                                                                 |
@@ -442,8 +442,8 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Text"
-    Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search inside global search "Health"
+    Then I see value "Test94Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                               | dndCriteria                                                                                 |
@@ -1000,10 +1000,10 @@ Business Need: dnd Component Scenarios
       | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
-    When I perform quick search inside global search "Disease Control"
+    When I perform quick search inside global search "Health"
     Then I softly do not see value "Health Resources And Services Administration" for title "Organization" inside table "---program:-:programSearchFlexTableID---"
-    When I perform quick search for "FPG-HHS-CDC-0005"
-    Then I softly see value "Centers For Disease Control And Prevention" for title "Organization" inside table "---program:-:programSearchFlexTableID---"
+    When I perform quick search for "FPG-HHS-ACF-0017"
+    Then I softly see value "Administration For Children And Families" for title "Organization" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
       | DNDFilterClause1                                                                     | dndCriteria                                                                                   |

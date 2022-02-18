@@ -479,10 +479,10 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
-    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
-    When I pause execution for "7" seconds
-    Then I softly do not see library/folder/file "MultipleFileUploadDND1.png" is displayed under files library
+#    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+#    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+#    When I pause execution for "7" seconds
+#    Then I softly do not see library/folder/file "MultipleFileUploadDND1.png" is displayed under files library
 
   @70435 @validateThatByClickOnRenameFolderAnUpdatedFolderShouldGetShownInLibraryByAdmin-HomePhase
   Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by admin
@@ -1828,7 +1828,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "TestDND2.png" in "WorkspaceFiles" panel
+    When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
     Then I see "TestDND2.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
@@ -2346,8 +2346,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "DragAndDropFileDND.png" in "WorkspaceFiles" panel
-    Then I see "DragAndDropFileDND.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
+    When I perform quick search for "duplicateFileInFolder.png" in "WorkspaceFiles" panel
+    Then I see "duplicateFileInFolder.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
 
     Examples:
       | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
@@ -4212,11 +4212,11 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
-    When I click "Yes" on modal confirmation box
-    When I pause execution for "5" seconds
-    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+#    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+#    When I click "Yes" on modal confirmation box
+#    When I pause execution for "5" seconds
+#    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+#    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @129989 @validateMaximum5FilesCanBeUploadedMessageAtUploadFileMOodal-RecordLevel
   Scenario: Verify that maximum 5 files can be uploaded msg at upload file modal-  record level
@@ -5459,13 +5459,13 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:workSpaceFilesFlexTableId---" panel
     Then I softly see value "MultipleFileUploadDND1.png" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
-    When I click on "Delete" icon for "MultipleFileUploadDND1.png" inside table
-    When I click "Yes" on modal confirmation box
-    When I pause execution for "3" seconds
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_FileList"
-    When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:workSpaceFilesFlexTableId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+#    When I click on "Delete" icon for "MultipleFileUploadDND1.png" inside table
+#    When I click "Yes" on modal confirmation box
+#    When I pause execution for "3" seconds
+#    When I click on "My_Workspace_File"
+#    When I click on "My_Workspace_FileList"
+#    When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:workSpaceFilesFlexTableId---" panel
+#    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
   @160806 @validateThatSPIUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from record level if visibility option is disabled and default option is selected
