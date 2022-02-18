@@ -4780,7 +4780,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    And I click on "Edit" icon for "GT-GT09-001" inside flex table with id "---program:-:enhancedGridTableId---"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForNumberCheking}" in "---program:-:enhancedGridTableId---" panel
+    And I click on "Edit" icon for "{Framework_recordUsed:NewRecordForNumberCheking}" inside flex table with id "---program:-:enhancedGridTableId---"
     And I refresh the page
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing

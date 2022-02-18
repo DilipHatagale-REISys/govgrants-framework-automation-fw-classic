@@ -595,7 +595,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA-USAID-004"
-    When I click on "Edit" icon for "FOA-USAID-004" inside table
+    When I click on "View" icon for "FOA-USAID-004" inside table
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
       | --None-- | Competitive | Sole Source/Directed |
@@ -5977,7 +5977,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Comment" action at "Framework Dev" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -6019,7 +6019,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Comment" action at "Framework Dev" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
