@@ -4264,7 +4264,6 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "5" seconds
-#    And I click on "edit" in the page details
     Then I softly see "Written" field inside "Section 1" is disabled
     Then I softly see "Number" field inside "Section 1" is disabled
     Then I softly see "Written Section 3" field inside "Section 3" is disabled
