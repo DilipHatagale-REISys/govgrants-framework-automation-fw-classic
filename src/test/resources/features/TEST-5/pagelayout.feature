@@ -5419,7 +5419,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "15/10/2021 05:13 PM" text enter in field "fieldPublisheddate__c"
+    Then I see "11/30/2020" text enter in field "fieldStartDate__c"
 
   @132863  @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate date time field is displayed at enhanced flex edit page layout
@@ -5436,7 +5436,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "11/30/2020 5:00 PM" text enter in field "fieldDateandTime__c"
+    Then I see "5/15/2018 9:21 AM" text enter in field "fieldCreatedDate"
 
   @132864  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayout
   Scenario Outline: validate help text at field hover is displayed at enhanced flex edit page layout
