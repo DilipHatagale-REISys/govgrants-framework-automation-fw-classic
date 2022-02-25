@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -806,5 +807,10 @@ public class PageLayoutSteps {
     @Then("I see lookup link {string} inside page block")
     public void iSeeLookupLinkInsidePageBlock(String name) {
         pageLayoutPage.assertLookupLinkInsidePageBlock(name);
+    }
+
+    @And("I press enter key")
+    public void iPressEnterKey() throws AWTException {
+        pageLayoutPage.pressKeyFromkeyboard();
     }
 }
