@@ -828,8 +828,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Non-NC-Sole Source"
-    When I click on "Edit" icon for "Non-NC-Sole Source" inside table
+    When I perform quick search for "Test"
+    When I click on "Edit" icon for "Test" inside table
     When I enter value "0" into field "AnnouncementAvailableDateTime__c"
     When I click on "Save" in the page details
     And I navigate to "HOME" tab

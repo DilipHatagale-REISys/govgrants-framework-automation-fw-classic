@@ -58,3 +58,47 @@ Business Need: Flex Grid and enhaned grid Component Scenarios related to confirm
     And I enter value "Test" into field "GrantAbbreviation__c"
     When I click on "Save" in the page details without processing
     Then I softly see confirmation box with body "Grants Enhanced Table section" is displayed
+
+  @194091  @sprint2 @userstory_137720
+  Scenario:  To verify, when on Data Table Enhanced a record is made some New Record and then clicked on Save (Page Layout edit mode)without saving the record, then a confirmation message should be displayed to show unsaved changes
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:EnhancedDataTableId---"
+    And I enter value "Test" into field "GrantAbbreviation__c"
+    When I click on "Save" in the page details without processing
+    Then I softly see confirmation box with body "Grants Enhanced Table section" is displayed
+
+  @194477  @sprint2 @userstory_137720
+  Scenario: To verify, when some inline edit changes are made on Parent table's (E-Grid) record and Child Table's (Data Table Enhanced) record, and then clicked on Cancel(Page Layout edit mode), then a confirmation message should be displayed before canc
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I expand nested table containing column value "test11"
+    And I click on "Edit" icon for "GT-test-005" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I enter value "Test" into field "AddressProgramContact__c"
+    When I click on "Cancel" in the page details without processing
+    Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
+
+  @194478 @sprint2 @userstory_137720
+  Scenario: Scenario 7 : To verify, when some inline edit changes are made on Parent table's (E-Grid) record and Child Table's (Data Table Enhanced) record, and then clicked on Save(Page Layout edit mode), then a confirmation message should be displayed to show unsav
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I expand nested table containing column value "test11"
+    And I click on "Edit" icon for "GT-test-005" inside flex table with id "---program:-:enhancedGridTableId---"
+    And I enter value "Test" into field "AddressProgramContact__c"
+    When I click on "Save" in the page details without processing
+    Then I softly see confirmation box with body "Monitoring Schedule For All Active Grants section" is displayed

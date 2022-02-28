@@ -585,7 +585,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
     When I pause execution for "7" seconds
-    Then I softly do not see library/folder/file "MultipleFileUploadDND1.png" is displayed under files library
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Doc.x under library and folder - Home Phase
@@ -1950,7 +1950,7 @@ Business Need: Library Files Component Scenarios
     When I drag the "SendEmailAttachment.pdf" file from "UnitedHealth Group" folder and drop in "Asset Library" folder at library
     When I pause execution for "3" seconds
     When I click on expand icon at library/folder "Asset Library"
-    When I drag the "TestDND2.png" file from "Asset Library" folder and drop in "UnitedHealth Group" folder at library
+    When I drag the "TestDND4.png" file from "Asset Library" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
     Then I see file "SendEmailAttachment.pdf" is displayed under "UnitedHealth Group" library or folder
 
@@ -2682,7 +2682,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "DND" in "WorkspaceFiles" panel
-    Then I see "test record DND" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "TestDND4.png" shown in search table with id "PlanningFilesgrid" at file upload modal
 
   @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file is visible to all internal user if sharing option as "Visible to internal With Record Access" is select at upload file modal
