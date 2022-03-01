@@ -515,3 +515,139 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
     Then I see field "Description" as "test temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp data"
+
+  @194928 @sprint1
+  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | EnhancedDataTable | Name                      | FTC-1556                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+
+  @194451 @sprint1
+  Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | EnhancedDataTable | Name                      | FTC-1556                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+
+  @194456 @sprint1
+  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable1 | EnhancedDataTable | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "Number of Project Areas" in flex table header "Demo_Title"
+
+  @194457 @sprint1
+  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with currency   field(Total Award Obligated Amount)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable1 | EnhancedDataTable | Name                      | FTC-1524                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "Demo_Title"
+
+  @194459 @sprint1
+  Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with status
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable2 | EnhancedDataTable | Name                      | FTC-1560                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "Status" in flex table header "Demo_Title"
+
+  @194929 @sprint1
+  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | EnhancedDataTable | Name                      | FTC-1556                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+
+  @194931 @sprint1
+  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field  with equal to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable3 | EnhancedDataTable | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "Demo_Title"
+
+  @194932 @sprint1
+  Scenario:Data Table Enhanced - To verify, Hide  expression builder is working  for $user with number  field  with  not equal to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable4 | EnhancedDataTable | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I navigate to "Financials" sub tab
+    Then I softly do not see "Number of Project Areas" in flex table header "Demo_Title"
