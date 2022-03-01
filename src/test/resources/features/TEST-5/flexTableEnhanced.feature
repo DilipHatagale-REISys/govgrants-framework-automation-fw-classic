@@ -636,7 +636,7 @@ Business Need: Flex Table enhanced Component Scenarios
     Then I softly do not see "Total Award Obligated Amount" in flex table header "Demo_Title"
 
   @194932 @sprint1
-  Scenario:Data Table Enhanced - To verify, Hide  expression builder is working  for $user with number  field  with  not equal to operator
+  Scenario:Data Table Enhanced -To verify, Hide  expression builder is working  for $user with number  field  with  not equal to operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
