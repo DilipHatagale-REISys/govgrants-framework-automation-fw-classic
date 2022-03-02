@@ -807,5 +807,4 @@ public class PageLayoutSteps {
     public void iSeeLookupLinkInsidePageBlock(String name) {
         pageLayoutPage.assertLookupLinkInsidePageBlock(name);
     }
-
 }
