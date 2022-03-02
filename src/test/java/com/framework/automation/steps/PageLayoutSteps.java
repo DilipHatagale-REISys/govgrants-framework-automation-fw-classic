@@ -809,8 +809,4 @@ public class PageLayoutSteps {
         pageLayoutPage.assertLookupLinkInsidePageBlock(name);
     }
 
-    @And("I press enter key")
-    public void iPressEnterKey() throws AWTException {
-        pageLayoutPage.pressKeyFromkeyboard();
-    }
 }

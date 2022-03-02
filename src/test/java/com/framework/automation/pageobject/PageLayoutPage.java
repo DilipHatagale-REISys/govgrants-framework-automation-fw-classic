@@ -3565,8 +3565,4 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
-
-    public void pressKeyFromkeyboard() throws AWTException {
-        I.amPerforming().robotActionsTo().enter();
-    }
 }
