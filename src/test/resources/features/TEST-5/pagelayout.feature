@@ -7683,7 +7683,6 @@ Business Need: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" in the page details
     When I clear the value from field "Phone_Field__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -7747,8 +7746,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
@@ -8726,12 +8725,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     And I save the field labeled "ID" as "EGMSID"
     When I navigate to "Overview" sub tab
-    And I click on "Edit" in the page details
     Then I see field "Account__c" is disabled
 
   @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
@@ -8898,13 +8895,14 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
-    And I click on "Edit" in the page details
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
     Then I softly cannot see field "Queue Lookup" inside page block

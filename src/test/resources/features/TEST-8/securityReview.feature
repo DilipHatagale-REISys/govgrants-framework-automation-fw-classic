@@ -700,6 +700,7 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
 
   # @109931 - first approval
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal

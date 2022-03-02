@@ -10,6 +10,9 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation Admin Comment" in my feed section and share the comment
+    Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -17,6 +20,7 @@ Business Need: collab Component Scenarios
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
+    Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
@@ -66,7 +70,10 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I click on "Delete" action from dropdown at "Test Automation Admin collab phase Comment" comment inside my feed
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the comment
+    Then I softly see "Test Automation Admin collab phase Comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation Admin collab phase Comment" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the post
@@ -80,13 +87,17 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation PM Comment" in my feed section and share the comment
+    Then I softly see "Test Automation PM Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "Comment" action at "Test Post for automation-PM DND" comment inside my feed
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
+    Then I softly see "Test Automation PM Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
@@ -235,10 +246,10 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Test Automation collab admin to check post share access" in my feed section and share the post
-    And I pause execution for "2" seconds
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation collab admin to check post share access" in my feed section and share the comment
     Then I softly see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
-    And I click on "Delete" action from dropdown at "Test Automation collab admin to check post share access" comment inside my feed
+    And I click on "Delete" action at "Test Automation collab admin to check post share access" comment inside my feed
     And I click modal button "OK"
     Then I softly do not see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -440,7 +451,7 @@ Business Need: collab Component Scenarios
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @Automation" in the comment at collab
+    And I enter value "Hello @AutomationPM" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
 
   @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
@@ -449,7 +460,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @Automation" in the comment at collab
+    And I enter value "Hello @AutomationPM" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
 
   @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab
@@ -587,6 +598,8 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -614,6 +627,8 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -639,7 +654,7 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I click on "Comment" action at "Internal Group for Testing" comment inside my feed
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly do not see tab label as "Upload File from Computer" at files library upload modal

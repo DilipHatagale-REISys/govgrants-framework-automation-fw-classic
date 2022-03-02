@@ -595,7 +595,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA-USAID-004"
-    When I click on "Edit" icon for "FOA-USAID-004" inside table
+    When I click on "View" icon for "FOA-USAID-004" inside table
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
       | --None-- | Competitive | Sole Source/Directed |
@@ -4098,7 +4098,7 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "Program Contacts"
+    And I click on top right button "Associate" in flex table with id "----program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "3" seconds
@@ -5635,9 +5635,9 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "actionsAtEgrid" in "WorkspaceFiles" panel
+    When I perform quick search for "actionsAtEgrid1" in "WorkspaceFiles" panel
     And I pause execution for "5" seconds
-    When I check "actionsAtEgrid.png" boxes in flex table with id "WorkspaceFiles"
+    When I check "actionsAtEgrid1.png" boxes in flex table with id "WorkspaceFiles"
  #130109 after selecting one radio button all others set to false/disabled
     Then I softly see checkbox/radio button at "actionsAtEgrid1.png" is disabled
     When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
@@ -5651,9 +5651,9 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "actionsAtEgrid" in "---program:-:PlanningFilesFlexGridId---" panel
  #130109 single file uploaded from home phase is displayed inside attachment tab - record detail
-    Then I softly see value "actionsAtEgrid.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
-    When I perform quick search for "actionsAtEgrid.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Delete" icon for "actionsAtEgrid.png" inside table
+    Then I softly see value "actionsAtEgrid1.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search for "actionsAtEgrid1.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "actionsAtEgrid1.png" inside table
     When I click "Yes" on modal confirmation box
     Then I softly see the following messages in the page details :
       | File actionsAtEgrid.png deleted successfully. |
@@ -5977,7 +5977,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Comment" action at "Framework Dev" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
@@ -6019,7 +6019,7 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Comment" action at "Framework Dev" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing

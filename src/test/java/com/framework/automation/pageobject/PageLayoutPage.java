@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-
 import java.io.IOException;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -735,7 +734,7 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click search icon of owner organization at page block detail edit page
+     * click search icon of owner organization at page block detail edit page *
      *
      * @param frameId
      */

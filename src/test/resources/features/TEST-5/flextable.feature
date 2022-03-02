@@ -2345,7 +2345,7 @@ Business Need: Flex Table Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    When I navigate to "Financials" sub tab
+    And I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
     And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
