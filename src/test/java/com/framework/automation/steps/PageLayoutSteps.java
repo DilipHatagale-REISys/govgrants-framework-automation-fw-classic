@@ -10,7 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
