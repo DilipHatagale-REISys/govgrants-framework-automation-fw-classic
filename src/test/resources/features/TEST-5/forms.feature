@@ -233,9 +233,9 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
-    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
+    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
     When I click on "Save" in the page details
-    Then I see value as "Display 2" is selected at "Multi-Picklist Field" inside dynamic form
+    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
   Scenario:validate that radio button displayed at multipicklist field inside form layout

@@ -217,12 +217,12 @@ Business Need: Side bar Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJSONFieldAtEnhancedDataTable | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn| EnhancedDataTable  | Name                      | FTC-1511                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Applicationg test88888"
+    Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
 
   @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table at sidebar -Home
