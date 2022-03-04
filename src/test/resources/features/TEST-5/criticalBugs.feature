@@ -4558,10 +4558,10 @@ Business Need: Logged Issues Scenarios
     When I click on "Upload" button in send email modal
     When I click on "×" icon at "Add Files" modal under Library
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
-    And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
+    And I enter value "Test Automation Post For collab attachment functionality check - record level" in my feed section and share the comment
     And I navigate to "HOME" tab
     When I pause execution for "3" seconds
-    And I click on "More Actions" action at "Collab Phase sharing temporary comment" comment inside my feed
+    And I click on "More Actions" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     And I navigate to "Collab" tab
     And I pause execution for "3" seconds
@@ -5336,7 +5336,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I click on "Upload File from Library" tab at files library upload modal
@@ -5599,6 +5599,9 @@ Business Need: Logged Issues Scenarios
  #129996 single file uploaded from home phase is displayed inside attachment tab - record detail
     Then I softly see value "actionsAtEgrid.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "HOME" tab
+    And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+    Then I softly see "Automation file upload at record post collab" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -5635,11 +5638,11 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     And I switch to iframe with id "HomeCollabIframe"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "actionsAtEgrid1" in "WorkspaceFiles" panel
+    When I perform quick search for "actionsAtEgrid" in "WorkspaceFiles" panel
     And I pause execution for "5" seconds
-    When I check "actionsAtEgrid1.png" boxes in flex table with id "WorkspaceFiles"
+    When I check "actionsAtEgrid.png" boxes in flex table with id "WorkspaceFiles"
  #130109 after selecting one radio button all others set to false/disabled
-    Then I softly see checkbox/radio button at "actionsAtEgrid1.png" is disabled
+    Then I softly see checkbox/radio button at "actionsAtEgrid.png" is disabled
     When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
  #130109 only single file is uploaded from home phase - my feed section
@@ -5651,9 +5654,9 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "actionsAtEgrid" in "---program:-:PlanningFilesFlexGridId---" panel
  #130109 single file uploaded from home phase is displayed inside attachment tab - record detail
-    Then I softly see value "actionsAtEgrid1.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
-    When I perform quick search for "actionsAtEgrid1.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Delete" icon for "actionsAtEgrid1.png" inside table
+    Then I softly see value "actionsAtEgrid.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I perform quick search for "actionsAtEgrid.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "actionsAtEgrid.png" inside table
     When I click "Yes" on modal confirmation box
     Then I softly see the following messages in the page details :
       | File actionsAtEgrid.png deleted successfully. |

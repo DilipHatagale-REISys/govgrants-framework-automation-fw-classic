@@ -7515,7 +7515,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "test11e" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "test11"
     Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpGrantorActiveAwardsGRIDtABLEiD1---"
 
