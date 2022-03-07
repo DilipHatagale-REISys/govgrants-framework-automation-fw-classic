@@ -4633,3 +4633,127 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see section column is "horizontally" aligned
+
+  @191190 @userstory_192715
+  Scenario: To verify, if the user views a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "preview" icon for "Grantor Application Forms" inside table
+    And I refresh the page
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @193600 @userstory_192715
+  Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "Edit" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Grantor Application Forms" inside table
+    And I refresh the page
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191196 @userstory_192715
+  Scenario: To verify, if the user edits a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "Edit" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Organization Desk Review" inside table
+    And I refresh the page
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @193601  @userstory_192715
+  Scenario: To verify, If the user views a Form in an Announcement  record(Edit layout), the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "Edit" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "preview" icon for "Organization Desk Review" inside table
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191195  @userstory_192715
+  Scenario: To verify, if the user edits a Form in an Announcement record, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "View" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Organization Desk Review" inside table
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191398 @userstory_192715
+  Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "View" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Grantor Progress Report Forms" inside table
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191406 @userstory_192715
+  Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "View" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Grantor Progress Report Forms" inside table
+    And I refresh the page
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191199  @userstory_192715
+  Scenario: To verify, if the user views a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "View" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191200 @userstory_192715
+  Scenario: To verify, if the user views a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Announcement 1"
+    When I click on "Edit" icon for "Announcement 1" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
+    Then I see "Announcements" tab is highlighted for particular program
+
+  @191189 @userstory_192715
+  Scenario: To verify, if the user views a Form in an Announcement record, the same correct phase should be highlighted
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "preview" icon for "Grantor Application Forms" inside table
+    Then I see "Announcements" tab is highlighted for particular program
