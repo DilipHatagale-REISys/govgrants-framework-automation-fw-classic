@@ -648,6 +648,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     Then I see the sub-header is "Automation Internal Program for flow" in the page details
 
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser
@@ -660,6 +661,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -686,6 +688,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -742,6 +745,7 @@ Business Need: security review Scenarios
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
     And I get the "EGMS ID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
@@ -807,6 +811,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -884,6 +889,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1008,6 +1014,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1186,6 +1193,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     And I pause execution for "2" seconds
@@ -1236,6 +1244,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1289,6 +1298,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1431,6 +1441,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1537,6 +1548,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -1637,6 +1649,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
@@ -2230,6 +2243,7 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I get the "EGMS ID"
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
