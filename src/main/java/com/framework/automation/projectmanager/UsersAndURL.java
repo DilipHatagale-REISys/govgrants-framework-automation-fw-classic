@@ -155,7 +155,7 @@ public class UsersAndURL implements UsersController {
         password.put("PM", "test@1234567891");
         password.put("FO", "test@123456");
         password.put("SPI", "test@12345678");
-        password.put("PM1", "test@12345986");
+        password.put("PM1", "test@123459867");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {

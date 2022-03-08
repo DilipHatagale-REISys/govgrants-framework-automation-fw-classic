@@ -3,17 +3,6 @@ Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
 
-  @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
-  Scenario: validate flex  table at record table is rendered properly by PM user
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    When I navigate to "Setup" sub tab
-    Then I see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"
-
   @105884    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUser
   Scenario: validate flex table at phase level is rendered properly by PM user
     When I login as "PM" user
@@ -32,17 +21,6 @@ Business Need: security review Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Overview" sub tab
     Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
-
-  @105918    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsPMUser
-  Scenario: validate enhanced grid at record table is rendered properly by PM user
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    When I navigate to "Setup" sub tab
-    Then I see expected table with id "GrantorServiceAreasProgramFlexToggle"
 
   @106148    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuInternalOrganizationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then internal organization table displayed
@@ -169,14 +147,15 @@ Business Need: security review Scenarios
 
   @106311    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsAdminUser
   Scenario: validate flex  table at record table is rendered properly by admin user
-    When I login as "Admin" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see expected table with id "Field History"
+    When I navigate to "History" sub tab
+    When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
+    Then I see "Changed By" shown as flex table column title
 
   @106308    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
   Scenario: validate flex table at phase level is rendered properly by admin user
@@ -196,14 +175,14 @@ Business Need: security review Scenarios
 
   @106320    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsAdminUser
   Scenario: validate enhanced grid at record table is rendered properly by admin user
-    When I login as "Admin" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    When I navigate to "Setup" sub tab
-    Then I see expected table with id "Peer Reviewers"
+    When I navigate to "Responsibilities" sub tab
+    Then I see "Description" shown as flex table column title
 
   @106323    @verifyThatEnhancedGridIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced grid IsDisplayed by logged in as SPI user
@@ -546,11 +525,12 @@ Business Need: security review Scenarios
   Scenario: validate by logged in as PM user and view completed task at grants phase from assigned by me table then respective record opens in view mode
     When I login as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
-    When I perform quick search for "AD-12345-01"
-    When I click on "View" icon for "AD-12345-01" inside table
-    Then I see "Subaward" shown as over view header
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    When I perform quick search for "PR-AO-0001"
+    When I click on "View" icon for "PR-AO-0001" inside table
+    And I pause execution for "5" seconds
+    Then I see "Pre-Application" shown as over view header
 
   @109270    @verifyThatByLoginAsLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenGrantsAndSubAwardsTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then grants and subawards table displayed
@@ -612,10 +592,11 @@ Business Need: security review Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    And I pause execution for "7" seconds
     When I navigate to "Overview" sub tab
     And I enter value "5000" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "25" seconds
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -794,8 +775,9 @@ Business Need: security review Scenarios
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
+    And I pause execution for "6" seconds
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see table with header "Snapshot History" contains records "Date Taken"
 
   @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user
