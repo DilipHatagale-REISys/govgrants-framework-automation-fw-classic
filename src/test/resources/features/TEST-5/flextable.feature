@@ -2846,6 +2846,30 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                       | defaultFieldsApi   |
       | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
 
+  @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
+  Scenario: validate flex  table at record table is rendered properly by Automation user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "BP-8623" in "---program:-:budgetPeriodDetailsTableId---" panel
+    Then I see "Status" shown as flex table column title
+
+  @105918    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsAutomationUser
+  Scenario: validate enhanced grid at record table is rendered properly by Automation user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-test-005" in "---program:-:enhancedGridTableId---" panel
+    Then I see "Project Title" shown as flex table column title
+
   @190090 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:

@@ -4746,6 +4746,33 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
+  @201238 @Bug_194547
+  Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I softly cannot see top right button "Validate" in page detail
+    Then I cannot see the following message in the page details :
+      | Validated successfully |
+
+  @201239  @Bug_194547
+  Scenario:  To verify "Validated successfully" message not displayed on Form edit mode for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I cannot see the following message in the page details :
+      | Validated successfully |
+
   @191189 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record, the same correct phase should be highlighted
     When I login as "Admin" user
