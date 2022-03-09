@@ -4563,6 +4563,7 @@ Business Need: Logged Issues Scenarios
     When I pause execution for "3" seconds
     And I click on "More Actions" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
+    When I pause execution for "3" seconds
     And I navigate to "Collab" tab
     And I pause execution for "3" seconds
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
@@ -5149,15 +5150,10 @@ Business Need: Logged Issues Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
-    When I upload file "CollabFileTemp.pdf" into library
-    When I enter value as "test Automation" in field "Description" at Library Files
+    When I upload file "CollabFileVanish.pdf" into library
     When I select sharing option as "Select visibility options" at upload file modal
+    When I enter value as "test Automation" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @130577    @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevelCollabTabWhenCustomPermissionIsEnabled @wip @functionalityDeprecated
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record detail- collab tab when custom permission is enabled
