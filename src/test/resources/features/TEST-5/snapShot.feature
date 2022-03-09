@@ -248,7 +248,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
