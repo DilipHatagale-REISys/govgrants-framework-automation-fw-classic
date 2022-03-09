@@ -4784,3 +4784,75 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "preview" icon for "Grantor Application Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
+
+  @201250 @sprint3
+  Scenario: Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button.
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Number |      |
+    When I click on "Save" in the page details
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Number | 200    |
+    When I click on "Save" in the page details
+    Then I softly see "Number" inside "Section 1" at dynamic form
+
+  @201251 @sprint3
+  Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Percent |      |
+    When I click on "Save" in the page details
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Percent | 20    |
+    When I click on "Save" in the page details
+    Then I softly see "Number" inside "Section 1" at dynamic form
+
+  @201252 @sprint3
+  Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Number |      |
+    When I click on "Save" in the page details
+    When I pause execution for "2" seconds
+    When I click on "Edit" button in right header
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Number | 100    |
+    When I click on "Save" in the page details
+    Then I softly see "Number" inside "Section 1" at dynamic form

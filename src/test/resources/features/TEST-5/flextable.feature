@@ -2092,29 +2092,51 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
 
-  @173830 @jyoti
-  Scenario: Data Table Enhanced - To verify, Relationship fields of a record in Data table Enhanced should displayed as hyperlink when 'Show link as Text' checkbox is un-checked
+  @173830 @Jyoti
+  Scenario Outline: Data Table Enhanced - To verify, Relationship fields of a record in Data table Enhanced should displayed as hyperlink when 'Show link as Text' checkbox is un-checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
-    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @173831 @jyoti
-  Scenario:Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
+  Scenario Outline: :Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:EnhancedDataTableId---"
-    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:EnhancedDataTableId---" table
+    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
+    Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
   Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the view layout
@@ -2391,9 +2413,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
@@ -2402,10 +2423,6 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     And I pause execution for "5" seconds
     And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
-    And I pause execution for "4" seconds
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @176524 @sprint20
@@ -2546,10 +2563,6 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     And I pause execution for "5" seconds
     And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
-    And I pause execution for "4" seconds
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @174396 @sprint20
