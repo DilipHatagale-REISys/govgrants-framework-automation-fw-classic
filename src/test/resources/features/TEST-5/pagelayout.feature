@@ -2387,8 +2387,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
     Then I see the sub-header is "PG-343-019" in the page details
 
@@ -4250,8 +4250,9 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    And I pause execution for "7" seconds
     When I navigate to "Attachments" sub tab
-    When I click on "Edit" icon for "Test" inside table
+    When I click on "Edit" icon for "Automation Notes" inside table
     And I close modal by clicking the top right x button
     Then I cannot see the following messages in the page details contains:
       | required fields missing:[Parent Id] |
@@ -4845,7 +4846,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Blue" color:
-      | TEST PAGE INFORMATION MSG DND |
+      | test is done for page layout |
 
   @128491    @verifyAlertMessageSetFromPageMessageConfirIsDisplayedAtViewPageLayoutInBrownColor
   Scenario: validate alert message set from page message config is displayed at view page layout in brown color
@@ -4936,7 +4937,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I see below message at page detail in "Blue" color:
-      | TEST PAGE INFORMATION MSG DND   |
+      | test is done for page layout   |
       | TEST PAGE INFORMATION MSG DND 1 |
 
   @128908    @verifyWarningMessageSetFromPageMessageConfirIsDisplayedAtEditPageLayoutInRedColor
@@ -5257,7 +5258,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I see below message at page detail in "Blue" color:
-      | TEST PAGE INFORMATION MSG DND |
+      | test is done for page layout |
 
   @129623    @verifyInformationMessageSetFromPageMessageConfigIsNotDisplayedAtViewPageLayoutWhenHideForProfileIsSelectedAsSysAdministratorAndUserAsInternal
   Scenario: validate information message set from page message config is not displayed at view page layout when hide for profile = System Administrator and user=internal
@@ -6217,8 +6218,8 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I click modal button "Save"
-    And I pause execution for "10" seconds
-    Then I see "Edit" modal window with id "ProgramBudgetPeriod" is not displayed
+    And I pause execution for "5" seconds
+    Then I do not see "Edit" modal window is displayed
 
   @129075    @verifyErrorMessageWithSpecialCharactersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
   Scenario Outline: verify error message with special characters is displayed at page layout
@@ -6236,8 +6237,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:TestProgramErrorMessageDnd}"
     When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
     When I click on "Save" in the page details
+    And I pause execution for "12" seconds
     When I click on "Submit For Approval" in the page details
-    When I click "Yes" on modal confirmation box
     Then I see the following messages in the page details contains:
       | Test Automation Error Message @ |
 
@@ -7670,7 +7671,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |  --None--         | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
@@ -7682,11 +7683,9 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
-    And I pause execution for "4" seconds
-    When I clear the value from field "Phone_Field__c"
-    When I click on "Save" in the page details
+    And I pause execution for "10" seconds
     Then I see the following message in the page details contains:
-      | Phone Field is required to save under Overview. |
+      | Phone Field is required to save. |
 
   @151138    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldOnModal
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at modal
@@ -7746,8 +7745,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
@@ -8241,8 +8240,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Shantanu GGP.TEST5"
@@ -8356,8 +8355,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
     And I clear the value from field "cke_1_contents"
     And I enter value "Test data" into field "cke_1_contents"
@@ -8406,8 +8405,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
     Then I see field "fieldProjectGoals__c" is vertically resized
 
@@ -8725,8 +8724,9 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    And I pause execution for "5" seconds
     And I save the field labeled "ID" as "EGMSID"
     When I navigate to "Overview" sub tab
     Then I see field "Account__c" is disabled
@@ -8895,13 +8895,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    And I pause execution for "10" seconds
-    And I click on "Edit" in the page details
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"

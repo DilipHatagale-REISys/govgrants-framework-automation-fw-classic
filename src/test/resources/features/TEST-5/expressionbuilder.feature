@@ -4597,7 +4597,9 @@ Business Need: Expression Builder Component Scenarios
     And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
+    And I pause execution for "10" seconds
     When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
