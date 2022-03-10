@@ -1661,14 +1661,14 @@ Business Need: Flex Table Component Scenarios
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Bottom"
 
   @148305    @validateQuickSearchWorkingForPartialValueFromPicklistFieldAtFlexTable
-  Scenario: Validate quick search working for picklist partial value at flex table
+  Scenario:To verify, Picklist value is searchable in Quick search of Data table if partial keyword is entered.
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
-    Then I softly see "Test Program For Automation - Expression Builder 2" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Package Testing" value in flex table id "---program:-:programsTableId---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
@@ -2781,7 +2781,13 @@ Business Need: Flex Table Component Scenarios
     Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
 
   @173826 @sprint20
-  Scenario: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
+  Scenario Outline: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
       | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
@@ -2791,11 +2797,14 @@ Business Need: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see field "Applicant Organization" inside page block
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @189254 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to any 'Display Field Names' of the Flex table, the error message is displayed on the Page

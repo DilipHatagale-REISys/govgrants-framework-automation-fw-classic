@@ -595,7 +595,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA-USAID-004"
-    When I click on "View" icon for "FOA-USAID-004" inside table
+    When I click on "Edit" icon for "FOA-USAID-004" inside table
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
       | --None-- | Competitive | Sole Source/Directed |
@@ -3762,11 +3762,11 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "AP-755-214"
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-07" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Delete" icon for "BP-07" inside table
+    And I perform quick search for "BP-09" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Delete" icon for "BP-09" inside table
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year |
-      | BP-07        |
+      | BP-09        |
     Then I see the following messages in the page details :
       | Record Saved Successfully. |
 
@@ -6316,19 +6316,3 @@ Business Need: Logged Issues Scenarios
     And I enter value "hii @Framework Dev" in my feed section and share the post
     And I click on hyperlink containing value "@Framework Dev"
     Then I see new tab is opened
-
-  @176819 @jyoti
-  Scenario: Collab - To verify, on Collab phase if the user clicks on 'Share' button without entering any text in the Comment/Post-box, the alert message should display "A comment is required"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Collab" tab
-    And I click on button "Share" under collab for comment box
-    Then I see alert message "A comment is required"
-
-  @176820 @Jyoti
-  Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Collab" tab
-    And I enter value "hii @Framework Dev" in my feed section and share the post
-    Then I do not see alert popup box

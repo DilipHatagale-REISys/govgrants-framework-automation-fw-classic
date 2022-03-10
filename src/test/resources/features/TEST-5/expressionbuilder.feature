@@ -3710,7 +3710,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
@@ -3748,7 +3748,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47329    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
@@ -3805,7 +3805,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47332    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
@@ -3824,7 +3824,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47333    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
@@ -3862,7 +3862,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "View" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
@@ -3900,7 +3900,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Edit" icon for "AD-GG PJ--01" is displayed inside flex table
+    Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
 
   @47337    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
