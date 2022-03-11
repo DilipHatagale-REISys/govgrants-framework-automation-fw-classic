@@ -1411,7 +1411,9 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
+    And I pause execution for "7" seconds
     When I navigate to "Collab" sub tab
+    And I pause execution for "7" seconds
     When I perform quick search for "Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Test Automation Email1" inside table
     When I click on "Send" button in send email modal

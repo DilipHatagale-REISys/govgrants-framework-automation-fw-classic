@@ -527,8 +527,9 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
-    When I perform quick search for "PR-AO-0001"
-    When I click on "View" icon for "PR-AO-0001" inside table
+    And I pause execution for "5" seconds
+    When I perform quick search for "PR-AO-0002"
+    When I click on "View" icon for "PR-AO-0002" inside table
     And I pause execution for "5" seconds
     Then I see "Pre-Application" shown as over view header
 

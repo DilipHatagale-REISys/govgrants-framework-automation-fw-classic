@@ -458,7 +458,7 @@ Business Need: Library Files Component Scenarios
 #    When I click on "My_Workspace_File"
 #    When I click on "My_Workspace_FileList"
 #    When I perform quick search for "MultipleFileUploadDND1.png" in "---program:-:workSpaceFilesFlexTableId---" panel
-#    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
+#    Then I softly see "TestFileSharingUpdated.docx" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
   @70411 @validateThatFileUploadedFromFileListIsDisplayedUnderRespectiveLibraryAtFilesLibraryTab-HomePhase-FileList
   Scenario: Verify thatfile uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
@@ -478,7 +478,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    Then I softly see library/folder/file "TestFileSharingUpdated.docx" is displayed under files library
 #    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
 #    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
 #    When I pause execution for "7" seconds
@@ -582,10 +582,6 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
-    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
-    When I pause execution for "7" seconds
-    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Doc.x under library and folder - Home Phase
@@ -706,6 +702,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    And I pause execution for "10" seconds
     Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomation.txt"
 #    When I click on "Delete File" option at library/folder/file "TestAutomation.txt"
@@ -730,10 +727,6 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
-    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
-    When I pause execution for "7" seconds
-    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pptx under library and folder - Home Phase
@@ -751,7 +744,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
+    Then I softly see library/folder/file "TestFileSharingUpdated.docx" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomationFile.pptx"
 #    When I click on "Delete File" option at library/folder/file "TestAutomationFile.pptx"
 #    When I pause execution for "7" seconds
@@ -1761,6 +1754,7 @@ Business Need: Library Files Component Scenarios
   @82664 @validateThatibraryViewIsAvailableAtRecordLevelForAdminUser-RecordLevel
   Scenario: Verify that library view is available at record level for admin user - record level
     When I login as "Automation" user
+    And I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2858,7 +2852,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   #122142 - file deleted by internal user is not visible to admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
@@ -3048,7 +3042,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "SheetJSFileUploadDateTime.xlsx" inside table
     When I click "Yes" on modal confirmation box
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122182 @validateThatFileNameUploadedByInternalUserShouldNotDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by internal user is displayed to admin user but not to external when sharing option as "Visible to Anyone With Record Access"
@@ -3086,7 +3080,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3098,7 +3092,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122188 @validateThatFileNameUploadedByInternalUserShouldDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess @wip @facingIssueOfDuplicateFileUpload
   Scenario: Verify that if file uploaded by internal user is displayed to admin and external when sharing option as "Visible to Anyone With Record Access"
@@ -3182,7 +3176,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   #122469 - file deleted by external user is removed from admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
@@ -3192,7 +3186,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122470 @validateThatFileNameUploadedByAdminUserShouldBeDeletedByInternalUserAndRemovedFromBothAdminAndInternalUserRecordWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user can be deleted by internal when sharing option as "Visible to Anyone With Record Access"
@@ -3227,7 +3221,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   #122470 - file deleted by internal user can be removed from admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
@@ -3237,7 +3231,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122471 @validateThatFileNameUploadedByAdminUserCanBeDeletedByInternalUserAndRemovedFromBothAdminAndInternalUserRecordWhenSharinOptionAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file uploaded by admin user can be deleted by internal when sharing option as "Visible to Internal Users With Record Access"
@@ -3268,11 +3262,11 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-    When I click on "Delete" icon for "TestFileSharing.docx" inside table
+    When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   #122471 - file deleted by internal user can be removed from admin user
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
@@ -3282,7 +3276,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "MultipleFileUploadCollabDND.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122494 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
@@ -3368,6 +3362,7 @@ Business Need: Library Files Component Scenarios
     Then I softly see value "TestFileSharingUpdated.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
 
   #122495 - edited file is visible to internal user
+    And I pause execution for "10" seconds
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -3434,7 +3429,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122164 @validateThatFileNameUploadedByAdminUserIsNotEditableByExternalUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that if file uploaded by admin user is not editable by external user when sharing option as "Visible to Anyone With Record Access"
@@ -3480,7 +3475,7 @@ Business Need: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
-    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @wip @functionalityDeprecated
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
@@ -4943,6 +4938,7 @@ Business Need: Library Files Component Scenarios
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I navigate to "HOME" tab
+    And I pause execution for "8" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5143,13 +5139,13 @@ Business Need: Library Files Component Scenarios
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
+    And I pause execution for "7" seconds
     And I navigate to "HOME" tab
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    When I upload file "SendEmailAttachment.pdf" into library with sharing
+    When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
-    Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
 #    When I click on "×" icon at "Add Files" modal under Library
 #    And I navigate to "Collab" tab
@@ -5355,7 +5351,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
-    When I upload file "duplicateFileInFolder.png" into library
+    When I upload file "SheetJSFileUploadDateTime.xlsx" into library
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
@@ -5377,7 +5373,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
-    When I upload file "duplicateFileInFolder.png" into library
+    When I upload file "MultipleFileUploadDND1.png" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -5427,6 +5423,7 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "MultipleFileUploadDND1.png" into library with sharing
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
