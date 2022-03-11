@@ -5931,8 +5931,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_row_level_action | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedJsonForEdidActionOnEgri   | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5941,7 +5941,6 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    And I click toggle button to select "Active Awards"
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @82065    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtTopLevelActions-EGrid @enhancedGrid

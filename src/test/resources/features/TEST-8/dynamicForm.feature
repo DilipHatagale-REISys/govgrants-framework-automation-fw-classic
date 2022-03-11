@@ -555,14 +555,6 @@ Business Need: dynamic forms Component Scenarios
 
   @89936   @ValidateValidationMessageAtDynamicFormInViewMode
   Scenario: validate that validation message should display by click on validate button on dynamic form layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
-      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
-      | Capture Item          | Question Applicable ?        |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-      | Capture Item:General  | Question Applicable ?        |               | CI-0040            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -775,6 +767,7 @@ Business Need: dynamic forms Component Scenarios
       | Field          |
       | Rich Text Area |
     When I click on "Save" in the page details
+    And I pause execution for "10" seconds
     Then I see the following message in the page details :
       | Rich Text Area is Required to save under Section 1. |
 
@@ -1206,6 +1199,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
+    And I pause execution for "5" seconds
     When I hovering mouse on help text icon inside page block detail "Picklist"
     Then I see "Test Automation Picklist Help" shown as help text
 
@@ -2272,6 +2266,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "6" seconds
+    And I pause execution for "9" seconds
     Then I see "Currency" field inside "Section 1" is disabled
 
   @94564   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInViewMode
@@ -2338,6 +2334,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "6" seconds
+    And I enter value "Demo" into field "Rich Text area"
+    And I click on "Save" in the page details
+    And I pause execution for "9" seconds
     Then I see "Currency" field inside "Section 1" is hidden
 
   @94551   @validateDependentQuestionJsonFieldByMakingCurrencyFieldAsRequiredUsingPercentFieldValueInsideDynamicFormInEditMode
@@ -4022,8 +4022,9 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Cancel" button in right header
-    When I pause execution for "3" seconds
-    Then I see "UFormView" in current url
+    When I pause execution for "15" seconds
+    Then I softly can see top right button "Edit" in page detail
+    Then I softly can see top right button "Validate" in page detail
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
