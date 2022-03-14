@@ -2694,7 +2694,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see value "12,344.0,000" for title "NumberDecimal" inside table "---program:-:flexGridEnhancedID---"
+    Then I see value "12,345.0000" for title "NumberDecimal" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -2716,7 +2716,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see the text :
-      | 12,345.0,000 |
+      | 12,345.0000 |
 
     Examples:
       | newFieldsApi                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -2737,9 +2737,9 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "Demo_Title"
-    Then I see "2,323.0,000" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+    When I perform quick search for "GT-FD123-001" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-FD123-001"
+    Then I see "2,323.0000" shown inside enhanced grid table for specified record "AD-FD123--00"
 
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
@@ -3321,10 +3321,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "GT-GGREI-001" inside table
-    When I enter value "7,000,00" into field "Test_Currency__c"
-    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "$3,400.00" for title "testtotalcurrency" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "$20,000.00" for title "testtotalcurrency" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |

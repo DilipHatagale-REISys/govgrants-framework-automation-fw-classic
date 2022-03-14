@@ -836,8 +836,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form" inside table
-    When I click on "Edit" button in right header
+    When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Cancel" button is displayed
 
   @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
@@ -2391,6 +2390,7 @@ Business Need: dynamic forms Component Scenarios
       | Field    | Value |
       | Currency |       |
     When I click on "Save" in the page details
+    And I pause execution for "8" seconds
     Then I see the following message in the page details :
       | Currency is Required to save under Section 1. |
 
