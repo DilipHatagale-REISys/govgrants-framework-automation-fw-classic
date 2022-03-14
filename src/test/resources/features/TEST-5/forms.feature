@@ -235,6 +235,7 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
     When I click on "Save" in the page details
+    And I pause execution for "10" seconds
     Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
@@ -317,7 +318,7 @@ Business Need: Forms Component Scenarios
     When I click on "Edit" in the page details
     And I enter value "$@#" into field "fieldAcknowledgment2__c"
     When I click on "Save" button in right header
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     Then I see for "Acknowledgment2" field value is "$@#" inside dynamic form
 
   @112036 @verifySpecialCharacterArAcceptedAtFormLayoutInEdit
