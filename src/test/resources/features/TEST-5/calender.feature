@@ -1004,7 +1004,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Next" navigation button at calendar
     Then I see "Next" month is displayed
 
-  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC
+  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC @skipOnJenkins
   Scenario: verify user click on program ID from home phase calendar then open owner record page if Modal Page Url is provided
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1031,7 +1031,7 @@ Business Need: Calender Config Component Scenarios
     Then I see the text containing :
       | Nauman Shahid |
 
-  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC
+  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @skipOnJenkins
   Scenario: verify user click on program ID from home phase calendar then open record page
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user

@@ -438,7 +438,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
       | ProjectTitle__c,Status__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
-  @111920  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedDataTable
+  @111920  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedDataTable @skipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Enhanced data table
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -447,13 +447,13 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-Grant-005" in "---program:-:flexGridEnhancedDataTableId---" panel
-#    When I on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-Grant-005"
+    When I perform quick search for "GT-IE11G-001" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hovering mouse on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-IE11G-001"
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
-      | new_helpText                           |
-      | This is the test application for IE 11 |
+      | new_helpText    |
+      | Educational Pro |
 
   @132268    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
@@ -503,18 +503,17 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    And I clear the value from field "Objectives__c"
-    When I enter value "test temp data" into field "Objectives__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    When I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-HRGr-001" in "---program:-:EnhancedDataTableId---" panel
     When I click on "Edit" icon for "GT-HRGr-001" inside table
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see field "Description" as "test temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp datatest temp data"
+    Then I see field "Description" as "Automation Internal Program for Approval and Snapshot scenarios"
 
   @194928 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)

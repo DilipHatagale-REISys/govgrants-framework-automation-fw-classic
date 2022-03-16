@@ -1718,6 +1718,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
+    When I pause execution for "5" seconds
     Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Ascending" order
 
     Examples:
@@ -1743,6 +1744,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
+    When I pause execution for "6" seconds
     Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Descending" order
 
     Examples:
@@ -2739,6 +2741,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FD123-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FD123-001"
+    When I pause execution for "5" seconds
     Then I see "2,323.0000" shown inside enhanced grid table for specified record "AD-FD123--00"
 
     Examples:
@@ -3321,7 +3324,6 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "GT-GGREI-001" inside table
-    When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
     Then I softly see value "$20,000.00" for title "testtotalcurrency" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
@@ -3915,6 +3917,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
   @181633 @sprint23
   Scenario: Data table Enhanced-To verify,  advanced filter should work for the date  field with 'less than  ' operator
     When I login as "Automation" user
+    When I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
