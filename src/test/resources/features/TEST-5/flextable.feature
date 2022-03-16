@@ -757,6 +757,7 @@ Business Need: Flex Table Component Scenarios
       | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
+    When I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1448,9 +1449,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    And I pause execution for "10" seconds
-    When I perform quick search for "{Framework_recordUsed:HideExpressionId}" in "ActiveFundingOpportunities" panel
-    Then I softly see value "*****" for title "Announcement Title" inside table "---program:-:programTableDivId---"
+    Then I see "Announcement Title" not displayed in enhanced grid table column title
 
   @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
   Scenario: validate hide columns field at flex table using equals operator on multiple field
@@ -1493,7 +1492,7 @@ Business Need: Flex Table Component Scenarios
     When I hovering mouse on help text icon inside "Budget Period Details" for flex table
     Then I see help text is displayed at bottom
 
-  @130095    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFlexTable
+  @130095    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFlexTable @skipOnJenkins
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at flex table
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1887,6 +1886,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
+    When I pause execution for "6" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
@@ -1913,6 +1913,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -2706,8 +2707,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I pause execution for "8" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Does not Contains | AN-343-030 |
+      | ID | Does not contains | AN-755-297 |
     Then I softly do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23

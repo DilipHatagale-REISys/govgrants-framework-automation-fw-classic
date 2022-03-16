@@ -2423,6 +2423,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
+    When I pause execution for "5" seconds
     Then I see value "10/07/2020 3:53 PM" for title "DateTime" inside table "---program:-:BudgetPeroidNewId---"
 
     Examples:
