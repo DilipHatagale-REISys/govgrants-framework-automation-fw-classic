@@ -1163,7 +1163,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Number"
     Then I see "Test Automation Number Help" shown as help text
 
-  @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode
+  @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode @skiponjenkins
   Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1411,7 +1411,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Radio"
     Then I see "Test Automation Radio Help" shown as help text
 
-  @92637    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInEditMode
+  @92637    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInEditMode @skiponjenkins
   Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -3488,9 +3488,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I enter value "" into field "Written"
     When I click on "Save" in the page details
     Then I see the following message in the page details :
-      | Date Required is Required to save under Section 1. |
+      | Written is required to save under Section 1. |
 
   @96619   @validateSortOrderAtSectionsAtDynamicFormLayoutInEditMode
   Scenario: validate sort order field at capture section in dynamic form layout -edit mode
@@ -4022,7 +4023,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Cancel" button in right header
-    When I pause execution for "15" seconds
+    When I pause execution for "10" seconds
     Then I softly can see top right button "Edit" in page detail
     Then I softly can see top right button "Validate" in page detail
 
