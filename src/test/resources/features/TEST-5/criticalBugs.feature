@@ -438,7 +438,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     And I pause execution for "4" seconds
-    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    When I click "Save" after selection of "PSA-0006" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
@@ -1009,13 +1009,13 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-00" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Delete" icon for "BP-00" inside table
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Delete" icon for "BP-01" inside table
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year |
-      | BP-00        |
-    And I perform quick search for "BP-00" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    Then I see that "BP-00" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+      | BP-01        |
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see that "BP-01" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
   @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
@@ -2706,7 +2706,7 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "PG-343-003" in the page details
+    Then I see the sub-header is "PG-343-1650" in the page details
 
   @93594  @verifyIfTopLevelActionOpensInNewWindowAtEnhancedGrid-gPlanning @enhancedGrid
   Scenario: validate if top level action is opened in new tab at EnhancedGrid - gPlanning
@@ -2815,7 +2815,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "30" into field "PercentTest__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see over all total for "TmpActiveGrantsGridresizable" at enhanced grid
+    Then I see value "MDH Test Application # 1" for multiple cells at column "ProjectTitle__c"
 
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                             | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                  |
@@ -3550,12 +3550,12 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on top right button "test" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
-    When I enter value "Award Created for default value testing" into field "GrantAwardName__c"
+    When I enter value "Award Created" into field "GrantAwardName__c"
     When I enter value "Created" into field "Status__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     And I click toggle button to select "All Awards"
-    When I perform quick search for "Award Created for default value testing" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
+    When I perform quick search for "Award Created" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
     Then I see value "1" for multiple cells at column "Agreement1__c"
 
   @97354    @validateDownloadPDFBrowserTabTitleAtFlexTable-gPlanning @wip
@@ -5219,14 +5219,11 @@ Business Need: Logged Issues Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     And I switch to iframe with id "CollabIframe"
+    And I pause execution for "3" seconds
     When I upload file "CollabFileVanish.pdf" into library
+    And I pause execution for "3" seconds
     When I select sharing option as "Select visibility options" at upload file modal
     Then I see "Upload" button is disabled at modal under library
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @130104    @validateThatIfFileUploadedFromHomePhaseAtRecordLevelPostIsDisplayedInsideFilesTableOnThatRecord @libraryFiles @wip @needToUpdate @classificationMissing
   Scenario: Verify that if file uploaded on record level post from home phase-My feed section is displayed on respective record inside files table

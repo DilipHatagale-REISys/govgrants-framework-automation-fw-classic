@@ -288,8 +288,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
@@ -315,8 +315,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "ashwini M" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-phone" with user "ashwini M" is displayed on send email modal
@@ -342,8 +342,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Au" into field "{testData:CcField}" on send email modal
@@ -544,8 +544,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     Then I see "Reply" opens in overLay window
 
   @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
@@ -726,8 +726,8 @@ Business Need: Send Email Component Scenarios
     When I click on "Delete" icon for "RE: DND-Test Automation Record" inside table
     When I pause execution for "2" seconds
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     When I enter value "test body content" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -757,8 +757,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     Then I softly see "9/28/2021 1:48 AM" on html page
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
@@ -782,8 +782,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
@@ -807,8 +807,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1 " in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1 " inside table
     Then I softly see "9/28/2021 1:48 AM" on html page
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
@@ -832,8 +832,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     Then I softly see "9/28/2021 1:48 AM" on html page
 
   @101042 @validateSentDateOfEmailInESTModeAtSendEmailModal
@@ -857,8 +857,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "qqqqqqqq" inside table
+    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "Test automation mail subject 1" inside table
     Then I softly see "9/28/2021 1:48 AM" on html page
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
@@ -1210,8 +1210,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "Email Created To Check Attached File Link	" inside table
+    When I perform quick search for "Temp Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Temp Record" inside table
     Then I see select files section is displayed under send email modal
 
   @104330 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtReplyModal
@@ -1297,8 +1297,8 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Email Created To Check Attached File Link" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "Email Created To Check Attached File Link	" inside table
+    When I perform quick search for "Temp Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Temp Record" inside table
     Then I see hyperlink at value "ProgramRecordDoNotDelete.png" inside "sendEmail" modal
 
   @116303 @validateIfOneMailIdIsRemovedFromReplyEmailToFieldThenEmailSentSuccessfullyOnIt
@@ -2294,7 +2294,7 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-    When I perform quick search for "qqqqqqqq" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Temp Record" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "" for title "Attention To" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @163532 @ValidateUserSelectInternalToFieldItShowActiveInternalUserWithStandardUser
