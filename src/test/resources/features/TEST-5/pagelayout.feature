@@ -2390,7 +2390,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "PG-343-019" in the page details
+    Then I see the sub-header is "PG-755-0280" in the page details
 
   @102100    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
@@ -5351,7 +5351,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Description" field is rendered as rich text area
 
-  @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout
+  @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout @skipOnJenkins
   Scenario: validate mini page layout is displayed at enhanced flex edit page layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -7684,8 +7684,8 @@ Business Need: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    Then I see the following message in the page details contains:
-      | Phone Field is required to save. |
+    Then I see the text containing :
+      | Phone Field is required to save |
 
   @151138    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldOnModal
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at modal
@@ -8234,7 +8234,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     Then I see "programview" in current url
 
-  @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode
+  @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode @skipOnJenkins
   Scenario: validate that mini page layout at lookup field is getting displayed properly on mouse hover at page detail in edit mode
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8314,12 +8314,11 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
-    And I close modal by clicking the top right x button
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
-      | newLookupFilter                                                          | oldLookupFilter                                   |
-      | RecordType.Name = 'Internal' OR Id != '{!OrgId}'                         | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
+      | newLookupFilter                                                           | oldLookupFilter                                   |
+      | RecordType.Name = 'Internal' OR Id != '{!OrgId}' AND Status__c ='Active' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
 
   @148732 @verifyThatAddNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that add notes modal window is displayed properly
@@ -8405,9 +8404,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I perform quick search for "Road Construction"
+    When I click on "Edit" icon for "Road Construction" inside table
     When I navigate to "Overview" sub tab
+    And I pause execution for "50" seconds
     Then I see field "fieldProjectGoals__c" is vertically resized
 
   @150747 @VerifyUserSendsRecordsToApproveUserForwardRecordAnotherUserThenRejectOptionAvailable @vaibhavC
@@ -8780,7 +8780,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeEnableQueuedLookupUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
