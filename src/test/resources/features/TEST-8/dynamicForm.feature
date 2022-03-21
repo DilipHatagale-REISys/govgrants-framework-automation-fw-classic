@@ -1392,7 +1392,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
     Then I see "Test Automation Rich Text Area Help" shown as help text
 
-  @92639    @ValidateHelpTextAtRadioFieldInsideDynamicFormInEditMode
+  @92639    @ValidateHelpTextAtRadioFieldInsideDynamicFormInEditMode @skiponjenkis
   Scenario: validate the help text is displayed at radio field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |

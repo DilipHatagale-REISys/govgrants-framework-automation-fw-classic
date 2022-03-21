@@ -417,7 +417,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grants" enabled
 
-  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning
+  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning @skiponjenkins
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -436,7 +436,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             |
-      | Help Text for Automation |
+      | Automation Help Text     |
 
   @41316    @fieldLabelOverrideFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid column header from config and validating it inside enhanced grid of programs-planning

@@ -2481,8 +2481,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than or Equal to | 11/23/2021 1:56 AM |
-    Then I softly see value "11/23/2021 1:56 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Less than or Equal to | 11/26/2021  01:11 PM |
+    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184283 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
@@ -2492,8 +2492,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 11/26/2021 |
-    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
+    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
@@ -2503,8 +2503,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than | 11/26/2021 |
-    Then I softly see value "11/15/2021 2:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Less than | 11/26/2021  01:11 PM |
+    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184242 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
@@ -2514,8 +2514,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021 |
-    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Greater than | 11/26/2021  01:11 PM |
+    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
@@ -2709,7 +2709,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "8" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Does not contains | AN-755-297 |
+      | ID | Does not contains | AN-343-030 |
     Then I softly do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23

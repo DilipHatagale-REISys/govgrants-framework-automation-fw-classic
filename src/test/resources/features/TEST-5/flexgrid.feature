@@ -1810,7 +1810,7 @@ Business Need: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     Then I see Nested Table "---program:-:applicationBudgetCategoryFlexGridTableId---" with changed header name as "Test Automation"
 
-  @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications @skiponjenkins
   Scenario Outline: Changing content of help text field at ApplicationBudgetCategoryFlexTable column header from config and validating it inside Application budget flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

@@ -1823,7 +1823,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
-    Then I see "TestDND2.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "TestDND4.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
   Scenario: Verify that only asset library is displayed to the user who have access of only asset library at upload file from library modal window - record level
