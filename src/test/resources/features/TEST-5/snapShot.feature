@@ -60,7 +60,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70015    @verifyAutoSnapShotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval
@@ -78,7 +78,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "Date Taken"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70016    @verifyAutoSnapShotFileNameWithSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chages after making changes inside field SnapShot File Name at config page
@@ -99,7 +99,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "testAutomationSnapshot.pdf"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70049    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Approval
   Scenario: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
@@ -123,7 +123,7 @@ Business Need: Snapshot Config Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chaged after making changes inside field Approval Snapshot File Name at config page
@@ -171,7 +171,7 @@ Business Need: Snapshot Config Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70029    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Reassign
   Scenario: Validate Auto Snapshot is getting captured on record forward after making change for field Capture Snapshot on Approval at config
@@ -195,7 +195,7 @@ Business Need: Snapshot Config Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @70032    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-SendBack
   Scenario: Validate Auto Snapshot is getting captured on record sent back to owner after making change for field Capture Snapshot on Approval at config
@@ -219,7 +219,7 @@ Business Need: Snapshot Config Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @112878    @verifyAutoSnapShotCapturedWithIsActiveFieldByLoginAsAdminUser
   Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval for second time by admin user
@@ -252,4 +252,4 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
