@@ -782,7 +782,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     And I pause execution for "6" seconds
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "Date Taken"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user

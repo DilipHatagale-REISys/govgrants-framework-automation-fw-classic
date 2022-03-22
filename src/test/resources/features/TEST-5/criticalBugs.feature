@@ -1187,7 +1187,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "FOA-USAID-004"
     When I click on "View" icon for "Family Planning and Reproductive Health Methods APS" inside table
     When I navigate to "Attachments" sub tab
-    And I click on top right button "New" in flex table with id "AnnoucementPackages"
+    And I click on top right button "New" in flex table with id "toggleFlexTableAnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
     When I click modal button "Save"
@@ -1506,8 +1506,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see expected table with id "toggleFGridAppLineItem"
@@ -2943,8 +2943,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see "Edit" icon for "Demo Line 1" is not displayed inside flex table

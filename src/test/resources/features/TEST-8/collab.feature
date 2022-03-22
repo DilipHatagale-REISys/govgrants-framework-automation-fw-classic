@@ -106,6 +106,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
@@ -225,9 +226,6 @@ Business Need: collab Component Scenarios
     And I select "All Users" from dropdown
     And I click on "Delete" action from dropdown at "Test Automation Admin Post Delete Action Access" comment inside my feed
     And I click modal button "OK"
-    And I refresh the page
-    When I click on "Menu" in the page details
-    And I select "All Users" from dropdown
     Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
 
   @112484    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
@@ -555,7 +553,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed home
+    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed home
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
@@ -614,13 +612,13 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
-    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab
+    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
     When I login as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
-    Then I see user logo at comment "Comment DO NOT DELETE" is small in size inside my feed collab
+    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord
   Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
