@@ -45,7 +45,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     And I pause execution for "5" seconds
-    When I click on "Edit" icon for "Receipt" inside table
+    When I click on "Edit" icon for "Program Artifacts" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
     Then I see "Test Automation" has been added in "Description" flex table
@@ -1187,7 +1187,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "FOA-USAID-004"
     When I click on "View" icon for "Family Planning and Reproductive Health Methods APS" inside table
     When I navigate to "Attachments" sub tab
-    And I click on top right button "New" in flex table with id "AnnoucementPackages"
+    And I click on top right button "New" in flex table with id "toggleFlexTableAnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
     When I click modal button "Save"
@@ -1429,7 +1429,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see subtotal value "$0.00" for null record values
+    Then I see "$0.00" shown inside enhanced grid table for specified record "Total Adjusted Amount"
 
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1506,8 +1506,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see expected table with id "toggleFGridAppLineItem"
@@ -2943,8 +2943,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see "Edit" icon for "Demo Line 1" is not displayed inside flex table
@@ -3399,7 +3399,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I perform quick search for "BP-00" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" parent table
 
   @96618     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridChildTableAndIsAlignedCentrally-gPlanning @flexGrid
@@ -3416,8 +3416,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" child table
 
