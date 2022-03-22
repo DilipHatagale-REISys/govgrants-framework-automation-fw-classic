@@ -233,19 +233,8 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
-    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
-    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
-    When I click on "Save" in the page details
-    When I click on "Edit" in the page details
-    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
-    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
-    When I click on "Save" in the page details
-    When I click on "Edit" in the page details
-    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
-    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
     When I click on "Save" in the page details
     And I pause execution for "10" seconds
-    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
     Then I see value as "Display 2" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
@@ -257,6 +246,7 @@ Business Need: Forms Component Scenarios
       | id                 | Type  | Name                 |
       | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     When I login as "Automation" user
+    When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -274,6 +264,7 @@ Business Need: Forms Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Application - Simple | Name                      | PB-1852                    |
     When I login as "Automation" user
+    When I pause execution for "7" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -319,6 +310,7 @@ Business Need: Forms Component Scenarios
   @112014 @verifySpecialCharacterAtFormLayoutByPMUser
   Scenario:validate special characters are displayed inside form layout by login as pm user
     When I login as "Automation-PM" user
+    When I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"

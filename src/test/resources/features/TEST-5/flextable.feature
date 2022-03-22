@@ -1247,7 +1247,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
-    Then I see value "18/3/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    Then I see value "03/18/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1730,7 +1730,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program @@/ Created"
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
 
   @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
@@ -2216,7 +2216,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180704 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
@@ -2225,7 +2225,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Program"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180719 @jyoti
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
@@ -2234,7 +2234,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180705 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
@@ -2243,7 +2243,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Announcement"
     When I perform quick search inside global search "AN-343-028"
-    Then I see value "10/20/2021 2:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "10/20/2021 3:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @180717 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
@@ -2252,7 +2252,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Application"
     When I perform quick search inside global search "AP-755-214"
-    Then I see value "11/27/2018 6:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "11/27/2018 7:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @181411 @jyoti
   Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show

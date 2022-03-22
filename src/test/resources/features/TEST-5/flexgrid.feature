@@ -1304,8 +1304,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
 
@@ -1323,8 +1323,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see new tab is opened
@@ -1345,8 +1345,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see no new tab is opened
@@ -1365,8 +1365,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see "View" opens in overLay window
@@ -1385,8 +1385,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
     Then I see confirmation box with body "null" is displayed
@@ -1407,8 +1407,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -1467,8 +1467,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see edit opens with "<newActionUrl>"
@@ -1511,7 +1511,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
 
@@ -1958,8 +1958,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "#" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
@@ -2394,8 +2394,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see subtotal amount at "Grantor Share" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
