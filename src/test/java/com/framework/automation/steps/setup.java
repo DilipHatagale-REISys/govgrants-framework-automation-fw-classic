@@ -47,7 +47,6 @@ public class setup {
             ProjectWebServices.thisValue = null;
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
-            e.printStackTrace();
         }
     }
 }

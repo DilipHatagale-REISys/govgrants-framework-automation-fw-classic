@@ -1801,7 +1801,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" in the page details
     When I click on error message "KPI"
-    When I pause execution for "3" seconds
+    When I pause execution for "5" seconds
     Then I see expected field getting focused
 
   @59743      @verifyDateIsGettingSavedCorrectlyAsTodaysDate

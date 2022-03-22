@@ -2476,7 +2476,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    Then I see value "7/10/2020 3:53 PM" for title "DateTime" inside table "---program:-:BudgetPeroidNewId---"
+    Then I see value "7/10/2020 6:23 AM" for title "DateTime" inside table "---program:-:BudgetPeroidNewId---"
 
     Examples:
       | defaultFieldsApi                                               | newFieldsApi                                                               |
