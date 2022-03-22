@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
 import java.io.IOException;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -962,7 +963,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on user/group from suggestion box appears by entering text in To/CC fields on send email modal window
      */
     public void selectValueFromDropdown(String objectName) {
-        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'" + objectName + "')]|//select[@aria-label='DropDown Menu']//option[contains(text(),'"+objectName+"')]");
+        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'" + objectName + "')]|//select[@aria-label='DropDown Menu']//option[contains(text(),'" + objectName + "')]");
         I.amPerforming().click().on(selectValueFromDropdown);
     }
 
@@ -3339,8 +3340,8 @@ public class PageLayoutPage extends GovGrantsManager {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement getCKEditorBox = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[@id='cke_1_top']"));
         try {
-            if (colorName.equalsIgnoreCase("yellow") && (getCKEditorBox.getCssValue("background-color").equals("rgb(255, 255, 102)"))
-                    || getCKEditorBox.getCssValue("background-color").equals("rgba(255, 255, 102, 1)")) {
+            if ((colorName.equalsIgnoreCase("yellow") && ((getCKEditorBox.getCssValue("background-color").equals("rgb(255, 255, 102)")) || getCKEditorBox.getCssValue("background-color").equals("rgba(255, 255, 102, 1)")))
+                    || (colorName.equalsIgnoreCase("green") && (getCKEditorBox.getCssValue("background-color").equals("rgba(248, 248, 248, 1)")))) {
                 flag = true;
             }
         } catch (Exception e) {
