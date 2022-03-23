@@ -233,8 +233,19 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
+    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
+    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I select value as "Display 1" inside "fieldMulti_Picklist_Field__c" radio field
+    When I select value as "Display 2" inside "fieldMulti_Picklist_Field__c" radio field
     When I click on "Save" in the page details
     And I pause execution for "10" seconds
+    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
     Then I see value as "Display 2" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
@@ -289,7 +300,7 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I select below checkbox options for field "fieldMulti_Picklist_Field__c"
-      |  Display 1 |
+      | Display 1 |
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
     And I pause execution for "7" seconds
@@ -1157,7 +1168,7 @@ Business Need: Forms Component Scenarios
     Then I see the header is "Application Cover Page 12" in the page details
 
   @174501 @OldForms-ToverifythatinPreviewmodeofForm,theDynamicFormTitlesshouldbeconfigured
-    Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
+  Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

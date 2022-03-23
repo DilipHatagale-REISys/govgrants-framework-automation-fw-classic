@@ -104,13 +104,87 @@ Business Need: Calender Config Component Scenarios
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantee State Program   | Name                      | TAB-409                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    And I pause execution for "3" seconds
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    And I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "View Program Details" icon for "{SavedValue:savedValue}" inside table
+    When I click on "Activate" in the page details
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "{SavedValue:savedValue}" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+    And I click modal button "Continue"
+    When I enter value "Announcement created for calendar test" into field "AnnouncementName__c"
+    When I enter value "Announcement test" into field "AnnouncementDescription__c"
+    When I enter value "0" into field "FOAPublicationDate__c"
+    When I enter value "3" into field "EstimatedProjectPeriodStartDate__c"
+    When I enter value "State government" into field "EligibleApplicantTypes__c"
+    And I navigate to "Financials" sub tab
+    When I enter value "2000" into field "AwardCeiling__c"
+    When I enter value "1000" into field "AwardFloor__c"
+    When I enter value "2" into field "EstimatedAverageSizeOfAward__c"
+    When I enter value "5" into field "EstimatedNumberOfAwards__c"
+    When I enter value "1500" into field "ObligatedAmount__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue1"
+    And I pause execution for "3" seconds
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    When I click on lookup link "FOA--095"
-    And I wait for "5" seconds
-    Then I see new tab is opened
+    And I click on lookup link contains "{SavedValue:savedValue1}"
+    Then I see the header is "Funding Opportunity" in the page details
+    Given I delete the record "{SavedValue:savedValue1}" from the object "Announcement__c" with field "Name"
+    Given I delete the record "{SavedValue:savedValue}" from the object "Program__c" with field "Name"
 
   @127042  @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at calendar layout
@@ -140,14 +214,94 @@ Business Need: Calender Config Component Scenarios
       | Automation Internal Program for Approval and Snapshot scenarios |
       | Created                                                         |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @skipOnJenkins
+  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantee State Program   | Name                      | TAB-409                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    When I enter value "10" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    And I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{SavedValue:savedValue}"
+    When I click on "View Program Details" icon for "{SavedValue:savedValue}" inside table
+    When I click on "Activate" in the page details
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "{SavedValue:savedValue}" into field "Program__c"
+    When I enter value "Competitive" into field "AnnouncementType__c"
+    And I click modal button "Continue"
+    When I enter value "Announcement created for calendar test" into field "AnnouncementName__c"
+    When I enter value "Announcement test" into field "AnnouncementDescription__c"
+    When I enter value "0" into field "FOAPublicationDate__c"
+    When I enter value "3" into field "EstimatedProjectPeriodStartDate__c"
+    When I enter value "State government" into field "EligibleApplicantTypes__c"
+    And I navigate to "Financials" sub tab
+    When I enter value "2000" into field "AwardCeiling__c"
+    When I enter value "1000" into field "AwardFloor__c"
+    When I enter value "2" into field "EstimatedAverageSizeOfAward__c"
+    When I enter value "5" into field "EstimatedNumberOfAwards__c"
+    When I enter value "1500" into field "ObligatedAmount__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "savedValue1"
+    And I pause execution for "3" seconds
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
-    When I hover mouse on lookup link "GT-final-001 (Budget Period End Date)"
-    Then I softly see "Grant Layout Page Block" as "GT-final-001" inside mini page layout
+    And I click on "Month" Button at calendar
+    When I hover mouse on lookup link "{SavedValue:savedValue1} (FOA Publish Date)"
+    Then I see the text :
+      | Announcement                           |
+      | {SavedValue:savedValue1}               |
+      | Announcement created for calendar test |
+      | Created                                |
+    Given I delete the record "{SavedValue:savedValue1}" from the object "Announcement__c" with field "Name"
+    Given I delete the record "{SavedValue:savedValue}" from the object "Program__c" with field "Name"
 
   @127323    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForPMUser
   Scenario: validate that calender is displayed in month format if user click on 'Month' button at calendar for PM user
@@ -639,12 +793,24 @@ Business Need: Calender Config Component Scenarios
 
   @127657    @verifyAdminUserCanSeeProgramIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
   Scenario: validate admin User is able to see program ID in aqua blue color at month wise calendar-HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue                                      | filterId         |
+      | Calender Config       | Date Fields | govgrants_config:DefaultDateFieldsJsonAtCalendarConfig | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName   | fieldNewValue                                      | coreComponentField   |
+      | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtCalendarConfig | Grantor_Home_Program |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "PG-755-0237 (End Date)" record is displayed in "aqua blue" color inside calendar
+    Then I see "PG-755-0221 (End Date)" record is displayed in "aqua blue" color inside calendar
 
   @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
   Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
@@ -677,8 +843,23 @@ Business Need: Calender Config Component Scenarios
 
   @127667    @verifySPIUserCanSeeGrantIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
   Scenario: validate SPI User is able to see grant ID in turquoise color at month wise calendar-HomePhase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue                                             | coreComponentField | filterId         |
+      | Calender Config       | Date Fields | govgrants_config:DefaultDateFieldsJsonAtGrantorCalendarConfig |                    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName   | fieldNewValue                                             | coreComponentField   | CoreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtGrantorCalendarConfig | Recipient_Home_Grant |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Manage Grants, Awards, Amendments" subheader on left panel
+    And I click toggle button to select "Draft Grants"
+    When I perform quick search for "test"
+    When I click on "Edit" icon for "test" inside table
+    When I enter value "0" into field "ProjectPeriodStartDate__c"
+    When I enter value "365" into field "ProjectPeriodEndDate__c"
+    When I click on "Save" in the page details
+    And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     Then I see "GT-final-001 (Budget Period End Date)" record is displayed in "turquoise" color inside calendar
