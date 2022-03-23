@@ -4190,6 +4190,16 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
+ #  130416 - visible to external user
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Announcement"
+    When I click on "View" icon for "Test Announcement" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
+
  #   130416 - visible to internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
@@ -5029,13 +5039,18 @@ Business Need: Library Files Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    When I pause execution for "5" seconds
+    When I pause execution for "4" seconds
+    And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I enter value "@Automation PM" in my feed section and share the comment
     And I navigate to "HOME" tab
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
+    Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
 
   @158169 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationADMINUser
