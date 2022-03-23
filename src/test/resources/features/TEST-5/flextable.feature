@@ -1172,7 +1172,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "30/11/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1712,7 +1712,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program 1 Created"
-    And I pause execution for "3" seconds
+    And I pause execution for "10" seconds
     Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
 
   @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
@@ -1730,7 +1730,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program @@/ Created"
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
 
   @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
@@ -2482,6 +2482,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Application Deadline | Less than or Equal to | 11/26/2021  01:11 PM |
+    When I pause execution for "2" seconds
     Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184283 @sprint23
@@ -2493,6 +2494,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
+    When I pause execution for "10" seconds
     Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23

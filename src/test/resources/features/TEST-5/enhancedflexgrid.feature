@@ -1647,6 +1647,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGRIDtABLEiD1---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-CMAQ-001" in "---program:-:flexGridEnhancedID---" panel
+    When I pause execution for "10" seconds
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -3212,7 +3213,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "55" into field "Test_Percentage2__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "120.00%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "100.00%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                               | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -3363,7 +3364,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "100" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "9,900.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "100.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |
