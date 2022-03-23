@@ -4335,7 +4335,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
 #    Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
-  @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue
+  @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue@skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at ME Grid lookup value
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -5533,6 +5533,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
+    When I pause execution for "20" seconds
     Then I see CK editor box color changed to "green"
 
   @131798  @verifytextInsideCkEditorInputBoxIsDisplayedInAnExpectedFormat
@@ -6234,10 +6235,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:TestProgramErrorMessageDnd}"
-    When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
-    When I click on "Save" in the page details
-    And I pause execution for "12" seconds
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
     Then I see the following messages in the page details contains:
       | Test Automation Error Message @ |
@@ -6258,10 +6259,10 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:TestProgramErrorMessageDnd}"
-    When I click on "Edit" icon for "{Framework_recordUsed:TestProgramErrorMessageDnd}" inside table
-    When I click on "Save" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
     Then I see the following messages in the page details contains:
       | Test Automation Error Message 123 |
@@ -7930,7 +7931,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
-    And I pause execution for "2" seconds
+    And I pause execution fo r "2" seconds
     Then I see alert popup box
 
   @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
