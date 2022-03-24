@@ -1712,7 +1712,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program 1 Created"
-    And I pause execution for "10" seconds
+    And I pause execution for "8" seconds
     Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
 
   @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
@@ -2515,6 +2515,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Application Deadline | Greater than | 11/26/2021  01:11 PM |
     Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"

@@ -227,6 +227,7 @@ Business Need: Forms Component Scenarios
       | id                 | Type     | Name                 |
       | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
     When I login as "Automation" user
+    When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"

@@ -2333,10 +2333,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    And I pause execution for "6" seconds
-    And I enter value "Demo" into field "Rich Text area"
-    And I click on "Save" in the page details
-    And I pause execution for "9" seconds
+    And I pause execution for "10" seconds
     Then I see "Currency" field inside "Section 1" is hidden
 
   @94551   @validateDependentQuestionJsonFieldByMakingCurrencyFieldAsRequiredUsingPercentFieldValueInsideDynamicFormInEditMode
@@ -2390,9 +2387,9 @@ Business Need: dynamic forms Component Scenarios
       | Field    | Value |
       | Currency |       |
     When I click on "Save" in the page details
-    And I pause execution for "8" seconds
+    And I pause execution for "10" seconds
     Then I see the following message in the page details :
-      | Currency is Required to save under Section 1. |
+      | Currency is required to save under Section 1. |
 
   @94686   @validateDependentQuestionJsonFieldByHidingPicklistFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by hiding picklist field on the basis of currency field value in form edit mode
@@ -3490,6 +3487,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I enter value "" into field "Written"
     When I click on "Save" in the page details
+    When I pause execution for "6" seconds
     Then I see the following message in the page details :
       | Written is required to save under Section 1. |
 
@@ -4022,6 +4020,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "7" seconds
     When I click on "Cancel" button in right header
     When I pause execution for "10" seconds
     Then I softly can see top right button "Edit" in page detail
