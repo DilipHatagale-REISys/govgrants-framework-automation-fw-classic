@@ -4014,7 +4014,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Current Budget Period End Date | greater than | 05/15/2020 |
     Then I softly see value "12/14/2021" for title "Current Budget Period End Date" inside table "---program:-:EnhancedDataTableId---"
 
-  @181526 @sprint24 @userstory_179175
+  @181526 @sprint24 @userstory_179175 @skiponjenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4034,7 +4034,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181517 @sprint24 @userstory_179175
+  @181517 @sprint24 @userstory_179175 @skiponjenkis
   Scenario: Data table Enhanced-To verify, In Downloaded XLS  Number column should not display  When Hide column at Number  field   with    user type &  profile  operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4054,7 +4054,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181514 @sprint24 @userstory_179175
+  @181514 @sprint24 @userstory_179175 @skiponjenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4074,7 +4074,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181519 @sprint24 @userstory_179175
+  @181519 @sprint24 @userstory_179175 @skiponjenkins
   Scenario: Data table Enhanced-To verify,  In Downloaded xls  date  column should not display When Hide column at Date field with not   equal to  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
