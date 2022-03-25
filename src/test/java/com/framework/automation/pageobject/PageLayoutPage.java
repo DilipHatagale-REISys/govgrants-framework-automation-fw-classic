@@ -16,6 +16,7 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PageLayoutPage extends GovGrantsManager {
 
@@ -2535,6 +2536,13 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+
+        if(!flag) {
+            String text = I.amPerforming().actionToGet().attribute(By.xpath("//label[contains(text(),'Body Content')]/..//span"),"innerHTML");
+            if (text.contains(value)){
+                return true;
+            }
         }
         return flag;
     }
