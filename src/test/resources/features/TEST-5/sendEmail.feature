@@ -6444,7 +6444,7 @@ Business Need: Send Email Component Scenarios
       | From: ashwini.mahore@yopmail.com |
       | Sent:                            |
       | To: snehal.mulange@reisystems.in |
-      | Subject: test                    |
+      |Subject: test                     |
 
   @168974 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when attachment is attached for the mail , then  reply back content is aligned properly

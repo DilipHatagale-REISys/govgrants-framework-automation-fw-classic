@@ -1823,7 +1823,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
-    Then I see "TestDND2.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "TestDND4.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
   Scenario: Verify that only asset library is displayed to the user who have access of only asset library at upload file from library modal window - record level
@@ -4190,7 +4190,8 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "7" seconds
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-  #130416 - visible to external user
+
+ #  130416 - visible to external user
     When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     When I perform quick search for "Test Announcement"
@@ -4198,7 +4199,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I perform quick search for "TestFileSharing.docx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "TestFileSharing.docx" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
-  #130416 - visible to internal user
+
+ #   130416 - visible to internal user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -5037,6 +5039,7 @@ Business Need: Library Files Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
+    When I pause execution for "4" seconds
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
@@ -5072,7 +5075,9 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
+    When I pause execution for "5" seconds
     And I enter value "Temp Post Automation" in my feed section and share the post
+    When I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5351,7 +5356,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
-    When I upload file "SheetJSFileUploadDateTime.xlsx" into library
+    When I upload file "MultipleFileUploadDND1.png" into library with sharing
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
@@ -5373,7 +5378,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
-    When I upload file "MultipleFileUploadDND1.png" into library
+    When I upload file "MultipleFileUploadDND1.png" into library with sharing
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "UnitedHealth Group" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files

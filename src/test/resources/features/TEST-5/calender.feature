@@ -119,6 +119,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    When I pause execution for "5" seconds
     And I save the field labeled "ID" as "savedValue"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -810,7 +811,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "PG-755-0221 (End Date)" record is displayed in "aqua blue" color inside calendar
+    Then I see "PG-343-042 (End Date)" record is displayed in "aqua blue" color inside calendar
 
   @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
   Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
@@ -830,12 +831,14 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test"
     When I click on "Edit" icon for "Test" inside table
-    When I enter value "0" into field "AnnouncementAvailableDateTime__c"
+    When I pause execution for "10" seconds
+    When I enter value "0" into field "fieldApplicationDeadlineWithDateTime__c"
     When I click on "Save" in the page details
+    When I pause execution for "10" seconds
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "AN-9832-070 (Test Date Time)" record is displayed in "teal green" color inside calendar
+    Then I see "FOA-DOD-004 (FOA Publish Date)" record is displayed in "teal green" color inside calendar
 
     Examples:
       | filterClause                                                                                                                                                                                                                                                                                                                                                                            |

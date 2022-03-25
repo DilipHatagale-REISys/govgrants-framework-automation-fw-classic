@@ -1172,7 +1172,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "30/11/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1247,7 +1247,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
-    Then I see value "18/3/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    Then I see value "03/18/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1712,7 +1712,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program 1 Created"
-    And I pause execution for "3" seconds
+    And I pause execution for "8" seconds
     Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
 
   @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
@@ -1730,7 +1730,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program @@/ Created"
-    And I pause execution for "3" seconds
+    And I pause execution for "10" seconds
     Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
 
   @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
@@ -2216,7 +2216,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180704 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
@@ -2225,7 +2225,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Program"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180719 @jyoti
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
@@ -2234,7 +2234,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180705 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
@@ -2243,7 +2243,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Announcement"
     When I perform quick search inside global search "AN-343-028"
-    Then I see value "10/20/2021 2:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "10/20/2021 3:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @180717 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
@@ -2252,7 +2252,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Application"
     When I perform quick search inside global search "AP-755-214"
-    Then I see value "11/27/2018 6:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "11/27/2018 7:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @181411 @jyoti
   Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
@@ -2481,8 +2481,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than or Equal to | 11/23/2021 1:56 AM |
-    Then I softly see value "11/23/2021 1:56 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Less than or Equal to | 11/26/2021  01:11 PM |
+    When I pause execution for "2" seconds
+    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184283 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
@@ -2492,8 +2493,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 11/26/2021 |
-    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
+    When I pause execution for "10" seconds
+    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
@@ -2503,8 +2505,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than | 11/26/2021 |
-    Then I softly see value "11/15/2021 2:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Less than | 11/26/2021  01:11 PM |
+    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184242 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
@@ -2513,9 +2515,10 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
+    When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021 |
-    Then I softly see value "12/06/2021 10:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Greater than | 11/26/2021  01:11 PM |
+    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
@@ -2709,7 +2712,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "8" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Does not contains | AN-755-297 |
+      | ID | Does not contains | AN-343-030 |
     Then I softly do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23

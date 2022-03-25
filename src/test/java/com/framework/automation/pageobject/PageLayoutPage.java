@@ -3542,7 +3542,7 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     public void assertThatFollowingReplyBackContentIsAlignedProperly(List<String> replyContent) {
-        String actualReplyContent = I.amPerforming().actionToGet().text(By.xpath("//html//body[@contenteditable='true']//p[3]"));
+        String actualReplyContent = I.amPerforming().actionToGet().text(By.xpath("//html//body[@contenteditable='true']"));
         for (String individualReplyContent : replyContent) {
             I.amPerforming().assertionsTo().assertThat(actualReplyContent).contains(individualReplyContent);
         }

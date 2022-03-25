@@ -417,7 +417,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grants" enabled
 
-  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning
+  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning @skiponjenkins
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -436,7 +436,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             |
-      | Help Text for Automation |
+      | Automation Help Text     |
 
   @41316    @fieldLabelOverrideFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid column header from config and validating it inside enhanced grid of programs-planning
@@ -1647,6 +1647,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGRIDtABLEiD1---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-CMAQ-001" in "---program:-:flexGridEnhancedID---" panel
+    When I pause execution for "10" seconds
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -3212,7 +3213,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "55" into field "Test_Percentage2__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "120.00%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "100.00%" for title "Test Percentage Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                               | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -3360,10 +3361,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "GT-GT007-001" inside table
-    When I enter value "100" into field "Test_Number__c"
+    When I enter value "88812" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "9,900.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "8,88.12" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |

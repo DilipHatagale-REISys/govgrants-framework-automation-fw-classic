@@ -309,6 +309,7 @@ Business Need: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I pause execution for "7" seconds
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"

@@ -227,6 +227,7 @@ Business Need: Forms Component Scenarios
       | id                 | Type     | Name                 |
       | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
     When I login as "Automation" user
+    When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -257,6 +258,7 @@ Business Need: Forms Component Scenarios
       | id                 | Type  | Name                 |
       | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     When I login as "Automation" user
+    When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -274,6 +276,7 @@ Business Need: Forms Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Application - Simple | Name                      | PB-1852                    |
     When I login as "Automation" user
+    When I pause execution for "7" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -298,7 +301,7 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I select below checkbox options for field "fieldMulti_Picklist_Field__c"
-      |  Display 1 |
+      | Display 1 |
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
     And I pause execution for "7" seconds
@@ -319,6 +322,7 @@ Business Need: Forms Component Scenarios
   @112014 @verifySpecialCharacterAtFormLayoutByPMUser
   Scenario:validate special characters are displayed inside form layout by login as pm user
     When I login as "Automation-PM" user
+    When I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -1165,7 +1169,7 @@ Business Need: Forms Component Scenarios
     Then I see the header is "Application Cover Page 12" in the page details
 
   @174501 @OldForms-ToverifythatinPreviewmodeofForm,theDynamicFormTitlesshouldbeconfigured
-    Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
+  Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
