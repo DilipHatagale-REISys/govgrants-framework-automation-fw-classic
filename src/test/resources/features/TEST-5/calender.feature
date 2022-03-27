@@ -118,6 +118,9 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
+    And I enter value "0" into field "fieldStartDate__c"
+    And I enter value "365" into field "fieldEndDate__c"
+    And I enter value "365" into field "Objectives__c"
     And I click on "Save" in the page details
     When I pause execution for "5" seconds
     And I save the field labeled "ID" as "savedValue"
@@ -231,6 +234,9 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
+    And I enter value "0" into field "fieldStartDate__c"
+    And I enter value "365" into field "fieldEndDate__c"
+    And I enter value "365" into field "Objectives__c"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I navigate to "Roles" sub tab
