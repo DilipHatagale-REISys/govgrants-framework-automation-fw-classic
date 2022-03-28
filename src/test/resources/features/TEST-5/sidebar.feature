@@ -314,6 +314,7 @@ Business Need: Side bar Component Scenarios
     And I navigate to "HOME" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I pause execution for "10" seconds
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
   @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome @smoke

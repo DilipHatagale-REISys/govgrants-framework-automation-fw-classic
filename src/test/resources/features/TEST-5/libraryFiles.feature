@@ -2675,7 +2675,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "DND" in "WorkspaceFiles" panel
+    When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
     Then I see "TestDND4.png" shown in search table with id "PlanningFilesgrid" at file upload modal
 
   @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess

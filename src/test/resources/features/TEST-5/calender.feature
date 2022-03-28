@@ -786,6 +786,7 @@ Business Need: Calender Config Component Scenarios
   @127490  @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForAdminUserAtRecordLevel
   Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for admin user at record level
     When I login as "Automation" user
+    When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"

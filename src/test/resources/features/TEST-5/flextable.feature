@@ -1600,7 +1600,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    Then I softly see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I softly see value "82,470%" for title "Percent" inside table "---program:-:programsTableId---"
     Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
@@ -1917,7 +1917,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    Then I see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I see value "82,470%" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                             | defaultFieldsApi                                                                                                 |
