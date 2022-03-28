@@ -416,7 +416,7 @@ Business Need: Sanity check for all Component Scenarios
     Then I see iconName "fa fa-users" with user "test group 1" is displayed on send email modal
     Then I see iconName "fa fa-users" with user "test group 2" is displayed on send email modal
 
-  @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts
+  @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts @SkipOnJenkins
   Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |

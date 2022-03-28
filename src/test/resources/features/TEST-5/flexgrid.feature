@@ -1510,7 +1510,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
@@ -2655,6 +2655,8 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I enter value "12344" into field "NumberDecimal__c"
+    And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see value "12,344.0000" for title "NumberDecimal" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
     Examples:
@@ -2675,6 +2677,11 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I click on "Edit" icon for "BP-01" inside table
+    When I enter value "12344" into field "NumberDecimal__c"
+    And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see the text :
       | 12,344.0000 |
 
@@ -2721,9 +2728,11 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Edit" icon for "BP-01" inside table
+    When I enter value "12344" into field "NumberDecimal__c"
+    And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see the text :
-      | 2,468.0000 |
+      | 12,344.0000 |
 
     Examples:
       | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
