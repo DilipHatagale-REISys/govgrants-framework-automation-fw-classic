@@ -1070,7 +1070,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail
 
-  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode
+  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode @skiponjenkis
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1736,6 +1736,7 @@ Business Need: dynamic forms Component Scenarios
   @93779   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInEditMode
   Scenario: validate sections are expanded by default inside dynamic form in edit mode
     When I login as "Admin" user
+    And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -2050,6 +2051,7 @@ Business Need: dynamic forms Component Scenarios
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
+    And I pause execution for "5" seconds
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Written" inside "Section 1" at dynamic form

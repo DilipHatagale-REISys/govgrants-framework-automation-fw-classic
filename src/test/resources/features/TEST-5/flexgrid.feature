@@ -1496,7 +1496,7 @@ Business Need: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
 
-  @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications @skiponjenkins
   Scenario: Changing action name field for view action at ApplicationBudgetCategoryFlexTable from config and validating it at Application Budget child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -1513,6 +1513,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I hovering mouse on help text icon inside "Actions" for flex table column
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
 
   @51400    @headerFieldAtApplicationBudgetCategoryFlexTable-gApplications
@@ -1824,9 +1825,10 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    And I pause execution for "8" seconds
     When I hovering mouse on help text icon inside "Grantee Share %" for flex table column
     Then I see "<new_helpText>" shown as help text
 
@@ -1848,8 +1850,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
@@ -1867,8 +1869,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
@@ -2056,9 +2058,10 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    And I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    And I pause execution for "5" seconds
     Then I see column "Budget Category" value is in "Descending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid
 
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
@@ -2077,8 +2080,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    And I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see column "Budget Category" value is in "Ascending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid
 
@@ -2450,7 +2453,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    Then I see value "7/10/2020 6:23 AM" for title "DateTime" inside table "---program:-:BudgetPeroidNewId---"
+    Then I see value "07/10/2020 6:23 AM" for title "DateTime" inside table "---program:-:BudgetPeroidNewId---"
 
     Examples:
       | defaultFieldsApi                                               | newFieldsApi                                                               |
@@ -2654,8 +2657,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I enter value "12344" into field "NumberDecimal__c"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-03" inside table
     And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see value "12,344.0000" for title "NumberDecimal" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
@@ -2677,10 +2680,9 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I click on "Edit" icon for "BP-01" inside table
-    When I enter value "12344" into field "NumberDecimal__c"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
+    When I click on "Edit" icon for "BP-03" inside table
     And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see the text :
       | 12,344.0000 |
@@ -2726,10 +2728,9 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
-    When I click on "Edit" icon for "BP-01" inside table
-    When I enter value "12344" into field "NumberDecimal__c"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
+    When I click on "Edit" icon for "BP-03" inside table
     And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see the text :
       | 12,344.0000 |
@@ -2802,10 +2803,11 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "BP-02"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
+    And I pause execution for "10" seconds
     And I edit the following rows inline in flex table with id "inlineEditGridAppLineItem" by clicking "Edit" :
       | Title       | Grantor Share %     |
       | Demo Line 1 | 1000000000000007777 |
