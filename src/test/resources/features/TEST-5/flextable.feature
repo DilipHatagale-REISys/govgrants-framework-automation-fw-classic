@@ -2517,7 +2517,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021  |
+      | Application Deadline | Greater than | 11/26/2021  01:11 PM  |
     And I pause execution for "5" seconds
     Then I softly see value "12/06/2021 11:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
