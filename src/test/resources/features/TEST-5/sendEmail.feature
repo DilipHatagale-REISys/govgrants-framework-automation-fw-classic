@@ -1634,7 +1634,13 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     When I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
-    Then I softly see attachment "testAutomationFileDND.png" is present in send email modal
+    And I click modal button "Select Files"
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    Then I softly see attachment "TestAutomationFile.csv" is present in send email modal
+    Then I softly see attachment "TestAutomationFile.csv" is present in send email modal
 
   @125698    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForAdminUser
   Scenario: validate Email Template rendering with body content at send invitation modal for admin user
