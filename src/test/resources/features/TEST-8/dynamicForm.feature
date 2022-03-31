@@ -1736,7 +1736,7 @@ Business Need: dynamic forms Component Scenarios
   @93779   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInEditMode
   Scenario: validate sections are expanded by default inside dynamic form in edit mode
     When I login as "Admin" user
-    And I pause execution for "5" seconds
+    And I pause execution for "2" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -2051,7 +2051,7 @@ Business Need: dynamic forms Component Scenarios
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
-    And I pause execution for "5" seconds
+    And I pause execution for "2" seconds
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Written" inside "Section 1" at dynamic form
