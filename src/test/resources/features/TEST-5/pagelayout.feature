@@ -17,7 +17,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "1231232222" shown as over view title in header "Program"
+    Then I see "TPA01" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -8315,6 +8315,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
     When I click search icon for lookup "Internal Organization Lookup (New Window)"
+    Then I pause execution for "30" seconds
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
