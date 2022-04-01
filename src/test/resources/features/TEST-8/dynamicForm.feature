@@ -566,7 +566,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Date Required in Section Section 1 question not answered |
+      | Written in Section Section 1 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -769,7 +769,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     And I pause execution for "10" seconds
     Then I see the following message in the page details :
-      | Rich Text Area is Required to save under Section 1. |
+      | Rich Text Area is required to save under Section 1. |
 
   @89855    @validateQuestionApplicableFieldAsRequiredForSaveAtRadioNewFieldTypeAtDynamicFormLayout @wip @changeInRequirement @invalidScenario
   Scenario: changing value of question applicable as required for save and checking error message for radio new field at dynamic form
@@ -2698,11 +2698,11 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Written Section 2 in Section Section 2 question not answered |
+      | Written in Section Section 1 question not answered |
 
   @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode
