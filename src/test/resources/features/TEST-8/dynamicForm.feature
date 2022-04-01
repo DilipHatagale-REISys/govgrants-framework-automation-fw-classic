@@ -2403,7 +2403,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
-      | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DynamicFormNewUpdatedJsonForPicklist                      | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
@@ -4811,6 +4811,95 @@ Business Need: dynamic forms Component Scenarios
       | Number | 200    |
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
+
+  @201240 @sprint5
+  Scenario:  Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
+
+  @201236 @sprint5
+  Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "Standard Assurances Form" inside table
+    When I click on "Validate" in the page details
+    Then I see the following message in the page details :
+      | Form validated successfully. |
+
+  @201241 @sprint5
+  Scenario: Form - To verify  "Form Saved successfully" message displayed on Form Edit for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
+
+  @201242 @sprint5
+  Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for Internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "Standard Assurances Form" inside table
+    When I click on "Validate" in the page details
+    Then I see the following message in the page details :
+      | Form validated successfully. |
+
+  @201247 @sprint5
+  Scenario: Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
+
+  @201245 @sprint5
+  Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    Then I cannot see the following message in the page details :
+      | Form validated successfully. |
 
   @201251 @sprint3
   Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available

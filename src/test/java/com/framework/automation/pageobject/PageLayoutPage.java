@@ -826,6 +826,30 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click and enter value in fields on send email modal
+     */
+    public void enterValueInSendEmailModalFields(String value, String fieldLabel) {
+        if (fieldLabel.equalsIgnoreCase("Body Content")) {
+            By fieldWrapperLocator = ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]//following-sibling::div");
+            WebElement fieldWrapper = I.amPerforming().getElementReference().of(fieldWrapperLocator);
+            By inputBoxSelector = By.xpath("//html//body[@contenteditable='true']");
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().switchTo().frame(I.amPerforming().getElementReference().ofNested(fieldWrapper, (By.xpath(".//iframe"))));
+            try {
+                I.amPerforming().textInput().toClear(I.amPerforming().getElementReference().ofNested(fieldWrapper, inputBoxSelector));
+            } catch (Exception e) {
+            }
+            I.amPerforming().textInput().in(inputBoxSelector, value);
+            I.amPerforming().switchTo().parentFrame();
+        } else {
+            WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']" +
+                    "| //label[contains(text(),'" + fieldLabel + "')]/parent::th/following-sibling::td//input[@type='text']"));
+            I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
+            fieldOnSendEmailModal.sendKeys(value);
+        }
+    }
+
+    /**
      * click and select package type and package for business form
      */
     public void selectPackageAndPackageType() {
@@ -2513,9 +2537,9 @@ public class PageLayoutPage extends GovGrantsManager {
         } catch (Exception e) {
         }
 
-        if(!flag) {
-            String text = I.amPerforming().actionToGet().attribute(By.xpath("//label[contains(text(),'Body Content')]/..//span"),"innerHTML");
-            if (text.contains(value)){
+        if (!flag) {
+            String text = I.amPerforming().actionToGet().attribute(By.xpath("//label[contains(text(),'Body Content')]/..//span"), "innerHTML");
+            if (text.contains(value)) {
                 return true;
             }
         }

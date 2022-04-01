@@ -290,6 +290,21 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * return true if post/comment is displayed inside collab - my feed container
+     *
+     * @param text
+     * @param sectionId
+     * @author ashwini.mahore
+     */
+    public void assertTextAtMyFeedSectionWithId(String usage, String text, String sectionId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isFalse();
+        }
+    }
+    /**
+    /**
      * return true if visibility option is disabled and value is displayed
      *
      * @param visibilityOption
@@ -704,6 +719,25 @@ public class LibraryFilesPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='WorkspaceFiles']//th//*[text()='" + fileName + "']/ancestor::tr[1]//input[(@type='checkbox' or @type='radio') and @disabled] " +
                     "| //div[@id='WorkspaceFiles']//*[text()='" + fileName + "']/ancestor::tr[@aria-selected='false']"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if post/comment is displayed inside collab - my feed container
+     *
+     * @param text
+     * @param sectionId
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedTextDisabledAtMyFeedSection(String text, String sectionId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + sectionId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "]"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {

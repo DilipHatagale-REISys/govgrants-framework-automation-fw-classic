@@ -94,6 +94,11 @@ public class PageLayoutSteps {
         pageLayoutPage.hoverMouseOnExpectedLookupField(label, lookupField);
     }
 
+    @When("^I enter value \"([^\"]*)\" into field \"([^\"]*)\" on send email modal$")
+    public void enterValueInSendEmailModal(String value, String fieldLabel) {
+        pageLayoutPage.enterValueInSendEmailModalFields(value, fieldLabel);
+    }
+
     @When("^I click on \"([^\"]*)\" email Search By field and select dropdown value as \"([^\"]*)\"$")
     public void clickSearchByButtonOnSendEmailModal(String fieldLabel, String dropdownValue) {
         pageLayoutPage.clickSearchByButton(fieldLabel, dropdownValue);
