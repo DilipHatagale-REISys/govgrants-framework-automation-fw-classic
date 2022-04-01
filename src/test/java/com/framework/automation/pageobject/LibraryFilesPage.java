@@ -303,7 +303,7 @@ public class LibraryFilesPage extends GovGrantsManager {
             I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isFalse();
         }
     }
-    /**
+
     /**
      * return true if visibility option is disabled and value is displayed
      *
