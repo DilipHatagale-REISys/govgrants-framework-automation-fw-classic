@@ -589,8 +589,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA-USAID-004"
-    When I click on "Edit" icon for "FOA-USAID-004" inside table
+    When I perform quick search for "FOA-SFC-002"
+    When I click on "Edit" icon for "FOA-SFC-002" inside table
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
       | --None-- | Competitive | Sole Source/Directed |
@@ -2150,8 +2150,9 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -4553,10 +4554,10 @@ Business Need: Logged Issues Scenarios
     When I click on "Upload" button in send email modal
     When I click on "×" icon at "Add Files" modal under Library
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
-    And I enter value "Test Automation Post For collab attachment functionality check - record level" in my feed section and share the comment
+    And I enter value "Automation file upload at record post collab" in my feed section and share the comment
     And I navigate to "HOME" tab
     When I pause execution for "3" seconds
-    And I click on "More Actions" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
+    And I click on "More Actions" action at "Automation file upload at record post collab" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
     When I pause execution for "3" seconds
     And I navigate to "Collab" tab
