@@ -4812,7 +4812,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
 
-  @201240 @sprint5
+  @201240 @sprint5  @Form-ToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforadminuser @jyoti
   Scenario:  Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for admin user
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
@@ -4827,7 +4827,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @201236 @sprint5
+  @201236 @sprint5  @Form-ToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforadminuser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for admin user
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
@@ -4842,7 +4842,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form validated successfully. |
 
-  @201241 @sprint5
+  @201241 @sprint5 @FormToverify"FormSavedsuccessfully"messagedisplayedonFormEditforadminuser @jyoti
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form Edit for admin user
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
@@ -4857,7 +4857,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @201242 @sprint5
+  @201242 @sprint5  @FormToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforInternaluser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for Internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4872,7 +4872,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form validated successfully. |
 
-  @201247 @sprint5
+  @201247 @sprint5  @FormToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforinternaluser @jyoti
   Scenario: Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4887,7 +4887,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @201245 @sprint5
+  @201245 @sprint5 @Form-Toverify"Validatedsuccessfully"messagenotdisplayedonFormeditmodeforinternaluser @jyoti
   Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
