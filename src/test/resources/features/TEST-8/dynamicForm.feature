@@ -566,7 +566,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Written in Section Section 1 question not answered |
+      |  Date Required in Section Section 1 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -2698,11 +2698,11 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Written in Section Section 1 question not answered |
+      | Written Section 2 in Section Section 2 question not answered |
 
   @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode
