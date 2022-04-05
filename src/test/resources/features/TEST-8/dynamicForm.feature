@@ -4858,7 +4858,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
 
-  @201237 @sprint5
+  @201237 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:  Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for admin user
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
@@ -4873,7 +4873,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form validated successfully. |
 
-  @201243 @sprint5
+  @201243 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for Internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4888,7 +4888,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" in the page details
     Then I do not see "Form validated successfully." error
 
-  @201244 @sprint5
+  @201244 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:   Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4903,7 +4903,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" in the page details
     Then I do not see "Form validated successfully." error
 
-  @201248 @Sprint5
+  @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form edit for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"

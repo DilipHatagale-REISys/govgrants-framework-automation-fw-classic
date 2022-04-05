@@ -5641,8 +5641,9 @@ Business Need: Page Layout Component Scenarios
     And I enter value "Test" into field "cke_1_contents"
     And I clear the value from field "cke_1_contents"
     And I enter value "Test Automation" into field "cke_1_contents"
-    And I change formatting of all text to "Strike Through" inside CK editor
-    Then I see "Test Automation" displayed in "Strike Through" format inside CK editor
+    And I change formatting of all text to "Select All" inside CK editor
+    And I change formatting of all text to "Strikethrough" inside CK editor
+    Then I see "Test Automation" displayed in "Strikethrough" format inside CK editor
 
   @131808  @verifytextInsideCkEditorInputBoxIsDisplayedWithBoldItalicUnderlineAndStrikeThroughFormat
   Scenario: validate text inside ck editor input box is displayed with bold,italic,underline and strike through format at edit page layout
@@ -5666,7 +5667,8 @@ Business Need: Page Layout Component Scenarios
     And I change formatting of all text to "Bold" inside CK editor
     And I change formatting of all text to "Italic" inside CK editor
     And I change formatting of all text to "Underline" inside CK editor
-    And I change formatting of all text to "Strike Through" inside CK editor
+    And I change formatting of all text to "Select All" inside CK editor
+    And I change formatting of all text to "Strikethrough" inside CK editor
     Then I see "Test Automation" displayed in "All" format inside CK editor
 
   @133021    @verifySaveAndCancelButtonsAreDisplayedAtEnhancedFlexEditPageLayoutToSPIUser
