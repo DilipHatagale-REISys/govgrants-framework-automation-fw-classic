@@ -3572,4 +3572,9 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void pressKeyFromkeyboard() {
+        I.amPerforming().addOnsTo().getKeyBoard().keyPress(Keys.ENTER);
+        System.out.println("pressed enter");
+    }
 }
