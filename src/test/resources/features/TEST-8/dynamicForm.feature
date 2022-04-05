@@ -4948,3 +4948,63 @@ Business Need: dynamic forms Component Scenarios
       | Number | 100    |
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
+
+  @201237 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  Scenario:  Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "Validate" in the page details
+    Then I see the following message in the page details :
+      | Form validated successfully. |
+
+  @201243 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for Internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "Standard Assurances Form" inside table
+    When I click on "Validate" in the page details
+    When I click on "Edit" in the page details
+    Then I do not see "Form validated successfully." error
+
+  @201244 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  Scenario:   Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "Standard Assurances Form" inside table
+    When I click on "Validate" in the page details
+    When I click on "Edit" in the page details
+    Then I do not see "Form validated successfully." error
+
+  @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
+  Scenario: Form - To verify  "Form Saved successfully" message displayed on Form edit for internal  user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "REI"
+    When I click on "View" icon for "REI" inside table
+    And I pause execution for "2" seconds
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
