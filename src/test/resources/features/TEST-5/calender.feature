@@ -218,7 +218,7 @@ Business Need: Calender Config Component Scenarios
       | Automation Internal Program for Approval and Snapshot scenarios |
       | Created                                                         |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
+  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -238,6 +238,7 @@ Business Need: Calender Config Component Scenarios
     And I enter value "365" into field "fieldEndDate__c"
     And I enter value "365" into field "Objectives__c"
     And I click on "Save" in the page details
+    And I pause execution for "8" seconds
     And I save the field labeled "ID" as "savedValue"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -261,7 +262,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ProgramServiceTableid---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
@@ -786,7 +787,7 @@ Business Need: Calender Config Component Scenarios
   @127490  @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForAdminUserAtRecordLevel
   Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for admin user at record level
     When I login as "Automation" user
-    When I pause execution for "5" seconds
+    When I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -965,6 +966,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "10" seconds
     And I click on "+4 more" Button at calendar
     Then I see the text :
       | {SavedValue:savedValue1} (Start Date) |

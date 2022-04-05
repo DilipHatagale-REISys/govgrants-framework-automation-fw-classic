@@ -301,7 +301,6 @@ public class LibraryFilesPage extends GovGrantsManager {
             I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isExpectedTextDisabledAtMyFeedSection(text, sectionId)).isFalse();
-
         }
     }
 
@@ -727,7 +726,6 @@ public class LibraryFilesPage extends GovGrantsManager {
         }
         return flag;
     }
-
 
     /**
      * return true if post/comment is displayed inside collab - my feed container

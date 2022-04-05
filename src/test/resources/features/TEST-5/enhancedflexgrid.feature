@@ -433,6 +433,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I hovering mouse on help text icon inside "Internal Organization" for enhanced grid table column
+    And I pause execution for "3" seconds
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             |
@@ -1647,8 +1648,6 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter values "Test Automation" into textarea for table id "Agreement1__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-CMAQ-001" in "---program:-:flexGridEnhancedID---" panel
-    When I pause execution for "10" seconds
-    When I expand nested table containing column value "GT-CMAQ-001"
     When I pause execution for "10" seconds
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 

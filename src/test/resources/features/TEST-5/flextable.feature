@@ -2493,7 +2493,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
+      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM   |
     When I pause execution for "10" seconds
     Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
@@ -2517,8 +2517,9 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021  01:11 PM |
-    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Greater than | 11/26/2021  01:11 PM  |
+    And I pause execution for "5" seconds
+    Then I softly see value "12/06/2021 11:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
@@ -2710,10 +2711,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
-    When I pause execution for "8" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | ID | Does not contains | AN-343-030 |
-    Then I softly do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+    Then I do not see value "AN-755-297" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table
