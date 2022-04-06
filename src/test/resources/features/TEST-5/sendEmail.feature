@@ -1632,10 +1632,15 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
-    And I pause execution for "10" seconds
-    Then I softly see attachment "testAutomationFileDND.png" is present in send email modal
-    Then I softly see attachment "Automation Test Data File-DND.png" is present in send email modal
+    And I click modal button "Select Files"
+    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    Then I softly see attachment "TestAutomationFile.csv" is present in send email modal
+    Then I softly see attachment "TestAutomationFile.csv" is present in send email modal
 
   @125698    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForAdminUser
   Scenario: validate Email Template rendering with body content at send invitation modal for admin user
@@ -7734,3 +7739,51 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+    @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
+      Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+        | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+      Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+      When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+      When I navigate to "Collab" sub tab
+      When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+      When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+      When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+      When I enter value "Email Created" into field "Subject" on send email modal
+      When I click on "Send" button in send email modal
+      Then I see the following messages in the page details :
+        | Email Sent Successfully. |
+
+  @205481 @sprint6 @ToVerifySpelling @dnyaneshwari
+  Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Email Created" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I see the following messages in the page details :
+      | Email Sent Successfully. |

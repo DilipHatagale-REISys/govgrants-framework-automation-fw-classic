@@ -7187,7 +7187,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     And I pause execution for "3" seconds
-    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--01"
 
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                               |

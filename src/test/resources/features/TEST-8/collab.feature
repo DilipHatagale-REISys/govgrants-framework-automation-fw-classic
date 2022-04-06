@@ -458,7 +458,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @AutomationPM" in the comment at collab
+    And I enter value "Hello @Automation" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
 
   @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab

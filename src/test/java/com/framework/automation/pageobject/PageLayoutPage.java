@@ -832,7 +832,6 @@ public class PageLayoutPage extends GovGrantsManager {
         if (fieldLabel.equalsIgnoreCase("Body Content")) {
             By fieldWrapperLocator = ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]//following-sibling::div");
             WebElement fieldWrapper = I.amPerforming().getElementReference().of(fieldWrapperLocator);
-
             By inputBoxSelector = By.xpath("//html//body[@contenteditable='true']");
             I.amPerforming().waitFor().makeThreadSleep(1000);
             I.amPerforming().switchTo().frame(I.amPerforming().getElementReference().ofNested(fieldWrapper, (By.xpath(".//iframe"))));
@@ -2538,9 +2537,9 @@ public class PageLayoutPage extends GovGrantsManager {
         } catch (Exception e) {
         }
 
-        if(!flag) {
-            String text = I.amPerforming().actionToGet().attribute(By.xpath("//label[contains(text(),'Body Content')]/..//span"),"innerHTML");
-            if (text.contains(value)){
+        if (!flag) {
+            String text = I.amPerforming().actionToGet().attribute(By.xpath("//label[contains(text(),'Body Content')]/..//span"), "innerHTML");
+            if (text.contains(value)) {
                 return true;
             }
         }
