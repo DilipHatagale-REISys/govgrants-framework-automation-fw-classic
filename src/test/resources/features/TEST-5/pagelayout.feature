@@ -9758,3 +9758,203 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
+
+  @205789 @ToVerifyPercentageNumberCurrencyandFormulafields @Sprint5 @dnyaneshwari
+  Scenario: To verify, Verified for Percentage, Number, Currency and Formula  (Text)  fields
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
+    When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
+    When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Funded Amount123 : Number is too large. |
+    Then I see the following message in the page details contains:
+      | Number : Number is too large. |
+    Then I see the following message in the page details contains:
+      | Percent : Number is too large. |
+
+  @205795 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205796 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "123456783456789456789045678945678" into field "Number__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205800 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1234567834567834567834567834567834567" into field "Percent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205802 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "13456789034567894567890234567" into field "Number__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205803 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205804 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205805 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "145678967890673456784567894567896788" into field "Number__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205814 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @205794 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
+  Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION-ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "12345678901234567" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
