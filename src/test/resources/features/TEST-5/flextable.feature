@@ -2914,3 +2914,87 @@ Business Need: Flex Table Component Scenarios
     Examples:
       | newFieldsApi                           | defaultFieldsApi |
       | NameName,Id,ProgramName__c,Account__c, | Name             |
+
+    @206586 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+      Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+      When I login as "AUTOMATION-ADMIN" user
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+      Then I see the following message in the page details contains:
+        | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206610 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+    When I login as "AUTOMATION-ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206612 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario: To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+    When I login as "AUTOMATION-ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206613 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206616 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario:  To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206620 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario:  To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+    When I login as "Automation" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206621 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario:  To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+    When I login as "Automation-PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206623 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario:   To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+    When I login as "Automation-PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @206625 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario:   To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+    When I login as "Automation-PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
