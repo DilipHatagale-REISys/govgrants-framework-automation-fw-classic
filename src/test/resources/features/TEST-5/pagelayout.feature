@@ -9191,6 +9191,283 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldProjectGoals__c"
       | YES |
 
+  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Funded Amount : Number is too large. |
+
+  @205808 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Number : Number is too large. |
+
+  @205807 @Toverify-ValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforpercentfieldforinternaluser
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Funded Amount : Number is too large. |
+
+  @205810 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforNumberfieldforinternaluser @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Number : Number is too large. |
+
+  @205809 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverridinCalibriLight(Headings)fontStyleforcurrencyfieldforinternaluser
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for currency field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Funded Amount : Number is too large. |
+
+  @205812 @ToverifValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforNumbefieldforinternaluser @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Number : Number is too large. |
+
+  @205811 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforpercentfieldforinternaluser
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Funded Amount : Number is too large. |
+
+  @205813 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStyleforcurrencyfieldforinternaluser
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field  for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Funded Amount : Number is too large. |
+
+  @205815 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStylefornumberfieldforinterluser
+  Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field for interl user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details :
+      | Number : Number is too large. |
+
+  @205798 @ValidationMessageShuoldDisplayWhenWeUseLablOverride @Jyoti @sprint5
+  Scenario:  To verify - Validation message should display properly when we use field label override in  font Arial Nova for currency field (Nauman shahid
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @206506 @ValidatonMessageShouldDisplyedInArialFont @sprint5 @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in arial  for currency field Automation user(Nauman shahid)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Dynamic field : Number is too large. |
+
+  @206456 @ValidationMessageShouldDisplayInCalibriFont @sprint5 @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri for currency field Automation user(Nauman shahid)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Dynamic field Config : Number is too large. |
+
+  @206566 @ErrorMessageShouldbeDisplayInPercentField @sprint5 @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in arial  for Percent field Automation user(Nauman shahid)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Dynamic field : Number is too large. |
+
+  @206569 @ErroressageShouldDisplyedInCallabriForPercentField @Sprint5 @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri for percent  field Automation user(Nauman shahid)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Dynamic field Config : Number is too large. |
+
+  @206571 @ValidationMessageeShouldDisplyInArialNovaFont @sprint5 @jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Number field (Nauman shahid
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I pause execution for "4" seconds
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
+  @206572 @ErrormESSAGEdisplyedForNumberField @sprint5 @Jyoti
+  Scenario: To verify - Validation message should display properly when we use field label override in Calibri for Number  field Automation user(Nauman shahid)
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see the following message in the page details contains:
+      | Dynamic field Config : Number is too large. |
+
   @171509 @jyoti
   Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
     When I login as "Automation" user
@@ -9367,7 +9644,7 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |         --None--  | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3178                   |
