@@ -1496,7 +1496,7 @@ Business Need: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
 
-  @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications @skiponjenkins
+  @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications @skipOnJenkins
   Scenario: Changing action name field for view action at ApplicationBudgetCategoryFlexTable from config and validating it at Application Budget child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |

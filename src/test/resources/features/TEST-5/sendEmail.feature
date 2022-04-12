@@ -2259,7 +2259,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @159444 @validateAttentionToFieldValueAtSendEmailMessageTable
   Scenario: Validate Attention To field at reply email inside message table at send email
@@ -2453,7 +2453,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Succesfully. |
 
   @161872 @ValidateUserRplyToAnEmailFromCollabTabSendEmailSubjectLineStartWithRe
   Scenario: Validate User Rply To An Email From Collab Tab Send Email Subject Line Start With Re
@@ -2548,7 +2548,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @161871  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySpace    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by space
@@ -2580,7 +2580,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @164064  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySemicolon    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by Semicolon for TO and cc
@@ -2614,7 +2614,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @164262 @ValidateUserSendEmailWithMultipleEmailAddressAreSeparatedByCommaTo&CcField @vaibhavC
   Scenario: Validate User Send Email With Multiple Email Address Are Separated By Comma To & Cc Field
@@ -2647,7 +2647,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @164271 @ValidateUserSendEmailWithMultipleEmailAddressAreSeparatedBySpaceTo&CcField @vaibhavC
   Scenario: Validate User Send Email With Multiple Email Address Are Separated By Space To & Cc Field
@@ -2680,7 +2680,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
-      | Email sent succesfully. |
+      | Email Sent Successfully. |
 
   @169516 @tejal
   Scenario: verify,User send the email from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
@@ -7076,6 +7076,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7103,6 +7104,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7133,6 +7135,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7163,6 +7166,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7193,6 +7197,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7224,6 +7229,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7255,6 +7261,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7281,6 +7288,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7307,6 +7315,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7331,6 +7340,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7355,6 +7365,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7381,6 +7392,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7414,6 +7426,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7442,6 +7455,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7473,6 +7487,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7506,6 +7521,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7537,6 +7553,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7567,6 +7584,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7587,6 +7605,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7607,6 +7626,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7627,6 +7647,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7648,6 +7669,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7669,6 +7691,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7689,6 +7712,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7720,6 +7744,7 @@ Business Need: Send Email Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0280"
     When I click on "Edit" icon for "PG-755-0280" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"

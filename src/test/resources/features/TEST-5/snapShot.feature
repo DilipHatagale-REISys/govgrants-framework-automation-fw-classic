@@ -241,7 +241,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Send to Owner" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
