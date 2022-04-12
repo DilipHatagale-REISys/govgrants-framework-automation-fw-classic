@@ -1667,7 +1667,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
-    Then I softly see "Test Prog" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Package Testing" value in flex table id "---program:-:programsTableId---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
