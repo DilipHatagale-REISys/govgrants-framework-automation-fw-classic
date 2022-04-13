@@ -213,6 +213,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
+    And I pause execution for "5" seconds
     Then I see collab my feed page refreshed
 
   @112487    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
@@ -221,6 +222,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Admin Post Delete Action Access" in my feed section and share the post
+    When I pause execution for "10" seconds
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
@@ -234,7 +236,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
-    And I pause execution for "2" seconds
+    And I pause execution for "5" seconds
     And I click on "Delete" action from dropdown at "Test Automation collab Delete action by admin" comment inside my feed
     And I click modal button "OK"
     Then I do not see "Test Automation collab Delete action by admin" inside flex table with id "---program:-:myFeedTableId---"
@@ -390,6 +392,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     And I click on refresh button at collab
+    When I pause execution for "10" seconds
     Then I see collab my feed page refreshed
 
   @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToPMUser
