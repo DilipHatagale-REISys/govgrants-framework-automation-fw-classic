@@ -1163,7 +1163,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Number"
     Then I see "Test Automation Number Help" shown as help text
 
-  @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode @skiponjenkins
+  @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1202,7 +1202,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Picklist"
     Then I see "Test Automation Picklist Help" shown as help text
 
-  @92172    @ValidateHelpTextAtRichTextAreaFieldInsideDynamicFormInViewMode
+  @92172    @ValidateHelpTextAtRichTextAreaFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Rich Text Area field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1297,7 +1297,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Currency"
     Then I see "Test Automation Currency Help" shown as help text
 
-  @92625    @ValidateHelpTextAtNumberFieldInsideDynamicFormInEditMode
+  @92625    @ValidateHelpTextAtNumberFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1316,7 +1316,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Number"
     Then I see "Test Automation Number Help" shown as help text
 
-  @92630    @ValidateHelpTextAtDateFieldInsideDynamicFormInEditMode
+  @92630    @ValidateHelpTextAtDateFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at date field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1831,7 +1831,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-
     Then I softly see "Currency" field inside "Section 1" is hidden
     Then I softly see "Number" field inside "Section 1" is disabled
 

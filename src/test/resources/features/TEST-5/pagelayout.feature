@@ -9406,6 +9406,26 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
+  @206570 @ValidationMessageShouldDisplyWhrenFontIsArialNovaForPercentField @Jyoti @sprint5
+  Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Percent field (Nauman shahid
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Go to platform setup : Number is too large. |
+
   @206569 @ErroressageShouldDisplyedInCallabriForPercentField @Sprint5 @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for percent  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
