@@ -1597,6 +1597,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -1667,8 +1668,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
-    Then I softly see "Package Testing" value in flex table id "---program:-:programsTableId---"
-    Then I softly do not see "Change Requested" value in flex table id "---program:-:programsTableId---"
+    When I perform quick search for "Package Testing"
+    Then I softly see "Package Testing" value in flex table id "---program:-:ProgramsTableIdNew---"
+    Then I softly do not see "Change Requested" value in flex table id "---program:-:ProgramsTableIdNew---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containg numeric value followed by space at flex table

@@ -700,6 +700,7 @@ Business Need: Sanity check for all Component Scenarios
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
     When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "GGPTEST5" inside bottom menu

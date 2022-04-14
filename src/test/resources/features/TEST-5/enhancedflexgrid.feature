@@ -3365,7 +3365,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "88812" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "8,88.12" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "88,812.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -4015,7 +4015,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Current Budget Period End Date | greater than | 05/15/2020 |
     Then I softly see value "12/14/2021" for title "Current Budget Period End Date" inside table "---program:-:EnhancedDataTableId---"
 
-  @181526 @sprint24 @userstory_179175 @skiponjenkins
+  @181526 @sprint24 @userstory_179175  @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4035,7 +4035,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181517 @sprint24 @userstory_179175 @skiponjenkins
+  @181517 @sprint24 @userstory_179175  @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, In Downloaded XLS  Number column should not display  When Hide column at Number  field   with    user type &  profile  operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4055,7 +4055,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181514 @sprint24 @userstory_179175 @skiponjenkins
+  @181514 @sprint24 @userstory_179175  @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4075,7 +4075,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181519 @sprint24 @userstory_179175 @skiponjenkins
+  @181519 @sprint24 @userstory_179175  @SkipOnJenkins
   Scenario: Data table Enhanced-To verify,  In Downloaded xls  date  column should not display When Hide column at Date field with not   equal to  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4335,7 +4335,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181520 @sprint24  @userstory_179175 @skiponjenkins
+  @181520 @sprint24  @userstory_179175 @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded xls   Number column should not display  When Hide column at Number  field   with user type operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4356,7 +4356,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181508 @sprint24  @userstory_179175 @skiponjenkins
+  @181508 @sprint24  @userstory_179175 @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, In Downloaded PDF Currency column should not display When Hide column JSON  with 'user type ' operand  at currency field  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4399,7 +4399,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190159 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the grid), they remain on the same page after Modal closing
@@ -4424,7 +4424,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190165 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Close modal and refresh grid), they remain on the same page after Modal closing
@@ -4449,7 +4449,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190166 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the entire page), the entire page gets refreshed and the table navigates to its first page
@@ -4474,7 +4474,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190155 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: None), they remain on the same page after Modal closing
@@ -4499,7 +4499,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190158 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the grid), they remain on the same page after Modal closing
@@ -4524,7 +4524,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190161 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
@@ -4549,7 +4549,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190162 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
@@ -4574,7 +4574,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25|
 
   @190163 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
@@ -4599,7 +4599,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190164 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour:Close modal and refresh grid), they remain on the same page after Modal closing
@@ -4624,7 +4624,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @190168 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the entire page), the entire page gets refreshed and the table navigates to its first page
@@ -4649,7 +4649,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 23 |
+      | Page 1 of 25 |
 
   @192567 @sprint1 @userstory_184938 @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "Profile"operand  then that column is not displayed in the pdf  as well as in the UI

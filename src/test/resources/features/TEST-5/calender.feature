@@ -93,6 +93,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
@@ -144,6 +145,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
+    And I pause execution for "5" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     And I pause execution for "3" seconds
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
