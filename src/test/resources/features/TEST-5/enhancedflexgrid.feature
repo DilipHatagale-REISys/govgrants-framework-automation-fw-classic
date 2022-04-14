@@ -3365,7 +3365,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "88812" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "8,88.12" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "88,812.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -4335,7 +4335,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181520 @sprint24  @userstory_179175 @skiponjenkins
+  @181520 @sprint24  @userstory_179175 @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded xls   Number column should not display  When Hide column at Number  field   with user type operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4356,7 +4356,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181508 @sprint24  @userstory_179175 @skiponjenkins
+  @181508 @sprint24  @userstory_179175 @SkipOnJenkins
   Scenario: Data table Enhanced-To verify, In Downloaded PDF Currency column should not display When Hide column JSON  with 'user type ' operand  at currency field  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |

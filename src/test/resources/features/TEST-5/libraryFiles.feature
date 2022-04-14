@@ -4604,6 +4604,7 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -4621,6 +4622,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     Then I softly see the text :
@@ -4637,6 +4639,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     Then I do not see sharing option as "Private On Record" at upload file modal
@@ -4831,6 +4834,7 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation-PM" user
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -4848,6 +4852,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I navigate to "HOME" tab
@@ -4909,6 +4914,7 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation" user
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -4937,6 +4943,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I navigate to "HOME" tab
@@ -5020,6 +5027,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "4" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5042,6 +5050,7 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "4" seconds
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "4" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I navigate to "HOME" tab
@@ -5110,6 +5119,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "4" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5208,6 +5218,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5229,10 +5240,12 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     And I navigate to "HOME" tab
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds

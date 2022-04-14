@@ -822,6 +822,7 @@ Business Need: dynamic forms Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
+    And I pause execution for "5" seconds
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
@@ -1070,7 +1071,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail
 
-  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode @skiponjenkis
+  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode @skipOnjenkis
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1392,7 +1393,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
     Then I see "Test Automation Rich Text Area Help" shown as help text
 
-  @92639    @ValidateHelpTextAtRadioFieldInsideDynamicFormInEditMode @skiponjenkis
+  @92639    @ValidateHelpTextAtRadioFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at radio field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1411,7 +1412,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Radio"
     Then I see "Test Automation Radio Help" shown as help text
 
-  @92637    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInEditMode @skiponjenkins
+  @92637    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -4521,6 +4522,7 @@ Business Need: dynamic forms Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "2" seconds
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
@@ -4958,7 +4960,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "REI" inside table
     And I pause execution for "2" seconds
     When I navigate to "Attachments" sub tab
-    When I click on "Edit" icon for "Standard Assurances Form" inside table
+    When I click on "View" icon for "Standard Assurances Form" inside table
     When I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form validated successfully. |
