@@ -425,8 +425,6 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I click on "Start" icon for "Program Sent To Owner" inside table
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
 
   @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoke

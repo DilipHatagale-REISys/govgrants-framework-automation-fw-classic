@@ -4350,7 +4350,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
     Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
-  @120455  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinks
+  @120455  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinks @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at sidebar links
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -8464,8 +8464,8 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:savedValue}"
     When I click on "Start" icon for "{SavedValue:savedValue}" inside table
-    When I "Reassign" to user "Automation PO" in the approval decision
-    When I re-login to "As a Grantor" app as "AUTOMATION-PO" user on "default" portal
+    When I "Reassign" to user "Automation PM" in the approval decision
+    When I re-login to "As a Grantor" app as "AUTOMATION-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:savedValue}"
@@ -10070,7 +10070,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Funded Amount123 : Number is too large. |
+      | Funded Amount : Number is too large. |
     Then I see the following message in the page details contains:
       | Number : Number is too large. |
     Then I see the following message in the page details contains:
@@ -10251,7 +10251,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    When I enter value "12345678901234567" into field "fieldFundedAmount__c"
+    When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |

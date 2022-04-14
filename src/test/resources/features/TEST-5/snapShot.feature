@@ -145,7 +145,16 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
-    When I "Approve" in the approval decision
+    When I "Send to Owner" in the approval decision
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I click on "Save" in the page details without processing
+    And I click on "Submit For Approval" in the page details
+    And I refresh the page
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval.pdf"
 
@@ -248,7 +257,8 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I click on "Save" in the page details without processing
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
