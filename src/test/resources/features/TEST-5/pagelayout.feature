@@ -8464,7 +8464,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:savedValue}"
     When I click on "Start" icon for "{SavedValue:savedValue}" inside table
-    When I "Reassign" to user "Automation PO" in the approval decision
+    When I "Reassign" to user "Automation PM" in the approval decision
     When I re-login to "As a Grantor" app as "AUTOMATION-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
