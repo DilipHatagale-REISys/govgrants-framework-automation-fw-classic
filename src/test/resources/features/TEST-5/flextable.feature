@@ -3000,3 +3000,94 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+
+  @207067 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
+
+  @207072 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: To verify that on applying Row grouping, respective subtotal label display correctly on all pages.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
+
+  @207074 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: E-Grid - To verify that on applying Row grouping, respective subtotal label display correctly on all pages.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1491                   |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+  @206942 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: E-grid-To verify Sub total label displayed after adding formula in "Name" field details config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+  @207065 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
