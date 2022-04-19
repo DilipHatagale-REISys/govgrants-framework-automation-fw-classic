@@ -2899,6 +2899,115 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "GT-test-005" in "---program:-:enhancedGridTableId---" panel
     Then I see "Project Title" shown as flex table column title
 
+  @217228 @ToCheckIndexColumnIsPresentInsideTable
+  Scenario: To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "#" shown inside flex table with id "---program:-:programTableDivId---"
+
+  @217240 @ToVerifyNotRecordFoundInsideTable
+  Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Heloo"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217241 @ToVerifyNoRecordsFoundDisplyedInFlexTable
+  Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Heloo"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217242 @ToVerifyNoRecordsFoundDisplyedInFlexTableforspiuser
+  Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Heloo"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217243 @ToVerifyNotRecordFoundInsideTableForAdminuser
+  Scenario: To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "100.10,00"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217244 @ToVerifyNotRecordFoundInsideTableForPMuser
+  Scenario: To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "100.10,00"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217245 @ToVerifyNotRecordFoundInsideTableForSPIuser
+  Scenario:  To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "100.10,00"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217273 @ToVerifyNotRecordFoundInsideTableForAdminuser(DateFormat)
+  Scenario:  To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "2020/09/16/"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217274 @ToVerifyNotRecordFoundInsideTableForSPIuser(DateFormat)
+  Scenario: To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "2020/09/16/"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217275 @ToVerifyNotRecordFoundInsideTableForAdminuser(EGMDID)
+  Scenario:To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "17912222-PG-343"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217276 @ToVerifyNotRecordFoundInsideTableForPMuser(EGMDID)
+  Scenario: To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "17912222-PG-343"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217277 @ToVerifyNotRecordFoundInsideTableForSPIuser(EGMDID)
+  Scenario: To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "17912222-PG-343"
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
   @190090 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
