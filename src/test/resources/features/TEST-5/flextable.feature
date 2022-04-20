@@ -3091,3 +3091,130 @@ Business Need: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+    @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
+      Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      Then I do not see "Upload" button is displayed
+
+      @217214 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
+        Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+        When I login as "Automation-PM" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        Then I do not see "Upload" button is displayed
+
+  @217215 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
+  Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see "Upload" button is displayed
+
+  @217272 @Norecordsfound @dnyaneshwari
+  Scenario:To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "dfrtyuiodfgyhui"
+    Then I see the text :
+      | No records found |
+
+  @217219 @TotalRecordCount @dnyaneshwari
+  Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see no "Total Records" count in "---program:-:programsTableId---"
+
+    @217220 @TotalRecordCount @dnyaneshwari
+      Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+        | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      When I re-login as "Automation-PM" user on "default" portal
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      Then I see no "Total Records" count in "---program:-:programsTableId---"
+
+    @217216 @PageSize @dnyaneshwari
+      Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+        | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+
+    @217292 @DisableMenu @dnyaneshwari
+      Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+        | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+
+      @217293 @DisableMenu @dnyaneshwari
+        Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
+        Given I have "default" configuration as below:
+          | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+          | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
+        Given I setup test configuration as below:
+          | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+          | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
+        When I login as "Automation" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        When I re-login as "Automation-PM" user on "default" portal
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+
+  @217294 @DisableMenu @dnyaneshwari
+  Scenario:  To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
