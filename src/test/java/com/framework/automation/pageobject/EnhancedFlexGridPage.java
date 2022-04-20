@@ -155,8 +155,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * assert true if page size is enabled at bottom of enhanced grid
      */
-    public void assertEnhancedGridPageSizeEnabled(String text, String tableId) {
-        Assert.assertTrue(isEnhancedGridBottomElementEnabled(text, tableId));
+    public void assertEnhancedGridPageSizeEnabled(String usage,String text, String tableId) {
+        if (usage.equalsIgnoreCase("see")){
+            I.amPerforming().assertionsTo().assertThat(isEnhancedGridBottomElementEnabled(text, tableId)).isTrue();
+        }
+        else if(usage.equalsIgnoreCase("do no see")){
+            I.amPerforming().assertionsTo().assertThat(isEnhancedGridBottomElementEnabled(text, tableId)).isFalse();
+        }
     }
 
     /**

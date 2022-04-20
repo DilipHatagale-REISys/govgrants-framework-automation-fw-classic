@@ -58,9 +58,9 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertEditOpenInSameTabForEnhancedGrid();
     }
 
-    @Then("^I see \"([^\"]*)\" with page size dropdown in enhanced grid \"([^\"]*)\"$")
-    public void assertFlexTablePageSizeEnabled(String text, String tableId) {
-        enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(text, tableId);
+    @Then("^I (see|do not see) \"([^\"]*)\" with page size dropdown in enhanced grid \"([^\"]*)\"$")
+    public void assertFlexTablePageSizeEnabled(String usage, String text, String tableId) {
+        enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(usage,text, tableId);
     }
 
     @Then("^I see \"([^\"]*)\" records inside enhanced grid id \"([^\"]*)\"$")
