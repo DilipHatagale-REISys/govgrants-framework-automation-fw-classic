@@ -213,7 +213,6 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
-    And I pause execution for "5" seconds
     Then I see collab my feed page refreshed
 
   @112487    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
@@ -392,7 +391,6 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     And I click on refresh button at collab
-    When I pause execution for "10" seconds
     Then I see collab my feed page refreshed
 
   @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToPMUser
