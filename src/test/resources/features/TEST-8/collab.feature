@@ -490,9 +490,6 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I click on "Delete" action at "test @Simon Automation" comment inside my feed
-    And I click modal button "OK"
-    And I refresh the page
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "test @Simon Automation" in my feed section and share the comment
     Then I see "test @Simon Automation" inside flex table with id "---program:-:myFeedTableId---"
@@ -674,5 +671,5 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "hii @Framework Dev" in my feed section and share the post
+    And I enter value "hii" in my feed section and share the post
     Then I do not see alert popup box

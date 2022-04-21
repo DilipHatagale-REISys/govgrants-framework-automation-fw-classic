@@ -3120,6 +3120,74 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
+  @217278 @ToVerifyNotRecordFoundInsideTableForAdminuser @jyoti
+  Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+
+  @217279 @ToVerifyNotRecordFoundInsideTableForPMuser @jyoti
+  Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+
+  @217552 @FiledNameFromBakenddisplyed @jyoti
+  Scenario:  To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" shown as flex table column title
+
+  @217553 @FiledNameFromBakenddisplyedPM @jyoti
+  Scenario: To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" shown as flex table column title
+
+  @217554 @FiledNameFromBakenddisplyedSPIuser @jyoti
+  Scenario: SPI - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I see "ID" shown as flex table column title
+    
   @190090 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
