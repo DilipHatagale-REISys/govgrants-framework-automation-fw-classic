@@ -650,3 +650,56 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
     Then I softly do not see "Number of Project Areas" in flex table header "Demo_Title"
+
+  @208595   @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
+  Scenario:To verify , Mini layout UI at ME-Grid  table looks as   object name to the top, field title under it, then line separator for Internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    And I pause execution for "10" seconds
+    When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
+    Then I softly see "title" as "SYSTEM" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Educational Program Activity0" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Value" as "9832" inside mini page layout
+
+  @208597    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedGrid
+  Scenario:To verify , Mini layout UI at form looks as   object name to the top, field title under it, then line separator for Internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "title" as "Department of Higher Education" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Label" as "Code" inside mini page layout
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I hover mouse on lookup link "Department of Higher Education" at table
+    And I pause execution for "4" seconds
+    Then I softly see "Value" as "755" inside mini page layout

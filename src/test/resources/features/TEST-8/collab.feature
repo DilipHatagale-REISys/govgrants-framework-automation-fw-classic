@@ -669,5 +669,5 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "hii @Framework Dev" in my feed section and share the post
+    And I enter value "@Framework Admin" in my feed section and share the post
     Then I do not see alert popup box
