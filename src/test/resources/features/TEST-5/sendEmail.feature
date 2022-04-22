@@ -6180,10 +6180,10 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
-    Then I see text as "Sent:" on reply email modal
-    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
-    Then I see text as "Subject: test group for attachment" on reply email modal
+    Then I see "From: ashwini.mahore@yopmail.com" as "Body Content" on send email modal
+    Then I see "Sent:" as "Body Content" on send email modal
+    Then I see "To: ashwini.mahore@yopmail.com" as "Body Content" on send email modal
+    Then I see "Subject: test group for attachment" as "Body Content" on send email modal
     Then I see "test group for attachment" as "Body Content" on send email modal
 
   @169710 @tejal

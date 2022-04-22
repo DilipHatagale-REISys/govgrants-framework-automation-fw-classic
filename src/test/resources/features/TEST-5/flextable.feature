@@ -3460,6 +3460,40 @@ Business Need: Flex Table Component Scenarios
       And I click toggle button to select "Draft Programs"
       Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
+      @217217 @PageSize @dnyaneshwari
+        Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+        Given I have "default" configuration as below:
+          | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+          | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+        Given I setup test configuration as below:
+          | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+          | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
+        When I login as "Automation" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        When I re-login as "Automation-PM" user on "default" portal
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+
+        @217218 @PageSize @dnyaneshwari
+          Scenario:To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+          Given I have "default" configuration as below:
+            | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+            | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+          Given I setup test configuration as below:
+            | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+            | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
+          When I login as "Automation" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Planning" tab
+          And I click toggle button to select "Draft Programs"
+          When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+          And I navigate to "Applications" tab
+          Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+
     @217292 @DisableMenu @dnyaneshwari
       Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
       Given I have "default" configuration as below:
@@ -3507,3 +3541,95 @@ Business Need: Flex Table Component Scenarios
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+
+  @217415 @SortDirection @dnyaneshwari
+  Scenario: To verify that on selecting None option for Sort direction, records on flex table get sorted by ascending order
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see grouped row value is in "Ascending" order
+
+  @217416 @SortDirection @dnyaneshwari
+  Scenario:  To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see grouped row value is in "Ascending" order
+
+  @217417 @SortDirection @dnyaneshwari
+  Scenario:  To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    Then I see grouped row value is in "Ascending" order
+
+  @217418 @FilterCriteria @dnyaneshwari
+  Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see record with text "Created" in "---program:-:programTableDivId---"
+
+  @217419 @FilterCriteria @dnyaneshwari
+  Scenario: To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see record with text "Approved" in "---program:-:programTableDivId---"
+
+  @217420 @FilterCriteria @dnyaneshwari
+  Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    Then I see record with text "Submitted to Grantor" in "---program:-:programTableDivId---"
+
+  @207133 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario:To verify that Sub total label displayed properly for PM user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+  @207134 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
+  Scenario: To verify that Sub total label displayed properly for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-734-140"
+    When I click on "View" icon for "AP-734-140" inside table
+    When I navigate to "Plan" sub tab
+    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
