@@ -562,11 +562,11 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form" inside table
-    When I click on "Save" button in right header
+    When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      |  Date Required in Section Section 1 question not answered |
+      |  Written Section 2 in Section Section 2 question not answered |
+      |Radio in Section Section 1 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -1336,7 +1336,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Date"
     Then I see "Test Automation Date Help" shown as help text
 
-  @92623    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode
+  @92623    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode @SkipOnJenkins
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -2584,7 +2584,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
     When I click on "Save" in the page details
-    And I pause execution for "5"
+    And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     Then I softly do not see "Checkbox" inside "Section 1" at dynamic form
 
@@ -2698,8 +2698,9 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
+    And I pause execution for "5" seconds
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
       | Written Section 2 in Section Section 2 question not answered |

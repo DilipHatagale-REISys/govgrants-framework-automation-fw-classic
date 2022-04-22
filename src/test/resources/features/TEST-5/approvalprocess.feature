@@ -979,6 +979,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
+    And I pause execution for "10" seconds
     Then I see email is generated with template "Program_Rejected_Email_Template"
 
   @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs @BugId_163309
@@ -1561,13 +1562,16 @@ Business Need: Approval Process Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
+    And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
+    And I pause execution for "8" seconds
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
+    And I pause execution for "8" seconds
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"

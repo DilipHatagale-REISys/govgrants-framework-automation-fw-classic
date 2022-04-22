@@ -2265,6 +2265,118 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "Sub Awards"
     Then I see value "Sub Awards" for title "Spend Type" inside table "flexTableDivId"
 
+  @217231 @disablequickSeachForpmuser
+  Scenario:  To verify that on disabling 'Enable Quick Search' Quick search feature not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see quick search option is displayed
+
+  @217223 @disableAdvanceFilterForpmuser
+  Scenario:  To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
+
+  @217229 @IndexColumnIsNotDisplyed
+  Scenario: To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I softly do not see "#" in flex table header "---program:-:programTableDivId---"
+
+  @217333 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidId
+  Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | ID | Contains | PG-343-036--- |
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217334 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdPMuser
+  Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | ID | Contains | PG-343-036--- |
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217335 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdSPIuser
+  Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfApplications" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfApplications"
+      | ID | Contains | 0392222AP-603- |
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+  @217336 @NumberFieldInWrongFormat
+  Scenario Outline: To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Number Test | Equals to | 11,1,1,1 |
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+    Examples:
+      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @217337 @NumberFieldInWrongFormatPMuser
+  Scenario Outline: To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Number Test | Equals to | 11,1,1,1 |
+    Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
+
+    Examples:
+      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
   @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout
   Scenario: ME-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
     Given I have "default" configuration as below:
@@ -3008,6 +3120,74 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
+  @217278 @ToVerifyNotRecordFoundInsideTableForAdminuser @jyoti
+  Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+
+  @217279 @ToVerifyNotRecordFoundInsideTableForPMuser @jyoti
+  Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+
+  @217552 @FiledNameFromBakenddisplyed @jyoti
+  Scenario:  To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" shown as flex table column title
+
+  @217553 @FiledNameFromBakenddisplyedPM @jyoti
+  Scenario: To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" shown as flex table column title
+
+  @217554 @FiledNameFromBakenddisplyedSPIuser @jyoti
+  Scenario: SPI - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I see "ID" shown as flex table column title
+    
   @190090 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
