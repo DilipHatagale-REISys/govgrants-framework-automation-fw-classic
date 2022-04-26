@@ -4798,7 +4798,9 @@ Business Need: Expression Builder Component Scenarios
     And I enter value "10" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
+    And I pause execution for "10" seconds
     When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5931,8 +5933,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedJsonForEdidActionOnEgri   | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
