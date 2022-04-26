@@ -3588,6 +3588,145 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Applications" tab
     Then I see record with text "Submitted to Grantor" in "---program:-:programTableDivId---"
 
+  @217221 @TotalRecordCountForSpiuser @jyoti
+  Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+
+  @217316 @disablingPDFExportFile-gPlanning @jyoti
+  Scenario: To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I see "Download as PDF" options inside "Draft Programs" disabled
+
+  @217318 @disablingXls-ExportFile-gPlanning @jyoti
+  Scenario: PM - UI - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I see "Download as CSV" options inside "Draft Programs" disabled
+
+  @217555 @HideColoumnJsonNotHideData @jyoti
+  Scenario: Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" in flex table header "---program:-:programsTableId---"
+
+  @217556 @HideColoumnJsonNotHideDataPMUser
+  Scenario: Detail config - Hide column Json - PM - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" in flex table header "---program:-:programsTableId---"
+
+  @217557 @HideColoumnJsonNotHideDataSPIUser
+  Scenario: Detail config - Hide column Json - SPI - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I see "ID" in flex table header "---program:-:programTableDivId---"
+
+  @217558  @HideCellJsonNotHideDataAdminUser
+  Scenario: Detail config - Hide Cell Json - Admin - config - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" in flex table header "---program:-:programsTableId---"
+
+  @217559 @HideCellJsonNotHideDataPmUser @jyoti
+  Scenario: To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "ID" in flex table header "---program:-:programsTableId---"
+
+  @217560  @HideCellJsonNotHideDataSPIUser @jyoti
+  Scenario: Hide Cell Json - SPI - UI - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    And I pause execution for "8" seconds
+    Then I see "ID" in flex table header "---program:-:programTableDivId---"
+
   @207133 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario:To verify that Sub total label displayed properly for PM user
     Given I have "default" configuration as below:
