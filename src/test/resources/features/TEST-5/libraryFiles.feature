@@ -581,6 +581,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "SendEmailAttachment.pdf"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
@@ -702,6 +703,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "TestFileSharing.docx"
     And I pause execution for "10" seconds
     Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomation.txt"
@@ -726,6 +728,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "SendEmailAttachment.pdf"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
@@ -767,6 +770,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:workSpaceFilesFlexTableIdQuickSearch---" panel
     Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
 #    When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
@@ -1233,6 +1237,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
+    When I perform quick search for "TestAutomation.txt"
     Then I see "TestAutomation.txt" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @70745 @validateThatByClickOnFirstArrowAFirstPageIsDisplayedUnderUploadFileModal-RecordLevel
@@ -3042,6 +3047,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
     When I click on "Delete" icon for "SheetJSFileUploadDateTime.xlsx" inside table
     When I click "Yes" on modal confirmation box
+    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "SheetJSFileUploadDateTime.xlsx" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @122182 @validateThatFileNameUploadedByInternalUserShouldNotDisplayToExternalUserAndDisplayedToOnlyAdminUserWhenSharinOptionAsVisibleToAnyoneWithRecordAccess
@@ -5377,6 +5383,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "duplicateFileInFolder.png"
     Then I softly see library/folder/file "duplicateFileInFolder.png" is displayed under files library
 #    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
 #    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
