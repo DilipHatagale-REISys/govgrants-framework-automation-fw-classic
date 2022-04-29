@@ -4142,7 +4142,7 @@ Business Need: Logged Issues Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see take snap shot getting saved with "Snapshot History"
+    Then I see table with header "Snapshot History" contains records "currentdate"
 
   @116736    @validateFormulaTotalDisplayedAsOForNumberFieldIfAllTheValuesAreHiddenUsingHideLogic
   Scenario Outline: Validate formula total at number field is all cell values are hidden using hide cell json
