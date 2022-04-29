@@ -1303,6 +1303,7 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "advfPrograms"
       | Start Date   | Greater than or Equal to | 11/30/2020                                      |
       | Program Name | Contains                 | Test program for automation - Created mode only |
+    When I perform quick search for "01/01/2025"
     Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:ProgramsTableIdNew---"
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:ProgramsTableIdNew---"
 
@@ -1315,6 +1316,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than or Equal to | 09/16/2020 |
+    When I perform quick search for "09/16/2020"
     Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
@@ -1601,7 +1603,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    Then I softly see value "82,470%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I softly see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
     Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
@@ -1810,6 +1812,7 @@ Business Need: Flex Table Component Scenarios
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see the text :
       | 1,235.0000 |
 
@@ -1919,7 +1922,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    Then I see value "82,470%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                             | defaultFieldsApi                                                                                                 |
@@ -3345,7 +3348,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @206942 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: E-grid-To verify Sub total label displayed after adding formula in "Name" field details config.
@@ -3362,7 +3365,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @207065 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.
@@ -3379,7 +3382,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
     @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
       Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.

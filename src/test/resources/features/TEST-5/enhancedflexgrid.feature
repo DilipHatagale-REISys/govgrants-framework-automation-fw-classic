@@ -417,7 +417,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grants" enabled
 
-  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning @SkipOnJenkins
+  @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2583,7 +2583,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see cross icon is displayed at search box at "---program:-:flexGridEnhancedID---"
 
-  @121593    @verifyThatBorderIsDisplayedAtEnhancedGridForFirefoxBrowser @firefox
+  @121593    @verifyThatBorderIsDisplayedAtEnhancedGridForFirefoxBrowser @firefox @skipOnJenkins
   Scenario: validate that border box is displayed at enhanced grid when opens in firefox browser
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3362,10 +3362,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "GT-GT007-001" inside table
-    When I enter value "88812" into field "Test_Number__c"
+    When I enter value "100" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "88,812.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "9,900.00" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -4015,7 +4015,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Current Budget Period End Date | greater than | 05/15/2020 |
     Then I softly see value "12/14/2021" for title "Current Budget Period End Date" inside table "---program:-:EnhancedDataTableId---"
 
-  @181526 @sprint24 @userstory_179175  @SkipOnJenkins
+  @181526 @sprint24 @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4035,7 +4035,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Total Award Obligated Amount" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181517 @sprint24 @userstory_179175  @SkipOnJenkins
+  @181517 @sprint24 @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify, In Downloaded XLS  Number column should not display  When Hide column at Number  field   with    user type &  profile  operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4055,7 +4055,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181514 @sprint24 @userstory_179175  @SkipOnJenkins
+  @181514 @sprint24 @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4075,7 +4075,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Status" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181519 @sprint24 @userstory_179175  @SkipOnJenkins
+  @181519 @sprint24 @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify,  In Downloaded xls  date  column should not display When Hide column at Date field with not   equal to  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4335,7 +4335,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181520 @sprint24  @userstory_179175 @SkipOnJenkins
+  @181520 @sprint24  @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify, Downloaded xls   Number column should not display  When Hide column at Number  field   with user type operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4356,7 +4356,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Number of Project Areas" in flex table header "---program:-:EnhancedDataTableId---"
 
-  @181508 @sprint24  @userstory_179175 @SkipOnJenkins
+  @181508 @sprint24  @userstory_179175 @skipOnJenkins
   Scenario: Data table Enhanced-To verify, In Downloaded PDF Currency column should not display When Hide column JSON  with 'user type ' operand  at currency field  operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |

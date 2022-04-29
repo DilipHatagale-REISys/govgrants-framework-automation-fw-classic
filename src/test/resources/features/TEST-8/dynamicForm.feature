@@ -4025,7 +4025,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "7" seconds
     When I click on "Cancel" button in right header
-    When I pause execution for "10" seconds
+    When I pause execution for "5" seconds
     Then I softly can see top right button "Edit" in page detail
     Then I softly can see top right button "Validate" in page detail
 
