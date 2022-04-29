@@ -565,7 +565,7 @@ public class FlexGridPage extends GovGrantsManager {
      * @return specific column values inside table while passing column name for MEGrid
      */
     private List<Elements> getTableSpecificColumnValuesForMEGrid(String text, String tableId) {
-        WebElement row = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr/following-sibling::tr//tbody//tr"));
+        WebElement row = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-03']/ancestor::tr/following-sibling::tr//tbody//tr"));
         Set<String> headerTitles = new HashSet<String>();
         headerTitles.add(text);
         Map<String, Integer> columnMapping = govgrants.perform().flexTable().constructColumnMapping(row, headerTitles);

@@ -2705,10 +2705,10 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see value "1,234.0000" for title "testnumber" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    Then I see value "0.0000" for title "testnumber" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
