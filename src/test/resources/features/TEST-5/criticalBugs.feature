@@ -2698,11 +2698,10 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "PG-343-1650" in the page details
+    Then I see the sub-header is "PG-343-0058" in the page details
 
   @93594  @verifyIfTopLevelActionOpensInNewWindowAtEnhancedGrid-gPlanning @enhancedGrid
   Scenario: validate if top level action is opened in new tab at EnhancedGrid - gPlanning
@@ -2959,8 +2958,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see "Test View" icon for "Demo Line 1" is not displayed inside flex table
@@ -4128,22 +4127,22 @@ Business Need: Logged Issues Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Send to Owner" in the approval decision
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "currentdate"
+    Then I see take snap shot getting saved with "Snapshot History"
 
   @116736    @validateFormulaTotalDisplayedAsOForNumberFieldIfAllTheValuesAreHiddenUsingHideLogic
   Scenario Outline: Validate formula total at number field is all cell values are hidden using hide cell json
@@ -4635,7 +4634,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
     And I click on "More Options" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
@@ -4715,7 +4714,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
