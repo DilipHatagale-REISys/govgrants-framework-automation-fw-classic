@@ -2453,7 +2453,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
-      | Email Sent Succesfully. |
+      | Email Sent Successfully. |
 
   @161872 @ValidateUserRplyToAnEmailFromCollabTabSendEmailSubjectLineStartWithRe
   Scenario: Validate User Rply To An Email From Collab Tab Send Email Subject Line Start With Re

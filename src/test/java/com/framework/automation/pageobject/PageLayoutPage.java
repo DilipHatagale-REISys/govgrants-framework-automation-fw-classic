@@ -3401,7 +3401,7 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
-            case "STRIKE THROUGH":
+            case "STRIKETHROUGH":
                 if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//s[text()='" + value + "']"))) {
                     flag = true;
                 }

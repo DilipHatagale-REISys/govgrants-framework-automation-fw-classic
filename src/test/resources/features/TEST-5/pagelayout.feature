@@ -4320,7 +4320,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
 #    Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
-  @120515  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtFlexTableLookupValue
+  @120515  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtFlexTableLookupValue @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at table lookup value
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4335,7 +4335,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
 #    Then I softly see value at miniPageLayout is displayed as bold and left aligned
 
-  @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue@skipOnJenkins
+  @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue@skipOnJenkins @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at ME Grid lookup value
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -7687,7 +7687,7 @@ Business Need: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
-    Then I see the text containing :
+    Then I see the following message in the page details contains:
       | Phone Field is required to save |
 
   @151138    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldOnModal
@@ -8322,7 +8322,7 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | newLookupFilter                                                           | oldLookupFilter                                   |
-      | RecordType.Name = 'Internal' OR Id != '{!OrgId}' AND Status__c ='Active' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
+      | RecordType.Name = 'Internal' OR Id != '{!OrgId}' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
 
   @148732 @verifyThatAddNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that add notes modal window is displayed properly
@@ -8394,8 +8394,9 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "1234" into field "fieldPercent__c"
@@ -9234,7 +9235,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Funded Amount : Number is too large. |
+      | Percent : Number is too large. |
 
   @205810 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforNumberfieldforinternaluser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
@@ -9294,7 +9295,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Funded Amount : Number is too large. |
+      | Percent : Number is too large. |
 
   @205813 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStyleforcurrencyfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field  for internal user
