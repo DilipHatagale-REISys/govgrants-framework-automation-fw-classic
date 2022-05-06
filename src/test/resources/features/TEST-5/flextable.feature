@@ -2835,7 +2835,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfActiveFundingOpportunities"
       | ID | Does not contains | AN-343-030 |
     Then I do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
