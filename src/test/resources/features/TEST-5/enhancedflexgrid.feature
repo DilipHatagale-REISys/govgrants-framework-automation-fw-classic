@@ -1699,7 +1699,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
 
     Examples:
       | fieldNewValue                               |
-      | ProjectTitle__c DESC,NumberofAwards__c DESC |
+      | NumberofAwards__c DESC,ProjectTitle__c DESC |
 
   @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
@@ -1721,7 +1721,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
     When I pause execution for "5" seconds
-    Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Ascending" order
+    Then I see column "Award Title" value is in "Active Budget Year" order for table id "TmpGrantorActiveAwardsGridFlexToggle"
 
     Examples:
       | fieldNewValue                                 | newFieldsApi                               | defaultFieldsApi                                                                                                                               |
@@ -1747,7 +1747,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
     When I pause execution for "6" seconds
-    Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Descending" order
+    Then I see column "Award Title" value is in "Active Budget Year" order for table id "TmpGrantorActiveAwardsGridFlexToggle"
 
     Examples:
       | fieldNewValue                                   | newFieldsApi                               | defaultFieldsApi                                                                                                                               |

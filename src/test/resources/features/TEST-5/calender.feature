@@ -821,7 +821,8 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    Then I see "PG-343-042 (End Date)" record is displayed in "aqua blue" color inside calendar
+    And I pause execution for "5" seconds
+    Then I see "PG-343-179 (DateandTime)" record is displayed in "aqua blue" color inside calendar
 
   @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
   Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase

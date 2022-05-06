@@ -1427,8 +1427,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
 
@@ -1446,8 +1446,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
 
@@ -1491,8 +1491,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
 
@@ -1530,8 +1530,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Test Automation"
     Then I see Nested Table "---program:-:applicationBudgetCategoryFlexGridTableId---" with changed header name as "Test Automation"
 
@@ -1807,8 +1807,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     Then I see Nested Table "---program:-:applicationBudgetCategoryFlexGridTableId---" with changed header name as "Test Automation"
 
   @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications @skiponjenkins
@@ -1979,8 +1979,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see no "Total Records" count in "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
@@ -2493,8 +2493,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Edit" icon for "BP-01" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" inside table
     Then I see lookup field "ID" is in edit mode
 
   @125138   @verifyLookupFieldIsDisplayedAsSelectPicklistInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsSelectDropdownFromConfig
@@ -2511,8 +2511,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Edit" icon for "BP-01" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" inside table
     Then I see lookup field is rendered with picklist
 
   @125394   @verifyLookupFieldIsDisplayedAsSelectPicklistInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsNoneFromConfig
@@ -2529,8 +2529,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Edit" icon for "BP-01" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" inside table
     Then I see lookup field is rendered with picklist
 
   @125393   @verifyLookupFieldIsDisplayedWithAutoSuggestionInInlineEditModeAtMEGridIfRenderTypeIsSelectedAsAutosuggestFromConfig
@@ -2547,8 +2547,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "Edit" icon for "BP-01" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" inside table
     Then I see lookup field is rendered with Autosuggestion
 
   @130542    @helpTextDisplayedAtBottomOfHelpIconAtMEGridInPageViewMode
@@ -2599,7 +2599,7 @@ Business Need: Flex Grid Component Scenarios
     When I hovering mouse on help text icon inside "Goals Objectives" for flex table
     Then I see help text is displayed at bottom
 
-  @130099    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtMEGrid
+  @130099    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtMEGrid @skipOnJenkins
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at ME grid
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2803,8 +2803,8 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    When I expand nested table containing column value "BP-02"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     And I pause execution for "10" seconds

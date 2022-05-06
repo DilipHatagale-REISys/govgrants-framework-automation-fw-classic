@@ -581,7 +581,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I perform quick search for "SendEmailAttachment.pdf"
+    When I perform quick search for "SendEmailAttachment.pdf" under files
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
@@ -703,7 +703,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I perform quick search for "TestFileSharing.docx"
+    When I perform quick search for "TestFileSharing.docx" under files
     And I pause execution for "10" seconds
     Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomation.txt"
@@ -728,7 +728,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I perform quick search for "SendEmailAttachment.pdf"
+    When I perform quick search for "SendEmailAttachment.pdf" under files
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
@@ -770,7 +770,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:workSpaceFilesFlexTableIdQuickSearch---" panel
+    When I perform quick search for "TestAutomationFile.jpg" under files
     Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
 #    When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
 #    When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
@@ -897,7 +897,7 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I perform quick search for "ProgramRecordDoNotDelete.png" under files library
+    When I perform quick search for "ProgramRecordDoNotDelete.png" under files
     Then I softly see Label/Count as "Files - 1" is displayed
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
@@ -4691,6 +4691,7 @@ Business Need: Library Files Component Scenarios
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -5383,7 +5384,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I perform quick search for "duplicateFileInFolder.png"
+    When I perform quick search for "duplicateFileInFolder.png" under files
     Then I softly see library/folder/file "duplicateFileInFolder.png" is displayed under files library
 #    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
 #    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"

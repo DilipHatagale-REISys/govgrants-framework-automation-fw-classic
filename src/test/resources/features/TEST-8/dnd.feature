@@ -12,6 +12,7 @@ Business Need: dnd Component Scenarios
     And I update custom metadata setting DND changes:
       | id                 | label   | dndCriteria                              | filterCriteria     | customMetaDataApiName |
       | m05g00000004giNAAQ | Program | (NOT DND_Text2__c Like '%{!searchVal}%') | <DNDFilterClause1> | GNT__DND__mdt         |
+    And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Test"
