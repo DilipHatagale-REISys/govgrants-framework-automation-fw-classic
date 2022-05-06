@@ -288,7 +288,7 @@ Business Need: New API related scenarios temporary
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
-  @161161  @verifyThatWhwnUserPerformScrollMouseMoveThenSessionTimeoutCountdownShouldRestarts @@skipOnJenkins
+  @161161  @verifyThatWhwnUserPerformScrollMouseMoveThenSessionTimeoutCountdownShouldRestarts @skipOnJenkins
   Scenario: To verify that user perform Mouse move then session timeout coundown shoild restarts
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |

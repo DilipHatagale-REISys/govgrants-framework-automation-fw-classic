@@ -873,7 +873,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorGreaterThan | AnnouncementFundingAccount | Name                      | Associate                  |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorGreaterThan1 | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -1292,7 +1292,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsAllDataTypeOfFieldUsingANDOperator | Grantee State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsAllDataTypeOfFieldUsingANDOperator1 | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2002,8 +2002,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly2}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly2}" inside table
     Then I see "Program Information" page block displayed
 
   @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
