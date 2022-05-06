@@ -1588,9 +1588,11 @@ Business Need: Flex Table Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1619,6 +1621,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Does not contains | test |
+    When I perform quick search for "Road Construction"
     Then I softly do not see value "Test Program For Automation - Expression Builder 2" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I softly see value "Road Construction" for title "Program Name" inside table "---program:-:programsTableId---"
 
@@ -1857,6 +1860,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "PG-343-019" inside table
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -1907,9 +1911,11 @@ Business Need: Flex Table Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2612,6 +2618,7 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM   |
     When I pause execution for "10" seconds
+    When I perform quick search for "12/31/2021"
     Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
@@ -2828,9 +2835,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside id "---program:-:programTableDivId---"
+    When I enter advance filter values inside id "advfActiveFundingOpportunities"
       | ID | Does not contains | AN-343-030 |
-    Then I do not see value "AN-755-297" for title "ID" inside table "---program:-:programTableDivId---"
+    Then I do not see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table
@@ -2838,8 +2845,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:NewProgramCreatedId}" inside table
+    When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:NewProgramCreatedId1}" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -3335,12 +3342,6 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1491                   |
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1491                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3348,7 +3349,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @206942 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: E-grid-To verify Sub total label displayed after adding formula in "Name" field details config.

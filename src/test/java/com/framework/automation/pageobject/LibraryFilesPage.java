@@ -764,5 +764,10 @@ public class LibraryFilesPage extends GovGrantsManager {
         return flag;
     }
 
+    public void performQuickSearchUnderFiles(String searchValue) {
+        By enterText = By.xpath("//input[@name='TreeSearch']");
+        I.amPerforming().textInput().toClear(enterText);
+        I.amPerforming().textInput().in(enterText, searchValue);
+    }
 
 }

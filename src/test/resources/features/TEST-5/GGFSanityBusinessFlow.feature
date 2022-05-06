@@ -190,8 +190,8 @@ Business Need: Sanity check for all Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-01"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "---program:-:applicationBudgetCategoryFlexGridTableId---" is at position "0" inside flex table
 

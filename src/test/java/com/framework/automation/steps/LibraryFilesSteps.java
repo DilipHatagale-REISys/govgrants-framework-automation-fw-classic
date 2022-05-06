@@ -1,5 +1,6 @@
 package com.framework.automation.steps;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.pageobject.LibraryFilesPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -142,5 +143,11 @@ public class LibraryFilesSteps {
     @Then("I see visibility option is disabled with default value as {string}")
     public void iSeeSharingOptionAsIsDisabled(String visibilityOption) {
         libraryFilesPage.assertVisibilityOptionIsDisabledAtUploadFileModal(visibilityOption);
+    }
+
+    @Description("Perform quick search for folder or file or library under library files tree view")
+    @When("^I perform quick search for \"([^\"]*)\" under files$")
+    public void performQuickSearchUnderFiles(String searchValue) {
+        libraryFilesPage.performQuickSearchUnderFiles(searchValue);
     }
 }
