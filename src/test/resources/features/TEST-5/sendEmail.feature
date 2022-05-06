@@ -289,7 +289,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
+    When I click on "reply" icon for "Test automation mail subject 1" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
@@ -1262,7 +1262,7 @@ Business Need: Send Email Component Scenarios
     And I click modal button "Select Files"
     When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
     And I pause execution for "10" seconds
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -1823,9 +1823,9 @@ Business Need: Send Email Component Scenarios
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation" into field "Subject" on send email modal
     When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Strike Through" inside CK editor
+    And I change formatting of all text to "Strikethrough" inside CK editor
     When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Strike Through" format inside CK editor
+    Then I see "Test Body formatting" displayed in "Strikethrough" format inside CK editor
 
   @147301  @verifyTextInsideCkEditorInputBoxIsDisplayedAsplainTextInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as plain text at send email modal

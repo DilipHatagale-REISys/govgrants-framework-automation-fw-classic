@@ -1733,8 +1733,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    Then I see value "BP-01" for title "Support Year" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "BP-02" for title "Support Year" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @61082    @formulaAndFormulaJsonFieldAtEnhancedGridQuickSearch
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula and formula json field at config validating it inside enhanced grid with particular value of program-planning
@@ -3394,7 +3394,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-00" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" parent table
 
   @96618     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridChildTableAndIsAlignedCentrally-gPlanning @flexGrid
@@ -4565,7 +4565,6 @@ Business Need: Logged Issues Scenarios
     And I click modal button "OK"
     When I pause execution for "5" seconds
     Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
-
 
   @121379    @vverifyThatQuickSearchIsWorkProperlyForMultiPicklistAtFlexTable-gMonitoring
   Scenario Outline: validate that quick search is working for multi picklist field at flex table

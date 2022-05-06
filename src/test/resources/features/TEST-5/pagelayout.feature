@@ -1773,7 +1773,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
-      | DateandTime is required to submit under Overview. |
+      | Date &Time is required to submit under Overview. |
 
   @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
@@ -4249,7 +4249,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     And I pause execution for "7" seconds
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Automation Notes" inside table
@@ -4264,7 +4264,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -8379,8 +8379,9 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "900000" into field "fieldFundedAmount__c"
