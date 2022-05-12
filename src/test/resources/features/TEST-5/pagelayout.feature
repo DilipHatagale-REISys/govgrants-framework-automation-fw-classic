@@ -2810,7 +2810,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
     Then I see missing field badge on "Overview" tab
 
-  @112913    @verifyHelpTextAtAtPageBlockSeperator-gPlanning
+  @112913    @verifyHelpTextAtAtPageBlockSeperator-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2833,7 +2833,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
 
-  @113065    @verifyHelpTextAtAtPageBlockSeperatorForPMUser-gPlanning
+  @113065    @verifyHelpTextAtAtPageBlockSeperatorForPMUser-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3589,7 +3589,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
 
-  @115588    @verifySpecialCharacterInHelpTextAtAtPageBlockSeperator-gPlanning
+  @115588    @verifySpecialCharacterInHelpTextAtAtPageBlockSeperator-gPlanning @skipOnJenkins
   Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9496,7 +9496,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on "Edit" icon for "PG-343-019" inside flex table with id "---program:-:ApplicationTablIdForTestApplication---"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |

@@ -591,8 +591,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}" inside table
     And I pause execution for "7" seconds
     When I navigate to "Overview" sub tab
     And I enter value "5000" into field "FundedAmount__c"
@@ -1546,6 +1546,7 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
@@ -1647,6 +1648,7 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
@@ -2139,6 +2141,7 @@ Business Need: security review Scenarios
       | Fiscal Approver    | Automation FO  | Automation Test Description |
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
+    When I click "Yes" on modal confirmation box
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
   #@110500 Sub-Award approval by program approval
@@ -2241,6 +2244,7 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab

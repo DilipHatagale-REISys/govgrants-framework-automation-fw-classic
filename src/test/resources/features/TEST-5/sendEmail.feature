@@ -545,7 +545,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
+    When I click on "reply" icon for "Test automation mail subject 1" inside table
     Then I see "Reply" opens in overLay window
 
   @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
@@ -783,7 +783,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
+    When I click on "reply" icon for "Test automation mail subject 1" inside table
     Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal

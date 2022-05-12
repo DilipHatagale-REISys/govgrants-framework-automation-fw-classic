@@ -131,6 +131,9 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Notes Record" inside table
+    When I enter values "Success message on second tab" into textarea description field for Edit Attachment and save
+    When I close modal by clicking the top right x button
     When I click on "Delete" icon for "Success message on second tab" inside table
     When I click "Yes" on modal confirmation box
     When I close alertbox

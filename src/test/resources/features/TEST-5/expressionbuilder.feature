@@ -1299,6 +1299,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I pause execution for "10" seconds
     Then I see "Submit For Approval" button is not displayed
 
   @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smoke
@@ -5934,7 +5935,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson1 | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
