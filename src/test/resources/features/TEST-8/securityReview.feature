@@ -591,8 +591,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction1}" inside table
     And I pause execution for "7" seconds
     When I navigate to "Overview" sub tab
     And I enter value "5000" into field "FundedAmount__c"
