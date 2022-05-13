@@ -344,7 +344,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | isClosedOut                    | isClosedOut__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
       | Program Contact Address        | AddressProgramContact__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @41297    @headerHelpTextFieldForParentFlexTableAtEnhancedGrid-gPlanning
+  @41297    @headerHelpTextFieldForParentFlexTableAtEnhancedGrid-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at parent flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -604,7 +604,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
-  @42027    @headerHelpTextFieldForChildFlexTableAtEnhancedGrid-gPlanning
+  @42027    @headerHelpTextFieldForChildFlexTableAtEnhancedGrid-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -647,7 +647,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Help" options inside "Active Awards" enabled
 
-  @42024    @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning
+  @42024    @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
