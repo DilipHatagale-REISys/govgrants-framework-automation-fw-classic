@@ -716,6 +716,15 @@ Business Need: collab Component Scenarios
     And I select "All Users" from dropdown
     Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
 
+  @207083 @UserNameShouldBeDisplayedAtSamePosition @Sprint8
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase  for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Framework Admin" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+
   @176820 @Jyoti
   Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
     When I login as "Admin" user
