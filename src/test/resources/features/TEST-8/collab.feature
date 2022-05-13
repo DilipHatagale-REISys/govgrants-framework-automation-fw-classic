@@ -664,6 +664,67 @@ Business Need: collab Component Scenarios
     And I click on button "Share" under collab for comment box
     Then I see alert message "A comment is required"
 
+  @207088 @UserNameShouldDisplyedInTextFormat @Sprint8
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207094 @MiddleUserNameShouldDisplyedInTextFormat @Sprint8
+  Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207089 @UserNameShouldBeDisplayedAtTheStartingOfTheComment @Sprint8
+  Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab  for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation FO" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "@Automation FO" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207092 @UserNameShouldBeDisplayedAtTheSMiddleOfTheComment @Sprint8
+  Scenario:Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207086 @UserNameShouldBeDisplayedAtTheSSamePositionOfTheHomeLevel @Sprint8
+  Scenario: To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Framework Admin" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207083 @UserNameShouldBeDisplayedAtSamePosition @Sprint8
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase  for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Framework Admin" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+
   @176820 @Jyoti
   Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
     When I login as "Admin" user

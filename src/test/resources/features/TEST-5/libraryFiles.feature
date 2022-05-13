@@ -1827,8 +1827,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
-    Then I see "TestDND4.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    When I perform quick search for "duplicateFileInFolder.png" in "WorkspaceFiles" panel
+    Then I see "duplicateFileInFolder.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
   Scenario: Verify that only asset library is displayed to the user who have access of only asset library at upload file from library modal window - record level
@@ -1946,11 +1946,14 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I perform quick search for "SendEmailAttachment.pdf" under files
     When I drag the "SendEmailAttachment.pdf" file from "UnitedHealth Group" folder and drop in "Asset Library" folder at library
     When I pause execution for "3" seconds
     When I click on expand icon at library/folder "Asset Library"
-    When I drag the "TestDND4.png" file from "Asset Library" folder and drop in "UnitedHealth Group" folder at library
+    When I perform quick search for "SendEmailAttachment.pdf" under files
+    When I drag the "SendEmailAttachment.pdf" file from "Asset Library" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" under files
     Then I see file "SendEmailAttachment.pdf" is displayed under "UnitedHealth Group" library or folder
 
   @70288 @validateThatFileCanBeDragAndDropFromoneFolderToOtherFolderAtSameLibrary-gHome
@@ -2680,8 +2683,10 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "TestDND4.png" in "WorkspaceFiles" panel
-    Then I see "TestDND4.png" shown in search table with id "PlanningFilesgrid" at file upload modal
+    And I pause execution for "5" seconds
+    When I perform quick search for "test record DND" in "WorkspaceFiles" panel
+    And I pause execution for "2" seconds
+    Then I see "test record DND" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @122136 @validateThatFileIsVisibleToAllInternalUserIfSharingOptionIsSelectedAsVisibleToInternalWithRecordAccess
   Scenario: Verify that file is visible to all internal user if sharing option as "Visible to internal With Record Access" is select at upload file modal

@@ -2725,19 +2725,20 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I expand nested table containing column value "BP-03"
-    When I click on "Edit" icon for "BP-03" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecordTstCurrancy}" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecordTstCurrancy}"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationBudgetCategoryRecordTstCurrancy}" inside table
     And I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see the text :
-      | 12,344.0000 |
+      | 1,234.0000 |
 
     Examples:
-      | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                     |
-      | Id,ServiceAreaTitle__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c,BuildUpItem__r.testnumber__c,BuildUpItem__c,testnumber__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
 
   @148233    @verifyNoneValueCanBeSavedUnderPicklistFieldValueAtMEGrid
   Scenario Outline: validate that None value is accepted at picklist field under ME Grid
@@ -2800,17 +2801,17 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "AP-687-010"
+    When I click on "View" icon for "AP-687-010" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecordTstCurrancy}" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecordTstCurrancy}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
+    When I click on "Add Line Items" icon for "Employee reward/bonus" inside table
     And I pause execution for "10" seconds
     And I edit the following rows inline in flex table with id "inlineEditGridAppLineItem" by clicking "Edit" :
-      | Title       | Grantor Share %     |
-      | Demo Line 1 | 1000000000000007777 |
+      | Title                | Grantor Share %     |
+      | Computer Application | 1000000000000007777 |
     Then I see the following messages in the page details :
       | Grantor Share : value outside of valid range on numeric field |
 
