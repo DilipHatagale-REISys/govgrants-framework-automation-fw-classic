@@ -10328,7 +10328,7 @@ Business Need: Page Layout Component Scenarios
           And I pause execution for "5" seconds
           Then I do not see "Percent : Number is too large." error
 
-        @208967 @ValidationMessageShouldNotDisplay @Sprint5 @t
+        @208967 @ValidationMessageShouldNotDisplay @Sprint5
           Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
           When I login as "Automation-PM" user
           When I setup my app as "As a Grantor"
