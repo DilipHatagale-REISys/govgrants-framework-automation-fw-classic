@@ -671,3 +671,89 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Framework Admin" in my feed section and share the post
     Then I do not see alert popup box
+
+  @207018 @ToVerifyIfIaddauserinaline @Sprint8
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207020 @ToVerifyIfIaddauserinaline @Sprint8
+    Scenario: To verify, If i add a user in a line then that user name should not  be displayed at the starting of the comment on the collab phase
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207047 @ToVerifyIfIaddauserinaline @Sprint8
+    Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
+    When I login as "PM" user
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test @Automation PM" comment inside my feed
+    And I enter value "Test Automation PM" in my feed section and share the comment
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207048 @ToVerifyIfIaddauserinaline @Sprint8
+    Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation PM" in my feed section and share the post
+    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+    @207049 @ToVerifyIfIaddauserinaline @Sprint8
+      Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab
+      When I login as "PM" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Collaboration (Collab)" tab
+      And I enter value "@Automation PM" in my feed section and share the post
+      Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+      And I navigate to "Home" tab
+      When I click on "Menu" in the page details
+      And I select "All Users" from dropdown
+      Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+      @207050 @ToVerifyIfIaddauserinaline @Sprint8
+        Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab
+        When I login as "Admin" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Collaboration (Collab)" tab
+        And I enter value "Hi @Automation PM" in my feed section and share the post
+        Then I see "Hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+      @207052 @ToVerifyIfIaddauserinaline @Sprint8
+        Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the collab phase
+        When I login as "Admin" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Collaboration (Collab)" tab
+        And I enter value "Test@Automation PM" in my feed section and share the post
+        Then I see "Test@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+      @207053 @ToVerifyIfIaddauserinaline @Sprint8
+        Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab
+        When I login as "Admin" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Collaboration (Collab)" tab
+        And I enter value "Hello@Automation PM" in my feed section and share the post
+        Then I see "Hello@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+        @207054 @ToVerifyIfIaddauserinaline @Sprint8
+          Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab
+          When I login as "Admin" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Collaboration (Collab)" tab
+          And I enter value "hi @Automation PM" in my feed section and share the post
+          Then I see "hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+        @207056 @ToVerifyIfIaddauserinaline @Sprint8
+          Scenario: Collab-To verify, If i add a  two user in a line then the user name should be displayed at the same position in text format on the collab phase
+          When I login as "Admin" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Collaboration (Collab)" tab
+          And I enter value "hi @Automation PM @Framework Admin" in my feed section and share the post
+          Then I see "hi @Automation PM @Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
