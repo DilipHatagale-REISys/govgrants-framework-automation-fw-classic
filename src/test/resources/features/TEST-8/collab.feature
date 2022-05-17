@@ -749,11 +749,3 @@ Business Need: collab Component Scenarios
           And I navigate to "Collaboration (Collab)" tab
           And I enter value "hi @Automation PM" in my feed section and share the post
           Then I see "hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
-
-        @207056 @ToVerifyIfIaddauserinaline @Sprint8
-          Scenario: Collab-To verify, If i add a  two user in a line then the user name should be displayed at the same position in text format on the collab phase
-          When I login as "Admin" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Collaboration (Collab)" tab
-          And I enter value "hi @Automation PM @Framework Admin" in my feed section and share the post
-          Then I see "hi @Automation PM @Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
