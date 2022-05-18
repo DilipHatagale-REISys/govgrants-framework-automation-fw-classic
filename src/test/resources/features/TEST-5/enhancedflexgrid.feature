@@ -2512,7 +2512,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid
+  @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid @SkipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4399,7 +4399,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190159 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the grid), they remain on the same page after Modal closing
@@ -4424,7 +4424,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190165 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Close modal and refresh grid), they remain on the same page after Modal closing
@@ -4449,7 +4449,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190166 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the entire page), the entire page gets refreshed and the table navigates to its first page
@@ -4474,7 +4474,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190155 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: None), they remain on the same page after Modal closing
@@ -4499,7 +4499,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190158 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the grid), they remain on the same page after Modal closing
@@ -4524,7 +4524,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190161 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
@@ -4549,7 +4549,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190162 @sprint25
   Scenario: To verify, if the users 'Edit' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
@@ -4574,7 +4574,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25|
+      | Page 1 of 24|
 
   @190163 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh parent page), they remain on the same page after Modal closing
@@ -4599,7 +4599,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190164 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour:Close modal and refresh grid), they remain on the same page after Modal closing
@@ -4624,7 +4624,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @190168 @sprint25
   Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh the entire page), the entire page gets refreshed and the table navigates to its first page
@@ -4649,7 +4649,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I navigate to "Financials" sub tab
     Then I see entire page is refreshing
     Then I see the text containing :
-      | Page 1 of 25 |
+      | Page 1 of 24 |
 
   @192567 @sprint1 @userstory_184938 @skipOnJenkins
   Scenario: E-grid To verify,Hide column using "Profile"operand  then that column is not displayed in the pdf  as well as in the UI
