@@ -36,7 +36,8 @@ public class CommonSteps {
         By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
         By inputField = By.xpath("//div[@id='" + advanceFilterId + "']//input|//div[@id='" + advanceFilterId + "']//textarea");
         By filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
-        I.amPerforming().waitFor().makeThreadSleep(5000);
+        //I.amPerforming().waitFor().makeThreadSleep(5000);
+        I.amPerforming().waitFor().ElementToBeVisible(dropDownSelector1);
         I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
        // I.amPerforming().waitFor().makeThreadSleep(5000);
         I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
