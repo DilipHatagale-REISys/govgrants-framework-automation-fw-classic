@@ -38,18 +38,18 @@ public class CommonSteps {
         By filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
         I.amPerforming().waitFor().makeThreadSleep(5000);
         I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
-        I.amPerforming().waitFor().makeThreadSleep(5000);
+       // I.amPerforming().waitFor().makeThreadSleep(5000);
         I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
-        I.amPerforming().waitFor().makeThreadSleep(5000);
+       // I.amPerforming().waitFor().makeThreadSleep(5000);
         if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
-            I.amPerforming().waitFor().makeThreadSleep(5000);
+            //I.amPerforming().waitFor().makeThreadSleep(5000);
             I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
         } else {
-            I.amPerforming().waitFor().makeThreadSleep(5000);
+            //I.amPerforming().waitFor().makeThreadSleep(5000);
             I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
         }
 
-        I.amPerforming().waitFor().makeThreadSleep(5000);
+        //I.amPerforming().waitFor().makeThreadSleep(5000);
         I.amPerforming().click().on(filterAction);
     }
 
