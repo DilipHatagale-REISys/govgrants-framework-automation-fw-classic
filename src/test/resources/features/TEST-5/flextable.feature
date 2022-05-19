@@ -1260,8 +1260,10 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
-    When I enter advance filter values inside id "advfPrograms"
+    And I enter someting in "advfPrograms"
       | Start Date | Equals to | 09/16/2020 |
+#    When I enter advance filter values inside id "advfPrograms"
+#      | Start Date | Equals to | 09/16/2020 |
     Then I see label containing value as "09/16/2020" inside advance filter
 
   @106403    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanAtFlexTable
@@ -1672,9 +1674,10 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Create"
-    And I pause execution for "4" seconds
+    And I pause execution for "10" seconds
     When I perform quick search for "Package Testing"
     Then I softly see "Package Testing" value in flex table id "---program:-:ProgramsTableIdNew---"
+    And I pause execution for "15" seconds
     Then I softly do not see "Change Requested" value in flex table id "---program:-:ProgramsTableIdNew---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
@@ -3477,6 +3480,7 @@ Business Need: Flex Table Component Scenarios
         And I navigate to "Planning" tab
         And I click toggle button to select "Draft Programs"
         When I re-login as "Automation-PM" user on "default" portal
+        And I pause execution for "5" seconds
         When I setup my app as "As a Grantor"
         And I navigate to "Planning" tab
         And I click toggle button to select "Draft Programs"
