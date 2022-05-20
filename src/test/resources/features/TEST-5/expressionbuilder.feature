@@ -6077,7 +6077,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1516                   |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1516                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                   | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -6122,7 +6122,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | FTC-1517                   |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGrid1 | TmpGrantorActiveAwardsGrid | Name                      | FTC-1517                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                             | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -6922,7 +6922,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingANDOperatorForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                 | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

@@ -2486,7 +2486,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see value "10/15/2021 7:43 AM" of "DateandTime" field is not changed on page scroll
+    Then I see value "10/15/2021 7:43 AM" of "Date &Time" field is not changed on page scroll
 
   @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
   Scenario: verify that user can enter and save value in url field in a valid format when URL Validation Regex is set to true from custom metadata config
@@ -5434,10 +5434,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly2}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly2}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "5/15/2018 9:21 AM" text enter in field "fieldCreatedDate"
+    Then I softly see field "Created Date" as "10/15/2019 5:02 AM"
 
   @132864  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayout
   Scenario Outline: validate help text at field hover is displayed at enhanced flex edit page layout
