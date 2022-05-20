@@ -10258,3 +10258,101 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
+
+  @208958 @ValidationMessageShouldNotDisplay @Sprint5
+    Scenario: Validation message should not display when user enter 4 digit no
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1234" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Funded Amount : Number is too large." error
+
+  @208960 @ValidationMessageShouldNotDisplay @Sprint5
+    Scenario: To verify - Validation message should not display when user enter 4 digit no for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1111" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Funded Amount : Number is too large." error
+
+    @208962 @ValidationMessageShouldNotDisplay @Sprint5
+      Scenario:Validation message should not display when user enter 4 digit no for automation user
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Draft Programs"
+      When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+      When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+      When I navigate to "Overview" sub tab
+      When I enter value "1234" into field "fieldFundedAmount__c"
+      And I click on "Save" in the page details
+      And I pause execution for "5" seconds
+      Then I do not see "Funded Amount : Number is too large." error
+
+      @208963 @ValidationMessageShouldNotDisplay @Sprint5
+        Scenario: To verify - Validation message should not display properly when user enter 4 digit number
+        When I login as "Admin" user
+        When I setup my app as "As a Grantor"
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Draft Programs"
+        When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+        When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+        When I navigate to "Overview" sub tab
+        When I enter value "1123" into field "Percent__c"
+        And I click on "Save" in the page details
+        And I pause execution for "5" seconds
+        Then I do not see "Percent : Number is too large." error
+
+        @208965 @ValidationMessageShouldNotDisplay @Sprint5
+          Scenario:  To verify - Validation message should not display properly when user enter 4 digit number for internal user
+          When I login as "Automation-PM" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Planning" tab
+          And I click toggle button to select "Draft Programs"
+          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+          When I navigate to "Overview" sub tab
+          When I enter value "1123" into field "Percent__c"
+          And I click on "Save" in the page details
+          And I pause execution for "5" seconds
+          Then I do not see "Percent : Number is too large." error
+
+        @208967 @ValidationMessageShouldNotDisplay @Sprint5
+          Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
+          When I login as "Automation-PM" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Planning" tab
+          And I click toggle button to select "Draft Programs"
+          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+          When I navigate to "Overview" sub tab
+          When I enter value "1123" into field "Percent__c"
+          And I click on "Save" in the page details
+          And I pause execution for "5" seconds
+          Then I do not see "Percent : Number is too large." error
+
+        @208969 @ValidationMessageShouldNotDisplay @Sprint5
+          Scenario: Validation message should not display properly when user enter 4 digit number
+          When I login as "Automation" user
+          When I setup my app as "As a Grantor"
+          And I navigate to "Planning" tab
+          And I click toggle button to select "Draft Programs"
+          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+          When I navigate to "Overview" sub tab
+          When I enter value "1123" into field "Percent__c"
+          And I click on "Save" in the page details
+          And I pause execution for "5" seconds
+          Then I do not see "Percent : Number is too large." error
