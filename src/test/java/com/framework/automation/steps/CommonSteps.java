@@ -1,13 +1,10 @@
 package com.framework.automation.steps;
 
 
-
 import com.framework.automation.projectmanager.GovGrantsManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
-
-
 
 public class CommonSteps {
     GovGrantsManager govGrantsManager;
@@ -26,5 +23,4 @@ public class CommonSteps {
     public void asserPageTitle(String pageTitle) {
         govGrantsManager.assertPageTitle(pageTitle);
     }
-
-    }
+}
