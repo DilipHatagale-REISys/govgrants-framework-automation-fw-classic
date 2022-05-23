@@ -4615,7 +4615,7 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
-    #And I pause execution for "5" seconds
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment1 inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
