@@ -67,4 +67,9 @@ public class CommonSteps {
         }
     }
 
+    @And("I save the total record from flex table id {string} as {string}")
+    public void iSaveTheTotalRecordFromFlexTableIdAs(String id, String key) {
+        By record = By.xpath("(//div[@id='"+id+"']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
+        I.amPerforming().propertiesFileOperationsTo().saveValue(key,I.amPerforming().actionToGet().text(record));
+    }
 }

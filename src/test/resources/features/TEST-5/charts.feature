@@ -2763,3 +2763,39 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Grants" tab
     Then I do not see charts with id "chartGrantsAwardedId" displayed
+
+  @207811 @ToVerifyAdvanceViewForAllData @sprint8
+  Scenario: Charts - Admin - To verify enhanced view for all data
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    And I pause execution for "10" seconds
+    Then I see charts with id "---program:-:EnhancedLineID---" displayed
+
+  @208078 @VerifiedPieChart @sprint8
+  Scenario: Admin - Verified that Pie chart displayed correctly on ChartTesting VF page for all available data/records
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see charts with id "---program:-:EnhancedPiechartID---" displayed
+
+  @208587 @VerifyThatAllDataGettingDisplayedAfterClickingShowAllButton @Sprint8
+  Scenario:  Verified that on clicking on Show all data button, correct data/records get displayed diferently for both the charts
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "10" seconds
+    Then I see "Awarded Amount" displayed in modal
+
+  @207814 @VerifyEhhancedViewOnlyAfterClickingShowAllData @sprint8 @needtorun
+  Scenario: Admin - To verify that on enhanced view, only respective record details displayed in table format on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see charts with id "---program:-:EnhancedPiechartID---" displayed

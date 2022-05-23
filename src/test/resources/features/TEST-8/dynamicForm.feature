@@ -1090,7 +1090,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Written"
     Then I see "Test Automation Written Help" shown as help text
 
-  @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
+  @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
