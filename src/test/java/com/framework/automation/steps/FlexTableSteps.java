@@ -277,4 +277,9 @@ public class FlexTableSteps {
     public void iSeeFieldIsRequired(String usage, String fieldApiName) {
         flexTablePage.assertFieldIsRequired(usage, fieldApiName);
     }
+
+    @And("I save the total record from flex table id {string} as {string}")
+    public void iSaveTheTotalRecordFromFlexTableIdAs(String id, String key) {
+        flexTablePage.assertFieldRelatedPageRecords(id,key);
+    }
 }
