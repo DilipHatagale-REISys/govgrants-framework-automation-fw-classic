@@ -586,6 +586,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Key Outcomes" for flex table
+    And I pause execution for "10" seconds
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             | old_helpText                                                                                                                |

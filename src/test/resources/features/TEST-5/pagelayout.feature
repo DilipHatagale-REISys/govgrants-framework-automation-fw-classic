@@ -4937,7 +4937,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I see below message at page detail in "Blue" color:
-      | test is done for page layout   |
+      | test is done for page layout    |
       | TEST PAGE INFORMATION MSG DND 1 |
 
   @128908    @verifyWarningMessageSetFromPageMessageConfirIsDisplayedAtEditPageLayoutInRedColor
@@ -7674,7 +7674,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |  --None--         | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
@@ -8321,7 +8321,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Active" inside flex table with id "---program:-:AccountTableId---"
 
     Examples:
-      | newLookupFilter                                                           | oldLookupFilter                                   |
+      | newLookupFilter                                  | oldLookupFilter                                   |
       | RecordType.Name = 'Internal' OR Id != '{!OrgId}' | RecordType.Name = 'Internal' AND Id != '{!OrgId}' |
 
   @148732 @verifyThatAddNotesModalWindowIsDisplayedProperlyInSize
@@ -8785,7 +8785,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField           | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Roles and Responsibilities 7 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "AUTOMATION-ADMIN" user
@@ -8798,7 +8798,10 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I select "User" from dropdown
-    Then I see field "QueueId__c" is disabled
+    And I pause execution for "10" seconds
+    Then I see field "fieldQueueId__c" is disabled
+    #Then I see below fields in "Information" page block
+     # | Queue Lookup |
 
   @161568    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingJsonExpEqualToOpreatorThenFeildIsDoNotShowOnPageLayout   @abhishekS
   Scenario: verify Owner organization field is not displayed if user is not displayed using hide field json on Page layout
@@ -8848,8 +8851,8 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
-      | Display 2    |
-      | Display 1    |
+      | Display 2 |
+      | Display 1 |
 
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
@@ -9082,8 +9085,8 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
-      | Display 2    |
-      | Display 1    |
+      | Display 2 |
+      | Display 1 |
     Then I do not see below checkbox options for field "fieldTypesOfAssistance__c"
       | Select All |
 
@@ -9162,6 +9165,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
+    And I pause execution for "60" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
     Then I select below checkbox options for field "fieldProjectGoals__c"
@@ -9188,9 +9192,8 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
+    And I pause execution for "20" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
-      | YES |
-    Then I select below checkbox options for field "fieldProjectGoals__c"
       | YES |
 
   @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
@@ -9687,9 +9690,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |         --None--  | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -9994,10 +9997,10 @@ Business Need: Page Layout Component Scenarios
   @186955 @sprint26
   Scenario: To verify, 'Select All' option out of Multiselect picklist fields should not be displayed in Edit Layout the UI in View Mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -10011,10 +10014,10 @@ Business Need: Page Layout Component Scenarios
   @189066 @sprint26
   Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in Edit mode (but 'Select All' option should be visible)
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -10028,10 +10031,10 @@ Business Need: Page Layout Component Scenarios
   @189068 @sprint26
   Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in View mode (without 'Select All' option)
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -10045,10 +10048,10 @@ Business Need: Page Layout Component Scenarios
   @189083 @sprint26
   Scenario: To verify, if "Disable Select All' config is checked, then 'Select all' is not displayed on Page layout in View mode.
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -10083,9 +10086,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10103,9 +10106,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10123,9 +10126,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10143,9 +10146,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10163,9 +10166,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10183,9 +10186,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10203,9 +10206,9 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10223,9 +10226,9 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10243,9 +10246,9 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10260,7 +10263,7 @@ Business Need: Page Layout Component Scenarios
       | Go to platform setup : Number is too large. |
 
   @208958 @ValidationMessageShouldNotDisplay @Sprint5
-    Scenario: Validation message should not display when user enter 4 digit no
+  Scenario: Validation message should not display when user enter 4 digit no
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10274,7 +10277,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Funded Amount : Number is too large." error
 
   @208960 @ValidationMessageShouldNotDisplay @Sprint5
-    Scenario: To verify - Validation message should not display when user enter 4 digit no for internal user
+  Scenario: To verify - Validation message should not display when user enter 4 digit no for internal user
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10287,72 +10290,72 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
 
-    @208962 @ValidationMessageShouldNotDisplay @Sprint5
-      Scenario:Validation message should not display when user enter 4 digit no for automation user
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-      When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-      When I navigate to "Overview" sub tab
-      When I enter value "1234" into field "fieldFundedAmount__c"
-      And I click on "Save" in the page details
-      And I pause execution for "5" seconds
-      Then I do not see "Funded Amount : Number is too large." error
+  @208962 @ValidationMessageShouldNotDisplay @Sprint5
+  Scenario:Validation message should not display when user enter 4 digit no for automation user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1234" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Funded Amount : Number is too large." error
 
-      @208963 @ValidationMessageShouldNotDisplay @Sprint5
-        Scenario: To verify - Validation message should not display properly when user enter 4 digit number
-        When I login as "Admin" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-        When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-        When I navigate to "Overview" sub tab
-        When I enter value "1123" into field "Percent__c"
-        And I click on "Save" in the page details
-        And I pause execution for "5" seconds
-        Then I do not see "Percent : Number is too large." error
+  @208963 @ValidationMessageShouldNotDisplay @Sprint5
+  Scenario: To verify - Validation message should not display properly when user enter 4 digit number
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1123" into field "Percent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Percent : Number is too large." error
 
-        @208965 @ValidationMessageShouldNotDisplay @Sprint5
-          Scenario:  To verify - Validation message should not display properly when user enter 4 digit number for internal user
-          When I login as "Automation-PM" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Planning" tab
-          And I click toggle button to select "Draft Programs"
-          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-          When I navigate to "Overview" sub tab
-          When I enter value "1123" into field "Percent__c"
-          And I click on "Save" in the page details
-          And I pause execution for "5" seconds
-          Then I do not see "Percent : Number is too large." error
+  @208965 @ValidationMessageShouldNotDisplay @Sprint5
+  Scenario:  To verify - Validation message should not display properly when user enter 4 digit number for internal user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1123" into field "Percent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Percent : Number is too large." error
 
-        @208967 @ValidationMessageShouldNotDisplay @Sprint5
-          Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
-          When I login as "Automation-PM" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Planning" tab
-          And I click toggle button to select "Draft Programs"
-          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-          When I navigate to "Overview" sub tab
-          When I enter value "1123" into field "Percent__c"
-          And I click on "Save" in the page details
-          And I pause execution for "5" seconds
-          Then I do not see "Percent : Number is too large." error
+  @208967 @ValidationMessageShouldNotDisplay @Sprint5
+  Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1123" into field "Percent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Percent : Number is too large." error
 
-        @208969 @ValidationMessageShouldNotDisplay @Sprint5
-          Scenario: Validation message should not display properly when user enter 4 digit number
-          When I login as "Automation" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Planning" tab
-          And I click toggle button to select "Draft Programs"
-          When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-          When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-          When I navigate to "Overview" sub tab
-          When I enter value "1123" into field "Percent__c"
-          And I click on "Save" in the page details
-          And I pause execution for "5" seconds
-          Then I do not see "Percent : Number is too large." error
+  @208969 @ValidationMessageShouldNotDisplay @Sprint5
+  Scenario: Validation message should not display properly when user enter 4 digit number
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
+    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "1123" into field "Percent__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Percent : Number is too large." error
