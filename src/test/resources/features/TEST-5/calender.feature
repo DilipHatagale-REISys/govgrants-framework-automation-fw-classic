@@ -442,6 +442,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "tmpcase1FlexTable"
+    And I pause execution for "20" seconds
     When I click on advance filter "#advfCaseList" of table id "CaseList"
     When I enter advance filter values inside id "advfCaseList"
       | Subject | Starts with | Test Automation |
@@ -849,8 +850,8 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "10" seconds
     Then I see "FOA-DOD-004 (FOA Publish Date)" record is displayed in "teal green" color inside calendar
-
     Examples:
       | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
       | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
@@ -970,7 +971,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "10" seconds
-    And I click on "+4 more" Button at calendar
+    And I click on "+6 more" Button at calendar
     Then I see the text :
       | {SavedValue:savedValue1} (Start Date) |
       | {SavedValue:savedValue2} (Start Date) |

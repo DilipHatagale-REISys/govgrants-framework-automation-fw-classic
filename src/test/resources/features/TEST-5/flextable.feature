@@ -1674,6 +1674,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
     When I perform quick search for "Package Testing"
+    And I pause execution for "10" seconds
     Then I softly see "Package Testing" value in flex table id "---program:-:ProgramsTableIdNew---"
     Then I softly do not see "Change Requested" value in flex table id "---program:-:ProgramsTableIdNew---"
 
@@ -1684,6 +1685,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "edu 2 program"
+    And I pause execution for "10" seconds
     Then I see "edu 2 program" value in flex table id "---program:-:programsTableId---"
 
   @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
@@ -1760,20 +1762,22 @@ Business Need: Flex Table Component Scenarios
 
   @149995    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet1AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "nge Req" at flex table
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "nge Req"
+    And I pause execution for "10" seconds
     Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @149992    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet2AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "Requested" at flex table
-    When I login as "Automation" user
+    When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Requested"
+    And I pause execution for "10" seconds
     Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @150000    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet3AtFlexTable
@@ -1861,7 +1865,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "PG-343-019" inside table
+    When I click on "Edit" icon for "PG-343-190" inside table
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab

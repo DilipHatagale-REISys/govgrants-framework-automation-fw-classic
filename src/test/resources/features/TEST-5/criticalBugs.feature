@@ -47,8 +47,9 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "5" seconds
     When I click on "Edit" icon for "Program Artifacts" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment and save
-    When I close modal by clicking the top right x button
-    Then I see "Test Automation" has been added in "Description" flex table
+    And I pause execution for "10" seconds
+    Then I see the following message in the page details :
+      | Attachement edited successfully. |
 
   @54847    @validateAttachmentDeleteActionWorkingOrNot
   Scenario: validate Attachment Delete action working correctly while deleting attachment records of programs-planning
@@ -477,6 +478,7 @@ Business Need: Logged Issues Scenarios
     When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
+    And I pause execution for "60" seconds
     Then I see sticky Notes "Notes Title" contains text as "<descriptionValue>"
 
     Examples:
@@ -720,7 +722,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
-    Then I see chevron bar is in "Red" color for "rejected" status
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
 
   @57148    @validateGoveGrantLogoAndNameDisplayedProperly
   Scenario: validate govgrants logo and name is displayed properly on UI
@@ -1405,7 +1407,6 @@ Business Need: Logged Issues Scenarios
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Total Adjusted Amount | equals to | -1 |
     Then I see value "($1.00)" for title "Total Adjusted Amount" inside table "---program:-:flexGridEnhancedID---"
-
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
@@ -2446,6 +2447,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on SelectChange Folder in add file modal
+    And I pause execution for "10" seconds
     Then I see "Back to previous" button inside select folder modal
 
   @90635 @validateThatBackToPreviousButtonIsDisplayedAtSelectFolderModalOfEditFile-RecordLevel @libraryFiles
