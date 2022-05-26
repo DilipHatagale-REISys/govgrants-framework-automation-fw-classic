@@ -570,7 +570,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "#" shown inside flex table with id "---program:-:programOutComesTableId---"
 
-  @50226    @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning
+  @50226    @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning @SkipOnJenkins
   Scenario Outline: Changing content of help text field at program outcomes flex table from config and validating it at program outcomes flex table planning-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |

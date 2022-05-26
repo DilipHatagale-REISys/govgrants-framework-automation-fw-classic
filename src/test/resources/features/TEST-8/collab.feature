@@ -414,6 +414,9 @@ Business Need: collab Component Scenarios
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
@@ -423,6 +426,9 @@ Business Need: collab Component Scenarios
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
@@ -715,6 +721,41 @@ Business Need: collab Component Scenarios
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207095 @UserNameShouldBeDisplayedAtTheSSamePositionOfTherecordLevel @sprint8
+  Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207091 @UserNameShouldBeDisplayedAtStartingOfComment @sprint8
+  Scenario:Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation PM" in my feed section and share the post
+    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @223914 @UserNameShouldBeDisplayedAtStartingOfComment
+  Scenario: Collab-To verify, If i add a user in a starting of line  then the user name should be displayed at the starting position in text format on the home
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "@Automation PM Hello" inside flex table with id "---program:-:myFeedTableId---"
+
+  @223917 @UserNameShouldBeDisplayedAtStartingOfCollabPhase
+  Scenario: To verify, If i added user name should  be displayed at the starting of the comment on the collab phase for admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation PM" in my feed section and share the post
+    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207083 @UserNameShouldBeDisplayedAtSamePosition @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase  for internal user

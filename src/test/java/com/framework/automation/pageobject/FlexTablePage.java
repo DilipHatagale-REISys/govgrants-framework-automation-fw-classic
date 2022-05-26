@@ -1121,4 +1121,13 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * saved total page records and validate it in refresh mode
+     */
+
+    public void assertFieldRelatedPageRecords(String id, String key){
+        By record = By.xpath("(//div[@id='"+id+"']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
+        I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
+    }
 }

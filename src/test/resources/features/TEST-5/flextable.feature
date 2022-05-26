@@ -3481,6 +3481,7 @@ Business Need: Flex Table Component Scenarios
         And I navigate to "Planning" tab
         And I click toggle button to select "Draft Programs"
         When I re-login as "Automation-PM" user on "default" portal
+        And I pause execution for "5" seconds
         When I setup my app as "As a Grantor"
         And I navigate to "Planning" tab
         And I click toggle button to select "Draft Programs"
