@@ -2790,7 +2790,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I pause execution for "10" seconds
     Then I see "Awarded Amount" displayed in modal
 
-  @207814 @VerifyEhhancedViewOnlyAfterClickingShowAllData @sprint8 @needtorun
+  @207814 @VerifyEhhancedViewOnlyAfterClickingShowAllData @sprint8
   Scenario: Admin - To verify that on enhanced view, only respective record details displayed in table format on clicking on Show all data button
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2798,4 +2798,68 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
     When I click modal button "Show All Data"
     And I pause execution for "7" seconds
-    Then I see charts with id "---program:-:EnhancedPiechartID---" displayed
+    Then I see "Awarded Amount" displayed in modal
+
+  @208118 @ChartNameDisplyedInVisualForcePage @sprint8
+  Scenario: E-Charts - Admin - Verified that Pie chart (Chart name : ApplicationsDonutbyStatus) displayed correctly on ChartTesting VF page for all available data/records
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Enhanced Pie" displayed as chart title
+
+  @208119 @ChartNameDisplyedInVisualForcePageAfterClickingEnhbacedView @sprint8
+  Scenario:  E-Charts - Admin - Verified that Pie chart (Chart name : ApplicationsDonutbyStatus) displayed correctly on ChartTesting VF page for all specific given record
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "10" seconds
+    Then I see "Enhanced Pie chart" displayed in modal
+
+  @208076 @VerifyThatDualChartName @sprint8
+  Scenario: E-Charts - PM - Verified that Dual axes chart (Chart name :Program and Award Funding Status) displayed correctly on ChartTesting VF page for all available data/records
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes 1" with title "Enhanced View"
+    And I pause execution for "7" seconds
+    When I click modal button "Show All Data"
+    Then I see "Total Grant Awarded Amount" displayed in modal
+
+  @208074 @VerifyThatDualChartName @sprint8
+  Scenario: Charts - Admin - Verified that Dual axes chart (Chart name :Program and Award Funding Status) displayed correctly on ChartTesting VF page for all available data/records
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes 1" with title "Enhanced View"
+    And I pause execution for "7" seconds
+    When I click modal button "Show All Data"
+    Then I see "Total Grant Awarded Amount" displayed in modal
+
+  @208122 @AllDataDisplayedInTableFormatAfterClickingShowAllButton @Sprit8
+  Scenario:  Charts - Admin - Pie chart (Chart name : ApplicationsDonutbyStatus) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "10" seconds
+    Then I see "Distribution of Announcements by Grant Type" displayed in modal
+
+  @208125 @PieChartDisplayedCorrectlyOnChartTesting @sprint8
+  Scenario:  E-Charts - PM - Verified that Pie chart (Chart name : applicantPieClassBased) displayed correctly on ChartTesting VF page for all available data/records
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Enhanced Pie" displayed as chart title
+
+  @208131 @VerifyScatterChartNameDisplayingCorrectly @sprint8
+  Scenario: E-Charts - Admin - Verified that Scatter chart (Chart name : HomeOpportunities180Days) displayed correctly on ChartTesting VF page for all specific given record
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see "Awarded Amount" displayed in modal
