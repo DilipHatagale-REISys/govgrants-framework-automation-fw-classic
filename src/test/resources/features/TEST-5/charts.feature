@@ -2891,13 +2891,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Pie" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Pie"
-    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | ID          | Announcement Title               | Announcement Type | Status   | Action |
-      | AN-852-006  | Pankaj'sTest                     | Competitive       | Archived | View   |
-      | AN-687-001  | Funding for school               | Competitive       | Archived | View   |
-      | AN-501-032  | Announcement test 24-04-2018     | Competitive       | Archived | View   |
-      | AN-9832-058 | Announcement1                    | Competitive       | Archived | View   |
-      | AN-734-121  | test_pre_application_family_rule | Competitive       | Archived | View   |
+    Then I see all the records are showing in table "---program:-:EnhancedPiechartModalID---" for chart
 
   @208133 @ScatterNameIsDisplayedAfterClickungShowAllButton @Sprint8
   Scenario:  E- Charts - Admin - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
@@ -2907,13 +2901,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
     When I click modal button "Show All Data"
     And I pause execution for "7" seconds
-    Then I see the following rows under the following columns in table with id "---program:-:EnhancedScatterModalID---" :
-      | ID          | Announcement Title               | Announcement Type | Status   | Action |
-      | AN-852-006  | Pankaj'sTest                     | Competitive       | Archived | View   |
-      | AN-687-001  | Funding for school               | Competitive       | Archived | View   |
-      | AN-501-032  | Announcement test 24-04-2018     | Competitive       | Archived | View   |
-      | AN-9832-058 | Announcement1                    | Competitive       | Archived | View   |
-      | AN-734-121  | test_pre_application_family_rule | Competitive       | Archived | View   |
+    Then I see all the records are showing in table "---program:-:EnhancedScatterModalID---" for chart
 
   @208138 @ScatterNameIsDisplayedAfterClickungShowAllButton-PMuser @Sprint8
   Scenario: E- Charts - PM - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
