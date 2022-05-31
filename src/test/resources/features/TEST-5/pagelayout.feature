@@ -10347,23 +10347,6 @@ Business Need: Page Layout Component Scenarios
     Then I see the text :
       | Lorem Ipsum |
 
-  @205426 @CKEditorTextIsNotTakingAnyExtraLineSpae @Sprint8
-  Scenario: CK Editor-To verify,When user add the text it is not taking any extra line space between paragraphs/2 lines after pressing 'Enter' for internal user
-    When I login as "Automation-PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
-    When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
-    When I navigate to "Overview" sub tab
-    And I enter value "Lorem Ipsum is gfhjkl fgyhjuki" into field "toggleBlocka0k1500000LTNC2AAP"
-    And I press enter key
-    And I enter value "Lorem Ipsum is gfhjkl fgyhjuki" into field "toggleBlocka0k1500000LTNC2AAP"
-    When I click on "Save" in the page details
-    Then I see the text :
-      | Lorem Ipsum is gfhjkl fgyhjuki |
-      | Lorem Ipsum is gfhjkl fgyhjuki |
-
   @208967 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
     When I login as "Automation-PM" user
