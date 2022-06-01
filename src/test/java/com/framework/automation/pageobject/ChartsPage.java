@@ -254,4 +254,14 @@ public class ChartsPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * to check if any records are showing in tables of not
+     * @param flexTableId
+     */
+    public void assertAllRecordsShowingInTableForChart(String flexTableId) {
+        By allRecordTable = By.xpath("//*[@id='"+flexTableId+"']//tbody//tr");
+        int records = I.amPerforming().getElementReference().forListOfElements().of(allRecordTable).size();
+        I.amPerforming().assertionsTo().assertThat(records >= 1).isTrue();
+    }
 }

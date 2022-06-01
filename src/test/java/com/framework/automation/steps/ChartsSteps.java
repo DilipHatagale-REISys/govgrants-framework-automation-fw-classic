@@ -76,4 +76,9 @@ public class ChartsSteps {
     public void assertSpecificTextForChart(String usage, String label, String chartName) {
         chartsPage.assertFormattingAtAxisIsDisplayed(usage, label, chartName);
     }
+
+    @Then("I see all the records are showing in table {string} for chart")
+    public void iSeeAllTheRecordsAreShowingInTableForChart(String flexTableId) {
+        chartsPage.assertAllRecordsShowingInTableForChart(flexTableId);
+    }
 }

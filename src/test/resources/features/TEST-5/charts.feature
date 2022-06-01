@@ -2863,3 +2863,52 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     And I pause execution for "7" seconds
     Then I see "Awarded Amount" displayed in modal
+
+  @208142 @ScatterNameIsDisplayedAfterClickungShowAllButton @Sprint8
+  Scenario:  E- Charts - PM - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, only respective record details displayed in table format on clicking on Show all data button
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see "Funding Opportunities" displayed in modal
+
+  @208139 @ScatterNameIsDisplayedAfterClickungShowAllButton @Sprint8
+  Scenario: E- Charts - Admin - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, only respective record details displayed in table format on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see "Funding Opportunities" displayed in modal
+
+  @208123 @PieChartNameIsDisplayedAfterClickungShowAllButton @Sprint8
+  Scenario:  E- Charts - Admin - Pie chart (Chart name : ApplicationsDonutbyStatus) - Verified that on enhanced view, only respective record details displayed in table format on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
+    Then I see all the records are showing in table "---program:-:EnhancedPiechartModalID---" for chart
+
+  @208133 @ScatterNameIsDisplayedAfterClickungShowAllButton @Sprint8
+  Scenario:  E- Charts - Admin - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see all the records are showing in table "---program:-:EnhancedScatterModalID---" for chart
+
+  @208138 @ScatterNameIsDisplayedAfterClickungShowAllButton-PMuser @Sprint8
+  Scenario: E- Charts - PM - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see "Funding Opportunities" displayed in modal
