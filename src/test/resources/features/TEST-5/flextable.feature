@@ -342,7 +342,7 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @39287    @headerHelpTextFieldAtFlexTable-gPlanning
+  @39287    @headerHelpTextFieldAtFlexTable-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of header help text field at flex table and validating it at draft program flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -421,7 +421,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     Then I see "20" records inside flex table id "---program:-:programsTableId---"
 
-  @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
+  @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

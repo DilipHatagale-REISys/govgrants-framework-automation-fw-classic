@@ -1200,7 +1200,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" Button at position "0"
 
-  @35982    @helpTextFieldAtPageBlock-gPlanning
+  @35982    @helpTextFieldAtPageBlock-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1220,7 +1220,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText                                                                           |
       | Help Text for Automation | The section gives program overview along with funder and funding organization details. |
 
-  @36102    @helpTextLongFieldAtPageBlockDetail-gPlanning
+  @36102    @helpTextLongFieldAtPageBlockDetail-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2856,7 +2856,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
 
-  @113066    @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  @113066    @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
@@ -3612,7 +3612,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText                 | old_helpText |
       | Help Text @#$ for Automation | Help Text    |
 
-  @115592    @verifySpecialCharaterInHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  @115592    @verifySpecialCharaterInHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning @skipOnJenkins
   Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page for SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
@@ -3787,7 +3787,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program ID is required to save. |
 
-  @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
+  @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
@@ -3818,7 +3818,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120005    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInViewMode-gPlanning
+  @120005    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInViewMode-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
@@ -3849,7 +3849,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120006    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInEditMode-gPlanning
+  @120006    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInEditMode-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
@@ -3881,7 +3881,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120007    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInViewMode-gPlanning
+  @120007    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInViewMode-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
@@ -3913,7 +3913,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120009    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithDiffHelpText-gPlanning
+  @120009    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithDiffHelpText-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field two same name fields are displayed at 2 diff tabs in edit mode with diff help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
@@ -3943,7 +3943,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120010    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithDiffHelpText-gPlanning
+  @120010    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithDiffHelpText-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with diff help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -3973,7 +3973,7 @@ Business Need: Page Layout Component Scenarios
       | default_helpText1 | default_helpText2 |
       | help text         | help text2        |
 
-  @120012    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithSameHelpText-gPlanning
+  @120012    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithSameHelpText-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with same help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -4003,7 +4003,7 @@ Business Need: Page Layout Component Scenarios
       | default_helpText1 | default_helpText2 |
       | help text         | help text2        |
 
-  @120013    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithSameHelpText-gPlanning
+  @120013    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithSameHelpText-gPlanning @skipOnJenkins
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in edit mode with same help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -5439,7 +5439,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I softly see field "Created Date" as "10/15/2019 5:02 AM"
 
-  @132864  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayout
+  @132864  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayout @skipOnJenkins
   Scenario Outline: validate help text at field hover is displayed at enhanced flex edit page layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5770,7 +5770,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "6/19/2018 5:41 AM" text enter in field "fieldSubmittedOn__c"
 
-  @133032  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayoutToSPIUser
+  @133032  @verifyHelpTextAtTitleFieldIsDisplayedOnHoverAtEnhancedFlexEditLayoutToSPIUser @skipOnJenkins
   Scenario Outline: validate help text at field hover is displayed at enhanced flex edit page layout to spi user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6221,7 +6221,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I click modal button "Save"
-    And I pause execution for "5" seconds
+    And I pause execution for "7" seconds
     Then I do not see "Edit" modal window is displayed
 
   @129075    @verifyErrorMessageWithSpecialCharactersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
@@ -7933,7 +7933,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
-    And I pause execution fo r "2" seconds
+    And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
