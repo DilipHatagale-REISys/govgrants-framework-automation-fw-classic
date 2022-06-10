@@ -665,7 +665,7 @@ Business Need: Library Files Component Scenarios
 #    When I pause execution for "7" seconds
 #    Then I softly do not see library/folder/file "SheetJSFileUploadDateTime.xlsx" is displayed under files library
 
-  @70535 @validateThatUserCanUploadFileOfTypeZipInLibrarAndFolder-HomePhase
+  @70535 @validateThatUserCanUploadFileOfTypeZipInLibrarAndFolder-HomePhase @reportedBug
   Scenario: Verify that user can upload file of type Zip under library and folder - Home Phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -686,7 +686,7 @@ Business Need: Library Files Component Scenarios
 #    When I pause execution for "7" seconds
 #    Then I softly do not see library/folder/file "TestAutomationFile.zip" is displayed under files library
 
-  @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase
+  @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase @reportedBug
   Scenario: Verify that user can upload file of type .txt under library and folder - Home Phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1854,7 +1854,7 @@ Business Need: Library Files Component Scenarios
     Then I softly see "Upload File" option is present at library/folder/file "Asset Library"
     Then I softly see "Download Files" option is present at library/folder/file "Asset Library"
 
-  @83180 @validateThatAdminUserCanDeleteTheFilesFromAssetLibrary-HomePhase
+  @83180 @validateThatAdminUserCanDeleteTheFilesFromAssetLibrary-HomePhase @reportedBug
   Scenario: Verify that admin user can delete the files from  asset library
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1919,7 +1919,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "ProgramRecordDoNotDelete.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "test Automation" for title "Description" inside table "---program:-:ApplicationFilesFlexGridId---"
 
-  @83170 @validateThatFileCanBeDragAndDropFromOneLibraryToOtherLibrary-gHome
+  @83170 @validateThatFileCanBeDragAndDropFromOneLibraryToOtherLibrary-gHome @reportedBug
   Scenario: Verify that file can be drag and droped from one library to another lbrary
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1938,7 +1938,7 @@ Business Need: Library Files Component Scenarios
 #    When I pause execution for "7" seconds
 #    Then I softly do not see library/folder/file "TestAutomationFile.docx" is displayed under files library
 
-  @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome
+  @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome @reportedBug
   Scenario: Verify that file can be drag from assert library and droped into another library
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -5372,7 +5372,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
-  @160586 @validateThatAdminUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
+  @160586 @validateThatAdminUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @reportedBug
   Scenario: Verify that admin user can upload file from Home- files library if visibility option is disabled and default option is selected
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

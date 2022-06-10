@@ -6221,7 +6221,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I click modal button "Save"
-    And I pause execution for "5" seconds
+    And I pause execution for "7" seconds
     Then I do not see "Edit" modal window is displayed
 
   @129075    @verifyErrorMessageWithSpecialCharactersDisplayedByChangingMessageFieldValueFromErrorMessageConfig
@@ -7933,7 +7933,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
-    And I pause execution fo r "2" seconds
+    And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
