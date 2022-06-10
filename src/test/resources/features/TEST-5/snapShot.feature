@@ -116,7 +116,7 @@ Business Need: Snapshot Config Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"

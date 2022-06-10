@@ -9140,11 +9140,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "PG-343-0079"
+    When I click on "Edit" icon for "PG-343-0079" inside table
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "fieldProjectGoals__c"
-      | Yes |
+    Then I enter value "checked" into field "fieldProjectGoals__c
 
   @171518 @jyoti
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is unchecked

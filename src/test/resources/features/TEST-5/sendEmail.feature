@@ -759,7 +759,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "9/28/2021 1:48 AM" on html page
+    Then I softly see "5/6/2022 7:14 pm" on html page
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
@@ -809,7 +809,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1 " in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1 " inside table
-    Then I softly see "9/28/2021 1:48 AM" on html page
+    Then I softly see "5/6/2022 7:14 pm" on html page
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EDT time zone
@@ -834,7 +834,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "9/28/2021 1:48 AM" on html page
+    Then I softly see "5/6/2022 7:14 pm" on html page
 
   @101042 @validateSentDateOfEmailInESTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EST time zone
@@ -859,7 +859,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "9/28/2021 1:48 AM" on html page
+    Then I softly see "5/6/2022 7:14 pm" on html page
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal

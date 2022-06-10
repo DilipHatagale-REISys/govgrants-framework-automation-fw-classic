@@ -240,14 +240,19 @@ Business Need: Calender Config Component Scenarios
     And I enter value "365" into field "fieldEndDate__c"
     And I enter value "365" into field "Objectives__c"
     And I click on "Save" in the page details
-    And I pause execution for "8" seconds
-    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "Automation PM" into field "fieldName__c"
     And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    When I enter value "10" into field "fieldStartDate__c"
-    When I enter value "365" into field "fieldEndDate__c"
     And I click modal button "Save"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -264,7 +269,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:ProgramServiceTableid---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
@@ -444,6 +449,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I pause execution for "20" seconds
     When I click on advance filter "#advfCaseList" of table id "CaseList"
+    And I pause execution for "120" seconds
     When I enter advance filter values inside id "advfCaseList"
       | Subject | Starts with | Test Automation |
     Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
@@ -877,6 +883,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "10" seconds
     Then I see "GT-final-001 (Budget Period End Date)" record is displayed in "turquoise" color inside calendar
 
   @127666    @verifySPIUserCanSeeGrantIdInWhiteColorAtMonthWiseCalendarIfChangedColorCodeFromConfig-HomePhase
@@ -902,6 +909,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "10" seconds
     Then I see "GT-final-001 (Budget Period End Date)" record is displayed in "white" color inside calendar
 
   @89805  @verifyByClickAtMoreOptionAllProgramRecordsDisplayedAtMonthlyCalendar
