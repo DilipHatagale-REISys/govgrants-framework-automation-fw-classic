@@ -484,6 +484,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Preview" icon of form "General Application Form" program in flex table
+    And I pause execution for "5" seconds
     When I hovering mouse on help text icon inside "APPLICANTS ORGANIZATION INFORMATION"
     Then I see "This section displays the information about applicants organization details." shown as help text
 
