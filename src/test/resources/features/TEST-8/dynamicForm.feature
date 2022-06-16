@@ -532,7 +532,6 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
-    And I pause execution for "9" seconds
     Then I see "Demo Section help text" shown as help text
 
   @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode
@@ -1089,7 +1088,6 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
-    And I pause execution for "10" seconds
     Then I see "Test Automation Written Help" shown as help text
 
   @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
@@ -1126,7 +1124,6 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Date"
-    And I pause execution for "6" seconds
     Then I see "Test Automation Date Help" shown as help text
 
   @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode
