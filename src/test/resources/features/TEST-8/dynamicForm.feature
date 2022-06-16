@@ -107,14 +107,14 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Edit" button is not displayed
 
-  @88276    @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @88276  @check   @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a written field is displayed inside dynamic form layout
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
-    When I perform quick search for "AnnouncementTest"
-    When I click on "View" icon for "AnnouncementTest" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test announcement for auto snapshot - 25-05"
+    When I click on "View" icon for "Test announcement for auto snapshot - 25-05" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Written" inside "Section 1" at dynamic form
@@ -532,6 +532,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
+    And I pause execution for "10" seconds
     Then I see "Demo Section help text" shown as help text
 
   @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode
@@ -651,7 +652,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Written is Required to save under Section 1. |
 
-  @89833    @validateQuestionApplicableFieldAsRequiredForSaveAtCurrencyFieldTypeAtDynamicFormLayout
+  @89833 @check   @validateQuestionApplicableFieldAsRequiredForSaveAtCurrencyFieldTypeAtDynamicFormLayout
   Scenario: changing value of question applicable as required for save and checking error message for currency field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -1088,6 +1089,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
+    And I pause execution for "8" seconds
     Then I see "Test Automation Written Help" shown as help text
 
   @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
@@ -1124,6 +1126,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Date"
+    And I pause execution for "7" seconds
     Then I see "Test Automation Date Help" shown as help text
 
   @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode
@@ -1890,7 +1893,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see the following message in the page details :
       | Currency is Required to save under Section 1. |
 
-  @94416   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  @94416 @check   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by hiding written field on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
