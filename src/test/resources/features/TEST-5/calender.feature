@@ -118,13 +118,18 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
-    And I enter value "0" into field "fieldStartDate__c"
-    And I enter value "365" into field "fieldEndDate__c"
-    And I enter value "365" into field "Objectives__c"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
-    When I pause execution for "5" seconds
-    And I save the field labeled "ID" as "savedValue"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "Automation PM" into field "fieldName__c"
@@ -139,49 +144,38 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
     When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
     And I navigate to "Financials" sub tab
+    And I pause execution for "10" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
     When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
     When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
     And I navigate to "Log" sub tab
-    And I pause execution for "5" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    And I pause execution for "3" seconds
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{SavedValue:savedValue}"
-    When I click on "View Program Details" icon for "{SavedValue:savedValue}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Activate" in the page details
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "{SavedValue:savedValue}" into field "Program__c"
+    When I enter value "{SavedValue:PEGMSID}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
-    When I enter value "Announcement created for calendar test" into field "AnnouncementName__c"
-    When I enter value "Announcement test" into field "AnnouncementDescription__c"
-    When I enter value "0" into field "FOAPublicationDate__c"
-    When I enter value "3" into field "EstimatedProjectPeriodStartDate__c"
-    When I enter value "State government" into field "EligibleApplicantTypes__c"
-    And I navigate to "Financials" sub tab
-    When I enter value "2000" into field "AwardCeiling__c"
-    When I enter value "1000" into field "AwardFloor__c"
-    When I enter value "2" into field "EstimatedAverageSizeOfAward__c"
-    When I enter value "5" into field "EstimatedNumberOfAwards__c"
-    When I enter value "1500" into field "ObligatedAmount__c"
+    When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
-    And I save the field labeled "ID" as "savedValue1"
+    And I save the field labeled "ID" as "AnnEGMSID"
     And I pause execution for "3" seconds
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "HOME" tab
@@ -189,8 +183,8 @@ Business Need: Calender Config Component Scenarios
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:savedValue1}"
     Then I see the header is "Funding Opportunity" in the page details
-    Given I delete the record "{SavedValue:savedValue1}" from the object "Announcement__c" with field "Name"
-    Given I delete the record "{SavedValue:savedValue}" from the object "Program__c" with field "Name"
+    Given I delete the record "{SavedValue:AnnEGMSID}" from the object "Announcement__c" with field "Name"
+    Given I delete the record "{SavedValue:PEGMSID}" from the object "Program__c" with field "Name"
 
   @127042  @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at calendar layout
@@ -235,10 +229,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "CreationForAnnouncement" values from "Program_Field_Values.xlsx"
-    And I enter value "0" into field "fieldStartDate__c"
-    And I enter value "365" into field "fieldEndDate__c"
-    And I enter value "365" into field "Objectives__c"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
@@ -249,6 +240,7 @@ Business Need: Calender Config Component Scenarios
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
+    And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "Automation PM" into field "fieldName__c"
@@ -263,6 +255,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
     When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
     And I navigate to "Financials" sub tab
+    And I pause execution for "10" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
     When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
     And I navigate to "Log" sub tab
@@ -276,14 +269,14 @@ Business Need: Calender Config Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{SavedValue:savedValue}"
-    When I click on "View Program Details" icon for "{SavedValue:savedValue}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Activate" in the page details
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -291,32 +284,22 @@ Business Need: Calender Config Component Scenarios
     When I enter value "{SavedValue:savedValue}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
-    When I enter value "Announcement created for calendar test" into field "AnnouncementName__c"
-    When I enter value "Announcement test" into field "AnnouncementDescription__c"
-    When I enter value "0" into field "FOAPublicationDate__c"
-    When I enter value "3" into field "EstimatedProjectPeriodStartDate__c"
-    When I enter value "State government" into field "EligibleApplicantTypes__c"
-    And I navigate to "Financials" sub tab
-    When I enter value "2000" into field "AwardCeiling__c"
-    When I enter value "1000" into field "AwardFloor__c"
-    When I enter value "2" into field "EstimatedAverageSizeOfAward__c"
-    When I enter value "5" into field "EstimatedNumberOfAwards__c"
-    When I enter value "1500" into field "ObligatedAmount__c"
+    When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
-    And I save the field labeled "ID" as "savedValue1"
+    And I save the field labeled "ID" as "AnnEGMSID"
     And I pause execution for "3" seconds
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    When I hover mouse on lookup link "{SavedValue:savedValue1} (FOA Publish Date)"
+    When I hover mouse on lookup link "{SavedValue:AnnEGMSID} (FOA Publish Date)"
     Then I see the text :
       | Announcement                           |
-      | {SavedValue:savedValue1}               |
+      | {SavedValue:AnnEGMSID}               |
       | Announcement created for calendar test |
       | Created                                |
-    Given I delete the record "{SavedValue:savedValue1}" from the object "Announcement__c" with field "Name"
-    Given I delete the record "{SavedValue:savedValue}" from the object "Program__c" with field "Name"
+    Given I delete the record "{SavedValue:AnnEGMSID}" from the object "Announcement__c" with field "Name"
+    Given I delete the record "{SavedValue:PEGMSID}" from the object "Program__c" with field "Name"
 
   @127323    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForPMUser
   Scenario: validate that calender is displayed in month format if user click on 'Month' button at calendar for PM user
@@ -857,7 +840,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "10" seconds
-    Then I see "FOA-DOD-004 (FOA Publish Date)" record is displayed in "teal green" color inside calendar
+    Then I see "AN-343-032" record is displayed in "teal green" color inside calendar
     Examples:
       | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
       | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
@@ -931,14 +914,14 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "ID" as "savedValue1"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar2" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -946,7 +929,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar3" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -954,7 +937,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar4" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -962,7 +945,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar5" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
@@ -970,7 +953,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     When I enter value "Program created for calendar6" into field "ProgramName__c"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds

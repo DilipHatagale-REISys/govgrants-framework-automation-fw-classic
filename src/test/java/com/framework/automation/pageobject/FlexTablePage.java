@@ -65,10 +65,15 @@ public class FlexTablePage extends GovGrantsManager {
     /***
      * assert true if check box select record enabled
      */
-    public void assertFlexTabelRecordSelectionEnabled() {
-        Assert.assertTrue(isSelectRecordCheckBox());
-    }
-
+    public void assertFlexTabelRecordSelectionEnabled(String usage) {
+        try{
+       if(usage.equalsIgnoreCase("see")){
+            Assert.assertTrue(isSelectRecordCheckBox());
+       }else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isSelectRecordCheckBox());
+       }}catch (Exception e) {
+            }
+        }
     /**
      * assert true if total row calculation is disabled
      */
