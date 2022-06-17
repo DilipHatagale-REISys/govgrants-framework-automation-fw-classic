@@ -515,7 +515,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:SectionInstruction-Text}
   """
 
-  @90060    @ValidateSectionHelpTextFieldAtDynamicFormInViewMode
+  @90060    @ValidateSectionHelpTextFieldAtDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the section help text apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -534,7 +534,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
     Then I softly see "Demo Section help text" shown as help text
 
-  @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode
+  @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the section help text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1107,7 +1107,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Score value should not be greater than max score |
 
-  @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode
+  @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at date field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1126,7 +1126,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Date"
     Then I see "Test Automation Date Help" shown as help text
 
-  @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode
+  @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1145,7 +1145,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Currency"
     Then I see "Test Automation Currency Help" shown as help text
 
-  @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode
+  @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1183,7 +1183,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Percent"
     Then I see "Test Automation Percent Help" shown as help text
 
-  @92169    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInViewMode
+  @92169    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1222,7 +1222,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
     Then I see "Test Automation Rich Text Area Help" shown as help text
 
-  @92171    @ValidateHelpTextAtCheckboxFieldInsideDynamicFormInViewMode
+  @92171    @ValidateHelpTextAtCheckboxFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Checkbox field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1241,7 +1241,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Checkbox"
     Then I see "Test Automation Checkbox Help" shown as help text
 
-  @92170    @ValidateHelpTextAtRadioFieldInsideDynamicFormInViewMode
+  @92170    @ValidateHelpTextAtRadioFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at radio field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1260,7 +1260,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Radio"
     Then I see "Test Automation Radio Help" shown as help text
 
-  @92628    @ValidateHelpTextAtPercentFieldInsideDynamicFormInEditMode
+  @92628 @ValidateHelpTextAtPercentFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in Edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1279,7 +1279,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Percent"
     Then I see "Test Automation Percent Help" shown as help text
 
-  @92624    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode
+  @92624 @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1336,7 +1336,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Date"
     Then I see "Test Automation Date Help" shown as help text
 
-  @92623    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode @SkipOnJenkins
+  @92623 @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1355,7 +1355,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Written"
     Then I see "Test Automation Written Help" shown as help text
 
-  @92641    @ValidateHelpTextAtCheckboxFieldInsideDynamicFormInEditMode
+  @92641 @ValidateHelpTextAtCheckboxFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Checkbox field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1374,7 +1374,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Checkbox"
     Then I see "Test Automation Checkbox Help" shown as help text
 
-  @92640    @ValidateHelpTextAtRichTextAreaFieldInsideDynamicFormInEditMode
+  @92640 @ValidateHelpTextAtRichTextAreaFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Rich Text Area field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |

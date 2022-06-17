@@ -475,7 +475,7 @@ Business Need: Forms Component Scenarios
     When I click on "Preview" icon of form "General Application Form" program in flex table
     Then I see new tab is opened
 
-  @126481 @verifyHelpTextIsDisplayedByClickOnPreviewActionAtBusinessForms-gApplications
+  @126481 @verifyHelpTextIsDisplayedByClickOnPreviewActionAtBusinessForms-gApplications @skipOnJenkins
   Scenario:validate help text at page block is displayed at business form by click on preview action on it
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -829,7 +829,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see new tab is opened
 
-  @135994 @verifyHelpTextIsDisplayedByClickOnViewActionAtBusinessForms-gApplications
+  @135994 @verifyHelpTextIsDisplayedByClickOnViewActionAtBusinessForms-gApplications @skipOnJenkins
   Scenario:validate help text at page block is displayed at business form by click on view action on it
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

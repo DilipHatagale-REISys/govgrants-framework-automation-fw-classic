@@ -342,7 +342,7 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @39287    @headerHelpTextFieldAtFlexTable-gPlanning
+  @39287  @headerHelpTextFieldAtFlexTable-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of header help text field at flex table and validating it at draft program flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -421,7 +421,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     Then I see "20" records inside flex table id "---program:-:programsTableId---"
 
-  @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
+  @40002 @helpTextFieldAtFlexTableColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2303,6 +2303,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table:General    | Enable Filter | false         | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
+    And I pause execution for "6" seconds
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -3448,6 +3449,7 @@ Business Need: Flex Table Component Scenarios
       When I setup my app as "As a Grantor"
       And I navigate to "Planning" tab
       And I click toggle button to select "Draft Programs"
+      And I pause execution for "7" seconds
       When I re-login as "Automation-PM" user on "default" portal
       When I setup my app as "As a Grantor"
       And I navigate to "Planning" tab
@@ -3639,6 +3641,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
     When I login as "Automation" user
+    And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"

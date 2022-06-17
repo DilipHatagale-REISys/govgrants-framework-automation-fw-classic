@@ -557,7 +557,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on page
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
       | Total Awarded Amount | Account Name       |
-      | $350000.00           | UnitedHealth Group |
+      | $350,000           | UnitedHealth Group |
 
   @71024    @validateActiveFieldAtCharts-gAnnouncement-Announcementtest-1
   Scenario: Validating Announcementtest_1 is getting displayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
@@ -2560,10 +2560,11 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I pause execution for "5" seconds
     And I click on menu icon of chart "Enhanced Bar" with title "Enhanced View"
+    And I pause execution for "5" seconds
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedBarChartId---" on modal
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedBarModalID---" :
       | AwardCeiling |
-      | $300000      |
+      | $300,000      |
 
   @71501    @validateDataTableHeaders-gHome-EnhancedLineChart
   Scenario:  Change chart data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
@@ -2576,6 +2577,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I pause execution for "5" seconds
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
     And I pause execution for "10" seconds
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedLineChartId---" on modal
@@ -2902,6 +2904,49 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     And I pause execution for "7" seconds
     Then I see all the records are showing in table "---program:-:EnhancedScatterModalID---" for chart
+
+  @207813 @DataIsDisplyedInTableFormatAterClickingShowAllButton @Jyoti
+  Scenario:  Charts - Admin - To verify that on enhanced view, on clicking on Show all data button
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    And I pause execution for "7" seconds
+    Then I see "Awarded Amount" displayed in modal
+
+  @208244 @DataIsDisplyedInTableFormatAterClickingEnhancedView @Jyoti
+  Scenario: E- Charts - Admin - Bar Chart Verified enhanced view for all data after clicking view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Bar               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I pause execution for "5" seconds
+    And I click on menu icon of chart "Enhanced Bar" with title "Enhanced View"
+    And I pause execution for "5" seconds
+    Then I see "Enhanced Bar" displayed in modal
+
+  @208246 @DataIsDisplyedInTableFormatAterClickingShowAllButton @Jyoti
+  Scenario: E- Charts -  - Bar Chart (Chart name - AccountStackedBarClassBased) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Bar               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I pause execution for "5" seconds
+    And I click on menu icon of chart "Enhanced Bar" with title "Enhanced View"
+    And I pause execution for "7" seconds
+    When I click modal button "Show All Data"
+    Then I see "Awarded Amount" displayed in modal
 
   @208138 @ScatterNameIsDisplayedAfterClickungShowAllButton-PMuser @Sprint8
   Scenario: E- Charts - PM - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button

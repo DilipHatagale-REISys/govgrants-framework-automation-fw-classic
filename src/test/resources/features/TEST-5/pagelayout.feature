@@ -10457,6 +10457,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Percent is required to save |
 
+  @208865 @LogoLodingChangingTheApp @Jyoti
+  Scenario: UI/ UX : To check logo is loading on changing the app i.e. Grants to Grantee(PM-User)
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+
   @208967 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
     When I login as "Automation-PM" user
