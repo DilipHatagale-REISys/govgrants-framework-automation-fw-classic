@@ -3784,3 +3784,76 @@ Business Need: Flex Table Component Scenarios
     When I click on "View" icon for "AP-734-140" inside table
     When I navigate to "Plan" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+  @217286 @Toverifydisabling'EnableHelp'HelpfeaturenotgetdisplayedunderMenusecforrespectiveflextable. @Vrishali
+  Scenario:AdminConfig-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
+    When I login to "As a Grantor" app as "Automation-Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I do not see "Help" options inside "Draft Programs" enabled
+
+  @217288 @Toverifydisabling'EnableHelp'HelpfeaturenotgedisplayedunderMenusectionforrespectiveflextable. @Vrishali
+  Scenario: SPI-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Help | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Help | false         | Applications       |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableApplications"
+    Then I do not see "Help" options inside "Applications" enabled
+
+  @217289 @217290 @Toverifydisabling'EnableRecordSelection'recordseleccolumnnotgetdisplayedforrespectiveflextable. @Vrishali
+  Scenario Outline:Admin,PM-To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I pause execution for "5" seconds
+    Then I do not see select check box enabled in flex table
+    Examples:
+      | User             |
+      | Automation-Admin |
+      | Automation-PM    |
+
+  @217291 @verifydisablingEnableRecordSelectionrecordselectioncolumnnotgetdisplayedforrespectiveflextable. @Vrishali
+  Scenario:SPI-To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    And I pause execution for "5" seconds
+    Then I do not see select check box enabled in flex table
+
+  @217295 @217296 @verifyselecting'None'optionforAutoindexbehavior,alsoIndexcolumngetdisplayedforallrows @Vrishali
+  Scenario Outline: Admin-To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index    | true          | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "#" shown inside flex table with id "toggleFlexTablePrograms"
+    Examples:
+      | User             |
+      | Automation-Admin |
+      | Automation-PM    |
+
+  @217297 @verifyselectingNoneoptionforAutoindexbehavior,thenalsoIndexcolumngetdisplayedforallrows @Vrishali
+  Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index    | true          | Applications       |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    Then I see "#" shown inside flex table with id "toggleFlexTableApplications"

@@ -166,7 +166,7 @@ Business Need: New API related scenarios temporary
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I click on "View" icon for "Test Automation Application DND" inside flex table with id "flexTableDivId" without waiting for record
     When I pause execution for "180" seconds
     Then I see "Logout" in current url
 

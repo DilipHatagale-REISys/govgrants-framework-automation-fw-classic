@@ -73,9 +73,9 @@ public class FlexTableSteps {
         flexTablePage.assertquickSearchEnabled(usage);
     }
 
-    @Then("^I see select check box enabled in flex table$")
-    public void assertOptionEnabledInFlexTable() {
-        flexTablePage.assertFlexTabelRecordSelectionEnabled();
+    @Then("^I (see|do not see) select check box enabled in flex table$")
+    public void assertOptionEnabledInFlexTable(String usage) {
+        flexTablePage.assertFlexTabelRecordSelectionEnabled(usage);
     }
 
     @Then("^I see total amount row in flex table is not displayed$")

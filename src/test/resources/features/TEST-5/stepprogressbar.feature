@@ -144,7 +144,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see status in Progress-bar is "Submitted for Approval" and is "Blue"
+    Then I see status in Progress-bar is "Submitted for Approval" and is "Green"
 
   @37324    @displayValueFieldAtStepProgressBAr-gPlanning
   Scenario: validate after changing display value of created disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
@@ -163,7 +163,7 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see changed display name as "Automation" inside step progress bar
 
   @37328    @isCreatedFieldAtStepProgressBar-gPlanning
-  Scenario Outline: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
+  Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
@@ -180,11 +180,8 @@ Business Need: Step Progress Bar Component Scenarios
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
-    Then I see "<textInsideStatus>" shown as help text
-
-    Examples:
-      | textInsideStatus   |
-      | By : Nauman Shahid |
+    Then I see "By : Nauman Shahid" shown as help text
+    Then I see "Date : 11/27/2018 2:15 AM" shown as help text
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user
@@ -336,7 +333,7 @@ Business Need: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | HIDE EXPRESSION JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldProfileAndUserTypeWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
