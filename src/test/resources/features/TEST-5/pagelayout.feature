@@ -10331,6 +10331,139 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Percent : Number is too large." error
 
+  @208833 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUI @Jyoti
+  Scenario: To verify, When hidden the Text fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "Title" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Title is required to save |
+
+  @208830 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJson @Jyoti
+  Scenario: To verify, When hidden the Lookup  fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJson | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "Owner Organization" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Owner Organization is required to save |
+
+  @208829 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonNumberField @Jyoti
+  Scenario: To verify, When hidden the Number fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonNumberField | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "fieldNumber__c" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Number Organization is required to save |
+
+  @208828 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonDateAndTimeField @Jyoti
+  Scenario: To verify, When hidden the Date and Time fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForDateAndTime | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "fieldDateandTime__c" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Date And Time Organization is required to save |
+
+  @208825 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonFundedAField @Jyoti
+  Scenario: To verify, When hidden the currency  fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForFundedAmount | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "fieldFundedAmount__c" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Funded Amount is required to save |
+
+  @208826 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonForPercentAField @Jyoti
+  Scenario: To verify, When hidden the percent  fields which are required for save then no validation error is displayed on UI on saving the record
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForPercentField | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I select "Project Grants" from dropdown
+    Then I see "fieldPercent__c" is not displayed inside page block detail
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I cannot see the following message in the page details :
+      | Percent is required to save |
+
+  @208865 @LogoLodingChangingTheApp @Jyoti
+  Scenario: UI/ UX : To check logo is loading on changing the app i.e. Grants to Grantee(PM-User)
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+
   @208967 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: To verify - Validation message should not display properly when user enter 4 digit number for automation user
     When I login as "Automation-PM" user

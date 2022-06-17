@@ -355,7 +355,7 @@ Business Need: Flex Grid Component Scenarios
       | oldActionUrl                                | newActionUrl            |
       | /apex/KeyOutcomeView?id={!KeyOutcome__c.id} | https://www.google.com/ |
 
-  @49462    @helpTextFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
+  @49462 @helpTextFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at program outcomes flex table column header from config and validating it inside program outcomes flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -570,7 +570,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "#" shown inside flex table with id "---program:-:programOutComesTableId---"
 
-  @50226    @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning @SkipOnJenkins
+  @50226  @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at program outcomes flex table from config and validating it at program outcomes flex table planning-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -980,7 +980,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "Test Automation" shown as inside "---program:-:toggleFlexGridMonitoringTableId---"
 
-  @50365    @headerHelpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  @50365 @headerHelpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring @skipOnJenkins
   Scenario Outline: Changing content of help text field at parent flex table of ActiveGrantsGrid from config and validating it at Monitoring schedule for all active grant flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -1135,7 +1135,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     Then I see "Download as CSV" options inside "Monitoring Schedule For All Active Grant" disabled
 
-  @50393    @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  @50393 @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring @skipOnJenkins
   Scenario Outline: Changing content of help text field at ActiveGrantsGridParent flex table column header from config and validating it inside Monitoring schedule for all active grant flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1922,7 +1922,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:grantFinancialsTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
-  @51547    @helpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  @51547 @helpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants @skipOnJenkins
   Scenario Outline: Changing content of help text field at Budget period details child flex table column header from config and validating it inside Budget period details child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
