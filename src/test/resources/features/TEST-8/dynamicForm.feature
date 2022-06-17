@@ -532,7 +532,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
-    Then I see "Demo Section help text" shown as help text
+    Then I softly see "Demo Section help text" shown as help text
 
   @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode
   Scenario: validate the section help text apears as configured in edit mode on dynamic form layout
