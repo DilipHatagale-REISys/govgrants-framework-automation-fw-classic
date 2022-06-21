@@ -10557,6 +10557,25 @@ Business Need: Page Layout Component Scenarios
       | new_helpText | old_helpText                                                                                                       |
       |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
+  @205033 @WhenIPressEnterButtonThenItIsNotTakingExtraLineSpace @Jyoti
+  Scenario: Editor-To verify,When user add the text  it is not taking any extra line space between paragraphs/2 lines after pressing 'Enter'
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I press enter key
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I click on "Save" in the page details
+    Then I see the text containing :
+      | Test Automation |
+      | Test Automation |
+
   @208969 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: Validation message should not display properly when user enter 4 digit number
     When I login as "Automation" user

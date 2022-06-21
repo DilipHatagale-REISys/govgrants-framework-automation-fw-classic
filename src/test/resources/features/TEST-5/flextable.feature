@@ -1865,7 +1865,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "PG-343-190" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
@@ -3531,6 +3531,7 @@ Business Need: Flex Table Component Scenarios
         When I setup my app as "As a Grantor"
         And I navigate to "Planning" tab
         And I click toggle button to select "Draft Programs"
+        And I pause execution for "5" seconds
         When I re-login as "Automation-PM" user on "default" portal
         When I setup my app as "As a Grantor"
         And I navigate to "Planning" tab
@@ -3844,6 +3845,68 @@ Business Need: Flex Table Component Scenarios
       | User             |
       | Automation-Admin |
       | Automation-PM    |
+
+  @231997 @ToVerifyEnterTheValueManuallyIt'sGettingResult @Jyoti
+  Scenario: Quick search-To verify, Enter the value manually it's getting the result
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "34.345"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
+
+  @231998 @ToVerifyEnterTheValueManuallyIt'sGettingResult @Jyoti
+  Scenario:  Quick search-To verify, Enter the value without semicolumn then the expected result is getting
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "343450"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
+
+  @208991 @FlexTableRecordRenderedProperly @Jyoti
+  Scenario: validate flex  table at record table is rendered properly by internal user in edit mode and showing coloumn name as Status
+    When I login as "AUTOMATION-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
+    Then I see "Status" shown as flex table column title
+
+  @208986 @FlexTableRecordRenderedProperlyPMuser @Jyoti
+  Scenario: validate flex  table at record table is rendered properly by internal user in edit mode and showing coloumn name as Status
+    When I login as "AUTOMATION-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
+    Then I see "Status" shown as flex table column title
+
+  @208981 @NoRecordsFoundDisplyedOnUI @Jyoti
+  Scenario: Verify that user search  not crated record then after searching we can see "No records found" inside flex tbl for internal user
+    When I login as "AUTOMATION-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Automation For Testing"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
+
+  @208964 @ToVerifyDownloadASPDFIsDisplyedOnMenuIconInsideFlexTable @Jyoti
+  Scenario: verify that Menu button is availble on flex table and after clicking on that we see "Download as pdf"
+    When I login as "AUTOMATION-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I see "Download as PDF" inside flex table with id "---program:-:programTableDivId---"
 
   @217297 @verifyselectingNoneoptionforAutoindexbehavior,thenalsoIndexcolumngetdisplayedforallrows @Vrishali
   Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
