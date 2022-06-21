@@ -10478,6 +10478,85 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Percent : Number is too large." error
 
+  @208866 @PageBackgroundColorIsDisplyadInDarkColour @jyoti
+  Scenario: To verify, Logged in User User app "State as Grantor" ,Page background should be blue color(PM user)
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    Then I see page is in "Dark Blue" color
+
+  @217210 @HeaderInstructionIsNotDisplayedOnUi @jyoti
+  Scenario: Header Instruction - Admin - Config - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
+
+  @217211 @HeaderInstructionIsNotDisplayedOnUiForPMUser @jyoti
+  Scenario: Header Instruction - PM - UI - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
+
+  @217207 @HeaderHelpTextIconNotDisplayedOnUi @Jyoti
+  Scenario Outline: Header help text - Admin - Config - To verify that when user not entered any help text then help icon not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Help" options inside "flexTableDivId" enabled
+
+    Examples:
+      | new_helpText | old_helpText                                                                                                       |
+      |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
+
+  @217208 @HeaderHelpTextIconNotDisplayedOnUiPMUser @Jyoti
+  Scenario Outline:Header help text - PM - UI - To verify that when user not entered any help text then help icon not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "7" seconds
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Help" options inside "flexTableDivId" enabled
+
+    Examples:
+      | new_helpText | old_helpText                                                                                                       |
+      |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
+
+  @217209 @HeaderHelpTextIconNotDisplayedOnUiSPIUser @Jyoti
+  Scenario Outline: Header help text - SPI - UI - To verify that when user not entered any help text then help icon not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    And I pause execution for "7" seconds
+    And I navigate to "Applications" tab
+    Then I do not see "Help" options inside "flexTableDivId" enabled
+
+    Examples:
+      | new_helpText | old_helpText                                                                                                       |
+      |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
+
   @208969 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: Validation message should not display properly when user enter 4 digit number
     When I login as "Automation" user
