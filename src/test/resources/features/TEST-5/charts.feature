@@ -2948,6 +2948,24 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     Then I see "Awarded Amount" displayed in modal
 
+  @208412 @AllDataDisplyedInTableFormatAfterClickingShowAllButton @Jyoti
+  Scenario:  E- Charts - FO - Bar Chart (Chart name - AccountStackedBarClassBased) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Bar               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "5" seconds
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Bar" with title "Enhanced View"
+    And I pause execution for "7" seconds
+    When I click modal button "Show All Data"
+    Then I see all the records are showing in table "---program:-:EnhancedBarModalID---" for chart
+
   @208138 @ScatterNameIsDisplayedAfterClickungShowAllButton-PMuser @Sprint8
   Scenario: E- Charts - PM - Scatter chart (Chart name : HomeOpportunities180Days) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
     When I login as "Automation-PM" user
