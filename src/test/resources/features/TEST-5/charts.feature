@@ -2949,7 +2949,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     Then I see "Awarded Amount" displayed in modal
 
   @208412 @AllDataDisplyedInTableFormatAfterClickingShowAllButton @Jyoti
-  Scenario:  E- Charts - FO - Bar Chart (Chart name - AccountStackedBarClassBased) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
+  Scenario:  E- Charts - PM - Bar Chart (Chart name - AccountStackedBarClassBased) - Verified that on enhanced view, all data displayed in table format on clicking on Show all data button
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Charts Config         | Active    | false             | ApiGeneratedId:0 |
