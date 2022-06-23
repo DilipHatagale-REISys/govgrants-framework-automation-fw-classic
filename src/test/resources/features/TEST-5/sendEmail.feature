@@ -1265,7 +1265,7 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     And I pause execution for "10" seconds
     When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
+    #When I close modal by clicking the top right x button
     When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Email Created To Check Attached File Link	" inside table
     Then I see hyperlink is present at "ProgramRecordDoNotDelete.png" in rich text area field

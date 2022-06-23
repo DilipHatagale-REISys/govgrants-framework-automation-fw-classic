@@ -2014,9 +2014,10 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I softly see Classification as "Select file classification" at upload file modal
-    Then I softly see Classification as "Medical Reports" at upload file modal
-    Then I softly see Classification as "Clinical Budgets" at upload file modal
+    Then I see the following classification type at upload file modal:
+      | Select file classification |
+      | Medical Reports            |
+      | Clinical Budgets           |
 
   @89365  @VerifyThatTheLookupFieldValueIsOverridedByCurrencyFieldAtEnhancedGridChildFlexTable @enhancedGrid
   Scenario Outline: verify that the lookup field value is overrided by currency field at child flex table at enhanced grid
@@ -4095,7 +4096,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "Creation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
@@ -4331,7 +4332,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see field "Created By" as "Nauman Shahid"
+    Then I see field "Created By" as "PankajH GGPTEST5"
 
   @118822    @validateCreatedByStandardFieldValueIsDisplayProperlyAtPageBlockDetailInViewMode @pageLayout
   Scenario: Validate created by standard field value is displayed inside page block detail in view mode
@@ -4568,7 +4569,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
-    When I pause execution for "5" seconds
+    When I pause execution for "10" seconds
     Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @121379    @vverifyThatQuickSearchIsWorkProperlyForMultiPicklistAtFlexTable-gMonitoring
@@ -6087,9 +6088,9 @@ Business Need: Logged Issues Scenarios
     And I enter value "Automation SPI" in my feed section and share the post
     And I click on "Comment" action at "Automation SPI" comment inside my feed
     And I click on "Attach File" button at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "60" seconds
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
-    Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
+    #Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     Then I do not see "Upload" button is disabled at modal under library
     When I click on "×" icon at "Add Files" modal under Library

@@ -806,6 +806,8 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
     When I enter value "0" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     And I navigate to "HOME" tab
