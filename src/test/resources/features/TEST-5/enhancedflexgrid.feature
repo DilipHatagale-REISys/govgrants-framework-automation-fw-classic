@@ -2504,9 +2504,9 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
-      | Project Period | ends with | 2/15/2022 |
-    Then I softly see value "2/15/2018--2/15/2022" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
-    Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+      | Project Period | ends with | 1/4/2020 |
+    Then I softly see value " 1/4/2018--1/4/2020" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly do not see value "2/15/2018--2/15/2022" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |

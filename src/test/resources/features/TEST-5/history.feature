@@ -264,7 +264,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
-    When I pause execution for "10" seconds
+  #  When I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -582,9 +582,8 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Changed Field | Equals to | Program Name |
-    When I perform quick search for "Program Name"
-    Then I see value "Program Name" for title "Changed Field" inside table "---program:-:historyTableId---"
+      | Changed Field | Equals to | Program Approver |
+    Then I see value "Program Approver" for title "Changed Field" inside table "---program:-:historyTableId---"
 
   @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
   Scenario: validate approval history table is displayed at history tab when page is in view mode
