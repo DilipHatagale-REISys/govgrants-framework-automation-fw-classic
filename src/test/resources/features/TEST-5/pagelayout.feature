@@ -10557,6 +10557,91 @@ Business Need: Page Layout Component Scenarios
       | new_helpText | old_helpText                                                                                                       |
       |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
+  @205033 @WhenIPressEnterButtonThenItIsNotTakingExtraLineSpace @Jyoti
+  Scenario: Editor-To verify,When user add the text  it is not taking any extra line space between paragraphs/2 lines after pressing 'Enter'
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I press enter key
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I click on "Save" in the page details
+    Then I see the text containing :
+      | Test Automation |
+      | Test Automation |
+
+  @205036 @IfIChangingStyleExtraLineShouldNotComeforMarker @Jyoti
+  Scenario: CK Editor-To verify,When user add the text  and After changing the style then extra line should not  come between paragraphs.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementCreaedRecord}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementCreaedRecord}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Marker style testing" into field "cke_1_contents"
+    And I select "Marker" from ck editor
+    And I press enter key
+    And I enter value "Marker style testing" into field "cke_1_contents"
+    And I select "Marker" from ck editor
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    Then I see the text containing :
+      | Marker style testing |
+      | Marker style testing |
+
+  @205429 @IfIChangingStyleExtraLineShouldNotCome @Jyoti
+  Scenario: CK Editor-To verify,When internal user add the text  and After changing the style then extra line should not  come between paragraphs.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementCreaedRecord}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementCreaedRecord}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I select "Italic Title" from ck editor
+    And I press enter key
+    And I enter value "Test Automation" into field "cke_1_contents"
+    And I select "Italic Title" from ck editor
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    Then I see the text containing :
+      | Test Automation |
+      | Test Automation |
+
+  @205037 @IfIChangingfontExtraLineShouldNotComeforMarker @Jyoti
+  Scenario: CK Editor-To verify,When user add the text  and  changing the font then extra line should Not come between paragraphs.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementCreaedRecord}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementCreaedRecord}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    And I clear the value from field "cke_1_contents"
+    And I enter value "Arial Font" into field "cke_1_contents"
+    And I change font "Arial" from ck editor
+    And I press enter key
+    And I enter value "Arial Font" into field "cke_1_contents"
+    And I change font "Arial" from ck editor
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    Then I see the text containing :
+      | Arial Font |
+      | Arial Font |
+
   @208969 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: Validation message should not display properly when user enter 4 digit number
     When I login as "Automation" user
