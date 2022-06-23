@@ -3908,6 +3908,15 @@ Business Need: Flex Table Component Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as PDF" inside flex table with id "---program:-:programTableDivId---"
 
+  @208966 @ToVerifyDownloadACSVIsDisplyedOnMenuIconInsideFlexTable @Jyoti
+  Scenario: verify that "Download as csv" is displaying on Menu button
+    When I login as "AUTOMATION-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I see "Download as CSV" inside flex table with id "---program:-:programTableDivId---"
+
   @217297 @verifyselectingNoneoptionforAutoindexbehavior,thenalsoIndexcolumngetdisplayedforallrows @Vrishali
   Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:

@@ -808,4 +808,20 @@ public class PageLayoutSteps {
         pageLayoutPage.assertLookupLinkInsidePageBlock(name);
     }
 
+    @And("I select {string} from ck editor")
+    public void iChangeStyleOfAllTextToInsideCKEditor(String styleName) {
+    By StyleSelector= By.xpath("//a[@title='Formatting Styles']/span[2]");
+    I.amPerforming().click().on(StyleSelector);
+    By ChangeStyle= By.xpath("//*[text()='"+styleName+"']");
+    I.amPerforming().click().on(ChangeStyle);
+    }
+
+    @And("I change font {string} from ck editor")
+    public void iChangeFontOfAllTextToInsideCKEditor(String fontName) {
+        By StyleSelector= By.xpath("//a[@title='Font Name']/span[2]");
+        I.amPerforming().click().on(StyleSelector);
+        By ChangeStyle= By.xpath("//*[text()='"+fontName+"']");
+        I.amPerforming().click().on(ChangeStyle);
+    }
+
 }
