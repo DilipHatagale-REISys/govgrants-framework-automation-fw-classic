@@ -2787,8 +2787,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "PG-343-190"
+    When I click on "View Program Details" icon for "PG-343-190" inside table
     Then I see field "Website Address" inside page block
 
   @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678

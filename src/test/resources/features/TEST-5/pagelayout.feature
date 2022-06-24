@@ -61,9 +61,14 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "PEGMSID"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     Then I see "Submit For Approval" button is not displayed
 
     Examples:
@@ -901,11 +906,11 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Save" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Program Sub Type is required to save under Overview. |
+      | Program Sub Type is required to save. |
 
   @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
@@ -1143,9 +1148,14 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "ID" as "PEGMSID"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Edit" in the page details
     Then I see new tab is opened
 
