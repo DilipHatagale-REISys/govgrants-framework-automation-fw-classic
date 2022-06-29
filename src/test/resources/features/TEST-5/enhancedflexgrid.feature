@@ -3462,7 +3462,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Active Grants"
     When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
-    Then I softly see field "Show Link as Text" as "$1,200,000"
+    Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
   @170497 @tejal
   Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the Edit layout
@@ -3478,7 +3478,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Active Grants"
     When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
     When I click on "Edit" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
-    Then I softly see field "Show Link as Text" as "$1,200,000"
+    Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
   @171798 @tejal
   Scenario: Verify if User edits a existing Id  row level lookup field (Required to Save) then mandatory icon should display for lookup field

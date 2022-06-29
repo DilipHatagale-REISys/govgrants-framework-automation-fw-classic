@@ -175,13 +175,14 @@ Business Need: Calender Config Component Scenarios
     And I click modal button "Continue"
     When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I save the field labeled "ID" as "AnnEGMSID"
     And I pause execution for "3" seconds
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    And I click on lookup link contains "{SavedValue:savedValue1}"
+    And I click on lookup link contains "{SavedValue:AnnEGMSID}"
     Then I see the header is "Funding Opportunity" in the page details
     Given I delete the record "{SavedValue:AnnEGMSID}" from the object "Announcement__c" with field "Name"
     Given I delete the record "{SavedValue:PEGMSID}" from the object "Program__c" with field "Name"
@@ -295,7 +296,7 @@ Business Need: Calender Config Component Scenarios
     When I hover mouse on lookup link "{SavedValue:AnnEGMSID} (FOA Publish Date)"
     Then I see the text :
       | Announcement                           |
-      | {SavedValue:AnnEGMSID}               |
+      | {SavedValue:AnnEGMSID}                 |
       | Announcement created for calendar test |
       | Created                                |
     Given I delete the record "{SavedValue:AnnEGMSID}" from the object "Announcement__c" with field "Name"

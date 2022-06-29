@@ -1767,7 +1767,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "nge Req"
-    And I pause execution for "10" seconds
+    And I pause execution for "15" seconds
     Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @149992    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet2AtFlexTable
@@ -2128,7 +2128,7 @@ Business Need: Flex Table Component Scenarios
     Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
-      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @173831 @jyoti
@@ -2151,7 +2151,7 @@ Business Need: Flex Table Component Scenarios
     Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:
-      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
@@ -2621,7 +2621,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM   |
+      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
     When I pause execution for "10" seconds
     When I perform quick search for "12/31/2021"
     Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
@@ -2646,7 +2646,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021  01:11 PM  |
+      | Application Deadline | Greater than | 11/26/2021  01:11 PM |
     And I pause execution for "5" seconds
     Then I softly see value "12/06/2021 11:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
@@ -2937,7 +2937,7 @@ Business Need: Flex Table Component Scenarios
     Then I see field "Applicant Organization" inside page block
 
     Examples:
-      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @189254 @sprint26
@@ -3202,7 +3202,7 @@ Business Need: Flex Table Component Scenarios
     When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see "ID" shown as flex table column title
-    
+
   @190090 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
@@ -3221,14 +3221,14 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                           | defaultFieldsApi |
       | NameName,Id,ProgramName__c,Account__c, | Name             |
 
-    @206586 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-      Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
-      When I login as "AUTOMATION-ADMIN" user
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
-      Then I see the following message in the page details contains:
-        | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+  @206586 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
+  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+    When I login as "AUTOMATION-ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
 
   @206610 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
@@ -3345,8 +3345,8 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1491                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3362,8 +3362,8 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3379,8 +3379,8 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3390,21 +3390,33 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
-    @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
-      Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      Then I do not see "Upload" button is displayed
+  @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
+  Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Upload" button is displayed
 
-      @217214 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
-        Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
-        When I login as "Automation-PM" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        Then I do not see "Upload" button is displayed
+  @217214 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
+  Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Upload" button is displayed
 
   @217215 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
   Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
@@ -3437,115 +3449,115 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     Then I see no "Total Records" count in "---program:-:programsTableId---"
 
-    @217220 @TotalRecordCount @dnyaneshwari
-      Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-        | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      And I pause execution for "7" seconds
-      When I re-login as "Automation-PM" user on "default" portal
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      Then I see no "Total Records" count in "---program:-:programsTableId---"
+  @217220 @TotalRecordCount @dnyaneshwari
+  Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I pause execution for "7" seconds
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see no "Total Records" count in "---program:-:programsTableId---"
 
-    @217216 @PageSize @dnyaneshwari
-      Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-        | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+  @217216 @PageSize @dnyaneshwari
+  Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
-      @217217 @PageSize @dnyaneshwari
-        Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
-        Given I have "default" configuration as below:
-          | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-          | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
-        Given I setup test configuration as below:
-          | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-          | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
-        When I login as "Automation" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        When I re-login as "Automation-PM" user on "default" portal
-        And I pause execution for "5" seconds
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+  @217217 @PageSize @dnyaneshwari
+  Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login as "Automation-PM" user on "default" portal
+    And I pause execution for "5" seconds
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
-        @217218 @PageSize @dnyaneshwari
-          Scenario:To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
-          Given I have "default" configuration as below:
-            | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-            | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
-          Given I setup test configuration as below:
-            | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-            | Flex Table:General    | Enable Page Size | false          | Programs           |                           |                            |
-          When I login as "Automation" user
-          When I setup my app as "As a Grantor"
-          And I navigate to "Planning" tab
-          And I click toggle button to select "Draft Programs"
-          When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
-          And I navigate to "Applications" tab
-          Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+  @217218 @PageSize @dnyaneshwari
+  Scenario:To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I navigate to "Applications" tab
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
-    @217292 @DisableMenu @dnyaneshwari
-      Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-        | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+  @217292 @DisableMenu @dnyaneshwari
+  Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
-      @217293 @DisableMenu @dnyaneshwari
-        Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
-        Given I have "default" configuration as below:
-          | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-          | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
-        Given I setup test configuration as below:
-          | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-          | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
-        When I login as "Automation" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        And I pause execution for "5" seconds
-        When I re-login as "Automation-PM" user on "default" portal
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+  @217293 @DisableMenu @dnyaneshwari
+  Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I pause execution for "5" seconds
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
   @217294 @DisableMenu @dnyaneshwari
   Scenario:  To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Flex Table             | Disable Menu | false             | ApiGeneratedId:0 |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Disable Menu | true          | Programs            |                           |                            |
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3746,8 +3758,8 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3770,8 +3782,8 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid  | Name                      | FTC-1506                   |
+      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3832,11 +3844,11 @@ Business Need: Flex Table Component Scenarios
   @217295 @217296 @verifyselecting'None'optionforAutoindexbehavior,alsoIndexcolumngetdisplayedforallrows @Vrishali
   Scenario Outline: Admin-To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index    | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index    | true          | Programs           |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -3920,11 +3932,11 @@ Business Need: Flex Table Component Scenarios
   @217297 @verifyselectingNoneoptionforAutoindexbehavior,thenalsoIndexcolumngetdisplayedforallrows @Vrishali
   Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index    | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index    | true          | Applications       |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Applications       |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
