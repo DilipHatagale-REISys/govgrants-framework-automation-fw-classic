@@ -4397,7 +4397,6 @@ Business Need: Library Files Component Scenarios
     When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
-    And I pause execution for "120" seconds
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
 #    When I click on "Upload" button in send email modal
 #    When I pause execution for "7" seconds
