@@ -3670,6 +3670,7 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I click on "View" icon for "RE: test for reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "10" seconds
     Then I see "Body Content" as "Body Content" on send email modal
     Then I see "Sender:" as "Body Content" on send email modal
     Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal

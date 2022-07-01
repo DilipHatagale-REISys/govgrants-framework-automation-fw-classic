@@ -960,8 +960,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smoke
@@ -1008,8 +1008,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44211    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
@@ -1104,8 +1104,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44222    @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
@@ -1779,8 +1779,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I do not see "Program Information" page block displayed
 
   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
@@ -1795,8 +1795,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Program Information" page block displayed
 
   @45875    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_greaterThan_5678
@@ -1811,8 +1811,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Program Information" page block displayed
 
   @45876    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_lessThan_5678
@@ -1827,8 +1827,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Program Information" page block displayed
 
   @45877    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_equalto_true
@@ -2723,8 +2723,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46372    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_notequalto_40000
@@ -2739,8 +2739,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "Website Address" inside page block
 
   @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
@@ -2803,8 +2803,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "Website Address" inside page block
 
   @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
@@ -2851,8 +2851,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smoke
@@ -2899,8 +2899,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46383    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
