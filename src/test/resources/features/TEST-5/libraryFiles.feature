@@ -4398,21 +4398,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
-#    When I click on "Upload" button in send email modal
-#    When I pause execution for "7" seconds
-#    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-#    When I click on "Edit" icon for "MultipleFileUploadCollabDND.png" inside table
-# 136661 verify if sharing option is not displayed to external user
-#    Then I do not see sharing option as "Visible to internal users with Record access" at upload file modal
-#
-#    When I click on "×" icon at "File Edit" modal under Library
-#    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-#    When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
-#    When I click "Yes" on modal confirmation box
-#    When I pause execution for "5" seconds
-#    When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:ApplicationFilesFlexGridId---" panel
-# 136661 verify if record is not displayed to external user
-#    Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
 
   @148728 @validateCancelButtonWorkingAtEditFileModalAtRecordLevel
   Scenario: Verify modal gets closed by lick on cancel button under edit file modal at record level
