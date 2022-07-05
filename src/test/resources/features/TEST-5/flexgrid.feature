@@ -1308,7 +1308,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
+    Then I see "Budget Category" as title for "Indirect Cost Rate" inside flex table action
 
   @51332    @viewActionOpensInNewWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in new window
@@ -1327,7 +1327,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see new tab is opened
 
   @51333    @viewActionOpensInSameWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
@@ -1349,7 +1349,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see no new tab is opened
 
   @51334    @viewActionOpensInOverlayWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
@@ -1369,7 +1369,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see "View" opens in overLay window
 
   @51335    @showConfirmationBoxFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
@@ -1389,7 +1389,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see confirmation box with body "null" is displayed
 
   @51343    @ConfirmationMessageFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
@@ -1411,7 +1411,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see confirmation box with body "Automation" is displayed
 
   @51345    @hideForProfileFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
@@ -1431,7 +1431,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
+    Then I see "View" icon for "Indirect Cost Rate" is not displayed inside flex table
 
   @51358    @hideForUserFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Hide edit row level action for specific user from configuration and validating it at under Application Budget child flex table
@@ -1450,7 +1450,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
+    Then I see "View" icon for "Indirect Cost Rate" is not displayed inside flex table
 
   @51368    @actionURLLongFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario Outline: Changing action url long of action url long field for view action from config and validating it at under Application Budget child flex table
@@ -1471,7 +1471,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "BP-03" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-03"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    When I click on "View" icon for "Indirect Cost Rate" inside table
     Then I see edit opens with "<newActionUrl>"
 
     Examples:

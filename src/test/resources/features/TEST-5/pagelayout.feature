@@ -3380,8 +3380,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3404,8 +3404,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3428,8 +3428,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4192,8 +4192,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -5903,8 +5903,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "StartDate__c" is disabled
@@ -5921,8 +5921,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -5940,8 +5940,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "ProgramName__c" is disabled
@@ -5958,8 +5958,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "FundedAmount__c" is disabled
@@ -5976,8 +5976,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "StartDate__c" is disabled
 
   @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -5992,8 +5992,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -6012,8 +6012,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "ProgramName__c" is disabled
 
   @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6028,8 +6028,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "ProgramType__c" is disabled
 
   @133896    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6044,8 +6044,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "FundedAmount__c" is disabled
 
   @134132    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOPicklistFieldValueOnModal
@@ -6060,8 +6060,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6079,8 +6079,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6098,8 +6098,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6117,8 +6117,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6137,8 +6137,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6158,8 +6158,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "CFDA_Data__c" is disabled
@@ -6176,8 +6176,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "ProgramType__c" is disabled
@@ -6213,8 +6213,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "Account__c" is disabled
@@ -6225,8 +6225,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
@@ -6825,8 +6825,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145526    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserTypeAsInternalInEditMode
@@ -6841,8 +6841,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145528    @verifyHideFieldJsonFieldByHidingDateFieldUsingContextAsEditInEditMode
@@ -6857,8 +6857,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145533    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserAppAsAGrantorInEditMode
@@ -6873,8 +6873,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145661    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_AdminInEditMode
@@ -6953,8 +6953,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 
@@ -6970,8 +6970,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 
@@ -6987,8 +6987,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 
@@ -7004,8 +7004,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 
@@ -7037,8 +7037,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145839    @verifyHideExpressioJsonByHidingFieldsUsingUserOperatoreInEditMode
@@ -7053,8 +7053,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145844    @verifyHideExpressioJsonByHidingTabUsingUserOperatoreInEditMode
@@ -7069,8 +7069,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
@@ -7085,8 +7085,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 
@@ -7102,8 +7102,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Program Information" page block displayed
 

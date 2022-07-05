@@ -282,7 +282,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "{SavedValue:savedValue}" into field "Program__c"
+    When I enter value "{SavedValue:PEGMSID}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
     When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
@@ -843,7 +843,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "10" seconds
-    Then I see "AN-343-032" record is displayed in "teal green" color inside calendar
+    Then I see "AN-343-035" record is displayed in "teal green" color inside calendar
     Examples:
       | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
       | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |

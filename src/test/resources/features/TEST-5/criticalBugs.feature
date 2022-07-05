@@ -5582,6 +5582,7 @@ Business Need: Logged Issues Scenarios
     Then I softly see checkbox/radio button at "actionsAtEgrid.png" is disabled
     When I click on top right button "Attach" in flex table with id "WorkspaceFiles"
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
+    And I pause execution for "10" seconds
  #129996 only single file is uploaded from home phase - my feed section
     Then I softly see "actionsAtEgrid.png" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Planning" tab
