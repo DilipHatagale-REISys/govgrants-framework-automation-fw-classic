@@ -194,9 +194,9 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     And I pause execution for "10" seconds
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | Announcement Title                       | Announcement Type         |
-      | Sole Source/Formula grants verification  | Sole Source/Formula       |
-      |Sole Source/Formula announcement..        |Sole Source/Formula        |
+      | Announcement Title                      | Announcement Type   |
+      | Sole Source/Formula grants verification | Sole Source/Formula |
+      | Sole Source/Formula announcement..      | Sole Source/Formula |
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
@@ -557,7 +557,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on page
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
       | Total Awarded Amount | Account Name       |
-      | $350,000           | UnitedHealth Group |
+      | $350,000             | UnitedHealth Group |
 
   @71024    @validateActiveFieldAtCharts-gAnnouncement-Announcementtest-1
   Scenario: Validating Announcementtest_1 is getting displayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
@@ -2564,7 +2564,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedBarChartId---" on modal
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedBarModalID---" :
       | AwardCeiling |
-      | $300,000      |
+      | $300,000     |
 
   @71501    @validateDataTableHeaders-gHome-EnhancedLineChart
   Scenario:  Change chart data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
