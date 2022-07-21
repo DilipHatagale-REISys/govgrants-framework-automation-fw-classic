@@ -24,7 +24,9 @@ public class UsersAndURL implements UsersController {
         /* TO DO */
         else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
             userName = getTest8EnvironmentUser(userLevel);
-        } else {
+        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
+            userName = getTest5EnvironmentUser(userLevel);
+        }else {
             userName = getQAEnvironmentUser(userLevel);
         }
 
@@ -38,7 +40,9 @@ public class UsersAndURL implements UsersController {
             password = getQAEnvironmentPassword(userType);
         } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
             password = getTest8EnvironmentPassword(userType);
-        } else {
+        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
+            password = getTest5EnvironmentPassword(userType);
+        }else {
             password = getQAEnvironmentPassword(userType);
         }
 
@@ -156,6 +160,37 @@ public class UsersAndURL implements UsersController {
         password.put("FO", "test@123456");
         password.put("SPI", "test@12345678");
         password.put("PM1", "test@1234598678");
+        if (userType.toUpperCase() != null) {
+            return password.get(userType.toUpperCase());
+        } else {
+            return password.get("ADMIN");
+        }
+    }
+
+    private String getTest5EnvironmentUser(String userLevel) {
+        Map<String, String> username = new HashMap<>();
+        username.put("ADMIN", "automationadmin@ggp.test8.atm.fwautomat");
+        username.put("EXE", "automationexe@ggp.test8.fwautomat");
+        username.put("PM", "automationpm@ggp.test8.atm.fwautomat");
+        username.put("FO", "automationfo@ggp.test8.atm.fwautomat");
+        username.put("SPI", "automationspi@yopmail.com.fwautomat");
+        username.put("PM1", "frameworkpm1@ggp.test8.atm.fwautomat");
+
+        if (userLevel.toUpperCase() != null) {
+            return username.get(userLevel.toUpperCase());
+        } else {
+            return username.get("ADMIN");
+        }
+    }
+
+    private String getTest5EnvironmentPassword(String userType) {
+        Map<String, String> password = new HashMap<>();
+        password.put("ADMIN", "fwautoadmin@22");
+        password.put("EXE", "fwautoexe@22");
+        password.put("PM", "fwautopm@22");
+        password.put("FO", "fwautofo@22");
+        password.put("SPI", "fwautospi@22");
+        password.put("PM1", "fwautopm1@22");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {
