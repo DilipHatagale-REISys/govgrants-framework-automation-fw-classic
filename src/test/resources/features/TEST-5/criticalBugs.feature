@@ -546,8 +546,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "PG-601-0066"
+    When I click on "View Program Details" icon for "PG-601-0066" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Budget Category" flex table
 
@@ -2421,8 +2421,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreated}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreated}" inside table
     Then I softly can see bottom button "Edit" in page detail
     Then I softly can see bottom button "Submit For Approval" in page detail
 
@@ -2704,10 +2704,10 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "PG-343-2017"
+    When I click on "Edit" icon for "PG-343-2017" inside table
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "PG-343-0058" in the page details
+    Then I see the sub-header is "PG-343-2017" in the page details
 
   @93594  @verifyIfTopLevelActionOpensInNewWindowAtEnhancedGrid-gPlanning @enhancedGrid
   Scenario: validate if top level action is opened in new tab at EnhancedGrid - gPlanning

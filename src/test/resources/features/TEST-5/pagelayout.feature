@@ -190,8 +190,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Cancel" button is displayed at edit detail page
 
@@ -207,8 +207,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
@@ -1132,8 +1132,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
@@ -4198,6 +4198,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
     And I click modal button "Ok"
+    And I pause execution for "5" seconds
     When I add notes records
     When I close modal by clicking the top right x button
     Then I see table with header "Notes" contains records "Notes Record"
