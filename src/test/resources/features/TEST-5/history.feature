@@ -532,8 +532,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I perform quick search for "PG-343-6134"
+    When I click on "View Program Details" icon for "PG-343-6134" inside table
     When I navigate to "History" sub tab
     Then I see "$400,000" shown inside "New Value" column in history table
 
