@@ -244,8 +244,8 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Prog"
-    Then I see value "false" for title "CFDA Data" against the value "Test Prog" inside table "flexTableDivId"
+    When I perform quick search for "Test Program"
+    Then I see value "false" for title "CFDA Data" against the value "Test Program" inside table "flexTableDivId"
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                 |

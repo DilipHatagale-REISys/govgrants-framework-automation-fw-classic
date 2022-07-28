@@ -680,11 +680,8 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
     Then I softly see library/folder/file "TestAutomationFile.zip" is displayed under files library
-#    When I click on dropdown at library/folder/file "TestAutomationFile.zip"
-#    When I click on "Delete File" option at library/folder/file "TestAutomationFile.zip"
-#    When I pause execution for "7" seconds
-#    Then I softly do not see library/folder/file "TestAutomationFile.zip" is displayed under files library
 
   @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase @reportedBug
   Scenario: Verify that user can upload file of type .txt under library and folder - Home Phase
@@ -703,13 +700,10 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
     When I perform quick search for "TestFileSharing.docx" under files
     And I pause execution for "10" seconds
     Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
-#    When I click on dropdown at library/folder/file "TestAutomation.txt"
-#    When I click on "Delete File" option at library/folder/file "TestAutomation.txt"
-#    When I pause execution for "7" seconds
-#    Then I softly do not see library/folder/file "TestAutomation.txt" is displayed under files library
 
   @70537 @validateThatUserCanUploadFileOfTypePDFInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pdf under library and folder - Home Phase
@@ -5374,6 +5368,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
     When I perform quick search for "duplicateFileInFolder.png" under files
     Then I softly see library/folder/file "duplicateFileInFolder.png" is displayed under files library
 #    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"

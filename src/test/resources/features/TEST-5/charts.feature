@@ -194,9 +194,9 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     And I pause execution for "10" seconds
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | Announcement Title                      | Announcement Type   |
-      | Sole Source/Formula grants verification | Sole Source/Formula |
-      | Sole Source/Formula announcement..      | Sole Source/Formula |
+      | Announcement Title | Announcement Title                      | Announcement Type   | Status   | Announcement Type |
+      | AN-755-218         | Sole Source/Formula grants verification | Sole Source/Formula | Archived | View              |
+      | AN-755-193         | Sole Source/Formula announcement..      | Sole Source/Formula | Archived | View              |
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
@@ -601,7 +601,6 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Test" with title "Enhanced View"
-    When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "Announcemnenttest_1"
 
   @71029    @validateTitleFieldAtCharts-gAnnouncement-Testing_column
@@ -1516,6 +1515,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
     When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
+    And I pause execution for "5" seconds
     When I switch to tab number "1"
     Then I see the sub-header is "APP1- FOA for DHP" in the page details
     Then I see the header is "Application" in the page details
@@ -2780,6 +2780,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "5" seconds
     Then I see charts with id "---program:-:EnhancedPiechartID---" displayed
 
   @208587 @VerifyThatAllDataGettingDisplayedAfterClickingShowAllButton @Sprint8
