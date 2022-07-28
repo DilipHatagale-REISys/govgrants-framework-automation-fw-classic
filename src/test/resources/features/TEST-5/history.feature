@@ -533,7 +533,13 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "0" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I enter value "400000" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I see "$400,000" shown inside "New Value" column in history table
 
