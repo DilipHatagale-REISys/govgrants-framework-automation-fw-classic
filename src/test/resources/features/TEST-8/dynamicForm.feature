@@ -554,11 +554,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
     Then I see "Demo Section help text" shown as help text
 
-<<<<<<< HEAD
-  @avi @89936   @ValidateValidationMessageAtDynamicFormInViewMode
-=======
   @Radio @89936   @ValidateValidationMessageAtDynamicFormInViewMode
->>>>>>> 9f68d138b2dfcc65ad3028a11fe3fec9e9b74bbf
   Scenario: validate that validation message should display by click on validate button on dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1044,11 +1040,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Percent" field in form detail
 
-<<<<<<< HEAD
   @Radio @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
-=======
-  @vrush @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
->>>>>>> 9f68d138b2dfcc65ad3028a11fe3fec9e9b74bbf
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1102,11 +1094,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Written"
     Then I see "Test Automation Written Help" shown as help text
 
-<<<<<<< HEAD
   @Radio @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
-=======
-  @vrush @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
->>>>>>> 9f68d138b2dfcc65ad3028a11fe3fec9e9b74bbf
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2417,17 +2405,10 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-<<<<<<< HEAD
       | configurationCategory | fieldName               | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Picklist                                              | CI-0027            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DynamicFormNewUpdatedJsonForPicklist | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                              | CI-0022            |                           |                            |
-=======
-      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
-      | Capture Item:General  | Dependent Question Json | govgrants_config:DynamicFormNewUpdatedJsonForPicklist                      | CI-0022            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
->>>>>>> 9f68d138b2dfcc65ad3028a11fe3fec9e9b74bbf
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
