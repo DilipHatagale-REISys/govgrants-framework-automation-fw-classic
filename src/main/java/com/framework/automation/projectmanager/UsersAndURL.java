@@ -17,15 +17,16 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getUserName(String userLevel) {
         String userName = null;
-        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            userName = getQAEnvironmentUser(userLevel);
-        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
-        }
+        //if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+         //   userName = getQAEnvironmentUser(userLevel);
+       // } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
+        //}
         /* TO DO */
-        else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
-            userName = getTest8EnvironmentUser(userLevel);
-        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
-            userName = getTest5EnvironmentUser(userLevel);
+        //else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
+           // userName = getTest8EnvironmentUser(userLevel);
+       //} else
+            if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+            userName = getQAEnvironmentUser(userLevel);
         }else {
             userName = getQAEnvironmentUser(userLevel);
         }
@@ -36,12 +37,13 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getPassword(String userType) {
         String password = null;
-        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+        //if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+         //   password = getQAEnvironmentPassword(userType);
+        //} else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
+         //   password = getTest8EnvironmentPassword(userType);
+       // } else
+            if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             password = getQAEnvironmentPassword(userType);
-        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
-            password = getTest8EnvironmentPassword(userType);
-        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
-            password = getTest5EnvironmentPassword(userType);
         }else {
             password = getQAEnvironmentPassword(userType);
         }
@@ -55,7 +57,7 @@ public class UsersAndURL implements UsersController {
      * @param userType
      * @return the password for the passed in user type.
      */
-    private String getQAEnvironmentPassword(String userType) {
+  /*  private String getQAEnvironmentPassword(String userType) {
         String password;
         switch (userType.toUpperCase()) {
             case "AUTOMATION":
@@ -90,7 +92,7 @@ public class UsersAndURL implements UsersController {
         }
 
         return password;
-    }
+    }*/
 
     /**
      * Switches based on the user type passed in and returns the username for the
@@ -99,7 +101,7 @@ public class UsersAndURL implements UsersController {
      * @param userLevel
      * @return
      */
-    private String getQAEnvironmentUser(String userLevel) {
+    /*private String getQAEnvironmentUser(String userLevel) {
         String username;
 
         switch (userLevel.toUpperCase()) {
@@ -165,9 +167,9 @@ public class UsersAndURL implements UsersController {
         } else {
             return password.get("ADMIN");
         }
-    }
+    }*/
 
-    private String getTest5EnvironmentUser(String userLevel) {
+    private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();
         username.put("ADMIN", "automationadmin@ggp.test8.atm.fwautomat");
         username.put("EXE", "automationexe@ggp.test8.fwautomat");
@@ -183,7 +185,7 @@ public class UsersAndURL implements UsersController {
         }
     }
 
-    private String getTest5EnvironmentPassword(String userType) {
+    private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "fwautoadmin@22");
         password.put("EXE", "fwautoexe@22");
