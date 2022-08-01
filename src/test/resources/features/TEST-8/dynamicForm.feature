@@ -3,7 +3,7 @@ Business Need: dynamic forms Component Scenarios
   Test all dynamic forms component based scenarios
   As a configuration manager i make different configurational changes in dynamic forms component and will validate them.
 
- @test @89693    @validateByEnteringValueInTextFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89693    @validateByEnteringValueInTextFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into text field and click on save , a value is getting saved into written field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -15,11 +15,11 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
     When I enter values into "Section 5" page block
-      | Field   | Value           |
-      | Written | Test Automation |
+      | Field   | Value                       |
+      | Written | Test Automation Description |
     When I click on "Save" in the page details
     And I pause execution for "5" seconds
-    Then I see for "Written ? " field value is "Test Automation" inside dynamic form
+    Then I see for "Written" field value is "Test Automation" inside dynamic form
 
   @test @89696    @validateByEnteringValueInCurrencyFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into currency field and click on save , a value is getting saved into currency field at dynamic form
@@ -305,7 +305,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
-    Then I see "Dynamic Form" value in flex table id "---program:-:flexGridDynamicFormTableID---"
+    Then I see "Dynamic Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
 
   @abc @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
   Scenario: validate the page instructions text apears as configured in view mode on dynamic form layout
@@ -564,7 +564,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    When I click on "New Validate" button in right header
+    When I click on "Validate" button in right header
     Then I see the following message in the page details :
       | Written Section 2 in Section Section 2 question not answered |
       | Radio in Section Section 1 question not answered             |
@@ -890,7 +890,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I can see bottom button "New Validate" in page detail
+    Then I can see bottom button "Validate" in page detail
 
   @test @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
@@ -973,7 +973,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
-    Then I see "Test Automation Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"
+    Then I see "Test Automation Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
 
   @test @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
   Scenario: validate alert message if invalid data inserted in any field at dynamic form
@@ -1055,9 +1055,9 @@ Business Need: dynamic forms Component Scenarios
       | Score (Max Score : 50.00) | 60    |
     When I click on "Save" in the page details
     And I pause execution for "5" seconds
-    Then I see the following message in the page details :
-      | Score value should not be greater than max score |
-   #Then I see message "Score value should not be greater than max score" below "Score (Max Score : 50.00)" field in form detail
+    #Then I see the following message in the page details :
+     # | Score value should not be greater than max score |
+   Then I see message "Score value should not be greater than max score" below "Score (Max Score : 50.00)" field in form detail
 
   @test @92006    @validateAlertMessageAtMaxScoreFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in max score field at dynamic form
@@ -4031,7 +4031,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Cancel" button in right header
     When I pause execution for "5" seconds
     Then I softly can see top right button "Edit" in page detail
-    Then I softly can see top right button "New Validate" in page detail
+    Then I softly can see top right button "Validate" in page detail
 
   @test @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
@@ -4998,7 +4998,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
     When I click on "New Validate" in the page details
-    When I click on "Edit" in the page details
+    #When I click on "Edit" in the page details
     Then I do not see "Form Validated Successfully." error
 
   @test @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
