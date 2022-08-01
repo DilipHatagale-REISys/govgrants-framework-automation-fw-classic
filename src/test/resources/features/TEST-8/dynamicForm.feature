@@ -3,7 +3,7 @@ Business Need: dynamic forms Component Scenarios
   Test all dynamic forms component based scenarios
   As a configuration manager i make different configurational changes in dynamic forms component and will validate them.
 
-  @89693    @validateByEnteringValueInTextFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+ @test @89693    @validateByEnteringValueInTextFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into text field and click on save , a value is getting saved into written field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -21,7 +21,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "5" seconds
     Then I see for "Written ? " field value is "Test Automation" inside dynamic form
 
-  @89696    @validateByEnteringValueInCurrencyFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89696    @validateByEnteringValueInCurrencyFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into currency field and click on save , a value is getting saved into currency field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -38,7 +38,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Currency" field value is "$12.00" inside dynamic form
 
-  @89697    @validateByEnteringValueInNumberFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89697    @validateByEnteringValueInNumberFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into number field and click on save , a value is getting saved into number field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -55,7 +55,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
-  @89698    @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89698    @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -72,7 +72,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Percent" field value is "12.00%" inside dynamic form
 
-  @88124    @validateTitleOfFormAtDynamicFormLayout
+  @test @88124    @validateTitleOfFormAtDynamicFormLayout
   Scenario: validate the title of form at dynamic form view page
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -84,7 +84,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Dynamic Form" shown as over view header
 
-  @88126    @validateAFormIsDisplayedInViewModeByClickOnViewActionAtDynamicForm
+  @test @88126    @validateAFormIsDisplayedInViewModeByClickOnViewActionAtDynamicForm
   Scenario: validate that a form is displayed in view mode and edit button is displayed by clicking on view action
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -96,7 +96,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Edit" button is displayed
 
-  @88130    @validateAFormIsDisplayedInEditModeByClickOnEditActionAtDynamicForm
+  @test @88130    @validateAFormIsDisplayedInEditModeByClickOnEditActionAtDynamicForm
   Scenario: validate that a form is displayed in edit mode and edit button is not displayed by clicking on edit action
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -108,7 +108,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Edit" button is not displayed
 
-  @88276  @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88276  @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a written field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -120,7 +120,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Written" inside "Section 1" at dynamic form
 
-  @88277    @validateDateFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88277    @validateDateFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a date field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -132,7 +132,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Date" inside "Section 1" at dynamic form
 
-  @88278    @validateCurrencyFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88278    @validateCurrencyFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a currency field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -144,7 +144,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
 
-  @88281    @validatePercentFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88281    @validatePercentFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a percent field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -156,7 +156,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Percent" inside "Section 1" at dynamic form
 
-  @88282    @validateNumberFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88282    @validateNumberFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a number field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -168,7 +168,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Number" inside "Section 1" at dynamic form
 
-  @88283    @validatePicklistFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88283    @validatePicklistFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a picklist field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -180,7 +180,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Picklist" inside "Section 1" at dynamic form
 
-  @Radio @88284    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88284    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a radio field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -192,7 +192,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
 
-  @Radio @88285    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @test @88285    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a radio field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -204,7 +204,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
 
-  @Radio @88286    @validateRichTextAreaFieldIsDisplayedInsideFormAtDynamicFormLayout
+  @test @88286    @validateRichTextAreaFieldIsDisplayedInsideFormAtDynamicFormLayout
   Scenario: validate that a rich text area field is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -216,7 +216,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Rich Text Area" inside "Section 1" at dynamic form
 
-  @89702    @validateByEnteringValueInCheckboxFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89702    @validateByEnteringValueInCheckboxFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into checkbox field and click on save , a value is getting saved into checkbox field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -233,7 +233,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Checkbox" field value is "Checked" inside dynamic form
 
-  @Radio @89704    @validateByEnteringValueInRadioFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89704    @validateByEnteringValueInRadioFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into radio field and click on save , a value is getting saved into radio field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -249,7 +249,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Radio" field value is "Yes" inside dynamic form
 
-  @ovi @89700    @validateByEnteringValueInPicklistFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89700    @validateByEnteringValueInPicklistFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into picklist field and click on save , a value is getting saved into picklist field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -263,7 +263,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Picklist" field value is "Yes" inside dynamic form
 
-  @Radio @89705    @validateByEnteringValueInRichTextAreaFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89705    @validateByEnteringValueInRichTextAreaFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into rich text area field and click on save , a value is getting saved into rich text area field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -284,7 +284,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Rich Text Area" field value is "Test Automation Rich Text" inside dynamic form
 
-  @88147    @validateThatASingleSectionIsDisplayedAtDynamicFormLayout
+  @test @88147    @validateThatASingleSectionIsDisplayedAtDynamicFormLayout
   Scenario: validate that a single section is displayed inside dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -296,7 +296,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "Section 1" inside dynamic form layout
 
-  @88104    @validateThatDynamicFormIsDisplayedInsideDynamicFormTableATAnnouncement
+  @test @88104    @validateThatDynamicFormIsDisplayedInsideDynamicFormTableATAnnouncement
   Scenario: validate that a linked dynamic form is displayed inside dynamic form enhanced table at announcement detail
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -554,7 +554,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
     Then I see "Demo Section help text" shown as help text
 
-  @Radio @89936   @ValidateValidationMessageAtDynamicFormInViewMode
+  @test @89936   @ValidateValidationMessageAtDynamicFormInViewMode
   Scenario: validate that validation message should display by click on validate button on dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -612,7 +612,7 @@ Business Need: dynamic forms Component Scenarios
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. |
 
-  @89694    @validateByEnteringValueInDateFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @test @89694    @validateByEnteringValueInDateFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into date field and click on save , a value is getting saved into date field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -829,7 +829,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section column is "horizontally" aligned
 
-  @ovi @91526    @validateCancelButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
+  @test @91526    @validateCancelButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
   Scenario: validate that cancel button is displayed at top right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -841,7 +841,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Cancel" button is displayed
 
-  @ovi @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
+  @test @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
   Scenario: validate that save button is displayed at top right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -854,7 +854,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" button in right header
     Then I see "Save" button is displayed
 
-  @ovi @91527    @validateCancelButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  @test @91527    @validateCancelButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that cancel button is displayed at bottom right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -867,7 +867,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" button in right header
     Then I can see bottom button "Cancel" in page detail
 
-  @ovi @91529    @validateSaveButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  @test @91529    @validateSaveButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that save button is displayed at bottom right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -880,7 +880,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" button in right header
     Then I can see bottom button "Save" in page detail
 
-  @ovi @91364    @validateValidateButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  @test @91364    @validateValidateButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that validate button is displayed at bottom right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -892,7 +892,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "New Validate" in page detail
 
-  @ovi @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  @test @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -975,7 +975,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Test Automation Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"
 
-  @vrush @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
+  @test @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
   Scenario: validate alert message if invalid data inserted in any field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -992,7 +992,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details contains:
       | Please correct below errors. |
 
-  @vrush @91998    @validateAlertMessageAtCurrencyFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  @test @91998    @validateAlertMessageAtCurrencyFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in currency field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1008,7 +1008,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Currency" field in form detail
 
-  @vrush @92004    @validateAlertMessageAtNumberFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  @test @92004    @validateAlertMessageAtNumberFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in number field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1024,7 +1024,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Number" field in form detail
 
-  @vrush @92003    @validateAlertMessageAtPercentFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  @test @92003    @validateAlertMessageAtPercentFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1040,7 +1040,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Percent" field in form detail
 
-  @Radio @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
+  @test @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1059,7 +1059,7 @@ Business Need: dynamic forms Component Scenarios
       | Score value should not be greater than max score |
    #Then I see message "Score value should not be greater than max score" below "Score (Max Score : 50.00)" field in form detail
 
-  @vrush @92006    @validateAlertMessageAtMaxScoreFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  @test @92006    @validateAlertMessageAtMaxScoreFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in max score field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1094,7 +1094,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Written"
     Then I see "Test Automation Written Help" shown as help text
 
-  @Radio @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
+  @test @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1527,7 +1527,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "New Validate" button is not displayed
 
-  @vrush @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
+  @test @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
   Scenario: validate that a single section is displayed inside dynamic form layout in view mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1542,7 +1542,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see section as "Section 3" inside dynamic form layout
     Then I softly see section as "Section 4" inside dynamic form layout
 
-  @vrush @93861    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInEditMode
+  @test @93861    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInEditMode
   Scenario: validate that a single section is displayed inside dynamic form layout in edit mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1738,7 +1738,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is disabled
 
-  @vrush @93779   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInEditMode
+  @test @93779   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInEditMode
   Scenario: validate sections are expanded by default inside dynamic form in edit mode
     When I login as "ADMIN" user
     And I pause execution for "2" seconds
@@ -1752,7 +1752,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly do not see "Section: Section 1" block is collapsed
     Then I softly do not see "Section: Section 4" block is collapsed
 
-  @vrush @93780   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInViewMode
+  @test @93780   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInViewMode
   Scenario: validate sections are expanded by default inside dynamic form in view mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3022,7 +3022,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Percent" inside "Section 1" at dynamic form
     Then I softly see "Written" inside "Section 1" at dynamic form
 
-  @Radio  @95144  @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInViewLayout
+  @95144  @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInViewLayout
   Scenario: validate if response is removed from written field then a field with blank value is displayed in form view layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3043,7 +3043,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see "Written Section 2" field displayed with blank value at dynamic form
 
-  @Radio @95145   @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInEditLayout
+  @95145   @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInEditLayout
   Scenario: validate if response is removed from written field then a field with blank value is displayed in form edit layout
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3100,7 +3100,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Written" field inside "Section 1" is disabled
     Then I softly see "Date" field inside "Section 1" is disabled
 
-  @vrush @93705    @validateSortOrderFieldAtDynamicFormLayoutInViewMode
+  @93705    @validateSortOrderFieldAtDynamicFormLayoutInViewMode
   Scenario: validate that
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3112,7 +3112,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Written" field is shown at position "0" in "Section 1"
 
-  @vrush @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
+  @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
   Scenario: validate sort order field at capture items in dynamic form layout in edit mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4017,7 +4017,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "New Validate" button is displayed
 
-  @vrush @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
+  @test @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on cancel button a form is displayed in view mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4033,7 +4033,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly can see top right button "Edit" in page detail
     Then I softly can see top right button "New Validate" in page detail
 
-  @Radio @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
+  @test @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4510,7 +4510,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
 
-  @Radio @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
+  @test @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4522,7 +4522,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
 
-  @Radio @115551    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsPMUser
+  @test @115551    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsPMUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as PM user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4554,7 +4554,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
 
-  @Radio  @149135    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedFieldDataAtDynamicFormLayout
+  @test @149135    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedFieldDataAtDynamicFormLayout
   Scenario: validate the alert message is displayed for unsaved field data, by click on browser refresh button at dynamic form
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4643,7 +4643,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see section column is "horizontally" aligned
 
-  @vrush @191190 @userstory_192715
+  @test @191190 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4656,7 +4656,7 @@ Business Need: dynamic forms Component Scenarios
     And I refresh the page
     Then I see "Announcements" tab is highlighted for particular program
 
-  @Radio @193600 @userstory_192715
+  @test @193600 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4669,7 +4669,7 @@ Business Need: dynamic forms Component Scenarios
     And I refresh the page
     Then I see "Announcements" tab is highlighted for particular program
 
-  @Radio @191196 @userstory_192715
+  @test @191196 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4682,7 +4682,7 @@ Business Need: dynamic forms Component Scenarios
     And I refresh the page
     Then I see "Announcements" tab is highlighted for particular program
 
-  @vrush @193601  @userstory_192715
+  @test @193601  @userstory_192715
   Scenario: To verify, If the user views a Form in an Announcement  record(Edit layout), the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4694,7 +4694,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "preview" icon for "Organization Desk Review" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @Radio @191195  @userstory_192715
+  @test @191195  @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4706,7 +4706,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Organization Desk Review" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @Radio @191398 @userstory_192715
+  @test @191398 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4718,7 +4718,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @Radio @191406 @userstory_192715
+  @test @191406 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4731,7 +4731,7 @@ Business Need: dynamic forms Component Scenarios
     And I refresh the page
     Then I see "Announcements" tab is highlighted for particular program
 
-  @vrush @191199  @userstory_192715
+  @test @191199  @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4743,7 +4743,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @vrush @191200 @userstory_192715
+  @test @191200 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4755,7 +4755,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @vrush @201238 @Bug_194547
+  @test @201238 @Bug_194547
   Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4769,7 +4769,7 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Validated successfully |
 
-  @vrush @201239  @Bug_194547
+  @test @201239  @Bug_194547
   Scenario:  To verify "Validated successfully" message not displayed on Form edit mode for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4782,7 +4782,7 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Validated successfully |
 
-  @vrush @191189 @userstory_192715
+  @test @191189 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record, the same correct phase should be highlighted
     When I login as "Admin" user
     And I pause execution for "60" seconds
@@ -4795,7 +4795,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "preview" icon for "Grantor Application Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
 
-  @vrush @201250 @sprint3
+  @test @201250 @sprint3
   Scenario: Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button.
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4819,7 +4819,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
 
-  @Radio @201240 @sprint5  @Form-ToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforadminuser @jyoti
+  @test @201240 @sprint5  @Form-ToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforadminuser @jyoti
   Scenario:  Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4835,7 +4835,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @Radio @201236 @sprint5  @Form-ToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforadminuser @jyoti
+  @test @201236 @sprint5  @Form-ToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforadminuser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4850,7 +4850,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
-  @Radio @201241 @sprint5 @FormToverify"FormSavedsuccessfully"messagedisplayedonFormEditforadminuser @jyoti
+  @test @201241 @sprint5 @FormToverify"FormSavedsuccessfully"messagedisplayedonFormEditforadminuser @jyoti
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form Edit for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4865,7 +4865,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @Radio @201242 @sprint5  @FormToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforInternaluser @jyoti
+  @test @201242 @sprint5  @FormToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforInternaluser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for Internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4880,7 +4880,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
-  @Radio @201247 @sprint5  @FormToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforinternaluser @jyoti
+  @test @201247 @sprint5  @FormToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforinternaluser @jyoti
   Scenario: Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4895,7 +4895,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @Radio @201245 @sprint5 @Form-Toverify"Validatedsuccessfully"messagenotdisplayedonFormeditmodeforinternaluser @jyoti
+  @test @201245 @sprint5 @Form-Toverify"Validatedsuccessfully"messagenotdisplayedonFormeditmodeforinternaluser @jyoti
   Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4909,7 +4909,7 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Form Validated Successfully. |
 
-  @Radio @201251 @sprint3
+  @test @201251 @sprint3
   Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4933,7 +4933,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Percent" inside "Section 1" at dynamic form
 
-  @Radio @201252 @sprint3
+  @test @201252 @sprint3
   Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4956,7 +4956,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Number" inside "Section 1" at dynamic form
 
-  @Radio @201237 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  @test @201237 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:  Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4971,7 +4971,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
-  @Radio @201243 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  @test @201243 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for Internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -4986,7 +4986,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Back" in the page details
     Then I do not see "Form Validated Successfully." error
 
-  @Radio @201244 @sprint5 @ToVerifyformlayout @dnyaneshwari
+  @test @201244 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:   Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -5001,7 +5001,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" in the page details
     Then I do not see "Form Validated Successfully." error
 
-  @Radio @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
+  @test @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form edit for internal  user
     When I login as "PM" user
     When I setup my app as "As a Grantor"

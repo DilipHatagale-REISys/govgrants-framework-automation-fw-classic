@@ -3,12 +3,12 @@ Business Need: guest user registration flow based Scenarios
   Test all guest user registration flow based scenarios
   As a configuration manager i make different configurational changes in guest user registration and will validate them.
 
-  @138504    @validateGuestUserIsAbleToOpenExternalUserPortal
+  @test @138504    @validateGuestUserIsAbleToOpenExternalUserPortal
   Scenario: validate guest user is able to open external user portal
     Given I am on "SUBPORTAL" portal
     Then I see external user registration page displayed
 
-  @138527    @validateGuestUserIsAbleToOpenRegistrationPageUnderOrganizationSection
+ @test @138527    @validateGuestUserIsAbleToOpenRegistrationPageUnderOrganizationSection
   Scenario: validate guest user is able to open registration page under Organization Section
     Given I am on "SUBPORTAL" portal
     And I click modal button "Register"
@@ -27,7 +27,7 @@ Business Need: guest user registration flow based Scenarios
       | Registration |
       | Step 1 of 3  |
 
-  @138970    @validateGuestUserIsAbleToOpenCreateExternalRegistrationPageUnderOrganizationSection
+  @test @138970    @validateGuestUserIsAbleToOpenCreateExternalRegistrationPageUnderOrganizationSection
   Scenario: validate guest user is able to open Create External Registration page under organization section
     Given I am on "SUBPORTAL" portal
     And I click modal button "Register"
@@ -82,7 +82,7 @@ Business Need: guest user registration flow based Scenarios
     When I click on "Save" in the page details
     Then I see the ReCaptcha input box
 
-  @139176    @validateGuestUserIsAbleToOpenRegistrationPageUnderIndividualSection
+  @test @139176    @validateGuestUserIsAbleToOpenRegistrationPageUnderIndividualSection
   Scenario: validate guest user is able to open registration page under individual Section
     Given I begin "Individual" registration
  # @139176 validate that the legal disclaimer first page is displayed to guest user- individual section
@@ -98,7 +98,7 @@ Business Need: guest user registration flow based Scenarios
       | Registration |
       | Step 1 of 2  |
 
-  @139178    @validateGuestUserIsAbleToOpenCreateExternalRegistrationPageUnderIndividualSection
+  @test @139178    @validateGuestUserIsAbleToOpenCreateExternalRegistrationPageUnderIndividualSection
   Scenario: validate guest user is able to open Create External Registration page under individual section
     Given I begin "Individual" registration
     When I click on "Agree" in the page details
