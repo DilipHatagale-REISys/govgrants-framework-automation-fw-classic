@@ -8,7 +8,7 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
@@ -16,13 +16,13 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104678    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserFromHomePhase
   Scenario: validate the pop-up appears by perfomring delete action at my feed section by SPI user from home phase
@@ -35,7 +35,7 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104681    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtCollabPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by SPI user at collab phase
@@ -67,7 +67,7 @@ Business Need: collab Component Scenarios
 
   @104680    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by Admin user at collab tab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -93,13 +93,13 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
     Then I softly see "Test Automation PM Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104687    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at collab tab
@@ -150,7 +150,7 @@ Business Need: collab Component Scenarios
 
   @104343    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsAdminUserAtApplicationPhase
   Scenario: validate text wrap and alignment at my feed section by admin user at application phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -161,7 +161,7 @@ Business Need: collab Component Scenarios
 
   @104675    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by admin user at application phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -193,7 +193,7 @@ Business Need: collab Component Scenarios
 
   @111868    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as ADMIN user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
@@ -217,7 +217,7 @@ Business Need: collab Component Scenarios
 
   @112487    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
   Scenario: validate the delete action at post present under home phase -  my feed section by admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Admin Post Delete Action Access" in my feed section and share the post
@@ -231,7 +231,7 @@ Business Need: collab Component Scenarios
 
   @112484    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
   Scenario: validate the delete action at post present under collab phase-my feed section by admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
@@ -242,7 +242,7 @@ Business Need: collab Component Scenarios
 
   @112490    @verifyThatAdminUserCanPostFromCollabPhase
   Scenario: validate that a post can be shared from collab phase-my feed section by admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -254,12 +254,12 @@ Business Need: collab Component Scenarios
 
   @112485    @verifyThatByClickOnDeleteActionAtPostUnderRecordLevelCollabPhaseThenRespectivePostIsGettingDeletedByAdminUser
   Scenario: validate that delete action at post present at record detail collab phase by admin user from application phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation record admin to check post delete access" comment inside my feed
@@ -268,11 +268,11 @@ Business Need: collab Component Scenarios
 
   @112491    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from record level collab tab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
@@ -283,7 +283,7 @@ Business Need: collab Component Scenarios
 
   @112492    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from home phase-my feed section
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -358,19 +358,19 @@ Business Need: collab Component Scenarios
 
   @115006    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtRecordLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
 
   @115004    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -412,7 +412,7 @@ Business Need: collab Component Scenarios
 
   @115482    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToAdminUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "You and Automation PM like this." in my feed section and share the post
@@ -436,7 +436,7 @@ Business Need: collab Component Scenarios
 
   @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
   Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
@@ -450,7 +450,7 @@ Business Need: collab Component Scenarios
 
   @115988    @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtComment
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -461,7 +461,7 @@ Business Need: collab Component Scenarios
 
   @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
@@ -470,12 +470,12 @@ Business Need: collab Component Scenarios
 
   @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at record level collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post at record level" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
@@ -491,7 +491,7 @@ Business Need: collab Component Scenarios
 
   @118099    @verifyThatAdminUserCanCommentOnPostAtCollabPhase
   Scenario: validate that pop-up appears by perfomring delete action at my feed section by SPI user from home phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
@@ -500,7 +500,7 @@ Business Need: collab Component Scenarios
 
   @120990   @VerifyCrossIconIsDisplayedAtCollabPhaseQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase quick search box
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I perform quick search for "text"
@@ -508,7 +508,7 @@ Business Need: collab Component Scenarios
 
   @120991   @VerifyCrossIconIsDisplayedAtCollabPhaseMyColleaguesQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - my colleagues quick search box
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
@@ -517,7 +517,7 @@ Business Need: collab Component Scenarios
 
   @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - external users quick search box
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
@@ -526,7 +526,7 @@ Business Need: collab Component Scenarios
 
   @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - external users quick search box
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
@@ -535,7 +535,7 @@ Business Need: collab Component Scenarios
 
   @120994   @VerifyCrossIconIsDisplayedAtCollabPhaseMyGroupsTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - my group quick search box
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Groups" menu inside collab sidebar
@@ -544,7 +544,7 @@ Business Need: collab Component Scenarios
 
   @119853   @VerifyFlexGridDisplayedAtCollabPhaseMyContentTab
   Scenario: validate flex grid displayed at collab phase my content tab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Content" menu inside collab sidebar
@@ -552,7 +552,7 @@ Business Need: collab Component Scenarios
 
   @120448    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSection
   Scenario: validate that user logo at comment section is small in size at collab - my feed section
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -561,11 +561,11 @@ Business Need: collab Component Scenarios
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
@@ -575,7 +575,7 @@ Business Need: collab Component Scenarios
 
   @121306    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtCollabPhase
   Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -586,7 +586,7 @@ Business Need: collab Component Scenarios
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -597,7 +597,7 @@ Business Need: collab Component Scenarios
 
   @121625    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtHomePhase
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at home phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -610,23 +610,23 @@ Business Need: collab Component Scenarios
 
   @122006    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionRecordLevel
   Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord
   Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
@@ -639,7 +639,7 @@ Business Need: collab Component Scenarios
 
   @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
@@ -653,7 +653,7 @@ Business Need: collab Component Scenarios
 
   @125729    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtGroupPostAtCollabPhase
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
@@ -664,7 +664,7 @@ Business Need: collab Component Scenarios
 
   @176819 @jyoti
   Scenario: Collab - To verify, on Collab phase if the user clicks on 'Share' button without entering any text in the Comment/Post-box, the alert message should display "A comment is required"
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on button "Share" under collab for comment box
@@ -751,7 +751,7 @@ Business Need: collab Component Scenarios
 
   @223917 @UserNameShouldBeDisplayedAtStartingOfCollabPhase
   Scenario: To verify, If i added user name should  be displayed at the starting of the comment on the collab phase for admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation PM" in my feed section and share the post
@@ -768,7 +768,7 @@ Business Need: collab Component Scenarios
 
   @176820 @Jyoti
   Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Framework Admin" in my feed section and share the post
@@ -783,7 +783,7 @@ Business Need: collab Component Scenarios
     Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207020 @ToVerifyIfIaddauserinaline @Sprint8
-    Scenario: To verify, If i add a user in a line then that user name should not  be displayed at the starting of the comment on the collab phase
+  Scenario: To verify, If i add a user in a line then that user name should not  be displayed at the starting of the comment on the collab phase
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
@@ -791,17 +791,17 @@ Business Need: collab Component Scenarios
     Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207047 @ToVerifyIfIaddauserinaline @Sprint8
-    Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
     When I login as "PM" user
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test @Automation PM" comment inside my feed
     And I enter value "Test Automation PM" in my feed section and share the comment
     Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207048 @ToVerifyIfIaddauserinaline @Sprint8
-    Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
@@ -816,13 +816,13 @@ Business Need: collab Component Scenarios
     And I enter value "@Automation PM" in my feed section and share the post
     Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207050 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hi @Automation PM" in my feed section and share the post
@@ -830,7 +830,7 @@ Business Need: collab Component Scenarios
 
   @207052 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the collab phase
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test@Automation PM" in my feed section and share the post
@@ -838,7 +838,7 @@ Business Need: collab Component Scenarios
 
   @207053 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello@Automation PM" in my feed section and share the post
@@ -846,7 +846,7 @@ Business Need: collab Component Scenarios
 
   @207054 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "hi @Automation PM" in my feed section and share the post
