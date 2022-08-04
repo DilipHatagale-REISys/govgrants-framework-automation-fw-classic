@@ -2975,7 +2975,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isMenuIconDisplayedAtMyFeedSectionCollab() {
         boolean flag = true;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks collabDropdownMenuIcon dropdown-toggle')]"))) {
                 flag = false;
             }
         } catch (Exception e) {

@@ -5,7 +5,7 @@ Business Need: collab Component Scenarios
 
   @104686    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
-    When I login as "Admin" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -22,20 +22,21 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104678    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserFromHomePhase
   Scenario: validate the pop-up appears by perfomring delete action at my feed section by SPI user from home phase
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
+    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104681    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtCollabPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by SPI user at collab phase
@@ -63,6 +64,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation SPI application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
+    And I pause execution for "3" seconds
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104680    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtCollabTab
@@ -85,7 +87,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
@@ -99,7 +101,8 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
     Then I softly see "Test Automation PM Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
-    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
+    And I pause execution for "5" seconds
+    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104687    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at collab tab
@@ -112,6 +115,7 @@ Business Need: collab Component Scenarios
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
+    And I pause execution for "5" seconds
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
   @104683    @verifyThatByClickOnDeleteCommentActionCommentDeletedByLoggedInAsSPIUserFromHomePhase
@@ -124,6 +128,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation SPI Comment delete" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
+    And I pause execution for "5" seconds
     Then I do not see "Test Automation SPI Comment delete" comment inside "Test Post for automation-SPI DND" post at collab
 
   @104338    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsSPIUserAtApplicationPhase
@@ -220,13 +225,15 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation Admin Post Delete Action Access" in my feed section and share the post
     When I pause execution for "10" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Delete" action from dropdown at "Test Automation Admin Post Delete Action Access" comment inside my feed
     And I click modal button "OK"
+    And I pause execution for "5" seconds
     Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
 
   @112484    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
@@ -234,6 +241,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
     And I pause execution for "5" seconds
     And I click on "Delete" action from dropdown at "Test Automation collab Delete action by admin" comment inside my feed
@@ -257,11 +265,12 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Delete" action from dropdown at "Test Automation record admin to check post delete access" comment inside my feed
     And I click modal button "OK"
     Then I do not see "Test Automation record admin to check post delete access" inside flex table with id "---program:-:myFeedTableId---"
@@ -270,7 +279,7 @@ Business Need: collab Component Scenarios
   Scenario: validate that admin can send a comment to post from record level collab tab
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
@@ -286,7 +295,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Test Automation Admin Comment home" in my feed section and share the comment
@@ -295,7 +304,7 @@ Business Need: collab Component Scenarios
     And I click modal button "OK"
     And I pause execution for "3" seconds
     And I refresh the page
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I softly do not see "Test Automation Admin Comment home" comment inside "Test Post for automation-Admin DND" post at collab
 
@@ -304,7 +313,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     Then I see "To Me" option is displayed at collab menu
 
   @112213    @verifyThatPMUserCanSeeAllUsersOptionInsideMenuAtHomePhase-MyFeedSection
@@ -312,7 +321,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     Then I see "All Users" option is displayed at collab menu
 
   @112202    @verifyThatSPIUserCanNotSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
@@ -334,9 +343,9 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
-    Then I see "Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
 
   @112027    @verifyThatIfpmUserTriesToMentionExternalUserThenAutoCompleteListShouldNotDisplayedAtPost
   Scenario: validate that if pm user tries to mention external user in post then mention auto complete list is not displayed
@@ -361,7 +370,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
@@ -373,9 +382,10 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on refresh button at collab
+    And I pause execution for "5" seconds
     Then I see collab my feed page refreshed
 
   @115344    @verifyThatOnlyMyFeedSectionDisplayedToSPIUserAtHomePhase
@@ -398,7 +408,7 @@ Business Need: collab Component Scenarios
     When I login as "PM1" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "To Me" from dropdown
     Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
 
@@ -418,7 +428,7 @@ Business Need: collab Component Scenarios
     And I enter value "You and Automation PM like this." in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
 
@@ -430,7 +440,7 @@ Business Need: collab Component Scenarios
     And I enter value "You and Automation PM like this." in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
 
@@ -453,10 +463,11 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Hello @AutomationPM" in the comment at collab
+    And I enter value "Hello @Automation" in the comment at collab
+    And I pause execution for "5" seconds
     Then I see mention auto complete list is displayed at collab comment
 
   @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
@@ -473,16 +484,17 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Post at record level" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "10" seconds
     Then I see mention auto complete list is displayed at collab comment
 
-  @115346    @verifyBurgerMenuIconIsNotDisplayedAtExternalUserCollabMyFeedSection-HomePhase
+  @lmn @115346    @verifyBurgerMenuIconIsNotDisplayedAtExternalUserCollabMyFeedSection-HomePhase
   Scenario: validate that burger menu icon is not displayed at my feed section by login as external user - home phase
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -495,8 +507,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "test @Simon Automation" in my feed section and share the comment
-    Then I see "test @Simon Automation" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "@Simon" in my feed section and share the comment
+    Then I see "@Simon" inside flex table with id "---program:-:myFeedTableId---"
 
   @120990   @VerifyCrossIconIsDisplayedAtCollabPhaseQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase quick search box
@@ -555,7 +567,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed home
 
@@ -563,15 +575,15 @@ Business Need: collab Component Scenarios
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File from Computer" at files library upload modal
-    Then I softly see tab label as "Upload File from Library" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
 
   @121306    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtCollabPhase
   Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
@@ -581,18 +593,19 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File from Computer" at files library upload modal
-    Then I softly see tab label as "Upload File from Library" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
+    And I pause execution for "5" seconds
     Then I see "Add Files" opens in overLay window
 
   @121625    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtHomePhase
@@ -600,19 +613,19 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
-    Then I softly do not see tab label as "Upload File from Library" at files library upload modal
+    Then I softly do not see tab label as "Upload File" at files library upload modal
+    Then I softly do not see tab label as "Upload File" at files library upload modal
 
   @122006    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionRecordLevel
   Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
     When I navigate to "Collab" sub tab
@@ -629,13 +642,13 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File from Computer" at files library upload modal
-    Then I softly see tab label as "Upload File from Library" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Upload File" at files library upload modal
 
   @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
@@ -686,7 +699,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test @Automation PM" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -698,7 +711,7 @@ Business Need: collab Component Scenarios
     And I enter value "@Automation FO" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "@Automation FO" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -715,12 +728,12 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Framework Admin" in my feed section and share the post
+    And I enter value "@Automation Admin" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
-    Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "@Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
 
   @207095 @UserNameShouldBeDisplayedAtTheSSamePositionOfTherecordLevel @sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab for internal user
@@ -745,7 +758,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
-    When I click on "Menu" in the page details
+    And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     Then I see "@Automation PM Hello" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -762,16 +775,17 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Framework Admin" in my feed section and share the post
+    And I enter value "@Automation Admin" in my feed section and share the post
     And I pause execution for "5" seconds
-    Then I see "@Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "@Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
 
   @176820 @Jyoti
   Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Framework Admin" in my feed section and share the post
+    And I enter value "@Automation Admin" in my feed section and share the post
+    And I pause execution for "5" seconds
     Then I do not see alert popup box
 
   @207018 @ToVerifyIfIaddauserinaline @Sprint8
