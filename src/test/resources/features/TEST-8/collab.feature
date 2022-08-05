@@ -788,7 +788,7 @@ Business Need: collab Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see alert popup box
 
-  @207018 @ToVerifyIfIaddauserinaline @Sprint8
+  @207018 @ToVerifyIfIaddauserinaline @Sprint8 @wip
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -810,9 +810,10 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Test @Automation PM" comment inside my feed
     And I enter value "Test Automation PM" in my feed section and share the comment
-    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "Test Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207048 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab

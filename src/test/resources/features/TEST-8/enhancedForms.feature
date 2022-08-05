@@ -1,4 +1,4 @@
-@enhancedForms-component @regression-test8
+@vrushali @enhancedForms-component @regression-test8
 Business Need: enhanced Forms Component Scenarios
   Test all enhanced forms component based scenarios
   As a configuration manager i make different configurational changes in enhanced forms component and will validate them.

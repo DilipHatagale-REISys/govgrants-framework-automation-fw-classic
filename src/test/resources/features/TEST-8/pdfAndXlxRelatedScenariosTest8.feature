@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenariosTest8 @regression-test8 @skipOnJenkins
+@vrushali @allPdfAndXlxRelatedScenariosTest8 @regression-test8 @skipOnJenkins
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
@@ -28,7 +28,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Active" on page "1" of "govgrants" pdf file
 
-  @hold @109377    @verifyThatByLoginAsPMUserN2GGridDisplayed
+  @wip @109377    @verifyThatByLoginAsPMUserN2GGridDisplayed
   Scenario: validate by logged in as PM user N2G grid displayed
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -63,7 +63,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Automation Application" on page "1" of "govgrants" pdf file
 
-  @hold @109612    @verifyThatPageContentDisplayedProperlyByLoggedInAsSPIUserAndClickOnDownloadedPDFFromPageLayout
+  @wip @109612    @verifyThatPageContentDisplayedProperlyByLoggedInAsSPIUserAndClickOnDownloadedPDFFromPageLayout
   Scenario: validate if logged in as SPI user and downloaded PDF from page layout then page content displayed in pdf file
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -76,7 +76,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Program For Application" on page "1" of "govgrants" pdf file
 
-  @hold @109378    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedPDF
+  @wip @109378    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user ME grid displayed inside downloaded pdf
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -95,7 +95,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Automation Permanent Focus Area" on page "1" of "govgrants" pdf file
 
-  @hold @109381    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedPDF
+  @wip @109381    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user N2G grid displayed inside downloaded pdf
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -214,7 +214,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Applications - All" on page "1" of "govgrants" pdf file
 
-  @hold  @109391    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedPDF
+  @wip  @109391    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as PM user ME grid displayedInsideDownloadedPDF
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -236,7 +236,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Focus Area" on page "1" of "govgrants" pdf file
 
-  @hold @109748    @verifyThatByLoginAsPMUserN2GGridDisplayedInsideDownloadedXLS
+  @wip @109748    @verifyThatByLoginAsPMUserN2GGridDisplayedInsideDownloadedXLS
   Scenario: validate by logged in as PM user N2G grid displayed inside downloaded xls
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -257,7 +257,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Site Visits Requirements"
     Then I see "Visit Name" in downloaded xls or csv file "govgrants"
 
-  @hold @109830    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedXLS
+  @wip @109830    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedXLS
   Scenario: validate by logged in as SPI user ME grid displayed inside downloaded XLS
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -275,7 +275,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Focus Areas"
     Then I see "Automation Permanent Focus Area" in downloaded xls or csv file "govgrants"
 
-  @hold @110011    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedXLS
+  @wip @110011    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedXLS
   Scenario: validate by logged in as SPI user N2G grid displayed inside downloaded XLS
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -306,7 +306,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
 
-  @hold @109393    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedXLS
+  @wip @109393    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedXLS
   Scenario: validate by logged in as PM user ME grid displayed Inside Downloaded XLS
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -341,7 +341,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
 
 
-  @hold @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
+  @wip @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
   Scenario Outline: validate by download as pdf if skip default theme checkbox is checked at dynamic form modal view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue       | filterId         |
@@ -372,7 +372,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
 
-  @hold @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
+  @wip @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
   Scenario: validate by download as pdf if skip default theme checkbox is checked at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -395,7 +395,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Dynamic Form 1" on page "1" of "govgrants" pdf file
 
-  @hold @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  @wip @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making number and written as req from section 1 and section 3 on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -440,7 +440,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Written Section 3 is Required to save under Section 3. |
       | Number Section 3 is Required to save under Section 3.  |
 
-  @hold @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate currency value with symbol is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -461,7 +461,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "$12.00" on page "1" of "govgrants" pdf file
 
-  @hold @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate percent value with symbol is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -482,7 +482,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "12.00 %" on page "1" of "govgrants" pdf file
 
-  @hold @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate max score as 0.0 is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -503,7 +503,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "0.0" on page "1" of "govgrants" pdf file
 
-  @hold @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate if checkbox field is checked then it should displayed inside downloaded PDF as true at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -524,7 +524,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "true" on page "1" of "govgrants" pdf file
 
-  @hold @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate decimal values are displayed for number , currency, percent field inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -547,7 +547,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "12.00 %" on page "1" of "govgrants" pdf file
     Then I softly see "12.00" on page "1" of "govgrants" pdf file
 
-  @hold @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -568,7 +568,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
 
-  @hold @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -589,7 +589,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
 
-  @hold @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate written field value is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -610,7 +610,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Test Automation" on page "1" of "govgrants" pdf file
 
-  @hold @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @wip @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate rich text area field value is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -631,7 +631,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Test Automation Rich Text" on page "1" of "govgrants" pdf file
 
-  @hold @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -656,7 +656,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I cannot see "Currency" on page "1" of "govgrants" pdf file
 
-  @hold @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -681,7 +681,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I see "Currency" on page "1" of "govgrants" pdf file
 
-  @hold @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency, number , percent field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -712,7 +712,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly cannot see "Number" on page "1" of "govgrants" pdf file
     Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
 
-  @hold @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency, number , percent field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -743,7 +743,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "Number" on page "1" of "govgrants" pdf file
     Then I softly see "Percent" on page "1" of "govgrants" pdf file
 
-  @hold @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency is disabled and number, percent field is hidden from ui then it is displayed accordingly in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -774,7 +774,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
     Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
 
-  @hold @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
+  @wip @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate disabled and hidden fields like number, percent, currency, date field displayed accordingly in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -850,7 +850,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "All Forms" on page "5" of "govgrants" pdf file
 
-  @hold @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
+  @wip @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
   Scenario: validate by click on download as pdf it is getting open in new tab at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
