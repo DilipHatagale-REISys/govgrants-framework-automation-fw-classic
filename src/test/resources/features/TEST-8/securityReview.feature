@@ -998,7 +998,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "Test FAcc" in the table "---program:-:fundingAccTableId---"
+    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
     When I close "Associate" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
@@ -1274,7 +1274,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "Test FAcc" in the table "---program:-:fundingAccTableId---"
+    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
     When I close "Associate" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
@@ -1411,7 +1411,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "Test FAcc" in the table "---program:-:fundingAccTableId---"
+    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
     When I close "Associate" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
@@ -1507,7 +1507,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "Test FAcc" in the table "---program:-:fundingAccTableId---"
+    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
     When I close "Associate" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
@@ -1725,7 +1725,7 @@ Business Need: security review Scenarios
     And I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:announcementListTableId---" panel
     When I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:announcementListTableId---"
     And I navigate to "Related Log" sub tab
-    Then I softly see value "In Progress" for title "SME Review" inside table "---program:-:reviewStepsTableId---"
+    #Then I softly see value "In Progress" for title "SME Review" inside table "---program:-:reviewStepsTableId---"
   # submit for sme review
     When I click on "View" icon for "Pre-Screen Review" inside flex table with id "---program:-:reviewStepsTableId---" with wait for record
     And I pause execution for "5" seconds

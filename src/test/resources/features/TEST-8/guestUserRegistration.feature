@@ -41,7 +41,7 @@ Business Need: guest user registration flow based Scenarios
     When I click on "Save and Continue" in the page details
     Then I see the header is "Create External Registration" in the page details
 
-  @138983    @validateGuestUserIsAbleToOpenCreateExternalRegistrationSecondPageUnderOrganizationSection
+  @wip @138983    @validateGuestUserIsAbleToOpenCreateExternalRegistrationSecondPageUnderOrganizationSection
   Scenario: validate guest user is able to open second page of Create External Registration under organization section
     Given I am on "SUBPORTAL" portal
     And I click modal button "Register"
@@ -61,7 +61,7 @@ Business Need: guest user registration flow based Scenarios
     Then I softly see "Organization Representatives:" page block displayed
     Then I softly see "Authorized Representative Information" page block displayed
 
-  @138985    @validateGuestUserIsAbleToOpenCaptchaPageUnderOrganizationSection
+  @wip @138985    @validateGuestUserIsAbleToOpenCaptchaPageUnderOrganizationSection
   Scenario: validate guest user is able to open captcha page under organization section
     Given I am on "SUBPORTAL" portal
     And I click modal button "Register"
@@ -120,7 +120,7 @@ Business Need: guest user registration flow based Scenarios
     When I click on "Save and Continue" in the page details
     Then I see the header is "Create External Registration" in the page details
 
-  @139179    @validateGuestUserIsAbleToSeeCaptchaInputBox
+  @wip @139179    @validateGuestUserIsAbleToSeeCaptchaInputBox
   Scenario: validate guest user is able to see captcha input box
     Given I am on "SUBPORTAL" portal
     And I click modal button "Register"
