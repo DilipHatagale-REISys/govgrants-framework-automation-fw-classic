@@ -1541,7 +1541,7 @@ Business Need: security review Scenarios
   Scenario: validate grant created ad activated by PM user
    # Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
    # Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    #Given I delete the record "Automation Internal Program for flow" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
    #program Activation
     When I login as "PM" user
     When I setup my app as "As a Grantor"
