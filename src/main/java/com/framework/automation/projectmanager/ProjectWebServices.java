@@ -217,7 +217,7 @@ public class ProjectWebServices {
     public void deletionApiProgramRecord(String recordName, String objectName, String fieldApiName) {
         System.out.print("Making API call... ");
         getAuthToken();
-        String finalEndPoint = endPoint + "/services/apexrest/AutomationAPI/delete";
+        String finalEndPoint = endPoint + "/services/apexrest/GNT/AutomationAPI/Delete";
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("objectName", objectName);
