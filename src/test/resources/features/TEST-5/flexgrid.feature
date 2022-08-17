@@ -2864,3 +2864,22 @@ Business Need: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                  |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Application__r.testcurrency__c|
+
+  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications @flexGrid
+  Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationBudgetCategoryRecord}" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "{Framework_recordUsed:ApplicationBudgetCategoryRecord}"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "View" icon for "---program:-:applicationBudgetCategoryFlexGridTableId---" is at position "0" inside flex table

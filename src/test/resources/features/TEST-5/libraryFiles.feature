@@ -1927,10 +1927,6 @@ Business Need: Library Files Component Scenarios
     When I drag the "TestAutomationFile.csv" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
     Then I see file "SendEmailAttachment.pdf" is displayed under "UnitedHealth Group" library or folder
-#    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
-#    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
-#    When I pause execution for "7" seconds
-#    Then I softly do not see library/folder/file "TestAutomationFile.docx" is displayed under files library
 
   @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome @reportedBug
   Scenario: Verify that file can be drag from assert library and droped into another library
@@ -5606,3 +5602,40 @@ Business Need: Library Files Component Scenarios
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
     Then I do not see "Upload" button is disabled at modal under library
+
+  @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
+  Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I enter value as "  " in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    Then I see the following messages in the page details contains:
+      | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /. |
+
+  @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI @libraryFiles
+  Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.csv" into library with sharing
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomationFile.csv" is displayed under files library

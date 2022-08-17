@@ -39,3 +39,21 @@ Business Need: Footer Links Component Scenarios
     When I navigate to url "{environment:QASUBPORTAL}"
     And I refresh the page
     Then I see "Terms and Conditions" footer link is present
+
+  @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks @footerLinks
+  Scenario Outline: validate given target URL opens by click on 508 Compliance link from footer
+    Given I have "customAppFooter" configuration as below:
+      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+    And I update custom app footer setting changes:
+      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0094 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I click on footer links "508 Compliance"
+    When I switch to tab number "1"
+    When I pause execution for "3" seconds
+    Then I see "Complete" "<Logout_URL>" page is displayed
+    Examples:
+      | Logout_URL                                                                         |
+      | https://ggptest5-dev-ed--gnt.na164.visual.force.com/apex/Help?uniqueName=Help-0094 |
