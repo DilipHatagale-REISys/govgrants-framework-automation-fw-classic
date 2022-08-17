@@ -436,8 +436,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I pause execution for "3" seconds
     Then I see "<new_helpText>" shown as help text
     Examples:
-      | new_helpText             |
-      | Automation Help Text     |
+      | new_helpText         |
+      | Automation Help Text |
 
   @41316    @fieldLabelOverrideFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid column header from config and validating it inside enhanced grid of programs-planning
@@ -4815,9 +4815,9 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Flex Table Action     | Refresh Behavior         |                   | TmpActiveGrantsGrid | Name                      | View                       |
       | Flex Table Action     | Single Row Edit Behavior | Inline            | TmpActiveGrantsGrid | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Refresh Behavior         | Refresh all flextables      | TmpActiveGrantsGrid | Name                      | View                       |
-      | Flex Table Action     | Single Row Edit Behavior | Modal         | TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName                | fieldNewValue          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior         | Refresh all flextables | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Single Row Edit Behavior | Modal                  | TmpActiveGrantsGrid | Name                      | View                       |
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
@@ -4873,8 +4873,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4889,5 +4889,67 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see the following message in the page details contains:
       | Saved Successfully! |
     Examples:
-      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                                   |
-      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Test_Currency__c |Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Test_Currency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+
+  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid
+  Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName     | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
+      | Project Title                 | Status |
+      | Road COnst. Ann.              | Active |
+      | Road Construction Annoumsment | Active |
+    Then I see select box for picklist is not displayed for status inside table
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @77285    @enableFormulaFieldAtFlexTableForEnhanced-gPlanning
+  Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhancedDataTable  | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see cell subtotal as expected as given formula at "NumberofProjectAreas__c" field
+
+  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Sub Total    | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-VT-001"
+    Then I see field "Total Obligated Amount : 300" inside page block

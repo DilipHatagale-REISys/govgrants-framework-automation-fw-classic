@@ -1,4 +1,4 @@
-@GGFSanityBusinessFlow @regression-test5
+@GGFSanityBusinessFlow-test5 @regression-test5
 Business Need: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 
@@ -605,17 +605,6 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
     Then I softly see library/folder/file "TestAutomationFile.csv" is displayed under files library
-#    And I navigate to "Planning" tab
-#    And I click toggle button to select "Draft Programs"
-#    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-#    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-#    When I navigate to "Attachments" sub tab
-#    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
-#    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
-#    When I click "Yes" on modal confirmation box
-#    When I pause execution for "3" seconds
-#    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
-#    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @77285    @enableFormulaFieldAtFlexTableForEnhanced-gPlanning
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced data table -planning
