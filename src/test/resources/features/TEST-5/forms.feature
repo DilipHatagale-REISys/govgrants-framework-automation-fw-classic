@@ -568,18 +568,7 @@ Business Need: Forms Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon of form "General Application Budget Form" program in flex table
-    Then I see "Application Budget" shown as over view header
-
-  @132393 @verifyFormOpensInViewModeForExternalUser
-  Scenario:validate that by click at View action, form displayed in view mode for external user - SPI
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
-    When I navigate to "Attachments" sub tab
-    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    And I click on "View" icon for "General Application Budget Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Application Budget" shown as over view header
 
   @132394 @verifyFormOpensInEditModeForExternalUser
