@@ -1469,11 +1469,60 @@ Business Need: security review Scenarios
       | Program Approver   | Admin          | Automation Test Description |
       | Executive Approver | Automation EXE | Automation Test Description |
       | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I pause execution for "5" seconds
+    When I navigate to "Setup" sub tab
+    #Pre-screen review
+    When I expand nested table containing column value "Pre-Screen Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test      | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 1             | Automation Test 1 | 100                |
+    When I expand nested table containing column value "1"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question               | Type    | Max Score |
+      | 1              | Automation Description | Written | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Pre-Screen Review"
+    #SME
+    When I expand nested table containing column value "SME Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 1    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 2             | Automation Test 2 | 100                |
+    When I expand nested table containing column value "2"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type     | Max Score |
+      | 2              | Automation Description 1 | Currency | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "SME Review"
+    #Management
+    When I expand nested table containing column value "Management Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 2    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 3             | Automation Test 3 | 100                |
+    When I expand nested table containing column value "3"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type   | Max Score |
+      | 3              | Automation Description 2 | Number | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Management Review"
+    And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
   # @110210 - Program Approver
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
@@ -1481,7 +1530,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
   # @110210 - Fiscal Approver
     When I re-login to "As a Grantor" app as "FO" user on "test8" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
@@ -1489,7 +1538,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
   # @110210 - Executive Approver
     When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
@@ -1575,6 +1624,55 @@ Business Need: security review Scenarios
       | Program Approver   | Admin          | Automation Test Description |
       | Executive Approver | Automation EXE | Automation Test Description |
       | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I pause execution for "5" seconds
+    When I navigate to "Setup" sub tab
+    #Pre-screen review
+    When I expand nested table containing column value "Pre-Screen Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test      | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 1             | Automation Test 1 | 100                |
+    When I expand nested table containing column value "1"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question               | Type    | Max Score |
+      | 1              | Automation Description | Written | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Pre-Screen Review"
+    #SME
+    When I expand nested table containing column value "SME Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 1    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 2             | Automation Test 2 | 100                |
+    When I expand nested table containing column value "2"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type     | Max Score |
+      | 2              | Automation Description 1 | Currency | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "SME Review"
+    #Management
+    When I expand nested table containing column value "Management Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 2    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 3             | Automation Test 3 | 100                |
+    When I expand nested table containing column value "3"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type   | Max Score |
+      | 3              | Automation Description 2 | Number | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Management Review"
+    And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
@@ -1679,6 +1777,55 @@ Business Need: security review Scenarios
       | Program Approver   | Admin          | Automation Test Description |
       | Executive Approver | Automation EXE | Automation Test Description |
       | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I pause execution for "5" seconds
+    When I navigate to "Setup" sub tab
+    #Pre-screen review
+    When I expand nested table containing column value "Pre-Screen Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test      | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 1             | Automation Test 1 | 100                |
+    When I expand nested table containing column value "1"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question               | Type    | Max Score |
+      | 1              | Automation Description | Written | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Pre-Screen Review"
+    #SME
+    When I expand nested table containing column value "SME Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 1    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 2             | Automation Test 2 | 100                |
+    When I expand nested table containing column value "2"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type     | Max Score |
+      | 2              | Automation Description 1 | Currency | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "SME Review"
+    #Management
+    When I expand nested table containing column value "Management Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 2    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 3             | Automation Test 3 | 100                |
+    When I expand nested table containing column value "3"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type   | Max Score |
+      | 3              | Automation Description 2 | Number | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Management Review"
+    And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
@@ -1688,14 +1835,13 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
-    Then I softly see status in Progress-bar is "Approved" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2256,6 +2402,55 @@ Business Need: security review Scenarios
       | Program Approver   | Admin          | Automation Test Description |
       | Executive Approver | Automation EXE | Automation Test Description |
       | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I pause execution for "5" seconds
+    When I navigate to "Setup" sub tab
+    #Pre-screen review
+    When I expand nested table containing column value "Pre-Screen Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test      | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 1             | Automation Test 1 | 100                |
+    When I expand nested table containing column value "1"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question               | Type    | Max Score |
+      | 1              | Automation Description | Written | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Pre-Screen Review"
+    #SME
+    When I expand nested table containing column value "SME Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 1    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 2             | Automation Test 2 | 100                |
+    When I expand nested table containing column value "2"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type     | Max Score |
+      | 2              | Automation Description 1 | Currency | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "SME Review"
+    #Management
+    When I expand nested table containing column value "Management Review"
+    When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Test 2    | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
+      | Section Order | Section Header    | Section Weight (%) |
+      | 3             | Automation Test 3 | 100                |
+    When I expand nested table containing column value "3"
+    When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsFlexCollapseTableId---" by clicking "New" :
+      | Question Order | Question                 | Type   | Max Score |
+      | 3              | Automation Description 2 | Number | 100       |
+    When I close modal by clicking the top right x button
+    And I collapse nested table containing column value "Management Review"
+    And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
