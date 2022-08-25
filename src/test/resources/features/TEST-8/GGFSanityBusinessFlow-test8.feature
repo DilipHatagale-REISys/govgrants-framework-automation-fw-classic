@@ -82,9 +82,9 @@ Business Need: Sanity check for all Component Scenarios
     #Pre-screen review
     When I expand nested table containing column value "Pre-Screen Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test      | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Pre-Screen Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -97,9 +97,9 @@ Business Need: Sanity check for all Component Scenarios
     #SME
     When I expand nested table containing column value "SME Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test 1    | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | SME Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -112,9 +112,9 @@ Business Need: Sanity check for all Component Scenarios
     #Management
     When I expand nested table containing column value "Management Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test 2    | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Management Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -135,14 +135,6 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    # @110210 - Executive Approver
-    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
-    And I navigate to "Announcements" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
-    When I "Approve" in the approval decision
-    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     # @110210 - Fiscal Approver
     When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Announcements" tab
@@ -150,9 +142,17 @@ Business Need: Sanity check for all Component Scenarios
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    # @110210 - Executive Approver
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    And I navigate to "Announcements" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
-  @110257   @verifyGrantCreatedAndActivateByPMUser @test2
+  @110257   @verifyGrantCreatedAndActivateByPMUser @test2 @vip
   Scenario Outline: validate grant created ad activated by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -240,7 +240,7 @@ Business Need: Sanity check for all Component Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Pre-Screen Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -255,7 +255,7 @@ Business Need: Sanity check for all Component Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | SME Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -270,7 +270,7 @@ Business Need: Sanity check for all Component Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Management Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -290,13 +290,13 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
-    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -376,8 +376,8 @@ Business Need: Sanity check for all Component Scenarios
     When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    And I perform quick search for "Record ID" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "Record ID" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I perform quick search for "<Announcement Name>" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "<Announcement Name>" inside flex table with id "---program:-:pendingTaskTableId---"
     Then I softly see field "Status" as "Sent for Review"
     When I complete filling in the Review form with recommendation "Recommended"
     And I click on "Save" in the page details
@@ -861,9 +861,9 @@ Business Need: Sanity check for all Component Scenarios
     #Pre-screen review
     When I expand nested table containing column value "Pre-Screen Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test      | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Pre-Screen Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -876,9 +876,9 @@ Business Need: Sanity check for all Component Scenarios
     #SME
     When I expand nested table containing column value "SME Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test 1    | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | SME Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -891,9 +891,9 @@ Business Need: Sanity check for all Component Scenarios
     #Management
     When I expand nested table containing column value "Management Review"
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
-      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
-      | Test 2    | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+      | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Management Review | 100             | 1                                         | Checked   |
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -989,7 +989,7 @@ Business Need: Sanity check for all Component Scenarios
     When I perform quick search for "<Application Name>" in "---program:-:assignApplicationsTableId---" panel
     And I check "<Application Name>" boxes in flex table with id "---program:-:assignApplicationsTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:assignApplicationsTableId---"
-    When I close "Assign Applications" modal by clicking the top right x button
+   # When I close "Assign Applications" modal by clicking the top right x button
     When I check "<Application Name>" boxes in flex table with id "---program:-:appreviewsTableId---"
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
@@ -1032,13 +1032,13 @@ Business Need: Sanity check for all Component Scenarios
     And I perform quick search for "Automation PM" in "---program:-:panelAppTableId---" panel
     And I check "Automation PM" boxes in flex table with id "---program:-:panelAppTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:panelAppTableId---"
-    When I close "Assign Reviewers" modal by clicking the top right x button
+   # When I close "Assign Reviewers" modal by clicking the top right x button
     When I expand nested table containing column value "<Application Name>"
     And I click on "Assign" icon for "Fiscal Review" inside flex table with id "---program:-:reviewFormsTableId---" with wait for record
     And I perform quick search for "Automation FO" in "---program:-:panelAppTableId---" panel
     And I check "Automation FO" boxes in flex table with id "---program:-:panelAppTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:panelAppTableId---"
-    When I close "Assign Reviewers" modal by clicking the top right x button
+   #When I close "Assign Reviewers" modal by clicking the top right x button
     When I expand nested table containing column value "<Application Name>"
     And I click on "Assign" icon for "Compliance Review" inside flex table with id "---program:-:reviewFormsTableId---" with wait for record
     And I perform quick search for "Automation EXE" in "---program:-:panelAppTableId---" panel
