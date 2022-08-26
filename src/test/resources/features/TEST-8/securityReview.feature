@@ -1477,7 +1477,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Pre-Screen Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -1492,7 +1492,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | SME Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -1507,7 +1507,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Management Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -1528,16 +1528,16 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    # @110210 - Executive Approver
-    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    # @110210 - Fiscal Approver
+    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    # @110210 - Fiscal Approver
-    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
+    # @110210 - Executive Approver
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1785,7 +1785,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Pre-Screen Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -1800,7 +1800,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | SME Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -1815,7 +1815,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Management Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -1835,13 +1835,13 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
-    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
     And I navigate to "Announcements" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2395,6 +2395,7 @@ Business Need: security review Scenarios
     And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
+    And I pause execution for "5" seconds
     When I navigate to "Responsibilities" sub tab
     And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "Edit" :
       | Role               | Name           | Description                 |
@@ -2408,7 +2409,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Pre-Screen Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Pre-Screen Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 1             | Automation Test 1 | 100                |
@@ -2423,7 +2424,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | SME Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 1" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "SME Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 2             | Automation Test 2 | 100                |
@@ -2438,7 +2439,7 @@ Business Need: security review Scenarios
     When I enter the following values into flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" by clicking "New" :
       | Form Name         | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Management Review | 100             | 1                                         | Checked   |
-    And I click on "Review Form" icon for "Test 2" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
+    And I click on "Review Form" icon for "Management Review" inside flex table with id "---program:-:AnnouncementReviewTemplatesFlexToggleId---" with wait for record
     When I enter the following values into flex table with id "---program:-:RelatedReviewPanelQuestionsresizableTableId---" by clicking "New" :
       | Section Order | Section Header    | Section Weight (%) |
       | 3             | Automation Test 3 | 100                |
@@ -2450,7 +2451,6 @@ Business Need: security review Scenarios
     And I collapse nested table containing column value "Management Review"
     And I click on "Submit For Approval" in the page details
     When I click "Yes" on modal confirmation box
-    And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Announcements" tab
@@ -2526,8 +2526,8 @@ Business Need: security review Scenarios
     Then I softly see value "In Progress" for title "Pre-Screen Review" inside table "---program:-:reviewStepsTableId---"
     When I click on "View" icon for "Pre-Screen Review" inside flex table with id "---program:-:reviewStepsTableId---"
     When I edit the following rows inline in flex table with id "---program:-:formTableId---" by clicking "Edit" :
-      | Form Name         | Due in Days |
-      | Pre-Screen Review | 5           |
+      | Form Name  | Due in Days |
+      | Pre-Screen | 5           |
     When I enter the following values into flex table with id "---program:-:reviewersTableId---" by clicking "Add" :
       | Reviewer      |
       | Automation FO |
@@ -2535,7 +2535,7 @@ Business Need: security review Scenarios
     When I perform quick search for "<Application Name>" in "---program:-:assignApplicationsTableId---" panel
     And I check "<Application Name>" boxes in flex table with id "---program:-:assignApplicationsTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:assignApplicationsTableId---"
-    When I close "Assign Applications" modal by clicking the top right x button
+   # When I close "Assign Applications" modal by clicking the top right x button
     When I check "<Application Name>" boxes in flex table with id "---program:-:appreviewsTableId---"
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
@@ -2578,13 +2578,13 @@ Business Need: security review Scenarios
     And I perform quick search for "Automation PM" in "---program:-:panelAppTableId---" panel
     And I check "Automation PM" boxes in flex table with id "---program:-:panelAppTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:panelAppTableId---"
-    When I close "Assign Reviewers" modal by clicking the top right x button
+   # When I close "Assign Reviewers" modal by clicking the top right x button
     When I expand nested table containing column value "<Application Name>"
     And I click on "Assign" icon for "Fiscal Review" inside flex table with id "---program:-:reviewFormsTableId---" with wait for record
     And I perform quick search for "Automation FO" in "---program:-:panelAppTableId---" panel
     And I check "Automation FO" boxes in flex table with id "---program:-:panelAppTableId---"
     When I click on top right button "Assign" in flex table with id "---program:-:panelAppTableId---"
-    When I close "Assign Reviewers" modal by clicking the top right x button
+   #When I close "Assign Reviewers" modal by clicking the top right x button
     When I expand nested table containing column value "<Application Name>"
     And I click on "Assign" icon for "Compliance Review" inside flex table with id "---program:-:reviewFormsTableId---" with wait for record
     And I perform quick search for "Automation EXE" in "---program:-:panelAppTableId---" panel

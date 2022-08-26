@@ -152,7 +152,7 @@ Business Need: Sanity check for all Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
-  @110257   @verifyGrantCreatedAndActivateByPMUser @test2 @vip
+  @110257   @verifyGrantCreatedAndActivateByPMUser @test2
   Scenario Outline: validate grant created ad activated by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -376,8 +376,8 @@ Business Need: Sanity check for all Component Scenarios
     When I re-login to "As a Grantor" app as "FO" user on "test8" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    And I perform quick search for "<Announcement Name>" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "<Announcement Name>" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I perform quick search for "Record ID" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record ID" inside flex table with id "---program:-:pendingTaskTableId---"
     Then I softly see field "Status" as "Sent for Review"
     When I complete filling in the Review form with recommendation "Recommended"
     And I click on "Save" in the page details
