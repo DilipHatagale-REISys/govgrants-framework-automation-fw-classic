@@ -151,9 +151,9 @@ public class UsersAndURL implements UsersController {
     private String getTest8EnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "test1234");
-        password.put("EXE", "test@1234567");
-        password.put("PM", "test@12345678912");
-        password.put("FO", "test@123456");
+        password.put("EXE", "SALESFORCE@2021");
+        password.put("PM", "SALESFORCE@2022");
+        password.put("FO", "SALESFORCE@2023");
         password.put("SPI", "test@12345678");
         password.put("PM1", "test@1234598678");
         if (userType.toUpperCase() != null) {
