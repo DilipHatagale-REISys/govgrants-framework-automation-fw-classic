@@ -209,7 +209,6 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
-    And I pause execution for "60" seconds
     Then I see the text :
       | Department of Community Health                                  |
       | {SavedValue:savedValue}                                         |
