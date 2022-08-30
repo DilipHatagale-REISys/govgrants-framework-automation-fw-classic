@@ -142,8 +142,8 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSubmittedForApprovalMode}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInSubmittedForApprovalMode}" inside table
     Then I see status in Progress-bar is "Submitted for Approval" and is "Green"
 
   @37324    @displayValueFieldAtStepProgressBAr-gPlanning

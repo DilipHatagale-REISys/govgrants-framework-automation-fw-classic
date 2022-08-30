@@ -176,7 +176,7 @@ Business Need: SheetJS Config Component Scenarios
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
+    When I perform quick search for "{Framework_recordUsed:SheetJSProgram}"
     Then I softly see value "$5,000" for title "Funded Amount" inside table "---program:-:programTableDivId---"
 
     Examples:
