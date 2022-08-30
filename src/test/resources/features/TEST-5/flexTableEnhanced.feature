@@ -530,7 +530,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+    Then I softly do not see "External Organization" in flex table header "Grants Enhanced Table"
 
   @194451 @sprint1
   Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator
@@ -547,7 +547,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+    Then I softly do not see "External Organization" in flex table header "Grants Enhanced Table"
 
   @194456 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field
@@ -564,7 +564,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "Number of Project Areas" in flex table header "Demo_Title"
+    Then I softly do not see "Number of Project Areas" in flex table header "Grants Enhanced Table"
 
   @194457 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with currency   field(Total Award Obligated Amount)
@@ -581,7 +581,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "Total Award Obligated Amount" in flex table header "Demo_Title"
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "Grants Enhanced Table"
 
   @194459 @sprint1
   Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with status
@@ -598,7 +598,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "Status" in flex table header "Demo_Title"
+    Then I softly do not see "Status" in flex table header "Grants Enhanced Table"
 
   @194929 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
@@ -615,7 +615,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "External Organization" in flex table header "Demo_Title"
+    Then I softly do not see "External Organization" in flex table header "Grants Enhanced Table"
 
   @194931 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field  with equal to operator
@@ -632,7 +632,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "Total Award Obligated Amount" in flex table header "Demo_Title"
+    Then I softly do not see "Total Award Obligated Amount" in flex table header "Grants Enhanced Table"
 
   @194932 @sprint1
   Scenario:Data Table Enhanced -To verify, Hide  expression builder is working  for $user with number  field  with  not equal to operator
@@ -649,7 +649,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Financials" sub tab
-    Then I softly do not see "Number of Project Areas" in flex table header "Demo_Title"
+    Then I softly do not see "Number of Project Areas" in flex table header "Grants Enhanced Table"
 
   @208595   @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
   Scenario:To verify , Mini layout UI at ME-Grid  table looks as   object name to the top, field title under it, then line separator for Internal user

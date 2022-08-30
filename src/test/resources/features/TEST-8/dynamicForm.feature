@@ -1,4 +1,4 @@
-@DynamicForms-component @regression-test8 @dynamicForms @wip
+@DynamicForms-component @regression-test8 @dynamicForms
 Business Need: dynamic forms Component Scenarios
   Test all dynamic forms component based scenarios
   As a configuration manager i make different configurational changes in dynamic forms component and will validate them.

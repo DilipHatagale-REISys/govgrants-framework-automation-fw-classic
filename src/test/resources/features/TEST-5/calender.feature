@@ -209,6 +209,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
+    And I pause execution for "60" seconds
     Then I see the text :
       | Department of Community Health                                  |
       | {SavedValue:savedValue}                                         |
@@ -464,7 +465,8 @@ Business Need: Calender Config Component Scenarios
     When I click on "Assign to User" in the page details
     When I check "Swati" boxes in flex table with id "toggleFlexTableUserListForQueue"
     And I click on top right button "Assign Case" in flex table with id "UserListForQueue"
-    Then I softly see field "Assigned To" as "Swati GGPTEST5"
+    And I save the field containing "Assigned To" as "AssignedTo"
+    Then I softly see field "Assigned To" as "{SavedValue:AssignedTo}"
 
   @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage
   Scenario: validate by click on close case action at detail pages case should get closed

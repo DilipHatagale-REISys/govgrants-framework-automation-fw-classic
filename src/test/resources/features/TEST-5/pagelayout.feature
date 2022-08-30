@@ -6064,7 +6064,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
-    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
     Then I see field "BusinessRole__c" is disabled
 
@@ -6083,7 +6083,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
-    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
     Then I see field "Test_URL__c" is disabled
 
@@ -6102,7 +6102,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
-    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
     Then I see field "Notify__c" is disabled
 
@@ -6121,7 +6121,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
-    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
     Then I softly see field "Notify__c" is disabled
     Then I softly see field "Test_URL__c" is disabled
@@ -6141,7 +6141,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
-    And I click on "Edit" icon for "PankajH GGPTEST5" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
+    And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
     Then I softly see field "Notify__c" is disabled
     Then I softly see field "Test_URL__c" is disabled
