@@ -301,7 +301,7 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    Then I see for "Program Manager Approver" value is "Automation PM" in chevron diagram
+    Then I see for "Program Manager Approver (Pending for approval)" value is "Automation PM" in chevron diagram
 
   @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
   Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase

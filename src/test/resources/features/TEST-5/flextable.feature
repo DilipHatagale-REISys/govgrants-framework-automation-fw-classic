@@ -1122,7 +1122,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |

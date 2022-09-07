@@ -204,16 +204,17 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
+    And I save the field labeled "Title" as "TITLE"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
-      | Department of Community Health                                  |
-      | {SavedValue:savedValue}                                         |
-      | Automation Internal Program for Approval and Snapshot scenarios |
-      | Created                                                         |
+      | {SavedValue:savedValue}        |
+      | Department of Community Health |
+      | {SavedValue:TITLE}             |
+      | Created                        |
 
   @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
@@ -675,6 +676,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "120" seconds
     And I click on lookup link contains "{SavedValue:savedValue}"
     Then I see the header is "Program" in the page details
 
@@ -719,16 +721,17 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
+    And I save the field labeled "Title" as "TITLE"
     And I pause execution for "3" seconds
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
-      | Department of Community Health                                  |
-      | {SavedValue:savedValue}                                         |
-      | Automation Internal Program for Approval and Snapshot scenarios |
-      | Created                                                         |
+      | {SavedValue:savedValue}        |
+      | Department of Community Health |
+      | {SavedValue:TITLE}             |
+      | Created                        |
 
   @127655    @verifyProgramIDIsDisplayedAtDayWiseCalendarForAdminUserAtHomePhase
   Scenario: validate that program ID is displayed at day wise calendar at home phase to admin user
