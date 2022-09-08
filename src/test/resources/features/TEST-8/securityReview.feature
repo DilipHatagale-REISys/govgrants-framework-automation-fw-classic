@@ -1,4 +1,4 @@
-@vrushali @SecurityReview-component @regression-test8 @securityReview
+@SecurityReview-component @regression-QA @securityReview
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.

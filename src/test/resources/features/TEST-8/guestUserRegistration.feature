@@ -1,4 +1,4 @@
-@vrushali @GuestUserRegistration-flow @regression-test8 @guestUserRegistration
+@vrushali @GuestUserRegistration-flow @regression-QA @guestUserRegistration
 Business Need: guest user registration flow based Scenarios
   Test all guest user registration flow based scenarios
   As a configuration manager i make different configurational changes in guest user registration and will validate them.

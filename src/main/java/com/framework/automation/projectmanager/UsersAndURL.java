@@ -17,14 +17,15 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getUserName(String userLevel) {
         String userName = null;
-        //if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-         //   userName = getQAEnvironmentUser(userLevel);
-       // } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
-        //}
-        /* TO DO */
-        //else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
-           // userName = getTest8EnvironmentUser(userLevel);
-       //} else
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+            userName = getQAEnvironmentUser(userLevel);
+        }/* else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
+        }
+        /* TO DO
+        else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
+            userName = getTest8EnvironmentUser(userLevel);
+       }*/
+         else
             if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             userName = getQAEnvironmentUser(userLevel);
         }else {
@@ -37,12 +38,12 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getPassword(String userType) {
         String password = null;
-        //if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-         //   password = getQAEnvironmentPassword(userType);
-        //} else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
+            password = getTEST5EnvironmentPassword(userType);
+        }/* else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
          //   password = getTest8EnvironmentPassword(userType);
-       // } else
-            if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+       // }*/
+           else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             password = getQAEnvironmentPassword(userType);
         }else {
             password = getQAEnvironmentPassword(userType);
@@ -57,7 +58,7 @@ public class UsersAndURL implements UsersController {
      * @param userType
      * @return the password for the passed in user type.
      */
-  /*  private String getQAEnvironmentPassword(String userType) {
+    private String getTEST5EnvironmentPassword(String userType) {
         String password;
         switch (userType.toUpperCase()) {
             case "AUTOMATION":
@@ -92,7 +93,7 @@ public class UsersAndURL implements UsersController {
         }
 
         return password;
-    }*/
+    }
 
     /**
      * Switches based on the user type passed in and returns the username for the
@@ -101,7 +102,7 @@ public class UsersAndURL implements UsersController {
      * @param userLevel
      * @return
      */
-    /*private String getQAEnvironmentUser(String userLevel) {
+    private String getTEST5EnvironmentUser(String userLevel) {
         String username;
 
         switch (userLevel.toUpperCase()) {
@@ -138,36 +139,7 @@ public class UsersAndURL implements UsersController {
         return username;
     }
 
-    private String getTest8EnvironmentUser(String userLevel) {
-        Map<String, String> username = new HashMap<>();
-        username.put("ADMIN", "nakul@admin.test8.ux");
-        username.put("EXE", "autoexe@yopmail.com.ux");
-        username.put("PM", "donaldpm@yopmail.com.ux");
-        username.put("FO", "autofm@yopmail.com.ux");
-        username.put("SPI", "autospi@yopmail.com.ux");
-        username.put("PM1", "pm1@yopmail.com.ux");
 
-        if (userLevel.toUpperCase() != null) {
-            return username.get(userLevel.toUpperCase());
-        } else {
-            return username.get("ADMIN");
-        }
-    }
-
-    private String getTest8EnvironmentPassword(String userType) {
-        Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "test1234");
-        password.put("EXE", "test@1234567");
-        password.put("PM", "test@12345678912");
-        password.put("FO", "test@123456");
-        password.put("SPI", "test@12345678");
-        password.put("PM1", "test@1234598678");
-        if (userType.toUpperCase() != null) {
-            return password.get(userType.toUpperCase());
-        } else {
-            return password.get("ADMIN");
-        }
-    }*/
 
     private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();

@@ -30,11 +30,11 @@ public class ProjectWebServices {
 
     private String defaultEndPointGetToken() {
         String defaultEndPointGetToken = "";
-        /*if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
+        if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
-        } else if (EnvironmentFactory.getEnvironmentName().contains("TEST8")) {
+        }/* else if (EnvironmentFactory.getEnvironmentName().contains("TEST8")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=ED8AAA4C6E94B6CF90739C5FC2E705B7548BE195EF4364B99AC72B64F12AC9FE&client_id=3MVG9ahGHqp.k2_wmbjHwYMdmX6eG9Rs2V6RgQyCXgwKRQN5OzafHM.hCYLC2hRCOhvfzkBokman98o5xN6dK&username=nakul@admin.test8.ux&password=test1234";
-        } else*/
+        } */else
             if (EnvironmentFactory.getEnvironmentName().contains("QA")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=C534061B026C5FBFF856CD31DBB1E722CD7D4D976F6154CA431A976E0C592927&client_id=3MVG9Iu66FKeHhIPe91yESdsJL200IDKuBwsrDV7WewsJy9p2d.Zhgw2ikOH2mpGFHDtoTBZ3c..nrgqTXz7R&username=automationadmin@ggp.test8.atm.fwautomat&password=fwautoadmin@22";
         }
