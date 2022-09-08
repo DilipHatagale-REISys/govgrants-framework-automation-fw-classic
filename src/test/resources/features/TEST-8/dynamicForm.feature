@@ -328,7 +328,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:FormInstructionSmall-Text}
   """
 
-  @wip @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
+  @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
   Scenario: validate the page instructions text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4194,7 +4194,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
     Then I softly do not see "Percent Section 3" inside "Section 3" at dynamic form
 
-  @wip @100118   @validateDependentQuestionJsonFieldByReqCurrencyAndHidingPercentFromSection1And3UsingWrittenFieldValueInsideDynamicFormInEditMode
+  @100118   @validateDependentQuestionJsonFieldByReqCurrencyAndHidingPercentFromSection1And3UsingWrittenFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making currency req and hiding percent from section 1 and 3 on the basis of written field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |

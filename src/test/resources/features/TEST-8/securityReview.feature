@@ -17,8 +17,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Overview" sub tab
     Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
 
@@ -151,8 +151,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title
@@ -179,8 +179,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Responsibilities" sub tab
     Then I see "Description" shown as flex table column title
 
@@ -201,8 +201,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see expected table with id "ProgramReviewStepTemplatesFlexToggle"
 
@@ -212,8 +212,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Overview" sub tab
     Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
 
@@ -239,8 +239,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Files" sub tab
     Then I see expected table with id "ApplicationChecklistsFlexToggle"
 
@@ -250,8 +250,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Proposal" sub tab
     Then I see expected table with id "toggleFlexTableGoalsQualifiedApplications"
 
@@ -411,8 +411,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleApprovalHistory"
 
@@ -422,8 +422,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatusForSPI}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "Snapshot_Application_Submission.pdf"
 
@@ -635,6 +635,7 @@ Business Need: security review Scenarios
 
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser @flow
   Scenario: validate that program in submit for approval mode is getting created by login as PM user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -663,6 +664,7 @@ Business Need: security review Scenarios
 
   @109931    @verifyProgramInApprovedModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to approved after getting approved by both the approvers
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -705,6 +707,7 @@ Business Need: security review Scenarios
 
   @109932    @verifyProgramInActiveModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -736,6 +739,7 @@ Business Need: security review Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
@@ -765,6 +769,7 @@ Business Need: security review Scenarios
 
   @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser @flow
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -815,6 +820,7 @@ Business Need: security review Scenarios
 
   @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @flow
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -930,13 +936,14 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see expected table with id "ProramPackagesGrantorFlexToggle"
 
   @110209   @verifyAnnouncementInSubmittedForApprovalMode @flow
   Scenario: validate announcement in submitted for approval state
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1056,7 +1063,7 @@ Business Need: security review Scenarios
 
   @109392   @verifyAnnouncementInCreatedMode @flow
   Scenario: validate announcement in created state
-    #Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1113,6 +1120,7 @@ Business Need: security review Scenarios
 
   @110694   @verifyRejectActionAtProgramSubmittedForApproval @flow
   Scenario: validate reject action at program submitted for approval
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1161,6 +1169,7 @@ Business Need: security review Scenarios
 
   @110717   @verifySendBackActionPerformedByProgramApprover @flow
   Scenario: validate sending back action performed by program approver
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1213,6 +1222,7 @@ Business Need: security review Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @flow
   Scenario: validate announcement in published state
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1350,6 +1360,7 @@ Business Need: security review Scenarios
 
   @110210   @verifyAnnouncementInApprovedMode @flow
   Scenario: validate announcement in approved state
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1443,9 +1454,9 @@ Business Need: security review Scenarios
 
   @110218   @verifyOpportunityInSubmittedMode @flow
   Scenario: validate opportunity in submitted state
-    #Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-   # Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    #Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1539,8 +1550,8 @@ Business Need: security review Scenarios
 
   @110257   @verifyGrantCreatedAndActivateByPMUser @flow
   Scenario: validate grant created ad activated by PM user
-   # Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-   # Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
    #program Activation
     When I login as "PM" user
@@ -2019,7 +2030,6 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see field "Status" as "Approved"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-
     # Sub-Award sent to sub-recepient
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Grants" tab
@@ -2030,7 +2040,6 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:subawardsTableId---" without waiting for record
     When I click on "Send to Subrecipient" in the page details
     Then I softly see field "Status" as "Sent to Subrecipient after Approval"
-
   # Sub-Award accpted by sub-recepient
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Grants" tab
@@ -2050,7 +2059,6 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:subawardsTableId---" without waiting for record
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Activated" and is "green"
-
   # Grant activation by owner
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -2060,9 +2068,9 @@ Business Need: security review Scenarios
 
   @111198   @verifyAmendmentRequestAndPaymentRequestAndSiteVisitCreationByPMUser @flow
   Scenario: validate AmendmentRequest, Payment request and site visit closure by PM user
-   # Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-   # Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-  # Given I delete the record "Automation Internal Program for flow" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Internal Program for flow" from the object "Program__c" with field "ProgramName__c"
    #program Activation
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -2161,7 +2169,6 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
-
     #Create Application
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
