@@ -434,7 +434,6 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I pause execution for "20" seconds
     When I click on advance filter "#advfCaseList" of table id "CaseList"
-    And I pause execution for "120" seconds
     When I enter advance filter values inside id "advfCaseList"
       | Subject | Starts with | Test Automation |
     Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
