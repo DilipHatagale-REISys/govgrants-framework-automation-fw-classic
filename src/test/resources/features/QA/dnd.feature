@@ -1,4 +1,4 @@
-@Dnd-component @regression-QA @DND
+@Dnd-component @regression-QA @DND @skiponjenkins
 Business Need: dnd Component Scenarios
   Test all dnd component based scenarios
   As a configuration manager i make different configurational changes in dnd custom metadata config and will validate them.

@@ -134,7 +134,7 @@ Business Need: security review Scenarios
     And I click toggle button to select "Applications - All"
     Then I see expected table with id "toggleFlexTablepopupflextable"
 
-  @106314    @verifyThatRecordLevelFlexTableIsDisplayedByLoginAsSPIUser @record
+  @106314    @verifyThatRecordLevelFlexTableIsDisplayedByLoginAsSPIUser
   Scenario: validate record Level flexTable IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -750,6 +750,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
     And I click on "Activate" in the page details
+    And I pause execution for "3" seconds
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
   @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser @record

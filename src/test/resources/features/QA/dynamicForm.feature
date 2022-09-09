@@ -328,7 +328,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:FormInstructionSmall-Text}
   """
 
-  @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
+  @wip @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
   Scenario: validate the page instructions text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
