@@ -209,7 +209,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
+    And I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
       | {SavedValue:savedValue}        |
       | Department of Community Health |
