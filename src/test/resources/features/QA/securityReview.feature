@@ -244,7 +244,7 @@ Business Need: security review Scenarios
     When I navigate to "Files" sub tab
     Then I see expected table with id "ApplicationChecklistsFlexToggle"
 
-  @doubt @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser @record
+  @doubt @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser @record @wip @tableisnotavailable
   Scenario: validate data table Is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1041,12 +1041,9 @@ Business Need: security review Scenarios
     When I perform quick search for "GT-REI-00001"
     When I click on "View" icon for "GT-REI-00001" inside table
     When I navigate to "Subawards" sub tab
-    #When I perform quick search for "AD-REI-01" in "---program:-:subawardsTableId---" panel
-    #When I click on "View" icon for "AD-REI-01" inside table
     When I click on "View" icon for "AD-REI-01" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "1000" in "---program:-:flexGridSubAwardBudgetCategoryID---" panel
-    Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridSubAwardBudgetCategoryID---"
+    Then I see value "Construction" for title "Budget Category" inside table "---program:-:RecipientAwardBudgetCategoryFlexGridgridTableId---"
 
   @110745   @verifyAdvanceFilterAtFlexTableEnhancedTableIsWorkingCorrectly @record
   Scenario: validate that advance filter is working or not at flex table enhanced table
@@ -1087,10 +1084,11 @@ Business Need: security review Scenarios
       | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
+    When I click "Yes" on modal confirmation box
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -1098,7 +1096,7 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:toggleFlexTableHomePendingTasksTableID---" panel
@@ -1351,8 +1349,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "AP-A11-003"
-    When I click on "View" icon for "AP-A11-003" inside table
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfAppContact" of table id "---program:-:flexTableEnhancedAppContactId---"
     When I enter advance filter values inside id "advfAppContact"
