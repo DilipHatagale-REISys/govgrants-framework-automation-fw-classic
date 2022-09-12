@@ -148,8 +148,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -159,8 +159,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -170,8 +170,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
     And I click modal button "OK"
@@ -186,8 +186,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
     And I click modal button "OK"
@@ -266,8 +266,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -280,8 +280,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
@@ -371,8 +371,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -485,8 +485,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "5" seconds
     And I click on "Comment" action at "Post at record level" comment inside my feed
@@ -576,8 +576,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
@@ -626,8 +626,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
     When I navigate to "Collab" sub tab
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
