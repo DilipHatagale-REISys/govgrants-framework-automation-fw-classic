@@ -4535,7 +4535,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
 
-  @wip @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
+   @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
   Scenario: validating Download as pdf option is disappears from menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |

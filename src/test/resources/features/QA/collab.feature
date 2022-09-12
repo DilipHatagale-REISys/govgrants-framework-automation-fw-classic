@@ -749,6 +749,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation PM" in my feed section and share the post
+    And I pause execution for "3" seconds
     Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @223914 @UserNameShouldBeDisplayedAtStartingOfComment

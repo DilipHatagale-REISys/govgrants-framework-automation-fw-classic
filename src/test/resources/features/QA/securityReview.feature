@@ -244,7 +244,7 @@ Business Need: security review Scenarios
     When I navigate to "Files" sub tab
     Then I see expected table with id "ApplicationChecklistsFlexToggle"
 
-  @doubt @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser @record @wip @tableisnotavailable
+  @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser @record
   Scenario: validate data table Is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
