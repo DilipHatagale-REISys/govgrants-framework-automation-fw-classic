@@ -596,7 +596,6 @@ Business Need: collab Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly see tab label as "Upload File" at files library upload modal
-    Then I softly see tab label as "Upload File" at files library upload modal
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
@@ -649,7 +648,6 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File" at files library upload modal
     Then I softly see tab label as "Upload File" at files library upload modal
 
   @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser

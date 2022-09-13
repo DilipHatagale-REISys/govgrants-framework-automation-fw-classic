@@ -2922,7 +2922,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isMenuBarAtMyFeedSectionDisplayed() {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='panel-heading-title'] and //a[contains(@class,'menuLinks')]"))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
