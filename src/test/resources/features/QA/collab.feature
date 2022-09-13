@@ -173,10 +173,11 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
-    And I click modal button "OK"
+    #And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
+    #And I click modal button "OK"
     When I pause execution for "5" seconds
     And I enter value "Test Automation ADMIN application phase Comment" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
@@ -189,10 +190,11 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
-    And I click modal button "OK"
+    #And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
+    #And I click modal button "OK"
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
@@ -507,8 +509,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "@Simon" in my feed section and share the comment
-    Then I see "@Simon" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "@Simon PM" in my feed section and share the comment
+    Then I see "@Simon PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @120990   @VerifyCrossIconIsDisplayedAtCollabPhaseQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase quick search box
@@ -571,7 +573,7 @@ Business Need: collab Component Scenarios
     And I select "All Users" from dropdown
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed home
 
-  @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab
+  @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab @doubt
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
