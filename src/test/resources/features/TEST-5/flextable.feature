@@ -1122,7 +1122,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -2753,8 +2753,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Does not contains | Shambhavi |
-    Then I softly do not see value "Shambhavi" for title "Announcement Title" inside table "---program:-:programTableDivId---"
+      | Announcement Title | Does not contains | Announcement created for calendar test |
+    Then I softly do not see value "Announcement created for calendar test" for title "Announcement Title" inside table "---program:-:programTableDivId---"
 
   @184107 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' start with ' Operator
@@ -2764,8 +2764,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Starts with | Shambhavi |
-    Then I softly see value "Shambhavi Announcements" for title "Announcement Title" inside table "---program:-:programTableDivId---"
+      | Announcement Title | Starts with | Announcement created for calendar test |
+    Then I softly see value "Announcement created for calendar test" for title "Announcement Title" inside table "---program:-:programTableDivId---"
 
   @184108 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Ends with  ' Operator
@@ -2775,8 +2775,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Ends with | Shambhavi |
-    Then I softly see value "Shambhavi Announcements" for title "Announcement Title" inside table "---program:-:programTableDivId---"
+      | Announcement Title | Ends with | Announcement created for calendar test |
+    Then I softly see value "Announcement created for calendar test" for title "Announcement Title" inside table "---program:-:programTableDivId---"
 
   @184230 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist  field with ' Equals to ' Operator

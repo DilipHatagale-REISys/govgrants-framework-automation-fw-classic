@@ -76,8 +76,8 @@ Business Need: history Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
-    Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
+    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "3" contains text "Automation PM"
+    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "4" contains text "Allen PM"
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -606,6 +606,7 @@ Business Need: history Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
+    And I pause execution for "60" seconds
     Then I see expected table with id "toggleApprovalHistory"
 
   @121042    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageEditMode
