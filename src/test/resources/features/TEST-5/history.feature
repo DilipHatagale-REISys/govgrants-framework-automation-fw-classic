@@ -76,7 +76,6 @@ Business Need: history Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    And I pause execution for "60" seconds
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "3" contains text "Automation PM"
     Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "4" contains text "Allen PM"
 

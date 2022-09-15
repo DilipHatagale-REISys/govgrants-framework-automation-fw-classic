@@ -675,7 +675,6 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    And I pause execution for "120" seconds
     And I click on lookup link contains "{SavedValue:savedValue}"
     Then I see the header is "Program" in the page details
 
