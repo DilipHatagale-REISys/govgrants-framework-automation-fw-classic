@@ -3,7 +3,7 @@ Business Need: Flex Table Component Scenarios
   Test all flex table component based scenarios
   As a configuration manager i make different configurational changes in flex table component and will validate them.
 
-  @206106 @vip
+  @206106
   Scenario: qwe
     Given I delete the record "Automation Internal Program for flow" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
