@@ -1147,7 +1147,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1172,11 +1172,12 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
 
   @84704    @verifyDateAndTimeFieldFormatForLocalAsESTUnderFlexTable-gPlanning
   Scenario Outline: validate the date and time field format under flex table with respective to EST Local
@@ -1276,7 +1277,7 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Test program for automation - Created mode only |
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "11/30/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
@@ -1290,7 +1291,7 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Test program for automation - Created mode only |
     Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "11/30/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
@@ -1301,7 +1302,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsTableIdNew---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date   | Greater than or Equal to | 11/30/2020                                      |
+      | Start Date   | Greater than or Equal to | 01/01/2025                                      |
       | Program Name | Contains                 | Test program for automation - Created mode only |
     When I perform quick search for "01/01/2025"
     Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:ProgramsTableIdNew---"
@@ -1820,12 +1821,12 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    Then I see the text :
-      | 1,235.0000 |
+    Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
 
   @151627    @validateIsSearchWorkingForLongTextSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for long text searched in flex table quick search box
@@ -1903,8 +1904,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    Then I see the text :
-      | 1,235.0000 |
+    Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1944,9 +1944,10 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I perform quick search for "Program Created"
+    And I pause execution for "3" seconds
     Then I see the text :
-      | Showing 1 to 4 of 4 records |
+      | Showing 1 to 9 of 9 records |
 
   @148809     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
   Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
@@ -2809,7 +2810,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Greater than | $1,000 |
-    Then I softly see value "$2,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184087 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' start with ' Operator
@@ -3432,6 +3433,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "dfrtyuiodfgyhui"
+    And I pause execution for "3" seconds
     Then I see the text :
       | No records found |
 

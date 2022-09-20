@@ -205,16 +205,16 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I save the field labeled "Title" as "TITLE"
+    And I save the field labeled "Program Type" as "PT"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
-      | {SavedValue:savedValue}        |
-      | Department of Community Health |
-      | {SavedValue:TITLE}             |
-      | Created                        |
+      | {SavedValue:savedValue} |
+      | Department of Community Health     |
+      | {SavedValue:PT}                    |
 
   @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
@@ -729,7 +729,6 @@ Business Need: Calender Config Component Scenarios
       | {SavedValue:savedValue}        |
       | Department of Community Health |
       | {SavedValue:TITLE}             |
-      | Created                        |
 
   @127655    @verifyProgramIDIsDisplayedAtDayWiseCalendarForAdminUserAtHomePhase
   Scenario: validate that program ID is displayed at day wise calendar at home phase to admin user

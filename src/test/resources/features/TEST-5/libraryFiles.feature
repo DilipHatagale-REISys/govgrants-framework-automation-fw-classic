@@ -4716,7 +4716,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    When I click on top right button "Add" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I see the text :
       | Visibility Options |
 
@@ -4824,7 +4824,7 @@ Business Need: Library Files Component Scenarios
     And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     Then I softly do not see Classification as "Other" at upload file modal
 
   @157842 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtHomePhaseUploadFileModal-ByLoginAsAutomationPMUser
@@ -4842,10 +4842,10 @@ Business Need: Library Files Component Scenarios
     And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
-    And I navigate to "HOME" tab
+    And I navigate to "Collab" tab
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     Then I softly do not see Classification as "Other" at upload file modal
 
   @157886 @validateClassificationsPresentUnderDropDownAtRecordLevelCollabTabAtUploadFileModalByLoginAsAutomationADMINUser
@@ -4872,7 +4872,9 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
+    And I pause execution for "3" seconds
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly see Classification as "Other" at upload file modal
@@ -4933,18 +4935,12 @@ Business Need: Library Files Component Scenarios
     And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
-    And I navigate to "HOME" tab
-    And I pause execution for "8" seconds
+    And I navigate to "Collab" tab
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly do not see Classification as "Other" at upload file modal
-#    When I click on "×" icon at "Add Files" modal under Library
-#    And I navigate to "Collab" tab
-#    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-#    And I click modal button "OK"
-#    When I pause execution for "5" seconds
-#    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158145 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationSPIUser
   Scenario: Verify classifications added from config is not present in upload file modal at collab phase by login as SPI user
@@ -4961,6 +4957,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5040,7 +5037,7 @@ Business Need: Library Files Component Scenarios
     And I pause execution for "4" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
-    And I navigate to "HOME" tab
+    And I navigate to "Collab" tab
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5142,19 +5139,13 @@ Business Need: Library Files Component Scenarios
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I pause execution for "7" seconds
-    And I navigate to "HOME" tab
+    And I navigate to "Collab" tab
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I softly do not see Classification as "Select file classification" at upload file modal
-#    When I click on "×" icon at "Add Files" modal under Library
-#    And I navigate to "Collab" tab
-#    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-#    And I click modal button "OK"
-#    When I pause execution for "5" seconds
-#    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158193 @validateUploadButtonIsDisabledAndAsteriskMarkIsDisplayedAtClassificationAtRecordLevelCollabTablByLoginAsAutomationPMUser
   Scenario: Verify Upload button is disabled and asterisk mark is displayed at classification at upload file modal - record collab tab by PM account
@@ -5173,6 +5164,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5231,7 +5223,7 @@ Business Need: Library Files Component Scenarios
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "@Automation PM" in my feed section and share the comment
     And I pause execution for "5" seconds
-    And I navigate to "HOME" tab
+    And I navigate to "Collab" tab
     And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
