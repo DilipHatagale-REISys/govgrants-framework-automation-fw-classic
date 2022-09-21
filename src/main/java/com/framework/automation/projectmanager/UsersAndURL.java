@@ -17,15 +17,15 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getUserName(String userLevel) {
         String userName = null;
-        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            userName = getQAEnvironmentUser(userLevel);
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
+            userName = getTEST5EnvironmentUser(userLevel);
         } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
         }
         /* TO DO */
         else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
             userName = getTest8EnvironmentUser(userLevel);
         } else {
-            userName = getQAEnvironmentUser(userLevel);
+            userName = getTEST5EnvironmentUser(userLevel);
         }
 
         return userName;
@@ -35,11 +35,11 @@ public class UsersAndURL implements UsersController {
     public String getPassword(String userType) {
         String password = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            password = getQAEnvironmentPassword(userType);
+            password = getTEST5EnvironmentPassword(userType);
         } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
             password = getTest8EnvironmentPassword(userType);
         } else {
-            password = getQAEnvironmentPassword(userType);
+            password = getTEST5EnvironmentPassword(userType);
         }
 
         return password;
@@ -51,7 +51,7 @@ public class UsersAndURL implements UsersController {
      * @param userType
      * @return the password for the passed in user type.
      */
-    private String getQAEnvironmentPassword(String userType) {
+    private String getTEST5EnvironmentPassword(String userType) {
         String password;
         switch (userType.toUpperCase()) {
             case "AUTOMATION":
@@ -95,7 +95,7 @@ public class UsersAndURL implements UsersController {
      * @param userLevel
      * @return
      */
-    private String getQAEnvironmentUser(String userLevel) {
+    private String getTEST5EnvironmentUser(String userLevel) {
         String username;
 
         switch (userLevel.toUpperCase()) {
