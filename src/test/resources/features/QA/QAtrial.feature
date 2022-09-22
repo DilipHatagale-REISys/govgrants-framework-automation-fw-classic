@@ -31,7 +31,7 @@ Business Need: collab Component Scenarios
       And I enter value "Test Automation @[Automation EXE] collab phase Comment" in my feed section and share the post
       Then I see "@Automation EXE Test Automation @Automation EXE collab phase Comment" inside flex table with id "---program:-:myFeedTableId---"
 
-    @207106 @vip
+    @207106
     Scenario:
       When I login as "PM" user
       When I setup my app as "As a Grantor"
@@ -58,7 +58,7 @@ Business Need: collab Component Scenarios
         Then I softly see "Award Budget" page block displayed
 
     @221291
-    Scenario:
+    Scenario: do create step
       When I login as "Admin" user
       When I setup my app as "As a Grantor"
       And I navigate to "Applications" tab
@@ -67,5 +67,7 @@ Business Need: collab Component Scenarios
       When I click on "View" icon for "AP-A11-002" inside table
       When I navigate to "Budget" sub tab
       Then I softly see "Budget Periods" page block displayed
-      And I perform scroll on page layout
-      Then I see
+      And I perform scroll to with tableid "EnhanceAppBudCatGrantorFlexGridgrid"
+      And I pause execution for "5" seconds
+      Then I softly see "Budget Period #" in flex table header "EnhanceAppBudCatGrantorFlexGridgrid"
+      #Then I see value "11/08/2022" for title "Start Date" inside table "Budget Periods"
