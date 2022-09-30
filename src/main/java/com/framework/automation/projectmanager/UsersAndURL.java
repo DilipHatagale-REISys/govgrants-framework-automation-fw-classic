@@ -80,7 +80,7 @@ public class UsersAndURL implements UsersController {
                 password = "test@1234";
                 break;
             case "AUTOMATION-ADMIN":
-                password = "Automation@2022";
+                password = "Automation@202";
                 break;
             case "AUTOMATION-SPI2":
                 password = "Automation@123456";
@@ -159,12 +159,12 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "fwautoadmin@22");
-        password.put("EXE", "fwautoexe@22");
-        password.put("PM", "fwautopm@22");
-        password.put("FO", "fwautofo@22");
+        password.put("ADMIN", "Automation@2022");
+        password.put("EXE", "FrameworkAuto@2020");
+        password.put("PM", "Automation@22");
+        password.put("FO", "Automation@123");
         password.put("SPI", "fwautospi@22");
-        password.put("PM1", "fwautopm1@22");
+        password.put("PM1", "FrameworkAuto@2022");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {

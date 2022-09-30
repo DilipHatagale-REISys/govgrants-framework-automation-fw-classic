@@ -496,14 +496,14 @@ Business Need: security review Scenarios
     When I perform quick search inside global search "Gr"
     Then I see expected table with id "toggleFlexTableGrant__c"
 
-  @doubt @107836 @validateThatIfAnSearchedInGlobalSearchThenAwardTableDisplayedByLoginAsSPIUser-HomePhase
+  @107836 @validateThatIfAnSearchedInGlobalSearchThenAwardTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as Aw is searched in global search then, award Table is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
-    When I click on global search and select "Subawards"
+    When I click on global search and select "Awards"
     When I perform quick search inside global search "Sub"
-    Then I see expected table with id "toggleFlexTableAward__c"
+    Then I see expected table with id "flexTableDivId"
 
   @109267    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned to me table displayed
@@ -815,7 +815,6 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Active" and is "Green"
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
-    Then I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
 
@@ -1253,6 +1252,7 @@ Business Need: security review Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
@@ -1400,6 +1400,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
+    And I pause execution for "5" seconds
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
     #Announcement Creation
