@@ -204,16 +204,17 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
+    And I save the field labeled "Title" as "TITLE"
+    And I save the field labeled "Program Type" as "PT"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
+    And I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
-      | Department of Community Health                                  |
-      | {SavedValue:savedValue}                                         |
-      | Automation Internal Program for Approval and Snapshot scenarios |
-      | Created                                                         |
+      | {SavedValue:savedValue} |
+      | Department of Community Health     |
+      | {SavedValue:PT}                    |
 
   @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
@@ -433,7 +434,6 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I pause execution for "20" seconds
     When I click on advance filter "#advfCaseList" of table id "CaseList"
-    And I pause execution for "120" seconds
     When I enter advance filter values inside id "advfCaseList"
       | Subject | Starts with | Test Automation |
     Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
@@ -464,7 +464,8 @@ Business Need: Calender Config Component Scenarios
     When I click on "Assign to User" in the page details
     When I check "Swati" boxes in flex table with id "toggleFlexTableUserListForQueue"
     And I click on top right button "Assign Case" in flex table with id "UserListForQueue"
-    Then I softly see field "Assigned To" as "Swati GGPTEST5"
+    And I save the field containing "Assigned To" as "AssignedTo"
+    Then I softly see field "Assigned To" as "{SavedValue:AssignedTo}"
 
   @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage
   Scenario: validate by click on close case action at detail pages case should get closed
@@ -718,16 +719,16 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
+    And I save the field labeled "Title" as "TITLE"
     And I pause execution for "3" seconds
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
     Then I see the text :
-      | Department of Community Health                                  |
-      | {SavedValue:savedValue}                                         |
-      | Automation Internal Program for Approval and Snapshot scenarios |
-      | Created                                                         |
+      | {SavedValue:savedValue}        |
+      | Department of Community Health |
+      | {SavedValue:TITLE}             |
 
   @127655    @verifyProgramIDIsDisplayedAtDayWiseCalendarForAdminUserAtHomePhase
   Scenario: validate that program ID is displayed at day wise calendar at home phase to admin user
@@ -1059,3 +1060,17 @@ Business Need: Calender Config Component Scenarios
     And I click on lookup link contains "{SavedValue:savedValue}"
     Then I see the text :
       | {SavedValue:savedValue} |
+
+  @35121    @colorCodeFieldAtCalenderConfig @calenderConfig
+  Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Calender Config       | Color Code | #B0CEE1           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName  | fieldNewValue | coreComponentField   |
+      | Calender Config:General | Color Code | #FF0000       | Grantor_Home_Program |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    Then I see Program record in "Red" color inside my workspace

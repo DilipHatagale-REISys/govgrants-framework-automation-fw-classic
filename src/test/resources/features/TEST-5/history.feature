@@ -76,8 +76,8 @@ Business Need: history Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
-    Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
+    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "3" contains text "Automation PM"
+    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "4" contains text "Allen PM"
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -532,8 +532,14 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-343-6134"
-    When I click on "View Program Details" icon for "PG-343-6134" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "0" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I enter value "400000" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I see "$400,000" shown inside "New Value" column in history table
 

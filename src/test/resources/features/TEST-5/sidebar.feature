@@ -886,3 +886,17 @@ Business Need: Side bar Component Scenarios
     When I hover mouse on lookup link "PG-343-0058"
     And I pause execution for "3" seconds
     Then I softly see "Value" as "PG-343-0058" inside mini page layout
+
+  @77698    @enableFormulaFieldAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
+  Scenario: validate subtotal of cell value of total obligated amount by entering formula at config  and validating it inside enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field

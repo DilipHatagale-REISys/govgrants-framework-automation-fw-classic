@@ -194,9 +194,9 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     And I pause execution for "10" seconds
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | Announcement Title                      | Announcement Type   |
-      | Sole Source/Formula grants verification | Sole Source/Formula |
-      | Sole Source/Formula announcement..      | Sole Source/Formula |
+      | Announcement Title | Announcement Title                      | Announcement Type   | Status   | Announcement Type |
+      | AN-755-218         | Sole Source/Formula grants verification | Sole Source/Formula | Archived | View              |
+      | AN-755-193         | Sole Source/Formula announcement..      | Sole Source/Formula | Archived | View              |
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
@@ -601,7 +601,6 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Test" with title "Enhanced View"
-    When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "Announcemnenttest_1"
 
   @71029    @validateTitleFieldAtCharts-gAnnouncement-Testing_column
@@ -1516,6 +1515,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
     When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
+    And I pause execution for "5" seconds
     When I switch to tab number "1"
     Then I see the sub-header is "APP1- FOA for DHP" in the page details
     Then I see the header is "Application" in the page details
@@ -2780,6 +2780,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
+    And I pause execution for "5" seconds
     Then I see charts with id "---program:-:EnhancedPiechartID---" displayed
 
   @208587 @VerifyThatAllDataGettingDisplayedAfterClickingShowAllButton @Sprint8
@@ -2975,3 +2976,111 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     And I pause execution for "7" seconds
     Then I see "Funding Opportunities" displayed in modal
+
+  @34666    @validateTitleField-gplanning @enhancedCharts
+  Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
+      | Charts Config         | Title     | AnnouncementByAdminBureauUnit | ApiGeneratedId:0 |
+      | Charts Config         | Active    | false                         | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
+      | Charts Config         | Title     | Funding Opportunities for Automation | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
+      | Charts Config         | Active    | true                                 | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Funding Opportunities for Automation" displayed as chart title
+
+  @34485    @validateNumberOfCharts-gplanning  @enhancedCharts
+  Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Total Charts Allowed | 1             | GrantorPlanning    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" charts are displayed
+
+  @70869 @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts @skipOnJenkins
+  Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label | Count             | ApiGeneratedId:0 |
+      | Charts Config         | Active       | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | <EchartY-Axix_Text> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active       | true                | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text             |
+      | Automation Announcement count |
+
+  @70876    @validateEditDataTableQueryforAllDataFieldFromBurgerIcon-gAnnouncement-EnhancedCharts @enhancedCharts
+  Scenario Outline: Validate all data from 'EnhancedPiechartId'
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+
+  @70877    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-EnhancedCharts @enhancedCharts
+  Scenario Outline: Validate expected status from enhanced chart modal(show all data from enhanced view icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+
+  @70982    @validateDisableLegendsFieldsWithTrue-gHOME-EnhancedDualAxesCharts @enhancedCharts
+  Scenario: validate disable legends fields of 'EnhancedDualAxesId' is working or not while checking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"

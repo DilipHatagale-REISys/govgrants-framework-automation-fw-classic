@@ -19,12 +19,7 @@ public class UsersAndURL implements UsersController {
         String userName = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             userName = getTEST5EnvironmentUser(userLevel);
-        }/* else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
         }
-        /* TO DO
-        else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
-            userName = getTest8EnvironmentUser(userLevel);
-       }*/
          else
             if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             userName = getQAEnvironmentUser(userLevel);
@@ -40,9 +35,7 @@ public class UsersAndURL implements UsersController {
         String password = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             password = getTEST5EnvironmentPassword(userType);
-        }/* else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST8"))) {
-         //   password = getTest8EnvironmentPassword(userType);
-       // }*/
+        }
            else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             password = getQAEnvironmentPassword(userType);
         }else {

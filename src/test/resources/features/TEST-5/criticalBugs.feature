@@ -516,6 +516,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     And I click on "Save" in the page details
+    And I pause execution for "3" seconds
     Then I see the text :
       | is required to save. |
       | Assigned to User     |
@@ -641,6 +642,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Qualified Opportunities" content inside "Activities" subheader on left panel
     When I perform quick search for "FOA-State-004" in "---program:-:programTableDivId---" panel
     When I click on "View" icon for "FOA-State-004" inside table
+    And I pause execution for "5" seconds
     Then I see the text :
       | General Information    |
       | Eligibility            |
@@ -1009,13 +1011,13 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    And I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
     When I click on "Delete" icon for "BP-01" inside table
-    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:inlineApplicationBudgetCategoryTableId---" by clicking "New" :
       | Support Year |
       | BP-01        |
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    Then I see that "BP-01" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    When I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
+    Then I see that "BP-01" has been added in flextable with Id "---program:-:inlineApplicationBudgetCategoryTableId---"
 
   @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
@@ -4506,6 +4508,7 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -4560,7 +4563,7 @@ Business Need: Logged Issues Scenarios
     When I click on "×" icon at "Add Files" modal under Library
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
-    And I navigate to "HOME" tab
+    And I navigate to "Collab" tab
     When I pause execution for "3" seconds
     And I click on "More Actions" action at "Automation file upload at record post collab" comment inside my feed
     Then I see More Actions dropdown window displayed at collab
@@ -5147,6 +5150,7 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5216,6 +5220,7 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5783,6 +5788,8 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     And I navigate to "Planning" tab
     And I navigate to "Collab" tab
+    And I enter value "Temp Post Automation" in my feed section and share the post
+    And I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5916,6 +5923,7 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    When I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I enter value "" in my feed section and share the comment
     Then I softly see confirmation box with body "Comment is Required." is displayed
@@ -6048,6 +6056,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "Test Automation Application DND" inside table
     And I navigate to "Collab" sub tab
     And I enter value "Temp Post Automation" in my feed section and share the post
+    When I pause execution for "3" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
