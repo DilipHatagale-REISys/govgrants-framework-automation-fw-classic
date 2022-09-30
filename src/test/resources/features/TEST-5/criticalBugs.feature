@@ -1011,13 +1011,13 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    And I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
     When I click on "Delete" icon for "BP-01" inside table
-    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:inlineApplicationBudgetCategoryTableId---" by clicking "New" :
       | Support Year |
       | BP-01        |
-    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    Then I see that "BP-01" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    When I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
+    Then I see that "BP-01" has been added in flextable with Id "---program:-:inlineApplicationBudgetCategoryTableId---"
 
   @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
