@@ -4689,7 +4689,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
+   # When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
