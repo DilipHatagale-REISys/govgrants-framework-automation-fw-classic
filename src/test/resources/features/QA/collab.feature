@@ -867,3 +867,12 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "hi @Automation PM" in my feed section and share the post
     Then I see "hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @207060 @vrushali @sprint-8
+  Scenario:To verify,If add one user in starting of the line & second one is middle  then the user name should be displayed at the same position in text format on the record level collab
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Automation PM Automation Admin" in my feed section and share the post
+    Then I see "Automation PM Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
