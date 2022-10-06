@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenariosTest8 @regression-QA @skipOnJenkins
+@allPdfAndXlxRelatedScenariosTest8 @regression-QA
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
@@ -870,3 +870,49 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see new tab is opened
+
+  @201188  @201189 @201190  @us-199729 @vrushali
+  Scenario:To verify, If New Validate button of a form is clicked upon then the pdf of that form will be generated & it can be downloaded after clicking on 'Download as PDF' on the page layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see top right button "New Validate" in page detail
+    When I click on "New Validate" in the page details
+    When I click on "Menu" in the page details
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #201188
+    Then I see "Standard Assurances Form" on page "1" of "govgrants" pdf file
+    And I switch to parent tab
+    When I click on "Back" in the page details
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see top right button "New Validate" in page detail
+    When I click on "New Validate" in the page details
+    When I click on "Menu" in the page details
+   #201190
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #201189
+    Then I see new tab is opened
+
+  @201194 @201195 @us-199729 @vrushali
+  Scenario:To verify,If user clicks on 'New Validate' button without filling up all required fields then Error message should be displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I clear the value from field "fieldQuestion1__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | 1a. Describe the activities and/or services to be provided. (10 points) is required to save. |
