@@ -3571,4 +3571,9 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void ClickOnRightAllignInDescriptionField() {
+        By ByPhaseButton = By.xpath("//a[@title='Align Right' and @id='cke_58']");
+        I.amPerforming().click().on(ByPhaseButton);
+    }
 }

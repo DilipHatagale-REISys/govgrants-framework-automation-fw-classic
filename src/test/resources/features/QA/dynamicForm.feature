@@ -1115,7 +1115,7 @@ Business Need: dynamic forms Component Scenarios
       | Score value should not be greater than max score |
 
 
-  @wip @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
+   @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at date field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |

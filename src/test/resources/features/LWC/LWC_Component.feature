@@ -10,20 +10,13 @@ Business Need: Flex Table Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     When I navigate to "Component testing" sub tab
     Then I softly see quick search inside table id "Programs_TestflexTable"
 
-  @222532 @LWC-Flextable-QuickSearch-PM-UI-ToverifythatuserisabletosearchforPicklistfield @vip
+  @222532 @LWC-Flextable-QuickSearch-PM-UI-ToverifythatuserisabletosearchforPicklistfield
   Scenario:LWC-Flex table-Quick Search-PM-UI-To verify that user is able to search for Picklist field
     When I login as "PM" user
     When I setup my app as "As a Grantor"

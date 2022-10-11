@@ -824,4 +824,8 @@ public class PageLayoutSteps {
         I.amPerforming().click().on(ChangeStyle);
     }
 
+    @And("I click on Right allign in description field")
+    public void iClickOnRightAllignInDescriptionField() {
+        pageLayoutPage.ClickOnRightAllignInDescriptionField();
+    }
 }
