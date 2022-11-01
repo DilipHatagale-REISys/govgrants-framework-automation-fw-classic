@@ -810,10 +810,10 @@ public class PageLayoutSteps {
 
     @And("I select {string} from ck editor")
     public void iChangeStyleOfAllTextToInsideCKEditor(String styleName) {
-    By StyleSelector= By.xpath("//a[@title='Formatting Styles']/span[2]");
-    I.amPerforming().click().on(StyleSelector);
-    By ChangeStyle= By.xpath("//*[text()='"+styleName+"']");
-    I.amPerforming().click().on(ChangeStyle);
+        By StyleSelector= By.xpath("//a[@title='Formatting Styles']/span[2]");
+        I.amPerforming().click().on(StyleSelector);
+        By ChangeStyle= By.xpath("//*[text()='"+styleName+"']");
+        I.amPerforming().click().on(ChangeStyle);
     }
 
     @And("I change font {string} from ck editor")
@@ -824,4 +824,8 @@ public class PageLayoutSteps {
         I.amPerforming().click().on(ChangeStyle);
     }
 
+    @And("I click on Right allign in description field")
+    public void iClickOnRightAllignInDescriptionField() {
+        pageLayoutPage.ClickOnRightAllignInDescriptionField();
+    }
 }
