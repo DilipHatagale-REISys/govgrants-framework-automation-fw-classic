@@ -307,7 +307,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Dynamic Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
 
-  @wip @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
+   @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
   Scenario: validate the page instructions text apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -328,7 +328,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:FormInstructionSmall-Text}
   """
 
-  @wip @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
+  @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
   Scenario: validate the page instructions text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -349,7 +349,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:FormInstructionSmall-Text}
   """
 
-  @wip @89932    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInViewMode
+  @89932    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInViewMode
   Scenario: validate the display of validate button in view mode if Validation Button Visibility is set as shown from config at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -365,9 +365,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I see "New Validate" button is displayed
+    Then I see "Validate" button is displayed
 
-  @wip @89934    @ValidateThatValidateButtonIsHiddenAtDynamicFormLayoutInViewMode
+  @89934    @ValidateThatValidateButtonIsHiddenAtDynamicFormLayoutInViewMode
   Scenario: validate the validate button is hidden if Validation Button Visibility is set as Hide from config at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -383,9 +383,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I see "New Validate" button is not displayed
+    Then I see "Validate" button is not displayed
 
-  @wip @89925    @ValidateByClickOnViewMoreOptionAllPageInstructionTextIsDisplayedAtDynamicFormInViewMode
+  @89925    @ValidateByClickOnViewMoreOptionAllPageInstructionTextIsDisplayedAtDynamicFormInViewMode
   Scenario Outline: validate that by click on view more button at page instructions text , all text is getting displayed on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -411,7 +411,7 @@ Business Need: dynamic forms Component Scenarios
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  |
 
-  @wip @90786    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
+  @90786    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
   Scenario: validate the validate button is not displayed in edit mode if Validation Button Visibility is set as Show from config at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -427,7 +427,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    Then I see "New Validate" button is not displayed
+    Then I see "Validate" button is not displayed
 
   @wip @90787    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
   Scenario: validate the validate button is not displayed in edit mode if Validation Button Visibility is set as Hide from config at dynamic form layout
@@ -445,9 +445,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    Then I see "New Validate" button is not displayed
+    Then I see "Validate" button is not displayed
 
-  @wip @89927    @ValidateByClickOnViewLessOptionPageInstructionTextShouldGetCollapsedAtDynamicFormInViewMode
+  @89927    @ValidateByClickOnViewLessOptionPageInstructionTextShouldGetCollapsedAtDynamicFormInViewMode
   Scenario Outline: validate that by click on view less button at page instructions text, it should get collapsed on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -474,7 +474,7 @@ Business Need: dynamic forms Component Scenarios
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum |
 
-  @wip @90062    @ValidateSectionInstructionTextAtDynamicFormInViewMode
+  @90062    @ValidateSectionInstructionTextAtDynamicFormInViewMode
   Scenario: validate the section instructions text apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
@@ -495,7 +495,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:SectionInstruction-Text}
   """
 
-  @wip @90978    @ValidateSectionInstructionTextAtDynamicFormInEditMode
+  @90978    @ValidateSectionInstructionTextAtDynamicFormInEditMode
   Scenario: validate the section instructions text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
@@ -516,7 +516,7 @@ Business Need: dynamic forms Component Scenarios
    {LongText:SectionInstruction-Text}
   """
 
-  @wip @90060    @ValidateSectionHelpTextFieldAtDynamicFormInViewMode @skipOnJenkins
+  @90060    @ValidateSectionHelpTextFieldAtDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the section help text apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -535,7 +535,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
     Then I softly see "Demo Section help text" shown as help text
 
-  @wip @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode @skipOnJenkins
+  @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the section help text apears as configured in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -569,7 +569,7 @@ Business Need: dynamic forms Component Scenarios
       | Checkbox in Section Section 1 question not answered          |
       | Written Section 2 in Section Section 2 question not answered |
 
-  @wip @90063    @ValidateSectionNameAtDynamicFormInViewMode
+  @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -587,7 +587,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "Automation Title" inside dynamic form layout
 
-  @wip @90997    @ValidateByClickOnViewMoreOptionAllSectionInstructionTextIsDisplayedAtDynamicFormInViewMode
+  @90997    @ValidateByClickOnViewMoreOptionAllSectionInstructionTextIsDisplayedAtDynamicFormInViewMode
   Scenario Outline: validate that by click on view more button at section instructions text , all text is getting displayed on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
@@ -629,7 +629,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Date" field value is "6/30/2020" inside dynamic form
 
-  @wip @89823    @validateQuestionApplicableFieldAsRequiredForSaveAtTextFieldTypeAtDynamicFormLayout
+  @89823    @validateQuestionApplicableFieldAsRequiredForSaveAtTextFieldTypeAtDynamicFormLayout
   Scenario: changing value of question applicable as required for save and checking error message for written field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -698,7 +698,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see the following message in the page details :
       | Percent is Required to save under Section 1. |
 
-  @wip @89836    @validateQuestionApplicableFieldAsRequiredForSaveAtNumberFieldTypeAtDynamicFormLayout
+  @89836    @validateQuestionApplicableFieldAsRequiredForSaveAtNumberFieldTypeAtDynamicFormLayout
   Scenario: changing value of question applicable as required for save and checking error message for number field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -904,7 +904,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "Edit" in page detail
 
-  @wip @91363    @validateMaxScoreFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  @91363    @validateMaxScoreFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a max score field is displayed inside dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -922,7 +922,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
 
-  @wip @91757   @ValidateSpecialCharactersAtSectionNameAtDynamicFormInViewMode
+  @91757   @ValidateSpecialCharactersAtSectionNameAtDynamicFormInViewMode
   Scenario: validate special characters are accepted at section name in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1075,7 +1075,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail
 
-  @wip @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode @skipOnjenkis
+  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode @skipOnjenkis
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1134,7 +1134,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Date"
     Then I see "Test Automation Date Help" shown as help text
 
-  @wip @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode @skipOnJenkins
+  @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1153,7 +1153,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Currency"
     Then I see "Test Automation Currency Help" shown as help text
 
-  @wip @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode @skipOnJenkins
+ @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1172,7 +1172,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Number"
     Then I see "Test Automation Number Help" shown as help text
 
-  @wip @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode @skipOnJenkins
+  @92168    @ValidateHelpTextAtPercentFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1191,7 +1191,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Percent"
     Then I see "Test Automation Percent Help" shown as help text
 
-  @wip @92169    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInViewMode @skipOnJenkins
+  @92169    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1268,7 +1268,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Radio"
     Then I see "Test Automation Radio Help" shown as help text
 
-  @wip @92628 @ValidateHelpTextAtPercentFieldInsideDynamicFormInEditMode @skipOnJenkins
+  @92628 @ValidateHelpTextAtPercentFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in Edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1287,7 +1287,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Percent"
     Then I see "Test Automation Percent Help" shown as help text
 
-  @wip @92624 @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode @skipOnJenkins
+   @92624 @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1306,7 +1306,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Currency"
     Then I see "Test Automation Currency Help" shown as help text
 
-  @wip @92625    @ValidateHelpTextAtNumberFieldInsideDynamicFormInEditMode @skipOnJenkins
+  @92625    @ValidateHelpTextAtNumberFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1325,7 +1325,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Number"
     Then I see "Test Automation Number Help" shown as help text
 
-  @wip @92630    @ValidateHelpTextAtDateFieldInsideDynamicFormInEditMode @skipOnJenkins
+  @92630    @ValidateHelpTextAtDateFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at date field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1344,7 +1344,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Date"
     Then I see "Test Automation Date Help" shown as help text
 
-  @wip @92623 @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode @skipOnJenkins
+  @92623 @ValidateHelpTextAtWrittenFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at written field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1529,7 +1529,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I see "New Validate" button is not displayed
+    Then I see "Validate" button is not displayed
 
   @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
   Scenario: validate that a single section is displayed inside dynamic form layout in view mode
@@ -2709,7 +2709,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
     And I pause execution for "5" seconds
-    When I click on "New Validate" button in right header
+    When I click on "Validate" button in right header
     Then I see the following message in the page details :
       | Written Section 2 in Section Section 2 question not answered |
 
@@ -3454,7 +3454,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly do not see "Radio" inside "Section 1" at dynamic form
     Then I softly see "Checkbox" inside "Section 1" at dynamic form
 
-  @wip @91319   @ValidateByClickOnViewLessOptionSectionInstructionTextGetsCollapsedAndDisplayedAtDynamicFormInViewMode
+  @91319   @ValidateByClickOnViewLessOptionSectionInstructionTextGetsCollapsedAndDisplayedAtDynamicFormInViewMode
   Scenario Outline: validate that by click on view less button section instructions text is getting collapsed on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
@@ -3800,7 +3800,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    When I click on "New Validate" button in right header
+    When I click on "Validate" button in right header
     Then I see the following message in the page details :
       | Written Section 2 in Section Section 2 question not answered |
 
@@ -3826,7 +3826,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    When I click on "New Validate" button in right footer
+    When I click on "Validate" button in right footer
     Then I see the following message in the page details :
       | Written Section 2 in Section Section 2 question not answered |
 
@@ -3876,7 +3876,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "New Validate" button at "Top" of  Modal window
+    Then I see "Validate" button at "Top" of  Modal window
 
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
@@ -4003,7 +4003,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
 
-  @wip @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
+   @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
   Scenario: validate the display of validate button in edit mode if Validation Button Visibility is set as shown from config at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -4019,7 +4019,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I do not see "New Validate" button is displayed
+    Then I do not see "Validate" button is displayed
 
   @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on cancel button a form is displayed in view mode
@@ -4380,7 +4380,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
 
-  @wip @100446    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  @100446    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
   Scenario: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4399,7 +4399,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
 
-  @wip @100450    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormLayout
+  @100450    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormLayout
   Scenario: validating Download as pdf option is not displayed inside burger menu at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4417,7 +4417,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Menu" action is not displayed at the "Dynamic Form" modal
 
-  @wip @100451    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutEditMode
+  @100451    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutEditMode
   Scenario: validating Download as pdf option is not displayed inside burger menu at dynamic form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4539,7 +4539,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
 
-  @wip @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
+   @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
   Scenario: validating Download as pdf option is disappears from menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4769,7 +4769,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    Then I softly cannot see top right button "New Validate" in page detail
+    Then I softly cannot see top right button "Validate" in page detail
     Then I cannot see the following message in the page details :
       | Validated successfully |
 
@@ -4850,7 +4850,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
-    When I click on "New Validate" in the page details
+    When I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
@@ -4880,7 +4880,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
-    When I click on "New Validate" in the page details
+    When I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
@@ -4971,7 +4971,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
-    When I click on "New Validate" in the page details
+    When I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
@@ -4986,7 +4986,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
-    When I click on "New Validate" in the page details
+    When I click on "Validate" in the page details
     When I click on "Back" in the page details
     Then I do not see "Form Validated Successfully." error
 
@@ -5001,7 +5001,7 @@ Business Need: dynamic forms Component Scenarios
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
-    When I click on "New Validate" in the page details
+    When I click on "Validate" in the page details
     #When I click on "Edit" in the page details
     Then I do not see "Form Validated Successfully." error
 
