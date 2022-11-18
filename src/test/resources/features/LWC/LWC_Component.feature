@@ -72,37 +72,15 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Overview" sub tab
     Then I softly see "Contacts" page block displayed
 
-
-    #############Existing Test Cases###############
-  @136004a
-  Scenario Outline:
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
-      | Flex Table List                          | Enable Total        | true               | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9265                   |
-      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-1542                   |
-    When I login as "Automation" user
+  @257101 @US-256030
+    Scenario: Admin_View layout_To Verify that after manipulating id value, no any alert get displayed.
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
-    When I enter value "1235" into field "Number_Test__c"
-    And I click on "Save" in the page details
-    When I pause execution for "6" seconds
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
-
-    Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
-
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+   # And I enter this "ASDF" script after ""
 
