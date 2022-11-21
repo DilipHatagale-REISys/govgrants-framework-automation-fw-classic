@@ -785,13 +785,13 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                             | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentDateFieldsOnPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Date                                                         | CI-0001            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                            | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                              | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                             | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Date                                                                | CI-0001            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab

@@ -3084,3 +3084,15 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @208127 @208130 @VerifiedthatPiechart(Chartname:ApplicationsDonutbyStatus)displayedcorrectlyonChartTestingVFpagefoallspecificgivenrecord
+  Scenario Outline:Verified Pie chart (Chart name : ApplicationsDonutbyStatus)displayed correctly on ChartTesting VF page for all specific given record
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    Then I see new tab is opened
+    Examples:
+      | User          |
+      | AUTOMATION    |
+      | AUTOMATION-PM |
