@@ -1122,7 +1122,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1147,7 +1147,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1172,7 +1172,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see value "01/01/2025" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "1/7/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
@@ -1277,7 +1277,7 @@ Business Need: Flex Table Component Scenarios
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Test program for automation - Created mode only |
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "07/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
