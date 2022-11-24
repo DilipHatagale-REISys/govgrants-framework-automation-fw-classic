@@ -46,6 +46,10 @@ public class CollabSteps extends GovGrantsManager{
             collabPage.selectValueFromDropDown(value);
        // }
     }
+    @And("^I navigate to back$")
+    public void i_navigate_to_back() throws Throwable {
+        I.amPerforming().browserOperationsTo().navigateBack();
+    }
 
     // logic added parse URL and append script
     @And("^I enter this \"([^\"]*)\" script after \"([^\"]*)\"$")
@@ -66,8 +70,6 @@ public class CollabSteps extends GovGrantsManager{
             String p3 = url.split("&flexTableName=AppContact")[1];
             String newUrl = p1+strArg1+p2+p3;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-            I.amPerforming().browserOperationsTo().navigateBack();
-            
         } else if (strArg2.equalsIgnoreCase("pageBlockId"))
         {
             String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
@@ -76,7 +78,6 @@ public class CollabSteps extends GovGrantsManager{
             String p3 = url.split("userType")[1];
             String newUrl = p1+strArg1+p2+p3;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-            I.amPerforming().browserOperationsTo().navigateBack();
         } else if (strArg2.equalsIgnoreCase("Agency Id"))
         {
             String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
@@ -85,7 +86,6 @@ public class CollabSteps extends GovGrantsManager{
             String p3 = url.split("parentOwnerId")[1];
             String newUrl = p1+strArg1+p2+p3;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-            I.amPerforming().browserOperationsTo().navigateBack();
         }
         else if (strArg2.equalsIgnoreCase("application Id"))
         {
@@ -95,7 +95,6 @@ public class CollabSteps extends GovGrantsManager{
             String p3 = url.split("parentid")[1];
             String newUrl = p1+strArg1+p2+p3;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-            I.amPerforming().browserOperationsTo().navigateBack();
         }
         else if (strArg2.equalsIgnoreCase("parentOwner Id"))
         {
@@ -105,7 +104,60 @@ public class CollabSteps extends GovGrantsManager{
             String p3 = url.split("applicationid")[1];
             String newUrl = p1+strArg1+p2+p3;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-            I.amPerforming().browserOperationsTo().navigateBack();
+        }
+        else if (strArg2.equalsIgnoreCase("User Id"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("siteVisitRecordsIdsSet")[0];
+            String p2 ="siteVisitRecordsIdsSet";
+            String p3 = url.split("siteVisitRecordsIdsSet")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
+        else if (strArg2.equalsIgnoreCase("Program Id"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("announcementId")[0];
+            String p2 ="announcementId";
+            String p3 = url.split("announcementId")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
+        else if (strArg2.equalsIgnoreCase("parentRecordIdOfFlexTable"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("RecordId%22%")[0];
+            String p2 ="RecordId%22%";
+            String p3 = url.split("RecordId%22%")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
+        else if (strArg2.equalsIgnoreCase("Record Id"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("&flexTableName=AppContact")[0];
+            String p2 ="&flexTableName=AppContact";
+            String p3 = url.split("&flexTableName=AppContact")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
+        else if (strArg2.equalsIgnoreCase("announcement id"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("firstBudId")[0];
+            String p2 ="firstBudId";
+            String p3 = url.split("firstBudId")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
+        else if (strArg2.equalsIgnoreCase("flexTableName"))
+        {
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("&flexGridType")[0];
+            String p2 ="&flexGridType";
+            String p3 = url.split("&flexGridType")[1];
+            String newUrl = p1+strArg1+p2+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
         }
     }
 
@@ -118,8 +170,15 @@ public class CollabSteps extends GovGrantsManager{
            String p3 = url.split("&listParm=")[1];
            String newUrl = p1 + strArg1 + p2 + p3;
            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-           I.amPerforming().browserOperationsTo().navigateBack();
        }
+        if(strArg2.equalsIgnoreCase("mode parameter")){
+            String url =I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("mode=pdf")[0];
+            String p2 ="mode=pdf";
+            String p3 = url.split("mode=pdf")[1];
+            String newUrl = p1+p2+strArg1+p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        }
        else if (strArg2.equalsIgnoreCase("pageBlockId"))
        {
            String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
@@ -128,7 +187,6 @@ public class CollabSteps extends GovGrantsManager{
            String p3 = url.split("&listParm=")[1];
            String newUrl = p1 + strArg1 + p2 + p3;
            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-           I.amPerforming().browserOperationsTo().navigateBack();
        }
        else if (strArg2.equalsIgnoreCase("Agency Id"))
        {
@@ -138,7 +196,6 @@ public class CollabSteps extends GovGrantsManager{
            String p3 = url.split(",%22currentNegotiationRequestId")[1];
            String newUrl = p1 + strArg1 + p2 + p3;
            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-           I.amPerforming().browserOperationsTo().navigateBack();
        }
        else if (strArg2.equalsIgnoreCase("application Id"))
        {
@@ -148,7 +205,69 @@ public class CollabSteps extends GovGrantsManager{
            String p3 = url.split(",%22parentOwnerId")[1];
            String newUrl = p1 + strArg1 + p2 + p3;
            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
-           I.amPerforming().browserOperationsTo().navigateBack();
+       }
+       else if (strArg2.equalsIgnoreCase("parentOwner Id"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22agencyId")[0];
+           String p2 = ",%22agencyId";
+           String p3 = url.split(",%22agencyId")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("User Id"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22siteVisitRecordsIdsSet")[0];
+           String p2 = ",%22siteVisitRecordsIdsSet";
+           String p3 = url.split(",%22siteVisitRecordsIdsSet")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("Program Id"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22bpStartDate")[0];
+           String p2 = ",%22bpStartDate";
+           String p3 = url.split(",%22bpStartDate")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("parentRecordIdOfFlexTable"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22parentid%22")[0];
+           String p2 = ",%22parentid%22";
+           String p3 = url.split(",%22parentid%22")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("Record Id"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22parentRecordIdOfFlexTable")[0];
+           String p2 = ",%22parentRecordIdOfFlexTable";
+           String p3 = url.split(",%22parentRecordIdOfFlexTable")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("announcement id"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split(",%22programId")[0];
+           String p2 = ",%22programId";
+           String p3 = url.split(",%22programId")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+       }
+       else if (strArg2.equalsIgnoreCase("flexTableName"))
+       {
+           String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+           String p1 = url.split("&flexGridType")[0];
+           String p2 = "&flexGridType";
+           String p3 = url.split("&flexGridType")[1];
+           String newUrl = p1 + strArg1 + p2 + p3;
+           I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
        }
     }
 }
