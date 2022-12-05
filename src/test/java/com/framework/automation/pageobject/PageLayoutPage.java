@@ -628,7 +628,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * return true if attachment section is displayed under send email modal
      */
     public void assertAttachmentSectionDisplayedOnModal() {
-        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'Attachments')]/following-sibling::div[@class='fileDragDropWrap']")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'Attachments')]/following-sibling::div[@class='fileDragDropWrap'] | //div[@class='slds-form-element']/child::span[contains(text(),'Attachments')]")));
     }
 
     /**
