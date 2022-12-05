@@ -82,5 +82,3 @@ Business Need: Flex Table Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-   # And I enter this "ASDF" script after ""
-
