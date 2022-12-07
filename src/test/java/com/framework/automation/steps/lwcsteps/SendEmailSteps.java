@@ -1,6 +1,10 @@
-package com.lwcframework.automation.lwcsteps;
+package com.framework.automation.steps.lwcsteps;
 
 import com.testingblaze.actionsfactory.api.ByUsing;
+import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,11 +13,13 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class SendEmailSteps {
+import java.util.List;
+
+public class SendEmailSteps extends GovGrantsManager {
 
     @When("^I upload attachment \"([^\"]*)\" in send email LWC modal$")
     public void i_upload_attachment_something_in_send_email_lwc_modal(String attachmentName) throws Throwable {
-        By attachmentChooseFilePath = By.xpath("//div[@class='custom-upload']//input[@type='file']");
+        By attachmentChooseFilePath = By.xpath("//div[@class='custom-upload']//input[@type='file'] | //div[@class='slds-file-selector slds-file-selector_files']//lightning-primitive-file-droppable-zone//slot//input[@type='file']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
     }
@@ -23,9 +29,9 @@ public class SendEmailSteps {
         WebElement uploadedfiles = I.amPerforming().getElementReference().of(By.xpath("//div[@class='slds-cell-wrap']"));
         Assert.assertTrue(uploadedfiles.isDisplayed());
     }
-    @Then("^I see the \"([^\"]*)\" displayed in modal$")
-    public void i_see_the_something_displayed_in_modal(String strArg1) throws Throwable {
-        WebElement uploadedfilesSection = I.amPerforming().getElementReference().of(By.xpath("//span[text()='"+strArg1+"'] | //span[text()='"+strArg1+"']"));
+    @Then("I see the {string} displayed in modal")
+    public void i_see_the_displayed_in_modal(String UploadFiles) {
+        WebElement uploadedfilesSection = I.amPerforming().getElementReference().of(By.xpath("//div[@class='slds-file-selector slds-file-selector_files']//child::span[contains(text(),'"+ UploadFiles +"')]"));
         Assert.assertTrue(uploadedfilesSection.isDisplayed());
     }
     @And("^I click on X button in modal$")
@@ -73,7 +79,7 @@ public class SendEmailSteps {
         WebElement progerssBar = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@role='"+ progressbar +"']"));
         Assert.assertTrue(progerssBar.isDisplayed());
     }
-    @Then("^I can see  attach the \"([^\"]*)\"  file format in the attachment section$")
+    @Then("^I can see attach the \"([^\"]*)\" file format in the attachment section$")
     public void i_can_see_attach_the_something_file_format_in_the_attachment_section(String fileName) throws Throwable {
         WebElement fileFormat = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(text(),'"+fileName+"')]"));
         Assert.assertTrue(fileFormat.isDisplayed());
@@ -98,7 +104,6 @@ public class SendEmailSteps {
     }
     @When("I click on {string} button in send email modal in Send email LWC modal")
     public void iClickOnButtonInSendEmailModalInSendEmailLWCModal(String buttonName) {
-        // I.amPerforming().click().on(ByUsing.xpath(""));
         I.amPerforming().click().on(ByUsing.xpath("//button[@title='"+buttonName+"']"));
     }
     @Then("I can see  Below choose file field {string} message is displayed in the RED color")
@@ -110,12 +115,12 @@ public class SendEmailSteps {
         WebElement To = I.amPerforming().getElementReference().of(By.xpath("//input[@id='toExt-1'] | (//input[@ng-if=\"renderType=='Edit'\"])[1] | //input[@id='to-1']"));
         I.amPerforming().textInput().toClear(To);
         I.amPerforming().textInput().in(To, Tostr);
-        WebElement CC = I.amPerforming().getElementReference().of(By.xpath("//input[@id='ccExt-1'] | //input[@ng-model='searchItem.ccValue'] | //input[@id='cc-1']"));
-        I.amPerforming().textInput().toClear(CC);
-        I.amPerforming().textInput().in(CC, CCstr);
         WebElement subject = I.amPerforming().getElementReference().of(By.xpath("//input[@id='subject-1'] | //input[@ng-model='email.subject'] | //input[@id='subject-1']"));
         I.amPerforming().textInput().toClear(subject);
         I.amPerforming().textInput().in(subject, Subjectstr);
+        WebElement CC = I.amPerforming().getElementReference().of(By.xpath("//input[@id='ccExt-1'] | //input[@ng-model='searchItem.ccValue'] | //input[@id='cc-1']"));
+        I.amPerforming().textInput().toClear(CC);
+        I.amPerforming().textInput().in(CC, CCstr);
     }
     @Then("I can see the Progress bar file Size {string} displayed in modal")
     public void iCanSeeTheProgressBarFileSizeDisplayedInModal(String sizeOfFile) {
@@ -125,4 +130,40 @@ public class SendEmailSteps {
     public void iCanClickActionButtonInFrontOfFile(String icon, String filename) {
         I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'"+filename+"')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'"+icon+"')]"));
     }
+    @And("I click on {string} button in Email LWC Modal")
+    public void iClickOnButtonInEmailLWCModal(String buttonName) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@id='modal-content-id-1-1']//child::button[@title='"+ buttonName +"']"));
+    }
+    @Then("I can see Upload file & drop files actions on send email reply modal are enabled")
+    public void iCanSeeUploadFileDropFilesActionsOnSendEmailReplyModalAreEnabled() {
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@class='custom-upload']//input[@type='file']")));
+    }
+    @And("I click on top right button {string} in tableName {string}")
+    public void iClickOnTopRightButtonInTableName(String button, String tableName) {
+        if (tableName.contains("Attachments")) {
+            I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "']"));
+        }
+    }
+    @Then("I see {string} field under the Send Email LWC modal")
+    public void iSeeFieldUnderTheSendEmailLWCModal(String fieldName) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='" + fieldName + "']/ancestor::div[@class='slds-col slds-size_5-of-6']//div//div//div//input")));
+    }
+
+    @Then("I see and check {string} field dropdown is displayed with {string} value")
+    public void iSeeFieldDropdownIsDisplayedWithValue(String field, String value) {
+        if (field.equals("To"))
+        {
+            I.amPerforming().click().on(ByUsing.xpath("//strong[text()='"+field+"']/parent::label/parent::div/preceding-sibling::div//div//div[@class='slds-form-element__control']"));
+        }else if (field.equals("Cc")){
+            I.amPerforming().click().on(ByUsing.xpath("//strong[text()='"+field+"']/parent::label/parent::div/preceding-sibling::div//div//div[@class='slds-form-element__control']"));
+        }
+        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//strong[text()='"+ field +"']/parent::label/parent::div/preceding-sibling::div//div//ul//li//div//span[@class='slds-truncate']"));
+        for (Elements opt : options) {
+            if (opt.getText().equals(value)) {
+                opt.isDisplayed();
+                opt.click();
+            }
+        }
+    }
+
 }
