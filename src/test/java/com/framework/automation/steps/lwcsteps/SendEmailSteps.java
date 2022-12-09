@@ -165,5 +165,77 @@ public class SendEmailSteps extends GovGrantsManager {
             }
         }
     }
+    @And("I click on {string} field dropdown")
+    public void iClickOnFieldDropdown(String arg0) {
+    }
 
+    @Then("I see User should be able to checked the {string} & {string} picklist from {string}  field")
+    public void iSeeUserShouldBeAbleToCheckedThePicklistFromField(String value1, String value2, String field) {
+        if (field.equals("To"))
+        {
+            I.amPerforming().click().on(ByUsing.xpath("//strong[text()='"+field+"']/parent::label/parent::div/preceding-sibling::div//div//div[@class='slds-form-element__control']"));
+        }else if (field.equals("Cc")){
+            I.amPerforming().click().on(ByUsing.xpath("//strong[text()='"+field+"']/parent::label/parent::div/preceding-sibling::div//div//div[@class='slds-form-element__control']"));
+        }
+        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//strong[text()='"+ field +"']/parent::label/parent::div/preceding-sibling::div//div//ul//li//div//span[@class='slds-truncate']"));
+        for (Elements opt : options) {
+            if (opt.getText().equals(value1)) {
+                opt.isDisplayed();
+                opt.click();
+            }
+            if (opt.getText().equals(value2)) {
+                opt.isDisplayed();
+                opt.click();
+            }
+        }
+    }
+
+    @Then("I see checkbox is enabled for {string} and {string} picklist from {string} field")
+    public void iSeeCheckboxIsEnabledForAndPicklistFromField(String value1, String value2, String field) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//strong[text()='"+ field +"']/parent::label/parent::div/preceding-sibling::div//div//ul//li//div//span[@title='"+ value1 +"']/parent::span/preceding-sibling::span/lightning-icon/lightning-primitive-icon")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//strong[text()='"+ field +"']/parent::label/parent::div/preceding-sibling::div//div//ul//li//div//span[@title='"+ value2 +"']/parent::span/preceding-sibling::span/lightning-icon/lightning-primitive-icon")));
+    }
+    @Then("I see the {string} field on the send email modal")
+    public void iSeeTheFieldOnTheSendEmailModal(String field) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='"+field+"']/parent::label//following-sibling::div//input[@id='subject-1'] | //strong[text()='"+ field +"'] | //button[@title='"+ field +"'] | //div[@class='slds-modal__content']/descendant::strong[text()='"+ field +"']")));
+    }
+    @Then("I see modal contain {string} is displayed")
+    public void iSeeModalContainIsDisplayed(String field) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='header']/descendant::span[text()='"+field+"' and @class='slds-text-heading_small slds-text-title_bold slds-m-horizontal_xx-small']")));
+
+    }
+    @Then("I see the {string} and is enabled")
+    public void iSeeTheAndIsEnabled(String checkbox) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//th[@data-label='Title' and @scope='row']/preceding-sibling::td/descendant::input[@type='"+ checkbox +"']")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//th[@data-label='Title' and @scope='row']/preceding-sibling::td/descendant::input[@type='"+ checkbox +"']")));
+    }
+    @And("I see the {string} and is enabled and I click on {string} checkbox")
+    public void iSeeTheAndIsEnabledAndIClickOnCheckbox(String checkbox, String indexNo) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("(//th[@data-label='Title' and @scope='row']/preceding-sibling::td/descendant::input[@type='"+ checkbox +"'])["+ indexNo +"]"));
+    }
+    @Then("I see the {string} is selected as per row no {string} checkbox")
+    public void iSeeTheIsSelectedAsPerRowNo(String checkbox, String indexNo) {
+        I.amPerforming().checkToSee().isSelected(ByUsing.xpath("(//th[@data-label='Title' and @scope='row']/preceding-sibling::td/descendant::input[@type='"+ checkbox +"'])["+ indexNo +"]"));
+    }
+    @Then("I see {string} modal is displayed")
+    public void iSeeModalIsDisplayed(String field) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[@id='CommunicationHistorymodalDivCloseIcon']/following-sibling::p[text()='"+ field +"']")));
+    }
+    @Then("I see {string} message is displayed on send email modal")
+    public void iSeeMessageIsDisplayedOnSendEmailModal(String message) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='slds-notify slds-notify_alert slds-alert-success']/child::h2[text()='"+ message +"']")));
+
+    }
+    @When("I click on {string} icon at {string} modal after Email Sent Successfully")
+    public void iClickOnIconAtModalAfterEmailSentSuccessfully(String icon, String modal) {
+        if(modal.equalsIgnoreCase("Send Email LWC")){
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='"+ icon +"']"));
+        }
+    }
+
+    @Then("I see {string} is displayed under {string} and enabled")
+    public void iSeeIsDisplayedUnderAndEnabled(String buttonName, String bodycontent) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='"+ bodycontent +"']/ancestor::div[@class='slds-form-element slds-m-top_small']/descendant::button[@title='"+ buttonName +"']")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//*[text()='"+ bodycontent +"']/ancestor::div[@class='slds-form-element slds-m-top_small']/descendant::button[@title='"+ buttonName +"']")));
+    }
 }
