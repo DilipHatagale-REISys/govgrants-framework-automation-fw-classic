@@ -252,3 +252,208 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     #256814
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
+
+    @223190 @223191 @223192 @223194 @223195 @223196 @LWC_ID-208784 @dilip
+  Scenario Outline: Verify Send Email LWC Modal dropDown values Internal, External, Groups, None for ADMIN user
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "10" seconds
+    #223190
+    Then I see "To" field under the Send Email LWC modal
+    #223191
+    Then I see "Cc" field under the Send Email LWC modal
+    #223192
+    Then I see and check "To" field dropdown is displayed with "None" value
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Then I see and check "To" field dropdown is displayed with "External" value
+    Then I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    #223194
+    Then I see and check "Cc" field dropdown is displayed with "None" value
+    Then I see and check "Cc" field dropdown is displayed with "Internal" value
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    #223196
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    #223195
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Examples:
+      | User  |
+      | ADMIN |
+
+    @223197 @223205 @223199 @223207 @LWC_ID-208784 @dilip
+  Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "10" seconds
+    #223197 #223205
+    Then I see and check "To" field dropdown is displayed with "External" value
+    #223199
+    Then I see and check "Cc" field dropdown is displayed with "Internal" value
+    #223207
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    Examples:
+      | User  |
+      | ADMIN |
+
+
+  @223199 @223207 @223211 @LWC_ID-208784 @dilip
+  Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user for To and Cc field
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "10" seconds
+    #223199
+    Then I see and check "Cc" field dropdown is displayed with "Internal" value
+    #223207
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    And I pause execution for "7" seconds
+    #223211
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    Examples:
+      | User  |
+      | ADMIN |
+
+  @223210 @223212 @223213 @223220 @223222 @223223 @223227 @223860 @223861 @223862 @223863 @223864
+  @223865 @223866 @223866 @223868 @223869 @223870 @LWC_ID-208784 @dilip
+  Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    #223210
+    Then I see User should be able to checked the "Internal" & "External" picklist from "Cc"  field
+    #223213
+    Then I see checkbox is enabled for "Internal" and "External" picklist from "Cc" field
+    #223212
+    And I pause execution for "10" seconds
+    Then I see User should be able to checked the "Internal" & "External" picklist from "To"  field
+    #223220
+    Then I see the "Subject" field on the send email modal
+    #223222
+    Then I see the "Body Content" field on the send email modal
+    #223859
+    Then I see "Strikethrough" is displayed under "Body Content" and enabled
+    #223860
+    Then I see "Italic" is displayed under "Body Content" and enabled
+    #223861
+    Then I see "Bold" is displayed under "Body Content" and enabled
+    #223862
+    Then I see "Underline" is displayed under "Body Content" and enabled
+    #223863
+    Then I see "Numbered list" is displayed under "Body Content" and enabled
+    #223864
+    Then I see "Bulleted list" is displayed under "Body Content" and enabled
+    #223865 #223866 #223866
+    Then I see "Indent" is displayed under "Body Content" and enabled
+    #223868
+    Then I see "Center align text" is displayed under "Body Content" and enabled
+    #223869
+    Then I see "Left align text" is displayed under "Body Content" and enabled
+    #223870
+    Then I see "Right align text" is displayed under "Body Content" and enabled
+    #223223
+    Then I see the "Select Files" field on the send email modal
+    #223227
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see modal contain "FilesLink" is displayed
+
+  @223228 @223231 @223844 @223845 @223858 @LWC_ID-208784 @dilip
+  Scenario: Verify Send Email LWC Modal for ADMIN checkbox selected
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+      #223844 #223858
+    Then I see the "Send Copy (Cc) to Me" field on the send email modal
+    #223845
+    Then I see the "Reset" field on the send email modal
+    #223228
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see modal contain "FilesLink" is displayed
+    Then I see the "checkbox" and is enabled
+    #223231
+    And I see the "checkbox" and is enabled and I click on "1" checkbox
+    And I see the "checkbox" and is enabled and I click on "2" checkbox
+    And I see the "checkbox" and is enabled and I click on "3" checkbox
+    And I pause execution for "3" seconds
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+
+  @223848 @223849  @223850 @223851 @223852 @223853 @LWC_ID-208784 @dilip
+  Scenario: send email-User send email with multiple Email addresses are separated by Comma (,) TO Field, Cc field
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+      #223848
+    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "Reply LWC" modal is displayed
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I pause execution for "5" seconds
+    #223849
+    And I click on "View LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "View LWC" modal is displayed
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I pause execution for "5" seconds
+    #223850
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "7" seconds
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    #223851
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com,automationfo@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "7" seconds
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    #223852
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com,automationfo@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "7" seconds
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    #223853
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com,automationpm@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "7" seconds
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
