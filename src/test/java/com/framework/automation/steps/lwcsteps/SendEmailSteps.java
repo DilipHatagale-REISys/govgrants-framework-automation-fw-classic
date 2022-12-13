@@ -3,7 +3,9 @@ package com.framework.automation.steps.lwcsteps;
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.controller.DeviceBucket;
 import com.testingblaze.objects.Elements;
+import com.testingblaze.objects.InstanceRecording;
 import com.testingblaze.register.I;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
@@ -12,6 +14,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -161,6 +164,7 @@ public class SendEmailSteps extends GovGrantsManager {
         for (Elements opt : options) {
             if (opt.getText().equals(value)) {
                 opt.isDisplayed();
+                opt.isEnabled();
                 opt.click();
             }
         }
@@ -237,5 +241,42 @@ public class SendEmailSteps extends GovGrantsManager {
     public void iSeeIsDisplayedUnderAndEnabled(String buttonName, String bodycontent) {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='"+ bodycontent +"']/ancestor::div[@class='slds-form-element slds-m-top_small']/descendant::button[@title='"+ buttonName +"']")));
         Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//*[text()='"+ bodycontent +"']/ancestor::div[@class='slds-form-element slds-m-top_small']/descendant::button[@title='"+ buttonName +"']")));
+    }
+
+    @Then("I hover mouse on on {string} section")
+    public void iHoverMouseOnOnSection(String symbol) {
+        if (symbol.equalsIgnoreCase("Attachment symbol")){
+            WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-col slds-size_12-of-12 slds-float_left slds-var-p-right_x-small slds-var-p-bottom_x-small bold-text slds-m-top_x-small slds-m-bottom_x-small']//div//div//div//button[@type='button']"));
+            String ele1 = ele.getText();
+            System.out.println("ele1 :"+ele1);
+            Actions actions = new Actions(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
+            actions.moveToElement(ele).build().perform();
+        }
+    }
+    @Then("I see {string} is displayed")
+    public void iSeeIsDisplayed(String helpText) {
+        if (helpText.equalsIgnoreCase("File Attachment")){
+            WebElement textmsg =  I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-popover__body']"));
+            String msg=  textmsg.getText();
+            System.out.println("printed msg :"+ msg);
+            Assert.assertTrue(helpText,true);
+        }
+    }
+
+    @Then("I see The {string} field in {string} color")
+    public void iSeeTheFieldInColor(String msg, String color) {
+        WebElement textElement=  I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-form-element']//following-sibling::div[@class='slds-text-color_error']"));
+        String elText= textElement.getText();
+        if(textElement.isDisplayed()) {
+            String textColor = textElement.getCssValue("color");
+            Assert.assertEquals(textColor, "rgba(234, 0, 30, 1)");
+        }
+    }
+
+    @Then("I see {string} error massage in attachment section")
+    public void iSeeErrorMassageInAttachmentSection(String errorMassage) {
+        WebElement errorMsgElement=  I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'"+ errorMassage +"')]"));
+        String errorMsg = errorMsgElement.getText();
+        Assert.assertEquals(errorMassage, errorMsg);
     }
 }
