@@ -253,7 +253,7 @@ Business Need: SendEmailLWC Component Scenarios
     #256814
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
 
-    @223190 @223191 @223192 @223194 @223195 @223196 @LWC_ID-208784 @dilip
+  @223190 @223191 @223192 @223194 @223195 @223196 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values Internal, External, Groups, None for ADMIN user
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -287,7 +287,7 @@ Business Need: SendEmailLWC Component Scenarios
       | User  |
       | ADMIN |
 
-    @223197 @223205 @223199 @223207 @LWC_ID-208784 @dilip
+  @223197 @223205 @223199 @223207 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -365,7 +365,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "Numbered list" is displayed under "Body Content" and enabled
     #223864
     Then I see "Bulleted list" is displayed under "Body Content" and enabled
-    #223865 #223866 #223866
+    #223865 #223866 #223867
     Then I see "Indent" is displayed under "Body Content" and enabled
     #223868
     Then I see "Center align text" is displayed under "Body Content" and enabled
@@ -406,7 +406,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see the "checkbox" is selected as per row no "1" checkbox
     Then I see the "checkbox" is selected as per row no "1" checkbox
 
-  @223848 @223849  @223850 @223851 @223852 @223853 @LWC_ID-208784 @dilip
+  @223848 @223849  @223850 @223851 @223852 @223853 @223847 @LWC_ID-208784 @dilip
   Scenario: send email-User send email with multiple Email addresses are separated by Comma (,) TO Field, Cc field
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -457,3 +457,112 @@ Business Need: SendEmailLWC Component Scenarios
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    #223847
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com,automationpm@yopmail.com" CC "" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "7" seconds
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+
+  @256742 @us-255931 @dilip
+  Scenario: Verify Send Email LWC Modal for ADMIN checkbox selected
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    #256742
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    And I can See the "×" Action Button on Email Modal
+    Then I can click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+
+  @257258 @257259 @us-255931 @dilip
+  Scenario: To verify, IN front of  Attachment '?' is displayed in the grey circle when hover over on that "?" "File attachment" is displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+  #257259
+    Then I see The "*Collective max size of attached files should be 25MB. Single file size attachment limit is upto 1.5MB. Do not attach more than 10 Files." field in "Red" color
+  #257258
+    Then I hover mouse on on "Attachment symbol" section
+    Then I see "File Attachment" is displayed
+
+
+  @257600 @257602 @us-255931 @dilip
+  Scenario Outline: To verify, Admin User try to attach the file more than 10 then  errror message is getting dispalyed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "TestFileSharing.docx" in send email LWC modal
+    When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
+    When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    When I upload attachment "actionsAtEgrid.png" in send email LWC modal
+    When I upload attachment "actionsAtAttachment.png" in send email LWC modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in send email LWC modal
+    When I upload attachment "actionsAtMeGridTable.png" in send email LWC modal
+    #257600 #257602
+    When I upload attachment "captureModalFields.png" in send email LWC modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @256757 @256759 @us-255931 @dilip
+  Scenario Outline: To verify, Admin User can not add the duplicate file if user can try then "File with this name already exist.' error message is displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    #256757 #256759
+    Then I see "File with this name already exist." error massage in attachment section
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @256761 @us-255931 @dilip
+  Scenario:To verify, External User can not add the duplicate file if user can try then "File with this name already exist.' error message is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    #256757 #256759
+    Then I see "File with this name already exist." error massage in attachment section
