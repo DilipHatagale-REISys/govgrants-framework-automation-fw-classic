@@ -3,7 +3,7 @@ Business Need: Attachment Component Scenarios
   Test all AttachmentLWC component based scenarios
   As a configuration manager i make different configurational changes in AttachmentLWC component and will validate them.
 
- @221532 @255614 @ValidateRequiredfieldasterisk'symbolonattachmentmodal @Vrushali @LWC-AttachmentTestSuit
+  @221532 @255614 @ValidateRequiredfieldasterisk'symbolonattachmentmodal @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:To verify asterisk symbol is visible for all mandatory fields such as Type,File,Description on UI with no space between word and symbol
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -104,7 +104,7 @@ Business Need: Attachment Component Scenarios
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
     Then I can see attach the "TestFileSharing.docx" file format in the attachment section
 
-  @221523 @255441 @255863 @221533 @255008 @Validatemessage"Attachmentaddedsuccessfully" @@LWC-AttachmentTestSuit @Vrushali
+  @221523 @255441 @255863 @221533 @255008 @222489 @Validatemessage"Attachmentaddedsuccessfully" @@LWC-AttachmentTestSuit @Vrushali
   Scenario Outline: To verify, admin User are able to add the attachment in the LWC Attachment page block
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -120,7 +120,7 @@ Business Need: Attachment Component Scenarios
     And I pause execution for "10" seconds
     And I perform scroll on page layout
     And I click on top right button "Add" in tableName "Attachments"
-    #255441
+    #255441 #222489
     Then I see "Add Attachments" is in attachment LWC modal window
     And I select "Other Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomation.txt" in attachments LWC modal
@@ -205,7 +205,7 @@ Business Need: Attachment Component Scenarios
       | ADMIN |
       | PM    |
 
-  @221536 @255936 @Validatemsg"ThedocumentyouareattemptingtouploadexistsintWorkspace"foraddingduplicatefile
+  @221536 @255936 @Validatemsg"ThedocumentyouareattemptingtouploadexistsintWorkspace"foraddingduplicatefile @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline: Validate msg "The document you are attempting to upload exists in the Workspace" for adding duplicate file
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -231,13 +231,13 @@ Business Need: Attachment Component Scenarios
     And I enter value "Test Automation" into description box
     And I click on "Save" on LWC modal
     Then I see the following message in the LWC page details :
-      | The document you are attempting to upload exists in the Workspace. |
+      | The document you are attempting to upload exists in the Workspace |
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile
+  @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile @Vrushali @LWC-AttachmentTestSuit
   Scenario: validate msg "File should not be blank" after adding blank text file
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -259,9 +259,9 @@ Business Need: Attachment Component Scenarios
     Then I see the following message in the LWC page details :
       | File should not be blank. |
 
-  @221539
-  Scenario: sdsfd
-    Given I login as "PM" user
+  @221539 @256574 @Toverifytypefieldisclickableuserisabletoselectit @Vrushali @LWC-AttachmentTestSuit
+  Scenario Outline: To verify type field is clickable and user is able to select it
+    Given I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -274,4 +274,344 @@ Business Need: Attachment Component Scenarios
     Then I see "Program Artifacts" from dropdown of filetype is displayed and enabled
     Then I see "Financial Artifacts" from dropdown of filetype is displayed and enabled
     Then I see "Other Artifacts" from dropdown of filetype is displayed and enabled
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
+  @221546 @Toverify'File'fieldisclickableuserisabletoselectanduploadfilefromcomputer @Vrushali @LWC-AttachmentTestSuit
+  Scenario: To verify 'File' field is clickable and user is able to select and upload the file from computer
+    Given I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    Then I can see Upload Files in "file" field is displayed and enabled
+    When I upload attachment "supporting document.pdf" in attachments LWC modal
+    Then I can see attach the "supporting document.pdf " file format in the attachment section
+
+  @221527 @255589 @Vrushali @LWC-AttachmentTestSuit
+  Scenario Outline:when user click on row level action delete, getting confirmation popup window and when click on 'Yes' then the record is getting deleted getting confirmation message as 'Record deleted successfully'
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    When I upload attachment "Create_Case.xlsx" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I perform scroll on page layout
+    When I click on "Delete" icon for file "Create_Case.xlsx" inside table name "Attachments" for LWC
+    And I click on "Yes" on confirmation modal
+    Then I see the following message in the LWC page details :
+      | Attachment deleted successfully. |
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @222487 @255488 @255420 @255427 @221528 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @LWC-AttachmentTestSuit
+  Scenario Outline: when user clicks on page block shrink action button then component gets shrunk
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on "up" arrow in "Attachments" table
+    Then I do not see "Attachments" table
+    And I pause execution for "5" seconds
+    And I click on "down" arrow in "Attachments" table
+    #221528
+    Then I softly see column "Name" in table name "Attachments"
+    Then I softly see column "Type" in table name "Attachments"
+    Then I softly see column "Description" in table name "Attachments"
+    Then I softly see column "Date Attached" in table name "Attachments"
+    Then I softly see column "Attached By" in table name "Attachments"
+    Then I softly see column "Actions" in table name "Attachments"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @221545 @255319 @221551 @255351 @221544 @Vrushali @LWC-AttachmentTestSuit
+  Scenario Outline: To verify, When User click on edit action then Edit Notes modal should be displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I pause execution for "5" seconds
+    #And I perform scroll on page layout
+    And I click on "Edit" icon for file "TestFileSharing.docx" inside table name "Attachments" for LWC
+    #221545
+    Then I see "Edit Attachment" is in attachment LWC modal window
+    And I enter value "Test Description" into description box
+    And I click on "Save" on LWC modal
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I perform scroll on page layout
+    #221551 #255351 #221544
+    Then I can see "Test Description" into column "Descrption" against value "TestFileSharing.docx"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @221540 @255172 @221541 @Toverify,Editrowlevelactionisvisibleforonlyrecordowner @Vrushali @LWC-AttachmentTestSuit
+  Scenario Outline:To verify, Edit row level action is visible for only record owner
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    And I pause execution for "5" seconds
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I perform scroll on page layout
+    Then I softly can see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
+    #221541
+    Then I softly can see row level action button "Delete" against "TestFileSharing.docx" in table name "Attachments"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @221531 @Toverifitrytoattachblankfilethenerrormessageshouldbedisplayedas'Fileshouldnobeblank' @Vrushali @LWC-AttachmentTestSuit
+  Scenario: validate msg "File should not be blank" after adding blank text file
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Title I, II, III assurances" from dropdown of filetype
+    When I upload attachment "blank.txt" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    Then I see the following message in the LWC page details :
+      | File should not be blank. |
+
+  @221543 @255188 @255352 @255439 @255862 @Toverify,Edittherecordonlybyrecordowner @Vrushali @LWC-AttachmentTestSuit
+  Scenario: To verify, Edit the record only by the record owner
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "General Assurances" from dropdown of filetype
+    When I upload attachment "actionsAtFlexTable.png" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+      #255439 #255862
+    Then I see the following message in the LWC page details :
+      | Attachment added successfully. |
+    And I pause execution for "5" seconds
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I perform scroll on page layout
+    And I pause execution for "5" seconds
+    Then I softly can see row level action button "Edit" against "actionsAtFlexTable.png" in table name "Attachments"
+      #255352
+    Then I can see "Test" into column "Descrption" against value "actionsAtFlexTable.png"
+
+  @255290 @Toverify,EditedrecordisdisplayedasexpectedonUI @Vrushali @LWC-AttachmentTestSuit
+  Scenario: To verify, Edited the record is displayed as expected on the UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Suspension" from dropdown of filetype
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    And I pause execution for "5" seconds
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    And I pause execution for "10" seconds
+    Then I softly can see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
+
+  @255419 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @Vrushali @LWC-AttachmentTestSuit
+  Scenario: when the user clicks on page block shrink action button then the component gets shrunk
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on "up" arrow in "Attachments" table
+    Then I do not see "Attachments" table
+    And I pause execution for "5" seconds
+    And I click on "down" arrow in "Attachments" table
+    Then I softly see column "Name" in table name "Attachments"
+    Then I softly see column "Type" in table name "Attachments"
+    Then I softly see column "Description" in table name "Attachments"
+    Then I softly see column "Date Attached" in table name "Attachments"
+    Then I softly see column "Attached By" in table name "Attachments"
+    Then I softly see column "Actions" in table name "Attachments"
+
+  @255548 @Validatemessage"Pleaseselecttype" @Vrushali @LWC-AttachmentTestSuit
+  Scenario: Validate message  "Please select type"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Attachments"
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I enter value "Automation" into description box
+    And I click on "Save" on LWC modal
+    Then I see the following message in the LWC page details :
+      | Please select type. |
+
+  @255555 @Validatemessage"Fileshouldnotbeblank." @Vrushali @LWC-AttachmentTestSuit
+  Scenario:Validate message "File should not be blank."
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Suspension" from dropdown of filetype
+    And I enter value "Automation Testing" into description box
+    And I click on "Save" on LWC modal
+    Then I see the following message in the LWC page details :
+      | File should not be blank. |
+
+  @255561 @Validatemessage"Pleaseentervalueindescriptionfield" @Vrushali @LWC-AttachmentTestSuit
+  Scenario: Validate message "Please enter value in description field"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Suspension" from dropdown of filetype
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I click on "Save" on LWC modal
+    Then I see the following message in the LWC page details :
+      | Please enter value in description field. |
+
+  @255613 @ValidateRequiredfield'asterisk'symbolonattachmentmodal @Vrushali @LWC-AttachmentTestSuit
+  Scenario: Validate Required field 'asterisk ' symbol on attachment modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    Then I see asterisk mark at "Type" field in LWC
+    Then I see asterisk mark at "File" field in LWC
+    Then I see asterisk mark at "Description" field in LWC
+
+  @256575 @Toverifytypefieldisclickableanduserisabletoselectit. @Vrushali @LWC-AttachmentTestSuit
+  Scenario:To verify type field is clickable and user is able to select it.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    Then I see "General Assurances" from dropdown of filetype is displayed and enabled
+    Then I see "Civil rights assurances" from dropdown of filetype is displayed and enabled
+    Then I see "Certification regarding Dabarment" from dropdown of filetype is displayed and enabled
+    Then I see "Suspension" from dropdown of filetype is displayed and enabled
+    Then I see "Ineligibility and Voluntary Exclusion Lower Tier Covered Transactions" from dropdown of filetype is displayed and enabled
+    Then I see "Title I, II, III assurances" from dropdown of filetype is displayed and enabled
+    Then I see "Idea assurances" from dropdown of filetype is displayed and enabled
+    Then I see "Justification for project cost" from dropdown of filetype is displayed and enabled
+
+  @255935 @Validateerrormsg"ThedocumentyouareattemptingtouploadexistsintheWorkspace' @Vrushali @LWC-AttachmentTestSuit
+  Scenario:Validate error msg"The document you are attempting to upload exists in the Workspace'
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Suspension" from dropdown of filetype
+    When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    And I pause execution for "5" seconds
+    And I select "Suspension" from dropdown of filetype
+    When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
+    And I pause execution for "2" seconds
+    And I enter value "Test Automation" into description box
+    And I click on "Save" on LWC modal
+    Then I see the following message in the LWC page details :
+      | The document you are attempting to upload exists in the Workspace |

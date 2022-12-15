@@ -84,7 +84,7 @@ public class SendEmailSteps extends GovGrantsManager {
     }
     @Then("^I can see attach the \"([^\"]*)\" file format in the attachment section$")
     public void i_can_see_attach_the_something_file_format_in_the_attachment_section(String fileName) throws Throwable {
-        WebElement fileFormat = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(text(),'"+fileName+"')] | //*[text()='Attachments']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='"+fileName+"']"));
+        WebElement fileFormat = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(text(),'"+fileName+"')] | //*[text()='Attachments']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='"+fileName+"'] | //strong[text()='File']/ancestor::tr//td[text()='"+fileName+"']"));
         Assert.assertTrue(fileFormat.isDisplayed());
     }
     @Then("^I able to click on \"([^\"]*)\" button on send email modal$")
