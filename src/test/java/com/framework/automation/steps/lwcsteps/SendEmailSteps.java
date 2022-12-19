@@ -2,11 +2,9 @@ package com.framework.automation.steps.lwcsteps;
 
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.DeviceBucket;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.objects.InstanceRecording;
-import com.testingblaze.register.I;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -15,10 +13,15 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import com.framework.automation.pageobject.ApprovalHistoryComponentPage;
+import org.openqa.selenium.NoSuchElementException;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class SendEmailSteps extends GovGrantsManager {
+    Actions actions;
+    ApprovalHistoryComponentPage approvalHistoryComponentPage;
 
     @When("^I upload attachment \"([^\"]*)\" in send email LWC modal$")
     public void i_upload_attachment_something_in_send_email_lwc_modal(String attachmentName) throws Throwable {
@@ -131,7 +134,11 @@ public class SendEmailSteps extends GovGrantsManager {
     }
     @Then("I can click on {string} Action Button in front of {string} file")
     public void iCanClickActionButtonInFrontOfFile(String icon, String filename) {
-        I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'"+filename+"')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'"+icon+"')]"));
+        if(icon.equals("× ")) {
+            I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"));
+        } else if (icon.equals("× button on Reply modal")) {
+            I.amPerforming().click().on(ByUsing.xpath("//td[contains(text(),'"+ filename +"')]//following-sibling::td/a[@ng-click='removeAttachedItem(this)']"));
+        }
     }
     @And("I click on {string} button in Email LWC Modal")
     public void iClickOnButtonInEmailLWCModal(String buttonName) {
@@ -234,6 +241,8 @@ public class SendEmailSteps extends GovGrantsManager {
     public void iClickOnIconAtModalAfterEmailSentSuccessfully(String icon, String modal) {
         if(modal.equalsIgnoreCase("Send Email LWC")){
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='"+ icon +"']"));
+        } else if (modal.equalsIgnoreCase("Reply")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='"+ icon +"']"));
         }
     }
 
@@ -249,7 +258,7 @@ public class SendEmailSteps extends GovGrantsManager {
             WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-col slds-size_12-of-12 slds-float_left slds-var-p-right_x-small slds-var-p-bottom_x-small bold-text slds-m-top_x-small slds-m-bottom_x-small']//div//div//div//button[@type='button']"));
             String ele1 = ele.getText();
             System.out.println("ele1 :"+ele1);
-            Actions actions = new Actions(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
+            actions = new Actions(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
             actions.moveToElement(ele).build().perform();
         }
     }
@@ -278,5 +287,42 @@ public class SendEmailSteps extends GovGrantsManager {
         WebElement errorMsgElement=  I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'"+ errorMassage +"')]"));
         String errorMsg = errorMsgElement.getText();
         Assert.assertEquals(errorMassage, errorMsg);
+    }
+
+    @Then("I can not see {string} file Send Email modal")
+    public void iCanNotSeeFileSendEmailModal (String fileName) throws InterruptedException {
+        boolean elementPresentOnWebPage = true;
+        try {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(text(),'"+fileName+"')]"));
+        } catch (NoSuchElementException e) {
+            elementPresentOnWebPage = false;
+        }
+        Assert.assertFalse(elementPresentOnWebPage);
+    }
+
+    @Then("I can not see download button in front of {string} file on send email reply modal")
+    public void iCanNotSeeDownloadButtonInFrontOfFileOnSendEmailReplyModal(String FileName) {
+        boolean elementPresentOnWebPage = true;
+        try {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(text(),'"+ FileName +"')]/parent::td/following-sibling::td"));
+        } catch (NoSuchElementException e) {
+            elementPresentOnWebPage = false;
+        }
+        Assert.assertFalse(elementPresentOnWebPage);
+    }
+
+    @Then("I see Attachment section is displayed under {string} modal")
+    public void iSeeAttachmentSectionIsDisplayedUnderModal(String modal) {
+        if(modal.equals("Reply")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div//input[@id='fileselect'] | //div[@class='custom-upload']//input[@type='file']"));
+        }
+    }
+
+    @Then("I see {string} value selected from dropdown")
+    public void iSeeValueSelectedFromDropdown(String arg0) {
+        WebElement ele1 = I.amPerforming().getElementReference().of(ByUsing.xpath("(//strong[text()='To']/ancestor::div[@class='slds-form']/descendant::*[@title='Internal'])[1]"));
+        ele1.isDisplayed();
+        boolean ExternalValue = ele1.isEnabled();
+        Assert.assertTrue(ExternalValue);
     }
 }
