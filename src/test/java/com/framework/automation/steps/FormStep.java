@@ -1,8 +1,12 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FormPage;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.register.I;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class FormStep {
     FormPage formPage;
@@ -49,5 +53,16 @@ public class FormStep {
     @Then("^I (softly see|softly do not see) dropdown with selected value as \"([^\"]*)\" at form layout$")
     public void iSeeDropdownWithSelectedValueAsAtFormLayout(String usage, String formName) {
         formPage.assertFormDisplayedInsideDropdownAtFormLayout(usage, formName);
+    }
+
+    @Then("I see error massage in the page details {string}")
+    public void iSeeErrorMassageInThePageDetails(String errorMsg) {
+        boolean errorDisplayed = I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='col-md-6 textFieldWrap']/descendant::*[contains(text(),'"+ errorMsg +"')]"));
+        Assert.assertTrue(errorDisplayed);
+    }
+
+    @Then("I see {string} field is shown in {string} position")
+    public void iSeeFieldIsShownInPosition(String field, String number) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("(//div[@class='formUIWrap']//div//dl//dt//span[text()='"+field+"'])["+number+"]"), true);
     }
 }

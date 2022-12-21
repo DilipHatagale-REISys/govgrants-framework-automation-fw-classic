@@ -129,10 +129,8 @@ Business Need: SendEmailLWC Component Scenarios
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
       #219666 #219773
-#    Then I see Overall Status is "Sent Back" and color background color is "Mint Green"
     Then I see Overall Status is "Approved" and color background color is "Mint Green"
     Then I see Overall Status is "Rejected" and color background color is "light red"
-
     Examples:
       | User  |
       | ADMIN |
@@ -149,3 +147,14 @@ Business Need: SendEmailLWC Component Scenarios
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     Then I see "No Records Found" massage under Approval History
+
+  @219822
+  Scenario: To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "History" sub tab
+    And I pause execution for "5" seconds

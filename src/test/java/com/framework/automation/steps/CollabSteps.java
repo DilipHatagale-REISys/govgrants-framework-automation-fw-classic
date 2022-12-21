@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import java.awt.*;

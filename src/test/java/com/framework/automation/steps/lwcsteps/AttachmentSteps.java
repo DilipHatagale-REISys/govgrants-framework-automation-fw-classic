@@ -1,6 +1,7 @@
 package com.framework.automation.steps.lwcsteps;
 
 //import com.framework.automation.pageobject.LWCPage.AttachmentsPage;
+
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -23,7 +24,7 @@ public class AttachmentSteps {
 
     @And("I click on {string} on LWC modal")
     public void iClickOnOnLWCModal(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='"+button+"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "']"));
     }
 
     @When("I upload attachment {string} in attachments LWC modal")
@@ -126,7 +127,8 @@ public class AttachmentSteps {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@class='slds-button' and text()='" + actionIcon + "']"));
         }
     }
-//mouse hovering implementation
+
+    //mouse hovering implementation
     @And("I hover mouse on {string} icon for LWC")
     public void iHoverMouseOnIconForLWC(String actionIcon) {
         I.amPerforming().waitFor().makeThreadSleep(1000);
@@ -179,7 +181,8 @@ public class AttachmentSteps {
         }
         return flag;
     }
-//sample step
+
+    //sample step
     @And("I do hover")
     public void iDoHover() {
         I.amPerforming().waitFor().makeThreadSleep(1000);
@@ -188,13 +191,15 @@ public class AttachmentSteps {
         String msg = hovermsg.getText();
         System.out.println("aaaaaaaaaaaaaaa" + msg);
     }
-//click on expand arrow
+
+    //click on expand arrow
     @And("I click on shrink or expand arrow for {string}")
     public void iClickOnShrinkOrExpandArrowFor(String tableName) {
-        By button = (ByUsing.xpath("//lightning-icon[@title='"+tableName+"']//lightning-primitive-icon"));
+        By button = (ByUsing.xpath("//lightning-icon[@title='" + tableName + "']//lightning-primitive-icon"));
         I.amPerforming().click().on(button);
     }
-//validate message in page displayed
+
+    //validate message in page displayed
     @Then("I see the following message in the LWC page details :")
     public void iSeeTheFollowingMessageInTheLWCPageDetails(String message) {
         MessageInTheLWCPageDetails(message);
@@ -207,15 +212,16 @@ public class AttachmentSteps {
 
     private boolean isValidateMessageDisplayedInsideFormDetails(String message) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h2[text()='"+message+"']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h2[text()='" + message + "']"))) {
             return true;
         }
         return flag;
     }
-//navigate to tab on modal
+
+    //navigate to tab on modal
     @And("I navigate to {string} tab on modal")
     public void iNavigateToTabOnModal(String text) {
-        By button = (ByUsing.xpath("//li[@title='"+text+"']"));
+        By button = (ByUsing.xpath("//li[@title='" + text + "']"));
         I.amPerforming().click().on(button);
     }
 
@@ -239,26 +245,31 @@ public class AttachmentSteps {
 
     @Then("I can see Upload Files in {string} field is displayed and enabled")
     public void iCanSeeUploadFilesInFieldIsDisplayedAndEnabled(String file) {
-        WebElement uploadfiles = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//lightning-primitive-file-droppable-zone//slot//input[@type='"+file+"']"));
+        WebElement uploadfiles = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//lightning-primitive-file-droppable-zone//slot//input[@type='" + file + "']"));
         uploadfiles.isDisplayed();
         uploadfiles.isEnabled();
     }
-//row level action step
+
+    //row level action step
     @When("I click on {string} icon for file {string} inside table name {string} for LWC")
     public void iClickOnIconForFileInsideTableNameForLWC(String icon, String fileName, String tableName) {
-        if (tableName.contains("Attachments"))
-        {
-            I.amPerforming().click().on(ByUsing.xpath("//*[text()='"+tableName+"']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='"+fileName+"']/ancestor::td/following-sibling::td/a[@title='"+icon+"']"));
+        if (tableName.contains("Attachments")) {
+            I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
         }
     }
 
     @And("I click on {string} on confirmation modal")
     public void iClickOnOnConfirmationModal(String value) {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class=\"slds-modal__container\"]/descendant::button[text()='"+value+"']"));
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class=\"slds-modal__container\"]/descendant::button[text()='" + value + "']"));
     }
 
     @And("I click on {string} arrow in {string} table")
     public void iClickOnArrowInTable(String arrow , String tableTitle) {
+        if(arrow.equals("up")){
+            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
+        } else if (arrow.equals("down")){
+            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
+        }else
         I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']/lightning-primitive-icon//*[@class='slds-icon']"));
       //  I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']"));
 
@@ -266,11 +277,20 @@ public class AttachmentSteps {
 
     @Then("I do not see {string} table")
     public void iDoNotSeeTable(String columnName) {
-        String locator ="//*[@data-aura-rendered-by='9:0']/descendant::th[@scope='col']";
-        List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
-        for (Elements opt : allOptions) {
-            if (opt.getText().equals(columnName)) {
-                opt.isDisplayed();
+        if (columnName.equals("Attachments")) {
+            String locator = "//*[@data-aura-rendered-by='9:0']/descendant::th[@scope='col']";
+            List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
+            for (Elements opt : allOptions) {
+                if (opt.getText().equals(columnName)) {
+                    opt.isDisplayed();
+                }
+            }
+        } else {
+            String locator = "//tr[@class='slds-line-height_reset']//th//div[@class='slds-truncate']";
+            List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
+            if (allOptions.size() <= 0) {
+                int sizeOfList = 0;
+                Assert.assertEquals(sizeOfList, 0);
             }
         }
 
@@ -278,7 +298,7 @@ public class AttachmentSteps {
 
     @Then("I softly see column {string} in table name {string}")
     public void iSoftlySeeColumnInTableName(String columnName, String arg1) {
-        String locator ="//*[@data-aura-rendered-by='9:0']/descendant::th[@scope='col']";
+        String locator = "//*[@data-aura-rendered-by='9:0']/descendant::th[@scope='col']";
         List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
         for (Elements opt : allOptions) {
             if (opt.getText().equals(columnName)) {
@@ -289,7 +309,7 @@ public class AttachmentSteps {
 
     @Then("I can see {string} into column {string} against value {string}")
     public void iCanSeeIntoColumnAgainstValue(String value, String field, String fileName) {
-        String locator ="//tr//td[@data-label='"+field+"']//div[@title='"+value+"']";
+        String locator = "//tr//td[@data-label='" + field + "']//div[@title='" + value + "']";
         List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
         for (Elements opt : allOptions) {
             if (opt.getText().equals(fileName)) {
@@ -298,11 +318,12 @@ public class AttachmentSteps {
         }
     }
 
-   @Then("I softly (can see|cannot see) row level action button \"([^\"]*)\" against \"([^\"]*)\" in table name \"([^\"]*)\"$")
+    @Then("I softly (can see|cannot see) row level action button \"([^\"]*)\" against \"([^\"]*)\" in table name \"([^\"]*)\"$")
     public void iSoftlyCanSeeRowLevelActionButtonAgainstInTableName(String tableName, String fileName, String icon) {
-      // String locator = "//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']";
-       I.amPerforming().assertionsTo().assertThat(iSoftlyCanSeeRowLevelActionButtonTableName(tableName, fileName, icon)).isTrue();
-   }
+        // String locator = "//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']";
+        I.amPerforming().assertionsTo().assertThat(iSoftlyCanSeeRowLevelActionButtonTableName(tableName, fileName, icon)).isTrue();
+    }
+
     private boolean iSoftlyCanSeeRowLevelActionButtonTableName(String icon, String fileName, String tableName) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {

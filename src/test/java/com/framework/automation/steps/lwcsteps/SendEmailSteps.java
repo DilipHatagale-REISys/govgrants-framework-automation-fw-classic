@@ -325,4 +325,9 @@ public class SendEmailSteps extends GovGrantsManager {
         boolean ExternalValue = ele1.isEnabled();
         Assert.assertTrue(ExternalValue);
     }
+
+    @When("I click on {string} content inside {string} subheader on left panel")
+    public void iClickOnContentInsideSubheaderOnLeftPanel(String subTask, String contentTitle) {
+        I.amPerforming().click().on(ByUsing.xpath("//*[@title='"+ contentTitle +"']//following-sibling::ul//li//ul//li//a[@title='"+ subTask +"']"));
+    }
 }

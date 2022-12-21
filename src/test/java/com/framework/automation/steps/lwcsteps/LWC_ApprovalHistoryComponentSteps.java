@@ -20,9 +20,6 @@ import java.util.List;
 public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
     Actions actions;
 
-
-
-
     @When("I click on {string} icon")
     public void iClickOnIcon(String arg0) {
         I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + arg0 + "']/lightning-primitive-icon//*[@data-key='down']"));
@@ -41,25 +38,6 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
             System.out.println("===== " + recordName.getText());
         }
     }
-
-    @And("I click on {string} arrow in {string} table")
-    public void iClickOnArrowIntable(String arrow, String tableTitle) {
-        I.amPerforming().click().on(ByUsing.xpath("//*[text()='"+ tableTitle +"']//span[@class='togglePageBlock fa fa-caret-"+ arrow +"']"));
-    }
-
-    @Then("I do not see {string} table")
-    public void iDoNotSeeTable(String arg0) {
-        //String locator ="//td[@data-label='"+ record +"']";
-        String locator = "//tr[@class='slds-line-height_reset']//th//div[@class='slds-truncate']";
-        List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
-        if (allOptions.size() <= 0) {
-            int sizeOfList = allOptions.size();
-            //Assert.assertEquals(0,true);
-            Assert.assertEquals(sizeOfList, 0);
-        }
-
-    }
-
 
     @Then("I see columnName {string} is Displayed on {string} table")
     public void iSeeColumnNameIsDisplayedOnTable(String headerName, String tableName) {
@@ -96,8 +74,7 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @Then("I see {string} arrow is displayed on {string} table expanded & not shrinked")
     public void iSeeArrowIsDisplayedOnTable(String arrow, String tableTitle) {
-        //boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='"+ tableTitle +"']//span[@class='togglePageBlock fa fa-caret-"+ arrow +"']"));
+        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
         Assert.assertTrue(ArrowDisplayed);
     }
 
