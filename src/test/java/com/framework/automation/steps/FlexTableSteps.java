@@ -1,7 +1,9 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.exception.TestingBlazeCustomException;
+import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -281,5 +283,10 @@ public class FlexTableSteps {
     @And("I save the total record from flex table id {string} as {string}")
     public void iSaveTheTotalRecordFromFlexTableIdAs(String id, String key) {
         flexTablePage.assertFieldRelatedPageRecords(id,key);
+    }
+
+    @Then("I see {string} value in flextable {string}")
+    public void iSeeValueInFlextable(String fileName, String tableName) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ tableName +"']//ancestor::div[@class='col-md-12']//span[text()='"+ fileName +"']"));
     }
 }

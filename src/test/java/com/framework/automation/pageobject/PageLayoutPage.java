@@ -2739,7 +2739,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isCollabMyFeedPageRefreshed() {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='collabContainer']//div[@class='loadingCollabFeed active'] | //div[@class='loadingCollabFeed active']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='collabContainer']//div[@class='loadingCollabFeed active'] | //div[@class='loadingCollabFeed active'] | //div[@id='collabContainer']//div[@class='collabFeedWrapper active'] | //div[@class='collabFeedWrapper active']"))) {
             flag = true;
         }
         return flag;

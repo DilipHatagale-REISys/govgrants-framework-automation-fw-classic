@@ -305,9 +305,10 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
-    Then I see "Dynamic Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
+    #Then I see "Dynamic Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
+    Then I see "Dynamic Form" value in flextable "DynamicForm"
 
-   @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
+  @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
   Scenario: validate the page instructions text apears as configured in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -1108,14 +1109,14 @@ Business Need: dynamic forms Component Scenarios
       | Field                     | Value |
       | Score (Max Score : 50.00) | 60    |
     When I click on "Save" in the page details
-    And I pause execution for "5" seconds
     #Then I see the following message in the page details :
-     # | Score value should not be greater than max score |
-    Then I see the following messages in the page details contains:
-      | Score value should not be greater than max score |
+#     # | Score value should not be greater than max score |
+#    Then I see the following messages in the page details contains:
+#      | Score value should not be greater than max score |
+    Then I see error massage in the page details "Score value should not be greater than max score"
 
 
-   @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
+  @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at date field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1153,7 +1154,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Currency"
     Then I see "Test Automation Currency Help" shown as help text
 
- @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode @skipOnJenkins
+  @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode @skipOnJenkins
   Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in view mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -1287,7 +1288,7 @@ Business Need: dynamic forms Component Scenarios
     When I hovering mouse on help text icon inside page block detail "Percent"
     Then I see "Test Automation Percent Help" shown as help text
 
-   @92624 @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode @skipOnJenkins
+  @92624 @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInEditMode @skipOnJenkins
   Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -3126,7 +3127,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
-    Then I see "Written" field is shown at position "0" in "Section 1"
+    #Then I see "Written" field is shown at position "0" in "Section 1"
+  Then I see "Written" field is shown in "1" position
 
   @wip @9552   @validateDependentQuestionJsonFieldByDisablingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
   Scenario: validate Dependent Question Json Field by disabling number, percent and written field on the basis of currency field value in form view mode
@@ -4003,7 +4005,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
 
-   @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
+  @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
   Scenario: validate the display of validate button in edit mode if Validation Button Visibility is set as shown from config at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -4539,7 +4541,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
 
-   @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
+  @147325    @validateEnablePdfDownloadOptionDisappearsFromMenuAtDynamicFormLayoutViewMode
   Scenario: validating Download as pdf option is disappears from menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |

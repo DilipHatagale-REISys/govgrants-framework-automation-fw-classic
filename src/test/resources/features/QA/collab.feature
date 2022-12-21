@@ -234,6 +234,7 @@ Business Need: collab Component Scenarios
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Delete" action from dropdown at "Test Automation Admin Post Delete Action Access" comment inside my feed
+    And I pause execution for "7" seconds
     And I click modal button "OK"
     And I pause execution for "5" seconds
     Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
@@ -355,7 +356,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "7" seconds
     Then I do not see mention auto complete list is displayed at collab post
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
@@ -585,7 +586,8 @@ Business Need: collab Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     #Then I softly see tab label as "Upload File" at files library upload modal
-    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
 
   @121306    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtCollabPhase
   Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
@@ -595,7 +597,8 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
@@ -657,7 +660,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
 
-  @104324   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForPMUser
+  @104324 @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForPMUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for PM user
     When I login as "PM" user
     When I setup my app as "As a Grantor"

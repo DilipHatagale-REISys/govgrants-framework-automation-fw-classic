@@ -36,7 +36,7 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePhaseCompletedTasks"
+    Then I see expected table with id "PhaseCompletedTasksFlexTable"
 
   @106108    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenCompletedTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then completed task assigned by me table displayed
@@ -44,15 +44,16 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePhaseCompletedTasksBy"
+    Then I see expected table with id "PhaseCompletedTasksByFlexTable"
 
   @106103    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me table displayed
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePendingTasks"
+    #When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
+    When I click on "Pending Tasks" content inside "My Tasks" subheader on left panel
+    Then I see expected table with id "PhasePendingTasksFlexTable"
 
   @106105    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned by me table displayed
@@ -60,7 +61,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "toggleFlexTableHomePendingTasksBy"
+    And I pause execution for "10" seconds
+    Then I see expected table with id "PhasePendingTasksByFlexTable"
 
   @wip @106148    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuSubrecipientsOrganizationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then Subrecipients organization table displayed
@@ -391,8 +393,8 @@ Business Need: security review Scenarios
     And I navigate to "Home" tab
     When I perform quick search inside global search "AP"
     When I click on global search and select "Applications / Negotiations"
-    Then I softly see expected table with id "toggleFlexTableRecipientApplications"
-    Then I softly see expected table with id "toggleFlexTableRecipientPreApplications"
+    Then I softly see expected table with id "Application__cFlexTable"
+    Then I softly see expected table with id "Preapplication__cFlexTable"
 
   @109254    @verifyThatFieldHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate field history flex table  is rendered properly by PM user
@@ -485,7 +487,7 @@ Business Need: security review Scenarios
     And I navigate to "Applications" tab
     When I click on global search and select "Applications / Negotiations"
     When I perform quick search inside global search "AP"
-    Then I see expected table with id "toggleFlexTableRecipientApplications"
+    Then I see expected table with id "toggleFlexTableApplication__c"
 
   @107809 @validateThatIfAnSearchedInGlobalSearchThenGrantsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, grants Table is displayed
@@ -503,7 +505,7 @@ Business Need: security review Scenarios
     And I navigate to "Monitoring" tab
     When I click on global search and select "Awards"
     When I perform quick search inside global search "Sub"
-    Then I see expected table with id "flexTableDivId"
+    Then I see expected table with id "Award__cFlexTable"
 
   @109267    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned to me table displayed

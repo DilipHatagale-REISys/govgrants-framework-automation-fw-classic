@@ -377,7 +377,7 @@ Business Need: SendEmailLWC Component Scenarios
       | PM    |
 
   @257258 @257259 @us-255931 @dilip
-  Scenario: To verify, IN front of  Attachment '?' is displayed in the grey circle when hover over on that "?" "File attachment" is displayed
+  Scenario: To verify, IN front of  Attachment  is displayed in the grey circle when hover over on that  "File attachment" is displayed
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
