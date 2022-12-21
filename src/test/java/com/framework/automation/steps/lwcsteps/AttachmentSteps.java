@@ -331,4 +331,9 @@ public class AttachmentSteps {
         }
         return flag;
     }
+
+    @Then("I see recently added snapshot in table name {string} with current date")
+    public void iSeeRecentlyAddedSnapshotInTableNameWithCurrentDate(String arg0) {
+
+    }
 }

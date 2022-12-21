@@ -3891,7 +3891,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    Then I see field "Expected Future Funding" as "($500,000)"
+    Then I see field "Expected Future Funding" as "$50,000"
 
   @100200    @verifyThatTotalValueAndDollarSymbolIsRightAlignedInsideTable
   Scenario Outline: validate that total value and dollar symbol is right aligned inside table
@@ -4334,7 +4334,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see field "Created By" as "PankajH GGPTEST5"
+    Then I see field "Created By" as "Nauman Shahid"
 
   @118822    @validateCreatedByStandardFieldValueIsDisplayProperlyAtPageBlockDetailInViewMode @pageLayout
   Scenario: Validate created by standard field value is displayed inside page block detail in view mode
@@ -4588,6 +4588,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Activities" subheader on left panel
     When I perform quick search for "Test value 1"
+    And I pause execution for "3" seconds
     Then I see the text :
       | Test value 1 |
 

@@ -326,6 +326,7 @@ Business Need: Calender Config Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I pause execution for "6" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Day" Button at calendar
     Then I see calender displayed in "Day" format
