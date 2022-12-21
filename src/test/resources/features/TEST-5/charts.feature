@@ -2818,7 +2818,8 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
     When I click modal button "Show All Data"
     And I pause execution for "10" seconds
-    Then I see "Enhanced Pie chart" displayed in modal
+   # Then I see "Enhanced Pie chart" displayed in modal
+    Then I see "Distribution of Announcements by Grant Type" displayed in modal
 
   @208076 @VerifyThatDualChartName @sprint8
   Scenario: E-Charts - PM - Verified that Dual axes chart (Chart name :Program and Award Funding Status) displayed correctly on ChartTesting VF page for all available data/records

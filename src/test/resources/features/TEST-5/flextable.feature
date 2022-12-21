@@ -1198,7 +1198,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
-    Then I see value "03/17/2021 4:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    Then I see value "03/17/2021, 04:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1223,7 +1223,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
-    Then I see value "03/17/2021 5:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    Then I see value "03/17/2021, 05:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -1248,7 +1248,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
-    Then I see value "03/18/2021 3:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+    Then I see value "03/18/2021, 03:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
@@ -2232,7 +2232,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180704 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
@@ -2241,7 +2241,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Program"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180719 @jyoti
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
@@ -2250,7 +2250,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021 3:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180705 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
@@ -2259,7 +2259,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Announcement"
     When I perform quick search inside global search "AN-343-028"
-    Then I see value "10/20/2021 3:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "10/20/2021, 03:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @180717 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
@@ -2268,7 +2268,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Application"
     When I perform quick search inside global search "AP-755-214"
-    Then I see value "11/27/2018 7:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+    Then I see value "11/27/2018, 07:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
 
   @181411 @jyoti
   Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
@@ -2622,10 +2622,10 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 11/26/2021  01:11 PM |
+      | Application Deadline | Greater than or Equal to | 08/30/2017, 01:07 PM |
     When I pause execution for "10" seconds
-    When I perform quick search for "12/31/2021"
-    Then I softly see value "12/31/2021 2:44 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+    When I perform quick search for "08/30/2017"
+    Then I softly see value "08/30/2017, 01:07 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
@@ -2635,8 +2635,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than | 11/26/2021  01:11 PM |
-    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Deadline | Less than | 04/24/2018, 07:45 PM |
+    Then I softly see value "10/31/2017, 02:37 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184242 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
@@ -2647,9 +2647,9 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 11/26/2021  01:11 PM |
+      | Application Deadline | Greater than | 12/04/2017, 01:05 AM |
     And I pause execution for "5" seconds
-    Then I softly see value "12/06/2021 11:54 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+    Then I softly see value "04/24/2018, 07:45 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
@@ -2660,7 +2660,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Greater than or Equal to | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184240 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less than or equal to   ' Operator
@@ -2671,7 +2671,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @176520 @sprint20
   Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
@@ -2721,8 +2721,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Contains | AN-343-030 |
-    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+      | ID | Contains | AN-852-006 |
+    Then I softly see value "AN-852-006" for title "ID" inside table "---program:-:programTableDivId---"
 
   @184088 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Ends  with ' Operator
@@ -2732,8 +2732,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Ends with | 343-029 |
-    Then I softly see value "AN-343-029" for title "ID" inside table "---program:-:programTableDivId---"
+      | ID | Ends with | 501-032 |
+    Then I softly see value "AN-501-032" for title "ID" inside table "---program:-:programTableDivId---"
 
   @184089 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with 'Contains' Operator
@@ -2743,8 +2743,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Contains | org level |
-    Then I softly see value "org level" for title "Announcement Title" inside table "---program:-:programTableDivId---"
+      | Announcement Title | Contains | for school |
+    Then I softly see value "for school" for title "Announcement Title" inside table "---program:-:programTableDivId---"
 
   @184091 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Does not Contains' Operator
@@ -2810,7 +2810,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Greater than | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184087 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' start with ' Operator
@@ -2820,8 +2820,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed/Reject Announcements"
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Starts with | AN-343 |
-    Then I softly see value "AN-343-030" for title "ID" inside table "---program:-:programTableDivId---"
+      | ID | Starts with | AN-852 |
+    Then I softly see value "AN-852-006" for title "ID" inside table "---program:-:programTableDivId---"
 
   @184234 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'Equals to ' Operator
@@ -2832,7 +2832,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Equals to | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184085 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
@@ -2868,7 +2868,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunities" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184238 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
