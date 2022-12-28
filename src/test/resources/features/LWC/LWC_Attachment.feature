@@ -72,11 +72,11 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "10" seconds
@@ -211,11 +211,11 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -243,11 +243,11 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -615,3 +615,30 @@ Business Need: Attachment Component Scenarios
     And I click on "Save" on LWC modal
     Then I see the following message in the LWC page details :
       | The document you are attempting to upload exists in the Workspace |
+
+  @221566 @255405 @Toverify,Totalrecordsshoulddisplayedasperrecordadding&deleting
+  Scenario Outline:To verify, Total records should displayed as per record adding & deleting
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+#   When I perform quick search for "Automation Internal Program for Testing Purpose Only"
+#   When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    When I upload attachment "TestFileSharing.docx" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" on LWC modal
+    When I close LWC modal by clicking the top right x button
+    And I refresh the page
+    Then I see total records count in "Snapshot History" table equals to Total record displayed on UI
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |

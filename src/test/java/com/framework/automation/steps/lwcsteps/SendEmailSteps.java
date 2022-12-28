@@ -152,6 +152,8 @@ public class SendEmailSteps extends GovGrantsManager {
     public void iClickOnTopRightButtonInTableName(String button, String tableName) {
         if (tableName.contains("Attachments")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "']"));
+        }else if (tableName.contains("Contacts")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='"+ tableName +"']/parent::div//following-sibling::div//div//div//div/lightning-button//button[@title='"+ button +"']"));
         }
     }
     @Then("I see {string} field under the Send Email LWC modal")

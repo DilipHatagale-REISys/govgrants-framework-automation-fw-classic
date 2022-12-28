@@ -225,12 +225,6 @@ public class AttachmentSteps {
         I.amPerforming().click().on(button);
     }
 
-//    @And("I select value {string} from upload from computer")
-//    public void iSelectValueFromUploadFromComputer(String sharingOptions) {
-//        attachmentsPage.iSelectValueFromUploadFromComputer(sharingOptions);
-//
-//    }
-
     @Then("I see {string} from dropdown of filetype is displayed and enabled")
     public void iSeeFromDropdownOfFiletypeIsDisplayedAndEnabled(String value) {
         I.amPerforming().click().on(ByUsing.xpath("//button[@aria-label='Select Progress']"));
@@ -262,16 +256,16 @@ public class AttachmentSteps {
     public void iClickOnOnConfirmationModal(String value) {
         I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class=\"slds-modal__container\"]/descendant::button[text()='" + value + "']"));
     }
-
+        //step for shrink and expand block
     @And("I click on {string} arrow in {string} table")
-    public void iClickOnArrowInTable(String arrow , String tableTitle) {
-        if(arrow.equals("up")){
-            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-        } else if (arrow.equals("down")){
-            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-        }else
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']/lightning-primitive-icon//*[@class='slds-icon']"));
-      //  I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']"));
+    public void iClickOnArrowInTable(String arrow, String tableTitle) {
+//        if (arrow.equals("up")) {
+//            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
+//        } else if (arrow.equals("down")) {
+//            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
+//        } else
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@class='slds-icon']"));
+        //  I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']"));
 
     }
 
@@ -298,13 +292,7 @@ public class AttachmentSteps {
 
     @Then("I softly see column {string} in table name {string}")
     public void iSoftlySeeColumnInTableName(String columnName, String arg1) {
-        String locator = "//*[@data-aura-rendered-by='9:0']/descendant::th[@scope='col']";
-        List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
-        for (Elements opt : allOptions) {
-            if (opt.getText().equals(columnName)) {
-                opt.isDisplayed();
-            }
-        }
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tr[@class='slds-line-height_reset']//th//span[@title='"+columnName+"']"));
     }
 
     @Then("I can see {string} into column {string} against value {string}")
@@ -335,5 +323,26 @@ public class AttachmentSteps {
     @Then("I see recently added snapshot in table name {string} with current date")
     public void iSeeRecentlyAddedSnapshotInTableNameWithCurrentDate(String arg0) {
 
+    }
+
+    @And("I click on saved snap shot {string}")
+    public void iClickOnSavedSnapShot(String fileName) {
+        // I.amPerforming().click().withJavaScript(ByUsing.xpath("//a[contains(text(),'"+fileName+"')]"));
+        I.amPerforming().click().on(ByUsing.xpath("//a[contains(text(),'" + fileName + "')]"));
+    }
+
+    @Then("I see generated snapshot {string} is displayed with {string}")
+    public void iSeeGeneratedSnapshotIsDisplayedWith(String fileName, String columnName) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "']"));
+    }
+
+    @Then("I see total records count in {string} table equals to Total record displayed on UI")
+    public void iSeeTotalRecordsCountInTableEqualsToTotalRecordDisplayedOnUI(String tableName) {
+        List<Elements> option = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//td[@data-label='Attachment Name']//div//a"));
+        int size =option.size();
+        if(tableName.equals("Snapshot History")){
+            String totalRecords =  I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='Snapshot History']//ancestor::gnt-snapshot-history//descendant::span[contains(text(),'Total Records :')]")).getText();
+            Assert.assertTrue(totalRecords.contains(Integer.toString(size)));
+        }
     }
 }
