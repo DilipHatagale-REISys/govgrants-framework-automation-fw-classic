@@ -113,7 +113,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I enter value "QWERTY!@#$%12345" inside "Title" in LWC modal
     Then I enter value "QWERTY!@#$%12345AK47" inside "Description" in LWC modal
     And I click on "Save" on LWC modal
-    Then I see "Program View" webpage is loaded
+    Then I see "Application View" webpage is loaded
     Then I see "Title" column contains the value "QWERTY!@#$%12345"
     Then I see "Description" column contains the value "QWERTY!@#$%12345AK47"
 
@@ -162,7 +162,6 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
-    And I click on top right button "Add" in tableName "Notes"
     #208861
     Then I see the "Description" contains "Courier" have font style is "courier" in Notes modul
     #208870
@@ -268,7 +267,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I see the "Description" contains "fontSize12Test" have font size is "12px" in Notes modul
 
   @208905 @208907 @208909 @208911 @208912 @208915 @LWC-NotesSuit @dilip
-  Scenario Outline:To verify user applies formatting 'Bold','Italic', on the text in description box then respective formatting should get apply.(Admin/PM)
+  Scenario Outline:To verify user applies formatting Bold,Italic,Underline,bulletlist,Indent,Outdent on the text in description box then respective formatting should get apply.(Admin/PM)
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -296,7 +295,7 @@ Business Need: Loading icon for all the operations Component Scenarios
       | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
   @208906 @208908 @208910 @208913 @208914 @LWC-NotesSuit @dilip
-  Scenario:To verify user applies formatting 'Bold' on the text in description box then respective formatting should get apply.(SPI)
+  Scenario:To verify user applies formatting Bold,Italic,Underline,bulletlist,Indent,Outdent on the text in description box then respective formatting should get apply.(SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -343,7 +342,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I close LWC modal by clicking the top right x button
     #208938
     Then I see title "Left align text test" and click on "View" icon
-    Then I navigate to "Application View" modal
+    Then I navigate to "Program View" modal
     When I close LWC modal by clicking the top right x button
     #208939
     Then I see title "Left align text test" and click on "View" icon
@@ -355,7 +354,7 @@ Business Need: Loading icon for all the operations Component Scenarios
       | ADMIN | {LWC_StaticRecords:AutomationProgramLWCNotesForAdmin} |
       | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
-  @208918 @208920 @208922 @208935 @208940 @207397 @LWC-NotesSuit @dilip
+  @208918 @208920 @208922 @208935 @208940 @207397 @208931 @LWC-NotesSuit @dilip
   Scenario:To verify user applies formatting Left align text,Center align text,Right align text Test  on the text in description box then respective formatting should get apply.(SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -370,10 +369,6 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I see "Description" column contains "Right align text Test" font format "right" align text get apply
     #208918
     Then I see "Description" column contains "Left align text test" font format "left" align text get apply
-    #208931
-    Then I see title "Left align text test" and click on "View" icon
-    Then I navigate to "Application View" modal
-    When I close LWC modal by clicking the top right x button
     #208933
     Then I see title "Left align text test" and click on "Edit" icon
     Then I enter value "test" inside "Title" in LWC modal
@@ -390,6 +385,10 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I see "Description" column contains "Description test"
     Then I see "CreatedDate" column contains "2023"
     Then I see "CreatedBy" column contains "Automation SPI"
+        #208931
+    Then I see title "Left align text test" and click on "View" icon
+    Then I navigate to "Application View" modal
+    When I close LWC modal by clicking the top right x button
 
 
   @208941 @LWC-NotesSuit @dilip
@@ -401,7 +400,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I perform quick search for "<programID>"
     When I click on "View" icon for "<programID>" inside table
     When I navigate to "Files" sub tab
-    And I pause execution for "5" seconds
+    And I pause execution for "7" seconds
     Then I see title "applyItalicFormating" and click on "View" icon
     Examples:
       | User  | programID                                             |
@@ -444,6 +443,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I enter value "Title for delete program" inside "Title" in LWC modal
     And I enter value "Description for delete program" inside "Description" in LWC modal
     And I click on "Save" button in LWC
+    And I pause execution for "10" seconds
     Then I see title "Title for delete program" and click on "Delete" icon
     And I click on "Yes" button on confirmation table
     Then I can not see "Title for delete program" inside "Title" in Notes lwc modal
@@ -473,6 +473,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I enter value "Title for delete program" inside "Title" in LWC modal
     And I enter value "Description for delete program" inside "Description" in LWC modal
     And I click on "Save" button in LWC
+    And I pause execution for "10" seconds
     Then I see title "Title for delete program" and click on "Delete" icon
     And I click on "Yes" button on confirmation table
     And I pause execution for "10" seconds

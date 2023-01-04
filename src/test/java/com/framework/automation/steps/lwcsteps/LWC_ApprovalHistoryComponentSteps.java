@@ -319,4 +319,9 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
         actions.click().build().perform();
     }
 
+    @Then("I see alignment of each column data is to the {string} side")
+    public void iSeeAlignmentOfEachColumnDataIsToTheSide(String allignmentSide) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.cssSelector(".slds-scope caption, .slds-scope th, .slds-scope td[Styles='text-align: left;']"),true);
+
+    }
 }
