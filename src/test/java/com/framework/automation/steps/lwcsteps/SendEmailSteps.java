@@ -150,10 +150,17 @@ public class SendEmailSteps extends GovGrantsManager {
     }
     @And("I click on top right button {string} in tableName {string}")
     public void iClickOnTopRightButtonInTableName(String button, String tableName) {
-        if (tableName.contains("Attachments")) {
+        if (tableName.contains("Attachments")|| tableName.equals("Notes")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "']"));
+<<<<<<< Updated upstream
         }else if (tableName.contains("Contacts")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='"+ tableName +"']/parent::div//following-sibling::div//div//div//div/lightning-button//button[@title='"+ button +"']"));
+=======
+        } else if (tableName.contains("Contacts")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='"+ tableName +"']/parent::div//following-sibling::div//div//div//div/lightning-button//button[@title='"+ button +"']"));
+        } else if (tableName.contains("Associate table")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@title='"+ button +"' and @class='secondaryBtn ng-scope ng-binding']"));
+>>>>>>> Stashed changes
         }
     }
     @Then("I see {string} field under the Send Email LWC modal")

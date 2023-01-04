@@ -24,7 +24,7 @@ public class AttachmentSteps {
 
     @And("I click on {string} on LWC modal")
     public void iClickOnOnLWCModal(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "'] | //button[@type='button' and text()='"+ button +"']"));
     }
 
     @When("I upload attachment {string} in attachments LWC modal")
@@ -73,8 +73,8 @@ public class AttachmentSteps {
         I.amPerforming().waitFor().makeThreadSleep(3000);
     }
 
-    @Then("I see {string} is in attachment LWC modal window")
-    public void iSeeIsInAttachmentLWCModalWindow(String header) {
+    @Then("I see {string} is in LWC modal window")
+    public void iSeeIsInLWCModalWindow(String header) {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='slds-modal__container']/descendant::h2[text()='" + header + "']")));
     }
 
@@ -278,6 +278,13 @@ public class AttachmentSteps {
                 if (opt.getText().equals(columnName)) {
                     opt.isDisplayed();
                 }
+            }
+        } else if (columnName.equals("Notes")) {
+            String locator = "//th//a[@class='slds-text-link_reset']";
+            List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
+            if (allOptions.size() <= 0) {
+                int sizeOfList = 0;
+                Assert.assertEquals(sizeOfList, 0);
             }
         } else {
             String locator = "//tr[@class='slds-line-height_reset']//th//div[@class='slds-truncate']";

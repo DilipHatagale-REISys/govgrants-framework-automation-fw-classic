@@ -805,8 +805,52 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "Email Sent Successfully." message is displayed on send email modal
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
 
-  @223214  @LWC_ID-208784 @dilip
-  Scenario: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
+  @223214 @223215 @223217 @223218 @LWC_ID-208784 @dilip
+  Scenario Outline: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Then I pause execution for "2" seconds
+    #223214 #223215
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "To" field dropdown is displayed with "Groups" value
+    #223217
+    When I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    #223218
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @223216 @LWC_ID-208784 @dilip
+  Scenario:When User check the checkbox for  the internal from dropdown then Group field is getting hidden from TO field
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "To" field dropdown is displayed with "Groups" value
+
+  @223219 @223207 @LWC_ID-208784 @dilip
+  Scenario: When User check the checkbox for  the group  from dropdown then internal &External  field is getting hidden from CC field
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -817,5 +861,63 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see and check "To" field dropdown is displayed with "Internal" value
     Then I pause execution for "2" seconds
+    #223219
+    Then I see and check "Cc" field dropdown is displayed with "Internal" value
+    #223207
+    Then I see and check "Cc" field dropdown is displayed with "External" value
     When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
-    Then I see "Internal" value selected from dropdown
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+
+  @223846 @LWC_ID-208784 @dilip
+    Scenario: User send email without filling subject field then error message should displayed on the modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Then I pause execution for "2" seconds
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Please add subject" error massage in attachment section
+
+  @createProgram
+  Scenario: validate status of program is changed to approved after getting approved by both the approvers
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+   # And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+#    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+#      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+#      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+#    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    #When I "Reject" in the approval decision
+    When I "Send back" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
