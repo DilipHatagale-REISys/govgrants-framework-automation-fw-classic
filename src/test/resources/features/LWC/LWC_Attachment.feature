@@ -9,8 +9,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "10" seconds
@@ -30,11 +30,9 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+        And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "10" seconds
@@ -72,8 +70,6 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -110,11 +106,9 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "10" seconds
@@ -144,8 +138,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -167,8 +161,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -189,8 +183,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -211,8 +205,6 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -243,11 +235,11 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click modal button "Save and Continue"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
+#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -265,8 +257,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -285,8 +277,9 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -301,11 +294,9 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -332,8 +323,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -359,11 +350,9 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
+     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -622,8 +611,6 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-#   When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-#   When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
