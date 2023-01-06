@@ -349,7 +349,7 @@ Business Need: SnapshotHistory Component Scenarios
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
-    And I select "Take Snapshot" from dropdown
+    When I select "Take Snapshot" from dropdown
     When I click alert button "OK"
     When I navigate to "Overview" sub tab
     When I navigate to "History" sub tab
