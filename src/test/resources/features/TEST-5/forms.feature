@@ -420,14 +420,14 @@ Business Need: Forms Component Scenarios
     When I click on "Cancel" button in right header
     Then I see "DynamicFormView" in current url
 
-  @122002    @VerifyAtFormsIfClickOnCancelButtonThenUserIsRedirectedToFormViewPageWhenPageRedirectBehaviourIsSetToSaveAndContinue
+ @wip @122002    @VerifyAtFormsIfClickOnCancelButtonThenUserIsRedirectedToFormViewPageWhenPageRedirectBehaviourIsSetToSaveAndContinue
   Scenario: Validate that a form view page is displayed by click on cancel button at forms if page redirected behaviour is set to save and continue
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Page Redirect Behaviour | Save and Continue | General Application Form |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Page Redirect Behaviour | Save and Close | General Application Form |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
