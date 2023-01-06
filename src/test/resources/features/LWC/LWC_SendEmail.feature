@@ -89,7 +89,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I fill the details in field To "reisystem@yopmail.com" CC "abc@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "7" seconds
@@ -217,10 +217,10 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
     #256768
     Then I can see Upload file & drop files actions on send email reply modal are enabled
@@ -235,7 +235,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "10" seconds
     And I click on "Send" button in Email LWC Modal
-    And I pause execution for "60" seconds
+    And I pause execution for "30" seconds
     #256787 #256786
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     #256794 #256792
@@ -494,7 +494,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I upload attachment "DuplicateFile.txt" in send email LWC modal
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
@@ -506,16 +506,16 @@ Business Need: SendEmailLWC Component Scenarios
       | ADMIN |
       | PM    |
 
-  @256816 @us-255931 @dilip
-  Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
-    When I login as "PM" user
+  @256816 @256817 @us-255931 @dilip
+  Scenario Outline: To verify, Internal user can Download file by clicking on download action button in the Attachments table in front of the attached file on send email Reply  modal
+    When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
     And I click on "Send" button in Email LWC Modal
@@ -524,8 +524,8 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
-    #256817
-    And I click on "View LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    #256817 #256816
+    And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
     When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com,automationfo@yopmail.com" Subject "Subject" in send email LWC
@@ -534,6 +534,10 @@ Business Need: SendEmailLWC Component Scenarios
     And I pause execution for "25" seconds
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @256891 @256892 @us-255931 @dilip
   Scenario:To verify, Admin User should not be able to see Attachment symbol when select file is not getting attached  to  send email modal
@@ -553,7 +557,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
     #256892
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
     And I click on "Send" button in Email LWC Modal
@@ -618,7 +622,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     #256883 #256885
     Then I see Attachment section is displayed under "Reply" modal
@@ -671,7 +675,7 @@ Business Need: SendEmailLWC Component Scenarios
 
 
   @223210 @223212 @223213 @223220 @223222 @223223 @223227 @223860 @223861 @223862 @223863 @223864
-  @223865 @223866 @223866 @223868 @223869 @223870 @LWC_ID-208784 @dilip
+  @223865 @223866 @223866 @223868 @223869 @223870 @223867 @LWC_ID-208784 @dilip
   Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -746,7 +750,8 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see the "checkbox" is selected as per row no "1" checkbox
 
   @223848 @223849  @223850 @223851 @223852 @223853 @223847 @LWC_ID-208784 @dilip
-  Scenario: send email-User send email with multiple Email addresses are separated by Comma (,) TO Field, Cc field
+  Scenario: send email-User send email with multiple Email addresses are separated by Comma (,) TO Field, Cc field,User Click on Reply LWC action then Reply LWC modal is displayed, User Click on View  LWC action then View LWC modal is displayed,
+  User send email with Internal email ID's in TO &CC field, User send email with multiple Email addresses are separated by Comma (,) TO Field, User send email with multiple Email addresses are separated by Comma (,) CC Field, To verify , User send the email with multiple email address in TO field
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -755,12 +760,12 @@ Business Need: SendEmailLWC Component Scenarios
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
       #223848
-    And I click on "Reply LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Reply LWC" modal is displayed
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
     And I pause execution for "5" seconds
     #223849
-    And I click on "View LWC" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "View LWC" modal is displayed
     When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
     And I pause execution for "5" seconds
@@ -869,7 +874,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see and check "Cc" field dropdown is displayed with "Groups" value
 
   @223846 @LWC_ID-208784 @dilip
-    Scenario: User send email without filling subject field then error message should displayed on the modal
+  Scenario: User send email without filling subject field then error message should displayed on the modal
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -883,41 +888,3 @@ Business Need: SendEmailLWC Component Scenarios
     When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "" in send email LWC
     And I click on "Send" button in Email LWC Modal
     Then I see "Please add subject" error massage in attachment section
-
-  @createProgram
-  Scenario: validate status of program is changed to approved after getting approved by both the approvers
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-   # And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-#    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-#      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-#      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-#    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    #When I "Reject" in the approval decision
-    When I "Send back" in the approval decision
-    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"

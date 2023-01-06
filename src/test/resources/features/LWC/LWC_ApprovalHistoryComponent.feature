@@ -32,7 +32,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see columnName "Comments" is Displayed on "Approval History" table
     Then I see columnName "Status" is Displayed on "Approval History" table
     Then I see columnName "Overall Status" is Displayed on "Approval History" table
-        ##I can not capture helptext #219668 #219779 #219668
+      #219668 #219779 #219668
     When I hover mouse over "Date" column names.
     Then I see columnName "Date" is Displayed on "Approval History" table
     And I pause execution for "5" seconds
@@ -53,8 +53,6 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see the font size of "Approver" is "13px" Approval History table
     Then I see the font size of "Comments" is "13px" Approval History table
     Then I see the font size of "Status" is "13px" Approval History table
-    #I can not validate by using driver.findElement(By.id("id2")).getLocation().x;
-    Then alignment of each column data is to the left side
     Examples:
       | User  |
       | ADMIN |
@@ -65,56 +63,149 @@ Business Need: SendEmailLWC Component Scenarios
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-0404"
-    When I click on "View" icon for "PG-A11-0404" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     Then I see "No Records Found" massage under Approval History
-    Examples:
-      | User  | EGMS ID     |
-      | ADMIN | PG-REI-0234 |
-      | PM    | PG-A11-0391 |
-
-  @219819 @219820 @220068 @220069 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline: Validate Approval Request Submitted,Submitted for approval.,Started values in column
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "History" sub tab
-    And I pause execution for "5" seconds
-    #219819 #219820
-    Then I see "Approval Request Submitted" and comments is changed "Submitted for approval." in Approval history table
-    #220068 #220069
-    Then I see step "Approval Request Submitted" and Comments column "Submitted for approval." and status "Started" displayed for Owner
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-
-  @219666 @219773 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline:PM or ADMIN user To verify that background color structure/theme is same as that of expected.
-    When I login as "<User>" user
+  @219819 @220068 @219666 @219669 @219822 @220098 @LWC-ApprovalHistorySuit @dilip
+  Scenario:Validate Approval Request Submitted,Submitted for approval.,Started values in column,To verify that Date and time format displayed correctly for each entry,To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-0423"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name             | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation Admin | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "3" seconds
+    And I click on "Submit For Approval" in the page details
+    When I "Approve" in the approval decision table and comment "Approve"
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
-      #219666 #219773
-#    Then I see Overall Status is "Approved" and color background color is "Mint Green"
-#    Then I see Overall Status is "Rejected" and color background color is "light red"
+    #219819
+    Then I see "Approval Request Submitted" and comments is changed "Submitted for approval." in Approval history table
+    #220068
+    Then I see step "Approval Request Submitted" and Comments column "Submitted for approval." and status "Started" displayed for Owner
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    When I "Send back" in the approval decision table and comment "Send back for test"
+    When I navigate to "History" sub tab
+    When I re-login to "As a Grantor" app as "Admin" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I "Reject" in the approval decision table and comment "Reject for test"
+    When I navigate to "History" sub tab
+    #219666
+    Then I see Overall Status is "Approved" and color background color is "Mint Green"
+    Then I see Overall Status is "Rejected" and color background color is "light red"
     Then I see Overall Status is "Sent Back" and color background color is "light yellow"
+    #219669
+    Then I see "Date" and time format "MM/dd/yyyy HH:mm" displayed
+    #219822
+    Then status changed "Submitted for approval." and "Assigned To" approver name is displayed "Automation Admin"
+    Then status changed "Submitted for approval." and "Actual Approver" approver name is displayed "Automation Admin"
+    #220098
+    Then I see Date column "Approval Request Submitted" text displayed
 
-    Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+  @219820 @220069 @219773 @219787 @219823 @220099 @LWC-ApprovalHistorySuit @dilip
+  Scenario:Validate Approval Request Submitted,Submitted for approval.,Started values in column,To verify that Date and time format displayed correctly for each entry,To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name             | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation Admin | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "3" seconds
+    And I click on "Submit For Approval" in the page details
+    When I "Approve" in the approval decision table and comment "Approve"
+    When I navigate to "History" sub tab
+    And I pause execution for "5" seconds
+    #219820
+    Then I see "Approval Request Submitted" and comments is changed "Submitted for approval." in Approval history table
+    #220069
+    Then I see step "Approval Request Submitted" and Comments column "Submitted for approval." and status "Started" displayed for Owner
+    When I re-login to "As a Grantor" app as "Admin" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    When I "Send back" in the approval decision table and comment "Send back for test"
+    When I navigate to "History" sub tab
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I "Reject" in the approval decision table and comment "Reject for test"
+    When I navigate to "History" sub tab
+    #219773
+    Then I see Overall Status is "Approved" and color background color is "Mint Green"
+    Then I see Overall Status is "Rejected" and color background color is "light red"
+    Then I see Overall Status is "Sent Back" and color background color is "light yellow"
+    #219787
+    Then I see "Date" and time format "MM/dd/yyyy HH:mm" displayed
+    #219823
+    Then status changed "Submitted for approval." and "Assigned To" approver name is displayed "Automation PM"
+    Then status changed "Submitted for approval." and "Actual Approver" approver name is displayed "Automation PM"
+    #220099
+    Then I see Date column "Approval Request Submitted" text displayed
 
   @219818 @LWC-ApprovalHistorySuit @dilip
   Scenario: To verify that when there is no any record to be displayed in Approval history table, then empty table with column header and "No records found" message displayed there
@@ -127,39 +218,6 @@ Business Need: SendEmailLWC Component Scenarios
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     Then I see "No Records Found" massage under Approval History
-
-  @219822 @219823 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline: To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "History" sub tab
-    And I pause execution for "5" seconds
-    Then status changed "Submitted for approval." and "Assigned To" approver name is displayed "Automation PM"
-    Then status changed "Submitted for approval." and "Actual Approver" approver name is displayed "Automation PM"
-    Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
-
-  @219787 @219669 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline: To verify that Date and time format displayed correctly for each entry
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "History" sub tab
-    And I pause execution for "5" seconds
-    Then I see "Date" and time format "MM/dd/yyyy HH:mm" displayed
-    Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
 
   @220074 @220075 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that when record is submitted for approval but not approved, then Overall status value showed "Pending" in respective column. Also in Date column "Step 1 (Pending for first Approval) " text displayed
@@ -194,23 +252,6 @@ Business Need: SendEmailLWC Component Scenarios
       | User  |
       | ADMIN |
       | PM    |
-
-  @220098 @220099 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline: To verify that when record is submitted for approval then in Date column "Approval Request Submitted" text displayed
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "History" sub tab
-    And I pause execution for "5" seconds
-    Then I see Date column "Approval Request Submitted" text displayed
-    Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
-
 
   @220114 @220115 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that when approver forwarded record to another user for approval, then status changed to "Re-assigned"
@@ -379,8 +420,8 @@ Business Need: SendEmailLWC Component Scenarios
       | PM    |
       | ADMIN |
 
-  @220545 @221016 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline:Admin - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
+  @220545 @LWC-ApprovalHistorySuit @dilip
+  Scenario: Admin - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -415,7 +456,7 @@ Business Need: SendEmailLWC Component Scenarios
       | Automation EXE | Step 4  | Step 4       | Step 4 | Step 4 | Step 4                  | Step 4   |
     And I pause execution for "3" seconds
     And I click on "Submit For Approval" in the page details
-    When I "<Approval Decision>" in the approval decision table and comment "<Enter Your Comments>"
+    When I "Approve" in the approval decision table and comment "Approve"
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
@@ -423,7 +464,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "<Approval Decision>" in the approval decision table and comment "<Enter Your Comments>"
+    When I "Approve" in the approval decision table and comment "Approve"
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
@@ -431,7 +472,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "<Approval Decision>" in the approval decision table and comment "<Enter Your Comments>"
+    When I "Approve" in the approval decision table and comment "Approve"
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -439,16 +480,12 @@ Business Need: SendEmailLWC Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "<Approval Decision>" in the approval decision table and comment "<Enter Your Comments>"
+    When I "Approve" in the approval decision table and comment "Approve"
     When I navigate to "History" sub tab
-    Then I see Date column "Step 1" text displayed and overall status is "<Status>"
-    Then I see Date column "Step 2" text displayed and overall status is "<Status>"
-    Then I see Date column "Step 3" text displayed and overall status is "<Status>"
-    Then I see Date column "Step 4" text displayed and overall status is "<Status>"
-    Examples:
-      | Approval Decision | Enter Your Comments | Status    |
-      | Approve           | Approve             | Approved  |
-      | Send back         | Send back           | Sent Back |
+    Then I see Date column "Step 1" text displayed and overall status is "Approved"
+    Then I see Date column "Step 2" text displayed and overall status is "Approved"
+    Then I see Date column "Step 3" text displayed and overall status is "Approved"
+    Then I see Date column "Step 4" text displayed and overall status is "Approved"
 
   @220546 @LWC-ApprovalHistorySuit @dilip
   Scenario:PM - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
@@ -516,3 +553,68 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see Date column "Step 2" text displayed and overall status is "Approved"
     Then I see Date column "Step 3" text displayed and overall status is "Approved"
     Then I see Date column "Step 4" text displayed and overall status is "Approved"
+
+  @221086 @221087 @220120 @220121 @220117 @220118 @LWC-ApprovalHistorySuit @dilip
+  Scenario Outline: To verify that records details of all 4 approval actions displayed correctly for financial officer(FO) user and executive user (EXE),To verify that on reassigning record, overall status changed to "Pending"(PM) and (Admin)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "3" seconds
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    And I pause execution for "5" seconds
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    Then I see Approval Decision table contain "Approve" approval action
+    Then I see Approval Decision table contain "Reject" approval action
+    Then I see Approval Decision table contain "Forward" approval action
+    Then I see Approval Decision table contain "Send back" approval action
+    When I "Approve" in the approval decision table and comment "Approve"
+    And I pause execution for "5" seconds
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    Then I see Approval Decision table contain "Approve" approval action
+    Then I see Approval Decision table contain "Reject" approval action
+    Then I see Approval Decision table contain "Forward" approval action
+    Then I see Approval Decision table contain "Send back" approval action
+    #When I "Approve" in the approval decision table and comment "Approve"
+    When I "Forward" in the approval decision table and Select name from dropdown "Automation PM" and comment "forward"
+    #220120 #220121
+    When I navigate to "History" sub tab
+    Then I see Date column contains "Step : Step 2 (Pending for approval)" text displayed in status column is "Reassigned"
+    Then I see Date column "Step : Step 2 (Pending for approval)" text displayed and overall status is "Pending"
+    #220117
+    Then I see Date column contains "Step : Step 2 (Pending for approval)" text displayed in status column is "Pending"
+    Then I see Date column contains "Step : Step 2 (Pending for approval)" text displayed in status column is "Reassigned"
+    Examples:
+      | User  |
+      | PM    |
+      | ADMIN |

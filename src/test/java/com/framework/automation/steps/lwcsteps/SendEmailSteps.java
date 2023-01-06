@@ -157,7 +157,10 @@ public class SendEmailSteps extends GovGrantsManager {
             I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"));
         } else if (icon.equals("× button on Reply modal")) {
             I.amPerforming().click().on(ByUsing.xpath("//td[contains(text(),'" + filename + "')]//following-sibling::td/a[@ng-click='removeAttachedItem(this)']"));
+        } else if (icon.equals("×")) {
+            I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"),true);
         }
+
     }
 
     @And("I click on {string} button in Email LWC Modal")

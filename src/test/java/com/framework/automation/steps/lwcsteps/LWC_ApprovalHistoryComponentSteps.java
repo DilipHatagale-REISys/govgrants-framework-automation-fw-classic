@@ -52,7 +52,7 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
     @Then("I see columnName {string} is Displayed on {string} table")
     public void iSeeColumnNameIsDisplayedOnTable(String headerName, String tableName) {
         if (tableName.equals("Approval History")) {
-            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//th[@class='title']//div[text()='" + headerName + "']"));
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//th[@class='title']//div[text()='" + headerName + "']"),true);
         }
     }
 
@@ -87,14 +87,6 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
     public void iSeeArrowIsDisplayedOnTable(String arrow, String tableTitle) {
         boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
         Assert.assertTrue(ArrowDisplayed);
-    }
-
-    @Then("alignment of each column data is to the left side")
-    public void alignmentOfEachColumnDataIsToTheLeftSide() {
-        int leftAllignment = I.amPerforming().getElementReference().of(ByUsing.xpath("//td[@data-label='stepName']")).getLocation().x;
-        System.out.println("leftAllignment is:" + leftAllignment);
-        int leftAllignment1 = I.amPerforming().getElementReference().of(ByUsing.xpath("//td[@data-label='stepName']//following-sibling::td//div[text()='Approved']")).getLocation().x;
-        System.out.println("leftAllignment is:" + leftAllignment1);
     }
 
     @Then("I see {string} massage under Approval History")
@@ -239,10 +231,12 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
     public void iInTheApprovalDecisionTableAndSelectNameFromDropdownAndComent(String approvalType, String approvarName, String comment) {
         govgrants.perform().approvals().selectRadioButton(approvalType);
         if (govgrants.perform().approvals().isCommentBoxVisible()) {
-            By listOfsUsers = By.xpath("//ul[@class='select2-results']//li//div//span[@class='select2-match']");
+            I.amPerforming().click().on(ByUsing.xpath("(//div/a/span[@class='select2-chosen' and contains(text(),'Search...')])[1]"));
+            //By listOfsUsers = By.xpath("//ul[@class='select2-results']//li//div//span[@class='select2-match']");
+            By listOfsUsers = By.xpath("//li//div[@class='select2-result-label']");
             List<Elements> opt = I.amPerforming().getElementReference().forListOfElements().of(listOfsUsers);
-            for( int j = 0; j< opt.size();j++){
-                if( opt.get(j).getText().equals(approvarName)){
+            for (int j = 0; j < opt.size(); j++) {
+                if (opt.get(j).getText().equals(approvarName)) {
                     opt.get(j).click();
                     break;
                 }
@@ -262,18 +256,18 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @Then("loading icon is display on the contacts flex table")
     public void loadingIconIsDisplayOnTheContactsFlexTable() throws InterruptedException {
-        boolean flag=false;
-        for (int i=0; i<=10; i++ ){
+        boolean flag = false;
+        for (int i = 0; i <= 10; i++) {
             try {
-                WebElement icon= I.amPerforming().getElementReference().of(ByUsing.xpath("//div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div//img[@id='govGrantsPleaseWaitHolderId']"));
-                System.out.println("icon is available:"+i);
+                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div//img[@id='govGrantsPleaseWaitHolderId']"));
+                System.out.println("icon is available:" + i);
                 flag = true;
                 break;
-            } catch (Exception e){
+            } catch (Exception e) {
                 Thread.sleep(1000);
             }
         }
-            Assert.assertTrue(flag);
+        Assert.assertTrue(flag);
     }
 
     @Then("I fill the mandatory field randomly {string} and {string} and {string} address")
@@ -285,29 +279,30 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @And("I click on {string} before the {string} column")
     public void iClickOnBeforeTheColumn(String checkbox, String columnName) {
-        I.amPerforming().click().on(ByUsing.xpath("//span[@title='"+ columnName +"']//ancestor::th//preceding-sibling::th//div//input[@type='"+ checkbox +"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//span[@title='" + columnName + "']//ancestor::th//preceding-sibling::th//div//input[@type='" + checkbox + "']"));
     }
 
     @And("I click on {string} button and select {string} option")
     public void iClickOnButtonAndSelectOption(String Action, String value) {
-        I.amPerforming().click().on(By.xpath("//*[@data-label='"+ Action +"']//descendant::button[@type='button']"));
-        I.amPerforming().click().on(ByUsing.xpath("//*[@data-label='Action']//descendant::button[@type='button']//following-sibling::div//descendant::span[text()='"+ value +"']"));
+        I.amPerforming().click().on(By.xpath("//*[@data-label='" + Action + "']//descendant::button[@type='button']"));
+        I.amPerforming().click().on(ByUsing.xpath("//*[@data-label='Action']//descendant::button[@type='button']//following-sibling::div//descendant::span[text()='" + value + "']"));
     }
 
     @And("I click on {string} button on confirmation table")
     public void iClickOnButtonOnConformatonTable(String yesButton) {
-        I.amPerforming().click().on(By.xpath("//button[@class='slds-button slds-button_brand' and @title='"+ yesButton +"'] | //button[@type='button' and text()='" +yesButton+ "']"));
+        I.amPerforming().click().on(By.xpath("//button[@class='slds-button slds-button_brand' and @title='" + yesButton + "'] | //button[@type='button' and text()='" + yesButton + "']"));
     }
+
     @Then("the position of loading icon is {string} on the LWC flex table")
     public void thePositionOfLoadingIconIsOnTheLWCFlexTable(String arg0) throws InterruptedException {
-        boolean flag=false;
-        for (int i=0; i<=10; i++ ){
+        boolean flag = false;
+        for (int i = 0; i <= 10; i++) {
             try {
-                WebElement icon= I.amPerforming().getElementReference().of(ByUsing.xpath("//div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div[@style='text-align: center;']//img[@id='govGrantsPleaseWaitHolderId']"));
-                System.out.println("icon is available:"+i);
+                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div[@style='text-align: center;']//img[@id='govGrantsPleaseWaitHolderId']"));
+                System.out.println("icon is available:" + i);
                 flag = true;
                 break;
-            } catch (Exception e){
+            } catch (Exception e) {
                 Thread.sleep(1000);
             }
         }
@@ -321,7 +316,30 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @Then("I see alignment of each column data is to the {string} side")
     public void iSeeAlignmentOfEachColumnDataIsToTheSide(String allignmentSide) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.cssSelector(".slds-scope caption, .slds-scope th, .slds-scope td[Styles='text-align: left;']"),true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.cssSelector(".slds-scope caption, .slds-scope th, .slds-scope td[Styles='text-align: left;']"), true);
 
+    }
+
+    @Then("I see Approval Decision table contain {string} approval action")
+    public void iSeeApprovalDecisionTableContainApprovalAction(String decision) {
+        switch (decision) {
+            case "Approve":
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@name='myRadio' and @value='Approve']"), true);
+                break;
+            case "Reject":
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@name='myRadio' and @value='Disapprove']"), true);
+                break;
+            case "Forward":
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@name='myRadio' and @value='Reassign']"), true);
+                break;
+            case "Send back":
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@name='myRadio' and @value='Send to Owner']"), true);
+                break;
+        }
+    }
+
+    @Then("I see Date column contains {string} text displayed in status column is {string}")
+    public void iSeeDateColumnContainsTextDisplayedInStatusColumnIs(String dateColumn, String status) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(text(),'"+ dateColumn +"')]//parent::tr//following-sibling::tr//td//div[text()='"+ status +"']"),true);
     }
 }
