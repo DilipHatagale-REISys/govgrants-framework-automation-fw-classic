@@ -38,7 +38,7 @@ Business Need: Attachment Component Scenarios
     And I pause execution for "10" seconds
     And I perform scroll on page layout
     And I click on top right button "Add" in tableName "Attachments"
-    And I see "Add Attachments" is in attachment LWC modal window
+    And I see "Add Attachments" is in LWC modal window
       #255886
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "SharingAtCollabTest.png" in attachments LWC modal
@@ -78,7 +78,7 @@ Business Need: Attachment Component Scenarios
     And I pause execution for "10" seconds
     And I perform scroll on page layout
     And I click on top right button "Add" in tableName "Attachments"
-    And I see "Add Attachments" is in attachment LWC modal window
+    And I see "Add Attachments" is in LWC modal window
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "RecordLevelDuplicateFile.pdf" in attachments LWC modal
     And I enter value "Test Description" into description box
@@ -115,7 +115,7 @@ Business Need: Attachment Component Scenarios
     And I perform scroll on page layout
     And I click on top right button "Add" in tableName "Attachments"
     #255441 #222489
-    Then I see "Add Attachments" is in attachment LWC modal window
+    Then I see "Add Attachments" is in LWC modal window
     And I select "Other Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomation.txt" in attachments LWC modal
     And I enter value "Test" into description box
@@ -367,7 +367,7 @@ Business Need: Attachment Component Scenarios
     #And I perform scroll on page layout
     And I click on "Edit" icon for file "TestFileSharing.docx" inside table name "Attachments" for LWC
     #221545
-    Then I see "Edit Attachment" is in attachment LWC modal window
+    Then I see "Edit Attachment" is in LWC modal window
     And I enter value "Test Description" into description box
     And I click on "Save" on LWC modal
     When I close LWC modal by clicking the top right x button

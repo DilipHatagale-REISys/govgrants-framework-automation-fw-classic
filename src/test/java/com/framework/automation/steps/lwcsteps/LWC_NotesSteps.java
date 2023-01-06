@@ -1,0 +1,202 @@
+package com.framework.automation.steps.lwcsteps;
+
+import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.controller.DeviceBucket;
+import com.testingblaze.objects.InstanceRecording;
+import com.testingblaze.register.I;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+
+public class LWC_NotesSteps extends GovGrantsManager {
+
+    @Then("I see {string} table gets Expand with column {string}")
+    public void iSeeTableGetsExpandWithColumn(String tableName, String columnName) {
+        if (tableName.equals("Notes")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tr//th//a[@class='slds-text-link_reset' and text()='"+ columnName +"']"));
+        }
+    }
+
+    @Then("I see error massage {string}in LWC")
+    public void iSeeErrorMassageInLWC(String errorMsg) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[text()='"+ errorMsg +"'] | //div[text()='"+ errorMsg +"']"),true);
+    }
+
+    @Then("I enter value {string} inside {string} in LWC modal")
+    public void iEnterValueInsideInLWCModal(String value, String field) throws InterruptedException {
+
+        if(field.equals("Description")){
+            By attachmentDescriptionPath = By.xpath("//div[@class='slds-rich-text-editor__textarea slds-grid']");
+            I.amPerforming().click().on(attachmentDescriptionPath);
+            for(int i=0; i<=10; i++) {
+                System.out.println("value of i :" + i);
+                Thread.sleep(2000);
+                try {
+                    By attachmentDescriptionPath1 = By.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']//following-sibling::div//div[@role='textbox']");
+                    Thread.sleep(5000);
+                    I.amPerforming().textInput().in(attachmentDescriptionPath1,value);
+                    break;
+                } catch (Exception e) {
+                }
+            }
+        }else
+            I.amPerforming().textInput().in(ByUsing.xpath("//label[text()='"+ field +"']//parent::div//following-sibling::div//input[@class='slds-input'] | //label[text()='"+ field +"']//parent::div//following-sibling::div//descendant::div[@aria-label='Compose text']//p"), value);
+    }
+
+    @And("hover mouse x button and see {string} text")
+    public void hoverMouseXButtonAndSeeText(String value) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-button//button[@title='"+ value +"']"));
+    }
+
+    @Then("I see title")
+    public void iSeeTitle() {
+        String titleOfPage =(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();
+        System.out.println("titleOfPage :"+titleOfPage);
+    }
+
+    @Then("I see {string} webpage is loaded")
+    public void iSeeWebpageIsLoaded(String expectedTitle) {
+        String actualTitle =(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();
+        Assert.assertEquals(actualTitle,expectedTitle);
+    }
+
+    @Then("I see {string} column contains the value {string}")
+    public void iSeeColumnContainsTheValue(String columnName, String value) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//*[contains(text(),'"+ value +"')]"), true);
+    }
+
+    @Then("I click on {string} dropdown and Select {string} value")
+    public void iClickOnDropdownAndSelectValue(String dropdown, String arg1) {
+        I.amPerforming().click().on(ByUsing.xpath("//button[@data-value='Salesforce Sans']"));
+        I.amPerforming().click().on(ByUsing.xpath("//button/span[@class='slds-truncate' and text()='Arial']"));
+
+    }
+
+    @Then("I see the {string} contains {string} have font style is {string} in Notes modul")
+    public void iSeeTheContainsHaveFontStyleIsInNotesModul(String columnName, String descriptionText, String fontstyle) {
+        if(fontstyle.equals("Arial") || fontstyle.equals("TimesNewRoman")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//span[contains(text(),'"+ descriptionText +"') and @style='font-family: sans-serif;'] | //td[@data-label='"+ columnName +"']//span[contains(text(),'"+ descriptionText +"') and @style='font-family: serif;']"), true);
+        } else if (fontstyle.equals("Salesforce Sans")) {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='Description']//*[text()='Salesforce Sans test']"), true);
+        } else {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//span[contains(text(),'"+ descriptionText +"') and @style='font-family: "+ fontstyle +";']"), true);
+        }
+    }
+
+    @Then("I see the {string} contains {string} have font size is {string} in Notes modul")
+    public void iSeeTheContainsHaveFontSizeIsInNotesModul(String columnName, String descriptionText, String fontSize) {
+        if(fontSize.equals("12px")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//*[contains(text(),'"+ descriptionText +"')]"), true);
+        }else {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//span[contains(text(),'"+ descriptionText +"') and @style='font-size: "+ fontSize +";']"), true);
+        }
+    }
+
+    @Then("I see {string} contains {string} font format {string} get apply")
+    public void iSeeContainsFontFormatGetApply(String columnName, String descriptionText, String fontFormat) {
+        if (fontFormat.equals("Bold") || fontFormat.equals("Italic")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//strong[contains(text(),'"+ descriptionText +"')] | //td[@data-label='"+ columnName +"']//em[contains(text(),'"+ descriptionText +"')]"), true);
+        } else if (fontFormat.equals("Underline") || fontFormat.equals("bulletlist")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//u[contains(text(),'"+ descriptionText +"')] | //td[@data-label='"+ columnName +"']//li[contains(text(),'"+ descriptionText +"')]"), true);
+        } else if (fontFormat.equals("Indent") || fontFormat.equals("Salesforce Sans")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//p[@class='ql-indent-1' and contains(text(),'"+ descriptionText +"')] | //td[@data-label='"+ columnName +"']//*[text()='"+ descriptionText +"']"), true);
+        } else if (fontFormat.equals("Outdent")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//*[text()='"+ descriptionText +"']"), true);
+        }
+    }
+
+    @Then("I see {string} column contains {string} font format {string} align text get apply")
+    public void iSeeColumnContainsFontFormatAlignTextGetApply(String columnName, String descriptionText, String fontFormat) {
+        if (fontFormat.equals("left")){
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//p[contains(text(),'"+ descriptionText +"')]"), true);
+        }else {
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//p[@style='text-align: "+ fontFormat +";' and contains(text(),'"+ descriptionText +"')]"), true);
+        }
+
+    }
+
+    @Then("I see title of view modal")
+    public void iSeeTitleOfViewModal() {
+        I.amPerforming().click().on(ByUsing.xpath("//td[@title='Left align text test']//following-sibling::td/a[@title='View']"));
+        String titleOfPage =(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();
+        System.out.println("titleOfPage :"+titleOfPage);
+    }
+
+    @Then("I see title {string} and click on {string} icon")
+    public void iSeeTitleAndClickOnIcon(String title, String button) {
+        I.amPerforming().click().on(ByUsing.xpath("//td[@title='"+ title +"']//following-sibling::td/a[@title='"+ button +"']"));
+    }
+
+    @Then("I navigate to {string} modal")
+    public void iNavigateToModal(String pageTitle) {
+        String titleOfPage =(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();
+        Assert.assertEquals(titleOfPage,pageTitle);
+    }
+
+    @Then("I see massage {string} displayed in delete modal")
+    public void iSeeMassageDisplayedInDeleteModal(String massage) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='"+ massage +"']"),true);
+    }
+
+    @Then("I see {string} column contains {string}")
+    public void iSeeColumnContains(String columnName, String value) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[@data-label='"+ columnName +"']//*[contains(text(),'"+ value +"')]"),true);
+    }
+
+    @When("I upload image {string} in send email LWC modal")
+    public void iUploadImageInSendEmailLWCModal(String attachmentName) {
+        By attachmentChooseFilePath = By.xpath("//div//button[@data-format='image']");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
+
+        //button[@class='slds-button slds-button_icon-border-filled ql-image' and @data-format='image']
+    }
+
+    @Then("I see Title {string} and {string} contains Image")
+    public void iSeeTitleAndContainsImage(String columnText, String columnName) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(text(),'"+ columnText +"')]/parent::td//following-sibling::td[@data-label='"+ columnName +"']//img"),true);
+    }
+
+    @When("I click on {string} inside notes modal")
+    public void iClickOnInsideNotesModal(String button) {
+        I.amPerforming().click().on(ByUsing.xpath("//div//button[@data-format='"+ button +"']"));
+    }
+
+
+    @And("enter text")
+    public void enterText() throws InterruptedException {
+        By attachmentDescriptionPath = By.xpath("//div[@class='slds-rich-text-editor__textarea slds-grid']");
+        I.amPerforming().click().on(attachmentDescriptionPath);
+        for(int i=0; i<=15; i++) {
+            System.out.println("value of i :" + i);
+            Thread.sleep(2000);
+            try {
+                By attachmentDescriptionPath1 = By.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']//following-sibling::div//div[@role='textbox']");
+                Thread.sleep(5000);
+                I.amPerforming().textInput().in(attachmentDescriptionPath1,"Testing");
+                break;
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    @And("I click on {string} button in LWC")
+    public void iClickOnButtonInLWC(String button) {
+        I.amPerforming().click().on(ByUsing.xpath("//button[@type='button' and text()='"+ button +"']"));
+    }
+
+    @Then("I can not see {string} inside {string} in Notes lwc modal")
+    public void iCanNotSeeInsideInNotesLwcModal(String field, String value) {
+        boolean elementPresentOnWebPage = true;
+        try {
+            I.amPerforming().textInput().in(ByUsing.xpath("//label[text()='"+ field +"']//parent::div//following-sibling::div//input[@class='slds-input'] | //label[text()='"+ field +"']//parent::div//following-sibling::div//descendant::div[@aria-label='Compose text']//p"), value);
+        } catch (NoSuchElementException e) {
+            elementPresentOnWebPage = false;
+        }
+        Assert.assertFalse(elementPresentOnWebPage);
+    }
+}
