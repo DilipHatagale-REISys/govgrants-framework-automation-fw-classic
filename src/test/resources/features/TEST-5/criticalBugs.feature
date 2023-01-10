@@ -405,7 +405,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -2159,7 +2159,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -2216,7 +2216,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -2273,7 +2273,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -2330,7 +2330,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -3925,7 +3925,7 @@ Business Need: Logged Issues Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     And I enter value "123" into field "FederalProgramCFDA__c"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -4441,7 +4441,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     Then I softly see "Overview" sub tab is displayed at view detail page
     Then I softly see "Plan" sub tab is displayed at view detail page
     Then I softly see "Roles" sub tab is displayed at view detail page
@@ -5858,7 +5858,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Attachments" sub tab
     When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
     And I click modal button "Save"
@@ -5874,7 +5874,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Attachments" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf"
@@ -5888,7 +5888,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Attachments" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     When I click on "Edit" icon for "DynamicLayoutExport.pdf" inside table
@@ -6130,7 +6130,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I navigate to "Collab" sub tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     And I click on hyperlink containing value "@Automation PM"
@@ -6173,7 +6173,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I navigate to "Collab" sub tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     And I click on hyperlink containing value "@Automation PM"
@@ -6215,7 +6215,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I navigate to "Collab" sub tab
     And I click on button "Share" under collab for comment box
     Then I see alert message "A comment is required"
@@ -6241,7 +6241,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Collab" sub tab
     And I click on button "Share" under collab for comment box
@@ -6268,7 +6268,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Collab" sub tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
@@ -6295,7 +6295,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I navigate to "Collab" sub tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     Then I do not see alert popup box

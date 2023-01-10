@@ -234,22 +234,22 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-    @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196926
-      Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
-      Given I am on "SUBPORTAL" portal
-      When I login to "Grants Portal" app as "SPI" user
-      And I navigate to "Applications" tab
-      And I click toggle button to select "Applications - All"
-      When I perform quick search for "AP-A11-001"
-      When I click on "View" icon for "AP-A11-001" inside table
-      When I navigate to "Files" sub tab
-      Then I softly see "Supporting Documents Checklist" page block displayed
-      When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
-      And I select "Download as PDF" from parallel lines dropdown of "Supporting Documents Checklist"
-      And I download the file
-      Then I softly see "currencytest" on page "1" of "govgrants" pdf file
-      Then I softly see "Numbertest" on page "1" of "govgrants" pdf file
-      Then I softly see "percenttest" on page "1" of "govgrants" pdf file
+  @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196926
+  Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Supporting Documents Checklist" page block displayed
+    When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Supporting Documents Checklist"
+    And I download the file
+    Then I softly see "currencytest" on page "1" of "govgrants" pdf file
+    Then I softly see "Numbertest" on page "1" of "govgrants" pdf file
+    Then I softly see "percenttest" on page "1" of "govgrants" pdf file
 
       @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196296
       Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table

@@ -92,7 +92,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
@@ -202,7 +202,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I save the field labeled "Title" as "TITLE"
     And I save the field labeled "Program Type" as "PT"
@@ -362,7 +362,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I navigate to "HOME" tab
     When I click on "tmpcase1FlexTable"
@@ -461,7 +461,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I click on "Assign to User" in the page details
     When I check "Swati" boxes in flex table with id "toggleFlexTableUserListForQueue"
     And I click on top right button "Assign Case" in flex table with id "UserListForQueue"
@@ -477,7 +477,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I click on "Close Case" in the page details
     And I navigate to "HOME" tab
@@ -495,7 +495,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I click on "Close Case" in the page details
     And I navigate to "HOME" tab
@@ -515,7 +515,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I click on "Close Case" in the page details
     And I navigate to "HOME" tab
@@ -536,7 +536,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "tmpcase1FlexTable"
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "Case #" as "savedValue"
     And I click on "Assign To Me" in the page details
     And I click on "Assign To Tier2" in the page details
@@ -601,7 +601,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
@@ -624,7 +624,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
@@ -647,7 +647,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
@@ -670,7 +670,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
@@ -694,7 +694,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     When I click on "Menu" in the page details
@@ -718,7 +718,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I save the field labeled "Title" as "TITLE"
     And I pause execution for "3" seconds
@@ -746,7 +746,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
@@ -770,7 +770,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
@@ -1033,7 +1033,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
@@ -1052,7 +1052,7 @@ Business Need: Calender Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
