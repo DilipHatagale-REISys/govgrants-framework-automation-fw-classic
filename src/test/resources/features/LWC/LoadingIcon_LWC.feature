@@ -1,4 +1,4 @@
-@LWC_LoadingIcon-Component @regression-LWC @LoadingIcon
+@LWC_LoadingIcon-Component @regression-LWC @LoadingIconLWC
 Business Need: Loading icon for all the operations Component Scenarios
   Test all Loading icon component based scenarios
   As a configuration manager i make different configurational changes in LoadingIcon component and will validate them.
@@ -21,7 +21,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @256805 @256806 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (PM)
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    #Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
