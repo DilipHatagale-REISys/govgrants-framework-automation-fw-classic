@@ -557,7 +557,7 @@ Business Need: Side bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -624,7 +624,7 @@ Business Need: Side bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -705,7 +705,7 @@ Business Need: Side bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -766,7 +766,7 @@ Business Need: Side bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -809,7 +809,7 @@ Business Need: Side bar Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I navigate to "Overview" sub tab
     And I enter value "Automation Internal Program for Approval and Snapshot scenarios 2" into field "ProgramName__c"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue1"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"

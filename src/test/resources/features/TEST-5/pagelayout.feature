@@ -63,7 +63,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -908,7 +908,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Program Sub Type is required to save. |
 
@@ -1150,7 +1150,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1549,8 +1549,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save          | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1567,8 +1567,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                 | fieldNewValue                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2205,7 +2205,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see the sub-header is "Automation Internal Program for Approval and Snapshot scenarios" in the page details
 
@@ -2224,7 +2224,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see the sub-header is "Automation Internal Program for Approval and Snapshot scenarios" in the page details
 
@@ -4478,8 +4478,8 @@ Business Need: Page Layout Component Scenarios
   @122001    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTableWhenPageRedirectBehaviourIsSetToSaveAndContinue
   Scenario: Validate that a draft program table is displayed by click on cancel button at record creation if page redirected behaviour is set to save and continue
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue    | filterId         |
-      | Forms                 | Page Redirect Behaviour | Save and Close Modal | ApiGeneratedId:0 |
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Page Redirect Behaviour | Save and Close | Grantee State Program |                           |                            |
@@ -6250,7 +6250,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
     Then I see the following messages in the page details contains:
@@ -6274,7 +6274,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
     Then I see the following messages in the page details contains:
@@ -7514,7 +7514,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Attachments" sub tab
     When I add notes records
     When I close modal by clicking the top right x button
@@ -7531,7 +7531,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Attachments" sub tab
     When I add notes records
     When I close modal by clicking the top right x button
@@ -7696,7 +7696,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "10" seconds
     Then I see the following message in the page details contains:
       | Phone Field is required to save |
@@ -8356,7 +8356,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Attachments" sub tab
     When I add notes records
     When I close modal by clicking the top right x button
@@ -8392,7 +8392,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "900000" into field "fieldFundedAmount__c"
@@ -8408,7 +8408,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     When I enter value "1234" into field "fieldPercent__c"
@@ -8442,7 +8442,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -8503,7 +8503,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
     When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
     When I enter value "Yes" into field "fieldIsWBSRequired__c"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     When I click on "Submit For Approval" in the page details
@@ -8534,7 +8534,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
     When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
     When I enter value "Yes" into field "fieldIsWBSRequired__c"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     When I click on "Submit For Approval" in the page details
@@ -8587,7 +8587,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -8616,7 +8616,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -8645,7 +8645,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -8674,7 +8674,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -8699,7 +8699,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on "Edit" in the page details
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -8721,7 +8721,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -8763,7 +8763,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "EGMSID"
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
@@ -8784,7 +8784,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     And I enter value "User" into field "UserType__c"
@@ -9115,7 +9115,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldObjectives__c"
@@ -9199,7 +9199,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I pause execution for "20" seconds
@@ -9670,7 +9670,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
@@ -9690,7 +9690,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
@@ -9710,7 +9710,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
@@ -9724,7 +9724,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
@@ -9744,7 +9744,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
@@ -9765,7 +9765,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
@@ -9786,7 +9786,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
@@ -9973,7 +9973,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"

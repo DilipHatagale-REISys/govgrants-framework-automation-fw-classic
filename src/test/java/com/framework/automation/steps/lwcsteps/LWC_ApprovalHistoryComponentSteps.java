@@ -52,7 +52,7 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
     @Then("I see columnName {string} is Displayed on {string} table")
     public void iSeeColumnNameIsDisplayedOnTable(String headerName, String tableName) {
         if (tableName.equals("Approval History")) {
-            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//th[@class='title']//div[text()='" + headerName + "']"),true);
+            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//th[@class='title']//div[text()='" + headerName + "']"), true);
         }
     }
 
@@ -340,6 +340,7 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @Then("I see Date column contains {string} text displayed in status column is {string}")
     public void iSeeDateColumnContainsTextDisplayedInStatusColumnIs(String dateColumn, String status) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(text(),'"+ dateColumn +"')]//parent::tr//following-sibling::tr//td//div[text()='"+ status +"']"),true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(text(),'" + dateColumn + "')]//parent::tr//following-sibling::tr//td//div[text()='" + status + "']"), true);
     }
+
 }

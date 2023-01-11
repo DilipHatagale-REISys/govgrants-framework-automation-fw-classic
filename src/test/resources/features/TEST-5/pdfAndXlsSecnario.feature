@@ -1046,7 +1046,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "Loan" into field "ProgramType__c"
@@ -1074,7 +1074,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "Loan" into field "ProgramType__c"
@@ -2071,7 +2071,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "Loan" into field "ProgramType__c"
@@ -2584,7 +2584,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -3183,7 +3183,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Attachments" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     When I click on "Download" icon for "DynamicLayoutExport.pdf" inside table
@@ -3199,7 +3199,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Attachments" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     And I click on hyperlink containing value "DynamicLayoutExport.pdf"
@@ -3223,7 +3223,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "Loan" into field "ProgramType__c"
@@ -3248,7 +3248,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "3" seconds
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
@@ -3275,7 +3275,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     And I pause execution for "3" seconds
     When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
@@ -3682,7 +3682,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilities"
     And I select "Download as PDF" from parallel lines dropdown of "Roles And Responsibilities"
@@ -3702,7 +3702,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3718,7 +3718,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3740,7 +3740,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     And I pause execution for "2" seconds
@@ -3768,7 +3768,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     And I pause execution for "2" seconds

@@ -251,18 +251,383 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Numbertest" on page "1" of "govgrants" pdf file
     Then I softly see "percenttest" on page "1" of "govgrants" pdf file
 
-      @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196296
-      Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table
-        Given I am on "SUBPORTAL" portal
-        When I login to "Grants Portal" app as "SPI" user
-        And I navigate to "Applications" tab
-        And I click toggle button to select "Applications - All"
-        When I perform quick search for "AP-A11-001"
-        When I click on "View" icon for "AP-A11-001" inside table
-        When I navigate to "Files" sub tab
-        Then I softly see "Supporting Documents Checklist" page block displayed
-        When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
-        And I select "Download as XLS" from parallel lines dropdown of "Supporting Documents Checklist"
-        Then I see "currencytest" in downloaded xls or csv file "govgrants"
-        Then I see "Numbertest" in downloaded xls or csv file "govgrants"
-        Then I see "percenttest" in downloaded xls or csv file "govgrants"
+  @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196296
+  Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Supporting Documents Checklist" page block displayed
+    When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Supporting Documents Checklist"
+    Then I see "currencytest" in downloaded xls or csv file "govgrants"
+    Then I see "Numbertest" in downloaded xls or csv file "govgrants"
+    Then I see "percenttest" in downloaded xls or csv file "govgrants"
+
+  @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
+  @ToverifyUsershouldbeabletoDeletethenewlyaddedrecord @UsershouldbeseeconfirmationboxwhenclickonDeleteactiononthenewlyaddedrecord @UsershouldbeabletoEditdetailstothenewlydisplayedrecord
+  @Usershouldbeabletoadddetailstothenewlyaddedrecordandclickonsaveactionthenrecordisgettingsaved @InpageblockdownloadPDFfornewlyaddedrecordinthetableshouldbedisplayed
+  Scenario:To verify, User should be able to Delete the newly added  record
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
+      | Reviewer Name | Responsibility   | Description | Due Date   | Allow Record Editing | Status | multiselecttest | testcurrency | testnumber |
+      | Automation PM | Program Reviewer | Desc test1  | 05/25/2023 | Yes                  |        | 1               | 1            | 1          |
+    And I pause execution for "3" seconds
+    #257463
+    Then I see newly added record with Description "Desc test1" in row
+    #257455
+    And I refresh the page
+    Then I see "Edit" action button respective "Desc test1" Description and Enabled
+    And I refresh the page
+    And I click on "Delete" action button respective "Desc test1" Description
+    #257460
+    Then I see massage "Do you want to delete? Once it is deleted it cannot be restored." displayed in delete modal
+    And I click on "Yes" button on confirmation table
+    #257457
+    Then I do not see "Desc test1" Description inside "Peer Reviewers" table
+    #257477
+    When I navigate to "Setup tabs" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Review Step Desc" on page "1" of "govgrants" pdf file
+
+
+  @257481 @ToverifyInpageblockdownloadCSVfornewlyaddedrecordinthetableshouldbedisplayed @dilip @Sprint-19 @US-255921
+  Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    #257481
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Review Step Desc" in downloaded xls or csv file "govgrants"
+
+  @257480 @ToVerifyInRecordLayoutDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayed @dilip @Sprint-19 @US-255921
+  Scenario: To verify, In Record layout download PDF for newly added record in the table  should be displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    #257480
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Review Step Desc" on page "1" of "govgrants" pdf file
+>>>>>>> 0c65892eb525b57f15b4a02b3ea58aacc60791b9
+
+  @257482 @ToVerifyInRecordLayoutScreenshotNewlyAddedRecordInTheTableShouldBeDisplayed @dilip @Sprint-19 @US-255921
+  Scenario:To verify, In Record layout Screenshot newly added record in the table  should be displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    #257482
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Review Step Desc" on page "1" of "govgrants" pdf file
+
+  @257495 @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedChildRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
+  Scenario:To verify,  Advanced filter should be working on newly added child record in the table for Internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    When I click on advance filter "#advfProgramReviewStepTemplates" of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    When I enter advance filter values inside id "advfProgramReviewStepTemplates"
+      | Description | contains | Review Step Desc |
+    Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+
+  @257502 @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
+  Scenario: Advanced filter should be working on newly added record in the table for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    When I click on advance filter "#advfProgramReviewStepTemplates" of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    When I enter advance filter values inside id "advfProgramReviewStepTemplates"
+      | Description | contains | Review Step Desc |
+    Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+
+  @257516 @ToVerifyInternalUserShouldNotSeeAnyChildTableAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
+  Scenario: To verify, Internal User should  not see any child table attached to the newly created record
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    And I expand nested table containing column value "Test Review"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+
+  @257526 @ToVerifyInternalUserShouldBeAbleToAddNewChildRecordInChildTableThatAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
+  Scenario: To verify, Internal User should be able to add new child record in child table that attached to the newly created record
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    And I expand nested table containing column value "Test Review"
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Testing   | 50              | 1                                         | Checked   |
+    And I expand nested table containing column value "Test Review"
+    Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+
+  @257518 @ToVerifyInternalUserShouldBeAbleToAddDetailsToTheNewlyDisplayedRecord @dilip @Sprint-19 @US-255921
+  Scenario: To verify, Internal User should be able to add details to the newly displayed record
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
+      | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    And I pause execution for "3" seconds
+    Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+
+  @257535 @ToVerifyInPageBlockDownloadCSVForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
+  Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed  for internal user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      |
+      | 4          | Pre-Screen Review | Review Step Desc |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Review Step Desc" in downloaded xls or csv file "govgrants"
+
+  @257539 @ToVerifyInPageBlockDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
+  Scenario: To verify, In page block download PDF for newly added record in the table  should be displayed  for Internal User
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      |
+      | 4          | Pre-Screen Review | Review Step Desc |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Pre-Screen Review" on page "1" of "govgrants" pdf file
+
+  @257523 @UsershouldbeabletoEditdetailstothenewlydisplayedrecord @vrishali @Sprint-19 @US-255921
+  Scenario: User should be able to Edit details to the newly displayed record
+#    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
+      | Reviewer Name | Responsibility   | Description | Due Date   | Allow Record Editing | Status | multiselecttest | testcurrency | testnumber |
+      | Automation PM | Program Reviewer | Test Data   | 11/25/2023 | Yes                  |        | 1               | 1            | 1          |
+    And I pause execution for "3" seconds
+    When I click on "Edit" icon for "1" inside flex table with id "---program:-:PeerReviewerEnhancedGridTableId---"
+    And I enter value "Test Data" into field "Description__c"
+    Then I softly see value "Test Data" for title "Description" inside table "---program:-:PeerReviewerEnhancedGridTableId---"
+
+  @257520 @257526 @257535 @US-255921 @vrishali @Sprint-19 @US-255921
+  Scenario: Internal User should be able to add details to the newly displayed record and click on save action then record is getting saved.
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            |
+      | 4          | Test Review | Automation Description |
+  #Then I softly see value "4" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I softly see value "Test Review" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I softly see value "Automation Description" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+  #257526
+    And I expand nested table containing column value "Test Review"
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Testing   | 50              | 1                                         | Checked   |
+    And I expand nested table containing column value "Test Review"
+    Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+  #257535
+    And I collapse nested table containing column value "Test Review"
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    Then I see "Test Review" on page "1" of "govgrants" pdf file
+
+  @257541 @ToVerifyInRecordLayoutDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
+  Scenario: In Record layout download PDF for newly added record in the table  should be displayed  for Internal User
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup tabs" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            |
+      | 4          | Test Review | Automation Description |
+    And I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "Test Review" on page "2" of "govgrants" pdf file
+
+  @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
+  @InternalUserShouldBeSeeConfirmationBoxWhenClickOnDeleteActionOnTheNewlyAddedRecord
+  Scenario: To verify, Internal User should be see confirmation box when click on Delete action on  the newly added  record
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
+      | Reviewer Name | Responsibility   | Description | Due Date   | Allow Record Editing | Status | multiselecttest | testcurrency | testnumber |
+      | Automation PM | Program Reviewer | Desc test1  | 05/25/2023 | Yes                  |        | 1               | 1            | 1          |
+    And I pause execution for "3" seconds
+    And I refresh the page
+    And I click on "Delete" action button respective "Desc test1" Description
+    #257553
+    Then I see massage "Do you want to delete? Once it is deleted it cannot be restored." displayed in delete modal
+    And I click on "Yes" button on confirmation table
+    #257551
+    Then I do not see "Desc test1" Description inside "Peer Reviewers" table

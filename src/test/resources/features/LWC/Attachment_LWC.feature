@@ -30,7 +30,7 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-        And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
@@ -106,7 +106,7 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
@@ -350,7 +350,7 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
@@ -451,6 +451,7 @@ Business Need: Attachment Component Scenarios
     And I perform scroll on page layout
     And I pause execution for "5" seconds
     Then I softly can see row level action button "Edit" against "actionsAtFlexTable.png" in table name "Attachments"
+    And I see row level action "Delete" file against "actionsAtFlexTable.png" in table name "Attachments"
       #255352
     Then I can see "Test" into column "Descrption" against value "actionsAtFlexTable.png"
 
@@ -630,17 +631,40 @@ Business Need: Attachment Component Scenarios
       | ADMIN |
       | PM    |
 
-    @221530 @Toverifyallfilesaregettingattachedfrom'Uploadfilefromworkspace'section
-      Scenario: To verify all files are getting attached from 'Upload file from workspace' section
-      When I login as "ADMIN" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-      And I click modal button "Save and Continue"
-      When I navigate to "Overview" sub tab
-      When I navigate to "Files" sub tab
-      And I pause execution for "5" seconds
-      And I click on top right button "Add" in tableName "Attachments"
-    
+  @221530 @Toverifyallfilesaregettingattachedfrom'Uploadfilefromworkspace'section
+  Scenario: To verify all files are getting attached from 'Upload file from workspace' section
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I get "EGMS ID" of program
+    And I click on top right button "Add" in tableName "Attachments"
+    And I click on "Upload file from workspace" in modal
+    And I click on "select all checkbox" in "Upload file from workspace" tab
+    Then I see all files get selected "Upload file from workspace__item" tab
+
+  @221538
+  Scenario: To verify only one file is getting attached even user clicked multiple times on attach button in upload file from workspace. (Admin)
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    And I get "EGMS ID" of program
+    And I click on top right button "Add" in tableName "Attachments"
+    And I click on "Upload file from workspace" in modal
+    And I click on "2" checkbox inside "Upload file from workspace"
+    And I click on "Attach" button on "Add Attachments" modal
+    And I click on "Attach" button on "Add Attachments" modal
+    Then I see only one file should get attached
