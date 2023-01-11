@@ -1,4 +1,4 @@
-@LWC_Notes-Component @regression-LWC @Notes
+@LWC_Notes-Component @regression-LWC @NotesLWC
 Business Need: Loading icon for all the operations Component Scenarios
   Test all LWC_Notes component based scenarios
   As a configuration manager i make different configurational changes in LWC_Notes component and will validate them.
