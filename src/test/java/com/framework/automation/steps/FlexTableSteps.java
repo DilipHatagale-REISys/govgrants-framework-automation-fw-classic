@@ -7,6 +7,8 @@ import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.springframework.context.annotation.Description;
 
 import java.io.IOException;
@@ -282,11 +284,19 @@ public class FlexTableSteps {
 
     @And("I save the total record from flex table id {string} as {string}")
     public void iSaveTheTotalRecordFromFlexTableIdAs(String id, String key) {
-        flexTablePage.assertFieldRelatedPageRecords(id,key);
+        flexTablePage.assertFieldRelatedPageRecords(id, key);
     }
 
     @Then("I see {string} value in flextable {string}")
     public void iSeeValueInFlextable(String fileName, String tableName) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ tableName +"']//ancestor::div[@class='col-md-12']//span[text()='"+ fileName +"']"));
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + tableName + "']//ancestor::div[@class='col-md-12']//span[text()='" + fileName + "']"));
     }
+    @Then("I can see last page displayed in pagination inside {string}")
+    public void iCanSeeLastPageDisplayedInPaginationInside(String tableName) {
+        String pagination = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[@class='bold ng-binding']")).getText();
+        String p1 = pagination.split(" ")[1];
+        String p2 = pagination.split(" ")[3];
+        Assert.assertEquals(p1, p2);
+    }
+
 }

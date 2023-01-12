@@ -426,8 +426,8 @@ Business Need: Forms Component Scenarios
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Page Redirect Behaviour | Save and Close | General Application Form |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Page Redirect Behaviour | Save and Continue | General Application Form |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

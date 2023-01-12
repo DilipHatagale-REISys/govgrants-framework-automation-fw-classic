@@ -1549,8 +1549,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save          | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1567,8 +1567,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4481,8 +4481,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Page Redirect Behaviour | Save and Close | Grantee State Program |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Page Redirect Behaviour | Save and Continue | Grantee State Program |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

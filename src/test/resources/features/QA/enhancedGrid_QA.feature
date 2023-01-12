@@ -357,7 +357,6 @@ Business Need: EnhancedGrid Component Scenarios
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     Then I download the file
     Then I see "Review Step Desc" on page "1" of "govgrants" pdf file
->>>>>>> 0c65892eb525b57f15b4a02b3ea58aacc60791b9
 
   @257482 @ToVerifyInRecordLayoutScreenshotNewlyAddedRecordInTheTableShouldBeDisplayed @dilip @Sprint-19 @US-255921
   Scenario:To verify, In Record layout Screenshot newly added record in the table  should be displayed
