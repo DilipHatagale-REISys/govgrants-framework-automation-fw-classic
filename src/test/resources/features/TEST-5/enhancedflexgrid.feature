@@ -3166,7 +3166,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3205,7 +3205,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3244,7 +3244,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3282,7 +3282,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3321,7 +3321,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GGREI-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3357,7 +3357,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3379,7 +3379,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
@@ -3395,7 +3395,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All  Draft Grants"
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
@@ -3497,7 +3497,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
     When I click on "Edit" icon for "GT-FIN.1-001" inside table
@@ -3520,7 +3520,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
     When I click on "Edit" icon for "GT-FIN.1-001" inside table
@@ -3544,7 +3544,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---"
     Then I softly see "ExternalOrganization__c" field is required
@@ -3566,7 +3566,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -3593,7 +3593,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.1-001" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
@@ -3625,7 +3625,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -3646,7 +3646,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     When I click on "Edit" icon for "GT-ITSGT-001" inside table
@@ -3661,7 +3661,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     And I pause execution for "2" seconds
@@ -3686,7 +3686,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -3720,7 +3720,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---"
@@ -3747,7 +3747,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
@@ -3771,7 +3771,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "id"
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
@@ -3818,7 +3818,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
@@ -3842,7 +3842,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:flexGridEnhancedID---" panel
@@ -3860,7 +3860,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3876,7 +3876,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3892,7 +3892,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3908,7 +3908,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3925,7 +3925,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3941,7 +3941,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3957,7 +3957,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "15" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3974,7 +3974,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "15" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -3991,7 +3991,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
@@ -4007,7 +4007,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "15" seconds
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"

@@ -34,7 +34,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "5" seconds
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
@@ -94,7 +94,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -152,7 +152,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -210,7 +210,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -270,7 +270,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -329,7 +329,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -423,7 +423,7 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -560,7 +560,7 @@ Business Need: history Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I navigate to "Overview" sub tab
     And I enter value "$300,000.00" into field "DecimalCurrency__c"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
@@ -642,7 +642,7 @@ Business Need: history Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I navigate to "Overview" sub tab
     And I enter value "$300,000.00" into field "DecimalCurrency__c"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "History" sub tab
     Then I softly see expected table with id "toggleApprovalHistory"
