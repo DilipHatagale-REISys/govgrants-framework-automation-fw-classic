@@ -204,6 +204,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -240,8 +241,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Approve" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -268,6 +269,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -303,8 +305,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Approve" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -327,6 +329,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -384,6 +387,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -419,8 +423,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Send to Owner" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
@@ -446,6 +450,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -481,8 +486,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Disapprove" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -508,6 +513,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -543,8 +549,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Reassign" in the approval decision
     And I select user "Allen PM" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -569,6 +575,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -604,8 +611,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Send to Owner" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -630,6 +637,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -665,8 +673,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Disapprove" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -692,6 +700,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -727,8 +736,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Reassign" in the approval decision
     And I select user "Allen PM" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -751,6 +760,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -786,14 +796,14 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
   @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
@@ -815,6 +825,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -850,8 +861,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Send to Owner" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -874,6 +885,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -909,7 +921,7 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I perform quick search for "{SavedValue:PEGMSID}"
     Then I see approval with subject as "Automation Internal Program for Approval and Snapshot scenarios" is not displayed
 
     Examples:
@@ -937,6 +949,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -972,8 +985,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Approve" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -1004,6 +1017,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "5" seconds
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1039,8 +1053,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Disapprove" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -1068,6 +1082,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1103,8 +1118,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -1132,6 +1147,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1167,8 +1183,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Send to Owner" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -1193,6 +1209,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1228,8 +1245,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Reassign" in the approval decision
     And I submit the approval in the approval decision
     Then I can see the message "Comments are Required." in the approval decision
@@ -1251,6 +1268,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1286,14 +1304,14 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     And I "Reassign" to user "Allen PM" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
   @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
@@ -1313,6 +1331,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1348,8 +1367,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
@@ -1369,6 +1388,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1404,8 +1424,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Disapprove" in the approval decision
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
@@ -1425,6 +1445,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1460,8 +1481,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Reassign" in the approval decision
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
@@ -1481,6 +1502,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1516,8 +1538,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Send to Owner" in the approval decision
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
@@ -1531,6 +1553,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1569,15 +1592,15 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     And I pause execution for "8" seconds
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     When I navigate to "History" sub tab
     Then I see "Automation testing" comment for user "Allen PM"
 
@@ -1604,6 +1627,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1640,8 +1664,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
 
   @103166    @verifyApprovalDecisionActionComponentIsDisplayedAtTopOfPageLayout-Programs @wip @needChangeInDom
   Scenario: verify that approval decision component is displayed at the top if custom setting boolean value is unchecked
@@ -1666,6 +1690,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1702,8 +1727,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
 
   @148991    @verifySingleTaskIsGettingCreatedForUserInsideAssignedToMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned to me' table after record submission for approval
@@ -1876,6 +1901,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1929,6 +1955,7 @@ Business Need: Approval Process Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1966,6 +1993,6 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
