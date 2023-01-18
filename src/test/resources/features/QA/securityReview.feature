@@ -1299,13 +1299,6 @@ Business Need: security review Scenarios
     And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
-<<<<<<< Updated upstream
-=======
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:approversTableId---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Amendment Request | Post Award Reporting | Payment Request | Monitoring | Closeout |
-      | Automation PM | Step 3  | Step 3       | Step 3 | Step 3 | Step 3            | Step 3               | Step 3          | Step 3     | Step 3   |
->>>>>>> Stashed changes
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
