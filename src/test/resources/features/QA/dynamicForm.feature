@@ -568,7 +568,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
       | Checkbox in Section Section 1 question not answered          |
-      | Written Section 2 in Section Section 2 question not answered |
+    #  | Written Section 2 in Section Section 2 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout

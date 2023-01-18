@@ -2,9 +2,13 @@ package com.framework.automation.steps;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.pageobject.LibraryFilesPage;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
 
 
@@ -149,5 +153,19 @@ public class LibraryFilesSteps {
     @When("^I perform quick search for \"([^\"]*)\" under files$")
     public void performQuickSearchUnderFiles(String searchValue) {
         libraryFilesPage.performQuickSearchUnderFiles(searchValue);
+    }
+
+    @Then("I see visibility option is enabled with default value as {string}")
+    public void iSeeVisibilityOptionIsEnabledWithDefaultValueAs(String visibilityOption) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//select[@name='SharingOptions']//option[text()='" + visibilityOption + "']"),true);
+    }
+
+    @When("I perform quick search for {string} in modal")
+    public void iPerformQuickSearchForInModal(String searchTerm) {
+        By quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
+        WebElement searchInput = I.amPerforming().getElementReference().of(ByUsing.xpath("//input[@name='workspaceFilesSearch']"));
+        I.amPerforming().textInput().toClear(searchInput);
+        I.amPerforming().textInput().in(searchInput, searchTerm);
+        I.amPerforming().click().on(quickSearchButton);
     }
 }

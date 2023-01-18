@@ -276,10 +276,14 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @When("I click on {string} icon at {string} modal after Email Sent Successfully")
     public void iClickOnIconAtModalAfterEmailSentSuccessfully(String icon, String modal) {
-        if (modal.equalsIgnoreCase("Send Email LWC")) {
+        if (modal.contains("Send Email")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='" + icon + "']"));
         } else if (modal.equalsIgnoreCase("Reply")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='" + icon + "']"));
+        } else if (modal.contains("Add Files")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='" + icon + "']"));
+        } else {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='" + icon + "']"));
         }
     }
 
@@ -367,5 +371,10 @@ public class SendEmailSteps extends GovGrantsManager {
     @When("I click on {string} content inside {string} subheader on left panel")
     public void iClickOnContentInsideSubheaderOnLeftPanel(String subTask, String contentTitle) {
         I.amPerforming().click().on(ByUsing.xpath("//*[@title='" + contentTitle + "']//following-sibling::ul//li//ul//li//a[@title='" + subTask + "']"));
+    }
+
+    @Then("I see the text {string} inside Body")
+    public void iSeeTheTextInsideBody(String desiredText) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[normalize-space(text())='"+ desiredText +"']"),true);
     }
 }

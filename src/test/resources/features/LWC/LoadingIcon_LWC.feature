@@ -9,10 +9,16 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-REI-0178"
-    When I click on "View" icon for "PG-REI-0178" inside table
-#    When I click page show "50" entries in "Contacts@1234567890!@#$%^&*()" table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I click on top right button "New" in tableName "Contacts@1234567890!@#$%^&*()"

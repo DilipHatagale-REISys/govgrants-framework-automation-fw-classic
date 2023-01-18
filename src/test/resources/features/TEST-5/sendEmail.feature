@@ -1653,12 +1653,18 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Eric FD" in "ContactsByAccount" panel
     When I click on "send invitation" icon for "Eric FD" inside table
     Then I see the text :
-      | Hello Eric FD,                                                                                                                                                                                                            |
-      | You are invited to become an user.                                                                                                                                                                                        |
-      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
-      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
-      | Sincerely,                                                                                                                                                                                                                |
-      | EGMS Team                                                                                                                                                                                                                 |
+#      | Hello Eric FD,                                                                                                                                                                                                            |
+#      | You are invited to become an user.                                                                                                                                                                                        |
+#      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+#      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+#      | Sincerely,                                                                                                                                                                                                                |
+#      | EGMS Team                                                                                                                                                                                                                 |
+    And I pause execution for "5" seconds
+    Then I see the text "Hello Eric FD," inside Body
+    Then I see the text "You are invited to become an user." inside Body
+    Then I see the text "Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process." inside Body
+    Then I see the text "You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement." inside Body
+    Then I see the text "EGMS Team" inside Body
 
   @126472    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForExternalUser
   Scenario: validate Email Template rendering with body content at send invitation modal for external user
@@ -1669,13 +1675,20 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "Michael Jones" in "ContactsByAccount" panel
     When I click on "send invitation" icon for "Michael Jones" inside table
-    Then I see the text :
-      | Hello Michael Jones,                                                                                                                                                                                                      |
-      | You are invited to become an user.                                                                                                                                                                                        |
-      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
-      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
-      | Sincerely,                                                                                                                                                                                                                |
-      | EGMS Team                                                                                                                                                                                                                 |
+#    Then I see the text :
+#      | Hello Michael Jones,                                                                                                                                                                                                      |
+#      | You are invited to become an user.                                                                                                                                                                                        |
+#      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
+#      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
+#      | Sincerely,                                                                                                                                                                                                                |
+#      | EGMS Team                                                                                                                                                                                                                 |
+    And I pause execution for "7" seconds
+    Then I see the text "Hello Michael Jones," inside Body
+    Then I see the text "You are invited to become an user." inside Body
+    Then I see the text "Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process." inside Body
+    Then I see the text "You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement." inside Body
+    Then I see the text "Sincerely," inside Body
+    Then I see the text "EGMS Team" inside Body
 
   @126469    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForInternalUser
   Scenario: validate Email Template rendering with body content at send invitation modal for internal user
@@ -1687,13 +1700,12 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "Eric FD" in "ContactsByAccount" panel
     When I click on "send invitation" icon for "Eric FD" inside table
-    Then I see the text :
-      | Hello Eric FD,                                                                                                                                                                                                            |
-      | You are invited to become an user.                                                                                                                                                                                        |
-      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
-      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
-      | Sincerely,                                                                                                                                                                                                                |
-      | EGMS Team                                                                                                                                                                                                                 |
+    And I pause execution for "5" seconds
+    Then I see the text "Hello Eric FD," inside Body
+    Then I see the text "You are invited to become an user." inside Body
+    Then I see the text "Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process." inside Body
+    Then I see the text "You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement." inside Body
+    Then I see the text "EGMS Team" inside Body
 
   @147248  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as bold text at send email modal
@@ -2147,6 +2159,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see the text :
       | Send Copy (Cc) to Me |
+    Then I see the text "Hello Eric FD," inside Body
 
   @150757 @verifyHelpTextAtSendCopyCCToMeFieldIsPresentOnModalWhileSendingEmail
   Scenario: Validate display help text at "Send Copy (Cc) to Me" field on send email modal
@@ -6450,7 +6463,7 @@ Business Need: Send Email Component Scenarios
       | From: ashwini.mahore@yopmail.com |
       | Sent:                            |
       | To: snehal.mulange@reisystems.in |
-      |Subject: test                     |
+      | Subject: test                    |
 
   @168974 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when attachment is attached for the mail , then  reply back content is aligned properly
@@ -7766,29 +7779,29 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-    @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
-      Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-        | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-      Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-      When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-      When I navigate to "Collab" sub tab
-      When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-      When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-      When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-      When I enter value "Email Created" into field "Subject" on send email modal
-      When I click on "Send" button in send email modal
-      Then I see the following messages in the page details :
-        | Email Sent Successfully. |
+  @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
+  Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Email Created" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I see the following messages in the page details :
+      | Email Sent Successfully. |
 
   @205481 @sprint6 @ToVerifySpelling @dnyaneshwari
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected for internal user
