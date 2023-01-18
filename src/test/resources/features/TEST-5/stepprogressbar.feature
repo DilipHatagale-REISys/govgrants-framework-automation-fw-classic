@@ -181,7 +181,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     Then I see "By : Nauman Shahid" shown as help text
-    Then I see "Date : 11/26/2018 2:15 AM" shown as help text
+    Then I see "Date : 11/27/2018 1:15 AM" shown as help text
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user

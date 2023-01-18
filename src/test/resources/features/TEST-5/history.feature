@@ -558,16 +558,18 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    When I navigate to "Overview" sub tab
-    And I enter value "$300,000.00" into field "DecimalCurrency__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "$200,000.50" into field "DecimalCurrency__c"
     And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    And I enter value "$300,000.00" into field "DecimalCurrency__c"
+    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
+    And I refresh the page
     Then I softly see "$200,000.50" shown inside "New Value" column in history table
     Then I softly see "$300,000.00" shown inside "Old Value" column in history table
 
@@ -640,15 +642,16 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    When I navigate to "Overview" sub tab
-    And I enter value "$300,000.00" into field "DecimalCurrency__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "$300,000.00" into field "DecimalCurrency__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I softly see expected table with id "toggleApprovalHistory"
     Then I softly see expected table with id "toggleFlexTableHistory"
-    Then I softly see the text :
-      | Snapshot History |
+    Then I softly see expected table with id "toggleAttachmentsa0k1500000LTNAQAA5"
 
   @120545  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedInRecordEditMode
   Scenario: validate that approval history table and snapshot history is displayed in record edit mode

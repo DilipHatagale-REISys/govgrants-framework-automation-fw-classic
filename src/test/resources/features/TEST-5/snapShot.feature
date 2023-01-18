@@ -116,16 +116,17 @@ Business Need: Snapshot Config Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
+    And I refresh the page
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapShotFileName
+  @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapSho1tFileName
   Scenario: Validate Auto Snapshot record name is getting chaged after making changes inside field Approval Snapshot File Name at config page
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
@@ -156,6 +157,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
+    And I refresh the page
     Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval.pdf"
 
   @70028    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Rejection

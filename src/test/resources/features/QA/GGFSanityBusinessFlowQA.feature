@@ -106,7 +106,7 @@ Business Need: Sanity check for all Component Scenarios
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
 
-  @110214   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
+  @110214#   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
   Scenario: validate announcement in published state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user

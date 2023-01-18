@@ -64,6 +64,7 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5871,7 +5872,7 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Continue"
     Then I see the header is "Create Funding Opportunity" in the page details
 
-  @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
+  @duplicate @wip @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at sidebar
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

@@ -4808,7 +4808,7 @@ Business Need: Library Files Component Scenarios
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
-    And I pause execution for "3" seconds
+    And I pause execution for "200" seconds
     Then I softly see Classification as "Other" at upload file modal
 
   @157794 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationPMUser

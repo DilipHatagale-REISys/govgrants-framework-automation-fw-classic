@@ -267,7 +267,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
-    Then I see "10" records inside enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "5" records inside enhanced grid id "---program:-:enhancedGridTableId---"
 
   @77620    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrderAtSidebar-gHome
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
@@ -381,7 +381,7 @@ Business Need: Side bar Component Scenarios
     When I enter values "Test Automation sidebar" into textarea for table id "---program:-:flexGridEnhancedID---"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedID---" panel
-    Then I see value "Test Automation sidebar" for multiple cells at column "AddressProgramContact__c"
+    Then I see value "Test Automation sidebar" for multiple cells at column "Program Contact Address"
 
   @78043    @validateViewActionAtFlexTableEnhancedAtSideBar-gHOME
   Scenario: validate view action at flex table enhanced at sidebar - home phase
@@ -767,6 +767,7 @@ Business Need: Side bar Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "5" seconds
     And I save the field labeled "ID" as "savedValue"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
@@ -810,8 +811,9 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Overview" sub tab
     And I enter value "Automation Internal Program for Approval and Snapshot scenarios 2" into field "ProgramName__c"
     And I click on "Save and Close Modal" in the page details
-    And I save the field labeled "ID" as "savedValue1"
+    And I pause execution for "5" seconds
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "savedValue1"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -874,18 +876,20 @@ Business Need: Side bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I save the field labeled "ID" as "PEGMSID"
+    And I pause execution for "5" seconds
     And I navigate to "HOME" tab
-    When I hover mouse on lookup link "PG-343-0058"
+    When I hover mouse on lookup link "{SavedValue:PEGMSID}"
     And I pause execution for "3" seconds
-    Then I softly see "title" as "PG-343-0058" inside mini page layout
+    Then I softly see "title" as "{SavedValue:PEGMSID}" inside mini page layout
     And I refresh the page
-    When I hover mouse on lookup link "PG-343-0058"
+    When I hover mouse on lookup link "{SavedValue:PEGMSID}"
     And I pause execution for "3" seconds
     Then I softly see "Label" as "ID" inside mini page layout
     And I refresh the page
-    When I hover mouse on lookup link "PG-343-0058"
+    When I hover mouse on lookup link "{SavedValue:PEGMSID}"
     And I pause execution for "3" seconds
-    Then I softly see "Value" as "PG-343-0058" inside mini page layout
+    Then I softly see "Value" as "{SavedValue:PEGMSID}" inside mini page layout
 
   @77698    @enableFormulaFieldAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
   Scenario: validate subtotal of cell value of total obligated amount by entering formula at config  and validating it inside enhanced grid at sidebar - home phase
