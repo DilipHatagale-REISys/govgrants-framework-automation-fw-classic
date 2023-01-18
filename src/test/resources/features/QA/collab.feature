@@ -7,10 +7,15 @@ Business Need: collab Component Scenarios
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I refresh the page
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I pause execution for "5" seconds
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
@@ -72,6 +77,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin collab phase Comment" inside flex table with id "---program:-:myFeedTableId---"
@@ -86,6 +92,8 @@ Business Need: collab Component Scenarios
   Scenario: validate the pop-up appears by perforing delete action at my feed section by PM user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -227,6 +235,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I refresh the page
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation Admin Post Delete Action Access" in my feed section and share the post
     When I pause execution for "10" seconds
@@ -244,6 +254,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I refresh the page
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
     And I pause execution for "5" seconds
@@ -256,6 +268,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation collab admin to check post share access" in my feed section and share the comment
     Then I softly see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
@@ -269,8 +282,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -283,9 +296,9 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
-    When I navigate to "Collab" sub tab
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
     Then I softly see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
@@ -374,10 +387,10 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
-    And I click on refresh button at collab
+    And I click on "Refresh" button inside collab tab
     Then I see collab my feed page refreshed
 
   @115004    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsADMINUser
@@ -478,6 +491,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I refresh the page
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
@@ -488,10 +503,11 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "5" seconds
+    And I enter value "Post at record level" in my feed section and share the post
     And I click on "Comment" action at "Post at record level" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
     And I pause execution for "10" seconds
@@ -509,6 +525,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "@Simon PM" in my feed section and share the comment
     Then I see "@Simon PM" inside flex table with id "---program:-:myFeedTableId---"
@@ -569,19 +586,23 @@ Business Need: collab Component Scenarios
   Scenario: validate that user logo at comment section is small in size at collab - my feed section
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
-    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed home
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I see user logo at comment "Test Automation Admin Comment" is small in size inside my feed home
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab @doubt
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -594,6 +615,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -604,6 +626,8 @@ Business Need: collab Component Scenarios
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -616,6 +640,8 @@ Business Need: collab Component Scenarios
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at home phase
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -630,8 +656,8 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnly}" inside table
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
@@ -639,19 +665,23 @@ Business Need: collab Component Scenarios
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
     When I login as "ADMIN" user
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Automation PM Comment" in my feed section and share the post
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord
   Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File" at files library upload modal
+    Then I softly see tab label as "Choose a File OR Drag it here" at files library upload modal
 
   @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
@@ -672,6 +702,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -691,7 +722,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Test @Automation PM" in my feed section and share the post
+    #And I enter value "Test @Automation PM" in my feed section and share the post
     Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207094 @MiddleUserNameShouldDisplyedInTextFormat @Sprint8
@@ -699,7 +730,9 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I enter value "Test @Automation PM" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
+  #  And I enter value "Test @Automation PM" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -711,7 +744,9 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation FO" in my feed section and share the post
+    And I enter value "@Automation FO" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
+    #And I enter value "@Automation FO" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -743,7 +778,8 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Hello @Automation PM" in my feed section and share the post
+    And I enter value "Hello @Automation PM" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
     Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207091 @UserNameShouldBeDisplayedAtStartingOfComment @sprint8
@@ -760,6 +796,7 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation PM Hello" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -779,7 +816,8 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation Admin" in my feed section and share the post
+    And I enter value "@Automation Admin" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
     And I pause execution for "5" seconds
     Then I see "@Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -824,15 +862,15 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation PM" in my feed section and share the post
-    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "@Automation PM " in my feed section and share the post
+    Then I see "@Automation PM " inside flex table with id "---program:-:myFeedTableId---"
 
   @207049 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation PM" in my feed section and share the post
+    #And I enter value "@Automation PM" in my feed section and share the post
     Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -852,7 +890,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Test@Automation PM" in my feed section and share the post
+   # And I enter value "Test@Automation PM" in my feed section and share the post
     Then I see "Test@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207053 @ToVerifyIfIaddauserinaline @Sprint8
@@ -860,7 +898,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Hello@Automation PM" in my feed section and share the post
+    #And I enter value "Hello@Automation PM" in my feed section and share the post
     Then I see "Hello@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207054 @ToVerifyIfIaddauserinaline @Sprint8
@@ -868,7 +906,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "hi @Automation PM" in my feed section and share the post
+  #  And I enter value "hi @Automation PM hello" in my feed section and share the post
     Then I see "hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207060 @vrushali @sprint-8

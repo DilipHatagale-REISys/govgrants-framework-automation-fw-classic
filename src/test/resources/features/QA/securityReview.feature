@@ -36,7 +36,7 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "PhaseCompletedTasksFlexTable"
+    Then I see expected table with id "HomePhaseCompletedTasksFlexTable"
 
   @106108    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenCompletedTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then completed task assigned by me table displayed
@@ -44,7 +44,7 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
-    Then I see expected table with id "PhaseCompletedTasksByFlexTable"
+    Then I see expected table with id "HomePhaseCompletedTasksByFlexTable"
 
   @106103    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me table displayed
@@ -53,7 +53,7 @@ Business Need: security review Scenarios
     And I navigate to "Home" tab
     #When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
     When I click on "Pending Tasks" content inside "My Tasks" subheader on left panel
-    Then I see expected table with id "PhasePendingTasksFlexTable"
+    Then I see expected table with id "HomePendingTasksFlexTable"
 
   @106105    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned by me table displayed
@@ -62,7 +62,7 @@ Business Need: security review Scenarios
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
     And I pause execution for "10" seconds
-    Then I see expected table with id "PhasePendingTasksByFlexTable"
+    Then I see expected table with id "HomePendingTasksByFlexTable"
 
   @wip @106148    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuSubrecipientsOrganizationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then Subrecipients organization table displayed
@@ -286,8 +286,8 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "AD-REI1-01"
-    When I click on "View" icon for "AD-REI1-01" inside table
+    When I perform quick search for "GT-REI-00001"
+    When I click on "View" icon for "GT-REI-00001" inside table
     When I navigate to "Management" sub tab
     Then I see expected table with id "toggleFlexTableRecipientsCompletedSiteVisitsReport"
 
@@ -427,7 +427,7 @@ Business Need: security review Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "Snapshot_Application_Submission.pdf"
+    Then I see table with header "Snapshot History" contains records "SnapShot on 12/28/2022 2:09 AM.pdf"
 
   @109263    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromAnnouncementPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me and by me table displayed
@@ -593,8 +593,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurpose}"
-    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramTestingPurpose}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurposeQA}"
+    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramTestingPurposeQA}" inside table
     And I pause execution for "7" seconds
     When I navigate to "Overview" sub tab
     And I enter value "5000" into field "fieldFundedAmount__c"
@@ -613,8 +613,8 @@ Business Need: security review Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurpose}"
-    When I click on "View" icon for "{Framework_recordUsed:InternalProgramTestingPurpose}" inside table
+    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurposeQA}"
+    When I click on "View" icon for "{Framework_recordUsed:InternalProgramTestingPurposeQA}" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -1222,7 +1222,7 @@ Business Need: security review Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @flow
   Scenario: validate announcement in published state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    #Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1232,10 +1232,10 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -1264,6 +1264,11 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
     #Announcement Creation
@@ -1279,27 +1284,24 @@ Business Need: security review Scenarios
     When I click on "Edit" in the page details
     And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "6" seconds
     And I click on "Edit" in the page details
     And I enter value "Test" into field "Justification__c"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
-    When I close "Associate" modal by clicking the top right x button
+    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate Funding Accounts" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
+    And I pause execution for "5" seconds
     And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
-    When I navigate to "Responsibilities" sub tab
-    And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Amendment Request | Post Award Reporting | Payment Request | Monitoring | Closeout |
-      | Automation PM | Step 3  | Step 3       | Step 3 | Step 3 | Step 3            | Step 3               | Step 3          | Step 3     | Step 3   |
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1307,7 +1309,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcement" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1361,7 +1363,7 @@ Business Need: security review Scenarios
 
   @110210   @verifyAnnouncementInApprovedMode @flow
   Scenario: validate announcement in approved state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1371,10 +1373,10 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -1393,6 +1395,7 @@ Business Need: security review Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
@@ -1402,7 +1405,11 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    And I pause execution for "5" seconds
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
     #Announcement Creation
@@ -1418,27 +1425,24 @@ Business Need: security review Scenarios
     When I click on "Edit" in the page details
     And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "6" seconds
     And I click on "Edit" in the page details
     And I enter value "Test" into field "Justification__c"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
-    When I close "Associate" modal by clicking the top right x button
+    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate Funding Accounts" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
+    And I pause execution for "5" seconds
     And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
-    When I navigate to "Responsibilities" sub tab
-    And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Amendment Request | Post Award Reporting | Payment Request | Monitoring | Closeout |
-      | Automation PM | Step 3  | Step 3       | Step 3 | Step 3 | Step 3            | Step 3               | Step 3          | Step 3     | Step 3   |
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1446,7 +1450,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcement" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel

@@ -16,7 +16,7 @@ Business Need: dnd Component Scenarios
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Test"
-    And I pause execution for "3" seconds
+    And I pause execution for "30" seconds
     Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:

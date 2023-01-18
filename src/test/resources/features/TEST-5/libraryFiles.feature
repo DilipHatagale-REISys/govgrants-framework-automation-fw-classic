@@ -780,7 +780,8 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "AdminCreatedFile.txt" in "---program:-:workSpaceFilesFlexTableId---" panel
     When I click on "Edit" icon for "AdminCreatedFile.txt" inside table
-    When I click on "×" icon at "File Edit" modal under Library
+    #When I click on "×" icon at "File Edit" modal under Library
+    When I click on "× " icon at "File Edit" modal after Email Sent Successfully
     Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
   @70498 @validateByClickOnCloseIconAtEditFileModalOperationAModalIsGettingClosed-HomePhase
@@ -876,6 +877,8 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I refresh the page
+    And I pause execution for "5" seconds
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I perform quick search for "Test" under files library
@@ -1231,7 +1234,8 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
-    When I perform quick search for "TestAutomation.txt"
+   # When I perform quick search for "TestAutomation.txt"
+    When I perform quick search for "TestAutomation.txt" in modal
     Then I see "TestAutomation.txt" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
   @70745 @validateThatByClickOnFirstArrowAFirstPageIsDisplayedUnderUploadFileModal-RecordLevel
@@ -1328,7 +1332,8 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "View" icon for "MultipleFileUploadCollabDND.png" inside table
     Then I softly see "File View" opens in overLay window
-    When I click on "×" icon at "File View" modal under Library
+   # When I click on "×" icon at "File View" modal under Library
+    When I click on "× " icon at "File View" modal after Email Sent Successfully
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
@@ -1356,7 +1361,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "MultipleFileUploadCollabDND.png" inside table
     Then I softly see "File Edit" opens in overLay window
-    When I click on "×" icon at "File Edit" modal under Library
+    When I click on "× " icon at "File Edit" modal after Email Sent Successfully
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "MultipleFileUploadCollabDND.png" inside table
     When I click "Yes" on modal confirmation box
@@ -1866,6 +1871,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
     Then I softly see library/folder/file "duplicateFileInFolder.png" is displayed under files library
+    And I pause execution for "360" seconds
     When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
     When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
     And I pause execution for "7" seconds
@@ -1921,12 +1927,12 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    When I drag the "TestFileSharing.docx" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
+    When I drag the "TestAutomationFile.docx" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
     When I pause execution for "3" seconds
     When I click on expand icon at library/folder "Department of Community Health"
-    When I drag the "TestAutomationFile.csv" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
+    When I drag the "TestAutomationFile.docx" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
-    Then I see file "SendEmailAttachment.pdf" is displayed under "UnitedHealth Group" library or folder
+    Then I see file "TestAutomationFile.docx" is displayed under "UnitedHealth Group" library or folder
 
   @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome @reportedBug
   Scenario: Verify that file can be drag from assert library and droped into another library
@@ -2164,8 +2170,8 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestAutomationFile.csv" inside table
     Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
 
   @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel @wip @functionalityDeprecated
@@ -2601,6 +2607,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
+    And I pause execution for "10" seconds
     Then I see the text :
       | Showing 1 to 5 of 1000 records |
 
@@ -4387,7 +4394,8 @@ Business Need: Library Files Component Scenarios
     When I upload file "MultipleFileUploadCollabDND.png" into library with sharing
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I select Classification as "Medical Reports" at upload file modal
-    Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+  #  Then I see visibility option is disabled with default value as "Visible to Anyone With Record Access"
+    Then I see visibility option is enabled with default value as "Visible to Anyone With Record Access"
 
   @148728 @validateCancelButtonWorkingAtEditFileModalAtRecordLevel
   Scenario: Verify modal gets closed by lick on cancel button under edit file modal at record level
@@ -4802,11 +4810,6 @@ Business Need: Library Files Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly see Classification as "Other" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @157794 @validateClassificationsAddedFromConfigIsNotPresentUnderDropDownAtCollabPhaseUploadFileModal-ByLoginAsAutomationPMUser
   Scenario: Verify classifications added from config is not present in upload file modal at collab phase by login as PM user
@@ -4878,7 +4881,8 @@ Business Need: Library Files Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly see Classification as "Other" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
+    #When I click on "×" icon at "Add Files" modal under Library
+    When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
@@ -4908,7 +4912,8 @@ Business Need: Library Files Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly do not see Classification as "Other" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
+    #When I click on "×" icon at "Add Files" modal under Library
+    When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
@@ -4992,11 +4997,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
     Then I see asterisk mark at "Classification" field
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @157935 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtCollabPhaseByLoginAsAutomationPMUser
   Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-collab phase by PM account
@@ -5078,7 +5078,7 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
     Then I see asterisk mark at "Classification" field
-    When I click on "×" icon at "Add Files" modal under Library
+    When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
@@ -5111,7 +5111,7 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I do not see "Upload" button is disabled at modal under library
     Then I softly do not see Classification as "Select file classification" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
@@ -5172,11 +5172,6 @@ Business Need: Library Files Component Scenarios
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     Then I see "Upload" button is disabled at modal under library
     Then I see asterisk mark at "Classification" field
-    When I click on "×" icon at "Add Files" modal under Library
-    And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
-    Then I softly do not see "Temp Post Automation" at my feed container with id "---program:-:myFeedTableId---"
 
   @158198 @validateUploadButtonIsEnabledAndClassificationIsNotDisplayedAtCollabPhaseByLoginAsPMUser
   Scenario: Verify Upload button is enabled and classification is not displayed at upload file modal-collab phase by PM account

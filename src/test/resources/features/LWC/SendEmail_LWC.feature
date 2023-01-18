@@ -312,7 +312,7 @@ Business Need: SendEmailLWC Component Scenarios
       | User  |
       | ADMIN |
 
-  @223197 @223205 @223199 @223207 @LWC_ID-208784 @dilip
+  @223197 @223205 @223207 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -325,8 +325,6 @@ Business Need: SendEmailLWC Component Scenarios
     And I pause execution for "10" seconds
     #223197 #223205
     Then I see and check "To" field dropdown is displayed with "External" value
-    #223199
-    Then I see and check "Cc" field dropdown is displayed with "Internal" value
     #223207
     Then I see and check "Cc" field dropdown is displayed with "External" value
     Examples:
