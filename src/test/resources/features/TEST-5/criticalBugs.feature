@@ -406,6 +406,7 @@ Business Need: Logged Issues Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -4099,7 +4100,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation_v" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
+    And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
@@ -5176,6 +5177,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Collab" sub tab
+    And I enter value "Custom Permission Enabled user - record level post DND" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Custom Permission Enabled user - record level post DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -5200,10 +5203,12 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
     When I navigate to "Collab" sub tab
+    And I enter value "Custom Permission Enabled user - record level post DND" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Custom Permission Enabled user - record level post DND" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    And I switch to iframe with id "CollabIframe"
+   # And I switch to iframe with id "CollabIframe"
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I select sharing option as "Select visibility options" at upload file modal
@@ -5875,6 +5880,7 @@ Business Need: Logged Issues Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Attachments" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf"
@@ -5982,6 +5988,8 @@ Business Need: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
+    And I enter value "Framework Dev" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I click on "Comment" action at "Framework Dev" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds

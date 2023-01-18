@@ -544,7 +544,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I perform quick search for "Demo_Title" in "---program:-:tmpActiveGrantsGridTableId---" panel
     Then I see external link icon as "Demo_Title" for "Edit" inside enhanced grid table action
 
   @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning

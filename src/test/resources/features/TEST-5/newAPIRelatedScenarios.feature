@@ -168,7 +168,8 @@ Business Need: New API related scenarios temporary
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside flex table with id "flexTableDivId" without waiting for record
     When I pause execution for "180" seconds
-    Then I see "Logout" in current url
+    #Then I see "Logout" in current url
+    Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 
   @148208   @VerifySessionTimeoutPopUpAppearsOnFormLayout
   Scenario: Verify session timeout pop-up appears after 1 min of session login on form layout

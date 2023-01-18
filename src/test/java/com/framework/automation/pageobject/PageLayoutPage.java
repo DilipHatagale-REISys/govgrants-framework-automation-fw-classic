@@ -808,7 +808,7 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().switchTo().frame(By.xpath("//iframe[contains(@ng-src, 'apex') or contains(@src,'apex')]"));
         I.amPerforming().click().on(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']"));
         for (String uniqueColumn : fileNameFromWorkSpace) {
-            I.amPerforming().click().on(By.xpath("//div[@id='Attachmentadd']//td[text()='" + uniqueColumn + "']/..//input"));
+            I.amPerforming().click().on(By.xpath("//div[@id='Attachmentadd']//td/span[text()='" + uniqueColumn + "']//parent::td//preceding-sibling::td/input"));
         }
         govgrants.perform().modal().clickModalContentSpecificButton("Attach");
         govgrants.perform().modal().closeModalByClickingTopRightCloseButton();

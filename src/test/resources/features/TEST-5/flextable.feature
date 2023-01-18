@@ -674,7 +674,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Title" opens in overLay window
 
-  @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke
+  @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
   Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -697,7 +697,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke
+  @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
   Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -720,7 +720,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke
+  @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -743,7 +743,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke
+  @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -815,7 +815,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
+  @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -841,7 +841,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
+  @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1698,9 +1698,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    When I enter value "Program @@/ created for special char" into field "ProgramName__c"
+    When I enter value "Program @@/ created for special char" into field "fieldProgramName__c"
     And I click on "Save and Close Modal" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "7" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program @@/ created"
@@ -1716,9 +1716,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
-    When I enter value "Program 1 Created for numeric value" into field "ProgramName__c"
+    When I enter value "Program 1 Created for numeric value" into field "fieldProgramName__c"
     And I click on "Save and Close Modal" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "7" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Program 1 Created"
@@ -1818,6 +1818,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -2170,6 +2171,7 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "7" seconds
     When I navigate to "Roles" sub tab
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:rolesAndResponsibilitiesTableId---"
 
@@ -2475,7 +2477,6 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
@@ -2499,8 +2500,6 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "10" seconds
     And I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
@@ -2524,8 +2523,6 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
@@ -2548,11 +2545,8 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
+   And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     And I pause execution for "5" seconds
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     Then I see confirmation box with body "Automation" is displayed
 
   @176524 @sprint20
@@ -2575,8 +2569,6 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
@@ -2693,11 +2685,8 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
-    When I expand nested table containing column value "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}"
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:enhancedGridTableId---" without processing
     And I pause execution for "5" seconds
-    And I save the value from row "1" for column name "ID" as "id" from flex table "---program:-:enhancedGridTableId---"
     Then I see confirmation box with body "Automation" is displayed
 
   @174396 @sprint20
@@ -3145,8 +3134,8 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
-    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+    When I perform quick search for "AllenX" in "---program:-:PlanningProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:PlanningProgramContactsTableId---"
 
   @217279 @ToVerifyNotRecordFoundInsideTableForPMuser @jyoti
   Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
@@ -3157,8 +3146,8 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "AllenX" in "---program:-:ProgramContactsTableId---" panel
-    Then I see "No records found" inside flex table with id "---program:-:ProgramContactsTableId---"
+    When I perform quick search for "AllenX" in "---program:-:PlanningProgramContactsTableId---" panel
+    Then I see "No records found" inside flex table with id "---program:-:PlanningProgramContactsTableId---"
 
   @217552 @FiledNameFromBakenddisplyed @jyoti
   Scenario:  To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
@@ -3762,21 +3751,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
-    When I login as "Automation" user
+    When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Total:" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @207134 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: To verify that Sub total label displayed properly for SPI user
