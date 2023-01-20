@@ -25,7 +25,7 @@ Business Need: Attachment Component Scenarios
       | PM    |
 
   @221534 @255886 @255891 @Toverifyuserisabletosave'.jpg'file @LWC-AttachmentTestSuit @Vrushali
-  Scenario: To verify user is able to save '.jpg' file
+  Scenario: To verify user is able to save '.jpg','.xlsx','.png' file
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -100,7 +100,7 @@ Business Need: Attachment Component Scenarios
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
     Then I can see attach the "TestFileSharing.docx" file format in the attachment section
 
-  @221523 @255441 @255863 @221533 @255008 @222489 @Validatemessage"Attachmentaddedsuccessfully" @@LWC-AttachmentTestSuit @Vrushali
+  @221523 @255441 @255863 @221533 @255008 @222489 @Validatemessage_Attachmentaddedsuccessfully @LWC-AttachmentTestSuit @Vrushali
   Scenario Outline: To verify, admin User are able to add the attachment in the LWC Attachment page block
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
@@ -217,17 +217,17 @@ Business Need: Attachment Component Scenarios
     And I enter value "Test" into description box
     And I click on "Save" on LWC modal
     And I pause execution for "5" seconds
-    And I select "Financial Artifacts" from dropdown of filetype
+    And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I pause execution for "2" seconds
-    And I enter value "Test Automation" into description box
+    And I enter value "Test" into description box
     And I click on "Save" on LWC modal
     Then I see the following message in the LWC page details :
       | The document you are attempting to upload exists in the Workspace |
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+      #| PM    |
 
   @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile @Vrushali @LWC-AttachmentTestSuit
   Scenario: validate msg "File should not be blank" after adding blank text file

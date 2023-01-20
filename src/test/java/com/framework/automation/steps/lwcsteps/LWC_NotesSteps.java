@@ -199,4 +199,16 @@ public class LWC_NotesSteps extends GovGrantsManager {
         }
         Assert.assertFalse(elementPresentOnWebPage);
     }
+
+    @And("I click on {string} button inside LWC modal")
+    public void iClickOnButtonInsideLWCModal(String button) {
+        if(button.equals("Center align text") || button.equals("Right align text") ||button.equals("Left align text")) {
+            I.amPerforming().click().on(ByUsing.xpath("//button[@title='" + button + "']"));
+        } else if (button.equals("Bold")) {
+            I.amPerforming().click().on(ByUsing.xpath("//button[@title='" + button + "']"));
+        } else if (button.equals("8")||button.equals("9")||button.equals("10")||button.equals("11")||button.equals("12")||button.equals("14")||button.equals("16")||button.equals("18")||button.equals("20")||button.equals("22")||button.equals("24")||button.equals("26")||button.equals("28")||button.equals("36")||button.equals("48")||button.equals("72")) {
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']/div/div//div[@class='slds-rich-text-editor__select slds-size_xx-small']"));
+            I.amPerforming().click().on(ByUsing.xpath("//span[@class='slds-media__body']/span[@title='"+button+"']"));
+        }
+    }
 }

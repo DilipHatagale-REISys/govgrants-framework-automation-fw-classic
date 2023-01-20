@@ -274,7 +274,7 @@ public class AttachmentSteps {
 //        } else if (arrow.equals("down")) {
 //            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
 //        } else
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@class='slds-icon']"));
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']//lightning-primitive-icon//*[@class='slds-icon']"));
         //  I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']"));
 
     }
