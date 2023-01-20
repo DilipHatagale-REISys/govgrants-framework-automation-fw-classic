@@ -94,6 +94,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
+    When I navigate to "Overview" sub tab
     And I save the field labeled "ID" as "savedValue"
     And I pause execution for "3" seconds
     And I navigate to "HOME" tab
