@@ -52,6 +52,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Files" sub tab
+    And I refresh the page
     And I pause execution for "5" seconds
     #208789
     Then I see "up" arrow is displayed on "Notes" table expanded & not shrinked
@@ -114,6 +115,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I enter value "QWERTY!@#$%12345AK47" inside "Description" in LWC modal
     And I click on "Save" on LWC modal
     Then I see "Application View" webpage is loaded
+    And I pause execution for "7" seconds
     Then I see "Title" column contains the value "QWERTY!@#$%12345"
     Then I see "Description" column contains the value "QWERTY!@#$%12345AK47"
 
@@ -161,8 +163,9 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Files" sub tab
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     #208861
+    And I refresh the page
     Then I see the "Description" contains "Courier" have font style is "courier" in Notes modul
     #208870
     Then I see the "Description" contains "Tahoma" have font style is "tahoma" in Notes modul
@@ -186,6 +189,103 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I click on "View" icon for "<programID>" inside table
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
+    #need to add step for select text and dropdown
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize8Test" inside "Title" in LWC modal
+#    And I click on "8" button inside LWC modal
+#    And I enter value "fontSize8Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize9Test" inside "Title" in LWC modal
+#    And I click on "9" button inside LWC modal
+#    And I enter value "fontSize9Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize10Test" inside "Title" in LWC modal
+#    And I click on "10" button inside LWC modal
+#    And I enter value "fontSize10Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize11Test" inside "Title" in LWC modal
+#    And I click on "11" button inside LWC modal
+#    And I enter value "fontSize11Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize12Test" inside "Title" in LWC modal
+#    And I click on "12" button inside LWC modal
+#    And I enter value "fontSize12Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize14Test" inside "Title" in LWC modal
+#    And I click on "14" button inside LWC modal
+#    And I enter value "fontSize14Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize16Test" inside "Title" in LWC modal
+#    And I click on "16" button inside LWC modal
+#    And I enter value "fontSize16Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize18Test" inside "Title" in LWC modal
+#    And I click on "18" button inside LWC modal
+#    And I enter value "fontSize18Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize20Test" inside "Title" in LWC modal
+#    And I click on "20" button inside LWC modal
+#    And I enter value "fontSize20Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize22Test" inside "Title" in LWC modal
+#    And I click on "22" button inside LWC modal
+#    And I enter value "fontSize22Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize24Test" inside "Title" in LWC modal
+#    And I click on "24" button inside LWC modal
+#    And I enter value "fontSize24Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize26Test" inside "Title" in LWC modal
+#    And I click on "26" button inside LWC modal
+#    And I enter value "fontSize26Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize28Test" inside "Title" in LWC modal
+#    And I click on "28" button inside LWC modal
+#    And I enter value "fontSize28Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize36Test" inside "Title" in LWC modal
+#    And I click on "36" button inside LWC modal
+#    And I enter value "fontSize36Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize48Test" inside "Title" in LWC modal
+#    And I click on "48" button inside LWC modal
+#    And I enter value "fontSize48Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "fontSize72Test" inside "Title" in LWC modal
+#    And I click on "72" button inside LWC modal
+#    And I enter value "fontSize72Test" inside "Description" in LWC modal
+#    And I click on "Save" button in LWC
     #208875
     Then I see the "Description" contains "fontSize8Test" have font size is "8px" in Notes modul
     #208877
@@ -223,7 +323,7 @@ Business Need: Loading icon for all the operations Component Scenarios
       | ADMIN | {LWC_StaticRecords:AutomationProgramLWCNotesForAdmin} |
       | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
-  @208876 @208876 @208878 @208880 @208882 @208884 @208886 @208888 @208890 @208892
+  @208876 @208878 @208880 @208882 @208884 @208886 @208888 @208890 @208892
   @208894 @208896 @208898 @208900 @208902 @275559 @LWC-NotesSuit @dilip
   Scenario: To verify user applies font size 8,9,10,11,14,16,18,20,22,24,28,36,48,72 on the text in description box then respective font size should get apply.(SPI)
     Given I am on "SUBPORTAL" portal
@@ -303,6 +403,14 @@ Business Need: Loading icon for all the operations Component Scenarios
    # When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Files" sub tab
+    #need to add step for select text and dropdown
+#    And I click on top right button "Add" in tableName "Notes"
+#    And I pause execution for "5" seconds
+#    And I enter value "applyBoldFormating" inside "Title" in LWC modal
+#    And I enter value "applyBoldFormating" inside "Description" in LWC modal
+#    And I click on "Bold" button inside LWC modal
+#    And I pause execution for "20" seconds
+#    And I click on "Save" button in LWC
     #208906
     Then I see "Description" contains "applyBoldFormating" font format "Bold" get apply
     #208908
@@ -326,6 +434,24 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I click on "View" icon for "<programID>" inside table
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Center align text test" inside "Title" in LWC modal
+    And I enter value "Center align text test" inside "Description" in LWC modal
+    And I click on "Center align text" button inside LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Right align text Test" inside "Title" in LWC modal
+    And I enter value "Right align text Test" inside "Description" in LWC modal
+    And I click on "Right align text" button inside LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Left align text test" inside "Title" in LWC modal
+    And I enter value "Left align text test" inside "Description" in LWC modal
+    And I click on "Left align text" button inside LWC modal
+    And I click on "Save" button in LWC
     #208919
     Then I see "Description" column contains "Center align text test" font format "center" align text get apply
     #208921
@@ -346,7 +472,9 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I close LWC modal by clicking the top right x button
     #208939
     Then I see title "Left align text test" and click on "View" icon
+    When I close LWC modal by clicking the top right x button
     Then I see title "Left align text test" and click on "Edit" icon
+    When I close LWC modal by clicking the top right x button
     Then I see title "Left align text test" and click on "Delete" icon
 
     Examples:
@@ -363,6 +491,25 @@ Business Need: Loading icon for all the operations Component Scenarios
    # When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Files" sub tab
+    And I pause execution for "10" seconds
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Center align text test" inside "Title" in LWC modal
+    And I enter value "Center align text test" inside "Description" in LWC modal
+    And I click on "Center align text" button inside LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Right align text Test" inside "Title" in LWC modal
+    And I enter value "Right align text Test" inside "Description" in LWC modal
+    And I click on "Right align text" button inside LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "Left align text test" inside "Title" in LWC modal
+    And I enter value "Left align text test" inside "Description" in LWC modal
+    And I click on "Left align text" button inside LWC modal
+    And I click on "Save" button in LWC
     #208920
     Then I see "Description" column contains "Center align text test" font format "center" align text get apply
     #208922
@@ -420,13 +567,30 @@ Business Need: Loading icon for all the operations Component Scenarios
     #207396
     Then I see "Title" column contains "Title text"
     Then I see "Description" column contains "Description test"
-    Then I see "CreatedDate" column contains "01/02/2023 8:47 PM"
-    Then I see "CreatedBy" column contains "Automation Admin"
+    Then I see "CreatedDate" column contains "01/19/2023 4:18 AM"
+    Then I see "CreatedBy" column contains "Automation PM"
+    Examples:
+      | User  | programID                                             |
+      | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
+  @207396 @LWC-NotesSuit @dilip
+  Scenario Outline:To verify when note is created then Title,Description,Created Date,Created By these details are showing correct.(Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "<programID>"
+    When I click on "View" icon for "<programID>" inside table
+    When I navigate to "Files" sub tab
+    And I pause execution for "5" seconds
+    #207396
+    Then I see "Title" column contains "Title text"
+    Then I see "Description" column contains "Description test"
+    Then I see "CreatedDate" column contains "01/19/2023 4:14 AM"
+    Then I see "CreatedBy" column contains "Automation Admin"
     Examples:
       | User  | programID                                             |
       | ADMIN | {LWC_StaticRecords:AutomationProgramLWCNotesForAdmin} |
-      | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
   @208936  @208927 @LWC-NotesSuit @dilip
   Scenario Outline: To verify user selects 'Image' then image is getting added.(Admin/PM)

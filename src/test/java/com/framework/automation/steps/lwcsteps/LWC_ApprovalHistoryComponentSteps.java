@@ -85,7 +85,7 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
 
     @Then("I see {string} arrow is displayed on {string} table expanded & not shrinked")
     public void iSeeArrowIsDisplayedOnTable(String arrow, String tableTitle) {
-        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
+        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']//lightning-primitive-icon//*[@data-key='" + arrow + "']"));
         Assert.assertTrue(ArrowDisplayed);
     }
 
