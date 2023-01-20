@@ -674,7 +674,7 @@ Business Need: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Title" opens in overLay window
 
-  @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
+  @wip @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins @plscheckagain
   Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -697,7 +697,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
+  @wip @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins @plscheckagain
   Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -720,7 +720,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
+  @wip @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins @plscheckagain
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -743,7 +743,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
+ @wip @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -815,7 +815,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
+  @wip @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -841,7 +841,7 @@ Business Need: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
+ @wip @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
