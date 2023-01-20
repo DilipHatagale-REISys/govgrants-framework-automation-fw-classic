@@ -4516,7 +4516,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     When I enter value as "Temp Post Automation description" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     Then I softly see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I enter value "Collab Phase sharing temporary comment" in my feed section and share the comment
     And I click on "More Actions" action at "Collab Phase sharing temporary comment" comment inside my feed
@@ -4695,7 +4695,7 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I pause execution for "3" seconds
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
@@ -4756,7 +4756,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library with sharing
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "Cancel" button at collab
     Then I do not see attached file as "CollabFileVanish.pdf" inside collab my feed
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
@@ -4782,7 +4782,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Temporary Comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I refresh the page
@@ -4814,7 +4814,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "HOME" tab
@@ -4890,7 +4890,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment group" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "HOME" tab
@@ -4931,7 +4931,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
@@ -4971,7 +4971,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileVanish.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -5019,7 +5019,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Collab Phase temporary comment" comment inside my feed
@@ -5066,7 +5066,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -5112,7 +5112,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "CollabFileTemp.pdf" into library
     When I enter value as "test Automation" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab Phase temporary comment" in my feed section and share the comment
     Then I softly see "CollabFileTemp.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -5256,7 +5256,7 @@ Business Need: Logged Issues Scenarios
     When I enter value as "test Automation" in field "Description" at Library Files
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab temp" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
  #130104 verify if the uploaded file is displayed at record detail page in attachment tab
@@ -5300,7 +5300,7 @@ Business Need: Logged Issues Scenarios
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I enter value as "sharing options test" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Collab temp" in my feed section and share the comment
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
  #130106 verify if the uploaded file is editable at record detail page in attachment tab
@@ -5477,7 +5477,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "captureModalFields.png" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
  #130103 upload file from collab - home phase
     Then I softly see "captureModalFields.png" inside flex table with id "---program:-:myFeedTableId---"
@@ -5528,7 +5528,7 @@ Business Need: Logged Issues Scenarios
     When I upload file "captureModalFields.png" into library with sharing
     When I select sharing option as "Visible to Anyone With Record Access" at upload file modal
     When I click on "Upload" button in send email modal
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I enter value "Automation file upload at record post collab" in my feed section and share the comment
  #130105 uploaded file from collab is displayed at collab tab - home phase
     Then I softly see "captureModalFields.png" inside flex table with id "---program:-:myFeedTableId---"
@@ -6071,7 +6071,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "3" seconds
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     Then I see "Upload" button is disabled at modal under library
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "More Options" action at "Temp Post Automation" comment inside my feed
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
@@ -6112,7 +6112,7 @@ Business Need: Logged Issues Scenarios
     #Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
     When I upload file "SendEmailAttachment.pdf" into library with sharing
     Then I do not see "Upload" button is disabled at modal under library
-    When I click on "×" icon at "Add Files" modal under Library
+    When When I click on "× " icon at "Add Files" modal after Email Sent Successfully
     And I click on "More Options" action at "Automation SPI" comment inside my feed
     And I click on "Delete" action from dropdown at "Automation SPI" comment inside my feed
     And I click modal button "OK"
