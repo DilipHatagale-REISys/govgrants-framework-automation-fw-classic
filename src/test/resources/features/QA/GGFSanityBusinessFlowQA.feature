@@ -98,7 +98,8 @@ Business Need: Sanity check for all Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -154,7 +155,8 @@ Business Need: Sanity check for all Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -193,10 +195,10 @@ Business Need: Sanity check for all Component Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
@@ -347,9 +349,8 @@ Business Need: Sanity check for all Component Scenarios
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"    And I click modal button "Continue"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
@@ -865,7 +866,8 @@ Business Need: Sanity check for all Component Scenarios
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"

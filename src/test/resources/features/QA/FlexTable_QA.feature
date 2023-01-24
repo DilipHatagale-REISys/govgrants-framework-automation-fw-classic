@@ -636,7 +636,50 @@ Business Need: FlexTable Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
     Then I do not see alert popup box
+
+  @268145 @268147
+  Scenario Outline:Admin,PM _DynamicForm_Edit layout_To Verify that after manipulating templatename value, no any alert get displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "templateName" and navigate to new URL
+    Then I do not see alert popup box
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @268148
+  Scenario: SPI_DynamicForm_Edit layout_To Verify that after manipulating id value, no any alert get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "templateName" and navigate to new URL
+    Then I do not see alert popup box
+
+    @268139
+    Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
+      When I login as "Admin" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Applications" tab
+      And I click toggle button to select "Applications - All"
+      When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+      When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+      When I navigate to "Files" sub tab
+      And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+      And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "parentid" and navigate to new URL
+      Then I do not see alert popup box
