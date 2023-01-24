@@ -168,4 +168,13 @@ public class LibraryFilesSteps {
         I.amPerforming().textInput().in(searchInput, searchTerm);
         I.amPerforming().click().on(quickSearchButton);
     }
+
+    @And("I click on {string} icon at {string} modal")
+    public void iClickOnIconAtModal(String icon, String modal) {
+        if (modal.contains("Add Files")) {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='" + icon + "']"));
+        } else {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='" + icon + "']"));
+        }
+    }
 }

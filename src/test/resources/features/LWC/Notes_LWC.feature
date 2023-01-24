@@ -440,12 +440,16 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I enter value "Center align text test" inside "Description" in LWC modal
     And I click on "Center align text" button inside LWC modal
     And I click on "Save" button in LWC
+    And I refresh the page
+    And I pause execution for "5" seconds
     And I click on top right button "Add" in tableName "Notes"
     And I pause execution for "5" seconds
     And I enter value "Right align text Test" inside "Title" in LWC modal
     And I enter value "Right align text Test" inside "Description" in LWC modal
     And I click on "Right align text" button inside LWC modal
     And I click on "Save" button in LWC
+    And I refresh the page
+    And I pause execution for "5" seconds
     And I click on top right button "Add" in tableName "Notes"
     And I pause execution for "5" seconds
     And I enter value "Left align text test" inside "Title" in LWC modal

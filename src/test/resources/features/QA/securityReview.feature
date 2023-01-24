@@ -17,8 +17,9 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
 
@@ -153,8 +154,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title
@@ -181,8 +182,10 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
     When I navigate to "Responsibilities" sub tab
     Then I see "Description" shown as flex table column title
 
@@ -203,8 +206,10 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
     When I navigate to "Setup tabs" sub tab
     Then I see expected table with id "ProgramReviewStepTemplatesFlexToggle"
 
@@ -214,8 +219,9 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
 
@@ -413,8 +419,9 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleApprovalHistory"
 
@@ -593,10 +600,12 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurposeQA}"
-    When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramTestingPurposeQA}" inside table
-    And I pause execution for "7" seconds
-    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    #And I click on "Save" in the page details
     And I enter value "5000" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "25" seconds
@@ -611,10 +620,14 @@ Business Need: security review Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:InternalProgramTestingPurposeQA}"
-    When I click on "View" icon for "{Framework_recordUsed:InternalProgramTestingPurposeQA}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -637,7 +650,7 @@ Business Need: security review Scenarios
 
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser @flow
   Scenario: validate that program in submit for approval mode is getting created by login as PM user
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+  #  Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -950,11 +963,18 @@ Business Need: security review Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Internal Program Testing Purpose"
-    When I click on "View" icon for "Internal Program Testing Purpose" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     Then I see value "Automation PM" for title "Name" inside table "---program:-:programContactsTableId---"
 
   @106456    @verifyThatEnhancedDataTableAsDefaultPackageIsDisplayedAtRecordLevelByLoggedInAsPMUser
@@ -963,8 +983,10 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
     When I navigate to "Setup tabs" sub tab
     Then I see expected table with id "ProramPackagesGrantorFlexToggle"
 
@@ -1022,7 +1044,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1142,7 +1165,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1311,7 +1335,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1347,16 +1372,16 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
     And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
     And I click on "Publish" in the page details
@@ -1452,7 +1477,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1488,10 +1514,10 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
@@ -1551,7 +1577,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1587,10 +1614,10 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
@@ -1651,7 +1678,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -2173,7 +2201,8 @@ Business Need: security review Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "NewOrgAnnCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -2209,16 +2238,16 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Announcement" tab
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
     And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
     And I click on "Publish" in the page details

@@ -688,8 +688,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -4847,8 +4847,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
@@ -4877,8 +4877,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
@@ -4968,8 +4968,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table

@@ -311,6 +311,13 @@ public class CollabSteps extends GovGrantsManager {
             String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
             String newUrl = url + script;
             I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+        } else if (parameter.equals("templateName")) {
+            String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+            String p1 = url.split("Application%20form")[0];
+            String p2 = "Application%20form";
+            String p3 = url.split("Application%20form")[1];
+            String newUrl = p1 + script + p2 + p3;
+            I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
         }
 
     }
@@ -363,6 +370,6 @@ public class CollabSteps extends GovGrantsManager {
 
     @And("I click on {string} button inside collab tab")
     public void iClickOnButtonInsideCollabTab(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//a[@title='"+button+"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//a[@title='" + button + "']"));
     }
 }
