@@ -1,6 +1,6 @@
 @SendEmail-Component @regression-LWC @ApprovalHistoryLWC
-Business Need: SendEmailLWC Component Scenarios
-  Test all SendEmailLWC component based scenarios
+Business Need: ApprovalHistoryLWC Component Scenarios
+  Test all ApprovalHistoryLWC component based scenarios
   As a configuration manager i make different configurational changes in SendEmailLWC component and will validate them.
 
 
@@ -258,17 +258,42 @@ Business Need: SendEmailLWC Component Scenarios
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "History" sub tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
-    #Add steps
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Forward" in the approval decision table and Select name from dropdown "Automation PM" and comment "Automation Testing"
+    And I pause execution for "10" seconds
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I navigate to "History" sub tab
     Then I see comment column "Automation Testing" and status is "Reassigned"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
+      | ADMIN |
 
   @219672 @219794 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline:To verify that alignment of each column data is to the left side
@@ -618,3 +643,13 @@ Business Need: SendEmailLWC Component Scenarios
       | User  |
       | PM    |
       | ADMIN |
+
+  @trial
+  Scenario: validate
+    When I login as "EXE" user
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "PG-A11-0738" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "PG-A11-0738" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Forward" in the approval decision table and Select name from dropdown "Automation PM" and comment "forward"
+    And I pause execution for "5" seconds
