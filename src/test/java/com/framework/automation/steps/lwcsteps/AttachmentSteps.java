@@ -257,7 +257,7 @@ public class AttachmentSteps {
     @When("I click on {string} icon for file {string} inside table name {string} for LWC")
     public void iClickOnIconForFileInsideTableNameForLWC(String icon, String fileName, String tableName) {
         if (tableName.contains("Attachments")) {
-            I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
+            I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_xx-small header']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
         }
     }
 
