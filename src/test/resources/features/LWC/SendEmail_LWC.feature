@@ -89,6 +89,14 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I refresh the page
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I fill the details in field To "reisystem@yopmail.com" CC "abc@yopmail.com" Subject "Subject" in send email LWC
@@ -147,7 +155,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I upload attachment "TestFileSharing.docx" in send email LWC modal
     When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
     When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
-    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject line added" in send email LWC
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "5" seconds
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "60" seconds
@@ -639,7 +647,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I pause execution for "5" seconds
     #257617 #257619
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
-    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject line added" in send email LWC
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "5" seconds
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "20" seconds
@@ -663,7 +671,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
-    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject line added" in send email LWC
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "5" seconds
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "20" seconds
@@ -757,6 +765,14 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I refresh the page
       #223848
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Reply LWC" modal is displayed

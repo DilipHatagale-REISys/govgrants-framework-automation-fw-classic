@@ -1871,7 +1871,6 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
     Then I softly see library/folder/file "duplicateFileInFolder.png" is displayed under files library
-    And I pause execution for "360" seconds
     When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
     When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
     And I pause execution for "7" seconds
@@ -2382,6 +2381,7 @@ Business Need: Library Files Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
+    And I pause execution for "7" seconds
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -4429,6 +4429,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Attachments" sub tab
+    And I pause execution for "5" seconds
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on "Cancel" button in send email modal
     Then I see "PlanningFiles" modal window with id "---program:-:PlanningFilesModalId---" is not displayed
@@ -4562,8 +4563,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
-    Then I see the text :
-      | Visibility Options |
+    Then I see the text "Visibility Options" inside Body
 
   @148282 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedAtFileUploadModalForInternalUser-RecordLevel
   Scenario: Verify that private on record sharing option is displayed at add/upload file modal for internal user - Record level
@@ -4619,6 +4619,7 @@ Business Need: Library Files Component Scenarios
     And I pause execution for "5" seconds
     And I click on "Comment" action at "Temp Post Automation" comment inside my feed
     And I click on "Attach File" button at collab
+    And I pause execution for "300" seconds
     Then I softly see the text :
       | Visibility Options |
     When I click on "×" icon at "Add Files" modal under Library
@@ -4660,9 +4661,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
-    And I pause execution for "10" seconds
-    Then I see the text :
-      | Visibility Options |
+    Then I see the text "Visibility Options" inside Body
 
   @155499    @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromCollabTab-RecordLevel
   Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from collab tab - record level
@@ -4700,8 +4699,7 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Collab" sub tab
     And I click on "Comment" action at "Post by Automation SPI user - DND" comment inside my feed
     And I click on "Attach File" button at collab
-    Then I see the text :
-      | Visibility Options |
+    Then I see the text "Visibility Options" inside Body
 
   @155840 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromFilesLibraryTab-HomePhase
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from files library tab
@@ -4713,8 +4711,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
     When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
-    Then I see the text :
-      | Visibility Options |
+    Then I see the text "Visibility Options" inside Body
 
   @148277 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromAttachmentTab-RecordLevel
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from attachment tab - record level
@@ -4967,7 +4964,7 @@ Business Need: Library Files Component Scenarios
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
     Then I softly see Classification as "Other" at upload file modal
-    When I click on "×" icon at "Add Files" modal under Library
+    And I click on "× " icon at "Add Files" modal
     And I click on "Delete" action from dropdown at "Temp Post Automation" comment inside my feed
     And I click modal button "OK"
     When I pause execution for "5" seconds
