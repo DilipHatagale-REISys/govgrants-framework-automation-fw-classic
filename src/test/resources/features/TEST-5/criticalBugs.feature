@@ -242,8 +242,8 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I navigate to "Financials" sub tab
     Then I see "View" icon for "FA-22-56" is not displayed inside flex table
 

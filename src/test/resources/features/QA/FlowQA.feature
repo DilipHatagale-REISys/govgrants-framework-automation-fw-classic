@@ -111,6 +111,7 @@ Business Need: security review Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
 
+
   @CreateApplication
   Scenario: Create Application and submitted for approval
     Given I am on "SUBPORTAL" portal

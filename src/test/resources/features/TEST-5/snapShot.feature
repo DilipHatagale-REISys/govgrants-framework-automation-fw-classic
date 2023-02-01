@@ -13,6 +13,7 @@ Business Need: Snapshot Config Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -144,20 +145,21 @@ Business Need: Snapshot Config Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I "Send to Owner" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Edit" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Save" in the page details without processing
+    And I pause execution for "5" seconds
     And I click on "Submit For Approval" in the page details
-    And I refresh the page
     When I navigate to "History" sub tab
     And I refresh the page
+    And I pause execution for "60" seconds
     Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval.pdf"
 
   @70028    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Rejection
