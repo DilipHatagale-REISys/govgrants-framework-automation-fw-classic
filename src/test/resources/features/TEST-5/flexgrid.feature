@@ -740,9 +740,10 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
     And I pause execution for "2" seconds
-    Then I see "Automation Help" as title for "App 786" inside flex table action
+    Then I see "Automation Help" as title for "AD-Grant--07" inside flex table action
 
   @50338    @viewActionOpensInNewWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
   Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in new window
@@ -755,8 +756,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786" in "---program:-:monitoringGridTableId---" panel
-    When I click on "View" icon for "App 786" inside table
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07" in "---program:-:monitoringGridTableId---" panel
+    When I click on "View" icon for "AD-Grant--07" inside table
     Then I see new tab is opened
 
   @50339    @viewActionOpensInSameWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -770,8 +772,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    When I click on "View" icon for "App 786" inside table
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    When I click on "View" icon for "AD-Grant--07" inside table
     Then I see no new tab is opened
 
   @50340    @viewActionOpensInOverlayForActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -785,8 +788,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    When I click on "View" icon for "App 786" inside table
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    When I click on "View" icon for "AD-Grant--07" inside table
     Then I see "View" opens in overLay window
 
   @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning @smoke
@@ -802,8 +806,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    When I click on "View" icon for "App 786" inside table
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    When I click on "View" icon for "AD-Grant--07" inside table
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -836,8 +841,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    Then I see "View" icon for "App 786" is displayed inside flex table
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    Then I see "View" icon for "AD-Grant--07" is displayed inside flex table
 
   @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke
   Scenario: Setup confirmation box for Monitoring Schedule For All Active Grant flex table view action configuration and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
@@ -850,8 +856,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
   @50346    @ConfirmationMessageFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring
@@ -867,8 +874,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
   @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants @smoke
@@ -950,8 +958,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    Then I see external link icon as "App 786" for "Edit" inside flex table action
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    Then I see external link icon as "AD-Grant--07" for "Edit" inside flex table action
 
   @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
   Scenario: Changing action name field for view action at ActiveGrantsGridParent flex table from config and validating it inside ActiveGrantsGridParent flex table of programs-gMonitoring
@@ -964,8 +973,9 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786"
-    Then I see "Test Automation" as title for "App 786" inside flex table action
+    And I click toggle button to select "All Monitoring Schedules"
+    When I perform quick search for "AD-Grant--07"
+    Then I see "Test Automation" as title for "AD-Grant--07" inside flex table action
 
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: Changing content of header field at ActiveGrantsGridParent flex table and validating it at Monitoring schedule for all active grants flex table

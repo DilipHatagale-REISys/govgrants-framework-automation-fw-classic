@@ -513,7 +513,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I enter value "Test" into field "GrantAbbreviation__c"
     When I click on top right button "Save" in flex table with id "---program:-:EnhancedDataTableId---"
     When I navigate to "Overview" sub tab
-    Then I see field "Description" as "Automation Internal Program for Approval and Snapshot scenarios"
+    Then I see field "Description" as "Testing"
 
   @194928 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
