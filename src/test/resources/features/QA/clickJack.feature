@@ -1,4 +1,4 @@
-clickjackScenarios @regression-test5
+@clickjackScenarios @regression-test5
 Business Need: clickjack Scenarios
   Test all clickjack based scenarios
 

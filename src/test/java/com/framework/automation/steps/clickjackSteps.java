@@ -45,7 +45,7 @@ public class clickjackSteps extends GovGrantsManager {
 
     @Then("I see {string} modal is open with data")
     public void iSeeModalIsOpenWithData(String value) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[text()='" + value + "'] | //h2[text()='" + value + "']"), true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[text()='" + value + "'] | //h2[text()='" + value + "'] | //p[text()='" + value + "']"), true);
     }
 
     @And("I click on {string} button in modal")
@@ -116,7 +116,7 @@ public class clickjackSteps extends GovGrantsManager {
 
     @Then("I see pagination contains {string}")
     public void iSeePaginationContains(String msg) {
-        boolean elementdisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[contains(text(),'"+ msg +"')]"));
+        boolean elementdisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[contains(text(),'" + msg + "')]"));
         Assert.assertTrue(elementdisplayed);
     }
 
@@ -160,12 +160,21 @@ public class clickjackSteps extends GovGrantsManager {
         }
     }
 
-    @And("Select {string} value")
-    public void selectValue(String arg0) {
-        I.amPerforming().click().on(ByUsing.xpath("//input[@id='input-11']"));
-        I.amPerforming().click().on(ByUsing.xpath("//div[text()='Health and Human Services ']"));
 
-//        By xpathForTable = ByUsing.xpath("//label[contains(text(),'Primary Funding Organization')]/parent::div//div[@role='listbox']/table/tbody/tr/td");
-//        List<Elements> listOf = I.amPerforming().getElementReference().forListOfElements().of(xpathForTable);
+    /////////////////////////////stepProgressBar-Steps///////////////////////////////////
+    @And("I click inside {string} and select {string} from table in Create Program modal")
+    public void iClickInsideAndSelectFromTable(String field, String OrganizationName) {
+        if (field.equalsIgnoreCase("Primary Funding Organization")) {
+            I.amPerforming().click().on(ByUsing.xpath("//input[@id='input-11']"));
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().click().on(ByUsing.xpath("//label[contains(text(),'Primary Funding Organization')]/parent::div//div[@role='listbox']/table/tbody/tr/td/div[contains(text(),'" + OrganizationName + "')]"));
+        }
+
+    }
+
+    @And("I click on Rating dropdown select {string} from value and {string} inside comment")
+    public void iClickOnRatingDropdownSelectFromValueAndInsideComment(String dropdownValue, String comment) {
+        I.amPerforming().click().on(ByUsing.xpath("//option[@value='" + dropdownValue + "']"));
+        I.amPerforming().textInput().in(ByUsing.xpath("//label[contains(text(),'Comments')]/parent::div/span/textarea"), comment);
     }
 }
