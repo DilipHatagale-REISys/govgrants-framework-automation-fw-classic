@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.PageLayoutPage;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
@@ -810,22 +811,42 @@ public class PageLayoutSteps {
 
     @And("I select {string} from ck editor")
     public void iChangeStyleOfAllTextToInsideCKEditor(String styleName) {
-        By StyleSelector= By.xpath("//a[@title='Formatting Styles']/span[2]");
+        By StyleSelector = By.xpath("//a[@title='Formatting Styles']/span[2]");
         I.amPerforming().click().on(StyleSelector);
-        By ChangeStyle= By.xpath("//*[text()='"+styleName+"']");
+        By ChangeStyle = By.xpath("//*[text()='" + styleName + "']");
         I.amPerforming().click().on(ChangeStyle);
     }
 
     @And("I change font {string} from ck editor")
     public void iChangeFontOfAllTextToInsideCKEditor(String fontName) {
-        By StyleSelector= By.xpath("//a[@title='Font Name']/span[2]");
+        By StyleSelector = By.xpath("//a[@title='Font Name']/span[2]");
         I.amPerforming().click().on(StyleSelector);
-        By ChangeStyle= By.xpath("//*[text()='"+fontName+"']");
+        By ChangeStyle = By.xpath("//*[text()='" + fontName + "']");
         I.amPerforming().click().on(ChangeStyle);
     }
 
     @And("I click on Right allign in description field")
     public void iClickOnRightAllignInDescriptionField() {
         pageLayoutPage.ClickOnRightAllignInDescriptionField();
+    }
+
+    @And("I click on {string} checkbox inside {string} field")
+    public void iClickOnCheckboxInsideField(String value, String field) {
+        boolean checkBoxSelected = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + field + "']//label[contains(text(),'" + value + "')]/preceding-sibling::input[@type='checkbox']")).isSelected();
+        if (checkBoxSelected) {
+            I.amPerforming().checkToSee().isSelected(ByUsing.xpath("//div[@id='" + field + "']//label[contains(text(),'" + value + "')]/preceding-sibling::input[@type='checkbox']"), true);
+        } else {
+            I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + field + "']//label[contains(text(),'" + value + "')]/preceding-sibling::input[@type='checkbox']"));
+        }
+    }
+
+    @And("I upload attachment {string} after click on {string} in Download & Upload wizard modal window")
+    public void iUploadAttachmentAfterClickOnInDownloadUploadWizardModalWindow(String file, String button) {
+        By attachmentChooseFilePath = By.xpath("//input[@id='fileUpload' or @type='file']");
+        By modalButton = By.xpath("//button[contains(text(),'" + button + "') and contains(@class,'customBtn')]");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        I.amPerforming().waitFor().makeThreadSleep(15000);
+        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + file);
+        I.amPerforming().click().on(modalButton);
     }
 }
