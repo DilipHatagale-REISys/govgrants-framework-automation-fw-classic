@@ -174,7 +174,7 @@ Business Need: Calender Config Component Scenarios
     When I enter value "{SavedValue:PEGMSID}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
-    When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
+    When I enter "AnnouncementCreationCalendar_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "ID" as "AnnEGMSID"
@@ -288,7 +288,7 @@ Business Need: Calender Config Component Scenarios
     When I enter value "{SavedValue:PEGMSID}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
-    When I enter "AnnouncementCreation_v" values from "Program_Field_Values.xlsx"
+    When I enter "AnnouncementCreationCalendar_v" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I save the field labeled "ID" as "AnnEGMSID"
     And I pause execution for "3" seconds
@@ -518,6 +518,7 @@ Business Need: Calender Config Component Scenarios
     And I click on top right button "New" in flex table with id "CaseList"
     When I enter "Creation" values from "Create_Case.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I save the field labeled "Case #" as "savedValue"
     And I click on "Close Case" in the page details
     And I navigate to "HOME" tab

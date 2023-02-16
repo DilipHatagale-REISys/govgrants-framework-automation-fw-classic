@@ -40,7 +40,8 @@ Business Need: SheetJS Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
-    When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
+    #When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
+    And I upload attachment "SheetJSFileUpload.xlsx" after click on "Upload" in Download & Upload wizard modal window
     Then I see confirmation box with body "Data Uploaded Successfully!" is displayed
 
     Examples:

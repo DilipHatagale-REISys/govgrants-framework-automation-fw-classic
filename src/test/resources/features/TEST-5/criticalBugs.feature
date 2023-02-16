@@ -2463,8 +2463,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestAutomationFile.csv" inside table
     When I click on SelectChange Folder in add file modal
     Then I see "Back to previous" button inside select folder modal
 
@@ -5733,8 +5733,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestAutomationFile.csv" inside table
     And I switch to iframe with id "PlanningFilesiframeContentId"
     And I close modal by clicking the top right x button
     When I click on "Save" button in send email modal
@@ -5750,8 +5750,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
-    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "TestAutomationFile.csv" inside table
     And I switch to iframe with id "PlanningFilesiframeContentId"
     When I click on "Cancel" button in send email modal
     When I pause execution for "3" seconds
