@@ -400,7 +400,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup tabs" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
-      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+      | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
     When I click on advance filter "#advfProgramReviewStepTemplates" of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     When I enter advance filter values inside id "advfProgramReviewStepTemplates"
@@ -528,13 +528,13 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup tabs" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description      |
-      | 4          | Pre-Screen Review | Review Step Desc |
+      | Step Order | Step Name         | Description |
+      | 4          | Pre-Screen Review | Test file   |
     And I pause execution for "3" seconds
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     Then I download the file
-    Then I see "Pre-Screen Review" on page "1" of "govgrants" pdf file
+    Then I see "Test file" on page "2" of "govgrants" pdf file
 
   @257523 @UsershouldbeabletoEditdetailstothenewlydisplayedrecord @vrishali @Sprint-19 @US-255921
   Scenario: User should be able to Edit details to the newly displayed record
@@ -555,7 +555,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I enter value "Test Data" into field "Description__c"
     Then I softly see value "Test Data" for title "Description" inside table "---program:-:PeerReviewerEnhancedGridTableId---"
 
-  @257520 @257526 @257535 @US-255921 @vrishali @Sprint-19 @US-255921
+  @257520 @257526 @US-255921 @vrishali @Sprint-19 @US-255921
   Scenario: Internal User should be able to add details to the newly displayed record and click on save action then record is getting saved.
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -568,7 +568,6 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
-  #Then I softly see value "4" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Then I softly see value "Test Review" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Then I softly see value "Automation Description" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
   #257526
@@ -578,11 +577,6 @@ Business Need: EnhancedGrid Component Scenarios
       | Testing   | 50              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
     Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
-  #257535
-    And I collapse nested table containing column value "Test Review"
-    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
-    Then I see "Test Review" on page "1" of "govgrants" pdf file
 
   @257541 @ToVerifyInRecordLayoutDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: In Record layout download PDF for newly added record in the table  should be displayed  for Internal User

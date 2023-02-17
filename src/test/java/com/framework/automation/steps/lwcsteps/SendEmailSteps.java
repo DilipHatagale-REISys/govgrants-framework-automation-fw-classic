@@ -377,4 +377,10 @@ public class SendEmailSteps extends GovGrantsManager {
     public void iSeeTheTextInsideBody(String desiredText) {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[normalize-space(text())='"+ desiredText +"']"),true);
     }
+
+    @Then("I see text as {string} on View modal")
+    public void iSeeTextAsOnViewModal(String textValue) {
+        boolean texDisplayedOnViewModal = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div//div//span[@ng-bind-html='trustSrcHTML(email.body)']//text()[contains(.,'"+ textValue +"')]"));
+        Assert.assertTrue(texDisplayedOnViewModal);
+    }
 }

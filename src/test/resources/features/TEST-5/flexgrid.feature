@@ -858,7 +858,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
     When I perform quick search for "AD-Grant--07"
-    When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
+    When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:MonitoringScheduleGrantorTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
   @50346    @ConfirmationMessageFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring

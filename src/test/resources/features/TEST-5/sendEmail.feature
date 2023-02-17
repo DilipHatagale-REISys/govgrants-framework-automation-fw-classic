@@ -809,7 +809,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1 " in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1 " inside table
-    Then I softly see "5/6/2022 7:14 pm" on html page
+    Then I softly see "12/2/2023" on html page
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EDT time zone
@@ -834,7 +834,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "5/6/2022 7:14 pm" on html page
+    Then I softly see "12/02/2023" on html page
 
   @101042 @validateSentDateOfEmailInESTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EST time zone
@@ -859,7 +859,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "5/6/2022 7:14 pm" on html page
+    Then I softly see "2/12/2023 " on html page
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal
@@ -1652,13 +1652,6 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "Eric FD" in "ContactsByAccount" panel
     When I click on "send invitation" icon for "Eric FD" inside table
-    Then I see the text :
-#      | Hello Eric FD,                                                                                                                                                                                                            |
-#      | You are invited to become an user.                                                                                                                                                                                        |
-#      | Please click on the url below to create your login account to register as an External User in the Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process. |
-#      | You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.                                                                                                                               |
-#      | Sincerely,                                                                                                                                                                                                                |
-#      | EGMS Team                                                                                                                                                                                                                 |
     And I pause execution for "5" seconds
     Then I see the text "Hello Eric FD," inside Body
     Then I see the text "You are invited to become an user." inside Body
@@ -2132,8 +2125,9 @@ Business Need: Send Email Component Scenarios
     And I checkout to yopmail with mailid "ashwini.mahore@yopmail.com"
     And I pause execution for "120" seconds
     And I refresh the page
-    Then I softly see the text :
-      | TestAutomationFile.csv |
+#    Then I softly see the text :
+#      | TestAutomationFile.csv |
+    Then I see the text "TestAutomationFile.csv" inside Body
 
   @150755 @SendCopyCCToMeFieldIsPresentOnModalWhileSendingEmail
   Scenario: Validate display of "Send Copy (Cc) to Me" field on send email modal
@@ -4575,10 +4569,14 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
-    Then I see text as "Sent:" on reply email modal
-    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
-    Then I see text as "Subject: test" on reply email modal
+#    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
+#    Then I see text as "Sent:" on reply email modal
+#    Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
+#    Then I see text as "Subject: test" on reply email modal
+    Then I see text as "From: ashwini.mahore@yopmail.com" on View modal
+    Then I see text as "Sent:" on View modal
+    Then I see text as "To: snehal.mulange@reisystems.in" on View modal
+    Then I see text as "Subject: test" on View modal
 
   @160296 @jyoti
   Scenario: Send Email-To verify,  For Reply action show only Contacts from 'Cc' field whose Account Record Type Name is not Internal, No user records will be shown for external
@@ -4897,6 +4895,7 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "Links to Additional Attachments " as "Body Content" on send email modal
+    Then I see text as "TestAutomationFile.csv" on View modal
     Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal

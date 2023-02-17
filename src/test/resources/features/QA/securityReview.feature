@@ -256,12 +256,12 @@ Business Need: security review Scenarios
   Scenario: validate data table Is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
-    When I navigate to "Proposal" sub tab
-    Then I see expected table with id "toggleFlexTableGoalsQualifiedApplications"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:securityReviewApplication}"
+    When I click on "View" icon for "{Framework_recordUsed:securityReviewApplication}" inside table
+    When I navigate to "Subawards" sub tab
+    Then I see expected table with id "RecipientsRelatedAwards1FlexToggle"
 
   @107539    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromApplicationPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from application phase task menu then pending task assigned to me table displayed
@@ -433,8 +433,12 @@ Business Need: security review Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    And I pause execution for "6" seconds
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "SnapShot on 12/28/2022 2:09 AM.pdf"
+    Then I see table with header "Snapshot History" contains records "SnapShot on 2/13/2023 12:50 AM.pdf"
 
   @109263    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromAnnouncementPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me and by me table displayed
@@ -727,7 +731,6 @@ Business Need: security review Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:toggleFlexTableHomePendingTasksTableID---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:toggleFlexTableHomePendingTasksTableID---"
-    When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
   @109932    @verifyProgramInActiveModeByLoginAsPMUser @flow
@@ -905,6 +908,11 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
     Then I softly see status in Progress-bar is "Created" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
@@ -924,7 +932,7 @@ Business Need: security review Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab

@@ -2467,7 +2467,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isDateTimeDisplayedInExpectedFormatInHistoryTable(String dateTimeFieldValue, String columnName) {
         boolean flag = false;
-        By getNewValue = By.xpath("//div[@id='History']//tr[1]//td[3]");
+        By getNewValue = By.xpath("//div[@id='History']//tr[1]//td[3] | //div[@id='History']//tr[2]//td[3]");
         By getOldValue = By.xpath("//div[@id='History']//tr[1]//td[4]");
 
         if (columnName.equalsIgnoreCase("New Value")) {

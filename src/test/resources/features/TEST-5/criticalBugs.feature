@@ -89,6 +89,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I add notes Records title as "Check Edit Behaviour" and description "Automation Notes" and "Save" button
     When I click on "Edit" icon for "Check Edit Behaviour" inside table
     When I enter values "Checked" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
@@ -103,12 +105,9 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "Notes Record" inside table
-    When I click "Yes" on modal confirmation box
-    And I click modal button "Ok"
-    When I add notes records
-    Then I see the text :
-      | Note saved Successfully. |
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I add notes Records title as "Notes Record" and description "Automation Notes" and "Save" button
+    Then I see the text "Note saved Successfully." inside Body
 
   @54898    @validateAttachmentEditActionWithFileUploadWorkingOrNot
   Scenario: validate Attachment edit action with upload file working correctly
@@ -132,6 +131,8 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
+    When I click on top right button "Add" in notes and attachment with name "Notes"
+    And I add notes Records title as "Notes Record" and description "Automation Notes" and "Save" button
     When I click on "Edit" icon for "Notes Record" inside table
     When I enter values "Success message on second tab" into textarea description field for Edit Attachment and save
     When I close modal by clicking the top right x button
@@ -580,8 +581,9 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA-USAID-004"
-    When I click on "View" icon for "FOA-USAID-004" inside table
+    And I click toggle button to select "Won Opportunities"
+    When I perform quick search for "PAR-15-287"
+    When I click on "View" icon for "PAR-15-287" inside table
     When I click on "Menu" in the page details
     And I select without accepting alert "Take Snapshot" from dropdown
     Then I see alert message "<message>"
@@ -1906,14 +1908,12 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on "Delete" icon for "Test Automation" inside table
-    And I refresh the page
-    When I navigate to "Financials" sub tab
     When I enter the following values into flex table with id "inlineEditGridProjectCostForProgram" by clicking "New" :
       | Financial Source | Match/Secured Amount |
       | Test Automation  | 1234                 |
     When I navigate to "Financials" sub tab
     Then I see value "$1,234.00" for title "Match/Secured Amount" inside table "inlineEditGridProjectCostForProgram"
+    And I click on "Delete" icon for "Test Automation" inside table
 
   @56756    @miniPageLayoutLinkShouldBeProperForProjectServiceAreaSideBarLink @check @wip
   Scenario: validate mini page layout displayed properly for lookup field at page block detail
