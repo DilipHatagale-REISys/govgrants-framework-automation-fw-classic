@@ -1,5 +1,6 @@
 package com.framework.automation.steps;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.DeviceBucket;
@@ -9,6 +10,7 @@ import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import java.util.Iterator;
 import java.util.List;
@@ -176,5 +178,14 @@ public class clickjackSteps extends GovGrantsManager {
     public void iClickOnRatingDropdownSelectFromValueAndInsideComment(String dropdownValue, String comment) {
         I.amPerforming().click().on(ByUsing.xpath("//option[@value='" + dropdownValue + "']"));
         I.amPerforming().textInput().in(ByUsing.xpath("//label[contains(text(),'Comments')]/parent::div/span/textarea"), comment);
+    }
+
+    @And("I add notes Records title as {string} and description {string} and {string} button")
+    public void iAddNotesRecordsTitleAsAndDescriptionAndButton(String title, String description, String button) {
+        By notesDescriptionPath = By.xpath("//div[@id='addAtt']//label[text()='Description']/..//textarea");
+        By notesTitle = By.xpath("//div[@id='addAtt']//label[text()='Title']/..//input");
+        I.amPerforming().textInput().in(notesTitle, title);
+        I.amPerforming().textInput().in(notesDescriptionPath, description);
+        I.amPerforming().click().on(By.xpath("//input[@value='"+ button +"']|//input[@value='Save and Close Modal']"));
     }
 }

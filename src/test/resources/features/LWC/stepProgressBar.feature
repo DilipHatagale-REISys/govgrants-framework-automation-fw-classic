@@ -277,3 +277,70 @@ Business Need: StepProgressBar Scenarios
     Then I softly see status in Progress-bar is "Active" and is "grey"
     Then I softly see status in Progress-bar is "Closed" and is "grey"
 
+  @284409
+  Scenario: To verify when user selects future step which not completed then it shows blue in color and the current step shows white in color with border (Admin/PM)
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision table and comment "Approve program comment"
+    And I refresh the page
+    Then I softly see status in Progress-bar is "Approved" and is "blue"
+    Then I softly see status in Progress-bar is "Active" and is "white"
+    Then I softly see status in Progress-bar is "Closed" and is "white"
+
+  @204410 @284432 @284433
+  Scenario: To verify text on each step shows white in color when step is completed (Admin/PM),
+  To verify text on each step shows blue in color when step is not completed(Admin/PM),
+  To verify for completed step white colored tick mark shows on step progress bar(Admin/PM)
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision table and comment "Approve program comment"
+    And I refresh the page
+    #204410 #284432 #284433

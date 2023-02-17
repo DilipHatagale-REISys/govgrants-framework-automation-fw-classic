@@ -76,8 +76,8 @@ Business Need: history Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "3" contains text "Automation PM"
-    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "4" contains text "Allen PM"
+    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
+    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "3" contains text "Allen PM"
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -570,8 +570,8 @@ Business Need: history Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     And I refresh the page
-    Then I softly see "$200,000.50" shown inside "New Value" column in history table
-    Then I softly see "$300,000.00" shown inside "Old Value" column in history table
+    Then I softly see "$200,000.50" shown inside "Old Value" column in history table
+    Then I softly see "$300,000.00" shown inside "New Value" column in history table
 
   @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
@@ -669,7 +669,7 @@ Business Need: history Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
     Then I softly see expected table with id "toggleApprovalHistory"
-    Then I softly see the text :
+    Then I softly see the text containing :
       | Snapshot History |
 
   @91687  @verifyAdvanceFilterAtFieldHistoryTableInRecordViewMode

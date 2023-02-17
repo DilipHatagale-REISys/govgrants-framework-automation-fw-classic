@@ -150,7 +150,12 @@ Business Need: Sanity check for all Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    And I click on "Activate" in the page details
+    #And I click on "Activate" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I softly see status in Progress-bar is "Active" and is "Green"
     #Announcement Creation
     And I navigate to "Announcements" tab
@@ -256,7 +261,7 @@ Business Need: Sanity check for all Component Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
@@ -269,7 +274,7 @@ Business Need: Sanity check for all Component Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
@@ -280,7 +285,7 @@ Business Need: Sanity check for all Component Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
