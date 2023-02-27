@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -848,5 +849,19 @@ public class PageLayoutSteps {
         I.amPerforming().waitFor().makeThreadSleep(15000);
         I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + file);
         I.amPerforming().click().on(modalButton);
+    }
+
+    @And("I click on {string} arrow inside {string} field")public void iClickOnArrowInsideField(String arrow, String columnName) {
+        I.amPerforming().click().on(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
+    }
+
+    @Then("I see {string} arrow is Displayed inside {string} field")
+    public void iSeeArrowIsDisplayedInsideField(String arrow, String columnName) {
+        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
+        Assert.assertTrue(ArrowDisplayed);
+    }
+
+    @And("I click on {string} column inside Internal Programs")public void iClickOnColumnInsideInternalPrograms(String columnValue) {
+        I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='"+ columnValue +"']"));
     }
 }
