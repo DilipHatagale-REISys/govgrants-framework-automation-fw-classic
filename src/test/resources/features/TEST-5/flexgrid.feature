@@ -741,7 +741,7 @@ Business Need: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
-    When I perform quick search for "AD-Grant--07"
+    When I perform quick search for "SC-01732"
     And I pause execution for "2" seconds
     Then I see "Automation Help" as title for "AD-Grant--07" inside flex table action
 
@@ -857,7 +857,7 @@ Business Need: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
-    When I perform quick search for "AD-Grant--07"
+    When I perform quick search for "SC-01732"
     When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:MonitoringScheduleGrantorTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
@@ -875,7 +875,7 @@ Business Need: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
-    When I perform quick search for "AD-Grant--07"
+    When I perform quick search for "SC-01732"
     When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
@@ -953,13 +953,13 @@ Business Need: Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | ActiveGrantsGrid   | Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | MonitoringScheduleGrantor | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
-    When I perform quick search for "AD-Grant--07"
+    When I perform quick search for "SC-01732"
     Then I see external link icon as "AD-Grant--07" for "Edit" inside flex table action
 
   @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
@@ -974,7 +974,7 @@ Business Need: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "All Monitoring Schedules"
-    When I perform quick search for "AD-Grant--07"
+    When I perform quick search for "SC-01732"
     Then I see "Test Automation" as title for "AD-Grant--07" inside flex table action
 
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
@@ -1031,7 +1031,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableMonitoringScheduleGrantor"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grant" enabled
 
   @50371    @enablePaginationFieldAtActiveGrantsGridParentFlexTable-gMonitoring
@@ -1128,7 +1128,7 @@ Business Need: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableMonitoringScheduleGrantor"
     Then I see "Download as PDF" options inside "Monitoring Schedule For All Active Grant" disabled
 
   @62730    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
@@ -2872,8 +2872,8 @@ Business Need: Flex Grid Component Scenarios
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
     Examples:
-      | defaultFieldsApi                                                         | newFieldsApi                  |
-      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Application__r.testcurrency__c|
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Application__r.testcurrency__c |
 
   @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications @flexGrid
   Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs

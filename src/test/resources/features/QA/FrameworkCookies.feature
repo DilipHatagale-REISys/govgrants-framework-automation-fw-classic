@@ -2503,29 +2503,939 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @268444
+  @268444 @268459
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
-     # | Flex Grid             | Sort Direction      | DESC              | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size   | 5                | ApiGeneratedId:1 |
-      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
-      | Flex Table            | Order By            |                   | ApiGeneratedId:3 |
-      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:4 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Sort Direction      | ASC                | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:4 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-      | Flex Grid:General     | Sort Direction      | ASC           | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
-      | Flex Grid:General     | Order By            | Percentage__c | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction      | ASC            | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5              | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true           | Programs           | Name                      |                            |
+     # | Flex Grid:General     | Order By            | Percentage__c  | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true           | Programs           | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  |
-      | ADMIN |
-         # | PM   |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268461 @268462
+  Scenario Outline: To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268464 @268466
+  Scenario Outline:To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268469 @268471
+  Scenario Outline:To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268476 @268478
+  Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  #### Custom Data Type - Picklist *********
+  @268482 @268560
+  Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Type" column inside Internal Programs
+    And I click on "up" arrow inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Type" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268563 @268564
+  Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Type" column inside Internal Programs
+    And I click on "up" arrow inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Type" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268565 @268569
+  Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Type" column inside Internal Programs
+    And I click on "up" arrow inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Type" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268572 @268574
+  Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Type" column inside Internal Programs
+    And I click on "up" arrow inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Type" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268581 @268582
+  Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Type" column inside Internal Programs
+    And I click on "up" arrow inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Type" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+##### Custom Data Type- Text #####
+  @268588 @268589
+  Scenario Outline: To verify when sort direction of data type-Text is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Abbreviation" column inside Internal Programs
+    And I click on "up" arrow inside "Abbreviation" field
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268592 @268593
+  Scenario Outline:  To verify when sort direction of data type-Text is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Abbreviation" column inside Internal Programs
+    And I click on "up" arrow inside "Abbreviation" field
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268595 @268596
+  Scenario Outline: To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Abbreviation" column inside Internal Programs
+    And I click on "up" arrow inside "Abbreviation" field
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268602 @268603
+  Scenario Outline:To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Abbreviation" column inside Internal Programs
+    And I click on "up" arrow inside "Abbreviation" field
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268607 @268609
+  Scenario Outline:To verify when sort direction of data type-Text is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Abbreviation" column inside Internal Programs
+    And I click on "up" arrow inside "Abbreviation" field
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  ###### Custom Data Type - Lookup *********
+  @268615 @268617
+  Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Lookup (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Internal Organization" column inside Internal Programs
+    And I click on "up" arrow inside "Internal Organization" field
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268619 @268620
+  Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Lookup (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Internal Organization" column inside Internal Programs
+    And I click on "up" arrow inside "Internal Organization" field
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268623 @268624
+  Scenario Outline:To verify when sort direction of data type-Lookup is set in ascending order and click on same phase then records should be in ascending order for data type-Lookup (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Internal Organization" column inside Internal Programs
+    And I click on "up" arrow inside "Internal Organization" field
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268628 @268631
+  Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Internal Organization" column inside Internal Programs
+    And I click on "up" arrow inside "Internal Organization" field
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268633 @268634
+  Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Internal Organization" column inside Internal Programs
+    And I click on "up" arrow inside "Internal Organization" field
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  #### Data Type - Number ********
+  @268637 @268638
+  Scenario Outline:To verify when sort direction of data type-Number is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Number (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268640 @268641
+  Scenario Outline:To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268644 @268646
+  Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268652 @268660
+  Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268667 @268668
+  Scenario Outline: To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+#### Data type - Date ***************
+  @268673 @268674
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Start Date" column inside Internal Programs
+    And I click on "up" arrow inside "Start Date" field
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268677 @268678
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Start Date" column inside Internal Programs
+    And I click on "up" arrow inside "Start Date" field
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268680 @268682
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Start Date" column inside Internal Programs
+    And I click on "up" arrow inside "Start Date" field
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268684 @268685
+  Scenario Outline:To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Start Date" column inside Internal Programs
+    And I click on "up" arrow inside "Start Date" field
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268687 @268688
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Start Date" column inside Internal Programs
+    And I click on "up" arrow inside "Start Date" field
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+#### Data Type - Date and Time ***********
+  @268699 @268700
+  Scenario Outline:To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Date and Time" column inside Internal Programs
+    And I click on "up" arrow inside "Date and Time" field
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    Examples:
+      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268707 @268708
+  Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Date and Time" column inside Internal Programs
+    And I click on "up" arrow inside "Date and Time" field
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    Examples:
+      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268713 @268715
+  Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Date and Time" column inside Internal Programs
+    And I click on "up" arrow inside "Date and Time" field
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    Examples:
+      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268721 @268723
+  Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Date and Time" column inside Internal Programs
+    And I click on "up" arrow inside "Date and Time" field
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    Examples:
+      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268734 @268735
+  Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Date and Time" column inside Internal Programs
+    And I click on "up" arrow inside "Date and Time" field
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    Examples:
+      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  #### Data Type - Percentage **************
+  @268791 @268792
+  Scenario Outline:To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Percentage(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268794 @268796
+  Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268799 @268802
+  Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268807 @268810
+  Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268819 @268820
+  Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  ##### Data Type - Formula****
+  @268822
+  Scenario Outline: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Percentage" column inside Internal Programs
+    And I click on "up" arrow inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    Examples:
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
