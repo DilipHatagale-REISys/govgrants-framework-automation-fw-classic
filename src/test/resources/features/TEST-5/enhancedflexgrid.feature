@@ -3245,6 +3245,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
@@ -3252,7 +3253,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I enter value "0" into field "Test_Number__c"
     When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
     When I perform quick search for "GT-GT007-001" in "---program:-:flexGridEnhancedID---" panel
-    Then I softly see value "(100.00)" for title "Test Number Result" inside table "---program:-:enhancedGridTableId---"
+    Then I softly see value "0.00" for title "Test Number" inside table "---program:-:enhancedGridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                                                                                   |

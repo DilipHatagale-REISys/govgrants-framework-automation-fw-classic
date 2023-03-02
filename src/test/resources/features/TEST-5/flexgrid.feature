@@ -950,8 +950,8 @@ Business Need: Flex Grid Component Scenarios
   @50355    @iconCSSFieldAtActiveGrantsGridParentFlexTableEditActionItem-gMonitoring
   Scenario: Setup icon for ActiveGrantsGridParent flex table edit action from config and validating it at ActiveGrantsGridParentflex table of program-gMonitoring
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | MonitoringScheduleGrantor | Name                      | Edit                       |
