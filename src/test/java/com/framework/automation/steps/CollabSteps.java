@@ -370,6 +370,6 @@ public class CollabSteps extends GovGrantsManager {
 
     @And("I click on {string} button inside collab tab")
     public void iClickOnButtonInsideCollabTab(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//a[@title='" + button + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//a[@title='" + button + "'] | //span//input[@value='"+ button +"']"));
     }
 }

@@ -236,8 +236,9 @@ Business Need: Sanity check for all Component Scenarios
     When I pause execution for "3" seconds
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
-      | Logout_URL                                                                         |
-      | https://ggptest5-dev-ed--gnt.na164.visual.force.com/apex/Help?uniqueName=Help-0094 |
+      | Logout_URL                                                               |
+     # | https://ggptest5-dev-ed--gnt.na164.visual.force.com/apex/Help?uniqueName=Help-0094 |
+      | https://ggptest5-dev-ed--gnt.vf.force.com/apex/Help?uniqueName=Help-0094 |
 
   @37857    @versionFieldAtFormConfig-gApplication
   Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page

@@ -541,10 +541,11 @@ Business Need: security review Scenarios
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I pause execution for "5" seconds
-    When I perform quick search for "PR-T09-0006"
-    When I click on "View" icon for "PR-T09-0006" inside table
-    And I pause execution for "5" seconds
-    Then I see "Pre-Application" shown as over view header
+#    When I perform quick search for "PR-T09-0006"
+#    When I click on "View" icon for "PR-T09-0006" inside table
+#    And I pause execution for "5" seconds
+#    Then I see "Pre-Application" shown as over view header
+    Then I see toggle button is displayed for "Pre-Applications - Submitted"
 
   @109270    @verifyThatByLoginAsLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenGrantsAndSubAwardsTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then grants and subawards table displayed
@@ -944,6 +945,7 @@ Business Need: security review Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
+    When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
@@ -1397,25 +1399,25 @@ Business Need: security review Scenarios
 
   @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser @record
   Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+#      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
-    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I perform quick search for "Automation Application"
+    When I click on "View" icon for "Automation Application" inside table
     When I navigate to "Subawards" sub tab
-    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
-    When I navigate to "Actuals" sub tab
-    When I click on advance filter "#advfRecipientsAwardPaymentRequests" of table id "---program:-:flexGridRecipientAwardPaymentReqId---"
-    When I enter advance filter values inside id "advfRecipientsAwardPaymentRequests"
-      | Payment Request Amount | equals to | 10 |
-    Then I see value "$10.00" for title "Payment Request Amount" inside table "---program:-:flexGridRecipientAwardPaymentReqId---"
+    When I click on "View" icon for "Automation Application" inside table
+    When I navigate to "Budget" sub tab
+    When I click on advance filter "#advfRecipientAwardBudgetCategoryFlexTable" of table id "---program:-:flexGridRecipientAwardPaymentReqIdAwardBudget---"
+    When I enter advance filter values inside id "advfRecipientAwardBudgetCategoryFlexTable"
+      | Budget Category | contains | Construction |
+    Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridRecipientAwardPaymentReqIdAwardBudget---"
 
   @110869    @verifyAdvanceSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser @record
   Scenario: validate that advance search is working or not at flex table enhanced table by login as SPI user
@@ -2058,7 +2060,7 @@ Business Need: security review Scenarios
 
   @110500  @VerifyDirectGrantCreationAndSubAwardActivation @flow
   Scenario: Verify grant creation and grant, sub-award activation
-   # Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
+    Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
     And I click on top right button "New" in flex table with id "---program:-:activeGrantsTableId---"

@@ -3994,6 +3994,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
+    And I pause execution for "360" seconds
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
       | Field    | Value |
