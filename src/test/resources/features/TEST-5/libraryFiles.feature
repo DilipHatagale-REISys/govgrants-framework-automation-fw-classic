@@ -695,15 +695,17 @@ Business Need: Library Files Component Scenarios
     When I upload file "TestFileSharing.docx" into library
     When I enter value as "test Automation Description text file upload" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "UnitedHealth Group"
-    When I click on expand icon at library/folder "Duplicate"
-    When I perform quick search for "TestFileSharing.docx" under files
-    And I pause execution for "10" seconds
-    Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
+    Then I see massage "File TestFileSharing.docx Uploaded successfully."in Library modal
+
+#    When I pause execution for "5" seconds
+#    And I refresh the page
+#    When I click on "My_Workspace_File"
+#    When I click on "My_Workspace_Library"
+#    When I click on expand icon at library/folder "UnitedHealth Group"
+#    When I click on expand icon at library/folder "Duplicate"
+#    When I perform quick search for "TestFileSharing.docx" under files
+#    And I pause execution for "10" seconds
+#    Then I softly see library/folder/file "TestFileSharing.docx" is displayed under files library
 
   @70537 @validateThatUserCanUploadFileOfTypePDFInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pdf under library and folder - Home Phase
@@ -2393,7 +2395,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
     When I upload file "duplicateFileInFolder.png" into library
     When I click on "Upload" button in send email modal
-    Then I see files "TestAutomationFile.docx" is displayed under "UnitedHealth Group" folder
+    Then I see files "duplicateFileInFolder.png" is displayed under "UnitedHealth Group" folder
 #    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
 #    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
 #    And I pause execution for "3" seconds

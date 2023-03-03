@@ -369,7 +369,6 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
-    And I pause execution for "7" seconds
     Then I do not see mention auto complete list is displayed at collab post
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
@@ -423,17 +422,17 @@ Business Need: collab Component Scenarios
   Scenario: validate that No feed available is displayed at my feed-to me only section by login as PM user
     When I login as "PM1" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    And I click on parallel menu button in flex table title "My Feed"
-    And I select "To Me" from dropdown
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel
     Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
 
   @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsPMUser
   Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as PM user
     When I login as "PM1" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Collaboration (Collab)" tab
-    When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "To Me" from dropdown
     Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
 
   @115482    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToAdminUser
@@ -659,7 +658,10 @@ Business Need: collab Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
     When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
     When I navigate to "Collab" sub tab
-    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
+    And I enter value "Test Automation Admin Comment" in my feed section and share the post
+    And I pause execution for "7" seconds
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I see user logo at comment "Test Automation Admin Comment" is small in size inside my feed collab
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
@@ -826,7 +828,7 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation Admin" in my feed section and share the post
+    And I enter value " @Automation Admin" in my feed section and share the post
     And I pause execution for "5" seconds
     Then I do not see alert popup box
 
@@ -843,8 +845,9 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "Test @Automation PM" in my feed section and share the post
-    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207047 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
@@ -862,8 +865,9 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation PM " in my feed section and share the post
-    Then I see "@Automation PM " inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value " @Automation PM" inside "Post" in My Feed
+    And I click on "Share" button inside collab tab
+    Then I see " @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207049 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab
@@ -890,23 +894,25 @@ Business Need: collab Component Scenarios
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-   # And I enter value "Test@Automation PM" in my feed section and share the post
-    Then I see "Test@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207053 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    #And I enter value "Hello@Automation PM" in my feed section and share the post
-    Then I see "Hello@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207054 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-  #  And I enter value "hi @Automation PM hello" in my feed section and share the post
+    And I enter value "hi @Automation PM" in my feed section and share the post
     Then I see "hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207060 @vrushali @sprint-8

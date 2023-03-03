@@ -26,7 +26,7 @@ Business Need: SendEmailLWC Component Scenarios
       #256774 #256779 #256775
     Then I can see the Progress bar file Size "0.42 MB" displayed in modal
     And I can See the "×" Action Button on Email Modal
-    Then I can click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
     Examples:
       | User  |
       | ADMIN |
@@ -50,7 +50,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see the Progress bar file Size "0.42 MB" displayed in modal
     And I can See the "×" Action Button on Email Modal
-    Then I can click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
 
   @256681 @256697 @256728 @256752 @256756 @256767 @256743 @us-255931 @dilip
   Scenario:Verify send email modal for SUBPORTAL (SPI) User
@@ -77,7 +77,7 @@ Business Need: SendEmailLWC Component Scenarios
     #256743
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     And I can See the "×" Action Button on Email Modal
-    Then I can click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
     Then I can not see "SendEmailAttachment.pdf" file Send Email modal
 
   @256666 @256723 @256773 @256732 @256682 @256722 @256770 @256776 @us-255931 @dilip
@@ -375,7 +375,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     And I can See the "×" Action Button on Email Modal
-    Then I can click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
     Then I can not see "SendEmailAttachment.pdf" file Send Email modal
     Examples:
       | User  |
@@ -598,7 +598,7 @@ Business Need: SendEmailLWC Component Scenarios
         #256749
     And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
-    Then I can click on "× button on Reply modal" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I click on "× button on Reply modal" Action Button in front of "SendEmailAttachment.pdf" file
     Then I can not see "SendEmailAttachment.pdf" file Send Email modal
 
   @256894 @us-255931 @dilip
@@ -902,3 +902,1972 @@ Business Need: SendEmailLWC Component Scenarios
     When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "" in send email LWC
     And I click on "Send" button in Email LWC Modal
     Then I see "Please add subject" error massage in attachment section
+
+    #########################UI UX and Negative scenario newly added#############################
+
+  @296099 @lwcsmoke @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "TC Collab.png" file format in the attachment section
+
+
+  @296101 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file for external user" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "TC Collab.png" file format in the attachment section
+
+  @296102 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file for Internal external user" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "TC Collab.png" file format in the attachment section
+
+  @296103 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "TC Collab.png" file format in the attachment section
+
+  @296108 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+
+  @296109 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @296110 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal   user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @296118 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @296124 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , WhenEXternal user sends an Email with an file  from TO field then attached file is displayed on the View & Send  modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @296125 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario:To verify , When Internal user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296126 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296127 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal  user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296128 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When   user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296129 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal   user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296130 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296131 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify, When Internal user sends an Email with an Multiple  file  from TO (Group) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296132 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , WhenEXternal user sends an Email with an multiple file  from TO field then attached file is displayed on the View & Send modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296133 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When  user sends an Email with an Multiple file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296134 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal  user sends an Email with an Multiple file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296135 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When Internal  user sends an Email with an  file from TO &  CC(Internal) field then attached file is displayed on the View & Send modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296136 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When user sends an Email with an file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296137 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify , When   user sends an Email with an Multiple file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Cc" field dropdown and select "Internal" and "External" value from dropdown
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @296138 @296141 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When Internal user sends an Email with an Multiple file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send  modal
+  To verify , When  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Cc" field dropdown and select "Internal" and "External" value from dropdown
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @296139 @296140 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline:To verify , When Internal user sends an Email with an  file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send modal,
+  To verify , When user sends an Email with an  file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Cc" field dropdown and select "Internal" and "External" value from dropdown
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @296142 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When internal  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    Examples:
+      | User |
+      | PM   |
+
+  @296143 @296144 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When internal  user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal,
+  To verify , When internal Internal user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @296145 @296146 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When Internal user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal,
+  To verify , When user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    And I see and check "Cc" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @296147 @296148 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send modal,
+  To verify , When Internal user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    And I see and check "Cc" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @296168 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline: To verify , When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "25" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Examples:
+      | User  |
+      | Admin |
+
+  @296224 @296225 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario:To verify, On reply modal user(Admin) are attached the file,To verify, On reply modal user(Admin) are attached the multiple  file
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "On reply modal user are attached the multiple  file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "Reply LWC" icon for "On reply modal user are attached the multiple  file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TestFileSharing.docx" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    #296225
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "TestFileSharing.docx" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    #296224
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "On reply modal user are attached the file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "Reply LWC" icon for "On reply modal user are attached the file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    #296224
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+
+  @296226 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify, On reply modal Internal user(PM) are attached the multiple  file
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "On reply modal user are attached the multiple  file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TC Collab.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "Reply LWC" icon for "On reply modal user are attached the multiple  file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "TestFileSharing.docx" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    #296226
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "TestFileSharing.docx" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+
+  @296807 @296809 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify, Internal user are remove the select file  from  reply  email modal,To verify, user are remove the select file from reply email modal
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "Reply LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    #296807
+    Then I see "×" Action Button in front of "SendEmailAttachment.pdf" file
+    #296809
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    And I pause execution for "5" seconds
+    Then I can not see "SendEmailAttachment.pdf" file Send Email modal
+
+  @296810 @296815 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario: To verify ,External user are remove the select file from reply email modal, To verify ,External user are remove the select file  from  send  email modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "External user are remove the select file from reply email modal" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I click on "Reply LWC" icon for "External user are remove the select file from reply email modal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    #296810
+    Then I see "×" Action Button in front of "SendEmailAttachment.pdf" file
+    #296815
+    Then I click on "×" Action Button in front of "SendEmailAttachment.pdf" file
+    Then I can not see "SendEmailAttachment.pdf" file Send Email modal
+
+  @296816 @296817 @SendEmailSelectFile(Suitid:294113) @dilip
+  Scenario Outline:To verify ,Internal user are remove the select file  from  send  email modal,To verify user are remove the select file  from  send  email modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    Then I see "×" Action Button in front of "actionsAtEgrid.png" file
+    #296816
+    Then I click on "×" Action Button in front of "actionsAtEgrid.png" file
+    And I pause execution for "5" seconds
+    Then I can not see "actionsAtEgrid.png" file Send Email modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+    #############################################################################
+  @298559 @298560 @298563 @298564 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario Outline:UI - when Internal user Hover on the TO field help icon and help text is displayed,when user Hover on the TO field help icon and help text is displayed,
+  when  user Hover on the  CC field help icon and help text is displayed,when Internal user Hover on the  CC field help icon and help text is displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "To" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298559 #298560
+    Then I see help text "Please enter To email address - Use semicolon(;) to separate manual email addresses" is displayed releted field inside Send Email LWC modal
+    And I close LWC modal window
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Cc" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298563 #298564
+    Then I see help text "Please enter Cc email address - Use semicolon(;) to separate manual email addresses" is displayed releted field inside Send Email LWC modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @298562 @298565 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario: UI when External user Hover on the  TO field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    And I hover mouse on text "To" inside Send Email LWC
+    #298562
+    Then I see help text "Please enter To email address - Use semicolon(;) to separate manual email addresses" is displayed releted field inside Send Email LWC modal
+    And I close LWC modal window
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Cc" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298565
+    Then I see help text "Please enter Cc email address - Use semicolon(;) to separate manual email addresses" is displayed releted field inside Send Email LWC modal
+
+  @298566 @298567 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario Outline: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed,
+  when  Internal user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email LWC
+    And I pause execution for "5" seconds
+    Then I see help text "Enable this checkbox to include yourself in Cc" is displayed releted field inside Send Email LWC modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @298568 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario: UI - when External user Hover on the  Send Copy (Cc) to Me field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email LWC
+    And I pause execution for "5" seconds
+    Then I see help text "Enable this checkbox to include yourself in Cc" is displayed releted field inside Send Email LWC modal
+
+  @298570 @298671 @298574 @298575 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario Outline:UI when Internal user Hover on the Subject field help icon and help text is displayed,
+  UI when user Hover on the Subject field help icon and help text is displayed,
+  UI - when user Hover on the Body Content  field help icon and help text is displayed,
+  UI - when Internal user Hover on the Body Content  field help icon and help text is displayed,
+  UI - when Internal user Hover on the Attachments field help icon and help text is displayed,
+  UI - when  user Hover on the Attachments field help icon and help text is displayed
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Subject" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298570 #298571
+    Then I see help text "Please enter subject" is displayed releted field inside Send Email LWC modal
+    And I close LWC modal window
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Body Content" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298574 #298575
+    Then I see help text "Enter email content here" is displayed releted field inside Send Email LWC modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @298573 @298576 @298579 @298582 @298599 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario: UI - when External user Hover on the Subject  field help icon and help text is displayed,
+  UI - when External user Hover on the Body Content field help icon and help text is displayed,
+  UI - when External user Hover on the Attachments field help icon and help text is displayed,
+  UI - when External user Hover on the  Select file  field help icon and help text is displayed,
+  UI - Required to save fields  (*)  is displayed for External user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Subject" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298573
+    Then I see help text "Please enter subject" is displayed releted field inside Send Email LWC modal
+    And I close LWC modal window
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Body Content" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298576
+    Then I see help text "Enter email content here" is displayed releted field inside Send Email LWC modal
+    And I hover mouse on text "Attachments" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298579
+    Then I see help text "File Attachment" is displayed releted field inside Send Email LWC modal
+    And I pause execution for "5" seconds
+    And I hover mouse on text "Insert links to file(s) from the record" inside Send Email LWC
+    #298582
+    Then I see help text "Select files to be attach as a link" is displayed releted field inside Send Email LWC modal
+    #298599
+    Then Required to save field "*" is displayed with respect "To" field
+
+  @298677 @298578 @298580 @298581 @298597 @298598 @SendEmail-UI/UX(SuiteID:298512) @dilip
+  Scenario Outline:UI - when Internal user Hover on the Attachments field help icon and help text is displayed,
+  UI - when  user Hover on the Attachments field help icon and help text is displayed,
+  UI - when  user Hover on the Select file field help icon and help text is displayed,
+  UI - when Internal  user Hover on the Select file field help icon and help text is displayed,
+  UI - Required to save fields  (*)  is displayed for admin user,
+  UI - Required to save fields  (*)  is displayed for Internal user
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Attachments" inside Send Email LWC
+    And I pause execution for "5" seconds
+    #298577 #298578
+    Then I see help text "File Attachment" is displayed releted field inside Send Email LWC modal
+    And I pause execution for "5" seconds
+    And I hover mouse on text "Insert links to file(s) from the record" inside Send Email LWC
+    #298580 #298581
+    Then I see help text "Select files to be attach as a link" is displayed releted field inside Send Email LWC modal
+    #298597 #298598
+    Then Required to save field "*" is displayed with respect "To" field
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+    ##############Send Email Attachment 52##################
+
+  @294102 @294103 @294104 @294105 @294106 @294107 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify,Internal User send the email from TO field as 'internal',
+  To verify,Internal User send the email from TO field as 'External',
+  To verify,Internal User send the email from TO field as 'Group',
+  To verify,Internal User send the email from TO & CC field as 'internal',
+  To verify,Internal User send the email from TO & CC field as 'External',
+  To verify,Internal User send the email from TO & CC field as 'Group'
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Test Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    #294102
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    #294103 #To verify,Internal User send the email from TO field as 'External'
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Test Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    #294104 #To verify,Internal User send the email from TO field as 'Group'
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Test Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    #294105 #To verify,Internal User send the email from TO & CC field as 'internal'
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "vrishali.raskar@reisystems.in" Subject "To verify Internal User send the email from TO & CC field as internal" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    #294106 #To verify,Internal User send the email from TO & CC field as 'External'
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "vrishali.raskar@reisystems.in" Subject "To verify Internal User send the email from TO & CC field as External" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    #294107 #To verify,Internal User send the email from TO & CC field as 'Group'
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    And I see and check "Cc" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "vrishali.raskar@reisystems.in" Subject "To verify Internal User send the email from TO & CC field as Group" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+
+  @294828 @294129 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When user sends an Email with an Attachment  from TO (internal) field,
+  To verify , When Internal user sends an Email with an Attachment  from TO (internal) field
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "When user sends an Email with an Attachment from TO internal field" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    #294828 #294829
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @294134 @294238 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , When External user sends an Email with an Attachment  from TO (internal) field,
+  To verify , When External user sends an Email with an Attachment  from TO field
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "When user sends an Email with an Attachment from TO internal field" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+
+  @294137 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , When user sends an Email with an Attachment  from TO (External) field
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "When user sends an Email with an Attachment  from TO External field" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+
+  @294139 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When Internal  user sends an Email with an Attachment  from TO (External) field
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Test" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Examples:
+      | User |
+      | PM   |
+
+  @294141 @294143 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When Internal  user sends an Email with an Attachment  from TO (Group) field,To verify , When  user sends an Email with an Attachment  from TO (Group) field
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Examples:
+      | User  |
+      | PM    |
+      | Admin |
+
+  @294147 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , When  user sends an Email with an Attachment  from TO (Group) field then attached file is displayed on the View modal
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment1" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Subject Attachment1" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+
+  @294150 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline:To verify,When Internal user sends an Email with an Attachment from TO (Group)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Examples:
+      | User  |
+      | Admin |
+
+  @294151 @294152 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline:To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal,
+  To verify , When  Internal user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Subject Attachment" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @294154 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , When External user sends an Email with an Attachment   then attached file is displayed on the View modal
+  To verify , When External user sends an Email with an Attachment  from TO field
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Subject Attachment" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+
+  @294159 @294161 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal,
+  To verify , When  Internal user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Subject Attachment" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @294163 @294166 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal,
+  To verify , When  Internal user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    And I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Email with an Attachment from TO & CC Internal" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Email with an Attachment from TO & CC Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @294168 @294171 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal,
+  To verify , When Internal user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Email with an Attachment from TO & CC External" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I pause execution for "5" seconds
+    And I click on "View LWC" icon for "Email with an Attachment from TO & CC External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SharingAtCollabTest.png" file format in the attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+
+  @296234 @296235 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal,
+  To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Email with an Attachment from TO & CC External" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "TestFileSharing.docx" in send email LWC modal
+    When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
+    When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    When I upload attachment "actionsAtEgrid.png" in send email LWC modal
+    When I upload attachment "actionsAtAttachment.png" in send email LWC modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in send email LWC modal
+    When I upload attachment "actionsAtMeGridTable.png" in send email LWC modal
+    When I upload attachment "captureModalFields.png" in send email LWC modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @296237 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario:To verify , When External user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject Attachment" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "TestFileSharing.docx" in send email LWC modal
+    When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
+    When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    When I upload attachment "actionsAtEgrid.png" in send email LWC modal
+    When I upload attachment "actionsAtAttachment.png" in send email LWC modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in send email LWC modal
+    When I upload attachment "actionsAtMeGridTable.png" in send email LWC modal
+    When I upload attachment "captureModalFields.png" in send email LWC modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+
+  @296244 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---"
+    When I click on "View" icon for "---LWC_StaticRecords:-:AutomationProgramforLWCTesting---" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    And I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Email with an Attachment from TO & CC External" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal

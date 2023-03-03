@@ -177,4 +177,9 @@ public class LibraryFilesSteps {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='" + icon + "']"));
         }
     }
+
+    @Then("I see massage {string}in Library modal")
+    public void iSeeMassageInLibraryModal(String massage) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='"+ massage +"']"),true);
+    }
 }

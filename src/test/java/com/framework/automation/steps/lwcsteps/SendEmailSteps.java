@@ -11,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import com.framework.automation.pageobject.ApprovalHistoryComponentPage;
@@ -99,7 +100,7 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("^I can see attach the \"([^\"]*)\" file format in the attachment section$")
     public void i_can_see_attach_the_something_file_format_in_the_attachment_section(String fileName) throws Throwable {
-        WebElement fileFormat = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(text(),'" + fileName + "')] | //*[text()='Attachments']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "'] | //strong[text()='File']/ancestor::tr//td[text()='" + fileName + "']"));
+        WebElement fileFormat = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(text(),'" + fileName + "')] | //*[text()='Attachments']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "'] | //strong[text()='File']/ancestor::tr//td[text()='" + fileName + "'] | //a[contains(text(),'" + fileName + "')]"));
         Assert.assertTrue(fileFormat.isDisplayed());
     }
 
@@ -135,12 +136,12 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @When("I fill the details in field To {string} CC {string} Subject {string} in send email LWC")
     public void iFillTheDetailsInFieldToCCSubjectInSendEmailLWC(String Tostr, String CCstr, String Subjectstr) {
-        WebElement To = I.amPerforming().getElementReference().of(By.xpath("//input[@id='toExt-1'] | (//input[@ng-if=\"renderType=='Edit'\"])[1] | //input[@id='to-1']"));
-        I.amPerforming().textInput().toClear(To);
-        I.amPerforming().textInput().in(To, Tostr);
         WebElement subject = I.amPerforming().getElementReference().of(By.xpath("//input[@id='subject-1'] | //input[@ng-model='email.subject'] | //input[@id='subject-1']"));
         I.amPerforming().textInput().toClear(subject);
         I.amPerforming().textInput().in(subject, Subjectstr);
+        WebElement To = I.amPerforming().getElementReference().of(By.xpath("//input[@id='toExt-1'] | (//input[@ng-if=\"renderType=='Edit'\"])[1] | //input[@id='to-1']"));
+        I.amPerforming().textInput().toClear(To);
+        I.amPerforming().textInput().in(To, Tostr);
         WebElement CC = I.amPerforming().getElementReference().of(By.xpath("//input[@id='ccExt-1'] | //input[@ng-model='searchItem.ccValue'] | //input[@id='cc-1']"));
         I.amPerforming().textInput().toClear(CC);
         I.amPerforming().textInput().in(CC, CCstr);
@@ -151,14 +152,14 @@ public class SendEmailSteps extends GovGrantsManager {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='slds-text-align_center']/child::b[contains(text(),'" + sizeOfFile + "')]")));
     }
 
-    @Then("I can click on {string} Action Button in front of {string} file")
+    @Then("I click on {string} Action Button in front of {string} file")
     public void iCanClickActionButtonInFrontOfFile(String icon, String filename) {
         if (icon.equals("× ")) {
             I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"));
         } else if (icon.equals("× button on Reply modal")) {
             I.amPerforming().click().on(ByUsing.xpath("//td[contains(text(),'" + filename + "')]//following-sibling::td/a[@ng-click='removeAttachedItem(this)']"));
         } else if (icon.equals("×")) {
-            I.amPerforming().click().on(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"),true);
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[contains(text(),'" + filename + "')]/parent::td/following-sibling::td/lightning-button/button[contains(text(),'" + icon + "')]"), true);
         }
 
     }
@@ -287,6 +288,12 @@ public class SendEmailSteps extends GovGrantsManager {
         }
     }
 
+
+    @And("I close LWC modal window")
+    public void iCloseLWCModalWindow() {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[text()='× '] | //button[@id='CommunicationHistorymodalDivCloseIcon' and text()='× ']"));
+    }
+
     @Then("I see {string} is displayed under {string} and enabled")
     public void iSeeIsDisplayedUnderAndEnabled(String buttonName, String bodycontent) {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + bodycontent + "']/ancestor::div[@class='slds-form-element slds-m-top_small']/descendant::button[@title='" + buttonName + "']")));
@@ -317,7 +324,6 @@ public class SendEmailSteps extends GovGrantsManager {
     @Then("I see The {string} field in {string} color")
     public void iSeeTheFieldInColor(String msg, String color) {
         WebElement textElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='slds-form-element']//following-sibling::div[@class='slds-text-color_error']"));
-        String elText = textElement.getText();
         if (textElement.isDisplayed()) {
             String textColor = textElement.getCssValue("color");
             Assert.assertEquals(textColor, "rgba(234, 0, 30, 1)");
@@ -375,12 +381,79 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("I see the text {string} inside Body")
     public void iSeeTheTextInsideBody(String desiredText) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[normalize-space(text())='"+ desiredText +"']"),true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[normalize-space(text())='" + desiredText + "']"), true);
     }
 
     @Then("I see text as {string} on View modal")
     public void iSeeTextAsOnViewModal(String textValue) {
-        boolean texDisplayedOnViewModal = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div//div//span[@ng-bind-html='trustSrcHTML(email.body)']//text()[contains(.,'"+ textValue +"')]"));
+        boolean texDisplayedOnViewModal = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div//div//span[@ng-bind-html='trustSrcHTML(email.body)']//text()[contains(.,'" + textValue + "')]"));
         Assert.assertTrue(texDisplayedOnViewModal);
+    }
+
+    @And("I enter the value {string} inside body content")
+    public void iEnterTheValueInsideBodyContent(String textValue) {
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("value of i :" + i);
+            try {
+                I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']/div/div"));
+                I.amPerforming().textInput().in(ByUsing.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']/div/div/p"), textValue);
+                break;
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    @And("I click on {string} field dropdown and select {string} and {string} value from dropdown")
+    public void iClickOnFieldDropdownAndSelectAndValueFromDropdown(String field, String value1, String value2) {
+        I.amPerforming().click().on(ByUsing.xpath("//strong[text()='" + field + "']/parent::label/parent::div/preceding-sibling::div//div//div[@class='slds-form-element__control']"));
+        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//strong[text()='" + field + "']/parent::label/parent::div/preceding-sibling::div//div//ul//li//div//span[@class='slds-truncate']"));
+        for (Elements opt : options) {
+            if (opt.getText().equals(value1)) {
+                opt.click();
+            }
+            if (opt.getText().equals(value2)) {
+                opt.click();
+            }
+        }
+    }
+
+    @And("I select checkbox {string} inside Send Email LWC")
+    public void iSelectCheckboxInsideSendEmailLWC(String filename) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div/*[text()='" + filename + "']/ancestor::th/preceding::td[1]//input[@type='checkbox']"));
+    }
+
+    @And("I click on {string} inside Send Email LWC")
+    public void iClickOnInsideSendEmailL(String buttonName) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@title='" + buttonName + "']"));
+    }
+
+    @Then("I see {string} Action Button in front of {string} file")
+    public void iSeeActionButtonInFrontOfFile(String button, String fileName) {
+        boolean fileCloseButton = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[text()='" + fileName + "']/parent::td/following::td//button[@class='slds-button slds-button_neutral' and text()='" + button + "']"));
+        Assert.assertTrue(fileCloseButton);
+    }
+
+    @And("I hover mouse on text {string} inside Send Email LWC")
+    public void iHoverMouseOnTextInsideSendEmailLWC(String value) {
+        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//strong[text()='" + value + "']/parent::label//button[@title='Help'] | //span[text()='"+ value +"']/parent::div//button[@title='Help'] | //div/label[contains(text(),'" + value + "')]/span | //div[contains(text(),'"+ value +"')]/child::span"));
+        try {
+            I.amPerforming().scroll().withMouseToElement(ele);
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor)((InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
+            js.executeScript("arguments[0].scrollIntoView();", ele);
+        }
+
+    }
+
+    @Then("I see help text {string} is displayed releted field inside Send Email LWC modal")
+    public void iSeeHelpTextIsDisplayedReletedFieldInsideSendEmailLWCModal(String helpText) {
+        boolean helpTextDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-primitive-bubble/div/div[text()='" + helpText + "'] | //span[@title='" + helpText + "']"));
+        Assert.assertTrue(helpTextDisplayed);
+    }
+
+    @Then("Required to save field {string} is displayed with respect {string} field")
+    public void requiredToSaveFieldIsDisplayedWithField(String symbol, String field) {
+        boolean starField = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='"+ field +"']/parent::label//abbr[@title='Required' and normalize-space(text()='"+ symbol +"')]"));
+        Assert.assertTrue(starField);
     }
 }

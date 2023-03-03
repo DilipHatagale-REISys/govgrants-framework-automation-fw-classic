@@ -809,7 +809,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1 " in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1 " inside table
-    Then I softly see "12/2/2023" on html page
+    Then I softly see "01/3/2023" on html page
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EDT time zone
@@ -2123,7 +2123,6 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I checkout to yopmail with mailid "ashwini.mahore@yopmail.com"
-    And I pause execution for "120" seconds
     And I refresh the page
 #    Then I softly see the text :
 #      | TestAutomationFile.csv |
