@@ -1,5 +1,8 @@
 package com.framework.automation.steps;
 import com.framework.automation.pageobject.DynamicFormPage;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.register.I;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -78,5 +81,14 @@ public class DynamicFormSteps {
     @Then("^I see \"([^\"]*)\" action is not displayed at the \"([^\"]*)\" modal$")
     public void iSeeActionIsNotDisplayedAtTheModal(String actionName, String modalOverviewHeader) {
         dynamicFormPage.assertTopRightActionsAtModalWindowWithOverviewHeader(actionName,modalOverviewHeader);
+    }
+
+    @And("I click on {string} icon in flex table for record number {string}")
+    public void iClickOnIconInFlexTableForRecordNumber(String iconButton, String index) {
+        if(iconButton.equalsIgnoreCase("View")){
+            I.amPerforming().click().on(ByUsing.xpath("(//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-eye'])["+index+"]"));
+        }else if (iconButton.equalsIgnoreCase("Edit")){
+            I.amPerforming().click().on(ByUsing.xpath("(//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-pencil'])["+index+"]"));
+        }
     }
 }

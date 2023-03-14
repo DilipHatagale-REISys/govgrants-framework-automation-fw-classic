@@ -257,7 +257,7 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Form Version 2.0" inside Form Version
 
-  @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
+  @699601   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
@@ -302,8 +302,10 @@ Business Need: Sanity check for all Component Scenarios
     And I refresh the page
     When I click on "Submit For Approval" in the page details
     And I refresh the page
-    When I navigate to "History" sub tab
-    Then I see for "Program Manager Approver (Pending for approval)" value is "Automation PM" in chevron diagram
+    And I pause execution for "15" seconds
+    And I navigate to "History" sub tab
+    And I pause execution for "10" seconds
+    Then I see for "Program Manager Approver (Pending for first approval)" value is "Automation PM" in chevron diagram
 
   @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
   Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase

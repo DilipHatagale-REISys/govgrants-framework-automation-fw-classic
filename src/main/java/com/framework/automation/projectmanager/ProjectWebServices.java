@@ -249,6 +249,34 @@ public class ProjectWebServices {
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+//    public void updateCustomMetaDynamicFieldConfigData(String id, String Name, String Type) {
+//        getAuthToken();
+//        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomMetadataAPI/CustomMetadata?id=" + id;
+//        JsonArray jArray = new JsonArray();
+//        JsonObject jsonObject = new JsonObject();
+//        JsonObject jsonContainer = new JsonObject();
+//        jsonObject.addProperty("GNT__Type__c", Type);
+//        jsonObject.addProperty("Id", id);
+//        jsonObject.addProperty("Name", Name);
+//        jsonContainer.add("fieldvalues", jsonObject);
+//        jsonContainer.addProperty("custommetadatafullname", "GNT__DynamicFieldConfigData__mdt");
+//        jArray.add(jsonContainer);
+//        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+//    }
+    public void updateCustomMetaDynamicFieldConfigData(String id, String Name, String Type) {
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomMetadataAPI/CustomMetadata?id=" + id;
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("Name", Name);
+        jsonObject.addProperty("GNT__Type__c", Type);
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("custommetadatafullname", "GNT__DynamicFieldConfigData__mdt.");
+        jArray.add(jsonContainer);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
     /**
      * calls the api to access and update custom dynamic field config
      *
@@ -342,6 +370,9 @@ public class ProjectWebServices {
         }
         if (configurationType.equalsIgnoreCase("customMetaDataDND")) {
             setDefaultCustomMetaDataDND("customMetaDataDND");
+        }
+        if (configurationType.equalsIgnoreCase("CustomMetaDynamicFieldConfigData")) {
+            setDefaultCustomDynamicCustomMetadata("CustomMetaDynamicFieldConfigData");
         }
     }
 
@@ -578,6 +609,11 @@ public class ProjectWebServices {
     private void setDefaultCustomDynamicFieldConfig(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateDynamicFieldConfig(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
+        }
+    }
+    private void setDefaultCustomDynamicCustomMetadata(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateCustomMetaDynamicFieldConfigData(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
         }
     }
 
