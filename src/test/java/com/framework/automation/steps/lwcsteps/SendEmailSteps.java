@@ -332,7 +332,7 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("I see {string} error massage in attachment section")
     public void iSeeErrorMassageInAttachmentSection(String errorMassage) {
-        WebElement errorMsgElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'" + errorMassage + "')]"));
+        WebElement errorMsgElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'" + errorMassage + "')] | //div[@role='alert']//h2[contains(text(),'"+ errorMassage +"')]"));
         String errorMsg = errorMsgElement.getText();
         Assert.assertEquals(errorMassage, errorMsg);
     }
@@ -455,5 +455,15 @@ public class SendEmailSteps extends GovGrantsManager {
     public void requiredToSaveFieldIsDisplayedWithField(String symbol, String field) {
         boolean starField = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='"+ field +"']/parent::label//abbr[@title='Required' and normalize-space(text()='"+ symbol +"')]"));
         Assert.assertTrue(starField);
+    }
+
+    @And("I click on checkbox for {string} inside lwc modal")
+    public void iClickOnCheckboxForInsideLwcModal(String field) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//strong[text()='"+ field +"']/ancestor::div/following::div[@class='slds-col slds-size_5-of-6 slds-m-top_xx-small']//input[@name='sendCopy']"));
+    }
+
+    @Then("I see checkbox is selected and Cc contain {string} email address")
+    public void iSeeCheckboxIsSelectedAndCcContainEmailAddress(String emailAddress) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-formatted-text[text()='Cc']/parent::p/following::p/lightning-formatted-text[text()='"+ emailAddress +"']"));
     }
 }

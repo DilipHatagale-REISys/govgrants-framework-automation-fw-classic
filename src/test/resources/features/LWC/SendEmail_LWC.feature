@@ -95,7 +95,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "5" seconds
     And I click on "Send" button in Email LWC Modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I refresh the page
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -529,7 +529,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #256817 #256816
     And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
@@ -561,7 +561,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I click on "Send" button in send email modal
     And I pause execution for "10" seconds
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #256892
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
@@ -569,7 +569,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "10" seconds
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
 
   @256893 @256895 @256897 @256749 @us-255931 @dilip
   Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email reply modal
@@ -586,7 +586,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "10" seconds
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #256895 #256897
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -594,7 +594,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I click on "Send" button in send email modal
     And I pause execution for "10" seconds
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
         #256749
     And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -617,7 +617,7 @@ Business Need: SendEmailLWC Component Scenarios
     When I click on "Send" button in send email modal
     And I pause execution for "10" seconds
     Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
 
   @256883 @256885 @us-255931 @dilip
   Scenario: To verify, Internal User should be able to see Attachment button when select file is attached  to  reply email modal
@@ -771,17 +771,17 @@ Business Need: SendEmailLWC Component Scenarios
     When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
     And I pause execution for "5" seconds
     And I click on "Send" button in Email LWC Modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I refresh the page
       #223848
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Reply LWC" modal is displayed
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I pause execution for "5" seconds
     #223849
     And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "View LWC" modal is displayed
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I pause execution for "5" seconds
     #223850
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -790,7 +790,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #223851
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automation.exe@yopmail.com,automationfo@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
@@ -798,7 +798,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #223852
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com,automationfo@yopmail.com" Subject "Subject" in send email LWC
@@ -806,7 +806,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #223853
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com,automationpm@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
@@ -814,7 +814,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #223847
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com,automationpm@yopmail.com" CC "" Subject "Subject" in send email LWC
@@ -822,7 +822,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     And I pause execution for "7" seconds
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
 
   @223214 @223215 @223217 @223218 @LWC_ID-208784 @dilip
   Scenario Outline: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
@@ -935,7 +935,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "TC Collab.png" file format in the attachment section
 
@@ -970,7 +970,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "TC Collab.png" file format in the attachment section
 
@@ -1003,7 +1003,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "TC Collab.png" file format in the attachment section
 
@@ -1036,7 +1036,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "TC Collab.png" file format in the attachment section
 
@@ -1070,7 +1070,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
 
@@ -1103,7 +1103,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
 
@@ -1137,7 +1137,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
 
@@ -1170,7 +1170,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
 
@@ -1192,7 +1192,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
 
@@ -1231,7 +1231,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1272,7 +1272,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1312,7 +1312,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1352,7 +1352,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1393,7 +1393,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1434,7 +1434,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1474,7 +1474,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1503,7 +1503,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1546,7 +1546,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1589,7 +1589,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1628,7 +1628,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
 
@@ -1665,7 +1665,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
 
@@ -1704,7 +1704,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1746,7 +1746,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1788,7 +1788,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Examples:
@@ -1833,7 +1833,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1876,7 +1876,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Examples:
@@ -1920,7 +1920,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
@@ -1962,7 +1962,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Examples:
@@ -2001,7 +2001,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
     Examples:
@@ -2038,7 +2038,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "Reply LWC" icon for "On reply modal user are attached the multiple  file" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     And I select checkbox "TestFileSharing.docx" inside Send Email LWC
@@ -2052,7 +2052,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "TestFileSharing.docx" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     #296224
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I see and check "To" field dropdown is displayed with "Internal" value
@@ -2065,7 +2065,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "Reply LWC" icon for "On reply modal user are attached the file" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
@@ -2107,7 +2107,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "Reply LWC" icon for "On reply modal user are attached the multiple  file" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     And I select checkbox "TestFileSharing.docx" inside Send Email LWC
@@ -2121,7 +2121,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I can see attach the "TestFileSharing.docx" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
     Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
 
   @296807 @296809 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify, Internal user are remove the select file  from  reply  email modal,To verify, user are remove the select file from reply email modal
@@ -2153,7 +2153,7 @@ Business Need: SendEmailLWC Component Scenarios
     Then I see "File Link Added Successfully." message is displayed on send email modal
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "Reply LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
@@ -2184,7 +2184,7 @@ Business Need: SendEmailLWC Component Scenarios
     And I click on "Send" button in Email LWC Modal
     Then I see "Email Sent Successfully." message is displayed on send email modal
     Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
-    When I click on "× " icon at "Send Email LWC" modal after Email Sent Successfully
+    And I close LWC modal window
     And I click on "Reply LWC" icon for "External user are remove the select file from reply email modal" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
@@ -2854,9 +2854,10 @@ Business Need: SendEmailLWC Component Scenarios
     When I upload attachment "captureModalFields.png" in send email LWC modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @296244 @SendEmailAttachment(SuiteID:294112) @dilip
-  Scenario: To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
-    When I login as "Admin" user
+  @296244 @296245 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario Outline: To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section,
+  To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2868,6 +2869,139 @@ Business Need: SendEmailLWC Component Scenarios
     And I see and check "To" field dropdown is displayed with "External" value
     And I see and check "Cc" field dropdown is displayed with "External" value
     And I see and check "Cc" field dropdown is displayed with "External" value
-    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Email with an Attachment from TO & CC External" in send email LWC
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "dilip.hatagale@reisystems.in" Subject "Single File Size Limit is Exceeded" in send email LWC
     And I enter the value "Test Description" inside body content
-    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "Maketodayfilematter.pdf" in send email LWC modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @296250 @SendEmailAttachment(SuiteID:294112) @dilip
+  Scenario: To verify , when External user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Single File Size Limit is Exceeded" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "Maketodayfilematter.pdf" in send email LWC modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @296253
+  Scenario: To verify , when External user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Single File Size Limit is Exceeded" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "Maketodayfilematter.pdf" in send email LWC modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @296257 @296259
+  Scenario Outline: To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section,
+  To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+    And I refresh the page
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Single File Size Limit is Exceeded" in send email LWC
+    And I enter the value "Test Description" inside body content
+    When I upload attachment "Maketodayfilematter.pdf" in send email LWC modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @296773
+  Scenario: To verify, user are remove the attachment from  sends email modal
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+
+  @296526 @296535
+  Scenario Outline:To verify, When user sends an Email with an attachment from then attachment is displayed in the outlook,
+  To verify , When  Internal user sends an Email with an attachment  from then attachment is displayed in the outlook
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    And I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "" Subject "Subject" in send email LWC
+    And I enter the value "Test Description" inside body content
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |

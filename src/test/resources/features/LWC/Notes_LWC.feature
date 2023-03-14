@@ -190,102 +190,102 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
     #need to add step for select text and dropdown
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize8Test" inside "Title" in LWC modal
-#    And I click on "8" button inside LWC modal
-#    And I enter value "fontSize8Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize9Test" inside "Title" in LWC modal
-#    And I click on "9" button inside LWC modal
-#    And I enter value "fontSize9Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize10Test" inside "Title" in LWC modal
-#    And I click on "10" button inside LWC modal
-#    And I enter value "fontSize10Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize11Test" inside "Title" in LWC modal
-#    And I click on "11" button inside LWC modal
-#    And I enter value "fontSize11Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize12Test" inside "Title" in LWC modal
-#    And I click on "12" button inside LWC modal
-#    And I enter value "fontSize12Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize14Test" inside "Title" in LWC modal
-#    And I click on "14" button inside LWC modal
-#    And I enter value "fontSize14Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize16Test" inside "Title" in LWC modal
-#    And I click on "16" button inside LWC modal
-#    And I enter value "fontSize16Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize18Test" inside "Title" in LWC modal
-#    And I click on "18" button inside LWC modal
-#    And I enter value "fontSize18Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize20Test" inside "Title" in LWC modal
-#    And I click on "20" button inside LWC modal
-#    And I enter value "fontSize20Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize22Test" inside "Title" in LWC modal
-#    And I click on "22" button inside LWC modal
-#    And I enter value "fontSize22Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize24Test" inside "Title" in LWC modal
-#    And I click on "24" button inside LWC modal
-#    And I enter value "fontSize24Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize26Test" inside "Title" in LWC modal
-#    And I click on "26" button inside LWC modal
-#    And I enter value "fontSize26Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize28Test" inside "Title" in LWC modal
-#    And I click on "28" button inside LWC modal
-#    And I enter value "fontSize28Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize36Test" inside "Title" in LWC modal
-#    And I click on "36" button inside LWC modal
-#    And I enter value "fontSize36Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize48Test" inside "Title" in LWC modal
-#    And I click on "48" button inside LWC modal
-#    And I enter value "fontSize48Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
-#    And I click on top right button "Add" in tableName "Notes"
-#    And I pause execution for "5" seconds
-#    And I enter value "fontSize72Test" inside "Title" in LWC modal
-#    And I click on "72" button inside LWC modal
-#    And I enter value "fontSize72Test" inside "Description" in LWC modal
-#    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize8Test" inside "Title" in LWC modal
+    And I click on "8" button inside LWC modal
+    And I enter value "fontSize8Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize9Test" inside "Title" in LWC modal
+    And I click on "9" button inside LWC modal
+    And I enter value "fontSize9Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize10Test" inside "Title" in LWC modal
+    And I click on "10" button inside LWC modal
+    And I enter value "fontSize10Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize11Test" inside "Title" in LWC modal
+    And I click on "11" button inside LWC modal
+    And I enter value "fontSize11Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize12Test" inside "Title" in LWC modal
+    And I click on "12" button inside LWC modal
+    And I enter value "fontSize12Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize14Test" inside "Title" in LWC modal
+    And I click on "14" button inside LWC modal
+    And I enter value "fontSize14Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize16Test" inside "Title" in LWC modal
+    And I click on "16" button inside LWC modal
+    And I enter value "fontSize16Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize18Test" inside "Title" in LWC modal
+    And I click on "18" button inside LWC modal
+    And I enter value "fontSize18Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize20Test" inside "Title" in LWC modal
+    And I click on "20" button inside LWC modal
+    And I enter value "fontSize20Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize22Test" inside "Title" in LWC modal
+    And I click on "22" button inside LWC modal
+    And I enter value "fontSize22Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize24Test" inside "Title" in LWC modal
+    And I click on "24" button inside LWC modal
+    And I enter value "fontSize24Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize26Test" inside "Title" in LWC modal
+    And I click on "26" button inside LWC modal
+    And I enter value "fontSize26Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize28Test" inside "Title" in LWC modal
+    And I click on "28" button inside LWC modal
+    And I enter value "fontSize28Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize36Test" inside "Title" in LWC modal
+    And I click on "36" button inside LWC modal
+    And I enter value "fontSize36Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize48Test" inside "Title" in LWC modal
+    And I click on "48" button inside LWC modal
+    And I enter value "fontSize48Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    And I enter value "fontSize72Test" inside "Title" in LWC modal
+    And I click on "72" button inside LWC modal
+    And I enter value "fontSize72Test" inside "Description" in LWC modal
+    And I click on "Save" button in LWC
     #208875
     Then I see the "Description" contains "fontSize8Test" have font size is "8px" in Notes modul
     #208877

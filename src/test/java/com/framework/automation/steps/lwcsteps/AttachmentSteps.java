@@ -207,8 +207,10 @@ public class AttachmentSteps {
     //validate message in page displayed
     @Then("I see the following message in the LWC page details :")
     public void iSeeTheFollowingMessageInTheLWCPageDetails(String message) {
-        MessageInTheLWCPageDetails(message);
-        //            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//h2[contains(text(),'The document')text()=' The document you are attempting to upload exists in the Workspace']"))
+        for(int i=0; i<=10; i++){
+            MessageInTheLWCPageDetails(message);
+            //            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//h2[contains(text(),'The document')text()=' The document you are attempting to upload exists in the Workspace']"))
+        }
 
     }
 
@@ -258,12 +260,13 @@ public class AttachmentSteps {
     public void iClickOnIconForFileInsideTableNameForLWC(String icon, String fileName, String tableName) {
         if (tableName.contains("Attachments")) {
             I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_xx-small header']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_xx-small header']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
         }
     }
 
     @And("I click on {string} on confirmation modal")
     public void iClickOnOnConfirmationModal(String value) {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class=\"slds-modal__container\"]/descendant::button[text()='" + value + "']"));
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class='slds-modal__container']/descendant::button[text()='" + value + "']"));
     }
 
     //step for shrink and expand block

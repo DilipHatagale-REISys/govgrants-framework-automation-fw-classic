@@ -186,7 +186,7 @@ public class LWC_NotesSteps extends GovGrantsManager {
 
     @And("I click on {string} button in LWC")
     public void iClickOnButtonInLWC(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//button[@type='button' and text()='"+ button +"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//button[@type='button' and text()='"+ button +"'] | //button[@title='"+ button +"']"));
     }
 
     @Then("I can not see {string} inside {string} in Notes lwc modal")
