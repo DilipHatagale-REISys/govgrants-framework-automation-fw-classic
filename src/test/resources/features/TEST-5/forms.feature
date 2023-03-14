@@ -220,12 +220,12 @@ Business Need: Forms Component Scenarios
 
   @105382 @verifyValueSavedUnderMultipicklistRadioButtonAtFormLayout
   Scenario:validate that saved value is displayed inside multi picklist field at form layout
-    Given I have "dynamicFieldConfig" configuration as below:
+    Given I have "CustomMetaDynamicFieldConfigData" configuration as below:
       | id                 | Type  | Name                 |
-      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
-    And I update custom Dynamic Field setting changes:
+      | m076O000000kBbPQAU | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Metadata changes:
       | id                 | Type     | Name                 |
-      | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
+      | m076O000000kBbPQAU | Checkbox | Multi-Picklist Field |
     When I login as "Automation" user
     When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"

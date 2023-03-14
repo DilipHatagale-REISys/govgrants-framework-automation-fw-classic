@@ -102,4 +102,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "customMetaDataDND";
         }
     }
+
+    @And("I update custom Dynamic Metadata changes:")
+    public void iUpdateCustomDynamicMetadataChanges(List<Map<String, String>> configParameters) throws IOException {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateCustomMetaDynamicFieldConfigData(parameters.get("id"), parameters.get("Name"), parameters.get("Type"));
+            ProjectWebServices.dynamicApi = "CustomMetaDynamicFieldConfigData";
+        }
+    }
 }

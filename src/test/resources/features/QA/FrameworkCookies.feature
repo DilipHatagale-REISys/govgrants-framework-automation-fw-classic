@@ -2503,6 +2503,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
+################### Sorting ###########
   @268444 @268459
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
     Given I have "default" configuration as below:
@@ -3417,7 +3418,7 @@ Business Need: FrameworkCookies Component Scenarios
       #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ##### Data Type - Formula****
-  @268822
+  @268822 @268823
   Scenario Outline: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3428,14 +3429,1516 @@ Business Need: FrameworkCookies Component Scenarios
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on "Percentage" column inside Internal Programs
-    And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    And I click on "Address" column inside Internal Programs
+    And I click on "up" arrow inside "Address" field
+    Then I see "down" arrow is Displayed inside "Address" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268827 @268828
+  Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Address" column inside Internal Programs
+    And I click on "up" arrow inside "Address" field
+    Then I see "down" arrow is Displayed inside "Address" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Address" field
+    Examples:
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268830 @268831
+  Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Address" column inside Internal Programs
+    And I click on "up" arrow inside "Address" field
+    Then I see "down" arrow is Displayed inside "Address" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Address" field
+    Examples:
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268833 @268834
+  Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Address" column inside Internal Programs
+    And I click on "up" arrow inside "Address" field
+    Then I see "down" arrow is Displayed inside "Address" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Address" field
+    Examples:
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268836 @268837
+  Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Address" column inside Internal Programs
+    And I click on "up" arrow inside "Address" field
+    Then I see "down" arrow is Displayed inside "Address" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Address" field
+    Examples:
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+    ##### Data Type - Checkbox****
+  @268839 @268840
+  Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "CFDA Data" column inside Internal Programs
+    And I click on "up" arrow inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268842 @268843
+  Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "CFDA Data" column inside Internal Programs
+    And I click on "up" arrow inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268845 @268846
+  Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "CFDA Data" column inside Internal Programs
+    And I click on "up" arrow inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268850 @268856
+  Scenario Outline:To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "CFDA Data" column inside Internal Programs
+    And I click on "up" arrow inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268863 @268864
+  Scenario Outline: To verify when sort direction of data type-Checkboxis set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "CFDA Data" column inside Internal Programs
+    And I click on "up" arrow inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+   ##### Data Type - Email ****
+  @268948 @268949
+  Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "DND_Email" column inside Internal Programs
+    And I click on "up" arrow inside "DND_Email" field
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268951 @268952
+  Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "DND_Email" column inside Internal Programs
+    And I click on "up" arrow inside "DND_Email" field
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268954 @268956
+  Scenario Outline:  To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "DND_Email" column inside Internal Programs
+    And I click on "up" arrow inside "DND_Email" field
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268958 @268959
+  Scenario Outline: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "DND_Email" column inside Internal Programs
+    And I click on "up" arrow inside "DND_Email" field
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268961 @268962
+  Scenario Outline: To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "DND_Email" column inside Internal Programs
+    And I click on "up" arrow inside "DND_Email" field
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    Examples:
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  ######## Data Type - Currency *******
+  @268965 @268966
+  Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Currency (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Funded Amount" column inside Internal Programs
+    And I click on "up" arrow inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268968 @268969
+  Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Funded Amount" column inside Internal Programs
+    And I click on "up" arrow inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268971 @268972
+  Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Funded Amount" column inside Internal Programs
+    And I click on "up" arrow inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268975 @268976
+  Scenario Outline:To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Funded Amount" column inside Internal Programs
+    And I click on "up" arrow inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268978 @268979
+  Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Funded Amount" column inside Internal Programs
+    And I click on "up" arrow inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  ########## Data Type - URL **************
+  @268981 @268983
+  Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268985 @268986
+  Scenario Outline: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268990 @268991
+  Scenario Outline: To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268993 @268994
+  Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @268996 @268997
+  Scenario Outline: To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  ############## Quick search  ##############
+  @269088 @269089
+  Scenario Outline:To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I perform quick search for "Automation Program"
+    When I click on "View" icon for "Automation Program" inside table
+    And I click on back arrow
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269091 @269092
+  Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I perform quick search for "Automation Edit Mode Program"
+    When I click on "Edit" icon for "Automation Edit Mode Program" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see value "Automation Edit Mode Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269094 @269095
+  Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and click on same phase then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I perform quick search for "Automation Program"
+    And I navigate to "Planning" tab
+    And I pause execution for "5" seconds
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269097 @269098
+  Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and refreshes the page then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I perform quick search for "Automation Program"
+    And I refresh the page
+    And I pause execution for "5" seconds
+    #After disabled lwc remove below comment
+   # Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269100 @269101
+  Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I perform quick search for "Automation Program"
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    And I pause execution for "5" seconds
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  ########### Quick search,sorting, pagination #############
+
+  @269105 @269106
+  Scenario Outline: To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    When I click on "View" icon for "Automation Program" inside table
+    And I click on back arrow
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269108 @269111
+  Scenario Outline:To verify when page size is 10 and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and page size (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Edit Mode Program"
+    When I click on "Edit" icon for "Automation Edit Mode Program" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see value "Automation Edit Mode Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269113 @269114
+  Scenario Outline: To verify when page size is 10 and searched any value in Quick search and click on same phase then table should restore search results and page size (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I navigate to "Planning" tab
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269116 @269117
+  Scenario Outline: To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I refresh the page
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269119 @269120
+  Scenario Outline: To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I refresh the page
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  ########### Quick search and pagination next ########
+  @269126 @269127
+  Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and Pagination ‘next’ (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    When I click on "View" icon for "Automation Program" inside table
+    And I click on back arrow
+    Then I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269130 @269131
+  Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and Pagination ‘next’ (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269135 @269137
+  Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search and click on same phase then table should restore search results and Pagination ‘next’ (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Internal Program for Testing"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I navigate to "Planning" tab
+    Then I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269140 @269142
+  Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search and  refreshes the page then table should restore search results and Pagination ‘next’ (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Internal Program for Testing"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I refresh the page
+    Then I see the text containing :
+      | Page 2 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269145 @269146
+  Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and Pagination ‘next’ (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Internal Program for Testing"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
+    Then I see the text containing :
+      | Page 1 |
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  ###################### Page size and sorting #####################
+  @269148 @269149
+  Scenario Outline:To verify when Sort direction-ascending order and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269151 @269152
+  Scenario Outline: To verify when Sort direction-ascending order and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269154 @269155
+  Scenario Outline:  To verify when Sort direction-ascending order and page size is 10 and click on same phase then table should restore page size and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269157 @269158
+  Scenario Outline: To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I refresh the page
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269160 @269161
+  Scenario Outline: To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  ######### Pagination and Page size ####################
+  @269240 @269241
+  Scenario Outline: To verify when Pagination is changed to next and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+   # When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I pause execution for "5" seconds
+    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269245 @269246
+  Scenario Outline:  To verify when Pagination is changed to next and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and Pagination(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+   # When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    And I pause execution for "5" seconds
+    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269250 @269251
+  Scenario Outline: To verify when Pagination is changed to next and page size is 10 and click on same phase then table should restore page size and Pagination(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Planning" tab
+    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269253 @269255
+  Scenario Outline: To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269257 @269258
+  Scenario Outline: o verify when Pagination is changed to next and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  ########## Sorting and Pagination ###############
+
+  @269261 @269262
+  Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order, user clicks on row level view action and click on page back arrow then table should restore Pagination and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "View" icon in flex table for record number "1"
+    And I click on back arrow
+    And I pause execution for "5" seconds
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269264 @269265
+  Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order, user clicks on row level Edit action and click on page back arrow then table should restore Pagination and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "Edit" icon in flex table for record number "2"
+    And I click on back arrow
+    And I click toggle button to select "Internal Programs - Draft"
+    And I pause execution for "5" seconds
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269267 @269268
+  Scenario Outline:To verify when Pagination is changed to next and Sort direction-ascending order and click on same phase then table should restore Pagination and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Planning" tab
+    And I pause execution for "5" seconds
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269270 @269271
+  Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order and  refreshes the page then table should restore Pagination and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    And I pause execution for "5" seconds
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @269273 @269275
+  Scenario Outline:  To verify when Pagination is changed to next and Sort direction-ascending order ,click on the another phase and again click on the previous phase then table should restore Pagination and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "Program Name" column inside Internal Programs
+    And I click on "up" arrow inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Announcements" tab
+    And I navigate to "Planning" tab
+    And I pause execution for "5" seconds
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  ############### Component tab testing - cookies testing table ##################
+############# Record Level Test Cases #######
+  @269306
+  Scenario Outline: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (Admin)
