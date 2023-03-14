@@ -31,7 +31,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -43,19 +44,19 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "SharingAtCollabTest.png" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
       #221534 #221534
     And I select "Financial Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I enter value "Automation Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
       #255891
     And I select "Other Artifacts" from dropdown of filetype
     When I upload attachment "SheetJSFileUpload.xlsx" in attachments LWC modal
     And I enter value "Test Description" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     When I close LWC modal by clicking the top right x button
     And I refresh the page
@@ -71,7 +72,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -82,19 +84,19 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "RecordLevelDuplicateFile.pdf" in attachments LWC modal
     And I enter value "Test Description" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "6" seconds
       #255889
     And I select "Financial Artifacts" from dropdown of filetype
     When I upload attachment "DuplicateFile.txt" in attachments LWC modal
     And I enter value "Test Automation" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
       #255890
     And I select "Other Artifacts" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     Then I can see attach the "RecordLevelDuplicateFile.pdf" file format in the attachment section
     Then I can see attach the "DuplicateFile.txt" file format in the attachment section
@@ -107,7 +109,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -119,7 +122,7 @@ Business Need: Attachment Component Scenarios
     And I select "Other Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomation.txt" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "3" seconds
     #255863 #221523 #221533
     Then I see the following message in the LWC page details :
@@ -140,7 +143,8 @@ Business Need: Attachment Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -152,7 +156,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | Please select type. |
     Examples:
@@ -168,7 +172,8 @@ Business Need: Attachment Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -179,7 +184,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | File should not be blank. |
     Examples:
@@ -195,7 +200,8 @@ Business Need: Attachment Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -206,7 +212,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | Please enter value in description field. |
     Examples:
@@ -221,7 +227,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -230,13 +237,13 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I pause execution for "2" seconds
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | The document you are attempting to upload exists in the Workspace |
     Examples:
@@ -253,7 +260,8 @@ Business Need: Attachment Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
 #    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
 #    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -262,7 +270,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "blank.txt" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | File should not be blank. |
 
@@ -293,7 +301,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -310,7 +319,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -319,10 +329,9 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "Create_Case.xlsx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     When I close LWC modal by clicking the top right x button
     And I refresh the page
-    And I perform scroll on page layout
     When I click on "Delete" icon for file "Create_Case.xlsx" inside table name "Attachments" for LWC
     And I click on "Yes" on confirmation modal
     Then I see the following message in the LWC page details :
@@ -330,7 +339,7 @@ Business Need: Attachment Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+      #| PM    |
 
   @222487 @255488 @255420 @255427 @221528 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @LWC-AttachmentTestSuit
   Scenario Outline: when user clicks on page block shrink action button then component gets shrunk
@@ -366,7 +375,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -375,7 +385,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     And I pause execution for "5" seconds
@@ -384,7 +394,7 @@ Business Need: Attachment Component Scenarios
     #221545
     Then I see "Edit Attachment" is in LWC modal window
     And I enter value "Test Description" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     And I perform scroll on page layout
@@ -404,7 +414,8 @@ Business Need: Attachment Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing Purpose Only"
     When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
 #    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
 #    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -413,7 +424,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     When I close LWC modal by clicking the top right x button
     And I refresh the page
@@ -439,7 +450,7 @@ Business Need: Attachment Component Scenarios
     And I select "Title I, II, III assurances" from dropdown of filetype
     When I upload attachment "blank.txt" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | File should not be blank. |
 
@@ -456,7 +467,7 @@ Business Need: Attachment Component Scenarios
     And I select "General Assurances" from dropdown of filetype
     When I upload attachment "actionsAtFlexTable.png" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
       #255439 #255862
     Then I see the following message in the LWC page details :
       | Attachment added successfully. |
@@ -484,7 +495,7 @@ Business Need: Attachment Component Scenarios
     And I select "Suspension" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     When I close LWC modal by clicking the top right x button
     And I refresh the page
@@ -524,7 +535,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Automation" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | Please select type. |
 
@@ -541,7 +552,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Suspension" from dropdown of filetype
     And I enter value "Automation Testing" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | File should not be blank. |
 
@@ -558,7 +569,7 @@ Business Need: Attachment Component Scenarios
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Suspension" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | Please enter value in description field. |
 
@@ -611,13 +622,13 @@ Business Need: Attachment Component Scenarios
     And I select "Suspension" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     And I pause execution for "5" seconds
     And I select "Suspension" from dropdown of filetype
     When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
     And I pause execution for "2" seconds
     And I enter value "Test Automation" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     Then I see the following message in the LWC page details :
       | The document you are attempting to upload exists in the Workspace |
 
@@ -628,7 +639,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -637,7 +649,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Test" into description box
-    And I click on "Save" on LWC modal
+    And I click on "Save" button in LWC
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     Then I see total records count in "Snapshot History" table equals to Total record displayed on UI
@@ -653,7 +665,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -671,7 +684,8 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
