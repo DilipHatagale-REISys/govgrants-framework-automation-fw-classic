@@ -4936,9 +4936,8 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   ############### Component tab testing - cookies testing table ##################
-############# Record Level Test Cases #######
-  @269306
+############# Record Level Test Cases ####  @269306
   Scenario Outline: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (Admin)
