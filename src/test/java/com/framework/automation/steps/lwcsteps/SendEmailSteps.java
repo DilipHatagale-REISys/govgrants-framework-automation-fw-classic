@@ -166,7 +166,11 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @And("I click on {string} button in Email LWC Modal")
     public void iClickOnButtonInEmailLWCModal(String buttonName) {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@id='modal-content-id-1-1']//child::button[@title='" + buttonName + "']"));
+        if (buttonName.equalsIgnoreCase("Upload Files")) {
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//child::span[contains(text(),'" + buttonName + "')]"));
+        } else {
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@id='modal-content-id-1-1']//child::button[@title='" + buttonName + "']"));
+        }
     }
 
     @Then("I can see Upload file & drop files actions on send email reply modal are enabled")
@@ -332,7 +336,7 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("I see {string} error massage in attachment section")
     public void iSeeErrorMassageInAttachmentSection(String errorMassage) {
-        WebElement errorMsgElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'" + errorMassage + "')] | //div[@role='alert']//h2[contains(text(),'"+ errorMassage +"')]"));
+        WebElement errorMsgElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'" + errorMassage + "')] | //div[@role='alert']//h2[contains(text(),'" + errorMassage + "')]"));
         String errorMsg = errorMsgElement.getText();
         Assert.assertEquals(errorMassage, errorMsg);
     }
@@ -435,11 +439,11 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @And("I hover mouse on text {string} inside Send Email LWC")
     public void iHoverMouseOnTextInsideSendEmailLWC(String value) {
-        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//strong[text()='" + value + "']/parent::label//button[@title='Help'] | //span[text()='"+ value +"']/parent::div//button[@title='Help'] | //div/label[contains(text(),'" + value + "')]/span | //div[contains(text(),'"+ value +"')]/child::span"));
+        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//strong[text()='" + value + "']/parent::label//button[@title='Help'] | //span[text()='" + value + "']/parent::div//button[@title='Help'] | //div/label[contains(text(),'" + value + "')]/span | //div[contains(text(),'" + value + "')]/child::span"));
         try {
             I.amPerforming().scroll().withMouseToElement(ele);
         } catch (Exception e) {
-            JavascriptExecutor js = (JavascriptExecutor)((InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
+            JavascriptExecutor js = (JavascriptExecutor) ((InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
             js.executeScript("arguments[0].scrollIntoView();", ele);
         }
 
@@ -453,17 +457,17 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("Required to save field {string} is displayed with respect {string} field")
     public void requiredToSaveFieldIsDisplayedWithField(String symbol, String field) {
-        boolean starField = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='"+ field +"']/parent::label//abbr[@title='Required' and normalize-space(text()='"+ symbol +"')]"));
+        boolean starField = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//strong[text()='" + field + "']/parent::label//abbr[@title='Required' and normalize-space(text()='" + symbol + "')]"));
         Assert.assertTrue(starField);
     }
 
     @And("I click on checkbox for {string} inside lwc modal")
     public void iClickOnCheckboxForInsideLwcModal(String field) {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//strong[text()='"+ field +"']/ancestor::div/following::div[@class='slds-col slds-size_5-of-6 slds-m-top_xx-small']//input[@name='sendCopy']"));
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//strong[text()='" + field + "']/ancestor::div/following::div[@class='slds-col slds-size_5-of-6 slds-m-top_xx-small']//input[@name='sendCopy']"));
     }
 
     @Then("I see checkbox is selected and Cc contain {string} email address")
     public void iSeeCheckboxIsSelectedAndCcContainEmailAddress(String emailAddress) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-formatted-text[text()='Cc']/parent::p/following::p/lightning-formatted-text[text()='"+ emailAddress +"']"));
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-formatted-text[text()='Cc']/parent::p/following::p/lightning-formatted-text[text()='" + emailAddress + "']"));
     }
 }

@@ -225,6 +225,9 @@ Business Need: SendEmailLWC Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "10" seconds
+    And I click on "Send" button in Email LWC Modal
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab

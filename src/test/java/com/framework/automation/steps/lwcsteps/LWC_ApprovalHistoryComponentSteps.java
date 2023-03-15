@@ -259,8 +259,9 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
         boolean flag = false;
         for (int i = 0; i <= 10; i++) {
             try {
-                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div//img[@id='govGrantsPleaseWaitHolderId']"));
+                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='modal fade bgColor-black in']//img[@alt='GovGrants Logo' and @id='govGrantsPleaseWaitHolderId'] | //div/img[@data-id='SpinnerImage'] | //div[@id='holdon-content']//div//img[@id='govGrantsPleaseWaitHolderId']"));
                 System.out.println("icon is available:" + i);
+                I.amPerforming().checkToSee().isDisplayed(icon);
                 flag = true;
                 break;
             } catch (Exception e) {
