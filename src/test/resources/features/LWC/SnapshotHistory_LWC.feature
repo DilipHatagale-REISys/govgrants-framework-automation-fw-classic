@@ -144,7 +144,7 @@ Business Need: SnapshotHistory Component Scenarios
       | ADMIN |
       | PM    |
 
-  @278532 @278538 @278540 @278541 @278542 @223129 @Toverify,manuallygeneratedsnapshotisdisplayedonLWCcomponent-SPI
+  @278532 @278538 @278540 @278541 @278542 @223129 @278543 @278544 @278554 @Toverify,manuallygeneratedsnapshotisdisplayedonLWCcomponent-SPI
   Scenario:To verify, manually generated snapshot is displayed on the LWC component - SPI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -160,15 +160,16 @@ Business Need: SnapshotHistory Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "5" seconds
+    #278532
     Then I see take snap shot getting saved with "Snapshot History"
     #278538 #278541 #278543 #223129 #278554
     Then I see generated snapshot "28-12-2022" is displayed with "Created Date"
     #278540 #278544
     Then I see generated snapshot "Automation Admin" is displayed with "Created By"
-    #578542
+    #278542
     Then I see generated snapshot "SnapShot" is displayed with "File Name"
 
-  @278534 @278535 @278536 @278552
+  @278534 @278535 @278536 @278552 @278537
   Scenario:  user click on submit for approval button snapshot getting generated then refresh the Aura then generated snapshot name display as expected
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -274,7 +275,7 @@ Business Need: SnapshotHistory Component Scenarios
     Then I see generated snapshot "SnapShot" is displayed with "File Name"
     Then I see generated snapshot "Automation Admin" is displayed with "Created By"
 
-  @278545 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk
+  @278545 @278546 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk
   Scenario:when the user clicks on page block shrink action button then the component gets shrunk
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
