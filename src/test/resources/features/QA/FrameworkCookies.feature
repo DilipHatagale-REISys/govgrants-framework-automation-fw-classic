@@ -22,13 +22,13 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    And I can see last page displayed in pagination inside "Programs"
     And I navigate to "Planning" tab
     Then I can see last page displayed in pagination inside "Programs"
     #267851
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
 
@@ -4939,5 +4939,228 @@ Business Need: FrameworkCookies Component Scenarios
       | PM    |
 
   ############### Component tab testing - cookies testing table ##################
-############# Record Level Test Cases ####  @269306
-  Scenario Outline: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (Admin)
+############# Clear Session Message Test Cases ####
+  @282365
+  Scenario Outline:To verify when user changes the list view and clicks on row level 'Edit' action and click on page back arrow then list view value should be restored. (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for record number "1"
+    And I click on back arrow
+    Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282224
+  Scenario Outline: To verify when user changes page size and clicks on clear session then page size should set back to default value (Admin/PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+    And I see "5" with page size dropdown at "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282226
+  Scenario Outline:o verify when user changes pagination and clicks on clear session then pagination should set back to default value (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+    And I see the text containing :
+      | Page 1 |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282235
+  Scenario Outline: To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+    And I click on "EGMS ID" column inside Internal Programs
+    Then I see "up" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282238
+  Scenario Outline: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Program For Application"
+    And I see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+    Then I do not see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282242
+  Scenario Outline: To verify when user changes the list view and clicks on clear session button then list view should set back to the default. (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I softly see "Internal Programs - Draft" inside list view option of table "#toggleFlexTablePrograms"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Draft"
+    Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282244
+  Scenario Outline: To verify when user changes page size then 'Click ‘Reset Table’ under the menu icon to refresh the table’s default values' message should display (Admin/PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282247
+  Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282261
+  Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282271
+  Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    When I perform quick search for "Automation Internal Program for Testing"
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282273
+  Scenario Outline:To verify when user changes the list view then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Internal Programs - Draft"
+    And I softly see "Internal Programs - Draft" inside list view option of table "#toggleFlexTablePrograms"
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282275
+  Scenario Outline: To verify when user changes page size and clicks on clear session then 'Table has been reset' message should display (Admin/PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I pause execution for "5" seconds
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+#    Then I softly see the following messages in the page details :
+#      | Table has been reset. |
+    Then I can see the following message in table :
+      | Table has been reset. |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |
+
+  @282354
+  Scenario Outline: To verify when user changes pagination and clicks on clear session then 'Cleared session storage successfully' message should display (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
+#    Then I softly see the following messages in the page details :
+#      | Table has been reset. |
+    Then I can see the following message in table :
+      | Table has been reset. |
+    Examples:
+      | User  |
+      | ADMIN |
+   #  | PM    |

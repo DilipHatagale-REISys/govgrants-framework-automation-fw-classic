@@ -91,4 +91,11 @@ public class DynamicFormSteps {
             I.amPerforming().click().on(ByUsing.xpath("(//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-pencil'])["+index+"]"));
         }
     }
+
+    @Then("I can see the following message in table :")
+    public void iCanSeeTheFollowingMessageInTable(String text) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='panel-title custom-title ng-scope']/following::div/span[@class='sessionClass' and contains(text(),'" +text+ "')] | //div[@class='container-fluid ng-scope']//span[text()='"+ text +"']"));
+       // I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='container-fluid ng-scope']//span[text()='Table has been reset.']"));
+
+    }
 }
