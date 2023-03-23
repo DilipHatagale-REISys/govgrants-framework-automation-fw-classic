@@ -13,7 +13,7 @@ public class LWC_LoadingIconSteps extends GovGrantsManager {
         boolean flag = false;
         for (int i = 0; i <= 10; i++) {
             try {
-                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='modal fade bgColor-black in']//img[@alt='GovGrants Logo' and @id='govGrantsPleaseWaitHolderId'] | //div[@class='slds-modal__content']//c-spinner//div[@class='spinner-container slds-spinner']//img[@data-id='SpinnerImage' and @class='nav-logo govGrantsPleaseWaitHolderId'] | //c-spinner//div[@class='spinner-container slds-spinner']//img[@data-id='SpinnerImage' and @class='nav-logo govGrantsPleaseWaitHolderId'] | //div[@id='holdon-overlay']//img[@id='govGrantsPleaseWaitHolderId']"));
+                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='modal fade bgColor-black in']//img[@alt='GovGrants Logo' and @id='govGrantsPleaseWaitHolderId'] | //div[@class='slds-modal__content']//c-spinner//div[@class='spinner-container slds-spinner']//img[@data-id='SpinnerImage' and @class='nav-logo govGrantsPleaseWaitHolderId'] | //div[@id='holdon-overlay']/div/div/div/img[@id='govGrantsPleaseWaitHolderId'] | //c-spinner//div[@class='spinner-container slds-spinner']//img[@data-id='SpinnerImage' and @class='nav-logo govGrantsPleaseWaitHolderId']"));
                 I.amPerforming().checkToSee().isDisplayed(icon);
                 System.out.println("icon is available:" + i);
                 flag = true;
@@ -25,4 +25,20 @@ public class LWC_LoadingIconSteps extends GovGrantsManager {
         Assert.assertTrue(flag);
     }
 
+    @Then("I see Loading icon in Approval History")
+    public void iSeeLoadingIconInApprovalHistory() {
+        boolean flag = false;
+        for (int i = 0; i <= 10; i++) {
+            try {
+                WebElement icon = I.amPerforming().getElementReference().of(ByUsing.xpath("//iframe[@id='embed']/following::div[@id='holdon-overlay']/div/div/div/img[@id='govGrantsPleaseWaitHolderId']"));
+                I.amPerforming().checkToSee().isDisplayed(icon);
+                System.out.println("icon is available:" + i);
+                flag = true;
+                break;
+            } catch (Exception e) {
+                I.amPerforming().waitFor().makeThreadSleep(1000);
+            }
+        }
+        Assert.assertTrue(flag);
+    }
 }

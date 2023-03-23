@@ -3,34 +3,9 @@ Business Need: Loading icon for all the operations Component Scenarios
   Test all Loading icon component based scenarios
   As a configuration manager i make different configurational changes in LoadingIcon component and will validate them.
 
-
-  @257288 @sprint-19 @us-250617 @dilip
-  Scenario: To verify whether loading icon displayed on contacts flex table when user clicks on page size to show 5 entries (Admin)
-    When I login as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "5" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-
-
-    When I navigate to "History" sub tab
-    When I navigate to "Overview" sub tab
-    And I click on "Edit" in the page details
-    And I click on top right button "New" in tableName "Contacts@1234567890!@#$%^&*()"
-    Then I see loading icon at lwc modal
-
-
   @256805 @256806 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (PM)
-    #Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -46,7 +21,11 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I click on "Save" in the page details
+<<<<<<< Updated upstream
     Then loading icon is display on the contacts flex table
+=======
+    Then I see loading icon at lwc modal
+>>>>>>> Stashed changes
     Examples:
       | User  |
       | PM    |
@@ -115,6 +94,8 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "History" sub tab
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I close LWC modal window
     And I click on "checkbox" before the "Full Name" column
     And I click on top right button "Associate" in tableName "Associate table"
     And I close LWC modal by clicking the top right x button
@@ -220,7 +201,8 @@ Business Need: Loading icon for all the operations Component Scenarios
       | ADMIN |
 
   @257019 @256999 @sprint-19 @us-250617 @dilip
-  Scenario: To verify whether loading icon displayed on contacts flex table when user clicks  on 'Associate' button on associate contacts modal window (SPI)
+  Scenario: To verify whether loading icon displayed on contacts flex table when user clicks  on 'Associate' button on associate contacts modal window (SPI),
+  To verify whether loading icon displayed on contacts flex table when user clicks  on 'Associate' button on contacts flex table (SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -235,7 +217,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I click on top right button "Associate" in tableName "Associate table"
     Then I see loading icon at lwc modal
 
-  @256660 @256798 @sprint-19 @us-250617 @dilip
+  @256660 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (Admin) or PM
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
@@ -299,8 +281,13 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "History" sub tab
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in tableName "Contacts@1234567890!@#$%^&*()"
+<<<<<<< Updated upstream
     Then loading icon is display on the contacts flex table
     And I fill the mandatory field randomly "FirstName2" and "LastName1" and "Emaila@gmail.com" address
+=======
+    And I see loading icon at lwc modal
+    Then I fill the mandatory field randomly "FirstName2" and "LastName1" and "Emaila@gmail.com" address
+>>>>>>> Stashed changes
     And I click on "Save" in the page details
     Then I could not be able to click anywhere on that table
     Examples:
@@ -625,3 +612,153 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button in Email LWC Modal
     Then I see loading icon at lwc modal
+
+  @271547 @sprint-24 @us-266977 @dilip
+  Scenario: Send Email Loading icon -Internal  user clicks on select file action on reply modal   then loading icon is displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see loading icon at lwc modal
+
+  @271548 @sprint-24 @us-266977 @dilip
+  Scenario: Send Email Loading icon -External user clicks on select file action on reply modal then loading icon is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see loading icon at lwc modal
+
+  @271549
+  Scenario: Send Email Loading icon-Internal user clicks on upload files action  on reply modal then loading icon is displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+    And I refresh the page
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Upload Files" button in Email LWC Modal
+    Then I see loading icon at lwc modal
+
+  @271551
+  Scenario: Send Email Loading icon-Admin user clicks on upload files action on reply moda then loading icon is displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+    And I refresh the page
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Upload Files" button in Email LWC Modal
+    Then I see loading icon at lwc modal
+
+  @271552
+  Scenario: Send Email Loading icon-External user clicks on upload files action on reply modal then loading icon is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I close LWC modal window
+    And I refresh the page
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Upload Files" button in Email LWC Modal
+    Then I see loading icon at lwc modal
+
+  @271984
+  Scenario:Approval History Loading icon-Admin user clicks on Send back action then loading icon is displayed,
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I pause execution for "3" seconds
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "7" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I refresh the page
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Send back" in the approval decision
+    Then I see loading icon at lwc modal
+
+  @271989
+  Scenario: Approval History Loading icon-Internal  user clicks on Approve action then loading icon is displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I pause execution for "3" seconds
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "7" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I refresh the page
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I see Loading icon in Approval History

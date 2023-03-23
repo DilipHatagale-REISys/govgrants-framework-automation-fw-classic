@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="govgrants-framework-automation" />
         <module name="govgrants-library" />
         <module name="framework-project" />
       </profile>
