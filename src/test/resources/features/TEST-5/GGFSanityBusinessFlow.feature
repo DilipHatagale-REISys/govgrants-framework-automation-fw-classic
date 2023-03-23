@@ -257,7 +257,7 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Form Version 2.0" inside Form Version
 
-  @699601   @VerifyAssignedApproverUserInsideChevron @approvalProcess
+  @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user

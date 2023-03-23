@@ -45,8 +45,8 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-    Then I click on "Save" in the page details
-    Then I see loading icon at lwc modal
+    And I click on "Save" in the page details
+    Then loading icon is display on the contacts flex table
     Examples:
       | User  |
       | PM    |
@@ -87,8 +87,8 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "History" sub tab
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in tableName "Contacts@1234567890!@#$%^&*()"
-    Then I see loading icon at lwc modal
-    Then I fill the mandatory field randomly "FirstName" and "LastNam" and "Emailpa@gmail.com" address
+    Then loading icon is display on the contacts flex table
+    And I fill the mandatory field randomly "FirstName2" and "LastName1" and "Emaila@gmail.com" address
     And I click on "Save" in the page details
     Then I see loading icon at lwc modal
     Examples:
@@ -299,8 +299,8 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "History" sub tab
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in tableName "Contacts@1234567890!@#$%^&*()"
-    Then I see loading icon at lwc modal
-    Then I fill the mandatory field randomly "FirstName2" and "LastName1" and "Emaila@gmail.com" address
+    Then loading icon is display on the contacts flex table
+    And I fill the mandatory field randomly "FirstName2" and "LastName1" and "Emaila@gmail.com" address
     And I click on "Save" in the page details
     Then I could not be able to click anywhere on that table
     Examples:
