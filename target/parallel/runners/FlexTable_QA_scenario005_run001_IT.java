@@ -7,13 +7,13 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"setup","com.framework.automation.steps","com.automation.rei.govgrantsSteps","com.testingblaze.actionsfactory.gherkin","com.testingblaze.register"},
-        features = {"target/parallel/features/LoadingIcon_LWC_scenario001_run001_IT.feature"},
-        plugin = {"json:target/cucumber-report/LoadingIcon_LWC_scenario001_run001_IT.json","com.testingblaze.controller.ReportingLogsPlugin"},
+        features = {"target/parallel/features/FlexTable_QA_scenario005_run001_IT.feature"},
+        plugin = {"json:target/cucumber-report/FlexTable_QA_scenario005_run001_IT.json","com.testingblaze.controller.ReportingLogsPlugin"},
         tags = {"not @wip"},
         monochrome = true,
         strict = true
 )
-public class LoadingIcon_LWC_scenario001_run001_IT {
+public class FlexTable_QA_scenario005_run001_IT {
 
 }
 

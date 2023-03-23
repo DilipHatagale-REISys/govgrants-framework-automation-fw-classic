@@ -167,7 +167,11 @@ public class SendEmailSteps extends GovGrantsManager {
     @And("I click on {string} button in Email LWC Modal")
     public void iClickOnButtonInEmailLWCModal(String buttonName) {
         if (buttonName.equalsIgnoreCase("Upload Files")) {
-            I.amPerforming().click().on(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//child::span[contains(text(),'" + buttonName + "')]"));
+            try {
+                I.amPerforming().click().on(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//child::span[contains(text(),'" + buttonName + "')]"));
+            } catch (Exception e) {
+                I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class='slds-file-selector slds-file-selector_files']//child::span[contains(text(),'" + buttonName + "')]"));
+            }
         } else {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@id='modal-content-id-1-1']//child::button[@title='" + buttonName + "']"));
         }

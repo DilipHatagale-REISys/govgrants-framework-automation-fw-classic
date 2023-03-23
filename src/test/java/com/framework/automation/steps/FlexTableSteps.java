@@ -299,4 +299,89 @@ public class FlexTableSteps {
         //Assert.assertEquals(p1, p2);
     }
 
+
+    @Then("I see alert message {string} does not contain PLEX Rocks on respective form layout")
+    public void iSeeAlertMessageDoesNotContainPLEXRocksOnRespectiveFormLayout(String message) {
+        String popupMessage = I.amPerforming().switchTo().getAlertText();
+        Assert.assertTrue(popupMessage.equalsIgnoreCase(message));
+        I.amPerforming().switchTo().acceptAlert();
+        I.amPerforming().switchTo().windowHandler(0);
+    }
+
+
+    @Then("I see error message contains text {string}")
+    public void iSeeErrorMessageContainsText(String errorMessage) {
+        boolean errorMessageDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='err-access-message' and contains(text(),'" + errorMessage + "')] " +
+                "| //span[@id='theErrorPage:theError' and contains(text(),'" + errorMessage + "')] " +
+                "| //div[@class='slds-text-longform']//h3[text()='" + errorMessage + "'] " +
+                "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'"+ errorMessage +"')]"));
+        Assert.assertTrue(errorMessageDisplayed);
+    }
+
+    @And("I enter this {string} before {string} parameter and navigate to new URL")
+    public void iEnterThisBeforeParameter(String script, String parameter) {
+        String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+        String p1 = url.split(parameter)[0];
+        String p2 = parameter;
+        String p3 = url.split(parameter)[1];
+        String newUrl = p1 + script + p2 + p3;
+        System.out.println("String newUrl4 :" + newUrl);
+        I.amPerforming().browserOperationsTo().navigateToUrl(newUrl);
+    }
+
+    @And("I enter this {string} before {string} and {string} parameter and navigate to new URL")
+    public void iEnterThisBeforeAndParameter(String script, String parameter1, String parameter2) {
+        String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+        String p1 = url.split(parameter1)[0];
+        String p2 = parameter1;
+        String p3 = url.split(parameter1)[1];
+        String newUrl = p1 + script + p2 + p3;
+        String u1 = newUrl.split(parameter2)[0];
+        String u2 = parameter2;
+        String u3 = url.split(parameter2)[1];
+        String newUrl1 = u1 + script + u2 + u3;
+        I.amPerforming().browserOperationsTo().navigateToUrl(newUrl1);
+    }
+
+    @And("I enter this {string} script before {string}, {string}, {string}, {string}, {string} parameter and navigate to new URL")
+    public void iEnterThisScriptBeforeParameterAndNavigateToNewURL(String script, String par1, String par2, String par3, String par4, String par5) {
+        String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+        String p1 = url.split(par1)[0];
+        String p2 = par1;
+        String p3 = url.split(par1)[1];
+        String newUrl = p1 + script + p2 + p3;
+        String u1 = newUrl.split(par2)[0];
+        String u2 = par2;
+        String u3 = url.split(par2)[1];
+        String newUrl1 = u1 + script + u2 + u3;
+        String v1 = newUrl1.split(par3)[0];
+        String v2 = par3;
+        String v3 = newUrl1.split(par3)[1];
+        String newUrl2 = v1 + script + v2 + v3;
+        String w1 = newUrl2.split(par4)[0];
+        String w2 = par4;
+        String w3 = newUrl2.split(par4)[1];
+        String newUrl3 = w1 + script + w2 + w3;
+        String x1 = newUrl3.split(par5)[0];
+        String x2 = par5;
+        String x3 = newUrl3.split(par5)[1];
+        String newUrl4 = x1 + script + x2 + x3;
+        System.out.println("String newUrl4 :" + newUrl4);
+        I.amPerforming().browserOperationsTo().navigateToUrl(newUrl4);
+    }
+
+    @And("I enter this {string} script twice before {string} and {string} parameter and navigate to new URL")
+    public void iEnterThisScriptTwiceBeforeAndParameterAndNavigateToNewURL(String script, String parameter1, String parameter2) {
+        String url = I.amPerforming().browserOperationsTo().getCurrentUrl();
+        String p1 = url.split(parameter1)[0];
+        String p2 = parameter1;
+        String p3 = url.split(parameter1)[1];
+        String newUrl = p1 + script + script + p2 + p3;
+        String u1 = newUrl.split(parameter2)[0];
+        String u2 = parameter2;
+        String u3 = url.split(parameter2)[1];
+        String newUrl1 = u1 + script + script + u2 + u3;
+        I.amPerforming().browserOperationsTo().navigateToUrl(newUrl1);
+    }
+
 }

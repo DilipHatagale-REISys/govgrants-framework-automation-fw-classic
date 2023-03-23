@@ -469,34 +469,6 @@ Business Need: FlexTable Component Scenarios
     Then I do not see alert popup box
     When I click on "× " icon at "Send Email" modal after Email Sent Successfully
 
-  @268216
-  Scenario Outline: Admin_Modal_To verify that after entering details and on clicking on action on modal (where parent id of action URL is manipulated), no any alert get displayed
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
-      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action URL | <NewActionUrl> | Send Email         | Name                      |                            |
-    When I login as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "<script>alert('hi')</script>" into field "Subject" on send email modal
-    When I click on "Send" button in send email modal
-    Then I do not see alert popup box
-
-    Examples:
-      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                     |
-      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit |
-     # | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}<script>alert('hi')</script>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit |
 
   @267734 @267736 @267716
   @ToVerifyThatOnEnteringScriptTwiceInMyFeedInputFieldalertNotGetDisplayed
@@ -671,15 +643,1034 @@ Business Need: FlexTable Component Scenarios
     And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "templateName" and navigate to new URL
     Then I do not see alert popup box
 
-    @268139
-    Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
-      When I login as "Admin" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Applications" tab
-      And I click toggle button to select "Applications - All"
-      When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-      When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
-      When I navigate to "Files" sub tab
-      And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-      And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "parentid" and navigate to new URL
-      Then I do not see alert popup box
+  @268139
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script after "parentid" and navigate to new URL
+    Then I do not see alert popup box
+
+  @256777 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "You dont have permission to access this record. Please contact administrator."
+
+  @257008 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "You dont have permission to access this record. Please contact administrator."
+
+  @257011 @sprint-19 @us-256030 @dilip
+  Scenario:SPI_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "You dont have permission to access this record. Please contact administrator."
+
+  @257016 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257020 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257021 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257027 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257029 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257030 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257035 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&t=Application" parameter and navigate to new URL
+    Then I see error message contains text ";alert(\"PLEX Rocks\")"
+
+  @257039 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&t=Application" parameter and navigate to new URL
+    Then I see error message contains text ";alert(\"PLEX Rocks\")"
+
+  @257042 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&t=Application" parameter and navigate to new URL
+    Then I see error message contains text "An unexpected connection error occurred."
+
+  @257092 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257093 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257095 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    And I pause execution for "5" seconds
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257099 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating ID, template name, package id, parent id, forminstance id and table name all at a same time, then alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script before "&templateName", "&parentLayoutId", "&parentId", "&formInstanceId", "&RefreshBehaviour" parameter and navigate to new URL
+    And I pause execution for "5" seconds
+    Then I see error message contains text "You dont have permission to access this record. Please contact administrator."
+
+  @257101 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I see error message contains text "You dont have permission to access this record. Please contact administrator."
+
+  @257102 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating packageid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257103 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating parentid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257104 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating TableName value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&TableType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257105 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&t=Application" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257106 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To Verify that after manipulating templatename value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257107 @sprint-19 @us-256030 @dilip
+  Scenario: PM_View layout_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257108 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_View layout_To Verify that after manipulating id value, no any alert get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    And I pause execution for "5" seconds
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
+
+  @257584 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257586 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257591 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I see error message contains text "An unexpected connection error occurred."
+
+  @257593 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257596 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257597 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&parentId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257598 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257601 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257604 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257607 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&RefreshBehaviour" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257608 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&RefreshBehaviour" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257610 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&RefreshBehaviour" parameter and navigate to new URL
+    Then I see error message contains text "An unexpected connection error occurred."
+
+  @257612 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257626 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257629 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&TableType" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257633 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To verify that after manipulating ID, template name, package id, parent id, forminstance id and table name all at a same time, then alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script before "&templateName", "&parentLayoutId", "&parentId", "&formInstanceId", "&RefreshBehaviour" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257634 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I see error message contains text "PLEX Rocks"
+
+  @257635 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating packageid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257637 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257638 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating TableName value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&TableType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257639 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&RefreshBehaviour" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257640 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_Edit layout_To Verify that after manipulating templatename value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257641 @sprint-19 @us-256030 @dilip
+  Scenario: PM_Edit layout_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257642 @sprint-19 @us-256030 @dilip
+  Scenario: SPI_Edit layout_To Verify that after manipulating id value, no any alert get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257866 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name (with adding ID immediately after template name) both, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @257874 @sprint-19 @us-256030 @dilip
+  Scenario: Admin_View layout_To verify that after manipulating ID and template name both by adding respective script twice, alert not get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" script twice before "&templateName" and "&parentLayoutId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+    ##########User Story 266643: QA - NED - Resolve the issues mentioned in new Plex Report (Suite ID: 269359)##########
+
+  @267652
+  Scenario:Admin_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Subject" into field "Subject" on send email modal
+    When I enter value "<script>alert('hi')</script>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Subject" into field "Subject" on send email modal
+    When I enter value "><img src=z onerror=alert(document.cookie)>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+
+  @267854
+  Scenario:PM_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Subject" into field "Subject" on send email modal
+    When I enter value "<script>alert('hi')</script>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Subject" into field "Subject" on send email modal
+    When I enter value "><img src=z onerror=alert(document.cookie)>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+
+  @267855
+  Scenario: SPI_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    When I enter value "<script>alert('hi')</script>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    When I enter value "><img src=z onerror=alert(document.cookie)>" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+
+  @268124
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268125
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating packageid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268126
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating parentid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268127
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating TableName value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&TableType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268128
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating forminstanceid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&t=Application" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268129
+  Scenario: Admin_DynamicFormView_To Verify that after manipulating templatename value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268130
+  Scenario: PM_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268131
+  Scenario: SPI_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268132
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating id value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&templateName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268138
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating packageid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268139
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&formInstanceId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268141
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating TableName value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&TableType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @268143
+  Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&RefreshBehaviour" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+
+  @268216
+  Scenario Outline: Admin_Modal_To verify that after entering details and on clicking on action on modal (where parent id of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "<script>alert('hi')</script>" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}<script>alert('hi')</script>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}><img src=z onerror=alert(document.cookie)>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit |
+
+  @268217
+  Scenario Outline: PM_Modal_To verify that after entering details and on clicking on action on modal (where parent id of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "<script>alert('hi')</script>" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}<script>alert('hi')</script>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}><img src=z onerror=alert(document.cookie)>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit |
+
+  @268218
+  Scenario Outline: SPI_Modal_To verify that after entering details and on clicking on action on modal (where parent id of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    When I enter value "Automation testing" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}<script>alert('hi')</script>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}><img src=z onerror=alert(document.cookie)>&emailFieldName={!emailFieldName}&mode=send&renderType=Edit |
+
+  @268220
+  Scenario Outline: Admin_Modal_To verify that after entering details and on clicking on action on modal (where emailFieldname of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation Subject" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
+
