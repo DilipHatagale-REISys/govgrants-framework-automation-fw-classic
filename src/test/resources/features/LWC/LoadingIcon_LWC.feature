@@ -45,13 +45,8 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-<<<<<<< Updated upstream
-    Then I click on "Save" in the page details
-    Then I see loading icon at lwc modal
-=======
     And I click on "Save" in the page details
     Then loading icon is display on the contacts flex table
->>>>>>> Stashed changes
     Examples:
       | User  |
       | PM    |
