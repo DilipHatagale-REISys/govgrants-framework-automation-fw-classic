@@ -1,4 +1,4 @@
-@US-296453 @regression-QA @Sprint-5-Year-2023
+@US-296453 @regression-QA @Sprint-5-Year-2023 @Year-2023
 Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
   Text Field of Data Table Enhanced, few script has to handle.
   Need to handle same scenario in PDF for CKEditor, Data Table and Data Table Enhanced. (Suite ID: 304363)

