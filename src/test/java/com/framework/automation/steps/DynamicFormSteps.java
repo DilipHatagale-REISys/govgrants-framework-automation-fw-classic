@@ -98,4 +98,13 @@ public class DynamicFormSteps {
        // I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='container-fluid ng-scope']//span[text()='Table has been reset.']"));
 
     }
+
+    @And("I click on {string} icon in flex table for first draft record")
+    public void iClickOnIconInFlexTableForFirstDraftRecord(String iconButton) {
+        if(iconButton.equalsIgnoreCase("View")){
+            I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-eye']"));
+        }else if (iconButton.equalsIgnoreCase("Edit")){
+            I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-pencil']"));
+        }
+    }
 }

