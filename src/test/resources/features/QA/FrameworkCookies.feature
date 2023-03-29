@@ -4791,7 +4791,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "View" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     And I click on back arrow
     And I pause execution for "5" seconds
     Then I see "down" arrow is Displayed inside "Program Name" field
@@ -4826,7 +4826,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "Edit" icon in flex table for record number "2"
+    And I click on "Edit" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
@@ -4947,7 +4947,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for record number "1"
+    And I click on "Edit" icon in flex table for first draft record
     And I click on back arrow
     Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     Examples:
