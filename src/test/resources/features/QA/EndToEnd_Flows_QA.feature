@@ -1,4 +1,4 @@
-@SecurityReview-component @regression-QA @securityReview
+@EndToEnd_Flows_QA-component @regression-QA @EndToEnd_Flows_QA
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
@@ -937,7 +937,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Approved"
   # @83371 - activated by owner
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
@@ -2082,13 +2082,20 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     Then I softly see status in Progress-bar is "Created" and is "green"
   # Sub-Award submitted for approval
+    And I navigate to "Overview" sub tab
+    And I edit the following rows inline in flex table with id "SubawardContactFlexToggle" by clicking "Edit" :
+      | Name | Project Role             | Is Key Personnel |
+      |      | Project Director/Manager | Checked          |
+    And I pause execution for "10" seconds
     And I navigate to "Budget" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:awardFundingAccountsTableId---"
     When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:selectAwardFundingAccountsTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
+    And I pause execution for "15" seconds
     When I edit the following rows inline in flex table with id "---program:-:awardFundingAccountsTableId---" by clicking "Edit" :
       | Funding Account | Encumbrance |
       | FA-ST-04        | 1000        |
+    And I pause execution for "15" seconds
     And I edit the following rows inline in flex table with id "---program:-:flexGridSubAwardBudgetCategoryID---" by clicking "Edit" :
       | Budget Category | Awarded Budget |
       | Construction    | 1000           |
@@ -2109,7 +2116,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel

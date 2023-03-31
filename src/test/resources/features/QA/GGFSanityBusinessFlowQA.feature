@@ -107,7 +107,7 @@ Business Need: Sanity check for all Component Scenarios
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
 
-  @110214#   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
+  @110214   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
   Scenario: validate announcement in published state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
@@ -119,10 +119,10 @@ Business Need: Sanity check for all Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -141,6 +141,7 @@ Business Need: Sanity check for all Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
@@ -150,12 +151,12 @@ Business Need: Sanity check for all Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    #And I click on "Activate" in the page details
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
     #Announcement Creation
     And I navigate to "Announcements" tab
@@ -171,27 +172,24 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "Edit" in the page details
     And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
-    And I pause execution for "3" seconds
+    And I pause execution for "6" seconds
     And I click on "Edit" in the page details
     And I enter value "Test" into field "Justification__c"
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Add" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
-    When I close "Associate" modal by clicking the top right x button
+    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate Funding Accounts" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
+    And I pause execution for "5" seconds
     And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
-    When I navigate to "Responsibilities" sub tab
-    And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Amendment Request | Post Award Reporting | Payment Request | Monitoring | Closeout |
-      | Automation PM | Step 3  | Step 3       | Step 3 | Step 3 | Step 3            | Step 3               | Step 3          | Step 3     | Step 3   |
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -209,7 +207,7 @@ Business Need: Sanity check for all Component Scenarios
     #Announcement Publish
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
     And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
     And I click on "Publish" in the page details
@@ -264,7 +262,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
+    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Sent Back"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
@@ -724,7 +722,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @110500  @DirectGrantCreationToSubAwardActivation
   Scenario: Verify grant creation and grant, sub-award activation
-   # Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
+    Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
     And I click on top right button "New" in flex table with id "---program:-:activeGrantsTableId---"
@@ -746,13 +744,20 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Save" in the page details
     Then I softly see status in Progress-bar is "Created" and is "green"
   # Sub-Award submitted for approval
+    And I navigate to "Overview" sub tab
+    And I edit the following rows inline in flex table with id "SubawardContactFlexToggle" by clicking "Edit" :
+      | Name | Project Role             | Is Key Personnel |
+      |      | Project Director/Manager | Checked          |
+    And I pause execution for "10" seconds
     And I navigate to "Budget" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:awardFundingAccountsTableId---"
     When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:selectAwardFundingAccountsTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
+    And I pause execution for "15" seconds
     When I edit the following rows inline in flex table with id "---program:-:awardFundingAccountsTableId---" by clicking "Edit" :
       | Funding Account | Encumbrance |
       | FA-ST-04        | 1000        |
+    And I pause execution for "15" seconds
     And I edit the following rows inline in flex table with id "---program:-:flexGridSubAwardBudgetCategoryID---" by clicking "Edit" :
       | Budget Category | Awarded Budget |
       | Construction    | 1000           |
@@ -773,7 +778,7 @@ Business Need: Sanity check for all Component Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
