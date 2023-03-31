@@ -6,7 +6,7 @@ Business Need: security review Scenarios
   @105884    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUser
   Scenario: validate flex table at phase level is rendered properly by PM user
     When I login as "PM" user
-    When I setup my app as "As a Grantor"
+    And I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see expected table with id "toggleFlexTablePrograms"
