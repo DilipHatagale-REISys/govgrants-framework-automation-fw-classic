@@ -4836,7 +4836,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269267 @269268
   Scenario Outline:To verify when Pagination is changed to next and Sort direction-ascending order and click on same phase then table should restore Pagination and sorting (Admin)
@@ -4869,7 +4869,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269270 @269271
   Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order and  refreshes the page then table should restore Pagination and sorting (Admin)
@@ -4902,7 +4902,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269273 @269275
   Scenario Outline:  To verify when Pagination is changed to next and Sort direction-ascending order ,click on the another phase and again click on the previous phase then table should restore Pagination and sorting (Admin)
@@ -4953,7 +4953,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282224
   Scenario Outline: To verify when user changes page size and clicks on clear session then page size should set back to default value (Admin/PM)
@@ -4974,7 +4974,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282226
   Scenario Outline:o verify when user changes pagination and clicks on clear session then pagination should set back to default value (Admin/PM)
@@ -4991,7 +4991,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282235
   Scenario Outline: To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (Admin/PM)
@@ -5008,7 +5008,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282238
   Scenario Outline: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (Admin/PM)
@@ -5023,7 +5023,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282242
   Scenario Outline: To verify when user changes the list view and clicks on clear session button then list view should set back to the default. (Admin/PM)
@@ -5038,7 +5038,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282244
   Scenario Outline: To verify when user changes page size then 'Click ‘Reset Table’ under the menu icon to refresh the table’s default values' message should display (Admin/PM)
