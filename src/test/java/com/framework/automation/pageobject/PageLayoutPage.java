@@ -2362,9 +2362,9 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = false;
             }
 
-        } else if (approverTitle.equalsIgnoreCase("Program Manager Approver")) {
+        } else if (approverTitle.equalsIgnoreCase("Program Manager Approver") || approverTitle.equalsIgnoreCase("Program Manager Approver (Pending for first approval)")) {
             try {
-                if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[2]//a/span[contains(text(),'" + approverName + "')]")))) {
+                if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[2]//a/span[contains(text(),'" + approverName + "')] | //div[@id='chevronBarId']/ancestor::div/div//div[@class='pbBody']//tr/td/span/span[contains(text(),'"+ approverTitle +"')]/ancestor::tr/following-sibling::tr/td/span[text()='"+ approverName +"']")))) {
                     flag = true;
                 }
             } catch (Exception e) {
