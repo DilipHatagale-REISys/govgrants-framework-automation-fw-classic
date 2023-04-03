@@ -1674,3 +1674,58 @@ Business Need: FlexTable Component Scenarios
       | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
       | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
 
+@268222
+Scenario Outline: PM_Modal_To verify that after entering details and on clicking on action on modal (where emailFieldname of action URL is manipulated), no any alert get displayed
+  Given I have "default" configuration as below:
+    | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+    | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+  Given I setup test configuration as below:
+    | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+    | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+  When I login as "PM" user
+  When I setup my app as "As a Grantor"
+  And I navigate to "Applications" tab
+  And I click toggle button to select "Applications - All"
+  When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+  When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+  When I navigate to "Collab" sub tab
+  When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+  When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+  When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+  When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+  When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+  When I enter value "Automation Subject" into field "Subject" on send email modal
+  When I click on "Send" button in send email modal
+  Then I do not see alert popup box
+  Examples:
+    | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+    | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
+    | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
+
+  @268224
+  Scenario Outline: SPI_Modal_To verify that after entering details and on clicking on action on modal (where emailFieldname of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation Subject" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
