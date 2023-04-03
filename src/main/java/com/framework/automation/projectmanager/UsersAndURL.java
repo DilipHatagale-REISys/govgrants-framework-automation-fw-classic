@@ -70,7 +70,7 @@ public class UsersAndURL implements UsersController {
                 password = "Automation@12345";
                 break;
             case "AUTOMATION-SPI":
-                password = "Automation@1234";
+                password = "Automation@2023";
                 break;
             case "AUTOMATION-ADMIN":
                 password = "Automation@2023";
@@ -156,7 +156,7 @@ public class UsersAndURL implements UsersController {
         password.put("EXE", "FrameworkAuto@2022");
         password.put("PM", "Automation@2023");
         password.put("FO", "Automation@2023");
-        password.put("SPI", "AUTOMATION@23");
+        password.put("SPI", "AUTOMATION@2023");
         password.put("PM1", "FrameworkAuto@2023");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
