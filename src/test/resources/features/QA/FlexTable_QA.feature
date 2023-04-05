@@ -4,8 +4,8 @@ Business Need: FlexTable Component Scenarios
   As a configuration manager i make different configurational changes in FlexTable component and will validate them.
 
 ###FlextableExport
-  @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @267756 @267773 @267779 @267789 @267792 @267797 @267801 @267804 @267807 @267819 @267827 @267832
-  Scenario Outline:ADMIN_FlextableExport_To verify that parsing the url and append Script in URL after manipulating mode parameter,flexTableParam,pageBlockId,Agency Id,application Id,parentOwner Id,User Id,Program Id,parentRecordIdOfFlexTable,Record Id alert not get displayed
+  @267756 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: Admin_FlextableExport_To verify that after manipulating mode, alert not get displayed
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -16,31 +16,248 @@ Business Need: FlexTable Component Scenarios
     When I pause execution for "5" seconds
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts"
-    And I enter this "<Script1>" script after "<Value in URL>"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script2>" script after "<Value in URL>"
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script3>" script after "<Value in URL>"
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
-    Examples:
-      | Script1                                  | Script2                                                                      | Script3                            | Value in URL              |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | mode parameter            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableParam            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | pageBlockId               |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Agency Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | application Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentOwner Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | User Id                   |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Program Id                |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentRecordIdOfFlexTable |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Record Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | announcement id           |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableName             |
 
-  @PMUser_parseURLandAppendScript @sprint-21 @us_266643 @267768 @267775 @267782 @267790 @267794 @267798 @267802 @267805 @267808 @267823 @267828 @267833
-  Scenario Outline:PM_FlextableExport_To verify that parsing the url and append Script in URL after manipulating mode parameter,flexTableParam,pageBlockId,Agency Id,application Id,parentOwner Id,User Id,Program Id,parentRecordIdOfFlexTable,Record Id alert not get displayed
+  @267773 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:  Admin_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267779 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: Admin_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267789 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267797 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: Admin_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267792 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating Application Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267801 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: Admin_FlextableExport_To verify that after manipulating User Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267804 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267807 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267819 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: Admin_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267827 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267832 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:Admin_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267768 @sprint-21 @us_266643 @dilip
+  Scenario: PM_FlextableExport_To verify that after manipulating mode, alert not get displayed
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -51,31 +268,248 @@ Business Need: FlexTable Component Scenarios
     When I pause execution for "5" seconds
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts"
-    And I enter this "<Script1>" script after "<Value in URL>"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script2>" script after "<Value in URL>"
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script3>" script after "<Value in URL>"
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
-    Examples:
-      | Script1                                  | Script2                                                                      | Script3                            | Value in URL              |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | mode parameter            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableParam            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | pageBlockId               |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Agency Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | application Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentOwner Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | User Id                   |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Program Id                |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentRecordIdOfFlexTable |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Record Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | announcement id           |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableName             |
 
-  @SPIUser_parseURLandAppendScript @sprint-21 @us_266643 @267771 @267776 @267787 @267791 @267796 @267800 @267803 @267806 @267815 @267825 @267830 @267834
-  Scenario Outline:SPI_FlextableExport_To verify that parsing the url and append Script in URL after manipulating mode parameter,flexTableParam,pageBlockId,Agency Id,application Id,parentOwner Id,User Id,Program Id,parentRecordIdOfFlexTable,Record Id alert not get displayed
+  @267775 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267782 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "userType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267790 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267794 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating Application Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267798 @sprint-21 @us_266643 @dilip
+  Scenario: PM_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267802 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
+  Scenario: PM_FlextableExport_To verify that after manipulating User Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267805 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267808 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267823 @sprint-21 @us_266643 @dilip
+  Scenario: PM_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267828 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267833 @sprint-21 @us_266643 @dilip
+  Scenario:PM_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267771 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating mode, alert not get displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -86,27 +520,247 @@ Business Need: FlexTable Component Scenarios
     When I pause execution for "5" seconds
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts"
-    And I enter this "<Script1>" script after "<Value in URL>" for SPI User
+    And I pause execution for "130" seconds
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableName" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script2>" script after "<Value in URL>" for SPI User
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexTableName" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back
-    And I enter this "<Script3>" script after "<Value in URL>" for SPI User
-    Examples:
-      | Script1                                  | Script2                                                                      | Script3                            | Value in URL              |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | mode parameter            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableParam            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | pageBlockId               |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Agency Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | application Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentOwner Id            |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | User Id                   |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Program Id                |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | parentRecordIdOfFlexTable |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | Record Id                 |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | announcement id           |
-      | %27%3balert(%22PLEX%20Rocks%22)%2f%2f909 | 952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952 | '%3balert('PLEX%20Rocks')%2f%2f909 | flexTableName             |
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexTableName" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267776 @sprint-21 @us_266643 @dilip
+  Scenario: SPI_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I pause execution for "130" seconds
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "pageBlockId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267787 @sprint-21 @us_266643 @dilip
+  Scenario: SPI_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267791 @sprint-21 @us_266643 @dilip
+  Scenario: SPI_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267796 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating application Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22parentOwnerId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267800 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22agencyId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267803 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating User Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22siteVisitRecordsIdsSet" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267806 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22announcementId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267815 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22RecordId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267825 @sprint-21 @us_266643 @dilip
+  Scenario: SPI_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&listParm" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267830 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before ",%22programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before ",%22programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before ",%22programId" parameter and navigate to new URL
+    Then I do not see alert popup box
+
+  @267834 @sprint-21 @us_266643 @dilip
+  Scenario:SPI_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Overview" sub tab
+    When I pause execution for "5" seconds
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "952%27%2c%27value%27%3a%20%27View%27%7d%3balert(%22PLEX%20Rocks%22)%2f%2f952" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
+    And I navigate to back
+    And I enter this "'%3balert('PLEX%20Rocks')%2f%2f909" before "&flexGridType" parameter and navigate to new URL
+    Then I do not see alert popup box
 
   @268155 @268162 @268168 @268172 @Admin_UFormView_ToVerifyThatAfterManipulatingFormIdValueNoAnyAlertGetDisplayed @ToVerifyThatAfterManipulatingRecordIdValueNoAnyAlertGetDisplayed
   @Admin_UFormEdit_ToVerifyThatAfterManipulatingFormIdValueNoAnyAlertGetDisplayed @FormEdit_ToVerifyThatAfterManipulatingRecordIdValueNoAnyAlertGetDisplayed
@@ -528,21 +1182,25 @@ Business Need: FlexTable Component Scenarios
       | ADMIN |
       | PM    |
 
-  @267684 @267677
-  @Post_ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
-  @SPI_Collab_ToMyFollowers_Link_ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
-  Scenario:SPI_Collab_To My Followers_Link_To verify that on entering script in My Feed input field, alert not get displayed
+  @267684
+  Scenario: SPI_Collab_To My Followers_Link_To verify that on entering script in My Feed input field, alert not get displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    #267677
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
-    Then I do not see alert popup box
-    #267684
     When I click on "Link" inside My Feed
     And I enter value "https://www.Rei.com" inside "Link URL" in My Feed
     And I enter value "><img src=x onmouseover=alert`'collab'`>" inside "Link Name" in My Feed
     And I select "My Followers" from dropdown in My Feed and Share Post
+    Then I do not see alert popup box
+
+  @267677
+  Scenario:SPI_Collab_To My Followers_Post_To verify that on entering script in My Feed input field, alert not get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
+    And I pause execution for "5" seconds
     Then I do not see alert popup box
 
   @267676 @ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
@@ -551,6 +1209,7 @@ Business Need: FlexTable Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
+    And I pause execution for "5" seconds
     Then I do not see alert popup box
 
   @267678 @267679
@@ -561,6 +1220,7 @@ Business Need: FlexTable Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" inside "Post" in My Feed
     And I select "A Group" from dropdown in My Feed and Share Post
+    And I pause execution for "5" seconds
     Then I do not see alert popup box
     Examples:
       | User  |
@@ -771,8 +1431,7 @@ Business Need: FlexTable Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
-
-    And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" and "&formInstanceId" parameter and navigate to new URL
+    And I pause execution for "7" seconds
     Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
 
   @257035 @sprint-19 @us-256030 @dilip
@@ -1470,7 +2129,7 @@ Business Need: FlexTable Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&parentLayoutId" parameter and navigate to new URL
-    Then I do not see alert popup box
+    Then I see alert message "Error while rendering actions: List has no rows for assignment to SObject, trace: (GNT)" does not contain PLEX Rocks on respective form layout
 
   @268130
   Scenario: PM_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
@@ -1674,3 +2333,56 @@ Business Need: FlexTable Component Scenarios
       | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
       | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
 
+  @268222
+  Scenario Outline: PM_Modal_To verify that after entering details and on clicking on action on modal (where emailFieldname of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Test@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation Subject" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |
+
+  @268224
+  Scenario Outline: SPI_Modal_To verify that after entering details and on clicking on action on modal (where emailFieldname of action URL is manipulated), no any alert get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action URL | <OriganalActionUrl> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    When I enter value "Automation testing" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    Then I do not see alert popup box
+    Examples:
+      | OriganalActionUrl                                                                                                | NewActionUrl                                                                                                                                                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}<script>alert('hi')</script>&mode=send&renderType=Edit                |
+      | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}&mode=send&renderType=Edit | /apex/SendEmail?parentId={!parentRecordIdOfFlexTable}&emailFieldName={!emailFieldName}><img src=z onerror=alert(document.cookie)>&mode=send&renderType=Edit |

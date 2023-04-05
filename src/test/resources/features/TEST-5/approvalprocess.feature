@@ -1902,7 +1902,6 @@ Business Need: Approval Process Component Scenarios
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
-    And I save the field labeled "ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
@@ -1936,8 +1935,10 @@ Business Need: Approval Process Component Scenarios
     And I refresh the page
     When I click on "Submit For Approval" in the page details
     And I refresh the page
-    When I navigate to "History" sub tab
-    Then I see for "Program Manager Approver(Pending for first approval)" value is "Automation PM" in chevron diagram
+    And I pause execution for "15" seconds
+    And I navigate to "History" sub tab
+    And I pause execution for "10" seconds
+    Then I see for "Program Manager Approver (Pending for first approval)" value is "Automation PM" in chevron diagram
 
   @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning @approvalProcess
   Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
