@@ -305,7 +305,8 @@ public class FlexTableSteps {
         String popupMessage = I.amPerforming().switchTo().getAlertText();
         Assert.assertTrue(popupMessage.equalsIgnoreCase(message));
         I.amPerforming().switchTo().acceptAlert();
-        I.amPerforming().switchTo().windowHandler(0);
+        I.amPerforming().waitFor().makeThreadSleep(2000);
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='alert alert-danger']/button[text()='×']"));
     }
 
 
