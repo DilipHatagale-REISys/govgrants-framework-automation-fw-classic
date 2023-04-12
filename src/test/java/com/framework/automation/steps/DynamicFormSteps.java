@@ -5,6 +5,7 @@ import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
 
 public class DynamicFormSteps {
     DynamicFormPage dynamicFormPage;
@@ -36,6 +37,11 @@ public class DynamicFormSteps {
     @Then("^I (see|softly see) section as \"([^\"]*)\" inside dynamic form layout$")
     public void assertSectionDisplayedAInsideDynamicForm(String usage, String sectionName) {
         dynamicFormPage.assertSectionDisplayedInsideDynamicFormLayout(usage, sectionName);
+    }
+
+    @Then("I (see|softly see) \"([^\"]*)\" option is displayed$")
+    public void iSeeOptionIsDisplayed(String usage, String sectionName) {
+        dynamicFormPage.assertElementIsDisplayedInsideDynamicFormLayout(usage, sectionName);
     }
 
     @Then("I see the instruction text is as follows :")
@@ -106,5 +112,9 @@ public class DynamicFormSteps {
         }else if (iconButton.equalsIgnoreCase("Edit")){
             I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-pencil']"));
         }
+    }
+    @Then("I (do not see) \"([^\"]*)\" modal window is open$")
+    public void iSeeModalWindowIsOpen(String usage, String windowTitle) {
+        dynamicFormPage.assertModalWindowOpenOrNot(usage, windowTitle);
     }
 }

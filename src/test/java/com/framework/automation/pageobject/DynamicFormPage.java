@@ -25,6 +25,7 @@ public class DynamicFormPage extends GovGrantsManager {
      *
      * @param sectionName
      */
+
     public void getHelpTextAtSectionInsideDynamicForm(String sectionName) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[@title='Section: " + sectionName + "']/..//span[contains(@class,'fa-info')]"));
     }
@@ -83,6 +84,13 @@ public class DynamicFormPage extends GovGrantsManager {
         }
     }
 
+    public void assertElementIsDisplayedInsideDynamicFormLayout(String usage, String linkName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isElementDisplayedInsideDynamicFormLayout(linkName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isElementDisplayedInsideDynamicFormLayout(linkName)).isTrue();
+        }
+    }
     /**
      * assert true if expected instruction text is displayed
      *
@@ -239,6 +247,20 @@ public class DynamicFormPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if expected section is displayed at dynamic form layout
+     *
+     * @param linkName
+     */
+    private boolean isElementDisplayedInsideDynamicFormLayout(String linkName) {
+        boolean flag = false;
+        By getSection = By.xpath("//*[text()='" + linkName + "']");
+        if (I.amPerforming().checkToSee().isDisplayed(getSection)) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
      * assert true if alignment of section column displayed as expected
      *
      * @param columnAlignment
@@ -365,6 +387,17 @@ public class DynamicFormPage extends GovGrantsManager {
         WebElement getTopRightActions = I.amPerforming().getElementReference().of(By.xpath("//b[text()='" + modalOverviewHeader + "']/ancestor::div//*[@title='" + actionName + "']/ancestor::div[@class='dropdown']"));
         if (getTopRightActions.getAttribute("style").contains("display: none")) {
             return true;
+        }
+        return flag;
+    }
+
+    public boolean assertModalWindowOpenOrNot(String usage, String modalTitle) {
+        boolean flag = false;
+        try {
+            if (usage.equalsIgnoreCase("do not see") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@class='modal-content']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

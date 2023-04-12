@@ -106,6 +106,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "10" seconds
     Then I see "Edit" button is not displayed
 
   @88276  @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
@@ -345,6 +346,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "15" seconds
     Then I see the instruction text is as follows :
   """
    {LongText:FormInstructionSmall-Text}
@@ -428,6 +430,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "10" seconds
     Then I see "Validate" button is not displayed
 
   @90787    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
@@ -446,6 +449,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "10" seconds
     Then I see "Validate" button is not displayed
 
   @89927    @ValidateByClickOnViewLessOptionPageInstructionTextShouldGetCollapsedAtDynamicFormInViewMode
@@ -512,6 +516,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "10" seconds
     Then I see the instruction text is as follows :
   """
    {LongText:SectionInstruction-Text}
@@ -564,11 +569,11 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form 1" inside table
-    When I click on "Validate" button in right header
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Save" button in right header
+    And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Checkbox in Section Section 1 question not answered          |
-    #  | Written Section 2 in Section Section 2 question not answered |
+      | Written ?  is required to save under Section 5. |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -605,10 +610,8 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
-    Then I see the instruction text is as follows :
-  """
-   {LongText:SectionInstructionLong-Text}
-  """
+    And I pause execution for "10" seconds
+    Then I see "view less" option is displayed
     Examples:
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. |
@@ -642,8 +645,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -660,13 +663,13 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0002            |                           |                            |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -683,13 +686,13 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0003            |                           |                            |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Application In Created State Only"
-    When I click on "View" icon for "Application In Created State Only" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -706,13 +709,13 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0004            |                           |                            |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -734,8 +737,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -757,8 +760,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -840,6 +843,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "5" seconds
     Then I see "Cancel" button is displayed
 
   @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
@@ -962,11 +966,11 @@ Business Need: dynamic forms Component Scenarios
   @91797    @validateIfDynamicFormNameIsChangedFromCaptureFormConfigThenItShouldDisplayedInsideDynamicFormTableATAnnouncement
   Scenario: validate if dynamic form name is changed from config then that name should displayed inside dynamic form enhanced table at announcement detail
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Capture Form          | Form Name | Dynamic Form      | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Capture Form          | Capture Package Name | Dynamic Form      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Form:General  | Form Name | Test Automation Form | CF-0000            |                           |                            |
+      | configurationCategory | fieldName            | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Capture Package Name | Test Automation Form | CF-0000            |                           |                            |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -974,6 +978,7 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
+    And I pause execution for "5" seconds
     Then I see "Test Automation Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
 
   @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
@@ -1324,6 +1329,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Number"
+    And I pause execution for "5" seconds
     Then I see "Test Automation Number Help" shown as help text
 
   @92630 @ValidateHelpTextAtDateFieldInsideDynamicFormInEditMode
@@ -1530,6 +1536,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "7" seconds
     Then I see "Validate" button is not displayed
 
   @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
@@ -1557,6 +1564,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "10" seconds
     Then I softly see section as "Section 1" inside dynamic form layout
     Then I softly see section as "Section 2" inside dynamic form layout
     Then I softly see section as "Section 3" inside dynamic form layout
@@ -1754,6 +1762,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "10" seconds
     Then I softly do not see "Section: Section 1" block is collapsed
     Then I softly do not see "Section: Section 4" block is collapsed
 
@@ -3127,6 +3136,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    And I pause execution for "5" seconds
     #Then I see "Written" field is shown at position "0" in "Section 1"
     Then I see "Written" field is shown in "1" position
 
@@ -3474,10 +3484,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
     And I click on "view less" hyperlink in page instruction block
-    Then I see the instruction text is as follows :
-  """
-   {LongText:SectionInstructionCollapsed-Text}
-  """
+    And I pause execution for "5" seconds
+    Then I see "view more" option is displayed
     Examples:
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since thee 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum |
@@ -3498,11 +3506,13 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    And I enter value "" into field "Written"
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number |       |
     When I click on "Save" in the page details
     When I pause execution for "6" seconds
     Then I see the following message in the page details :
-      | Written is required to save under Section 1. |
+      | Number is required to save under Section 1. |
 
   @96619   @validateSortOrderAtSectionsAtDynamicFormLayoutInEditMode
   Scenario: validate sort order field at capture section in dynamic form layout -edit mode
@@ -3604,8 +3614,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I close modal by clicking the top right x button
-    Then I see "DynamicForm" modal window with id "---program:-:DynamicFormTableModalId---" is not displayed
-
+    Then I do not see "DynamicForm" modal window is open
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
@@ -3654,11 +3663,11 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I close modal by clicking the top right x button
-    Then I see "View Window" modal is closed
+    Then I do not see "DynamicForm" modal window is open
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97076   @validateByClickOnEditActionAtDynamicFormItOpensDynamicFormInEitMode
   Scenario Outline: validate by click on edit action modal it opens modal in edit mode
@@ -3731,8 +3740,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Edit" button is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97566   @validateByClickOnViewActionAtFormOpenedInModalAnEditActionIsDisplayedAtBottom
   Scenario Outline: validate by click on view action at dynamic form an edit action is displayed at bottom of modal
@@ -3756,8 +3765,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Edit" button at "Bottom" of  Modal window
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97567   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutViewModeOpensInModal
   Scenario Outline: validate sections are expanded by default inside dynamic form view mode opens in modal
@@ -3781,8 +3790,8 @@ Business Need: dynamic forms Component Scenarios
     Then I softly do not see "Section: Section 4" block is collapsed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97576   @ValidateMessageAppearsByClickOnValidateButtonAtDynamicFormInViewModeOpensInModal
   Scenario Outline: validate a message should display by click on header validate button on dynamic form view mode opens in modal
@@ -3857,8 +3866,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Edit" button at "Top" of  Modal window
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97575   @validateValidateButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
   Scenario Outline: validate that validate button is displayed at top right corner at dynamic form layout opens in modal
@@ -3974,8 +3983,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Save" button is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit |
 
   @97588   @validateAPicklistFieldIsEditableAndSvaesTheGivenValueInsideModalOfDynamicForm
   Scenario Outline: validate that picklist field is ediatble and it saves the given value inside dynamic form modal window
@@ -4051,7 +4060,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
-    When I pause execution for "2" seconds
+    When I pause execution for "7" seconds
     Then I see "uformview" in current url
 
   @wip @100112   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldFromMultipleSectionsUsingWrittenFieldValueInsideDynamicFormInEditMode
@@ -4449,7 +4458,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ?   | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4459,11 +4468,12 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" action at the "Dynamic Form" modal
+    And I pause execution for "5" seconds
     Then I see "Download as PDF" options is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @100460    @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
@@ -4488,8 +4498,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Menu" action is not displayed at the "Dynamic Form" modal
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @100462    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormEditModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form edit modal window
@@ -4514,8 +4524,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Save" button is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit |
 
   @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as admin user
