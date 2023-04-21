@@ -6,7 +6,11 @@ import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import org.junit.Assert;
+=======
+import org.openqa.selenium.By;
+>>>>>>> 7042bd5657966f00ab1a491ee7a0e4cd7ddbeb93
 import org.openqa.selenium.WebElement;
 
 public class DynamicFormSteps {
@@ -121,6 +125,7 @@ public class DynamicFormSteps {
         dynamicFormPage.assertModalWindowOpenOrNot(usage, windowTitle);
     }
 
+<<<<<<< HEAD
     @And("I click on {string} icon in {string} flex table for {string} record")
     public void iClickOnIconInFlexTableForRecord(String action, String tableName, String recordIndex) {
         if (tableName.contains("Scheduled Activities - All")) {
@@ -138,4 +143,20 @@ public class DynamicFormSteps {
         }
     }
 
+=======
+    @Then("I softly see {string} success message for table id {string} with {string}")
+    public void iSoftlySeeSucessMessage(String text, String TableId, String menuItemName) {
+        By parallelMenuItem = By.xpath("//div[@id='" + TableId + "']//a//span[text()='" + menuItemName + "']");
+        I.amPerforming().click().on(parallelMenuItem);
+        try {
+            I.amPerforming().waitFor().makeThreadSleep(5000);
+            I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='success-alert']//span[text()='" + text + "']"));
+        } catch (Exception var5) {
+            I.amPerforming().click().on((By.xpath("//a[@data-target='#toggleFlexTablePrograms']/ancestor::div[contains(@class,'panel-heading')]//a[@title='Menu']")));
+            I.amPerforming().click().on(parallelMenuItem);
+            I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='success-alert']//span[text()='" + text + "']"));
+
+        }
+    }
+>>>>>>> 7042bd5657966f00ab1a491ee7a0e4cd7ddbeb93
 }

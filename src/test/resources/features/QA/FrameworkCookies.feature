@@ -24,7 +24,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
     And I can see last page displayed in pagination inside "Programs"
     And I navigate to "Planning" tab
-    Then I can see last page displayed in pagination inside "Programs"
+    And I can see last page displayed in pagination inside "Programs"
     #267851
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
@@ -51,7 +51,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -79,7 +79,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    And I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Applications" tab
     And I navigate to "Monitoring" tab
     Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -104,7 +104,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -132,7 +132,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -162,7 +162,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -186,7 +186,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -211,7 +211,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -236,7 +236,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     And I click toggle button to select "Internal Programs - Draft"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -266,7 +266,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -295,7 +295,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -320,7 +320,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -348,7 +348,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -377,7 +377,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
@@ -406,7 +406,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -435,7 +435,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "View" icon for "Vrush Application" inside table
     And I click on back arrow
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -460,7 +460,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -490,7 +490,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -520,7 +520,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -550,7 +550,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
@@ -580,7 +580,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -605,7 +605,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -633,7 +633,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -662,7 +662,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -691,7 +691,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -719,7 +719,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -747,7 +747,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    And I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
 
@@ -770,7 +770,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -798,7 +798,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    And I see "20" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     Then I see "20" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
 
@@ -822,7 +822,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -851,7 +851,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    And I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     Then I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -876,7 +876,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -905,7 +905,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    And I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     Then I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -929,7 +929,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -957,7 +957,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I click toggle button to select "Applications - All"
     And I navigate to "Applications" tab
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -981,7 +981,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
@@ -1009,7 +1009,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
@@ -1038,7 +1038,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1068,7 +1068,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    When I see "100" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1097,7 +1097,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -1126,7 +1126,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Monitoring" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1205,7 +1205,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    And I can see last page displayed in pagination inside "Programs"
     And I navigate to "Planning" tab
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
@@ -1233,7 +1233,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Monitoring"
+    When I can see last page displayed in pagination inside "Monitoring"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     Then I can see last page displayed in pagination inside "Monitoring"
@@ -1313,7 +1313,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
     And I navigate to "Planning" tab
     Then I softly see the text containing :
@@ -1421,7 +1421,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I refresh the page
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
@@ -1449,7 +1449,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Monitoring"
+    When I can see last page displayed in pagination inside "Monitoring"
     And I refresh the page
     And I click toggle button to select "Scheduled Activities - All"
     Then I can see last page displayed in pagination inside "Monitoring"
@@ -1482,7 +1482,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @268087
   Scenario: To verify when user changes pagination to Previous and refreshes the page then table should get open on the page where pagination was set to Previous (SPI)
@@ -1529,7 +1529,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
     And I navigate to "Planning" tab
     Then I softly see the text containing :
@@ -1537,7 +1537,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |`
+      | PM    |`
 
   @268090
   Scenario: o verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (SPI)
@@ -1559,7 +1559,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Monitoring"
+    When I can see last page displayed in pagination inside "Monitoring"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "First"
     And I refresh the page
     And I click toggle button to select "Scheduled Activities - All"
@@ -1596,7 +1596,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #  | PM    |
+        | PM    |
 
   @268098
   Scenario: To verify when user changes pagination to next, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1655,7 +1655,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #  | PM    |
+        | PM    |
 
   @268104
   Scenario: To verify when user changes pagination to Last, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1714,7 +1714,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @268107
   Scenario: To verify when user changes pagination to Previous, click on row level Edit action and click on page back arrow then table should get open on the page where pagina
@@ -1766,7 +1766,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
     And I pause execution for "5" seconds
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -1776,7 +1776,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @268113 @268114
   Scenario Outline:  To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(Admin)
@@ -1808,7 +1808,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #  | PM    |
+        | PM    |
 
   @268115
   Scenario: To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1867,7 +1867,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #  | PM    |
+        | PM    |
 
   @268119
   Scenario: To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1926,7 +1926,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @268122
   Scenario: To verify when user changes pagination to Previous, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Previous.(SPI)
@@ -1978,7 +1978,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
     And I pause execution for "5" seconds
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
     When I click on "Edit" icon for "<Record>" inside table
     And I click on back arrow
@@ -2043,7 +2043,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     #   | PM    |
+        | PM    |
 
   @268146
   Scenario: To verify when user changes pagination to next, click on the another phase and again click on the same phase where pagination was set to next then table should get open on that page (SPI)
@@ -2084,7 +2084,6 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
@@ -2092,14 +2091,14 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    When I can see last page displayed in pagination inside "Programs"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
       | User  |
       | ADMIN |
-     #   | PM    |
+      | PM    |
 
   @268156
   Scenario: To verify when user changes pagination to Last, click on the another phase and again click on the same phase where pagination was set to Last then table should get open on that page(SPI)
@@ -2206,7 +2205,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
-    Then I can see last page displayed in pagination inside "Programs"
+    And I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
@@ -2215,7 +2214,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     #   | PM    |
+        | PM    |
 
   @268193
   Scenario: To verify when user changes pagination to First, click on the another phase and again click on the same phase where pagination was set to First then table should get open on that page(SPI)
@@ -2270,7 +2269,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     #   | PM    |
+        | PM    |
 
   @268237
   Scenario: To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (SPI)
@@ -2373,7 +2372,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
       | User |
-     #| ADMIN |
+     | ADMIN |
       | PM   |
 
   @268293
@@ -2412,7 +2411,6 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
@@ -2426,7 +2424,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-         # | PM   |
+          | PM   |
 
   @268299
   Scenario: To verify when user searches any value in quick search field and clicks on the same phase then table should show the records of Quick search results (SPI)
@@ -2477,7 +2475,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-         # | PM   |
+          | PM   |
 
   @268306
   Scenario: o verify when user searches any value in quick search field, click on the another phase and again click on the same phase where table was showing quick search results then table should show the records of Quick search results (SPI)
@@ -2527,7 +2525,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2551,7 +2549,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2575,13 +2573,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268469 @268471
   Scenario Outline:To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (Admin)
@@ -2596,13 +2594,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268476 @268478
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2617,14 +2615,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    When I see "down" arrow is Displayed inside "EGMS ID" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   #### Custom Data Type - Picklist *********
   @268482 @268560
@@ -2640,7 +2638,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    Then I see "down" arrow is Displayed inside "Type" field
+    And I see "down" arrow is Displayed inside "Type" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2648,7 +2646,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268563 @268564
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
@@ -2664,7 +2662,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    Then I see "down" arrow is Displayed inside "Type" field
+    And I see "down" arrow is Displayed inside "Type" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2673,7 +2671,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268565 @268569
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (Admin)
@@ -2688,13 +2686,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    Then I see "down" arrow is Displayed inside "Type" field
+    And I see "down" arrow is Displayed inside "Type" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268572 @268574
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (Admin)
@@ -2709,13 +2707,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    Then I see "down" arrow is Displayed inside "Type" field
+    And I see "down" arrow is Displayed inside "Type" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268581 @268582
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
@@ -2730,14 +2728,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    Then I see "down" arrow is Displayed inside "Type" field
+    When I see "down" arrow is Displayed inside "Type" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
 ##### Custom Data Type- Text #####
   @268588 @268589
@@ -2753,7 +2751,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I see "down" arrow is Displayed inside "Abbreviation" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2761,7 +2759,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268592 @268593
   Scenario Outline:  To verify when sort direction of data type-Text is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
@@ -2777,7 +2775,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    And I see "down" arrow is Displayed inside "Abbreviation" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2786,7 +2784,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268595 @268596
   Scenario Outline: To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
@@ -2801,13 +2799,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I see "down" arrow is Displayed inside "Abbreviation" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268602 @268603
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(Admin)
@@ -2822,13 +2820,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I see "down" arrow is Displayed inside "Abbreviation" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268607 @268609
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2843,14 +2841,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I see "down" arrow is Displayed inside "Abbreviation" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ###### Custom Data Type - Lookup *********
   @268615 @268617
@@ -2866,7 +2864,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    And I see "down" arrow is Displayed inside "Internal Organization" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2874,7 +2872,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268619 @268620
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Lookup (Admin)
@@ -2890,7 +2888,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    And I see "down" arrow is Displayed inside "Internal Organization" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2899,7 +2897,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-       # | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268623 @268624
   Scenario Outline:To verify when sort direction of data type-Lookup is set in ascending order and click on same phase then records should be in ascending order for data type-Lookup (Admin)
@@ -2914,13 +2912,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I see "down" arrow is Displayed inside "Internal Organization" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268628 @268631
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (Admin)
@@ -2935,13 +2933,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I see "down" arrow is Displayed inside "Internal Organization" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268633 @268634
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2956,14 +2954,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I see "down" arrow is Displayed inside "Internal Organization" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   #### Data Type - Number ********
   @268637 @268638
@@ -2979,7 +2977,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
     And I click on "up" arrow inside "Number of Approval Steps" field
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -2987,7 +2985,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268640 @268641
   Scenario Outline:To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (Admin)
@@ -3003,7 +3001,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Number of Approval Steps" column inside Internal Programs
     And I click on "up" arrow inside "Number of Approval Steps" field
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3012,7 +3010,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268644 @268646
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (Admin)
@@ -3027,13 +3025,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
     And I click on "up" arrow inside "Number of Approval Steps" field
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268652 @268660
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (Admin)
@@ -3048,13 +3046,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
     And I click on "up" arrow inside "Number of Approval Steps" field
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268667 @268668
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3069,14 +3067,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
     And I click on "up" arrow inside "Number of Approval Steps" field
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
 #### Data type - Date ***************
   @268673 @268674
@@ -3092,7 +3090,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    Then I see "down" arrow is Displayed inside "Start Date" field
+    And I see "down" arrow is Displayed inside "Start Date" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3100,7 +3098,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268677 @268678
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
@@ -3116,7 +3114,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    Then I see "down" arrow is Displayed inside "Start Date" field
+    And I see "down" arrow is Displayed inside "Start Date" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3125,7 +3123,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268680 @268682
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (Admin)
@@ -3140,13 +3138,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I see "down" arrow is Displayed inside "Start Date" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268684 @268685
   Scenario Outline:To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
@@ -3161,13 +3159,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I see "down" arrow is Displayed inside "Start Date" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268687 @268688
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3182,14 +3180,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I see "down" arrow is Displayed inside "Start Date" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
 #### Data Type - Date and Time ***********
   @268699 @268700
@@ -3205,7 +3203,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I see "down" arrow is Displayed inside "Date and Time" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3213,7 +3211,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268707 @268708
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
@@ -3229,7 +3227,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    Then I see "down" arrow is Displayed inside "Date and Time" field
+    And I see "down" arrow is Displayed inside "Date and Time" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3238,7 +3236,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268713 @268715
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(Admin)
@@ -3253,13 +3251,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I see "down" arrow is Displayed inside "Date and Time" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268721 @268723
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(Admin)
@@ -3274,13 +3272,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I see "down" arrow is Displayed inside "Date and Time" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268734 @268735
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3295,14 +3293,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I see "down" arrow is Displayed inside "Date and Time" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   #### Data Type - Percentage **************
   @268791 @268792
@@ -3318,7 +3316,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    And I see "down" arrow is Displayed inside "Percentage" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3326,7 +3324,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268794 @268796
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(Admin)
@@ -3342,7 +3340,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I see "down" arrow is Displayed inside "Percentage" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3351,7 +3349,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268799 @268802
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(Admin)
@@ -3366,13 +3364,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I see "down" arrow is Displayed inside "Percentage" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268807 @268810
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
@@ -3387,13 +3385,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I see "down" arrow is Displayed inside "Percentage" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268819 @268820
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3408,14 +3406,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I see "down" arrow is Displayed inside "Percentage" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ##### Data Type - Formula****
   @268822 @268823
@@ -3431,7 +3429,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    Then I see "down" arrow is Displayed inside "Address" field
+    And I see "down" arrow is Displayed inside "Address" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3439,7 +3437,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268827 @268828
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
@@ -3455,7 +3453,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    Then I see "down" arrow is Displayed inside "Address" field
+    And I see "down" arrow is Displayed inside "Address" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3464,7 +3462,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268830 @268831
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (Admin)
@@ -3479,13 +3477,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    Then I see "down" arrow is Displayed inside "Address" field
+    When I see "down" arrow is Displayed inside "Address" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268833 @268834
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
@@ -3500,13 +3498,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    Then I see "down" arrow is Displayed inside "Address" field
+    When I see "down" arrow is Displayed inside "Address" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268836 @268837
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3521,14 +3519,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    Then I see "down" arrow is Displayed inside "Address" field
+    When I see "down" arrow is Displayed inside "Address" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
     ##### Data Type - Checkbox****
   @268839 @268840
@@ -3544,7 +3542,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I see "down" arrow is Displayed inside "CFDA Data" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3552,7 +3550,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268842 @268843
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
@@ -3568,7 +3566,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    And I see "down" arrow is Displayed inside "CFDA Data" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3577,7 +3575,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268845 @268846
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(Admin)
@@ -3592,13 +3590,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    And I see "down" arrow is Displayed inside "CFDA Data" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268850 @268856
   Scenario Outline:To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(Admin)
@@ -3613,13 +3611,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I see "down" arrow is Displayed inside "CFDA Data" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268863 @268864
   Scenario Outline: To verify when sort direction of data type-Checkboxis set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3634,14 +3632,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I see "down" arrow is Displayed inside "CFDA Data" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
    ##### Data Type - Email ****
   @268948 @268949
@@ -3657,7 +3655,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I see "down" arrow is Displayed inside "DND_Email" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3665,7 +3663,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268951 @268952
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
@@ -3681,7 +3679,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    Then I see "down" arrow is Displayed inside "DND_Email" field
+    And I see "down" arrow is Displayed inside "DND_Email" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3690,7 +3688,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268954 @268956
   Scenario Outline:  To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (Admin)
@@ -3705,13 +3703,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I see "down" arrow is Displayed inside "DND_Email" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268958 @268959
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (Admin)
@@ -3726,13 +3724,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I see "down" arrow is Displayed inside "DND_Email" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268961 @268962
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3747,14 +3745,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I see "down" arrow is Displayed inside "DND_Email" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ######## Data Type - Currency *******
   @268965 @268966
@@ -3770,7 +3768,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I see "down" arrow is Displayed inside "Funded Amount" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3778,7 +3776,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268968 @268969
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (Admin)
@@ -3794,7 +3792,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I see "down" arrow is Displayed inside "Funded Amount" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3803,7 +3801,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268971 @268972
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (Admin)
@@ -3818,13 +3816,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I see "down" arrow is Displayed inside "Funded Amount" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268975 @268976
   Scenario Outline:To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (Admin)
@@ -3839,13 +3837,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    And I see "down" arrow is Displayed inside "Funded Amount" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268978 @268979
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3860,14 +3858,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I see "down" arrow is Displayed inside "Funded Amount" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ########## Data Type - URL **************
   @268981 @268983
@@ -3883,7 +3881,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    Then I see "down" arrow is Displayed inside "URL" field
+    When I see "down" arrow is Displayed inside "URL" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3891,7 +3889,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268985 @268986
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
@@ -3907,7 +3905,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    Then I see "down" arrow is Displayed inside "URL" field
+    When I see "down" arrow is Displayed inside "URL" field
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I click on back arrow
@@ -3916,7 +3914,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268990 @268991
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (Admin)
@@ -3931,13 +3929,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    Then I see "down" arrow is Displayed inside "URL" field
+    When I see "down" arrow is Displayed inside "URL" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268993 @268994
   Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (Admin)
@@ -3952,13 +3950,13 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    Then I see "down" arrow is Displayed inside "URL" field
+    When I see "down" arrow is Displayed inside "URL" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268996 @268997
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3973,14 +3971,14 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    Then I see "down" arrow is Displayed inside "URL" field
+    When I see "down" arrow is Displayed inside "URL" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      #| PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ############## Quick search  ##############
   @269088 @269089
@@ -4002,7 +4000,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
     And I click on "up" arrow inside "Program Name" field
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     When I click on "View" icon for "Automation Program" inside table
     And I click on back arrow
@@ -4011,7 +4009,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269091 @269092
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and sorting (Admin)
@@ -4033,7 +4031,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Program Name" column inside Internal Programs
     And I click on "up" arrow inside "Program Name" field
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Edit Mode Program"
     When I click on "Edit" icon for "Automation Edit Mode Program" inside table
     And I click on back arrow
@@ -4043,7 +4041,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269094 @269095
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and click on same phase then table should restore search results and sorting (Admin)
@@ -4064,7 +4062,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
     And I click on "up" arrow inside "Program Name" field
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    When I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4073,7 +4071,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269097 @269098
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and refreshes the page then table should restore search results and sorting (Admin)
@@ -4094,17 +4092,16 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
     And I click on "up" arrow inside "Program Name" field
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I refresh the page
     And I pause execution for "5" seconds
-    #After disabled lwc remove below comment
-   # Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Program Name" field
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269100 @269101
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
@@ -4125,7 +4122,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
     And I click on "up" arrow inside "Program Name" field
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
@@ -4135,7 +4132,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   ########### Quick search,sorting, pagination #############
 
@@ -4157,7 +4154,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Program"
     When I click on "View" icon for "Automation Program" inside table
     And I click on back arrow
@@ -4166,7 +4163,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269108 @269111
   Scenario Outline:To verify when page size is 10 and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and page size (Admin)
@@ -4187,7 +4184,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Edit Mode Program"
     When I click on "Edit" icon for "Automation Edit Mode Program" inside table
     And I click on back arrow
@@ -4197,7 +4194,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269113 @269114
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search and click on same phase then table should restore search results and page size (Admin)
@@ -4217,16 +4214,16 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Program"
-    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    When I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I navigate to "Planning" tab
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269116 @269117
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (Admin)
@@ -4246,16 +4243,16 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Program"
-    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    When I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @269119 @269120
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (Admin)
@@ -4275,9 +4272,9 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    When I see "10" with page size dropdown at "---program:-:programTableDivId---"
     When I perform quick search for "Automation Program"
-    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
     Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
@@ -4372,7 +4369,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
     And I navigate to "Planning" tab
     Then I see the text containing :
       | Page 2 |
@@ -4403,7 +4400,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    When I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
     Then I see the text containing :
       | Page 2 |
@@ -4444,7 +4441,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   ###################### Page size and sorting #####################
   @269148 @269149
@@ -4476,7 +4473,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269151 @269152
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and sorting (Admin)
@@ -4509,7 +4506,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269154 @269155
   Scenario Outline:  To verify when Sort direction-ascending order and page size is 10 and click on same phase then table should restore page size and sorting (Admin)
@@ -4539,7 +4536,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+     | PM    |
 
   @269157 @269158
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (Admin)
@@ -4569,7 +4566,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269160 @269161
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (Admin)
@@ -4600,7 +4597,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   ######### Pagination and Page size ####################
   @269240 @269241
@@ -4635,7 +4632,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269245 @269246
   Scenario Outline:  To verify when Pagination is changed to next and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and Pagination(Admin)
@@ -4671,7 +4668,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269250 @269251
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and click on same phase then table should restore page size and Pagination(Admin)
@@ -4702,7 +4699,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269253 @269255
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(Admin)
@@ -4733,7 +4730,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269257 @269258
   Scenario Outline: o verify when Pagination is changed to next and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(Admin)
@@ -4764,7 +4761,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   ########## Sorting and Pagination ###############
 
@@ -4800,7 +4797,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @269264 @269265
   Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order, user clicks on row level Edit action and click on page back arrow then table should restore Pagination and sorting (Admin)
@@ -5059,7 +5056,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+     | PM    |
 
   @282247
   Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5074,7 +5071,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+     | PM    |
 
   @282261
   Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5091,7 +5088,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+     | PM    |
 
   @282271
   Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5106,23 +5103,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
-
-  @282273
-  Scenario Outline:To verify when user changes the list view then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I cannot see the following message in the page details :
-      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
-    And I click toggle button to select "Internal Programs - Draft"
-    And I softly see "Internal Programs - Draft" inside list view option of table "#toggleFlexTablePrograms"
-    Then I can see the following message in table :
-      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
-    Examples:
-      | User  |
-      | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282275
   Scenario Outline: To verify when user changes page size and clicks on clear session then 'Table has been reset' message should display (Admin/PM)
@@ -5139,14 +5120,12 @@ Business Need: FrameworkCookies Component Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I pause execution for "5" seconds
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
-#    Then I softly see the following messages in the page details :
-#      | Table has been reset. |
     Then I can see the following message in table :
       | Table has been reset. |
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282354
   Scenario Outline: To verify when user changes pagination and clicks on clear session then 'Cleared session storage successfully' message should display (Admin/PM)
@@ -5154,13 +5133,256 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I pause execution for "5" seconds
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
-#    Then I softly see the following messages in the page details :
-#      | Table has been reset. |
     Then I can see the following message in table :
       | Table has been reset. |
     Examples:
       | User  |
       | ADMIN |
    #  | PM    |
+
+  @282363
+  Scenario Outline: To verify when user changes the list view from active to draft, changes the page size, click on active and again on draft then page size should be restored. (Admin/PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
+    And I pause execution for "5" seconds
+    And I click toggle button to select "Internal Programs - Active"
+    Then I do not see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @282367
+  Scenario Outline: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "---program:-:programTableDivId---" is "20"
+    And I pause execution for "5" seconds
+    Then I see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
+    And I pause execution for "5" seconds
+    And I click toggle button to select "Internal Programs - Active"
+    Then I do not see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
+    Examples:
+      | User  |
+      | ADMIN |
+     | PM    |
+
+  @282369
+  Scenario Outline: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Internal Programs - Active"
+    And I pause execution for "5" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I see the text containing :
+      | Page 2 |
+    Then I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @282371 @Vrushali
+  Scenario Outline: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (Admin/PM)
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Internal Programs - Active"
+    And I pause execution for "5" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I see the text containing :
+      | Page 2 |
+    Then I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @282372 @282357
+  Scenario: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Applications - Submitted"
+    And I click toggle button to select "Applications - All"
+    #282357
+    Then I cannot see the following message in the page details :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+
+  @282225 @282276
+  Scenario: To verify when user changes page size and clicks on clear session then page size should set back to default value (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
+    When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Reset Table" from parallel lines dropdown of "Applications - Submitted"
+    #282276
+    Then I can see the following message in table :
+      | Table has been reset. |
+    #282225
+    Then I see "5" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @282227 @282248 @282355
+  Scenario: To verify when user changes pagination and clicks on clear session then pagination should set back to default value (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    #282248
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Reset Table" from parallel lines dropdown of "Applications - Submitted"
+    #282227
+    Then I see the text containing :
+      | Page 1 |
+    #282355
+    Then I can see the following message in table :
+      | Table has been reset. |
+
+  @282236 @282259
+  Scenario:To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    #282259
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I pause execution for "3" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Reset Table" from parallel lines dropdown of "Applications - Submitted"
+    Then I can see the following message in table :
+      | Table has been reset. |
+
+  @282239 @282272 @282359
+  Scenario: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Program For Application"
+    #282272
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Reset Table" from parallel lines dropdown of "Applications - Submitted"
+    #282359
+    Then I can see the following message in table :
+      | Table has been reset. |
+
+  @282245
+  Scenario:To verify when user changes page size then 'Click Clear Session to refresh back to the default values' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
+    When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+
+  @282364
+  Scenario:To verify when user changes the list view from active to draft, changes the page size, click on active and again on draft then page size should be restored. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
+    When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Applications - Submitted"
+    Then I see "5" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @282368
+  Scenario: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Program For Application"
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Applications - Submitted"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Reset Table" from parallel lines dropdown of "Applications - Submitted"
+    Then I can see the following message in table :
+      | Table has been reset. |
+
+  @282370
+  Scenario: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (SPI)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I can see the following message in table :
+      | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
+    And I click toggle button to select "Applications - Submitted"
+    Then I see the text containing :
+      | Page 1 |

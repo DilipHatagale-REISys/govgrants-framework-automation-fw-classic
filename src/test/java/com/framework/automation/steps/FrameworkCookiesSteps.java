@@ -22,5 +22,10 @@ public class FrameworkCookiesSteps {
     public void iSeeTableContains(String usage, String tableId, String textContains) {
         frameworkCookiesPage.assertPaginationOnCurrentPage(usage, tableId, textContains);
     }
+
+    @Then("^I (softly see|see|do not see) Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table")
+    public void iDoNotSeeClickResetTableUnderTheMenuIconToRefreshTheTableSDefaultValuesMessageInTable(String usage) {
+        FrameworkCookiesPage.assertIfMessageDisplayed(usage);
+    }
 }
 
