@@ -213,7 +213,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
 
-  @833711   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @SendBackActivity
+  @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @SendBackActivity
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
@@ -292,7 +292,7 @@ Business Need: Sanity check for all Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "5" at position "2" and column at position "5" contains text "Approved"
   # @83371 - activated by owner
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab

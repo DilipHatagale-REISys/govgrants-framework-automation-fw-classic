@@ -937,7 +937,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "5" at position "2" and column at position "5" contains text "Approved"
   # @83371 - activated by owner
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
