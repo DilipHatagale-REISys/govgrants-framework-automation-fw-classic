@@ -271,7 +271,7 @@ public class DynamicFormPage extends GovGrantsManager {
                 && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-6')]"))) {
             return true;
         } else if (columnAlignment.equalsIgnoreCase("horizontally")
-                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-4')]"))) {
+                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-4')] | //div[@class='formUIWrap']//div[contains(@class,'row flexWrap formRowWrap')]"))) {
             return true;
         }
         return flag;

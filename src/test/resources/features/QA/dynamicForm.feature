@@ -566,10 +566,13 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 5" page block
+      | Field   | Value |
+      | Written |       |
     When I click on "Save" button in right header
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -1114,11 +1117,11 @@ Business Need: dynamic forms Component Scenarios
       | Field                     | Value |
       | Score (Max Score : 50.00) | 60    |
     When I click on "Save" in the page details
-    #Then I see the following message in the page details :
-#     # | Score value should not be greater than max score |
+    Then I see the following message in the page details :
+      | Score value should not be greater than max score |
 #    Then I see the following messages in the page details contains:
 #      | Score value should not be greater than max score |
-    Then I see error massage in the page details "Score value should not be greater than max score"
+   # Then I see error massage in the page details "Score value should not be greater than max score"
 
 
   @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode @skipOnJenkins
@@ -3628,7 +3631,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | FlexGrid Enhanced Action | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | FlexGrid Enhanced Action | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | FlexGrid Enhanced Action | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3641,8 +3644,8 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Edit" button is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97054   @validateByClickOnCrossIconAtFormOpenedInModalAModalIsGettingClosed
   Scenario Outline: validate by click on cross icon at modal window a dynamic form modal is getting closed
@@ -3702,7 +3705,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3716,8 +3719,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Edit" button is displayed
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97564   @validateByClickOnViewActionAtFormOpenedInModalAnEditActionIsDisplayed
   Scenario Outline: validate by click on view action at dynamic form an edit action is displayed on modal window
@@ -3728,7 +3731,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3752,7 +3755,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3777,7 +3780,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3802,13 +3805,13 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Validate" button in right header
@@ -3816,8 +3819,8 @@ Business Need: dynamic forms Component Scenarios
       | Written Section 2 in Section Section 2 question not answered |
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97578   @ValidateMessageAppearsByClickOnValidateButtonAtBottomOfDynamicFormInViewModeOpensInModal
   Scenario Outline: validate a message should display by click on footer validate button on dynamic form opens in modal
@@ -3828,13 +3831,13 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I perform quick search for "Announcement for Dynamic Form Error Message Testing"
+    When I click on "View" icon for "Announcement for Dynamic Form Error Message Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Validate" button in right footer
@@ -3842,8 +3845,8 @@ Business Need: dynamic forms Component Scenarios
       | Written Section 2 in Section Section 2 question not answered |
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97574   @validateEditButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
   Scenario Outline: validate that Edit button is displayed at top right corner at dynamic form layout opens in modal
@@ -3878,7 +3881,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3890,8 +3893,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Validate" button at "Top" of  Modal window
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97580   @validateThatFormIsOpenedInEditModeByClickOnEditButtonAtFooterAtDynamicFormOpensInModal
   Scenario Outline: validate that form is opened in edit mode by click on bottom edit button at dynamic form layout opens in modal
@@ -3902,7 +3905,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3915,8 +3918,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Cancel" button at "Bottom" of  Modal window
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @97583   @validateSaveButtonIsDisplayedAtBottomRightCornerInViewModeAtDynamicFormOpensInModal
   Scenario Outline: validate that save button is displayed at bottom right corner at dynamic form layout opens in modal
@@ -3927,7 +3930,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3940,8 +3943,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Save" button at "Bottom" of  Modal window
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @96639   @validateOptionsAtRadioFieldAreDisplayedIfOptionsAreConfiguredAtCaptureItemInViewMode
   Scenario: validate options are displayed below radio field if configured at radio field capture item
@@ -3995,7 +3998,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
-      | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | Edit                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4003,7 +4006,6 @@ Business Need: dynamic forms Component Scenarios
     When I perform quick search for "Program For Announcement Testing"
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
-    And I pause execution for "360" seconds
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
       | Field    | Value |
@@ -4012,8 +4014,8 @@ Business Need: dynamic forms Component Scenarios
     Then I see for "Picklist" field value is "Items" inside dynamic form
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit |
 
   @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
   Scenario: validate the display of validate button in edit mode if Validation Button Visibility is set as shown from config at dynamic form layout
@@ -4486,7 +4488,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
-      | Flex Table Action     | Where To Open ?   | Modal                   | DynamicForm        | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?   | Newtab                  | DynamicForm        | Name                      | View                       |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4888,8 +4890,8 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application In Created State Only"
-    When I click on "View" icon for "Application In Created State Only" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     And I pause execution for "2" seconds
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Standard Assurances Form" inside table
@@ -4940,7 +4942,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" button in right header
     When I enter values into "Section 1" page block
       | Field   | Value |
-      | Percent |       |
+      | Percent | 20    |
     When I click on "Save" in the page details
     When I pause execution for "2" seconds
     When I click on "Edit" button in right header

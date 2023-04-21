@@ -2071,7 +2071,7 @@ Business Need: security review Scenarios
     When I enter value "Project Grant" into field "fieldGrantType__c"
     When I enter value "Test Description" into field "fieldGrantDescription__c"
     And I click on "Save" in the page details
-    Then I softly see status in Progress-bar is "Draft" and is "green"
+    Then I softly see status in Progress-bar is "Created" and is "green"
 
   #@110500 sub-award created
     And I navigate to "Subawards" sub tab
@@ -2091,7 +2091,7 @@ Business Need: security review Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:awardFundingAccountsTableId---"
     When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:selectAwardFundingAccountsTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
-    And I pause execution for "15" seconds
+    And I pause execution for "20" seconds
     When I edit the following rows inline in flex table with id "---program:-:awardFundingAccountsTableId---" by clicking "Edit" :
       | Funding Account | Encumbrance |
       | FA-ST-04        | 1000        |
@@ -2107,7 +2107,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2116,7 +2116,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
