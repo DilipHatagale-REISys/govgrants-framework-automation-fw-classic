@@ -5,6 +5,7 @@ import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class DynamicFormSteps {
@@ -116,5 +117,20 @@ public class DynamicFormSteps {
     @Then("I (do not see) \"([^\"]*)\" modal window is open$")
     public void iSeeModalWindowIsOpen(String usage, String windowTitle) {
         dynamicFormPage.assertModalWindowOpenOrNot(usage, windowTitle);
+    }
+
+    @Then("I softly see {string} success message for table id {string} with {string}")
+    public void iSoftlySeeSucessMessage(String text, String TableId, String menuItemName) {
+        By parallelMenuItem = By.xpath("//div[@id='" + TableId + "']//a//span[text()='" + menuItemName + "']");
+        I.amPerforming().click().on(parallelMenuItem);
+        try {
+            I.amPerforming().waitFor().makeThreadSleep(5000);
+            I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='success-alert']//span[text()='" + text + "']"));
+        } catch (Exception var5) {
+            I.amPerforming().click().on((By.xpath("//a[@data-target='#toggleFlexTablePrograms']/ancestor::div[contains(@class,'panel-heading')]//a[@title='Menu']")));
+            I.amPerforming().click().on(parallelMenuItem);
+            I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='success-alert']//span[text()='" + text + "']"));
+
+        }
     }
 }
