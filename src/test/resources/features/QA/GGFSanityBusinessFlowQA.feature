@@ -213,7 +213,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
 
-  @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @SendBackActivity
+  @833711   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @SendBackActivity
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
@@ -225,26 +225,26 @@ Business Need: Sanity check for all Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @83371 - first approval
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -255,31 +255,36 @@ Business Need: Sanity check for all Component Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @83371 - send back to owner by second approval
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Send to Owner" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Send to Owner" in the approval decision
-    When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Sent Back"
-    Then I softly see status in Progress-bar is "Created" and is "Green"
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @83371 - approved by first approval
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @83371 - approved by second approval
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -287,10 +292,15 @@ Business Need: Sanity check for all Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Approved"
   # @83371 - activated by owner
-    When I navigate to "History" sub tab
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
+    When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
@@ -733,7 +743,7 @@ Business Need: Sanity check for all Component Scenarios
     When I enter value "Project Grant" into field "fieldGrantType__c"
     When I enter value "Test Description" into field "fieldGrantDescription__c"
     And I click on "Save" in the page details
-    Then I softly see status in Progress-bar is "Draft" and is "green"
+    Then I softly see status in Progress-bar is "Created" and is "green"
 
   #@110500 sub-award created
     And I navigate to "Subawards" sub tab
@@ -769,7 +779,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -778,7 +788,7 @@ Business Need: Sanity check for all Component Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
