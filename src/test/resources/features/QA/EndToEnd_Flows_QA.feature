@@ -2091,7 +2091,7 @@ Business Need: security review Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:awardFundingAccountsTableId---"
     When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:selectAwardFundingAccountsTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
-    And I pause execution for "20" seconds
+    And I pause execution for "15" seconds
     When I edit the following rows inline in flex table with id "---program:-:awardFundingAccountsTableId---" by clicking "Edit" :
       | Funding Account | Encumbrance |
       | FA-ST-04        | 1000        |

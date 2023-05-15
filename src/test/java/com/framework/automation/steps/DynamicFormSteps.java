@@ -103,9 +103,10 @@ public class DynamicFormSteps {
 
     @Then("I can see the following message in table :")
     public void iCanSeeTheFollowingMessageInTable(String text) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='panel-title custom-title ng-scope']/following::div/span[@class='sessionClass' and contains(text(),'" + text + "')] | //div[@class='container-fluid ng-scope']//span[text()='" + text + "']"));
-        // I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='container-fluid ng-scope']//span[text()='Table has been reset.']"));
-
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='panel-title custom-title ng-scope']/following::div/span[@class='sessionClass' and contains(text(),'" + text + "')] |" +
+                " //div[@class='container-fluid ng-scope']//span[text()='" + text + "'] |" +
+                " //div[@id='ActiveGrantsGrid_1FlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
+                " //div[@id='ActiveGrantsGridFlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')]"));
     }
 
     @And("I click on {string} icon in flex table for first draft record")
@@ -124,17 +125,17 @@ public class DynamicFormSteps {
 
     @And("I click on {string} icon in {string} flex table for {string} record")
     public void iClickOnIconInFlexTableForRecord(String action, String tableName, String recordIndex) {
-        if (tableName.contains("Scheduled Activities - All")) {
-            if (action.equalsIgnoreCase("View")) {
-                I.amPerforming().click().on(ByUsing.xpath("(//table[@id='ActiveGrantsGridresizable']/tbody/tr/td/div[@class='actionColIconWrap']//i[@class='fa fa-eye'])[" + recordIndex + "] | (//div[@id='ActiveGrantsGrid_1FlexToggle']//td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "]"));
-            }
+        if (action.equalsIgnoreCase("View")) {
+            I.amPerforming().click().on(ByUsing.xpath("(//table[@id='ActiveGrantsGridresizable']/tbody/tr/td/div[@class='actionColIconWrap']//i[@class='fa fa-eye'])[" + recordIndex + "] |" +
+                    " (//div[@id='ActiveGrantsGrid_1FlexToggle']//td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "] |" +
+                    " (//div[@id='GrantorRelatedAwards2FlexToggle']/div/following::div/div/div/table/thead/following::tbody/tr/td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "]"));
         }
     }
 
     @Then("^I (see) show \"([^\"]*)\" Entries inside E-grid table$")
     public void iSeeShowEntriesInsideEGridTable(String usage, String value) {
         if (usage.equalsIgnoreCase("see")) {
-            boolean valueDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='ActiveGrantsGridFlexToggle']//select[@ng-model='pageSize.size']//option[@selected='selected' and text()='" + value + "'] | //div[@id='ActiveGrantsGrid_1FlexToggle']//select[@ng-model='pageSize.size']//option[@selected='selected' and text()='"+ value +"']"));
+            boolean valueDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='ActiveGrantsGridFlexToggle']//select[@ng-model='pageSize.size']//option[@selected='selected' and text()='" + value + "'] | //div[@id='ActiveGrantsGrid_1FlexToggle']//select[@ng-model='pageSize.size']//option[@selected='selected' and text()='" + value + "']"));
             Assert.assertTrue(valueDisplayed);
         }
     }
