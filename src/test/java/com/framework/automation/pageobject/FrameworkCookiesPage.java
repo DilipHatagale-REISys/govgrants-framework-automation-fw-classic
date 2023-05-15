@@ -1,10 +1,14 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 public class FrameworkCookiesPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
@@ -29,7 +33,7 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     private Boolean isLastPageOnPagination(String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='"+ tableId +"']//div/span[@class='pull-right table-pager ng-scope']/a[@title='Last' and @ng-disabled='true']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']/a[@title='Last' and @ng-disabled='true']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -45,10 +49,10 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         }
     }
 
-    private Boolean isCurrentPageDisplayed(String tableId, String textContains ) {
+    private Boolean isCurrentPageDisplayed(String tableId, String textContains) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='"+ tableId +"']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'"+ textContains +"')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'" + textContains + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -75,4 +79,105 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public static void enterTextAndClickOnSearchButton(String textValue, String tableid) {
+        I.amPerforming().textInput().toClear(ByUsing.xpath("//div[@id='" + tableid + "']//input[@type='search']"));
+        I.amPerforming().textInput().in(ByUsing.xpath("//div[@id='" + tableid + "']//input[@type='search']"), textValue);
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableid + "']//span/button/i[@class='fa fa-search']"));
+    }
+
+    public static void getListOfWebElementAfterSearchOperationPerform(String usage, String ProjectTitleList, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isListOfWebelementDisplayedAfterSearch(ProjectTitleList, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isListOfWebelementDisplayedAfterSearch(ProjectTitleList, tableid));
+        }
+    }
+
+    private static boolean isListOfWebelementDisplayedAfterSearch(String ProjectTitleList, String tableid) {
+        boolean flag = false;
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//div[@id='" + tableid + "']//span[@class='ng-scope']//field[@field-name='ProjectTitle__c']//span[contains(@title,'" + ProjectTitleList + "')] " +
+                    "| //div[@id='" + tableid + "']//span[@class='ng-scope']/span[@title='" + ProjectTitleList + "']"));
+            if (elements.size() > 0) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public static void selectAscendingOrDescendingOrder(String order, String titleName, String tableid) {
+        for (int i = 0; i <= 10; i++) {
+            try {
+                I.amPerforming().click().withJavaScript(ByUsing.xpath("(//div[@id='" + tableid + "']//descendant::span[text()='" + titleName + "']/parent::span/following::div[@class='dropdown thDropMenu']/button[@class='thDropMenuBtn'])[1]"));
+                break;
+            } catch (Exception e) {
+            }
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+        }
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='modal flexGridDropdownModal fade in']//ul[@role='menu']/li/a//span[text()='" + order + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='modal flexGridDropdownModal fade in']/div/div/div/button[text()='X']"));
+    }
+
+    public static void upArrowOrDownArrowIsDisplayed(String usage, String arrow, String columnName, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(arrowDisplayedInRelatedField(arrow, columnName, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(arrowDisplayedInRelatedField(arrow, columnName, tableid));
+        }
+    }
+
+    private static boolean arrowDisplayedInRelatedField(String arrow, String columnName, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//span[text()='" + columnName + "']/parent::span/following::i[@class='ng-scope fa fa-long-arrow-" + arrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public static void afterResetTableMessageDisplayed(String usage, String textMessage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(ResetMessageDisplayed(textMessage));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(ResetMessageDisplayed(textMessage));
+        }
+    }
+
+    private static boolean ResetMessageDisplayed(String textMessage) {
+        boolean flag = false;
+        for (int i = 0; i <= 10; i++) {
+            try {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//form//div[@class='col-md-12 ng-scope']/div/following-sibling::div/span[text()='" + textMessage + "'] | //form//div[@class='col-md-12 ng-scope']/div/following-sibling::div/span[text()='" + textMessage + "']"))) {
+                    flag = true;
+                }
+                break;
+            } catch (Exception e) {
+            }
+        }
+        return flag;
+    }
+
+    public static void pageSizeShowAfterPageSetting(String usage, String showingEnties, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertPageSize(showingEnties, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertPageSize(showingEnties, tableid));
+        }
+    }
+
+    private static boolean assertPageSize(String showingEnties, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingEnties + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }

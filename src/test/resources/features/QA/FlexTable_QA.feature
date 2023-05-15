@@ -16,6 +16,7 @@ Business Need: FlexTable Component Scenarios
     When I pause execution for "5" seconds
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I pause execution for "7" seconds
     And I enter this "%27%3balert(%22PLEX%20Rocks%22)%2f%2f909" before "&flexTableParam" parameter and navigate to new URL
     Then I do not see alert popup box
     And I navigate to back

@@ -1,8 +1,12 @@
 package com.framework.automation.steps;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.pageobject.FrameworkCookiesPage;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 
 public class FrameworkCookiesSteps {
     FrameworkCookiesPage frameworkCookiesPage;
@@ -25,6 +29,43 @@ public class FrameworkCookiesSteps {
     @Then("^I (softly see|see|do not see) Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table")
     public void iDoNotSeeClickResetTableUnderTheMenuIconToRefreshTheTableSDefaultValuesMessageInTable(String usage) {
         FrameworkCookiesPage.assertIfMessageDisplayed(usage);
+    }
+
+    @And("I quick search {string} inside table {string}")
+    public void iQuickSearchInsideTable(String textValue, String tableid) {
+        frameworkCookiesPage.enterTextAndClickOnSearchButton(textValue, tableid);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) list contain \"([^\"]*)\" inside table \"([^\"]*)\"$")
+    public void iSeeListContainInsideTable(String usage, String ProjectTitleList, String tableid) {
+        frameworkCookiesPage.getListOfWebElementAfterSearchOperationPerform(usage, ProjectTitleList, tableid);
+    }
+
+    @And("I select {string} order by clicking on arrow beside of {string} in table {string}")
+    public void iSelectOrderByClickingOnArrowBesideOfInTable(String order, String titleName, String tableid) {
+        frameworkCookiesPage.selectAscendingOrDescendingOrder(order, titleName, tableid);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" arrow is displayed inside \"([^\"]*)\" in table \"([^\"]*)\"$")
+    public void iSeeArrowIsDisplayedInsideInTable(String usage, String arrow, String columnName, String tableid) {
+        frameworkCookiesPage.upArrowOrDownArrowIsDisplayed(usage, arrow, columnName, tableid);
+    }
+
+    @And("I click on menu inside {string}")
+    public void iClickOnMenuInside(String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//span[text()='" + tableId + "']/ancestor::div[@class='row displayFlexCenter ng-scope']//span[@class='dropdown']/a[@title='Menu']"));
+    }
+
+
+    @Then("^I (see|do not see|softly see|softly do not see) the \"([^\"]*)\" message after Reset Table$")
+    public void iSeeTheMessageAfterResetTable(String usage, String textMessage) {
+        I.amPerforming().click().on(ByUsing.xpath("//span[text()='Scheduled Activities - All']/ancestor::div[@class='col-xs-6 col-md-7 header-title ']/following-sibling::div/span//ul/li/a/span[text()='Reset Table']"));
+        frameworkCookiesPage.afterResetTableMessageDisplayed(usage, textMessage);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) table contains \"([^\"]*)\" inside table id \"([^\"]*)\"$")
+    public void iSeeTableContainsInsideTableId(String usage, String showingEnties, String tableId) {
+        frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingEnties, tableId);
     }
 }
 
