@@ -11,7 +11,7 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName  | fieldNewValue  | coreComponentField| 
       | Custom App Config:General| Label      | Test Automation| StateasGrantor    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "Test Automation" inside CustomApp dropDown
 
@@ -23,7 +23,7 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName              | fieldNewValue  | coreComponentField| 
       | Custom App Config:General| Available For Profiles | <New-Profile>  | StateasGrantor    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
     
@@ -39,7 +39,7 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName  | fieldNewValue  | coreComponentField| 
       | Custom App Config:General| Active     | false          | StateasGrantor    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
@@ -51,7 +51,7 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName  | fieldNewValue  | coreComponentField|
       | Custom App Config:General| URL        |                | StateasGrantor    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     Then I see complete custom app is not displayed
 
     Examples:
@@ -66,9 +66,9 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory    | fieldName  | fieldNewValue  | coreComponentField|
       | Custom App Config:General| Sequence   | 2              | Admin             |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I click CustomApp select dropdown
-    Then I see "As an Administrator" option of custom App is at position "1"
+    Then I see "As Administrator" option of custom App is at position "1"
 
   @52895    @defaultFieldNameFieldAtCustomAppConfig @customAppConfig
   Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
@@ -78,6 +78,6 @@ Business Need: Custom App Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
       | Custom App Config:General | Default Theme Name |               | StateasGrantor     |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor

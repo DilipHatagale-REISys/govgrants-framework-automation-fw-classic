@@ -224,21 +224,20 @@ Business Need: Sanity check for all Component Scenarios
   @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks @footerLinks
   Scenario Outline: validate given target URL opens by click on 508 Compliance link from footer
     Given I have "customAppFooter" configuration as below:
-      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
-      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+      | id              | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0H4T000001MvkQ | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 7        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
     And I update custom app footer setting changes:
-      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
-      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0094 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
-    When I login as "Automation" user
+      | id              | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0H4T000001MvkQ | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 7        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+    When I login as "ADMIN" user
     When I navigate to "Planning" tab
     When I click on footer links "508 Compliance"
     When I switch to tab number "1"
     When I pause execution for "3" seconds
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
-      | Logout_URL                                                               |
-     # | https://ggptest5-dev-ed--gnt.na164.visual.force.com/apex/Help?uniqueName=Help-0094 |
-      | https://ggptest5-dev-ed--gnt.vf.force.com/apex/Help?uniqueName=Help-0094 |
+      | Logout_URL                                                                                 |
+      | https://test8-internal--fwautomat--gnt.sandbox.vf.force.com/apex/Help?uniqueName=Help-0113 |
 
   @37857    @versionFieldAtFormConfig-gApplication
   Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page

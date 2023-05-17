@@ -11,7 +11,7 @@ Business Need: Sticky Bottom Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                   | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableAdminSetup__c:false | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "Enable GovGrants Setup" inside bottom menu

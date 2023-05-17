@@ -11,7 +11,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Label     | Automation    | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Automation" shown as flex table title

@@ -862,6 +862,6 @@ public class PageLayoutSteps {
     }
 
     @And("I click on {string} column inside Internal Programs")public void iClickOnColumnInsideInternalPrograms(String columnValue) {
-        I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='"+ columnValue +"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='"+ columnValue +"'] |  //th//span//span[text()='"+ columnValue +"']"));
     }
 }
