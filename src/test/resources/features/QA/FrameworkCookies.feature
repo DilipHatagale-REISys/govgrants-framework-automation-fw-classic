@@ -1537,7 +1537,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |`
+      | PM    | `
 
   @268090
   Scenario: o verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (SPI)
@@ -1596,7 +1596,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268098
   Scenario: To verify when user changes pagination to next, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1655,7 +1655,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268104
   Scenario: To verify when user changes pagination to Last, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1808,7 +1808,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268115
   Scenario: To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1867,7 +1867,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268119
   Scenario: To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1988,7 +1988,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | Record                                  |
       | ADMIN | Automation Internal Program for Testing |
-      | PM    |                                         |
+      | PM    | Automation Internal Program for Testing |
 
   @268136
   Scenario: To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(SPI)
@@ -2043,7 +2043,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268146
   Scenario: To verify when user changes pagination to next, click on the another phase and again click on the same phase where pagination was set to next then table should get open on that page (SPI)
@@ -2214,7 +2214,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268193
   Scenario: To verify when user changes pagination to First, click on the another phase and again click on the same phase where pagination was set to First then table should get open on that page(SPI)
@@ -2269,7 +2269,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-        | PM    |
+      | PM    |
 
   @268237
   Scenario: To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (SPI)
@@ -2371,9 +2371,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User |
-     | ADMIN |
-      | PM   |
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @268293
   Scenario: To verify when user searches any value in quick search field and refreshes the page then table should show the records of Quick search results (SPI)
@@ -2424,7 +2424,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-          | PM   |
+      | PM    |
 
   @268299
   Scenario: To verify when user searches any value in quick search field and clicks on the same phase then table should show the records of Quick search results (SPI)
@@ -2475,7 +2475,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-          | PM   |
+      | PM    |
 
   @268306
   Scenario: o verify when user searches any value in quick search field, click on the another phase and again click on the same phase where table was showing quick search results then table should show the records of Quick search results (SPI)
@@ -2671,7 +2671,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268565 @268569
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (Admin)
@@ -2784,7 +2784,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268595 @268596
   Scenario Outline: To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
@@ -2897,7 +2897,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-        | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268623 @268624
   Scenario Outline:To verify when sort direction of data type-Lookup is set in ascending order and click on same phase then records should be in ascending order for data type-Lookup (Admin)
@@ -3194,10 +3194,10 @@ Business Need: FrameworkCookies Component Scenarios
   Scenario Outline:To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3217,10 +3217,10 @@ Business Need: FrameworkCookies Component Scenarios
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3889,7 +3889,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268985 @268986
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
@@ -3914,7 +3914,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268990 @268991
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (Admin)
@@ -3935,7 +3935,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268993 @268994
   Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (Admin)
@@ -3956,7 +3956,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   @268996 @268997
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3978,7 +3978,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c| Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
   ############## Quick search  ##############
   @269088 @269089
@@ -4536,7 +4536,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     | PM    |
+      | PM    |
 
   @269157 @269158
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (Admin)
@@ -4935,7 +4935,2908 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  ############### Component tab testing - cookies testing table ##################
+    #**** SPI USER Framework cookies **********
+
+  ##### Data type - Standard field and lookup field - Owner  ####
+  @268460 @268618
+  Scenario: Phase Level- To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I click on "Owner" column inside Internal Programs
+    And I click on "up" arrow inside "Owner" field
+    And I see "down" arrow is Displayed inside "Owner" field
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "Owner" field
+
+  @268463 @268622
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Owner" column inside Internal Programs
+    And I click on "up" arrow inside "Owner" field
+    And I see "down" arrow is Displayed inside "Owner" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Owner" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268467 @268627
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Owner" column inside Internal Programs
+    And I click on "up" arrow inside "Owner" field
+    And I see "down" arrow is Displayed inside "Owner" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Owner" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268473 @268632
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Owner" column inside Internal Programs
+    And I click on "up" arrow inside "Owner" field
+    And I see "down" arrow is Displayed inside "Owner" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Owner" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268479 @268636
+  Scenario Outline:Phase Level- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Owner" column inside Internal Programs
+    And I click on "up" arrow inside "Owner" field
+    And I see "down" arrow is Displayed inside "Owner" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Owner" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ##### Data Type - Picklist - Status for SPI User  ####
+  @268561
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Picklist (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Status" column inside Internal Programs
+    And I click on "up" arrow inside "Status" field
+    And I see "down" arrow is Displayed inside "Status" field
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268570
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Status" column inside Internal Programs
+    And I click on "up" arrow inside "Status" field
+    And I see "down" arrow is Displayed inside "Status" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268576
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Status" column inside Internal Programs
+    And I click on "up" arrow inside "Status" field
+    And I see "down" arrow is Displayed inside "Status" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268583
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Status" column inside Internal Programs
+    And I click on "up" arrow inside "Status" field
+    And I see "down" arrow is Displayed inside "Status" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ##### Data Type - Text - EGMS_ID for SPI User  ####
+  @268591
+  Scenario: Phase Level- To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+
+  @268594
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268597
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268604
+  Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268610
+  Scenario Outline:Phase Level- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "EGMS ID" column inside Internal Programs
+    And I click on "up" arrow inside "EGMS ID" field
+    And I see "down" arrow is Displayed inside "EGMS ID" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+############# Data Type - Number - Number of Approvals  ******************
+  @268639
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268642
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268648
+  Scenario Outline:Phase Level- To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268665
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268669
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "Number of Approval Steps" field
+    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ################## Data Type - Date - Application Due Date - For SPI user #####
+  @268675
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Application Due Date" column inside Internal Programs
+    And I click on "up" arrow inside "Application Due Date" field
+    And I see "down" arrow is Displayed inside "Application Due Date" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268679
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Application Due Date" column inside Internal Programs
+    And I click on "up" arrow inside "Application Due Date" field
+    And I see "down" arrow is Displayed inside "Application Due Date" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268683
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Due Date" column inside Internal Programs
+    And I click on "up" arrow inside "Application Due Date" field
+    And I see "down" arrow is Displayed inside "Application Due Date" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268686
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Due Date" column inside Internal Programs
+    And I click on "up" arrow inside "Application Due Date" field
+    And I see "down" arrow is Displayed inside "Application Due Date" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268689
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Due Date" column inside Internal Programs
+    And I click on "up" arrow inside "Application Due Date" field
+    And I see "down" arrow is Displayed inside "Application Due Date" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ###################### Data Type - Negotiation Submitted On - Date/Time - For SPI User ##########
+  @268704
+  Scenario Outline:Phase Level- To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Negotiation Submitted On" column inside Internal Programs
+    And I click on "up" arrow inside "Negotiation Submitted On" field
+    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268709
+  Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Negotiation Submitted On" column inside Internal Programs
+    And I click on "up" arrow inside "Negotiation Submitted On" field
+    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268718
+  Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Negotiation Submitted On" column inside Internal Programs
+    And I click on "up" arrow inside "Negotiation Submitted On" field
+    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268726
+  Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Negotiation Submitted On" column inside Internal Programs
+    And I click on "up" arrow inside "Negotiation Submitted On" field
+    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268738
+  Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Negotiation Submitted On" column inside Internal Programs
+    And I click on "up" arrow inside "Negotiation Submitted On" field
+    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+################### Data Type - Percentage - For SPI User - Required Match #######
+
+  @268793
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Percentage(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Required Match Percentage." column inside Internal Programs
+    And I click on "up" arrow inside "Required Match Percentage." field
+    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268798
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Required Match Percentage." column inside Internal Programs
+    And I click on "up" arrow inside "Required Match Percentage." field
+    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268805
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Required Match Percentage." column inside Internal Programs
+    And I click on "up" arrow inside "Required Match Percentage." field
+    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268807
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Required Match Percentage." column inside Internal Programs
+    And I click on "up" arrow inside "Required Match Percentage." field
+    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268821
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Required Match Percentage." column inside Internal Programs
+    And I click on "up" arrow inside "Required Match Percentage." field
+    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+############## Data Type - Formula - Announcement Name ###############
+  @268824
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Announcement Name" column inside Internal Programs
+    And I click on "up" arrow inside "Announcement Name" field
+    And I see "down" arrow is Displayed inside "Announcement Name" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268829
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Announcement Name" column inside Internal Programs
+    And I click on "up" arrow inside "Announcement Name" field
+    And I see "down" arrow is Displayed inside "Announcement Name" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268832
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Announcement Name" column inside Internal Programs
+    And I click on "up" arrow inside "Announcement Name" field
+    And I see "down" arrow is Displayed inside "Announcement Name" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268835
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Announcement Name" column inside Internal Programs
+    And I click on "up" arrow inside "Announcement Name" field
+    And I see "down" arrow is Displayed inside "Announcement Name" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268838
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Announcement Name" column inside Internal Programs
+    And I click on "up" arrow inside "Announcement Name" field
+    And I see "down" arrow is Displayed inside "Announcement Name" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+############# Data Type - Checkbox - Review Initiated ##################
+  @268841
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Review Initiated" column inside Internal Programs
+    And I click on "up" arrow inside "Review Initiated" field
+    And I see "down" arrow is Displayed inside "Review Initiated" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268844
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Review Initiated" column inside Internal Programs
+    And I click on "up" arrow inside "Review Initiated" field
+    And I see "down" arrow is Displayed inside "Review Initiated" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268847
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Review Initiated" column inside Internal Programs
+    And I click on "up" arrow inside "Review Initiated" field
+    And I see "down" arrow is Displayed inside "Review Initiated" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268858
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Review Initiated" column inside Internal Programs
+    And I click on "up" arrow inside "Review Initiated" field
+    And I see "down" arrow is Displayed inside "Review Initiated" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268866
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Review Initiated" column inside Internal Programs
+    And I click on "up" arrow inside "Review Initiated" field
+    And I see "down" arrow is Displayed inside "Review Initiated" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ########## Data Type - Email - Email Address  ###########
+  @268950
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Email Address" column inside Internal Programs
+    And I click on "up" arrow inside "Email Address" field
+    And I see "down" arrow is Displayed inside "Email Address" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Email Address" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268953
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Email Address" column inside Internal Programs
+    And I click on "up" arrow inside "Email Address" field
+    And I see "down" arrow is Displayed inside "Email Address" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Email Address" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268957
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Email Address" column inside Internal Programs
+    And I click on "up" arrow inside "Email Address" field
+    And I see "down" arrow is Displayed inside "Email Address" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Email Address" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268960
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Email Address" column inside Internal Programs
+    And I click on "up" arrow inside "Email Address" field
+    And I see "down" arrow is Displayed inside "Email Address" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Email Address" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268963
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Email Address" column inside Internal Programs
+    And I click on "up" arrow inside "Email Address" field
+    And I see "down" arrow is Displayed inside "Email Address" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Email Address" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+    ############## Data Type - Currency - Award Ceiling #############
+  @268967
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Award Ceiling" column inside Internal Programs
+    And I click on "up" arrow inside "Award Ceiling" field
+    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268970
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Award Ceiling" column inside Internal Programs
+    And I click on "up" arrow inside "Award Ceiling" field
+    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268974
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Award Ceiling" column inside Internal Programs
+    And I click on "up" arrow inside "Award Ceiling" field
+    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268977
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Award Ceiling" column inside Internal Programs
+    And I click on "up" arrow inside "Award Ceiling" field
+    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268980
+  Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Award Ceiling" column inside Internal Programs
+    And I click on "up" arrow inside "Award Ceiling" field
+    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  ################### Data Type - URL - URL #############
+  @268984
+  Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    And I see "down" arrow is Displayed inside "URL" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268988
+  Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    And I see "down" arrow is Displayed inside "URL" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268992
+  Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    And I see "down" arrow is Displayed inside "URL" field
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268995
+  Scenario Outline:Phase Level- To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    And I see "down" arrow is Displayed inside "URL" field
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @268997
+  Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Default Page Size   | 5                  | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination   | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size    | true               | ApiGeneratedId:2 |
+      | Flex Table:General    | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size   | 5              | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination   | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "URL" column inside Internal Programs
+    And I click on "up" arrow inside "URL" field
+    And I see "down" arrow is Displayed inside "URL" field
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see "down" arrow is Displayed inside "URL" field
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+##### Sorting - Quick Search ###############
+  @269090
+  Scenario: Phase Level- To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269093
+  Scenario:Phase Level- To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - Draft"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269096
+  Scenario: Phase Level- To verify when sort direction-ascending order and searched any value in Quick search and click on same phase then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    When I perform quick search for "Application In Created State Only"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269099
+  Scenario: Phase Level- To verify when sort direction-ascending order and searched any value in Quick search and refreshes the page then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    When I perform quick search for "Application In Created State Only"
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269100
+  Scenario: Phase Level- To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    When I perform quick search for "Application In Created State Only"
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+      ###### Page Size and Quick Search #####
+  @269107
+  Scenario:Phase Level- To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269112
+  Scenario: Phase Level- To verify when page size is 10 and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269115
+  Scenario: Phase Level- To verify when page size is 10 and searched any value in Quick search and click on same phase then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269118
+  Scenario: Phase Level- To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269121
+  Scenario: Phase Level- To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+
+    #################### Pagination and Quick Search For SPI ####################
+  @269129
+  Scenario: Phase Level- To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Test"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    Then I see the text containing :
+      | Page 2 |
+
+  @269132
+  Scenario: Phase Level- To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "Edit" icon in flex table for first draft record
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    Then I see the text containing :
+      | Page 2 |
+
+  @269138
+  Scenario: Phase Level- To verify when Pagination is changed to next and searched any value in Quick search and click on same phase then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see the text containing :
+      | Page 2 |
+
+  @269144
+  Scenario: Phase Level- To verify when Pagination is changed to next and searched any value in Quick search and  refreshes the page then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    Then I see the text containing :
+      | Page 2 |
+
+  @269147
+  Scenario: Phase Level- To verify when Pagination is changed to next and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application"
+    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    Then I see the text containing :
+      | Page 2 |
+
+    ################# Sort Direction and Page size for SPI User #################
+  @269150
+  Scenario: Phase Level- To verify when Sort direction-ascending order and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269153
+  Scenario: Phase Level- To verify when Sort direction-ascending order and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    When I perform quick search for "Application In Created State Only"
+    When I click on "Edit" icon for "Application In Created State Only" inside table
+    And I click on back arrow
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269156
+  Scenario: Phase Level- To verify when Sort direction-ascending order and page size is 10 and click on same phase then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269159
+  Scenario: Phase Level- To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I refresh the page
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+  @269162
+  Scenario: Phase Level- To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "Application Title" column inside Internal Programs
+    And I click on "up" arrow inside "Application Title" field
+    And I see "down" arrow is Displayed inside "Application Title" field
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I navigate to "Grants" tab
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+
+ ################## Pagination and Page Size combination #############
+  @269243
+  Scenario: Phase Level- To verify when page size is 10 and Pagination is changed to next, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I select value inside table "---program:-:GrantsListTableId---" is "10"
+    And I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
+
+  @269252
+  Scenario: Phase Level- To verify when page size is 10 and Pagination is changed to next and click on same phase then table should restore page size and Pagination(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I select value inside table "---program:-:GrantsListTableId---" is "10"
+    And I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
+
+  @269256
+  Scenario:Phase Level- To verify when page size is 10 and Pagination is changed to next and refreshes the page then table should restore page size and Pagination(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I select value inside table "---program:-:GrantsListTableId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:GrantsListTableId---"
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
+
+  @269259
+  Scenario:Phase Level- To verify when page size is 10 and Pagination is changed to next and  ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I select value inside table "---program:-:GrantsListTableId---" is "10"
+    Then I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Applications" tab
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
+
+        ########## Pagination and Sort Direction Combination ###############
+  @269263
+  Scenario: Phase Level- To verify when Sort direction-ascending order and Pagination is changed to next and , user clicks on row level view action and click on page back arrow then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I click on "Grant Title" column inside Internal Programs
+    And I click on "up" arrow inside "Grant Title" field
+    And I see "down" arrow is Displayed inside "Grant Title" field
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "down" arrow is Displayed inside "Grant Title" field
+
+  @269269
+  Scenario: Phase Level- To verify when Sort direction-ascending order and Pagination is changed to next and click on same phase then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I click on "Grant Title" column inside Internal Programs
+    And I click on "up" arrow inside "Grant Title" field
+    And I see "down" arrow is Displayed inside "Grant Title" field
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "down" arrow is Displayed inside "Grant Title" field
+
+  @269272
+  Scenario: Phase Level- To verify when Sort direction-ascending order and Pagination is changed to next and  refreshes the page then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    And I click on "Grant Title" column inside Internal Programs
+    And I click on "up" arrow inside "Grant Title" field
+    And I see "down" arrow is Displayed inside "Grant Title" field
+    And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    And I click toggle button to select "Grants - Active"
+    And I see the text containing :
+      | Page 2 |
+    Then I see "down" arrow is Displayed inside "Grant Title" field
+
+    ################# Record Level - Change Pagination ###########
+  @269306 @269307
+  Scenario Outline: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
+    And I see the text containing :
+      | Page 2 |
+    And I refresh the page
+    And I see the text containing :
+      | Page 2 |
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @269324 @269331
+  Scenario Outline: Record level-To verify when user changes Sort direction to Ascending and refreshes the page then records should be restored in ascending  (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    And I refresh the page
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @269325 @269337
+  Scenario Outline:Record level-To verify when user changes pagination to Next, click on row level View action and click on page back arrow then table should get open on the page where pagination was set to Next (PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
+    And I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269338
+  Scenario Outline: Record level-To verify when user changes Sort direction to Ascending, click on row level View action and click on page back arrow then records should be restored in ascending  (PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269342 @269343
+  Scenario Outline: Record level-To verify when user searches any value in Quick search, click on row level View action and click on page back arrow then records should be restored to quick search results (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269348 @269349
+  Scenario Outline:Record level-To verify when user searches any value in Quick search and refreshes the page then records should be restored to quick search results (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
+    And I refresh the page
+    Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269360 @269361
+  Scenario Outline: Record level-To verify when user changes page size to 10 and refreshes the page then records should be resorted to page size to 10 (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+    And I refresh the page
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269363 @269364
+  Scenario Outline: Record level-To verify when user changes page size to 10, click on row level View action and click on page back arrow then records should be restored to page size to 10 (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
+    When I login as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @269309
+  Scenario: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
+    And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+    And I refresh the page
+    Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+
+  @269321
+  Scenario: Record level-To verify when user changes pagination to Next, click on row level View action and click on page back arrow then table should get open on the page where pagination was set to Next (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
+    And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+
+  @269333
+  Scenario: Record level-To verify when user changes Sort direction to Ascending and refreshes the page then records should be restored in ascending  (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I refresh the page
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+
+  @269340
+  Scenario: Record level-To verify when user changes Sort direction to Ascending, click on row level View action and click on page back arrow then records should be restored in ascending  (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+
+  @269344
+  Scenario: Record level-To verify when user searches any value in Quick search, click on row level View action and click on page back arrow then records should be restored to quick search results (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+
+  @269362
+  Scenario: Record level-To verify when user changes page size to 10 and refreshes the page then records should be resorted to page size to 10 (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I refresh the page
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+
+  @269365
+  Scenario: Record level-To verify when user changes page size to 10, click on row level View action and click on page back arrow then records should be restored to page size to 10 (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction    | DESC              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
+      | Flex Grid:General                   | Sort Direction    | ASC           | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
+      | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Component testing " sub tab
+    And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    And I click on "View" icon in "Grants - All" flex table for "1" record
+    And I click on back arrow
+    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+
 ############# Clear Session Message Test Cases ####
   @282365
   Scenario Outline:To verify when user changes the list view and clicks on row level 'Edit' action and click on page back arrow then list view value should be restored. (Admin/PM)
@@ -5056,7 +7957,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     | PM    |
+      | PM    |
 
   @282247
   Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5071,7 +7972,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     | PM    |
+      | PM    |
 
   @282261
   Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5088,7 +7989,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     | PM    |
+      | PM    |
 
   @282271
   Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -5141,7 +8042,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-   #  | PM    |
+      | PM    |
 
   @282363
   Scenario Outline: To verify when user changes the list view from active to draft, changes the page size, click on active and again on draft then page size should be restored. (Admin/PM)
@@ -5182,7 +8083,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     | PM    |
+      | PM    |
 
   @282369
   Scenario Outline: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (Admin/PM)
