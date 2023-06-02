@@ -54,6 +54,7 @@ public class FrameworkCookiesSteps {
     @And("I click on menu inside {string}")
     public void iClickOnMenuInside(String tableId) {
         I.amPerforming().click().on(ByUsing.xpath("//span[text()='" + tableId + "']/ancestor::div[@class='row displayFlexCenter ng-scope']//span[@class='dropdown']/a[@title='Menu']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div//ul/li/a/span[contains(text(),'Reset Table')]"));
     }
 
 
@@ -66,6 +67,32 @@ public class FrameworkCookiesSteps {
     @Then("^I (see|do not see|softly see|softly do not see) table contains \"([^\"]*)\" inside table id \"([^\"]*)\"$")
     public void iSeeTableContainsInsideTableId(String usage, String showingEnties, String tableId) {
         frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingEnties, tableId);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) user on \"([^\"]*)\" pagination page \"([^\"]*)\" table$")
+    public void iSeeUserOnPaginationPageTable(String usage, String FirstOrLastPage, String tableId) {
+        frameworkCookiesPage.assertFlexTableFirstOrLastPage(usage, FirstOrLastPage, tableId);
+    }
+
+
+    @Then("^I (see|do not see) the following message in \"([^\"]*)\" table :$")
+    public void iSeeTheFollowingMessageInTable(String usage, String message, String tableId) {
+        frameworkCookiesPage.resetMessageDisplayedOrNot(usage, message, tableId);
+    }
+
+    @And("I click on toggle button inside table {string} to select {string}")
+    public void iClickOnToggleButtonInsideTableToSelect(String tableId, String listId) {
+        frameworkCookiesPage.clickOnListViewAndSelectValue(tableId, listId);
+    }
+
+    @And("I click on {string} from parallel lines dropdown of Menu {string}")
+    public void iClickOnFromParallelLinesDropdownOf(String action, String tableId) {
+        frameworkCookiesPage.iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(action,tableId);
+    }
+
+    @Then("^I (see|do not see) list view \"([^\"]*)\" displayed inside table \"([^\"]*)\"$")
+    public void iSeeListViewDisplayedInsideTable(String usage, String listViewName, String tableId) {
+
     }
 }
 

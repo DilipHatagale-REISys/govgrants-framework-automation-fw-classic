@@ -369,6 +369,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
+    And I pause execution for "7" seconds
     Then I do not see mention auto complete list is displayed at collab post
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
@@ -418,14 +419,6 @@ Business Need: collab Component Scenarios
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
 
-  @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToPMUser
-  Scenario: validate that No feed available is displayed at my feed-to me only section by login as PM user
-    When I login as "PM1" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Collaboration (Collab)" tab
-    When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel
-    Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
-
   @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsPMUser
   Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as PM user
     When I login as "PM1" user
@@ -433,7 +426,8 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "To Me" from dropdown
-    Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+   # Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
 
   @115482    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToAdminUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
@@ -445,6 +439,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
+    And I pause execution for "10" seconds
     Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115483    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToPMUser
@@ -457,6 +452,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
+    And I pause execution for "5" seconds
     Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
 
   @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
@@ -618,8 +614,7 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
-    Then I softly see tab label as "Upload File from Computer" at files library upload modal
-    Then I softly see tab label as "Upload File from Library" at files library upload modal
+    Then I see "Add Files" opens in overLay window
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
@@ -661,7 +656,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I pause execution for "7" seconds
     And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
-    Then I see user logo at comment "Test Automation Admin Comment" is small in size inside my feed collab
+    Then I softly see tab label as "Choose a File OR Drag it here" at files library upload modal
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase

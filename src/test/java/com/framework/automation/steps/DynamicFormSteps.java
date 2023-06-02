@@ -106,7 +106,8 @@ public class DynamicFormSteps {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='panel-title custom-title ng-scope']/following::div/span[@class='sessionClass' and contains(text(),'" + text + "')] |" +
                 " //div[@class='container-fluid ng-scope']//span[text()='" + text + "'] |" +
                 " //div[@id='ActiveGrantsGrid_1FlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
-                " //div[@id='ActiveGrantsGridFlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')]"));
+                " //div[@id='ActiveGrantsGridFlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
+                " //div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div/div//div//div/span[contains(text(),'" + text + "')]"));
     }
 
     @And("I click on {string} icon in flex table for first draft record")
@@ -127,8 +128,8 @@ public class DynamicFormSteps {
     public void iClickOnIconInFlexTableForRecord(String action, String tableName, String recordIndex) {
         if (action.equalsIgnoreCase("View")) {
             I.amPerforming().click().on(ByUsing.xpath("(//table[@id='ActiveGrantsGridresizable']/tbody/tr/td/div[@class='actionColIconWrap']//i[@class='fa fa-eye'])[" + recordIndex + "] |" +
-                    " (//div[@id='ActiveGrantsGrid_1FlexToggle']//td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "] |" +
-                    " (//div[@id='GrantorRelatedAwards2FlexToggle']/div/following::div/div/div/table/thead/following::tbody/tr/td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "]"));
+                    " (//div[@id='" + tableName + "']//td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "] |" +
+                    " (//div[@id='" + tableName + "']/div/following::div/div/div/table/thead/following::tbody/tr/td/div/span/action/span/span/a/span/i[@class='fa fa-eye'])[" + recordIndex + "]"));
         }
     }
 
