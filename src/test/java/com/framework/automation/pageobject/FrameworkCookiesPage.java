@@ -52,7 +52,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     private Boolean isCurrentPageDisplayed(String tableId, String textContains) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'" + textContains + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
+                    " //div[@id='" + tableId + "']//div//span[@class='pull-right table-pager ng-scope']/span[@class='bold ng-binding' and contains(text(),'" + textContains + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -180,4 +181,71 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         return flag;
     }
 
+    public void assertFlexTableFirstOrLastPage(String usage, String FirstOrLastPage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(userIsOnFirstOrLastPage(FirstOrLastPage, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(userIsOnFirstOrLastPage(FirstOrLastPage, tableId)).isFalse();
+        }
+    }
+
+    private Boolean userIsOnFirstOrLastPage(String FirstOrLastPage, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']/a[@ng-disabled='true' and @title='" + FirstOrLastPage + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void resetMessageDisplayedOrNot(String usage, String message, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(messageDisplayedAfterResetMenu(message, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(messageDisplayedAfterResetMenu(message, tableId)).isFalse();
+        }
+    }
+
+    private Boolean messageDisplayedAfterResetMenu(String tableId, String message) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div//div//div/span[contains(text(),'" + message + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void clickOnListViewAndSelectValue(String tableId, String listId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[contains(@id,'" + tableId + "')]/preceding-sibling::div/div//span[@id='dropdownListView']"));
+        I.amPerforming().click().on(ByUsing.xpath("//ul[@class='dropdown-menu dropdown-menu-left']/li/a/span[text()='" + listId + "']"));
+    }
+
+    public void iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(String action, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//span[normalize-space(text()='" + tableId + "')]/ancestor::div[@class='row displayFlexCenter ng-scope']//span[@class='dropdown']/a[@title='Menu'] |" +
+                " //*[text()='" + tableId + "']/ancestor::div[@class='row displayFlexCenter ng-scope']//span[@class='dropdown']/a[@title='Menu']"));
+        I.amPerforming().click().on(ByUsing.xpath("//span[normalize-space(text()='" + tableId + "')]/ancestor::div[@class='row displayFlexCenter ng-scope']//ul/li/a/span[contains(text(),'" + action + "')]"));
+    }
+
+    public void listViewListDisplayed(String usage, String listViewName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(listDisplayedUnderTable(listViewName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(listDisplayedUnderTable(listViewName, tableId)).isFalse();
+        }
+    }
+
+    private Boolean listDisplayedUnderTable(String listViewName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding::panel[@table-meta-data='tableMetaData']//font[@style='vertical-align: inherit;' and contains(text(),'" + listViewName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

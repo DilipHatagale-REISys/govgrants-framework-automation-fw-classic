@@ -3015,6 +3015,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    And I pause execution for "100" seconds
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
