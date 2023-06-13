@@ -864,4 +864,11 @@ public class PageLayoutSteps {
     @And("I click on {string} column inside Internal Programs")public void iClickOnColumnInsideInternalPrograms(String columnValue) {
         I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='"+ columnValue +"'] |  //th//span//span[text()='"+ columnValue +"']"));
     }
+
+    @And("I upload attachment {string} in attachment modal")
+    public void iUploadAttachmentInAttachmentModal(String attachmentName) {
+        By attachmentChooseFilePath = By.xpath("//div[@class='panel panel-default ng-scope']/div/div//button[contains(@title,'Attachments')]//*[text()='Add']");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
+    }
 }

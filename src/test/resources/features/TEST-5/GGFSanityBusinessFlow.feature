@@ -60,7 +60,7 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "My_Workspace_Calendar"
     Then I see Program record in "Red" color inside my workspace
 
-  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid
+  @547041      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |

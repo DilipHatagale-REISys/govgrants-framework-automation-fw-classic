@@ -11,10 +11,10 @@ Business Need: SheetJS Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I can see top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    Then I can see top right button "Upload" in flex table with id "---program:-:programsTableId---"
 
   @70097    @verifyUploadOfSheetJSFile
   Scenario Outline: Validate sheet JS file is getting uploaded with success message or not on upload button click inside download and upload wizard modal.
@@ -26,20 +26,20 @@ Business Need: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I login as "ADMIN" user
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     #When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I upload attachment "SheetJSFileUpload.xlsx" after click on "Upload" in Download & Upload wizard modal window
     Then I see confirmation box with body "Data Uploaded Successfully!" is displayed
@@ -58,25 +58,25 @@ Business Need: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I login as "ADMIN" user
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Road Construction"
-    Then I softly see value "GovGrant" for title "Organization" inside table "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Automation"
+    Then I softly see value "SYSTEM" for title "Internal Organization" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -92,28 +92,28 @@ Business Need: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I login as "ADMIN" user
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Prog"
-    Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
+      | newFieldsApi                                                                                           | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @70101    @verifyUploadOfSheetJSFileWithFieldStatusAsBlank
@@ -126,28 +126,28 @@ Business Need: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I login as "ADMIN" user
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                       | name                 |
+#      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Prog"
-    Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
+      | newFieldsApi                                                                                           | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @70103    @verifyUploadOfSheetJSFileWithFieldFundedAmount
@@ -166,19 +166,19 @@ Business Need: SheetJS Config Component Scenarios
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:SheetJSProgram}"
-    Then I softly see value "$5,000" for title "Funded Amount" inside table "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing For SheetJS"
+    Then I softly see value "$5,000" for title "Funded Amount" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -200,19 +200,19 @@ Business Need: SheetJS Config Component Scenarios
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Upload" in flex table with id "Programs"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Package Testing"
-    Then I see value "true" for title "CFDA Data" against the value "Package Testing" inside table "flexTableDivId"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    Then I see value "X" for title "CFDA Data" against the value "PG-REI-0716" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -234,57 +234,23 @@ Business Need: SheetJS Config Component Scenarios
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Upload" in flex table with id "Programs"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Program"
-    Then I see value "false" for title "CFDA Data" against the value "Test Program" inside table "flexTableDivId"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    Then I see value "False" for title "CFDA Data" against the value "Program" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,CFDA_Data__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
-  @70109    @verifyUploadOfSheetJSFileWithFieldStartDate @wip
-  Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet(StartDate) getting loaded inside flex table record
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Table            | Enable Data Import/Export | false              | ApiGeneratedId:0 |
-      | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
-      | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
-    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
-    Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
-    When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
-    And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I see value "02/10/2020" for title "Funded Amount" inside table "---program:-:programTableDivId---"
-
-    Examples:
-      | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |
-      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,DateandTime__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @70280    @verifyChangingRecordValueWithUploadingSheetJSFile
   Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet(funding amount value) getting updated as mentioned in uploading sheet
@@ -302,23 +268,26 @@ Business Need: SheetJS Config Component Scenarios
     Given I delete the record "AutomationSheetJSUpload" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "AutomationSheetJSUploadForStatusAsBlank1" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUploadForFundedAmount.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Automation Record For Funded Amount- SheetJS"
-    Then I softly see value "$10,000" for title "Funded Amount" inside table "---program:-:programTableDivId---"
+    And I softly see value "$10,000" for title "Funded Amount" inside table "---program:-:programsTableId---"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Automation Record For Funded Amount- SheetJS"
     When I click on "Edit" icon for "Test Automation Record For Funded Amount- SheetJS" inside table
-    And I enter value "2000" into field "fieldFundedAmount__c"
+    And I enter value "10000" into field "fieldFundedAmount__c"
+    And I click on "Save" in the page details
+    And I na
+    Then I softly see value "$10,000" for title "Funded Amount" inside table "---program:-:programsTableId---"
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
@@ -336,18 +305,18 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUploadDateTime.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test's September Program"
-    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "---program:-:programTableDivId---"
+    Then I see value "11/08/2021 2:28 PM" for title "DateandTime" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |
@@ -366,18 +335,18 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUploadWithMultipleData.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "AutomationSheetJSUpload"
-    Then I see total records count is same as total row of table id "---program:-:programTableDivId---" and table name "flextable"
+    Then I see total records count is same as total row of table id "---program:-:programsTableId---" and table name "flextable"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |
@@ -398,28 +367,29 @@ Business Need: SheetJS Config Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "Upload" in flex table with id "---program:-:programsTableId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    And I save the field labeled "ID" as "EGMSID"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Approval and Snapshot scenarios"
-    When I click on "View Program Details" icon for "Automation Internal Program for Approval and Snapshot scenarios" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View Program Details" icon for "Automation Internal Program for Testing" inside table
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Automation Internal Program for Approval and Snapshot scenarios"
-    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |

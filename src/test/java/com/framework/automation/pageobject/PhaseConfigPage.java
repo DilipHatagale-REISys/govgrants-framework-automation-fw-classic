@@ -611,7 +611,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isGovGrantsLogoAndNameDisplayedOnPage(String logo, String logoName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//img[@alt='" + logo + "']/../following-sibling::span[text()='" + logoName + "']")))
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//img[@alt='" + logo + "']/../following-sibling::span[text()='" + logoName + "'] | //img[@alt='" + logo + "']//following-sibling::span[text()='" + logoName + "']")))
                 ;
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {

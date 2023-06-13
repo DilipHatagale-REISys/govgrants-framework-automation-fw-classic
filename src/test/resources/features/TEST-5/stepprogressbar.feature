@@ -7,16 +7,16 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0016            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0108            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application |               | PB-0016            |                           |                            |
-    When I login as "Automation" user
+      | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
     Then I do not see step progress bar is displayed
 
     Examples:
@@ -27,16 +27,16 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0016            |                           |                            |
+      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User |               | PB-0016            |                           |                            |
-    When I login as "Automation" user
+      | Step Progressbar Header Config:General | Render for User |               | PB-0108            |                           |                            |
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
     Then I do not see step progress bar is displayed
 
     Examples:
@@ -51,12 +51,12 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide For Users | <changedUser> | Program Progress Bar | Name                      | Submitted for Approval     |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
     Examples:
@@ -71,43 +71,62 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Sequence  | 0             | Program Progress Bar | Name                      | Submitted for Approval     |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
     Then I see "Submitted for Approval" status shown at number "0" in step progress bar
 
   @34351    @colorFieldOfStepProgressBar-gPlanning @smoke
   Scenario: validate after changing color of created status to different and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Complete Color | #3ba10b           | PB-0016            |                           |                            |
+      | Step Progressbar Header Config:General | Complete Color | #3ba10b           | PB-0108            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0016            |                           |                            |
-    When I login as "Automation" user
+      | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0108            |                           |                            |
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    And I pause execution for "60" seconds
     Then I see status in Progress-bar is "Created" and is "Blue"
 
   @34593    @negativeFieldOfStepProgressBar-gPlanning @smoke
   Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
     Given I have "default" configuration as below:
-      | configurationCategory   | fieldName     | fieldOrignalValue | filterId         |
-      | Step Progressbar Detail | Negative Path | false             | ApiGeneratedId:1 |
+      | configurationCategory                  | fieldName     | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail                | Negative Path | false             | ApiGeneratedId:1 |
+      | Step Progressbar Header Config:General | Reject Color  | #E60000           | PB-0108          |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName     | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                 | Status        | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Step Progressbar Detail | Negative Path | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
-    When I login as "Automation" user
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program                                | Status        | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Step Progressbar Detail                | Negative Path | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
+      | Step Progressbar Header Config:General | Reject Color  | #E60000       | PB-0108                                                    |                           |                            |
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" in the page details
@@ -118,11 +137,11 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName    | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0016            |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0108            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0016            |                           |                            |
-    When I login as "Automation" user
+      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0108            |                           |                            |
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Rejected Programs"
@@ -134,14 +153,14 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField |
-      | Step Progressbar Header Config:General | Incomplete Color | #a0a0a0           | PB-0016            |
+      | Step Progressbar Header Config:General | Incomplete Color | #a0a0a0           | PB-0108            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Incomplete Color | #0b0ba0       | PB-0016            |                           |                            |
-    When I login as "Automation" user
+      | Step Progressbar Header Config:General | Incomplete Color | #0b0ba0       | PB-0108            |                           |                            |
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInSubmittedForApprovalMode}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInSubmittedForApprovalMode}" inside table
     Then I see status in Progress-bar is "Submitted for Approval" and is "Green"
@@ -154,13 +173,13 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName     | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Display Value | Automation    | Program Progress Bar | Name                      | Created                    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see changed display name as "Automation" inside step progress bar
+    Then I see changed display name as "ADMIN" inside step progress bar
 
   @37328    @isCreatedFieldAtStepProgressBar-gPlanning
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
@@ -171,10 +190,10 @@ Business Need: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Step Progressbar Detail | IsCreated | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" in the page details
@@ -185,7 +204,7 @@ Business Need: Step Progress Bar Component Scenarios
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
@@ -200,7 +219,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserTypeOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
@@ -230,7 +249,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingContextAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel

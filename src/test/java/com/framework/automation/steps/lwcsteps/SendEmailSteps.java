@@ -185,7 +185,9 @@ public class SendEmailSteps extends GovGrantsManager {
     @And("I click on top right button {string} in tableName {string}")
     public void iClickOnTopRightButtonInTableName(String button, String tableName) {
         if (tableName.contains("Attachments") || tableName.equals("Notes")) {
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "']"));
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "'] | //div[@class='NotesAttach']//div[@ng-controller='customNotesAppCtrl']/div//div/button[@type='button' and @title='"+ button +"'] | " +
+                    "//div[@class='panel panel-default ng-scope']/div//button[contains(@ng-click,'"+ tableName +"') and @title='"+ button +"'] | " +
+                    "//div[@class='panel panel-default ng-scope']/div/div//button[contains(@title,'"+ tableName +"')]//*[text()='"+ button +"']"));
         } else if (tableName.contains("Contacts")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div//following-sibling::div//div//div//div/lightning-button//button[@title='" + button + "']"));
         } else if (tableName.contains("Associate table")) {
