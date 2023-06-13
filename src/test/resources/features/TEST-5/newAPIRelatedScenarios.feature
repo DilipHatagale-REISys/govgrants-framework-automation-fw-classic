@@ -4,18 +4,18 @@ Business Need: New API related scenarios temporary
   @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab
   Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
     Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+      | booleanValue | integerValue | id              | description             | name                    |
+      | false        | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+      | booleanValue | integerValue | id              | description             | name                    |
+      | true         | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                 | name                        |
-      | false        | 2            | a0b1C00000M9lj9QAB | SessionTimeoutReminderValue | SessionTimeoutReminderValue |
+      | booleanValue | integerValue | id              | description                 | name                        |
+      | true         | 2            | a0kR000000Af2tU | SessionTimeoutReminderValue | SessionTimeoutReminderValue |
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description             | name                  |
-      | true         | 0            | a0b1C00000M9ljOQAR | Session Enable Reminder | SessionEnableReminder |
+      | booleanValue | integerValue | id              | description             | name                  |
+      | true         | 0            | a0kR000000Af2tA | Session Enable Reminder | SessionEnableReminder |
+    When I login as "ADMIN" user
     When I navigate to "Planning" tab
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
@@ -46,11 +46,11 @@ Business Need: New API related scenarios temporary
   Scenario: Verify session timeout pop-up appears after 2 min of session login
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
-      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+      | false        | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
-      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+      | true         | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description               | name                      |
       | true         | 1            | a0b1C00000LaBhVQAV | SessionDialogTimeoutLimit | SessionDialogTimeoutLimit |
@@ -64,12 +64,12 @@ Business Need: New API related scenarios temporary
   @61462 @VerifySessionGetsContinueByClickOnStayLoggedInButton @checkcannotSee @wip
   Scenario: Verify that session will get continue by click on Stay Logged In Button
     Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+      | booleanValue | integerValue | id              | description             | name                    |
+      | false        | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
+    When I login as "ADMIN" user
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+      | booleanValue | integerValue | id              | description             | name                    |
+      | true         | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
     When I click on "Stay Logged In" Button in Session Timeout dialogbox
@@ -88,7 +88,6 @@ Business Need: New API related scenarios temporary
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 

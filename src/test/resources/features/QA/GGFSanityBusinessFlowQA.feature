@@ -49,7 +49,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
-  @109392   @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
+  @1093921  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
   Scenario: validate announcement in created state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
@@ -69,6 +69,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
+    And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |

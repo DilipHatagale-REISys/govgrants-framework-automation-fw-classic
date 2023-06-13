@@ -1,4 +1,4 @@
-@stickyBottom-component @regression-test5 @stickyBottom
+@stickyBottom-component @regression-QA @stickyBottom
 Business Need: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
@@ -25,7 +25,7 @@ Business Need: Sticky Bottom Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue              | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableAlert__c:false | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "System Alerts" inside bottom menu
@@ -38,7 +38,7 @@ Business Need: Sticky Bottom Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                 | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableFeedback__c:false | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "Send Feedback" inside bottom menu
@@ -51,7 +51,7 @@ Business Need: Sticky Bottom Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                         | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableStickyBottomMenu__c:false | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see sticky bottom menu button with id "sticky_bottom_Menu" is not present
 
@@ -63,7 +63,7 @@ Business Need: Sticky Bottom Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "GGPTEST5" inside bottom menu
@@ -78,7 +78,7 @@ Business Need: Sticky Bottom Component Scenarios
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1C00000KyIeBUAV | 00515000005xr9aAAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "GGPTEST5" inside bottom menu
 
@@ -87,11 +87,11 @@ Business Need: Sticky Bottom Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
-    When I re-login as "Automation-PM" user on "default" portal
+    When I re-login as "PM" user on "default" portal
     And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"

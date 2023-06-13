@@ -182,8 +182,8 @@ public class clickjackSteps extends GovGrantsManager {
 
     @And("I add notes Records title as {string} and description {string} and {string} button")
     public void iAddNotesRecordsTitleAsAndDescriptionAndButton(String title, String description, String button) {
-        By notesDescriptionPath = By.xpath("//div[@id='addAtt']//label[text()='Description']/..//textarea");
-        By notesTitle = By.xpath("//div[@id='addAtt']//label[text()='Title']/..//input");
+        By notesDescriptionPath = By.xpath("//div[@id='addAtt']//label[text()='Description']/..//textarea | //div[@id='addAtt']/table/tbody/tr/td/label[@for='Description']/following::textarea");
+        By notesTitle = By.xpath("//div[@id='addAtt']//label[text()='Title']/..//input | //div[@id='addAtt']/table/tbody/tr/td/label[@for='Title']/following-sibling::input[@type='text']");
         I.amPerforming().textInput().in(notesTitle, title);
         I.amPerforming().textInput().in(notesDescriptionPath, description);
         I.amPerforming().click().on(By.xpath("//input[@value='"+ button +"']|//input[@value='Save and Close Modal']"));
