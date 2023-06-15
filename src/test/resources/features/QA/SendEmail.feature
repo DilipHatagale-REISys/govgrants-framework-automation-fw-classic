@@ -1,4 +1,4 @@
-@SendEmail-ComponentClassic @regression-QA @SendEmail
+@SendEmail-Component @regression-QA @SendEmail
 Business Need: SendEmai Component Scenarios Send Email Functionality Send Email Attachment Send Email Send Files
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
@@ -6,7 +6,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   ##########Test suite: Send Email UI/UX (Suite ID: 332319)##########
   @332320 @dilip
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -19,7 +19,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332321 @dilip
   Scenario: when PM user Hover on the  TO field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -45,7 +45,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332323 @dilip
   Scenario: when Internal user Hover on the  CC field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -58,7 +58,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332324 @dilip
   Scenario: when  PM user Hover on the  CC field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -85,7 +85,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332326 @dilip
   Scenario: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -98,7 +98,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332327 @dilip
   Scenario: when  Internal user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -124,7 +124,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332329 @dilip
   Scenario: Send Email -UI - when  Internal user Hover on the Subject field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -137,7 +137,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332330 @dilip
   Scenario: Send Email -UI - when user Hover on the Subject field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -163,7 +163,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332332 @dilip
   Scenario: Send Email -UI - when user Hover on the Body Content  field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -176,7 +176,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332333 @dilip
   Scenario: Send Email -UI - when Internal user Hover on the Body Content  field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -202,7 +202,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332335 @dilip
   Scenario: Send Email -UI - when Internal user Hover on the Attachments field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -215,7 +215,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332337 @dilip
   Scenario: Send Email -UI - when  user Hover on the Attachments field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -241,7 +241,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332339 @dilip
   Scenario: Send Email -UI - when  user Hover on the Select file field help icon and help text is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -254,7 +254,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332340 @dilip
   Scenario: Send Email -UI - when Internal  user Hover on the Select file field help icon and help text is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -280,7 +280,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332342 @dilip
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for admin user
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -292,7 +292,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332343 @dilip
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for Internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -317,7 +317,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     ##########Test suite: Send Email Attachments (Suite ID: 332777)#########
   @332780 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'internal'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -332,7 +332,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332781 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'External'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -347,7 +347,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332784 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'Group'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -362,7 +362,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332785 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'internal'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -378,7 +378,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332786 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'External'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -394,7 +394,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332787 @dilip
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'Group'
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -410,7 +410,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332788 @dilip
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -426,7 +426,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332790 @dilip
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO (internal) field
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -458,7 +458,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332792 @dilip
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (External) field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -474,7 +474,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332794 @dilip
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (External) field
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -490,7 +490,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332795 @dilip
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group) field
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -506,7 +506,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332796 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -522,7 +522,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332798 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field then attached file is displayed on the View modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -541,7 +541,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332799 @dilip
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -560,7 +560,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332800 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -579,7 +579,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332801 @dilip
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -598,7 +598,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332803 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -617,7 +617,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332804 @dilip
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -637,7 +637,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332805 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -657,7 +657,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332806 @dilip
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -677,7 +677,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332807 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -697,7 +697,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332808 @dilip
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -717,7 +717,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332809 @dilip
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -747,7 +747,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332811 @dilip
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -779,7 +779,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332815 @dilip
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -791,7 +791,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332816 @dilip
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -805,7 +805,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332821 @dilip
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then " Insert links to file(s) from the record"' message is displayed on the LWC- reply email attachment section
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -826,7 +826,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332822 @dilip
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -847,7 +847,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332833 @dilip
   Scenario: Send Email -Attachment - To verify ,  user are remove the attachement from  sends email modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -861,7 +861,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332834 @dilip
   Scenario: Send Email -Attachment - To verify ,  Internal user are remove the attachement from  sends email modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"

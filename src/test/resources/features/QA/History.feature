@@ -1,4 +1,4 @@
-@history-component @regression-QA @history
+@History-component @regression-QA @history
 Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
@@ -11,7 +11,7 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
@@ -28,7 +28,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -72,7 +72,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -115,7 +115,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -158,7 +158,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -202,7 +202,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -245,7 +245,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -283,7 +283,7 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
@@ -304,7 +304,7 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_US  | Asia/Kolkata |
@@ -326,7 +326,7 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -364,7 +364,7 @@ Business Need: history Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
@@ -382,7 +382,7 @@ Business Need: history Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
@@ -400,7 +400,7 @@ Business Need: history Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -421,7 +421,7 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -437,7 +437,7 @@ Business Need: history Component Scenarios
 
   @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -469,7 +469,7 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-1724                   |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -483,7 +483,7 @@ Business Need: history Component Scenarios
 
   @120539    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
   Scenario: validate approval history table is displayed at history tab when page is in view mode
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -494,7 +494,7 @@ Business Need: history Component Scenarios
 
   @121042    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageEditMode
   Scenario: validate approval history table is displayed at history tab when page is in edit mode
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -505,7 +505,7 @@ Business Need: history Component Scenarios
 
   @121152  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
   Scenario: validate that approval history table , field history table and snapshot history is displayed a newly created record
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -531,7 +531,7 @@ Business Need: history Component Scenarios
 
   @120545  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedInRecordEditMode
   Scenario: validate that approval history table and snapshot history is displayed in record edit mode
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -544,7 +544,7 @@ Business Need: history Component Scenarios
 
   @91687  @verifyAdvanceFilterAtFieldHistoryTableInRecordViewMode
   Scenario: validate advance filter at field history table in record view mode
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
@@ -557,7 +557,7 @@ Business Need: history Component Scenarios
 
   @132112    @verifyHistoryTableIsDisplayedAtAccountStandardObject
   Scenario: verify history table is present on account standard object
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to url "https://test8-internal--fwautomat.sandbox.my.salesforce.com/001"
@@ -567,7 +567,7 @@ Business Need: history Component Scenarios
 
   @151866  @verifyCustomFieldsOnStandardObjectsAreDisplayedUnderHistoryTable
   Scenario: validate custom fields on standard object are display inside field history table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal" content inside "Organization" subheader on left panel

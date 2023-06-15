@@ -1,4 +1,4 @@
-@footerLinks-component @regression-QA @footerLinks
+@FooterLinks-component @regression-QA @footerLinks
 Business Need: Footer Links Component Scenarios
   Test all Footer configuration based scenarios
   As a configuration manager i make different changes related to footer links and will validate them in history component.
@@ -11,7 +11,7 @@ Business Need: Footer Links Component Scenarios
     And I update custom app footer setting changes:
       | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
       | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     Then I see "508 Compliance" footer link is present
 
@@ -23,7 +23,7 @@ Business Need: Footer Links Component Scenarios
     And I update custom app footer setting changes:
       | id              | Name | DisplayText   | TargetURL                                 | Sequence | booleanValue                                         | customSettingApiName          |
       | a0H4T000001MvkP | EL3  | Accessibility | /web/grants/accessibility-compliance.html | 2        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     Then I see "Accessibility" footer link is present
 
@@ -32,7 +32,7 @@ Business Need: Footer Links Component Scenarios
     Given I have "customAppFooter" configuration as below:
       | id              | Name | DisplayText          | TargetURL                                 | Sequence | booleanValue                                          | customSettingApiName          |
       | a0HR000000BZKsD | EL2  | Terms and Conditions | /web/grants/accessibility-compliance.html | 1        | GNT__Active__c:false,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom app footer setting changes:
       | id              | Name | DisplayText          | TargetURL                                 | Sequence | booleanValue                                        | customSettingApiName          |
       | a0HR000000BZKsD | EL2  | Terms and Conditions | /web/grants/accessibility-compliance.html | 1        | GNT__Active__c:true,GNT__TermsAndConditions__c:true | GNT__CustomAppFooterConfig__c |
@@ -48,7 +48,7 @@ Business Need: Footer Links Component Scenarios
     And I update custom app footer setting changes:
       | id              | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
       | a0H4T000001MvkQ | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 7        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     When I click on footer links "508 Compliance"
     When I switch to tab number "1"

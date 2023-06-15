@@ -5,7 +5,7 @@ Business Need: security review Scenarios
 
   @105884    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUser
   Scenario: validate flex table at phase level is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     And I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -13,7 +13,7 @@ Business Need: security review Scenarios
 
   @105917    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate enhanced data table at record table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -25,7 +25,7 @@ Business Need: security review Scenarios
 
   @106148    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuInternalOrganizationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then internal organization table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal" content inside "Activities" subheader on left panel
@@ -33,7 +33,7 @@ Business Need: security review Scenarios
 
   @106107    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenCompletedTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then completed task assigned to me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
@@ -41,7 +41,7 @@ Business Need: security review Scenarios
 
   @106108    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenCompletedTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then completed task assigned by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
@@ -49,7 +49,7 @@ Business Need: security review Scenarios
 
   @106103    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     #When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
@@ -58,7 +58,7 @@ Business Need: security review Scenarios
 
   @106105    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
@@ -67,7 +67,7 @@ Business Need: security review Scenarios
 
   @wip @106148    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuSubrecipientsOrganizationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then Subrecipients organization table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Subrecipients" content inside "Activities" subheader on left panel
@@ -75,7 +75,7 @@ Business Need: security review Scenarios
 
   @106113    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenTaskReassignTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then task reassign table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
@@ -83,7 +83,7 @@ Business Need: security review Scenarios
 
   @106152    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenActiveIndividualSubrecipientsTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then Active Individual Subrecipients table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Subrecipients" content inside "Activities" subheader on left panel
@@ -91,7 +91,7 @@ Business Need: security review Scenarios
 
   @106153    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenPendingSubrecipientsRegistrationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then pending Subrecipients registration table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Pending Subrecipient Registrations" content inside "Activities" subheader on left panel
@@ -99,7 +99,7 @@ Business Need: security review Scenarios
 
   @106154    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenIndividualSubrecipientsRegistrationTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from activity menu then individual Subrecipients registration table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Pending Subrecipient Registrations" content inside "Activities" subheader on left panel
@@ -150,7 +150,7 @@ Business Need: security review Scenarios
 
   @106311    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsAdminUser
   Scenario: validate flex  table at record table is rendered properly by admin user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -162,7 +162,7 @@ Business Need: security review Scenarios
 
   @106308    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
   Scenario: validate flex table at phase level is rendered properly by admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -178,7 +178,7 @@ Business Need: security review Scenarios
 
   @106320    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsAdminUser
   Scenario: validate enhanced grid at record table is rendered properly by admin user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -202,7 +202,7 @@ Business Need: security review Scenarios
 
   @107085    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate enhanced grid at record table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -215,7 +215,7 @@ Business Need: security review Scenarios
 
   @107083    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate enhanced data table at record table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -227,7 +227,7 @@ Business Need: security review Scenarios
 
   @107109    @verifyThatEnhancedGridIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
   Scenario: validate enhanced grid at phase table is rendered properly by admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Activities" subheader on left panel
@@ -235,7 +235,7 @@ Business Need: security review Scenarios
 
   @107086    @verifyThatEnhancedGridIsDisplayedAtPhaseLevelByLoggedInAsPMUser
   Scenario: validate enhanced grid at phase table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Activities" subheader on left panel
@@ -404,7 +404,7 @@ Business Need: security review Scenarios
 
   @109254    @verifyThatFieldHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate field history flex table  is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -415,7 +415,7 @@ Business Need: security review Scenarios
 
   @109255    @verifyThatApprovalHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate approval history flex table  is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -442,7 +442,7 @@ Business Need: security review Scenarios
 
   @109263    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromAnnouncementPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then pending task assigned to me and by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -451,7 +451,7 @@ Business Need: security review Scenarios
 
   @109264    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromAnnouncementPhaseTaskMenuThenCompetitiveTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from task menu then competitive announcement table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I navigate to "Competitive" content inside "Announcements" subheader on left panel
@@ -459,7 +459,7 @@ Business Need: security review Scenarios
 
   @109261    @verifyThatFocusAreaTableIsDisplayedByLoggedInAsPMUser
   Scenario: validate Focus Area table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Focus Areas" content inside "Setup" subheader on left panel
@@ -467,7 +467,7 @@ Business Need: security review Scenarios
 
   @109262    @verifyThatFocusAreaTableIsDisplayedByLoggedInAsPMUser
   Scenario: validate Focus Area table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -475,7 +475,7 @@ Business Need: security review Scenarios
 
   @109260    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromPlanningPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from planning phase task menu then pending task assigned to me and by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -520,7 +520,7 @@ Business Need: security review Scenarios
 
   @109267    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned to me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -528,7 +528,7 @@ Business Need: security review Scenarios
 
   @109268    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -536,7 +536,7 @@ Business Need: security review Scenarios
 
   @109269    @verifyThatByLoginAsPMUserAndViewCompletedTaskAssignedByMeThenGrantShouldGetOpenInViewMode @record
   Scenario: validate by logged in as PM user and view completed task at grants phase from assigned by me table then respective record opens in view mode
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
@@ -549,7 +549,7 @@ Business Need: security review Scenarios
 
   @109270    @verifyThatByLoginAsLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenGrantsAndSubAwardsTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then grants and subawards table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -557,7 +557,7 @@ Business Need: security review Scenarios
 
   @109272    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenPendingTaskAssignedToMeAndByMeTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then pending task assigned to me and by me table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -566,7 +566,7 @@ Business Need: security review Scenarios
 
   @109273    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenProgressReportTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then progress report table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Progress Reports" content inside "Monitoring Activities" subheader on left panel
@@ -574,7 +574,7 @@ Business Need: security review Scenarios
 
   @109274    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenAdvancesTableOpens
   Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then advances table displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
@@ -588,7 +588,7 @@ Business Need: security review Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -601,7 +601,7 @@ Business Need: security review Scenarios
 
   @109620    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfCurrencyValueIsChangedByLoginAsPMUser
   Scenario: validate if currency value is changed by pm user and taken a snapshot then snapshot is getting generated inside history tab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -622,7 +622,7 @@ Business Need: security review Scenarios
 
   @109617    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsPMUser
   Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -642,7 +642,7 @@ Business Need: security review Scenarios
   @109914    @verifyProgramtIsGettingCreatedByLoginAsPMUser
   Scenario: validate that program is getting created by login as PM user
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -656,7 +656,7 @@ Business Need: security review Scenarios
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser @flow
   Scenario: validate that program in submit for approval mode is getting created by login as PM user
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -687,7 +687,7 @@ Business Need: security review Scenarios
   @109931    @verifyProgramInApprovedModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to approved after getting approved by both the approvers
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -737,7 +737,7 @@ Business Need: security review Scenarios
   @109932    @verifyProgramInActiveModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -805,7 +805,7 @@ Business Need: security review Scenarios
   @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser @flow
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -861,7 +861,7 @@ Business Need: security review Scenarios
   @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @flow
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -955,7 +955,7 @@ Business Need: security review Scenarios
 
   @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly @record
   Scenario: validate that quick search is working or not at flex grid enhanced table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -970,7 +970,7 @@ Business Need: security review Scenarios
 
   @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly @record
   Scenario: validate that quick search is working or not at flex table enhanced table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -989,7 +989,7 @@ Business Need: security review Scenarios
 
   @106456    @verifyThatEnhancedDataTableAsDefaultPackageIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate enhanced data table as default package at record table is rendered properly by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1003,7 +1003,7 @@ Business Need: security review Scenarios
   @110209   @verifyAnnouncementInSubmittedForApprovalMode @flow
   Scenario: validate announcement in submitted for approval state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1109,7 +1109,7 @@ Business Need: security review Scenarios
 
   @110745   @verifyAdvanceFilterAtFlexTableEnhancedTableIsWorkingCorrectly @record
   Scenario: validate that advance filter is working or not at flex table enhanced table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1124,7 +1124,7 @@ Business Need: security review Scenarios
   @109392   @verifyAnnouncementInCreatedMode @flow
   Scenario: validate announcement in created state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1192,7 +1192,7 @@ Business Need: security review Scenarios
   @110694   @verifyRejectActionAtProgramSubmittedForApproval @flow
   Scenario: validate reject action at program submitted for approval
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1240,7 +1240,7 @@ Business Need: security review Scenarios
   @110717   @verifySendBackActionPerformedByProgramApprover @flow
   Scenario: validate sending back action performed by program approver
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1277,7 +1277,7 @@ Business Need: security review Scenarios
 
   @110725    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForPMUser @record
   Scenario: validate that advance search is working or not at flex grid enhanced by login as PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -1294,7 +1294,7 @@ Business Need: security review Scenarios
   @110214   @verifyAnnouncementInPublishedMode @flow
   Scenario: validate announcement in published state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1436,7 +1436,7 @@ Business Need: security review Scenarios
   @110210   @verifyAnnouncementInApprovedMode @flow
   Scenario: validate announcement in approved state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1536,7 +1536,7 @@ Business Need: security review Scenarios
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1637,7 +1637,7 @@ Business Need: security review Scenarios
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
    #program Activation
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -2166,7 +2166,7 @@ Business Need: security review Scenarios
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Internal Program for flow" from the object "Program__c" with field "ProgramName__c"
    #program Activation
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

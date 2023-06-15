@@ -1,4 +1,4 @@
-@FlexTable_QA-Component @regression-QA @FlexTable
+@FlexTable_Plex-Component @regression-QA @FlexTablePlex
 Business Need: FlexTable Component Scenarios
   Test all FlexTable component based scenarios
   As a configuration manager i make different configurational changes in FlexTable component and will validate them.
@@ -6,7 +6,7 @@ Business Need: FlexTable Component Scenarios
 ###FlextableExport
   @267756 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: Admin_FlextableExport_To verify that after manipulating mode, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -28,7 +28,7 @@ Business Need: FlexTable Component Scenarios
 
   @267773 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:  Admin_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -49,7 +49,7 @@ Business Need: FlexTable Component Scenarios
 
   @267779 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: Admin_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -70,7 +70,7 @@ Business Need: FlexTable Component Scenarios
 
   @267789 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -91,7 +91,7 @@ Business Need: FlexTable Component Scenarios
 
   @267797 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: Admin_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -112,7 +112,7 @@ Business Need: FlexTable Component Scenarios
 
   @267792 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating Application Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -133,7 +133,7 @@ Business Need: FlexTable Component Scenarios
 
   @267801 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: Admin_FlextableExport_To verify that after manipulating User Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -154,7 +154,7 @@ Business Need: FlexTable Component Scenarios
 
   @267804 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -175,7 +175,7 @@ Business Need: FlexTable Component Scenarios
 
   @267807 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -196,7 +196,7 @@ Business Need: FlexTable Component Scenarios
 
   @267819 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: Admin_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -217,7 +217,7 @@ Business Need: FlexTable Component Scenarios
 
   @267827 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -238,7 +238,7 @@ Business Need: FlexTable Component Scenarios
 
   @267832 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:Admin_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -259,7 +259,7 @@ Business Need: FlexTable Component Scenarios
 
   @267768 @sprint-21 @us_266643 @dilip
   Scenario: PM_FlextableExport_To verify that after manipulating mode, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -280,7 +280,7 @@ Business Need: FlexTable Component Scenarios
 
   @267775 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -301,7 +301,7 @@ Business Need: FlexTable Component Scenarios
 
   @267782 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -322,7 +322,7 @@ Business Need: FlexTable Component Scenarios
 
   @267790 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -343,7 +343,7 @@ Business Need: FlexTable Component Scenarios
 
   @267794 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating Application Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -364,7 +364,7 @@ Business Need: FlexTable Component Scenarios
 
   @267798 @sprint-21 @us_266643 @dilip
   Scenario: PM_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -385,7 +385,7 @@ Business Need: FlexTable Component Scenarios
 
   @267802 @ADMINUser_parseURLandAppendScript @sprint-21 @us_266643 @dilip
   Scenario: PM_FlextableExport_To verify that after manipulating User Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -406,7 +406,7 @@ Business Need: FlexTable Component Scenarios
 
   @267805 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -427,7 +427,7 @@ Business Need: FlexTable Component Scenarios
 
   @267808 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -448,7 +448,7 @@ Business Need: FlexTable Component Scenarios
 
   @267823 @sprint-21 @us_266643 @dilip
   Scenario: PM_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -469,7 +469,7 @@ Business Need: FlexTable Component Scenarios
 
   @267828 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -490,7 +490,7 @@ Business Need: FlexTable Component Scenarios
 
   @267833 @sprint-21 @us_266643 @dilip
   Scenario:PM_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -766,7 +766,7 @@ Business Need: FlexTable Component Scenarios
   @268155 @268162 @268168 @268172 @Admin_UFormView_ToVerifyThatAfterManipulatingFormIdValueNoAnyAlertGetDisplayed @ToVerifyThatAfterManipulatingRecordIdValueNoAnyAlertGetDisplayed
   @Admin_UFormEdit_ToVerifyThatAfterManipulatingFormIdValueNoAnyAlertGetDisplayed @FormEdit_ToVerifyThatAfterManipulatingRecordIdValueNoAnyAlertGetDisplayed
   Scenario: Admin_UFormView_To verify that after manipulating form id,Record id value, no any alert get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -795,7 +795,7 @@ Business Need: FlexTable Component Scenarios
 
   @268175 @268176 @AdminDynamicFormViewToVerifyThatWhenThereIsNoAnyFormEntryFoundThenNoAnyAlertGetDisplayed @PMDynamicFormViewToVerifyThatWhenThereIsNoAnyFormEntryFoundThenNoAnyAlertGetDisplayed
   Scenario Outline:Admin or PM user To verify that when there is no any form entry found, then no any alert get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -813,7 +813,7 @@ Business Need: FlexTable Component Scenarios
 
   @268180 @268181 @AdminOrPM_USERDynamicFormExportPageToVerifyThatAfterManipulatingFormIdValueNoAnyAlertGetDisplayed
   Scenario Outline: Adminor PM DynamicFormExportPage_To verify that after manipulating form id value, no any alert get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -834,7 +834,7 @@ Business Need: FlexTable Component Scenarios
 
   @268186 @268188 @268191 @268192 @268183 @268184 @AdminPMUserDynamicFormExportPageToVerifyThatAfterManipulatingRecordIdValueNoAnyAlertGetDisplayed @DynamicLayoutExport_ToVerifyThatAfterManipulatingParentownerIdValueNoAnyAlertGetDisplayed
   Scenario Outline: Admin or PM_DynamicLayoutExport_To verify that after manipulating parentowner id value, no any alert get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -954,7 +954,7 @@ Business Need: FlexTable Component Scenarios
 
   @268170 @268166
   Scenario: PM_UFormEdit_To verify that after manipulating Record id value, no any alert get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -973,7 +973,7 @@ Business Need: FlexTable Component Scenarios
 
   @268163
   Scenario: PM_UFormView_To verify that after manipulating Record id,Form Id value, no any alert get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -992,7 +992,7 @@ Business Need: FlexTable Component Scenarios
 
   @267792 @268198 @268199 @268204 @268205 @268207 @268208
   Scenario Outline: Admin_FlextableExport_To verify that after manipulating Application Id,Organization id value, alert not get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1058,7 +1058,7 @@ Business Need: FlexTable Component Scenarios
 
   @268210 @268211 @268213 @268214
   Scenario Outline:To verify that on entering script in available multiple input fields at a time, no any alert get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1130,7 +1130,7 @@ Business Need: FlexTable Component Scenarios
   @ToVerifyThatOnEnteringScriptTwice(WhereOneScriptOnNewLine)InMyFeedInputFieldAlertNotGetDisplayed
   @Collab_ToVerifyThatOnEnteringScriptInCommentInputFieldAlertNotGetDisplayed
   Scenario: PM_Application Edit layout - Collab_To verify that on entering script twice in My Feed input field, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1154,7 +1154,7 @@ Business Need: FlexTable Component Scenarios
   @267714
   @Admin_ApplicationEditLayoutCollab_ToVerifyThatOnEnteringScriptInCommentInputFieldAlertNotGetDisplayed
   Scenario:Admin_Application Edit layout - Collab_To verify that on entering script in Comment input field, alert not get displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1170,7 +1170,7 @@ Business Need: FlexTable Component Scenarios
   @267681 @267682
     @AdminOrPm_Collab_ToMyFollowers_Link_ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
   Scenario Outline: Admin_Collab_To My Followers_Link_To verify that on entering script in My Feed input field, alert not get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I click on "Link" inside My Feed
@@ -1206,7 +1206,7 @@ Business Need: FlexTable Component Scenarios
 
   @267676 @ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
   Scenario:Admin and PM_Collab_To My Followers_Post_To verify that on entering script in My Feed input field, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
@@ -1216,7 +1216,7 @@ Business Need: FlexTable Component Scenarios
   @267678 @267679
     @AdminOrPM_Collab_AGroup_Post_ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
   Scenario Outline: Admin_Collab_A Group_Post_To verify that on entering script in My Feed input field, alert not get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" inside "Post" in My Feed
@@ -1243,7 +1243,7 @@ Business Need: FlexTable Component Scenarios
   @267649 @267650
     @AdminOrPMApplicationEditLayoutCollab_ToVerifyThatOnEnteringScriptInMyFeedInputFieldAlertNotGetDisplayed
   Scenario Outline: AdminOrPM_Application Edit layout - Collab_To verify that on entering script in My Feed input field, alert not get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1276,7 +1276,7 @@ Business Need: FlexTable Component Scenarios
 
   @268145 @268147
   Scenario Outline:Admin,PM _DynamicForm_Edit layout_To Verify that after manipulating templatename value, no any alert get displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1306,7 +1306,7 @@ Business Need: FlexTable Component Scenarios
 
   @268139
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1319,7 +1319,7 @@ Business Need: FlexTable Component Scenarios
 
   @256777 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1332,7 +1332,7 @@ Business Need: FlexTable Component Scenarios
 
   @257008 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1358,7 +1358,7 @@ Business Need: FlexTable Component Scenarios
 
   @257016 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1371,7 +1371,7 @@ Business Need: FlexTable Component Scenarios
 
   @257020 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1397,7 +1397,7 @@ Business Need: FlexTable Component Scenarios
 
   @257027 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1410,7 +1410,7 @@ Business Need: FlexTable Component Scenarios
 
   @257029 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1437,7 +1437,7 @@ Business Need: FlexTable Component Scenarios
 
   @257035 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1450,7 +1450,7 @@ Business Need: FlexTable Component Scenarios
 
   @257039 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1476,7 +1476,7 @@ Business Need: FlexTable Component Scenarios
 
   @257092 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1489,7 +1489,7 @@ Business Need: FlexTable Component Scenarios
 
   @257093 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1516,7 +1516,7 @@ Business Need: FlexTable Component Scenarios
 
   @257099 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating ID, template name, package id, parent id, forminstance id and table name all at a same time, then alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1530,7 +1530,7 @@ Business Need: FlexTable Component Scenarios
 
   @257101 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1543,7 +1543,7 @@ Business Need: FlexTable Component Scenarios
 
   @257102 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating packageid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1556,7 +1556,7 @@ Business Need: FlexTable Component Scenarios
 
   @257103 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating parentid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1569,7 +1569,7 @@ Business Need: FlexTable Component Scenarios
 
   @257104 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating TableName value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1582,7 +1582,7 @@ Business Need: FlexTable Component Scenarios
 
   @257105 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1595,7 +1595,7 @@ Business Need: FlexTable Component Scenarios
 
   @257106 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To Verify that after manipulating templatename value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1608,7 +1608,7 @@ Business Need: FlexTable Component Scenarios
 
   @257107 @sprint-19 @us-256030 @dilip
   Scenario: PM_View layout_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1635,7 +1635,7 @@ Business Need: FlexTable Component Scenarios
 
   @257584 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1648,7 +1648,7 @@ Business Need: FlexTable Component Scenarios
 
   @257586 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1674,7 +1674,7 @@ Business Need: FlexTable Component Scenarios
 
   @257593 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1687,7 +1687,7 @@ Business Need: FlexTable Component Scenarios
 
   @257596 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1713,7 +1713,7 @@ Business Need: FlexTable Component Scenarios
 
   @257598 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1726,7 +1726,7 @@ Business Need: FlexTable Component Scenarios
 
   @257601 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1752,7 +1752,7 @@ Business Need: FlexTable Component Scenarios
 
   @257607 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1765,7 +1765,7 @@ Business Need: FlexTable Component Scenarios
 
   @257608 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1791,7 +1791,7 @@ Business Need: FlexTable Component Scenarios
 
   @257612 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1804,7 +1804,7 @@ Business Need: FlexTable Component Scenarios
 
   @257626 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1830,7 +1830,7 @@ Business Need: FlexTable Component Scenarios
 
   @257633 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To verify that after manipulating ID, template name, package id, parent id, forminstance id and table name all at a same time, then alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1843,7 +1843,7 @@ Business Need: FlexTable Component Scenarios
 
   @257634 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1856,7 +1856,7 @@ Business Need: FlexTable Component Scenarios
 
   @257635 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating packageid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1869,7 +1869,7 @@ Business Need: FlexTable Component Scenarios
 
   @257637 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1882,7 +1882,7 @@ Business Need: FlexTable Component Scenarios
 
   @257638 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating TableName value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1895,7 +1895,7 @@ Business Need: FlexTable Component Scenarios
 
   @257639 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1908,7 +1908,7 @@ Business Need: FlexTable Component Scenarios
 
   @257640 @sprint-19 @us-256030 @dilip
   Scenario: Admin_Edit layout_To Verify that after manipulating templatename value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1921,7 +1921,7 @@ Business Need: FlexTable Component Scenarios
 
   @257641 @sprint-19 @us-256030 @dilip
   Scenario: PM_Edit layout_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1947,7 +1947,7 @@ Business Need: FlexTable Component Scenarios
 
   @257866 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name (with adding ID immediately after template name) both, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1960,7 +1960,7 @@ Business Need: FlexTable Component Scenarios
 
   @257874 @sprint-19 @us-256030 @dilip
   Scenario: Admin_View layout_To verify that after manipulating ID and template name both by adding respective script twice, alert not get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -1975,7 +1975,7 @@ Business Need: FlexTable Component Scenarios
 
   @267652
   Scenario:Admin_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2004,7 +2004,7 @@ Business Need: FlexTable Component Scenarios
 
   @267854
   Scenario:PM_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2056,7 +2056,7 @@ Business Need: FlexTable Component Scenarios
 
   @268124
   Scenario: Admin_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2069,7 +2069,7 @@ Business Need: FlexTable Component Scenarios
 
   @268125
   Scenario: Admin_DynamicFormView_To Verify that after manipulating packageid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2082,7 +2082,7 @@ Business Need: FlexTable Component Scenarios
 
   @268126
   Scenario: Admin_DynamicFormView_To Verify that after manipulating parentid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2095,7 +2095,7 @@ Business Need: FlexTable Component Scenarios
 
   @268127
   Scenario: Admin_DynamicFormView_To Verify that after manipulating TableName value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2108,7 +2108,7 @@ Business Need: FlexTable Component Scenarios
 
   @268128
   Scenario: Admin_DynamicFormView_To Verify that after manipulating forminstanceid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2121,7 +2121,7 @@ Business Need: FlexTable Component Scenarios
 
   @268129
   Scenario: Admin_DynamicFormView_To Verify that after manipulating templatename value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2134,7 +2134,7 @@ Business Need: FlexTable Component Scenarios
 
   @268130
   Scenario: PM_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2160,7 +2160,7 @@ Business Need: FlexTable Component Scenarios
 
   @268132
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating id value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2173,7 +2173,7 @@ Business Need: FlexTable Component Scenarios
 
   @268138
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating packageid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2186,7 +2186,7 @@ Business Need: FlexTable Component Scenarios
 
   @268139
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating parentid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2199,7 +2199,7 @@ Business Need: FlexTable Component Scenarios
 
   @268141
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating TableName value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2212,7 +2212,7 @@ Business Need: FlexTable Component Scenarios
 
   @268143
   Scenario: Admin_DynamicForm_Edit layout_To Verify that after manipulating forminstanceid value, no any alert get displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2232,7 +2232,7 @@ Business Need: FlexTable Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2260,7 +2260,7 @@ Business Need: FlexTable Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2314,7 +2314,7 @@ Business Need: FlexTable Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -2342,7 +2342,7 @@ Business Need: FlexTable Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"

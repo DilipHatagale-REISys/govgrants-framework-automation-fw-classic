@@ -1,4 +1,4 @@
-@FlexTable_AllComponent-ComponentClassic @regression-QA @FlexTable_AllComponent
+@FlexTable-Component @regression-QA @FlexTable_AllComponent
 Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface,Quick Search
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in FlexTable_AllComponent component and will validate them.
@@ -7,14 +7,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334978  @dilip
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334979 @dilip
   Scenario: Flex table-Page size-PM-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
@@ -34,7 +34,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
@@ -47,7 +47,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
@@ -55,14 +55,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334986 @dilip
   Scenario: Flex table-Total Records count-Admin-Config-To verify that on enabling Total records count, value of total record count displayed at bottom of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334988 @dilip
   Scenario: Flex table-Total Records count-PM-UI-To verify that on enabling Total records count, value of total record count displayed at bottom of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
@@ -82,7 +82,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
@@ -95,21 +95,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334995 @dilip
   Scenario:Flex table-Pagination-Admin-Config-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334997 @dilip
   Scenario: Flex table-Pagination-PM-UI-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
@@ -131,7 +131,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | false         | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
@@ -144,7 +144,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
@@ -152,14 +152,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335004 @dilip
   Scenario: Flex table-Default page size-Admin-Config-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335006 @dilip
   Scenario: Flex table-Default page size-PM-UI-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -179,7 +179,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -192,7 +192,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -205,7 +205,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
@@ -218,7 +218,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
@@ -231,7 +231,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | false         | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
@@ -244,7 +244,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
@@ -257,7 +257,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
@@ -270,7 +270,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
@@ -285,7 +285,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -300,7 +300,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -315,7 +315,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -330,7 +330,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -347,7 +347,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -364,35 +364,35 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335063 @dilip
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335066 @dilip
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335070 @dilip
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335072 @dilip
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
@@ -407,14 +407,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Record Selection Column Header   | Demo text     | Programs           | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | None          | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335080 @dilip
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
@@ -431,7 +431,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Disable Menu      | true          | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
@@ -448,7 +448,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Disable Menu      | true          | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
@@ -465,7 +465,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Disable Menu      | false         | Programs           | Name                      |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
@@ -482,14 +482,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Disable Menu      | false         | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335124 @dilip
   Scenario: Flex table-Page size-Admin-UI-To verify that user is able to change page size by clicking on Show Entries block
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "20"
@@ -497,7 +497,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335126 @dilip
   Scenario: Flex table-Page size-PM-UI-To verify that user is able to change page size by clicking on Show Entries block
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
@@ -513,7 +513,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335129 @dilip
   Scenario: Flex table-Page size-Admin-UI-To verify that different page sizes are available in Show Entries block
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
@@ -525,7 +525,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335131 @dilip
   Scenario: Flex table-Page size-PM-UI-To verify that different page sizes  are available in Show Entries block
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
@@ -547,7 +547,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335137 @dilip
   Scenario: Flex table-Page size-Admin-UI-To verify that on selecting All page size, all available records displayed on a page
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
@@ -555,7 +555,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335139 @dilip
   Scenario: Flex table-Page size-PM-UI-To verify that on selecting All page size, all available records displayed on a page
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
@@ -571,7 +571,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335150 @dilip
   Scenario: Flex table-Page size-Admin-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Next"
@@ -579,7 +579,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335151 @dilip
   Scenario: Flex table-Page size-PM-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Next"
@@ -595,7 +595,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335158 @dilip
   Scenario: Flex table-Pagination-Admin-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
@@ -603,7 +603,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335159 @dilip
   Scenario: Flex table-Pagination-PM-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
@@ -619,7 +619,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335174 @dilip
   Scenario: Flex table-Pagination-Admin-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
@@ -627,7 +627,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335177 @dilip
   Scenario: Flex table-Pagination-PM-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
@@ -643,7 +643,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335200 @dilip
   Scenario: LWC-Flex table-Page Size-Admin-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 20"
@@ -652,7 +652,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335205 @dilip
   Scenario: Flex table-Page Size-PM-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 17"
@@ -672,14 +672,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334650
   Scenario: Flex table-Quick Search-Admin-Config-To verify that on enabling Quick search, it displayed on top of the flex table
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334652
   Scenario: Flex table-Quick Search-PM-UI-To verify that on enabling Quick search, it displayed on top of the flex table
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
@@ -693,7 +693,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334659
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
@@ -701,7 +701,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334660
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for text field (i.e. Text data type)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
@@ -717,7 +717,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334663
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
@@ -725,7 +725,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334664
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"

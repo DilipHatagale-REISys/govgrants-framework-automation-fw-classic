@@ -13,7 +13,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3837                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -52,7 +52,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3836                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -92,7 +92,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -129,7 +129,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -163,7 +163,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -191,7 +191,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
