@@ -5,7 +5,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @109375    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedPDF
   Scenario: validate enhanced data table at record table is rendered properly by PM user inside downloaded PDF
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19,7 +19,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109376    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUserInsideDownloadedPDF
   Scenario: validate flex table at phase level is rendered properly by PM user inside downloaded PDF
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -36,7 +36,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -52,7 +52,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109610    @verifyThatPageContentDisplayedProperlyByLoggedInAsPMUserAndClickOnDownloadedPDFFromPageLayout
   Scenario: validate if logged in as PM user and downloaded PDF from page layout then page content displayed in pdf file
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -178,7 +178,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109769    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUserInsideDownloadedCSV
   Scenario: validate flex table at phase level is rendered properly by PM user inside downloaded csv
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -192,7 +192,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109661    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedXLS
   Scenario: validate enhanced data table at record table is rendered properly by PM user inside downloaded XLS
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -205,7 +205,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109258    @verifyThatApplicationFlexTableIsDisplayedAtPhaseByLoggedInAsPMUserInsideDownloadedPDF
   Scenario: validate flex table at application phase level is rendered properly by PM user inside downloaded PDF
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -222,7 +222,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Focus Areas                |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -244,7 +244,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -295,7 +295,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @109749    @verifyThatFlexGridEnhancedIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedXLS
   Scenario: validate flex grid enhanced at record table is rendered properly by PM user inside downloaded XLS
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -314,7 +314,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Focus Areas                |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
@@ -329,7 +329,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @110014    @verifyThatFlexGridEnhancedIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedPDF
   Scenario: validate flex grid enhanced at record table is rendered properly by PM user inside downloaded PDF
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -355,7 +355,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Form:General  | Skip PDF Default Theme | true                    | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long        | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
       | Flex Table Action     | Where To Open ?        | Modal                   | DynamicFormTable   | Name                      | View                       |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -382,7 +382,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download      | false         | CF-0000            |                           |                            |
       | Capture Form:General  | Skip PDF Default Theme | true          | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -417,7 +417,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqWrittenAndNumberFieldCurrencyFieldValueAtSection3ByProvidingNameOfField      | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                                      | CI-0038            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                      | CI-0035            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -448,7 +448,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -469,7 +469,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -490,7 +490,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -511,7 +511,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -532,7 +532,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -555,7 +555,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -576,7 +576,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -597,7 +597,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -618,7 +618,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -643,7 +643,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Written                                                   | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                  | CI-0004            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -668,7 +668,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Written                                                      | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                     | CI-0004            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -697,7 +697,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Currency                                              | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                | CI-0006            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                               | CI-0005            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -728,7 +728,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Currency                                                 | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                   | CI-0006            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                  | CI-0005            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -759,7 +759,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -792,7 +792,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Capture Item:General  | Question Identifier     | Number                                                              | CI-0006            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                             | CI-0005            |                           |                            |
       | Capture Item:General  | Question Identifier     | Date                                                                | CI-0001            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -810,7 +810,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @88132    @validateAFormIsDisplayedInDownloadedPDF
   Scenario: validate that a form is displayed in downloaded PDF
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -824,7 +824,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @111908    @verifyThatByLoginAsAdminUserAllFormsTableDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as Admin user All Forms flex table enhanced displayed inside downloaded pdf
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -838,7 +838,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @test @111910    @verifyThatByLoginAsAdminUserAllFormsTableDisplayedInsideDownloadedPDFFromPageLayout
   Scenario: validate by logged in as Admin user All Forms flex table enhanced displayed inside downloaded pdf from page layout
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -858,7 +858,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
@@ -873,7 +873,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @201188  @201189 @201190  @us-199729 @vrushali
   Scenario:To verify, If New Validate button of a form is clicked upon then the pdf of that form will be generated & it can be downloaded after clicking on 'Download as PDF' on the page layout
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -904,7 +904,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @201194 @201195 @us-199729 @vrushali
   Scenario:To verify,If user clicks on 'New Validate' button without filling up all required fields then Error message should be displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"

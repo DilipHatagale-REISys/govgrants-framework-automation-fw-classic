@@ -12,7 +12,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantor  | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
@@ -24,13 +24,13 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
       | Custom App Config:General | Default Theme Name |               | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
 
   @332490
   Scenario:Custom App- To verify, Logo Document Name field should be as 'GrantorHeaderLogo' in custom app configuration.
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see govgrants logo "Current App logo" is displayed with name "As a Grantor"
 
@@ -42,7 +42,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 1             | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" option of custom App is at position "1"
 
@@ -54,7 +54,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
       | Custom App Config:General | Abbreviation | GRNTR         | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
@@ -66,7 +66,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Then I see "As a Grantor" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
@@ -81,7 +81,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName              | fieldNewValue | coreComponentField |
       | Custom App Config:General | Available For Profiles | <New-Profile> | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
@@ -97,7 +97,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName              | fieldNewValue | coreComponentField |
       | Custom App Config:General | Available For Profiles | <New-Profile> | StateasGrantor     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
@@ -114,7 +114,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantee  | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
 
@@ -126,7 +126,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 2             | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantee" option of custom App is at position "2"
 
@@ -138,7 +138,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
       | Custom App Config:General | Abbreviation | GRNTE         | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
 
@@ -150,7 +150,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Then I see "As a Grantee" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
@@ -165,7 +165,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName              | fieldNewValue | coreComponentField |
       | Custom App Config:General | Available For Profiles | <New-Profile> | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
 
@@ -181,7 +181,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantee  | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     Then I see govgrants logo "Current App logo" is displayed with name "As a Grantee"
 
@@ -193,7 +193,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
       | Custom App Config:General | Default Theme Name |               | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     Then I see "ColorContrast_Grantee" on complete page for custom App as a Grantor
 
@@ -206,7 +206,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue    | coreComponentField |
       | Custom App Config:General | Label     | As Administrator | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
     Then I see "As a Grantee" inside CustomApp dropDown
@@ -220,7 +220,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 3             | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As Administrator" option of custom App is at position "3"
 
@@ -232,7 +232,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
       | Custom App Config:General | Abbreviation | ADM           | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As Administrator" inside CustomApp dropDown
 
@@ -244,7 +244,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Then I see "As Administrator" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
@@ -259,7 +259,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName              | fieldNewValue | coreComponentField |
       | Custom App Config:General | Available For Profiles | <New-Profile> | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As Administrator" inside CustomApp dropDown
 
@@ -275,7 +275,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue    | coreComponentField |
       | Custom App Config:General | Label     | As Administrator | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
     Then I see govgrants logo "Current App logo" is displayed with name "As Administrator"
 
@@ -287,7 +287,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
       | Custom App Config:General | Default Theme Name |               | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
     Then I see "ColorContrast_Admin" on complete page for custom App as a Grantor
 
@@ -399,7 +399,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantor  | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "As a Grantor" inside CustomApp dropDown
 #    Then I see the header is "As a Grantor" in the page details
@@ -413,7 +413,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantee  | StateasGrantee     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     Then I see "As a Grantee" inside CustomApp dropDown
 
@@ -425,6 +425,6 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue    | coreComponentField |
       | Custom App Config:General | Label     | As Administrator | Admin              |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
     Then I see "As Administrator" inside CustomApp dropDown

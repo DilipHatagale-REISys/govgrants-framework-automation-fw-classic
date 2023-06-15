@@ -6,7 +6,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode. @Vrushali @Sprint-19
   Scenario Outline: To verify ,  When Internal User click on 'New' action button to create a new record in Enhanced Grid, a new record should show up in the grid in edit mode.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -29,7 +29,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257614 @257611 @ToverifyAdminUserclickonnewactionandthenclickonRefreshbuttonfromPagelayoutthennewrecordshouldnotshowup @Vrushali @Sprint-19 @US-255921
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -50,7 +50,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257558 @257557 @InternalUserclickonnewactionthenclickonRefreshbuttonfrompageblockhamburgericonthennewrecordshouldnotshowup @Vrushali @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -74,7 +74,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly. @Vrushali @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -92,7 +92,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord. @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -109,7 +109,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord. @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -136,7 +136,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | ProgramReviewStepTemplates |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -162,7 +162,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | ProgramReviewStepPanelTemplates |                           |                            |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -192,7 +192,7 @@ Business Need: EnhancedGrid Component Scenarios
   @206105 @206107 @DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline:Download as XLS should work for empty table currency,  Number &Percent  column should be available on the table
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -214,7 +214,7 @@ Business Need: EnhancedGrid Component Scenarios
   @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -271,7 +271,7 @@ Business Need: EnhancedGrid Component Scenarios
   @ToverifyUsershouldbeabletoDeletethenewlyaddedrecord @UsershouldbeseeconfirmationboxwhenclickonDeleteactiononthenewlyaddedrecord @UsershouldbeabletoEditdetailstothenewlydisplayedrecord
   @Usershouldbeabletoadddetailstothenewlyaddedrecordandclickonsaveactionthenrecordisgettingsaved @InpageblockdownloadPDFfornewlyaddedrecordinthetableshouldbedisplayed
   Scenario:To verify, User should be able to Delete the newly added  record
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -310,7 +310,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257481 @ToverifyInpageblockdownloadCSVfornewlyaddedrecordinthetableshouldbedisplayed @dilip @Sprint-19 @US-255921
   Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -335,7 +335,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257480 @ToVerifyInRecordLayoutDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayed @dilip @Sprint-19 @US-255921
   Scenario: To verify, In Record layout download PDF for newly added record in the table  should be displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -360,7 +360,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257482 @ToVerifyInRecordLayoutScreenshotNewlyAddedRecordInTheTableShouldBeDisplayed @dilip @Sprint-19 @US-255921
   Scenario:To verify, In Record layout Screenshot newly added record in the table  should be displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -385,7 +385,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257495 @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedChildRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
   Scenario:To verify,  Advanced filter should be working on newly added child record in the table for Internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -409,7 +409,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257502 @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: Advanced filter should be working on newly added record in the table for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -433,7 +433,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257516 @ToVerifyInternalUserShouldNotSeeAnyChildTableAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should  not see any child table attached to the newly created record
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -449,7 +449,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257526 @ToVerifyInternalUserShouldBeAbleToAddNewChildRecordInChildTableThatAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add new child record in child table that attached to the newly created record
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -469,7 +469,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257518 @ToVerifyInternalUserShouldBeAbleToAddDetailsToTheNewlyDisplayedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add details to the newly displayed record
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -490,7 +490,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257535 @ToVerifyInPageBlockDownloadCSVForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed  for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -514,7 +514,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257539 @ToVerifyInPageBlockDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: To verify, In page block download PDF for newly added record in the table  should be displayed  for Internal User
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -539,7 +539,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257523 @UsershouldbeabletoEditdetailstothenewlydisplayedrecord @vrishali @Sprint-19 @US-255921
   Scenario: User should be able to Edit details to the newly displayed record
 #    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -557,7 +557,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257520 @257526 @US-255921 @vrishali @Sprint-19 @US-255921
   Scenario: Internal User should be able to add details to the newly displayed record and click on save action then record is getting saved.
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -580,7 +580,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257541 @ToVerifyInRecordLayoutDownloadPDFForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: In Record layout download PDF for newly added record in the table  should be displayed  for Internal User
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -600,7 +600,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
   @InternalUserShouldBeSeeConfirmationBoxWhenClickOnDeleteActionOnTheNewlyAddedRecord
   Scenario: To verify, Internal User should be see confirmation box when click on Delete action on  the newly added  record
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

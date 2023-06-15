@@ -5,7 +5,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89693    @validateByEnteringValueInTextFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into text field and click on save , a value is getting saved into written field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -23,7 +23,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89696    @validateByEnteringValueInCurrencyFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into currency field and click on save , a value is getting saved into currency field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -40,7 +40,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89697    @validateByEnteringValueInNumberFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into number field and click on save , a value is getting saved into number field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -57,7 +57,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89698    @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -74,7 +74,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88124    @validateTitleOfFormAtDynamicFormLayout
   Scenario: validate the title of form at dynamic form view page
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -86,7 +86,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88126    @validateAFormIsDisplayedInViewModeByClickOnViewActionAtDynamicForm
   Scenario: validate that a form is displayed in view mode and edit button is displayed by clicking on view action
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -98,7 +98,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88130    @validateAFormIsDisplayedInEditModeByClickOnEditActionAtDynamicForm
   Scenario: validate that a form is displayed in edit mode and edit button is not displayed by clicking on edit action
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -111,7 +111,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88276  @validateAWrittenFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a written field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -123,7 +123,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88277    @validateDateFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a date field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -135,7 +135,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88278    @validateCurrencyFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a currency field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -147,7 +147,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88281    @validatePercentFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a percent field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -159,7 +159,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88282    @validateNumberFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a number field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -171,7 +171,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88283    @validatePicklistFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a picklist field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -183,7 +183,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88284    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a radio field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -195,7 +195,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88285    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a radio field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -207,7 +207,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88286    @validateRichTextAreaFieldIsDisplayedInsideFormAtDynamicFormLayout
   Scenario: validate that a rich text area field is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -219,7 +219,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89702    @validateByEnteringValueInCheckboxFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into checkbox field and click on save , a value is getting saved into checkbox field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -236,7 +236,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89704    @validateByEnteringValueInRadioFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into radio field and click on save , a value is getting saved into radio field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -252,7 +252,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89700    @validateByEnteringValueInPicklistFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into picklist field and click on save , a value is getting saved into picklist field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -266,7 +266,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89705    @validateByEnteringValueInRichTextAreaFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into rich text area field and click on save , a value is getting saved into rich text area field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -287,7 +287,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88147    @validateThatASingleSectionIsDisplayedAtDynamicFormLayout
   Scenario: validate that a single section is displayed inside dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -299,7 +299,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88104    @validateThatDynamicFormIsDisplayedInsideDynamicFormTableATAnnouncement
   Scenario: validate that a linked dynamic form is displayed inside dynamic form enhanced table at announcement detail
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -317,7 +317,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Form Instruction | Demo Testing form Instruction | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -338,7 +338,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Form Instruction | Demo Testing form Instruction | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -360,7 +360,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -378,7 +378,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Hide          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -396,7 +396,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Form Instruction | <enterNewInstruction> | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -422,7 +422,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -441,7 +441,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Hide          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -460,7 +460,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Form Instruction | <enterNewInstruction> | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -487,7 +487,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName           | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Instruction | Demo Section instruction Automation | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -508,7 +508,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName           | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Instruction | Demo Section instruction Automation | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -530,7 +530,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName         | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Help Text | Demo Section help text | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -549,7 +549,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName         | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Help Text | Demo Section help text | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -562,7 +562,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89936   @ValidateValidationMessageAtDynamicFormInViewMode
   Scenario: validate that validation message should display by click on validate button on dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -586,7 +586,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName    | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Name | Automation Title | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -604,7 +604,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Instruction | <enterNewInstruction> | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -621,7 +621,7 @@ Business Need: dynamic forms Component Scenarios
 
   @89694    @validateByEnteringValueInDateFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario: Entering value into date field and click on save , a value is getting saved into date field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -644,7 +644,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -667,7 +667,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0002            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -690,7 +690,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0003            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -713,7 +713,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0004            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -736,7 +736,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -759,7 +759,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0013            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -787,7 +787,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0040            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -807,7 +807,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | 2             | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -825,7 +825,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | 1             | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -838,7 +838,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91526    @validateCancelButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
   Scenario: validate that cancel button is displayed at top right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -851,7 +851,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
   Scenario: validate that save button is displayed at top right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -864,7 +864,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91527    @validateCancelButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that cancel button is displayed at bottom right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -877,7 +877,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91529    @validateSaveButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that save button is displayed at bottom right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -890,7 +890,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91364    @validateValidateButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that validate button is displayed at bottom right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -902,7 +902,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -920,7 +920,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Max Score | 50.00         | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -938,7 +938,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName    | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Name | test~!@#$%^&*()_+{}][?/><. | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -956,7 +956,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Form Name | test~!@#$%^&*()_+{}][?/><. | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -974,7 +974,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Capture Package Name | Test Automation Form | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -986,7 +986,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
   Scenario: validate alert message if invalid data inserted in any field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1003,7 +1003,7 @@ Business Need: dynamic forms Component Scenarios
 
   @91998    @validateAlertMessageAtCurrencyFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in currency field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1019,7 +1019,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92004    @validateAlertMessageAtNumberFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in number field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1035,7 +1035,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92003    @validateAlertMessageAtPercentFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in percent field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1051,7 +1051,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1070,7 +1070,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92006    @validateAlertMessageAtMaxScoreFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
   Scenario: validate alert message if invalid data inserted in max score field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1092,7 +1092,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Written Help | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1105,7 +1105,7 @@ Business Need: dynamic forms Component Scenarios
 
   @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout @bugid_224392
   Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1132,7 +1132,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Date Help | CI-0001            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1151,7 +1151,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Currency Help | CI-0004            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1170,7 +1170,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Number Help | CI-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1189,7 +1189,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Percent Help | CI-0005            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1208,7 +1208,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Picklist Help | CI-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1228,7 +1228,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Rich Text Area Help | CI-0013            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1247,7 +1247,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Checkbox Help | CI-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1266,7 +1266,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Radio Help | CI-0012            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1285,7 +1285,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Percent Help | CI-0003            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1304,7 +1304,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Currency Help | CI-0002            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1323,7 +1323,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Number Help | CI-0004            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1343,7 +1343,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Date Help | CI-0001            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1362,7 +1362,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Written Help | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1381,7 +1381,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Checkbox Help | CI-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1400,7 +1400,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Rich Text Area Help | CI-0013            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1419,7 +1419,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Radio Help | CI-0012            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1438,7 +1438,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Help Text | Test Automation Picklist Help | CI-0005            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1457,7 +1457,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Comment Applicable? | Long TextArea Applicable | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1475,7 +1475,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Comment Applicable? | Rich TextArea Applicable | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1493,7 +1493,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Comment Applicable? | Not Applicable | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1512,7 +1512,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Comment Applicable? |               | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1531,7 +1531,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1544,7 +1544,7 @@ Business Need: dynamic forms Component Scenarios
 
   @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
   Scenario: validate that a single section is displayed inside dynamic form layout in view mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1559,7 +1559,7 @@ Business Need: dynamic forms Component Scenarios
 
   @93861    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInEditMode
   Scenario: validate that a single section is displayed inside dynamic form layout in edit mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1585,7 +1585,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                     | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                     | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1607,7 +1607,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                     | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                     | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1629,7 +1629,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                         | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledCurrencyUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                         | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1651,7 +1651,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                         | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledCurrencyUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                         | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1673,7 +1673,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                             | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                             | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1700,7 +1700,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                   | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                           | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1722,7 +1722,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnyL                                                           | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                           | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1744,7 +1744,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                      | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                              | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1756,7 +1756,7 @@ Business Need: dynamic forms Component Scenarios
 
   @93779   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInEditMode
   Scenario: validate sections are expanded by default inside dynamic form in edit mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "2" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -1771,7 +1771,7 @@ Business Need: dynamic forms Component Scenarios
 
   @93780   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutInViewMode
   Scenario: validate sections are expanded by default inside dynamic form in view mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1794,7 +1794,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                      | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                              | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1816,7 +1816,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                           | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1845,7 +1845,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberAndHideCurrencyFieldUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnzO                                                          | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1870,7 +1870,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberAndHideCurrencyFieldUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnzO                                                          | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1895,7 +1895,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableAndHideMultipleFieldsUsingWrittenFieldValue | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000Mnyf                                                     | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MnzO                                                     | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1923,7 +1923,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                   | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1945,7 +1945,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                   | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1967,7 +1967,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                       | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -1992,7 +1992,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                       | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2014,7 +2014,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                           | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2041,7 +2041,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                 | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                                  | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2066,7 +2066,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                 | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                                  | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2089,7 +2089,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                    | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                                     | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2114,7 +2114,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                    | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                                     | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2136,7 +2136,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                         | CI-0018            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
       | Capture Item:General  | Question Identifier     | Number                                                                          | CI-0023            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2163,7 +2163,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                   | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2188,7 +2188,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                   | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2213,7 +2213,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                     | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                      | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2238,7 +2238,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                     | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                      | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2256,7 +2256,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0034            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2280,7 +2280,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
       | Capture Item:General  | Question Identifier     | Rich Text area                                                                    | CI-0026            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2304,7 +2304,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
       | Capture Item:General  | Question Identifier     | Rich Text area                                                                    | CI-0026            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2326,7 +2326,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                       | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
       | Capture Item:General  | Question Identifier     | Rich Text area                                                                 | CI-0026            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2348,7 +2348,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                       | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
       | Capture Item:General  | Question Identifier     | Rich Text area                                                                 | CI-0026            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2371,7 +2371,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                           | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2398,7 +2398,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                               | CI-0022            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
       | Capture Item:General  | Question Identifier     | Rich Text area                                                                         | CI-0026            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2426,7 +2426,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                              | CI-0027            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DynamicFormNewUpdatedJsonForPicklist | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                              | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2449,7 +2449,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2471,7 +2471,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                                                      | CI-0027            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisablePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2497,7 +2497,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2519,7 +2519,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist(Required Field)                                                           | CI-0034            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredPicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                           | CI-0004            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2543,7 +2543,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2569,7 +2569,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2595,7 +2595,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Checkbox                                                                   | CI-0028            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2621,7 +2621,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Checkbox                                                                   | CI-0028            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2643,7 +2643,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Checkbox                                                                      | CI-0028            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2665,7 +2665,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Checkbox                                                                      | CI-0028            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2687,7 +2687,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Checkbox                                                                           | CI-0028            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                           | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2712,7 +2712,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
       | Capture Item:General  | Question Applicable ?        |               | CI-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2738,7 +2738,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Radio                                                                      | CI-0025            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2764,7 +2764,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Radio                                                                      | CI-0025            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2786,7 +2786,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0040            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                        | CI-0004            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2812,7 +2812,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberAndDisablePercentUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                                  | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                   | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2841,7 +2841,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberAndHidePercentUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                                  | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                   | CI-0024            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2872,7 +2872,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                                 | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                                  | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2904,7 +2904,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                           | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                           | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2936,7 +2936,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                       | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                        | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                        | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2964,7 +2964,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                       | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                        | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                        | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -2992,7 +2992,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                               | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                                | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                                | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3027,7 +3027,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                          | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                           | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                           | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3041,7 +3041,7 @@ Business Need: dynamic forms Component Scenarios
 
   @95144  @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInViewLayout
   Scenario: validate if response is removed from written field then a field with blank value is displayed in form view layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3062,7 +3062,7 @@ Business Need: dynamic forms Component Scenarios
 
   @95145   @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInEditLayout
   Scenario: validate if response is removed from written field then a field with blank value is displayed in form edit layout
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3100,7 +3100,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Percent                                                                                               | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                               | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Date                                                                                                  | CI-0019            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3119,7 +3119,7 @@ Business Need: dynamic forms Component Scenarios
 
   @93705    @validateSortOrderFieldAtDynamicFormLayoutInViewMode
   Scenario: validate that
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3131,7 +3131,7 @@ Business Need: dynamic forms Component Scenarios
 
   @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
   Scenario: validate sort order field at capture items in dynamic form layout in edit mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3161,7 +3161,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Percent                                                                                               | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                               | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Date                                                                                                  | CI-0019            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3190,7 +3190,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Currency                                                                                                     | CI-0022            |                           |                            |
       | Capture Item:General  | Question Identifier     | Percent                                                                                                      | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                                      | CI-0018            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3228,7 +3228,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                                   | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                                  | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                                     | CI-0025            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3268,7 +3268,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                      | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                     | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                        | CI-0025            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3305,7 +3305,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                 | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                    | CI-0025            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3340,7 +3340,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                 | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                    | CI-0025            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3373,7 +3373,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Percent                                                                                                         | CI-0024            |                           |                            |
       | Capture Item:General  | Question Identifier     | Written                                                                                                         | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio Required Field                                                                                            | CI-0031            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3414,7 +3414,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
       | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                   | CI-0028            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3451,7 +3451,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
       | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                   | CI-0028            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3477,7 +3477,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Instruction | <enterNewInstruction> | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3501,7 +3501,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0001            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3525,7 +3525,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Order     | 1             | CS-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3543,7 +3543,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Order     | 1             | CS-0001            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3561,7 +3561,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Options   | Forms;Items;List | CI-0005            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3584,7 +3584,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3608,7 +3608,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3632,7 +3632,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory    | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | FlexGrid Enhanced Action | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | FlexGrid Enhanced Action | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3657,7 +3657,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3682,7 +3682,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3706,7 +3706,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3732,7 +3732,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3756,7 +3756,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3781,7 +3781,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3806,7 +3806,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3832,7 +3832,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3858,7 +3858,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3882,7 +3882,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3906,7 +3906,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3931,7 +3931,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3954,7 +3954,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Options   | Yes;Test      | CI-0012            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3975,7 +3975,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | Modal                   | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -3999,7 +3999,7 @@ Business Need: dynamic forms Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | NewTab                  | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4025,7 +4025,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0006            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4037,7 +4037,7 @@ Business Need: dynamic forms Component Scenarios
 
   @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on cancel button a form is displayed in view mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4053,7 +4053,7 @@ Business Need: dynamic forms Component Scenarios
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4083,7 +4083,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                   | CI-0035            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingIdOfField   | CI-0035            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                   | CI-0036            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4120,7 +4120,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                      | CI-0038            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                      | CI-0035            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4155,7 +4155,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4194,7 +4194,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4234,7 +4234,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4281,7 +4281,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                         | CI-0038            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                         | CI-0035            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4317,7 +4317,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                         | CI-0038            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                         | CI-0035            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4352,7 +4352,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                      | CI-0038            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                      | CI-0035            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4383,7 +4383,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                   | CI-0035            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingIdOfField   | CI-0035            |                           |                            |
       | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                   | CI-0036            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4402,7 +4402,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4421,7 +4421,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | true          | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4439,7 +4439,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4461,7 +4461,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4489,7 +4489,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ?   | Newtab                  | DynamicForm        | Name                      | View                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4515,7 +4515,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ?   | Modal                   | DynamicForm        | Name                      | Edit                       |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4531,7 +4531,7 @@ Business Need: dynamic forms Component Scenarios
 
   @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4543,7 +4543,7 @@ Business Need: dynamic forms Component Scenarios
 
   @115551    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsPMUser
   Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I pause execution for "2" seconds
@@ -4562,7 +4562,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4575,7 +4575,7 @@ Business Need: dynamic forms Component Scenarios
 
   @149135    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedFieldDataAtDynamicFormLayout
   Scenario: validate the alert message is displayed for unsaved field data, by click on browser refresh button at dynamic form
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4598,7 +4598,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | Vertical      | CS-0009            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4616,7 +4616,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | Vertical      | CS-0009            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4634,7 +4634,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | Horizontal    | CS-0009            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4652,7 +4652,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Section:General | Section Column | Horizontal    | CS-0009            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4664,7 +4664,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191190 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4677,7 +4677,7 @@ Business Need: dynamic forms Component Scenarios
 
   @193600 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4690,7 +4690,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191196 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record and then refreshes the page, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4703,7 +4703,7 @@ Business Need: dynamic forms Component Scenarios
 
   @193601  @userstory_192715
   Scenario: To verify, If the user views a Form in an Announcement  record(Edit layout), the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4715,7 +4715,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191195  @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4727,7 +4727,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191398 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4739,7 +4739,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191406 @userstory_192715
   Scenario: To verify, if the user edits a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4752,7 +4752,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191199  @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record(Edit layout), the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4764,7 +4764,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191200 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record(Edit layout) and then refreshes the page, the same correct phase should be highlighted
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4776,7 +4776,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201238 @Bug_194547
   Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4790,7 +4790,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201239  @Bug_194547
   Scenario:  To verify "Validated successfully" message not displayed on Form edit mode for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4803,7 +4803,7 @@ Business Need: dynamic forms Component Scenarios
 
   @191189 @userstory_192715
   Scenario: To verify, if the user views a Form in an Announcement record, the same correct phase should be highlighted
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "60" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4816,7 +4816,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201250 @sprint3
   Scenario: Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button.
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4840,7 +4840,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201240 @sprint5  @Form-ToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforadminuser @jyoti
   Scenario:  Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4856,7 +4856,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201236 @sprint5  @Form-ToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforadminuser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4871,7 +4871,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201241 @sprint5 @FormToverify"FormSavedsuccessfully"messagedisplayedonFormEditforadminuser @jyoti
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form Edit for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4886,7 +4886,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201242 @sprint5  @FormToverifyonformlayoutwhenUserclickon"validatebuttonthen"Validatedsuccessfully"messagedisplayedonFormviewlayoutforInternaluser @jyoti
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout  for Internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4901,7 +4901,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201247 @sprint5  @FormToverifyformopeninEditmodeandclickonsavebutton"FormSavedsuccessfully"messagedisplayedonFormviewforinternaluser @jyoti
   Scenario: Form - To verify form open in Edit mode and click on save button "Form Saved successfully" message displayed on Form view for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4916,7 +4916,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201245 @sprint5 @Form-Toverify"Validatedsuccessfully"messagenotdisplayedonFormeditmodeforinternaluser @jyoti
   Scenario: Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4930,7 +4930,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201251 @sprint3
   Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4954,7 +4954,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201252 @sprint3
   Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4977,7 +4977,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201237 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:  Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -4992,7 +4992,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201243 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify on form  layout when User click on "validate button then "Validated successfully" message displayed on Form view layout and click on Edit then message is disappeared  for Internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5007,7 +5007,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201244 @sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario:   Form - To verify "Validated successfully" message not displayed on Form edit mode for internal  user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5022,7 +5022,7 @@ Business Need: dynamic forms Component Scenarios
 
   @201248 @Sprint5 @ToVerifyformlayout @dnyaneshwari
   Scenario: Form - To verify  "Form Saved successfully" message displayed on Form edit for internal  user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"

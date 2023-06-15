@@ -18,7 +18,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -47,7 +47,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
@@ -99,7 +99,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -128,7 +128,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -232,7 +232,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -262,7 +262,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
@@ -316,7 +316,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -343,7 +343,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -373,7 +373,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
@@ -401,7 +401,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -455,7 +455,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -485,7 +485,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -515,7 +515,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -545,7 +545,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -601,7 +601,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
@@ -628,7 +628,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -657,7 +657,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -686,7 +686,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -715,7 +715,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -766,7 +766,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
@@ -817,7 +817,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -871,7 +871,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -925,7 +925,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
@@ -977,7 +977,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -1005,7 +1005,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "20"
@@ -1033,7 +1033,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1063,7 +1063,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1093,7 +1093,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
@@ -1147,7 +1147,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -1201,7 +1201,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1253,7 +1253,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -1309,7 +1309,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1363,7 +1363,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -1417,7 +1417,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1469,7 +1469,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -1525,7 +1525,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1581,7 +1581,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1641,7 +1641,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1698,7 +1698,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1760,7 +1760,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1793,7 +1793,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1853,7 +1853,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1910,7 +1910,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1972,7 +1972,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2030,7 +2030,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -2087,7 +2087,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -2141,7 +2141,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -2201,7 +2201,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -2259,7 +2259,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Program For Application"
@@ -2311,7 +2311,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -2363,7 +2363,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -2414,7 +2414,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -2464,7 +2464,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -2520,7 +2520,7 @@ Business Need: FrameworkCookies Component Scenarios
      # | Flex Grid:General     | Order By            | Percentage__c  | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true           | Programs           | Name                      |                            |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -2543,7 +2543,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2568,7 +2568,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -2589,7 +2589,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -2610,7 +2610,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -2633,7 +2633,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
@@ -2656,7 +2656,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2681,7 +2681,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
@@ -2702,7 +2702,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
@@ -2723,7 +2723,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
@@ -2746,7 +2746,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2769,7 +2769,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2794,7 +2794,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2815,7 +2815,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2836,7 +2836,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2859,7 +2859,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2882,7 +2882,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2907,7 +2907,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2928,7 +2928,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2949,7 +2949,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2972,7 +2972,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
@@ -2995,7 +2995,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3020,7 +3020,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
@@ -3041,7 +3041,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
@@ -3062,7 +3062,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Number of Approval Steps" column inside Internal Programs
@@ -3085,7 +3085,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3108,7 +3108,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3133,7 +3133,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3154,7 +3154,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3175,7 +3175,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3198,7 +3198,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3221,7 +3221,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3246,7 +3246,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3267,7 +3267,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3288,7 +3288,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3311,7 +3311,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3334,7 +3334,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3359,7 +3359,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3380,7 +3380,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3401,7 +3401,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3424,7 +3424,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3447,7 +3447,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3472,7 +3472,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3493,7 +3493,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3514,7 +3514,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3537,7 +3537,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3560,7 +3560,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3585,7 +3585,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3606,7 +3606,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3627,7 +3627,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3650,7 +3650,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3673,7 +3673,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3698,7 +3698,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3719,7 +3719,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3740,7 +3740,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3763,7 +3763,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3786,7 +3786,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3811,7 +3811,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3832,7 +3832,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3853,7 +3853,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3876,7 +3876,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3899,7 +3899,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3924,7 +3924,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3945,7 +3945,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3966,7 +3966,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3995,7 +3995,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4025,7 +4025,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4057,7 +4057,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4087,7 +4087,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4117,7 +4117,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4150,7 +4150,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4179,7 +4179,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4210,7 +4210,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4239,7 +4239,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4268,7 +4268,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4298,7 +4298,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Program"
@@ -4329,7 +4329,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4362,7 +4362,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -4393,7 +4393,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -4424,7 +4424,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -4458,7 +4458,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4489,7 +4489,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4522,7 +4522,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4552,7 +4552,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4582,7 +4582,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4614,7 +4614,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4648,7 +4648,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4684,7 +4684,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4715,7 +4715,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4746,7 +4746,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -4779,7 +4779,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4813,7 +4813,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4849,7 +4849,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4882,7 +4882,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -4915,7 +4915,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
@@ -7402,7 +7402,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -7435,7 +7435,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -7466,7 +7466,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7499,7 +7499,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7532,7 +7532,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7564,7 +7564,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7595,7 +7595,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7627,7 +7627,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7840,7 +7840,7 @@ Business Need: FrameworkCookies Component Scenarios
 ############# Clear Session Message Test Cases ####
   @282365
   Scenario Outline:To verify when user changes the list view and clicks on row level 'Edit' action and click on page back arrow then list view value should be restored. (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
@@ -7861,7 +7861,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -7876,7 +7876,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282226
   Scenario Outline:o verify when user changes pagination and clicks on clear session then pagination should set back to default value (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -7893,7 +7893,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282235
   Scenario Outline: To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -7910,7 +7910,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282238
   Scenario Outline: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Program For Application"
@@ -7925,7 +7925,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282242
   Scenario Outline: To verify when user changes the list view and clicks on clear session button then list view should set back to the default. (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7946,7 +7946,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
@@ -7961,7 +7961,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282247
   Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
@@ -7976,7 +7976,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282261
   Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
@@ -7993,7 +7993,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282271
   Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
@@ -8014,7 +8014,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "10"
@@ -8030,7 +8030,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282354
   Scenario Outline: To verify when user changes pagination and clicks on clear session then 'Cleared session storage successfully' message should display (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -8054,7 +8054,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8070,7 +8070,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282367
   Scenario Outline: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8087,7 +8087,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282369
   Scenario Outline: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8111,7 +8111,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282371 @Vrushali
   Scenario Outline: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

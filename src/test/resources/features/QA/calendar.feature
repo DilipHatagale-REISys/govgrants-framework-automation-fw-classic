@@ -11,7 +11,7 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   |
       | Calender Config:General | Active    | false         | Grantor_Home_Program |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -19,14 +19,14 @@ Business Need: Calender Config Component Scenarios
 
   @114993    @validateCalendarTabIsDisplayedAtHomePhase
   Scenario: validate calendar tab is displayed at grantor-Home phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     Then I see "My_Workspace_Calendar" tab is displayed at Home
 
   @127018    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForAdminUser
   Scenario: validate that calender is displayed in month format if user click on 'Month' button at calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -35,7 +35,7 @@ Business Need: Calender Config Component Scenarios
 
   @127020    @verifyByClickOnWeekButtonAtCalendarItIsRenderingInWeekFormatForAdminUser
   Scenario: validate that calender is displayed in Week format if user click on 'Week' button at calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -44,7 +44,7 @@ Business Need: Calender Config Component Scenarios
 
   @127021    @verifyByClickOnDayButtonAtCalendarItIsRenderingInDayFormatForAdminUser
   Scenario: validate that calender is displayed in Day format if user click on 'Day' button at calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -87,7 +87,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -118,7 +118,7 @@ Business Need: Calender Config Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
       | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -205,7 +205,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -238,7 +238,7 @@ Business Need: Calender Config Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
       | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -317,7 +317,7 @@ Business Need: Calender Config Component Scenarios
 
   @127323    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForPMUser
   Scenario: validate that calender is displayed in month format if user click on 'Month' button at calendar for PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -326,7 +326,7 @@ Business Need: Calender Config Component Scenarios
 
   @127325    @verifyByClickOnWeekButtonAtCalendarItIsRenderingInWeekFormatForInternalUser
   Scenario: validate that calender is displayed in Week format if user click on 'Week' button at calendar for PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -336,7 +336,7 @@ Business Need: Calender Config Component Scenarios
 
   @127324   @verifyByClickOnDayButtonAtCalendarItIsRenderingInDayFormatForPMUser
   Scenario: validate that calender is displayed in Day format if user click on 'Day' button at calendar for PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I pause execution for "6" seconds
@@ -346,7 +346,7 @@ Business Need: Calender Config Component Scenarios
 
   @127034  @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForAdminUser
   Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -369,7 +369,7 @@ Business Need: Calender Config Component Scenarios
   @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase
   Scenario: validate that admin user can create case and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -386,7 +386,7 @@ Business Need: Calender Config Component Scenarios
   @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase
   Scenario: validate that admin user can create case with medium priority and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -403,7 +403,7 @@ Business Need: Calender Config Component Scenarios
   @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase
   Scenario: validate that edit action opend in edit mode inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -422,7 +422,7 @@ Business Need: Calender Config Component Scenarios
   @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase
   Scenario: validate that admin user is able to edit and update existing case inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -442,7 +442,7 @@ Business Need: Calender Config Component Scenarios
 
   @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase
   Scenario: validate advance filter inside 'Cases table' at home phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -454,7 +454,7 @@ Business Need: Calender Config Component Scenarios
 
   @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage
   Scenario: validate assigned to field with value is displayed at cases detail page
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -468,7 +468,7 @@ Business Need: Calender Config Component Scenarios
   @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage
   Scenario: validate Assign To User functionality at cases detail page
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -484,7 +484,7 @@ Business Need: Calender Config Component Scenarios
   @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage
   Scenario: validate by click on close case action at detail pages case should get closed
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -502,7 +502,7 @@ Business Need: Calender Config Component Scenarios
   @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase
   Scenario: validate that close case should be displayed inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -522,7 +522,7 @@ Business Need: Calender Config Component Scenarios
   @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase
   Scenario: validate that close case should be editable inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -544,7 +544,7 @@ Business Need: Calender Config Component Scenarios
   @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail
   Scenario: validate by click at 'assigned toTier2' action, case status changes to Tier2 support
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
@@ -563,7 +563,7 @@ Business Need: Calender Config Component Scenarios
 
   @127474    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForAdminUserAtRecordLevel
   Scenario: validate that calender is displayed in month format if admin click on 'Month' button at record level calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -576,7 +576,7 @@ Business Need: Calender Config Component Scenarios
 
   @127475    @verifyByClickOnWeekButtonAtCalendarItIsRenderingInWeekFormatForAdminUserAtRecordLevel
   Scenario: validate that calender is displayed in week format if admin click on 'Week' button at record level calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -589,7 +589,7 @@ Business Need: Calender Config Component Scenarios
 
   @127476    @verifyByClickOnDayButtonAtCalendarItIsRenderingInDayFormatForAdminUserAtRecordLevel
   Scenario: validate that calender is displayed in Day format if admin click on 'Day' button at record level calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -609,7 +609,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -636,7 +636,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -663,7 +663,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -690,7 +690,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -719,7 +719,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -747,7 +747,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -780,7 +780,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -808,7 +808,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -829,7 +829,7 @@ Business Need: Calender Config Component Scenarios
 
   @127490  @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForAdminUserAtRecordLevel
   Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for admin user at record level
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -851,7 +851,7 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName   | fieldNewValue                                      | coreComponentField   |
       | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtCalendarConfig | Grantor_Home_Program |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -880,7 +880,7 @@ Business Need: Calender Config Component Scenarios
       | Calender Config:General                  | Date Fields   | govgrants_config:NewDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       |                           |                            |
       | Page Block Config:Page Block Rule Detail | Is Active     | true                                                           | Annoucement Profile-Sole Source | Name                      | PBD-9244                   |
       | Calender Config:General                  | Filter Clause |                                                                | Grantor_Home_Announcement       |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -964,7 +964,7 @@ Business Need: Calender Config Component Scenarios
     Given I delete the record "{Framework_recordUsed:programForCalendar4}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar5}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar6}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1023,7 +1023,7 @@ Business Need: Calender Config Component Scenarios
 
   @127478  @verifyByClickAtPreviousArrowPreviousMonthIsDisplayedInMonthWiseCalendar
   Scenario: validate by click at previous arrow, previous month is displayed in month wise calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -1033,7 +1033,7 @@ Business Need: Calender Config Component Scenarios
 
   @127028  @verifyByClickAtPreviousArrowNextMonthIsDisplayedInMonthWiseCalendar
   Scenario: validate by click at previous arrow, next month is displayed in month wise calendar
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
@@ -1072,7 +1072,7 @@ Business Need: Calender Config Component Scenarios
       | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1095,7 +1095,7 @@ Business Need: Calender Config Component Scenarios
   @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @skipOnJenkins
   Scenario: verify user click on program ID from home phase calendar then open record page
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1123,7 +1123,7 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName  | fieldNewValue | coreComponentField   |
       | Calender Config:General | Color Code | #FF0000       | Grantor_Home_Program |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"

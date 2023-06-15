@@ -5,7 +5,7 @@ Business Need: collab Component Scenarios
 
   @104686    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -74,7 +74,7 @@ Business Need: collab Component Scenarios
 
   @104680    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by Admin user at collab tab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -90,7 +90,7 @@ Business Need: collab Component Scenarios
 
   @104688    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -114,7 +114,7 @@ Business Need: collab Component Scenarios
 
   @104687    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUserAtCollabTab
   Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at collab tab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
@@ -152,7 +152,7 @@ Business Need: collab Component Scenarios
 
   @104335    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsPMUserAtApplicationPhase
   Scenario: validate text wrap and alignment at my feed section by PM user at application phase
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -163,7 +163,7 @@ Business Need: collab Component Scenarios
 
   @104343    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsAdminUserAtApplicationPhase
   Scenario: validate text wrap and alignment at my feed section by admin user at application phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -174,7 +174,7 @@ Business Need: collab Component Scenarios
 
   @104675    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by admin user at application phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -191,7 +191,7 @@ Business Need: collab Component Scenarios
 
   @104674    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at application phase
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -208,7 +208,7 @@ Business Need: collab Component Scenarios
 
   @111868    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as ADMIN user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
@@ -216,7 +216,7 @@ Business Need: collab Component Scenarios
 
   @111864    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsPMUser
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as pm user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
@@ -232,7 +232,7 @@ Business Need: collab Component Scenarios
 
   @112487    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
   Scenario: validate the delete action at post present under home phase -  my feed section by admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -251,7 +251,7 @@ Business Need: collab Component Scenarios
 
   @112484    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
   Scenario: validate the delete action at post present under collab phase-my feed section by admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -265,7 +265,7 @@ Business Need: collab Component Scenarios
 
   @112490    @verifyThatAdminUserCanPostFromCollabPhase
   Scenario: validate that a post can be shared from collab phase-my feed section by admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -278,7 +278,7 @@ Business Need: collab Component Scenarios
 
   @112485    @verifyThatByClickOnDeleteActionAtPostUnderRecordLevelCollabPhaseThenRespectivePostIsGettingDeletedByAdminUser
   Scenario: validate that delete action at post present at record detail collab phase by admin user from application phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -293,7 +293,7 @@ Business Need: collab Component Scenarios
 
   @112491    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from record level collab tab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
@@ -308,7 +308,7 @@ Business Need: collab Component Scenarios
 
   @112492    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from home phase-my feed section
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -326,7 +326,7 @@ Business Need: collab Component Scenarios
 
   @112199    @verifyThatPMUserCanSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that PM user can see To Me option inside menu at home phase-my feed section
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -334,7 +334,7 @@ Business Need: collab Component Scenarios
 
   @112213    @verifyThatPMUserCanSeeAllUsersOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that PM user can see all users option inside menu at home phase-my feed section
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -356,7 +356,7 @@ Business Need: collab Component Scenarios
 
   @112219    @verifyThatPMUserCanClickOnAllUsersOptionInsideMenuAtHomePhaseThenAllUsersPostDisplayed
   Scenario: validate that by click on All users menu then, all users post/comment are displayed to PM user at home phase-my feed section
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -365,7 +365,7 @@ Business Need: collab Component Scenarios
 
   @112027    @verifyThatIfpmUserTriesToMentionExternalUserThenAutoCompleteListShouldNotDisplayedAtPost
   Scenario: validate that if pm user tries to mention external user in post then mention auto complete list is not displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
@@ -374,7 +374,7 @@ Business Need: collab Component Scenarios
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
   Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
@@ -383,7 +383,7 @@ Business Need: collab Component Scenarios
 
   @115006    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtRecordLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -395,7 +395,7 @@ Business Need: collab Component Scenarios
 
   @115004    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -431,7 +431,7 @@ Business Need: collab Component Scenarios
 
   @115482    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToAdminUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "You and Automation PM like this." in my feed section and share the post
@@ -444,7 +444,7 @@ Business Need: collab Component Scenarios
 
   @115483    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToPMUser
   Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "You and Automation PM like this." in my feed section and share the post
@@ -457,7 +457,7 @@ Business Need: collab Component Scenarios
 
   @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
   Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
@@ -471,7 +471,7 @@ Business Need: collab Component Scenarios
 
   @115988    @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtComment
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
@@ -483,7 +483,7 @@ Business Need: collab Component Scenarios
 
   @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
@@ -494,7 +494,7 @@ Business Need: collab Component Scenarios
 
   @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at record level collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -517,7 +517,7 @@ Business Need: collab Component Scenarios
 
   @118099    @verifyThatAdminUserCanCommentOnPostAtCollabPhase
   Scenario: validate that pop-up appears by perfomring delete action at my feed section by SPI user from home phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
@@ -527,7 +527,7 @@ Business Need: collab Component Scenarios
 
   @120990   @VerifyCrossIconIsDisplayedAtCollabPhaseQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase quick search box
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I perform quick search for "text"
@@ -535,7 +535,7 @@ Business Need: collab Component Scenarios
 
   @120991   @VerifyCrossIconIsDisplayedAtCollabPhaseMyColleaguesQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - my colleagues quick search box
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
@@ -544,7 +544,7 @@ Business Need: collab Component Scenarios
 
   @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - external users quick search box
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
@@ -553,7 +553,7 @@ Business Need: collab Component Scenarios
 
   @120992   @VerifyCrossIconIsDisplayedAtCollabPhaseExternalUserTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - external users quick search box
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
@@ -562,7 +562,7 @@ Business Need: collab Component Scenarios
 
   @120994   @VerifyCrossIconIsDisplayedAtCollabPhaseMyGroupsTabQuickSearchBox
   Scenario: validate that cross icon is displayed at collab phase - my group quick search box
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Groups" menu inside collab sidebar
@@ -571,7 +571,7 @@ Business Need: collab Component Scenarios
 
   @119853   @VerifyFlexGridDisplayedAtCollabPhaseMyContentTab
   Scenario: validate flex grid displayed at collab phase my content tab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Content" menu inside collab sidebar
@@ -579,7 +579,7 @@ Business Need: collab Component Scenarios
 
   @120448    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSection
   Scenario: validate that user logo at comment section is small in size at collab - my feed section
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
@@ -591,7 +591,7 @@ Business Need: collab Component Scenarios
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab @doubt
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
@@ -607,7 +607,7 @@ Business Need: collab Component Scenarios
 
   @121306    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtCollabPhase
   Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -618,7 +618,7 @@ Business Need: collab Component Scenarios
 
   @121305    @verifyThatAddFilesModalDisplayedAtHomePhaseByClickOnAttachButton
   Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -632,7 +632,7 @@ Business Need: collab Component Scenarios
 
   @121625    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtHomePhase
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at home phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
@@ -647,7 +647,7 @@ Business Need: collab Component Scenarios
 
   @122006    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionRecordLevel
   Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
@@ -660,7 +660,7 @@ Business Need: collab Component Scenarios
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM Comment" in my feed section and share the post
     And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
@@ -668,7 +668,7 @@ Business Need: collab Component Scenarios
 
   @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord
   Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
@@ -682,21 +682,21 @@ Business Need: collab Component Scenarios
 
   @104329   @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForAdminUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
 
   @104324 @VerifyPerticularSubMenuIsNotDisplayedInsideCollabSidebarForPMUser
   Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
 
   @125729    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtGroupPostAtCollabPhase
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
@@ -708,7 +708,7 @@ Business Need: collab Component Scenarios
 
   @176819 @jyoti
   Scenario: Collab - To verify, on Collab phase if the user clicks on 'Share' button without entering any text in the Comment/Post-box, the alert message should display "A comment is required"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I click on button "Share" under collab for comment box
@@ -716,7 +716,7 @@ Business Need: collab Component Scenarios
 
   @207088 @UserNameShouldDisplyedInTextFormat @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     #And I enter value "Test @Automation PM" in my feed section and share the post
@@ -724,7 +724,7 @@ Business Need: collab Component Scenarios
 
   @207094 @MiddleUserNameShouldDisplyedInTextFormat @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test @Automation PM" inside "Post" in My Feed
@@ -738,7 +738,7 @@ Business Need: collab Component Scenarios
 
   @207089 @UserNameShouldBeDisplayedAtTheStartingOfTheComment @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab  for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation FO" inside "Post" in My Feed
@@ -752,7 +752,7 @@ Business Need: collab Component Scenarios
 
   @207092 @UserNameShouldBeDisplayedAtTheSMiddleOfTheComment @Sprint8
   Scenario:Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
@@ -760,7 +760,7 @@ Business Need: collab Component Scenarios
 
   @207086 @UserNameShouldBeDisplayedAtTheSSamePositionOfTheHomeLevel @Sprint8
   Scenario: To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation Admin" in my feed section and share the post
@@ -772,7 +772,7 @@ Business Need: collab Component Scenarios
 
   @207095 @UserNameShouldBeDisplayedAtTheSSamePositionOfTherecordLevel @sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation PM" inside "Post" in My Feed
@@ -781,7 +781,7 @@ Business Need: collab Component Scenarios
 
   @207091 @UserNameShouldBeDisplayedAtStartingOfComment @sprint8
   Scenario:Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation PM" in my feed section and share the post
@@ -790,7 +790,7 @@ Business Need: collab Component Scenarios
 
   @223914 @UserNameShouldBeDisplayedAtStartingOfComment
   Scenario: Collab-To verify, If i add a user in a starting of line  then the user name should be displayed at the starting position in text format on the home
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation PM Hello" in my feed section and share the post
@@ -802,7 +802,7 @@ Business Need: collab Component Scenarios
 
   @223917 @UserNameShouldBeDisplayedAtStartingOfCollabPhase
   Scenario: To verify, If i added user name should  be displayed at the starting of the comment on the collab phase for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation PM" in my feed section and share the post
@@ -810,7 +810,7 @@ Business Need: collab Component Scenarios
 
   @207083 @UserNameShouldBeDisplayedAtSamePosition @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase  for internal user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "@Automation Admin" inside "Post" in My Feed
@@ -820,7 +820,7 @@ Business Need: collab Component Scenarios
 
   @176820 @Jyoti
   Scenario:  Collab - To verify, on Collab phase if the user clicks on 'Share' button after entering some text in the Comment/Post-box, the alert message should not display "A comment is required"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value " @Automation Admin" in my feed section and share the post
@@ -829,7 +829,7 @@ Business Need: collab Component Scenarios
 
   @207018 @ToVerifyIfIaddauserinaline @Sprint8 @wip
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the collab phase
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test @Automation PM" in my feed section and share the post
@@ -837,7 +837,7 @@ Business Need: collab Component Scenarios
 
   @207020 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: To verify, If i add a user in a line then that user name should not  be displayed at the starting of the comment on the collab phase
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "test @Automation PM" in my feed section and share the post
@@ -846,7 +846,7 @@ Business Need: collab Component Scenarios
 
   @207047 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -857,7 +857,7 @@ Business Need: collab Component Scenarios
 
   @207048 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value " @Automation PM" inside "Post" in My Feed
@@ -866,7 +866,7 @@ Business Need: collab Component Scenarios
 
   @207049 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     #And I enter value "@Automation PM" in my feed section and share the post
@@ -878,7 +878,7 @@ Business Need: collab Component Scenarios
 
   @207050 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hi @Automation PM" in my feed section and share the post
@@ -886,7 +886,7 @@ Business Need: collab Component Scenarios
 
   @207052 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the collab phase
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test @Automation PM" in my feed section and share the post
@@ -895,7 +895,7 @@ Business Need: collab Component Scenarios
 
   @207053 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test @Automation PM" in my feed section and share the post
@@ -904,7 +904,7 @@ Business Need: collab Component Scenarios
 
   @207054 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "hi @Automation PM" in my feed section and share the post
@@ -912,7 +912,7 @@ Business Need: collab Component Scenarios
 
   @207060 @vrushali @sprint-8
   Scenario:To verify,If add one user in starting of the line & second one is middle  then the user name should be displayed at the same position in text format on the record level collab
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I navigate to "Collaboration (Collab)" tab

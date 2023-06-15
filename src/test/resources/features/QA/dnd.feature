@@ -5,7 +5,7 @@ Business Need: dnd Component Scenarios
 
   @102696 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldValue
   Scenario Outline: verify the global search result by setting dnd criteria for text field value from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -25,7 +25,7 @@ Business Need: dnd Component Scenarios
 
   @102697 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldValue
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field value from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -44,7 +44,7 @@ Business Need: dnd Component Scenarios
 
   @115775 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForInvalidEmailFieldValue
   Scenario Outline: verify the global search result by setting dnd criteria for invalid dummy email field value from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -63,7 +63,7 @@ Business Need: dnd Component Scenarios
 
   @102699 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmailFieldValueAsTest
   Scenario Outline: verify the global search result by setting dnd criteria for email field value as test from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -83,7 +83,7 @@ Business Need: dnd Component Scenarios
 
   @115772 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmailFieldValueContainingDotCom
   Scenario Outline: verify the global search result by setting dnd criteria for email field value as .com from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -102,7 +102,7 @@ Business Need: dnd Component Scenarios
 
   @102700 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldValue
   Scenario Outline: verify the global search result by setting dnd criteria for URL field value from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -121,7 +121,7 @@ Business Need: dnd Component Scenarios
 
   @102705 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldValue
   Scenario Outline: verify the global search result by setting dnd criteria for formula field value from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -139,7 +139,7 @@ Business Need: dnd Component Scenarios
 
   @115769 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWitValueUSA
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field value USA from metadata config
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -157,7 +157,7 @@ Business Need: dnd Component Scenarios
 
   @102708 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithOperatorContains
   Scenario Outline: verify the global search result by setting dnd criteria for text field using 'contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -177,7 +177,7 @@ Business Need: dnd Component Scenarios
 
   @102709 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithOperatorNotContains
   Scenario Outline: verify the global search result by setting dnd criteria for text field using 'not contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -195,7 +195,7 @@ Business Need: dnd Component Scenarios
 
   @102713 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNotContains
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using 'not contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -213,7 +213,7 @@ Business Need: dnd Component Scenarios
 
   @102712 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorContains
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using 'contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -232,7 +232,7 @@ Business Need: dnd Component Scenarios
 
   @103485 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -250,7 +250,7 @@ Business Need: dnd Component Scenarios
 
   @103486 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist field using 'CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -268,7 +268,7 @@ Business Need: dnd Component Scenarios
 
   @103839 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultipleFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for multiple fields using 'NOT EQUALS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -290,7 +290,7 @@ Business Need: dnd Component Scenarios
 
   @103488 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using 'NOT CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -308,7 +308,7 @@ Business Need: dnd Component Scenarios
 
   @103483 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmailFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for email fields using 'NOT CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
@@ -326,7 +326,7 @@ Business Need: dnd Component Scenarios
 
   @103481 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmailFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for email fields using 'NOT EQUALS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -344,7 +344,7 @@ Business Need: dnd Component Scenarios
 
   @102711 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'NOT EQUALS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -362,7 +362,7 @@ Business Need: dnd Component Scenarios
 
   @102707 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for text fields using 'NOT EQUALS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -380,7 +380,7 @@ Business Need: dnd Component Scenarios
 
   @102710 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'EQUALS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -398,7 +398,7 @@ Business Need: dnd Component Scenarios
 
   @103482 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmailFieldWithOperatorEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for email fields using 'contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -416,7 +416,7 @@ Business Need: dnd Component Scenarios
 
   @103840 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for text fields using 'contains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -434,7 +434,7 @@ Business Need: dnd Component Scenarios
 
   @103838 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultipleFieldWithOperatorEqualsEquals
   Scenario Outline: verify the global search result by setting dnd criteria for multiple fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -452,7 +452,7 @@ Business Need: dnd Component Scenarios
 
   @103484 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorEqualsEquals
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -471,7 +471,7 @@ Business Need: dnd Component Scenarios
 
   @103841 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultipleFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for multiple fields using 'NOT CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -489,7 +489,7 @@ Business Need: dnd Component Scenarios
 
   @116951 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultipleFieldWithOperatorEQUALSEQUALSAndSearchInvalidText
   Scenario Outline: verify the global search result by setting dnd criteria for multiple fields using 'EQUALS EQUALS' operator in filter criteria and searching invalid text
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -508,7 +508,7 @@ Business Need: dnd Component Scenarios
 
   @116945 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNOTCONTAINSAndSearchTextAsChina
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'NOTCONTAINS' operator in filter criteria and searching text as china
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -526,7 +526,7 @@ Business Need: dnd Component Scenarios
 
   @116937 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorCONTAINSAndSearchTextAsAS
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'CONTAINS' operator in filter criteria and searching text as AS
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -544,7 +544,7 @@ Business Need: dnd Component Scenarios
 
   @116934 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorEQUALSAndSearchInvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'EQUALS' operator in filter criteria and searching invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -563,7 +563,7 @@ Business Need: dnd Component Scenarios
 
   @116935 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithOperatorNotEQUALSAndSearchValueAsFrance
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'NOTEQUALS' operator in filter criteria and searching France value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -582,7 +582,7 @@ Business Need: dnd Component Scenarios
 
   @117250 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForPicklistFieldWithMultipleDNDCriteriaWithOperatorContainsAndSearchValueAsUSA
   Scenario Outline: verify the global search result by setting dnd criteria for picklist fields using 'CONTAINS' operator in filter criteria and searching USA value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -601,7 +601,7 @@ Business Need: dnd Component Scenarios
 
   @117251 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithMultipleDNDCriteriaWithOperatorContainsAndSearchValueAs111
   Scenario Outline: verify the global search result by setting dnd criteria for TEXT fields using 'CONTAINS' operator in filter criteria and searching 111 value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -619,7 +619,7 @@ Business Need: dnd Component Scenarios
 
   @117256 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTextFieldWithMultipleDNDCriteriaWithOperatorNotContainsAndSearchInvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for text fields with multiple criteria using 'Not contains' operator in filter criteria and searching invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -638,7 +638,7 @@ Business Need: dnd Component Scenarios
 
   @117319 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for formula fields using 'NOTCONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -656,7 +656,7 @@ Business Need: dnd Component Scenarios
 
   @117316 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for formula fields using 'CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -675,7 +675,7 @@ Business Need: dnd Component Scenarios
 
   @102698 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for formula fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -694,7 +694,7 @@ Business Need: dnd Component Scenarios
 
   @117259 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldAndMultipleDNDCriteriaWithOperatorEQUALSEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -715,7 +715,7 @@ Business Need: dnd Component Scenarios
 
   @117255 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTEXTFieldAndMultipleDNDCriteriaWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for TEXT fields using 'NOTCONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -733,7 +733,7 @@ Business Need: dnd Component Scenarios
 
   @116932 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEMAILFieldAndMultipleDNDCriteriaWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for EMAIL fields using 'CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -751,7 +751,7 @@ Business Need: dnd Component Scenarios
 
   @116933 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEMAILFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting dnd criteria for EMAIL fields using 'NOTCONTAINS' operator in filter criteria and search value as "@text"
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -769,7 +769,7 @@ Business Need: dnd Component Scenarios
 
   @103480 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEMAILFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for EMAIL fields using '!=' operator in filter criteria and search value as invalid
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -788,7 +788,7 @@ Business Need: dnd Component Scenarios
 
   @116931 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using '!=' operator in filter criteria and search value as invalid
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -806,7 +806,7 @@ Business Need: dnd Component Scenarios
 
   @103489 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting dnd criteria for relation fields using '!=' operator in filter criteria and search value as invalid
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -824,7 +824,7 @@ Business Need: dnd Component Scenarios
 
   @102706 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForTEXTFieldWithInvalidSearchValue
   Scenario Outline: verify the global search result by setting dnd criteria for text fields using '==' operator in filter criteria and search value as invalid
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -843,7 +843,7 @@ Business Need: dnd Component Scenarios
 
   @116893 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorNOTEQUALSAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using '!=' operator in filter criteria and search value as facebook.com
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -862,7 +862,7 @@ Business Need: dnd Component Scenarios
 
   @116908 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldWithOperatorContainsAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting dnd criteria for URL fields using 'CONTAINS' operator in filter criteria and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -881,7 +881,7 @@ Business Need: dnd Component Scenarios
 
   @103836 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational fields using 'NOTCONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -899,7 +899,7 @@ Business Need: dnd Component Scenarios
 
   @103833 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational fields using 'CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -919,7 +919,7 @@ Business Need: dnd Component Scenarios
 
   @103832 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorNotEquals
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -937,7 +937,7 @@ Business Need: dnd Component Scenarios
 
   @103830 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldWithOperatorEqualsEquals
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -956,7 +956,7 @@ Business Need: dnd Component Scenarios
 
   @103828 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndCountryFieldWithOperatorEqualsEquals
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and country fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -974,7 +974,7 @@ Business Need: dnd Component Scenarios
 
   @103827 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndCountryFieldWithOperatorNotEquals
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and country fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -992,7 +992,7 @@ Business Need: dnd Component Scenarios
 
   @103826 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndCountryFieldWithOperatorNotEquals
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and country fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1012,7 +1012,7 @@ Business Need: dnd Component Scenarios
 
   @103825 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForPicklistFieldAndCountryFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for picklist and country fields using 'NOTCONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1030,7 +1030,7 @@ Business Need: dnd Component Scenarios
 
   @103500 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndEmailFieldWithOperatorNOTCONTAINS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'NOTCONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1048,7 +1048,7 @@ Business Need: dnd Component Scenarios
 
   @103499 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndEmailFieldWithOperatorCONTAINS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'CONTAINS' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1066,7 +1066,7 @@ Business Need: dnd Component Scenarios
 
   @103498 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndEmailFieldWithOperatorNOTEQUALS
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1085,7 +1085,7 @@ Business Need: dnd Component Scenarios
 
   @103490 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndTextFieldWithOperatorEqualsEqualsAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and text fields using '==' operator in filter criteria  and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1104,7 +1104,7 @@ Business Need: dnd Component Scenarios
 
   @103497 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndEmailFieldWithOperatorEqualsEqualsAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using '==' operator in filter criteria  and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1123,7 +1123,7 @@ Business Need: dnd Component Scenarios
 
   @103495 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndTextFieldWithOperatorNOTCONTAINSAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'NOTCONTAINS' operator in filter criteria  and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1141,7 +1141,7 @@ Business Need: dnd Component Scenarios
 
   @103494 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndTextFieldWithOperatorCONTAINSAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'CONTAINS' operator in filter criteria  and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1159,7 +1159,7 @@ Business Need: dnd Component Scenarios
 
   @102701 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForRelationalFieldAndTextFieldWithOperatorCONTAINSAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'CONTAINS' operator in filter criteria  and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1178,7 +1178,7 @@ Business Need: dnd Component Scenarios
 
   @116915 @verifyGlobalSearchResultDisplayedByChangingMultipleDNDCriteriaFromCustomMetadatConfigForURLFieldAndTextFieldWithOperatorNOTCONTAINSAsInvalidSearchValue
   Scenario Outline: verify the global search result by setting multiple dnd criteria for relational and email fields using 'NOTCONTAINS' operator in filter criteria and search invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1197,7 +1197,7 @@ Business Need: dnd Component Scenarios
 
   @102704 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForURLFieldAndTextFieldWithOperatorEqualsEquals
   Scenario Outline: verify the global search result by setting dnd criteria for relational and email fields using '==' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1215,7 +1215,7 @@ Business Need: dnd Component Scenarios
 
   @119161 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndURLFieldWithOperatorNotEquals
   Scenario Outline: verify the global search result by setting dnd criteria for relational, text, url fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1233,7 +1233,7 @@ Business Need: dnd Component Scenarios
 
   @119162 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndPicklistFieldWithOperatorNotEquals
   Scenario Outline: verify the global search result by setting dnd criteria for relational, text, picklist fields using '!=' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1251,7 +1251,7 @@ Business Need: dnd Component Scenarios
 
   @119163 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndPicklistFieldWithOperatorNotContains
   Scenario Outline: verify the global search result by setting dnd criteria for relational, text, picklist fields using 'NotContains' operator in filter criteria
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1269,7 +1269,7 @@ Business Need: dnd Component Scenarios
 
   @119164 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiField
   Scenario Outline: verify the global search result by setting dnd criteria for multi field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1287,7 +1287,7 @@ Business Need: dnd Component Scenarios
 
   @119165 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiFieldAndSearchingInvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for multi field with invalid search value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1306,7 +1306,7 @@ Business Need: dnd Component Scenarios
 
   @119166 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiFieldAndSearchingValidValue
   Scenario Outline: verify the global search result by setting dnd criteria for multi field with valid search value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1324,7 +1324,7 @@ Business Need: dnd Component Scenarios
 
   @117325 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldWithMultipleDNDCriteriaWithOperatorEqualsEqualsAndSearchInvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for formula fields with multiple criteria using 'Equals Equals' operator in filter criteria and searching invalid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1343,7 +1343,7 @@ Business Need: dnd Component Scenarios
 
   @119360 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorCONTAINSsAndSearchvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using 'CONTAINS' operator in filter criteria and searching valid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1361,7 +1361,7 @@ Business Need: dnd Component Scenarios
 
   @119361 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorNOTCONTAINSsAndSearchvalidValue
   Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using 'NOTCONTAINS' operator in filter criteria and searching valid value
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
@@ -1379,7 +1379,7 @@ Business Need: dnd Component Scenarios
 
   @119362 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorNotEqualssAndSearchvalidValueAsUS
   Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using '!=' operator in filter criteria and searching valid value as US
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
       | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |

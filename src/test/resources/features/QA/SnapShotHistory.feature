@@ -1,10 +1,10 @@
-@SnapShot-component @regression-QA
+@SnapshotHistory-component @regression-QA
 Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 
   Background: Create Program
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

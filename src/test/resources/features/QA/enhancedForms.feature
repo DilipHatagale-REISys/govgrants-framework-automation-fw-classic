@@ -5,7 +5,7 @@ Business Need: enhanced Forms Component Scenarios
 
   @test @112347 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByPMUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by PM user
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -18,7 +18,7 @@ Business Need: enhanced Forms Component Scenarios
 
   @test @112350 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByAdminUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
