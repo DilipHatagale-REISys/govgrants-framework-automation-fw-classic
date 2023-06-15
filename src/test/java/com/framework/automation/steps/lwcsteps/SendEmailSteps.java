@@ -134,18 +134,18 @@ public class SendEmailSteps extends GovGrantsManager {
         WebElement massageInRedColor = I.amPerforming().getElementReference().of(By.xpath("//div[@class='slds-form-element']/following-sibling::div[@class='slds-text-color_error' and contains(text(),'" + massage + "')]"));
     }
 
-    @When("I fill the details in field To {string} CC {string} Subject {string} in send email LWC")
-    public void iFillTheDetailsInFieldToCCSubjectInSendEmailLWC(String Tostr, String CCstr, String Subjectstr) {
-        WebElement subject = I.amPerforming().getElementReference().of(By.xpath("//input[@id='subject-1'] | //input[@ng-model='email.subject'] | //input[@id='subject-1']"));
-        I.amPerforming().textInput().toClear(subject);
-        I.amPerforming().textInput().in(subject, Subjectstr);
-        WebElement To = I.amPerforming().getElementReference().of(By.xpath("//input[@id='toExt-1'] | (//input[@ng-if=\"renderType=='Edit'\"])[1] | //input[@id='to-1']"));
-        I.amPerforming().textInput().toClear(To);
-        I.amPerforming().textInput().in(To, Tostr);
-        WebElement CC = I.amPerforming().getElementReference().of(By.xpath("//input[@id='ccExt-1'] | //input[@ng-model='searchItem.ccValue'] | //input[@id='cc-1']"));
-        I.amPerforming().textInput().toClear(CC);
-        I.amPerforming().textInput().in(CC, CCstr);
-    }
+//    @When("I fill the details in field To {string} CC {string} Subject {string} in send email LWC")
+//    public void iFillTheDetailsInFieldToCCSubjectInSendEmailLWC(String Tostr, String CCstr, String Subjectstr) {
+//        WebElement subject = I.amPerforming().getElementReference().of(By.xpath("//input[@id='subject-1'] | //input[@ng-model='email.subject'] | //input[@id='subject-1']"));
+//        I.amPerforming().textInput().toClear(subject);
+//        I.amPerforming().textInput().in(subject, Subjectstr);
+//        WebElement To = I.amPerforming().getElementReference().of(By.xpath("//input[@id='toExt-1'] | (//input[@ng-if=\"renderType=='Edit'\"])[1] | //input[@id='to-1']"));
+//        I.amPerforming().textInput().toClear(To);
+//        I.amPerforming().textInput().in(To, Tostr);
+//        WebElement CC = I.amPerforming().getElementReference().of(By.xpath("//input[@id='ccExt-1'] | //input[@ng-model='searchItem.ccValue'] | //input[@id='cc-1']"));
+//        I.amPerforming().textInput().toClear(CC);
+//        I.amPerforming().textInput().in(CC, CCstr);
+//    }
 
     @Then("I can see the Progress bar file Size {string} displayed in modal")
     public void iCanSeeTheProgressBarFileSizeDisplayedInModal(String sizeOfFile) {
@@ -288,7 +288,7 @@ public class SendEmailSteps extends GovGrantsManager {
     @When("I click on {string} icon at {string} modal after Email Sent Successfully")
     public void iClickOnIconAtModalAfterEmailSentSuccessfully(String icon, String modal) {
         if (modal.contains("Send Email")) {
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='" + icon + "']"));
+            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='" + icon + "'] | //div[@class='modal-dialog ui-draggable']//div[@class='modal-content ui-draggable-handle']//button[@aria-label='Close' and contains(text(),'" + icon + "')]"));
         } else if (modal.equalsIgnoreCase("Reply")) {
             I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@id='CommunicationHistorymodalDivCloseIcon' and text()='" + icon + "']"));
         } else if (modal.contains("Add Files")) {
@@ -340,12 +340,7 @@ public class SendEmailSteps extends GovGrantsManager {
         }
     }
 
-    @Then("I see {string} error massage in attachment section")
-    public void iSeeErrorMassageInAttachmentSection(String errorMassage) {
-        WebElement errorMsgElement = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='LightningComponentid']//*[contains(text(),'" + errorMassage + "')] | //div[@role='alert']//h2[contains(text(),'" + errorMassage + "')]"));
-        String errorMsg = errorMsgElement.getText();
-        Assert.assertEquals(errorMassage, errorMsg);
-    }
+
 
     @Then("I can not see {string} file Send Email modal")
     public void iCanNotSeeFileSendEmailModal(String fileName) throws InterruptedException {

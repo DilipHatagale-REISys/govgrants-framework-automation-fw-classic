@@ -655,7 +655,7 @@ Business Need: security review Scenarios
 
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser @flow
   Scenario: validate that program in submit for approval mode is getting created by login as PM user
-  #  Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

@@ -53,7 +53,9 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
-                    " //div[@id='" + tableId + "']//div//span[@class='pull-right table-pager ng-scope']/span[@class='bold ng-binding' and contains(text(),'" + textContains + "')]"))) {
+                    " //div[@id='" + tableId + "']//div//span[@class='pull-right table-pager ng-scope']/span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
+                    " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo' and contains(text(),'" + textContains + "')] |" +
+                    " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo']//*[contains(text(),'" + textContains + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -84,7 +86,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     public static void enterTextAndClickOnSearchButton(String textValue, String tableid) {
         I.amPerforming().textInput().toClear(ByUsing.xpath("//div[@id='" + tableid + "']//input[@type='search']"));
         I.amPerforming().textInput().in(ByUsing.xpath("//div[@id='" + tableid + "']//input[@type='search']"), textValue);
-        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableid + "']//span/button/i[@class='fa fa-search']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableid + "']//span/button/i[@class='fa fa-search'] |" +
+                " //div[@id='" + tableid + "']/div//div[@class='quick-search']/div/div/a/i[@class='fa fa-search']"));
     }
 
     public static void getListOfWebElementAfterSearchOperationPerform(String usage, String ProjectTitleList, String tableid) {
@@ -173,7 +176,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     private static boolean assertPageSize(String showingEnties, String tableid) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingEnties + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingEnties + "')] |" +
+                    " //div[contains(@id,'" + tableid + "')]/div[@class='row ng-scope']/div[contains(@class,'showEntries mobshowEntries')]/span[contains(text(),'" + showingEnties + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -192,7 +196,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     private Boolean userIsOnFirstOrLastPage(String FirstOrLastPage, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']/a[@ng-disabled='true' and @title='" + FirstOrLastPage + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']/a[@ng-disabled='true' and @title='" + FirstOrLastPage + "'] |" +
+                    " //div[@id='" + tableId + "']//div[@class='table-pager mobtable-pager col-md-6 col-sm-6 col-xs-6 ng-scope']/a[@class='disabledCls' and @title='" + FirstOrLastPage + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
