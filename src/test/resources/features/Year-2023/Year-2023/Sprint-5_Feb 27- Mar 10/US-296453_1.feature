@@ -794,7 +794,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    When I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                          |
       | <audio controls onprogress=alert(1)><source src=validaudio.mp3 type=audio/mpeg></audio> | fieldBeneficiaryEligibility__c |
