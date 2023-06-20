@@ -18,7 +18,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    And I enter value "Test_Description" into field "fieldBeneficiaryEligibility__c"
+    When I enter value "Test_Description" into field "fieldBeneficiaryEligibility__c"
     When I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see alert popup box
