@@ -3,7 +3,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296791 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 10. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -14,7 +14,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296864 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 10. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -36,7 +36,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296867 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -47,7 +47,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296868 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -69,7 +69,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296879
   Scenario: To verify when user changes the page size (Show entries) to All, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to All. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -80,7 +80,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296881
   Scenario: To verify when user changes the page size (Show entries) to All, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to All. (PM)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -103,7 +103,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296887 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10 and refreshes the page then table should get open on the page size (Show entries) to 10. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -113,7 +113,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296889 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10 and refreshes the page then table should get open on the page size (Show entries) to 10. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -133,7 +133,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296892 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20 and refreshes  the page then table should get open on the page size (Show entries) to 20. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -143,7 +143,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296894 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20 and refreshes  the page then table should get open on the page size (Show entries) to 20. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -163,7 +163,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296903
   Scenario: To verify when user changes the page size (Show entries) to All and refreshes the page then table should get open on the page size (Show entries) to All. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -173,7 +173,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296904
   Scenario: To verify when user changes the page size (Show entries) to All and refreshes the page then table should get open on the page size (Show entries) to All. (PM)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -194,7 +194,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296907 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10, click on row level 'Edit' action and click on page back arrow then table should get open on the page size (Show entries) to 10. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -205,7 +205,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296923 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10, click on another phase and again click on the same phase where page size was changed to 10 then table should get open on the page size (Show entries) to 10. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -217,7 +217,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296925 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 10, click on another phase and again click on the same phase where page size was changed to 10 then table should get open on the page size (Show entries) to 10. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -241,7 +241,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296927 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on the another phase and again click on the same phase where page size was changed to 20 then table should get open on the page size (Show entries) to 20.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -253,7 +253,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296928 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on the another phase and again click on the same phase where page size was changed to 20 then table should get open on the page size (Show entries) to 20.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -277,7 +277,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296936
   Scenario: To verify when user changes the page size (Show entries) to All, click on the another phase and again click on the same phase where page size was changed to All then table should get open on the page size (Show entries) to All.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -289,7 +289,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296937
   Scenario: To verify when user changes the page size (Show entries) to All, click on the another phase and again click on the same phase where page size was changed to All then table should get open on the page size (Show entries) to All.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -313,7 +313,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296939 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -324,7 +324,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296940 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -346,7 +346,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296942 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -357,7 +357,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296943 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -379,7 +379,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296946 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Previous.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -391,7 +391,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296947 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Previous.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -415,7 +415,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296958 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -427,7 +427,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296960 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -451,7 +451,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296963 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next and refreshes the page then table should get open on the page where pagination was set to next (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -461,7 +461,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296965 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next and refreshes the page then table should get open on the page where pagination was set to next (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -481,7 +481,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296969 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last and refreshes the page then table should get open on the page where pagination was set to Last.(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -491,7 +491,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296971 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last and refreshes the page then table should get open on the page where pagination was set to Last.(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -511,7 +511,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296976 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -522,7 +522,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296981 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous and refreshes the page then table should get open on the page where pagination was set to Previous (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -534,7 +534,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296982 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous and refreshes the page then table should get open on the page where pagination was set to Previous (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -558,7 +558,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296986 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -582,7 +582,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297016 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next, click on the another phase and again click on the same phase where pagination was set to next then table should get open on that page (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -594,7 +594,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297017 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to next, click on the another phase and again click on the same phase where pagination was set to next then table should get open on that page (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -618,7 +618,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297019 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last, click on the another phase and again click on the same phase where pagination was set to Last then table should get open on that page(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -630,7 +630,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297020 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Last, click on the another phase and again click on the same phase where pagination was set to Last then table should get open on that page(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -654,7 +654,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297022 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous, click on the another phase and again click on the same phase where pagination was set to Previous then table should get open on that page(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -668,7 +668,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297025 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to Previous, click on the another phase and again click on the same phase where pagination was set to Previous then table should get open on that page(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -697,7 +697,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297030 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First, click on the another phase and again click on the same phase where pagination was set to First then table should get open on that page(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -710,7 +710,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297032 @dilip
   Scenario: Phase Level-E-table- To verify when user changes pagination to First, click on the another phase and again click on the same phase where pagination was set to First then table should get open on that page(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -736,7 +736,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297034 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -747,7 +747,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297035 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -769,7 +769,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297041 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field and refreshes the page then table should show the records of Quick search results (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -779,7 +779,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297043 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field and refreshes the page then table should show the records of Quick search results (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -799,7 +799,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297046 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field, click on the another phase and again click on the same phase where table was showing quick search results then table should show the records of Quick search results (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -811,7 +811,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297049 @dilip
   Scenario: Phase Level-E-table- To verify when user searches any value in quick search field, click on the another phase and again click on the same phase where table was showing quick search results then table should show the records of Quick search results (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -835,7 +835,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297051 @dilip
   Scenario:To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -846,7 +846,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297052 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -879,7 +879,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297059 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -889,7 +889,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297060 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -909,7 +909,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297062 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -921,7 +921,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297063 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -933,7 +933,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297065 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Text is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Text(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -956,7 +956,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297068 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Text is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -967,7 +967,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297078 @dilip
   Scenario:  To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -978,7 +978,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297079 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -998,7 +998,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297084 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1010,7 +1010,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297085 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1034,7 +1034,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297090 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search and  refreshes the page then table should restore search results and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1045,7 +1045,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297091 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search and  refreshes the page then table should restore search results and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1067,7 +1067,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297093 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1080,7 +1080,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297094 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I navigate to "Grants" tab
@@ -1107,7 +1107,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297096 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1120,7 +1120,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297097 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1146,7 +1146,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297102 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1158,7 +1158,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297103 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1182,7 +1182,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297105 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1196,7 +1196,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297106 @dilip
   Scenario: Phase Level-E-table- To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1224,7 +1224,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297108 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and Pagination ‘next’ (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1238,7 +1238,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297109 @dilip
   Scenario:  To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and Pagination ‘next’ (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1266,7 +1266,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297115 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and Pagination ‘next’ (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1281,7 +1281,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297116 @dilip
   Scenario: Phase Level-E-table- To verify when searched any value in Quick search ,  Pagination is changed to next and  click on the another phase and again click on the previous phase then table should restore search results and Pagination ‘next’ (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1311,7 +1311,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297122 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1324,7 +1324,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297124 @dilip
   Scenario: Phase Level-E-table- To verify when searched any value in Quick search and Pagination is changed to next and refreshes the page then table should restore search results and Pagination ‘next’ (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1336,7 +1336,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297125 @dilip
   Scenario: Phase Level-E-table- To verify when searched any value in Quick search and Pagination is changed to next and refreshes the page then table should restore search results and Pagination ‘next’ (PM)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1360,7 +1360,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297128 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1386,7 +1386,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297135 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1398,7 +1398,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297136 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (PM)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1422,7 +1422,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297139 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1436,7 +1436,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297140 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1463,7 +1463,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297144 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1476,7 +1476,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297145 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1502,7 +1502,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297151 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1515,7 +1515,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297152 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1541,7 +1541,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297154 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1553,7 +1553,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297155 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1577,7 +1577,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297157 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and Pagination is changed to next and , user clicks on row level view action and click on page back arrow then table should restore Pagination and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1590,7 +1590,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297158 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order,  Pagination is changed to next and user clicks on row level view action and click on page back arrow then table should restore Pagination and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1616,7 +1616,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297160 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and Pagination is changed to next and refreshes the page then table should restore Pagination and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1628,7 +1628,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297161 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order and Pagination is changed to next and refreshes the page then table should restore Pagination and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1652,7 +1652,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297170 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order Pagination is changed to next and ,click on the another phase and again click on the previous phase then table should restore Pagination and sorting (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1666,7 +1666,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297171 @dilip
   Scenario: Phase Level-E-table- To verify when Sort direction-ascending order Pagination is changed to next and ,click on the another phase and again click on the previous phase then table should restore Pagination and sorting (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1694,7 +1694,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297292 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1705,7 +1705,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297293 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Picklist (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1727,7 +1727,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297301 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1737,7 +1737,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297302 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1757,7 +1757,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297304 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1769,7 +1769,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297305 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1795,7 +1795,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297387 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1806,7 +1806,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297390 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1828,7 +1828,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297399 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1840,7 +1840,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297400 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1864,7 +1864,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297403 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1874,7 +1874,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297404 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1896,7 +1896,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297343 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1907,7 +1907,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297344 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1929,7 +1929,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297349 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1939,7 +1939,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297351 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1959,7 +1959,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297355 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1971,7 +1971,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297356 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -1997,7 +1997,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297466 @dilip
   Scenario: To verify when user changes page size and clicks on Reset Table then page size should set back to default value (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2008,7 +2008,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297467 @dilip
   Scenario: To verify when user changes page size and clicks on Reset Table then page size should set back to default value (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2031,7 +2031,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297469 @dilip
   Scenario: To verify when user changes pagination and clicks on Reset Table then pagination should set back to default value (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2043,7 +2043,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297470 @dilip
   Scenario: To verify when user changes pagination and clicks on Reset Table then pagination should set back to default value (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2065,7 +2065,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297472 @dilip
   Scenario: To verify when user changes sort direction and clicks on Reset Table then sort direction should set back to default value (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2076,7 +2076,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297473 @dilip
   Scenario: To verify when user changes sort direction and clicks on Reset Table then sort direction should set back to default value (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2098,7 +2098,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297475 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset Table then table records should set back to default value (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2110,7 +2110,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297476 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset Table then table records should set back to default value (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2134,7 +2134,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297481 @dilip
   Scenario: To verify when user changes page size then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2144,7 +2144,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297482 @dilip
   Scenario: To verify when user changes page size then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2164,7 +2164,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297484 @dilip
   Scenario: verify when user changes pagination then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2174,7 +2174,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297485 @dilip
   Scenario: verify when user changes pagination then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2194,7 +2194,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297487 @dilip
   Scenario: To verify when user changes sort direction then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2204,7 +2204,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297488 @dilip
   Scenario: To verify when user changes sort direction then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2224,7 +2224,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297491 @dilip
   Scenario: To verify when user searches something in quick search then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2234,7 +2234,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297492 @dilip
   Scenario: To verify when user searches something in quick search then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (PM)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2254,7 +2254,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297499 @dilip
   Scenario: To verify when user changes page size and clicks on "Reset Table" then 'Table has been reset.' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2265,7 +2265,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297500 @dilip
   Scenario: To verify when user changes page size and clicks on "Reset Table" then "Table has been reset." message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2287,7 +2287,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297504 @dilip
   Scenario: To verify when user changes pagination and clicks on "Reset Table" then "Table has been reset." message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2298,7 +2298,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297505 @dilip
   Scenario: To verify when user changes pagination and clicks on "Reset Table" then "Table has been reset." message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2320,7 +2320,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297511 @dilip
   Scenario: To verify when user changes sort direction and clicks on 'Reset Table' then 'Table has been reset.' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2331,7 +2331,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297512 @dilip
   Scenario: To verify when user changes sort direction and clicks on 'Reset Table' then 'Table has been reset.' message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2353,7 +2353,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297514 @dilip
   Scenario: To verify when user searches something in quick search and clicks on 'Reset Table' then 'Table has been reset.' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2364,7 +2364,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297515 @dilip
   Scenario: To verify when user searches something in quick search and clicks on 'Reset Table' then 'Table has been reset.' message should display (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2386,7 +2386,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297517 @dilip
   Scenario: To verify when user changes the list view and clicks on 'Reset Table' then 'Table has been reset.' message should display (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2397,7 +2397,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297522 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the page size, click on active and again on All then page size should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2409,7 +2409,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297523 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the page size, click on active and again on All then page size should be restored. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2433,7 +2433,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297525 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the pagination, click on active and again on All then pagination should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2445,7 +2445,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297528 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the pagination, click on Rejected and again on All then pagination should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2458,7 +2458,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297529 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the pagination, click on Rejected and again on All then pagination should be restored. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2483,7 +2483,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297531 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the sort direction click on active and again on All then sort direction should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2495,7 +2495,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297532 @dilip
   Scenario: To verify when user changes the list view from active to All, changes the sort direction click on Rejected and again on All then sort direction should be restored. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2519,7 +2519,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297534 @dilip
   Scenario: To verify when user changes the list view from active to All, searches something in quick search, click on Closed and again on All then quick search results should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2531,7 +2531,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297535 @dilip
   Scenario: To verify when user changes the list view from active to All, searches something in quick search, click on closed and again on All then quick search results should be restored. (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2555,7 +2555,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297537 @dilip
   Scenario: To verify when user changes the list view and clicks on another phase and again click on the same phase then list view value should be restored. (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I pause execution for "15" seconds
@@ -2569,7 +2569,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297555 @dilip
   Scenario: To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2579,7 +2579,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297556 @dilip
   Scenario: To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2599,7 +2599,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297558 @dilip
   Scenario: To verify when user changes pagination to Next, click on row level View action and click on close icon of modal then table should get open on the page where pagination was set to Next (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2609,7 +2609,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297561 @dilip
   Scenario: To verify when user changes Sort direction to Ascending and refreshes the page then records should be resorted in ascending  (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2619,7 +2619,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297562 @dilip
   Scenario: To verify when user changes Sort direction to Ascending and refreshes the page then records should be resorted in ascending  (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2639,7 +2639,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297567 @dilip
   Scenario: To verify when user searches any value in Quick search and refreshes the page then records should be restored to quick search results (Admin)
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2650,7 +2650,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297568 @dilip
   Scenario: To verify when user searches any value in Quick search and refreshes the page then records should be restored to quick search results (PM)
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -2676,7 +2676,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-3262                   |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2694,7 +2694,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-3262                   |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2725,7 +2725,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-3262                   |
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2744,7 +2744,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-3262                   |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

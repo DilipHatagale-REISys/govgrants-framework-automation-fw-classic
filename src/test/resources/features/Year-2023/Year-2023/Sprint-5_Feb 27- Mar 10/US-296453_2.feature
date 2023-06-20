@@ -14,7 +14,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -39,7 +39,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -64,7 +64,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -89,7 +89,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -114,7 +114,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -139,7 +139,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -164,7 +164,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -189,7 +189,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -214,7 +214,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -239,7 +239,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -264,7 +264,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -289,7 +289,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -314,7 +314,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -339,7 +339,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -364,7 +364,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -389,7 +389,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -414,7 +414,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -439,7 +439,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -464,7 +464,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -489,7 +489,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -514,7 +514,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -539,7 +539,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -564,7 +564,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -589,7 +589,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -614,7 +614,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -639,7 +639,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -664,7 +664,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -689,7 +689,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -714,7 +714,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -739,7 +739,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -764,7 +764,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -789,7 +789,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -814,7 +814,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -839,7 +839,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -864,7 +864,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -889,7 +889,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -914,7 +914,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -939,7 +939,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -964,7 +964,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -989,7 +989,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1014,7 +1014,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1039,7 +1039,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1064,7 +1064,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1089,7 +1089,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1114,7 +1114,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1139,7 +1139,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1164,7 +1164,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1189,7 +1189,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1214,7 +1214,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1239,7 +1239,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1264,7 +1264,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1289,7 +1289,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1314,7 +1314,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1339,7 +1339,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1364,7 +1364,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1389,7 +1389,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1414,7 +1414,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1439,7 +1439,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1464,7 +1464,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1489,7 +1489,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1514,7 +1514,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1539,7 +1539,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1564,7 +1564,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1589,7 +1589,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1614,7 +1614,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1639,7 +1639,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1664,7 +1664,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1689,7 +1689,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1714,7 +1714,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1739,7 +1739,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1765,7 +1765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1790,7 +1790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1815,7 +1815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1840,7 +1840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1865,7 +1865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1890,7 +1890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1915,7 +1915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1940,7 +1940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1965,7 +1965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1990,7 +1990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2015,7 +2015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2040,7 +2040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2065,7 +2065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2090,7 +2090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2115,7 +2115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2140,7 +2140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2165,7 +2165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2190,7 +2190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2215,7 +2215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2240,7 +2240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2265,7 +2265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2290,7 +2290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2315,7 +2315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2340,7 +2340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2365,7 +2365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2390,7 +2390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2415,7 +2415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2440,7 +2440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2465,7 +2465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2490,7 +2490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2515,7 +2515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2540,7 +2540,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2565,7 +2565,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2590,7 +2590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2615,7 +2615,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2640,7 +2640,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2665,7 +2665,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2690,7 +2690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2715,7 +2715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2740,7 +2740,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2765,7 +2765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2790,7 +2790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2815,7 +2815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2840,7 +2840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2865,7 +2865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2890,7 +2890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2915,7 +2915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2940,7 +2940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2965,7 +2965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2990,7 +2990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3015,7 +3015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3040,7 +3040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3065,7 +3065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3090,7 +3090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3115,7 +3115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3140,7 +3140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3165,7 +3165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3190,7 +3190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3215,7 +3215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3240,7 +3240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3265,7 +3265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3290,7 +3290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3315,7 +3315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3340,7 +3340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3365,7 +3365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3390,7 +3390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3415,7 +3415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3440,7 +3440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3465,7 +3465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3490,7 +3490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3515,7 +3515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3540,7 +3540,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3565,7 +3565,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3590,7 +3590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3615,7 +3615,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3640,7 +3640,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3665,7 +3665,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3690,7 +3690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3715,7 +3715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3740,7 +3740,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3765,7 +3765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3790,7 +3790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3815,7 +3815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3840,7 +3840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3865,7 +3865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3890,7 +3890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3915,7 +3915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3940,7 +3940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3965,7 +3965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3990,7 +3990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4015,7 +4015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4040,7 +4040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4065,7 +4065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4090,7 +4090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4115,7 +4115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4140,7 +4140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4165,7 +4165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4190,7 +4190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4215,7 +4215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4240,7 +4240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4265,7 +4265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4290,7 +4290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4315,7 +4315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4340,7 +4340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4365,7 +4365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4390,7 +4390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4415,7 +4415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4440,7 +4440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4465,7 +4465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4490,7 +4490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4515,7 +4515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4540,7 +4540,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4565,7 +4565,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4590,7 +4590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4615,7 +4615,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4640,7 +4640,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4665,7 +4665,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4690,7 +4690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4715,7 +4715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4740,7 +4740,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4765,7 +4765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4790,7 +4790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4815,7 +4815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4840,7 +4840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4865,7 +4865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4890,7 +4890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4915,7 +4915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4940,7 +4940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4965,7 +4965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4990,7 +4990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5015,7 +5015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5040,7 +5040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5065,7 +5065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5090,7 +5090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5115,7 +5115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5140,7 +5140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5165,7 +5165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5190,7 +5190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5215,7 +5215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5240,7 +5240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5265,7 +5265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5290,7 +5290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5315,7 +5315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5340,7 +5340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5365,7 +5365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5390,7 +5390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5415,7 +5415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5440,7 +5440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5465,7 +5465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5490,7 +5490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5515,7 +5515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5540,7 +5540,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5565,7 +5565,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5590,7 +5590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5615,7 +5615,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5640,7 +5640,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5665,7 +5665,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5690,7 +5690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5715,7 +5715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5740,7 +5740,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5765,7 +5765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5790,7 +5790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5815,7 +5815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5840,7 +5840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5865,7 +5865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5890,7 +5890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5915,7 +5915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5940,7 +5940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5965,7 +5965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5990,7 +5990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6015,7 +6015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6040,7 +6040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6065,7 +6065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6090,7 +6090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6115,7 +6115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6140,7 +6140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6165,7 +6165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6190,7 +6190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6215,7 +6215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6240,7 +6240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6265,7 +6265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6290,7 +6290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6315,7 +6315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6340,7 +6340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6365,7 +6365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6390,7 +6390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6415,7 +6415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6440,7 +6440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6465,7 +6465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6490,7 +6490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6515,7 +6515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6540,7 +6540,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6565,7 +6565,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6590,7 +6590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6615,7 +6615,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6640,7 +6640,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6665,7 +6665,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6690,7 +6690,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6715,7 +6715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6740,7 +6740,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6765,7 +6765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6790,7 +6790,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6815,7 +6815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6840,7 +6840,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6865,7 +6865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6890,7 +6890,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6915,7 +6915,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6940,7 +6940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6965,7 +6965,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6990,7 +6990,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7015,7 +7015,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7040,7 +7040,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7065,7 +7065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7090,7 +7090,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7115,7 +7115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7140,7 +7140,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7165,7 +7165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7190,7 +7190,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7215,7 +7215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7240,7 +7240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7265,7 +7265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7290,7 +7290,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7315,7 +7315,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7340,7 +7340,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7365,7 +7365,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7390,7 +7390,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7415,7 +7415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7440,7 +7440,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7465,7 +7465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7490,7 +7490,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7513,7 +7513,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7538,7 +7538,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7563,7 +7563,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7586,7 +7586,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7611,7 +7611,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7636,7 +7636,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7661,7 +7661,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7686,7 +7686,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7711,7 +7711,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7736,7 +7736,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7761,7 +7761,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7786,7 +7786,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7811,7 +7811,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7836,7 +7836,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7861,7 +7861,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7886,7 +7886,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7911,7 +7911,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7936,7 +7936,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7961,7 +7961,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7986,7 +7986,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8011,7 +8011,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8036,7 +8036,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8061,7 +8061,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8086,7 +8086,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8111,7 +8111,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8136,7 +8136,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8161,7 +8161,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8186,7 +8186,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8211,7 +8211,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8236,7 +8236,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8261,7 +8261,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8286,7 +8286,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8311,7 +8311,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8336,7 +8336,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8361,7 +8361,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8386,7 +8386,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8411,7 +8411,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8436,7 +8436,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8461,7 +8461,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8486,7 +8486,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8511,7 +8511,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8536,7 +8536,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8561,7 +8561,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8586,7 +8586,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8611,7 +8611,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8636,7 +8636,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8661,7 +8661,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8686,7 +8686,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8711,7 +8711,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8736,7 +8736,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8761,7 +8761,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8786,7 +8786,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8811,7 +8811,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8836,7 +8836,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8861,7 +8861,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8886,7 +8886,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8911,7 +8911,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8936,7 +8936,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8961,7 +8961,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8986,7 +8986,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9011,7 +9011,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9036,7 +9036,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9061,7 +9061,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9086,7 +9086,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9111,7 +9111,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9136,7 +9136,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9161,7 +9161,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9186,7 +9186,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9211,7 +9211,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9236,7 +9236,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9261,7 +9261,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9286,7 +9286,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9311,7 +9311,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9336,7 +9336,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9361,7 +9361,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9386,7 +9386,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9411,7 +9411,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9436,7 +9436,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9461,7 +9461,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9486,7 +9486,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9511,7 +9511,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9536,7 +9536,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9561,7 +9561,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9586,7 +9586,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9611,7 +9611,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9636,7 +9636,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9661,7 +9661,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9686,7 +9686,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General                        | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17751                  |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

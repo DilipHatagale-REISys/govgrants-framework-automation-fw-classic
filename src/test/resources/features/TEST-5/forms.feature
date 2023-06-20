@@ -937,6 +937,21 @@ Business Need: Forms Component Scenarios
     And I pause execution for "4" seconds
     Then I see alert popup box
 
+  @149711 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtBusinessForms
+  Scenario:validate that users should be warned when they click on browser back button with unsaved data at business forms
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    And I enter value "test123" into field "SimpleQuestion1__c"
+    And I click on back arrow
+    And I pause execution for "4" seconds
+    Then I see alert popup box
+
   @149714 @verifyThatUnsavedDataAtFormsCanBeSavedSuccessfullyByClickAtSaveButton
   Scenario:validate that unsaved data can be saved by click on form's Save Button
     When I login as "Automation" user
