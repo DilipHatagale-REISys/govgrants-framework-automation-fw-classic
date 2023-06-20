@@ -1,4 +1,4 @@
-@SendEmail-Component @regression-LWC @ApprovalHistoryLWC
+@ApprovalHistory-Component @regression-LWC @ApprovalHistoryLWC
 Business Need: ApprovalHistoryLWC Component Scenarios
   Test all ApprovalHistoryLWC component based scenarios
   As a configuration manager i make different configurational changes in SendEmailLWC component and will validate them.

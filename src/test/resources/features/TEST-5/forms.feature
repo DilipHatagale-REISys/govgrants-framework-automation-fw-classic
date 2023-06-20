@@ -11,7 +11,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | ApplicationView    | GNT__PageBlockTitle__c    | Business Forms             |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -27,7 +27,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For User | Internal      | ApplicationView    | Name                      | preview rule               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -43,7 +43,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For User | Internal      | ApplicationView    | Name                      | View                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -59,7 +59,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Application Cover Page | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -76,7 +76,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide For User | Internal      | Application Cover Page | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -93,7 +93,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Header    | Test Automation | Application - Simple |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -104,7 +104,7 @@ Business Need: Forms Component Scenarios
 
   @83501 @verifyEnhancedGridWithHeaderIsDisplayedOnFormPreviewPage-gAnnouncement
   Scenario:validate that enhanced grid with header is displayed on forms preview layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -115,7 +115,7 @@ Business Need: Forms Component Scenarios
 
   @83505 @verifyEnhancedDataTableWithHeaderIsDisplayedOnFormPreviewPage-gAnnouncement
   Scenario:validate that enhanced data table with header is displayed on forms preview layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -132,7 +132,7 @@ Business Need: Forms Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                 | name                               |
       | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -152,7 +152,7 @@ Business Need: Forms Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                 | name                               |
       | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -172,7 +172,7 @@ Business Need: Forms Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                 | name                               |
       | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -186,7 +186,7 @@ Business Need: Forms Component Scenarios
 
   @103084 @verifyThatEnhancedGridIsDisplayedAtFormPreviewPage-gApplications
   Scenario:validate enhanced grid is displayed at forms preview layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -197,7 +197,7 @@ Business Need: Forms Component Scenarios
 
   @103092 @verifyThatEnhancedGridIsDisplayedAtFormViewPage-gApplications
   Scenario:validate enhanced grid is displayed at forms view layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -208,7 +208,7 @@ Business Need: Forms Component Scenarios
 
   @103093 @verifyThatEnhancedGridIsDisplayedAtFormEditPage-gApplications
   Scenario:validate enhanced grid is displayed at forms edit layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -226,7 +226,7 @@ Business Need: Forms Component Scenarios
     And I update custom Dynamic Metadata changes:
       | id                 | Type     | Name                 |
       | m076O000000kBbPQAU | Checkbox | Multi-Picklist Field |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -249,7 +249,7 @@ Business Need: Forms Component Scenarios
     And I update custom Dynamic Field setting changes:
       | id                 | Type  | Name                 |
       | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -267,7 +267,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Application - Simple | Name                      | PB-1852                    |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "7" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -285,7 +285,7 @@ Business Need: Forms Component Scenarios
     And I update custom Dynamic Field setting changes:
       | id                 | Type     | Name                 |
       | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -301,7 +301,7 @@ Business Need: Forms Component Scenarios
 
   @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage
   Scenario:validate that by click on form layout, it is re-directed to application detail page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -313,7 +313,7 @@ Business Need: Forms Component Scenarios
 
   @112014 @verifySpecialCharacterAtFormLayoutByPMUser
   Scenario:validate special characters are displayed inside form layout by login as pm user
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I pause execution for "8" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -329,7 +329,7 @@ Business Need: Forms Component Scenarios
 
   @112036 @verifySpecialCharacterArAcceptedAtFormLayoutInEdit
   Scenario:validate special characters are accepted in edit mode and displayed inside form layout
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -343,7 +343,7 @@ Business Need: Forms Component Scenarios
 
   @118850 @verifyAlertMessageAtFormLayoutInEditMode
   Scenario:validate alert message displayed for required field at form layout in edit mode
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -357,7 +357,7 @@ Business Need: Forms Component Scenarios
 
   @119860  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtFormEdit-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at form edit
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -374,7 +374,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Application - Simple | Name                      | PBD-4188                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -388,7 +388,7 @@ Business Need: Forms Component Scenarios
 
   @120398 @verifyErrorMessageIsNotDisplayedAtFormLayoutWhileClickOnSaveButton
   Scenario:validate error message is not displayed if user click on save button by changing form data
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -402,7 +402,7 @@ Business Need: Forms Component Scenarios
 
   @120968 @verifyFormViewPageIsDisplayedByClickOnFormCancelButton
   Scenario:validate form view page is displayed by click on form cancel button
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -420,7 +420,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Page Redirect Behaviour | Save and Continue | General Application Form |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -433,7 +433,7 @@ Business Need: Forms Component Scenarios
 
   @125579 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtFormsUnderEnhancedFormsTable
   Scenario:validate that users should be warned when they click on Cancel button with unsaved data at forms under enhanced forms table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -445,7 +445,7 @@ Business Need: Forms Component Scenarios
 
   @112163 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtFormsUnderBusinessFormsTable
   Scenario:validate that users should be warned when they click on Cancel button with unsaved data at forms under business forms table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -458,7 +458,7 @@ Business Need: Forms Component Scenarios
 
   @126480 @verifyThatByClickOnPreviewActionAtBusinessFormsItShouldGetOpensInNewTab-gApplications
   Scenario:validate business form is getting opens in new tab by click on preview action on it
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -469,7 +469,7 @@ Business Need: Forms Component Scenarios
 
   @126481 @verifyHelpTextIsDisplayedByClickOnPreviewActionAtBusinessForms-gApplications @skipOnJenkins
   Scenario:validate help text at page block is displayed at business form by click on preview action on it
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -482,7 +482,7 @@ Business Need: Forms Component Scenarios
 
   @126482 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyPageBlockTitlesShouldDisplayAndNotTheBlockDetails-gApplications
   Scenario:validate at business form preview, only page block titles should display and not the block details fields
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -495,7 +495,7 @@ Business Need: Forms Component Scenarios
 
   @126483 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyStaticTextDisplayed-gApplications
   Scenario:validate at business form preview, only static text displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -508,7 +508,7 @@ Business Need: Forms Component Scenarios
 
   @126484 @verifyThatByClickOnPreviewActionAtBusinessFormsOnlyTableHeaderDisplayedAndNotRecordsDisplayed-gApplications
   Scenario:validate at business form preview, only table header displayed and not record
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -520,7 +520,7 @@ Business Need: Forms Component Scenarios
 
   @126486 @verifyThatByClickOnPreviewActionAtBusinessFormsEditCancelAndSaveAcionsNotDisplayed-gApplications1
   Scenario:validate at business form preview, edit, cancel, save actions are not displayed at form layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -533,7 +533,7 @@ Business Need: Forms Component Scenarios
 
   @130102    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFormsLayout
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at form layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -576,7 +576,7 @@ Business Need: Forms Component Scenarios
 
   @132423 @verifyFormOpensInViewModeForAdminUser
   Scenario:validate that by click at View action, form displayed in view mode for admin user - SPI
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -587,7 +587,7 @@ Business Need: Forms Component Scenarios
 
   @132425 @verifyFormOpensInEditModeForAdminUser
   Scenario:validate that by click at Edit action, form displayed for admin user - SPI
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -604,7 +604,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -621,7 +621,7 @@ Business Need: Forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Hide From Dropdown | true          | General Application Cover Page |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -674,7 +674,7 @@ Business Need: Forms Component Scenarios
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
       | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -695,7 +695,7 @@ Business Need: Forms Component Scenarios
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Hide From Dropdown | true          | General Application Cover Page  |                           |                            |
       | Forms:General         | Hide From Dropdown | true          | General Application Budget Form |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -896,7 +896,7 @@ Business Need: Forms Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                 | name                               |
       | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -924,7 +924,7 @@ Business Need: Forms Component Scenarios
 
   @149711 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtForms
   Scenario:validate that users should be warned when they click on browser back button with unsaved data at forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -939,7 +939,7 @@ Business Need: Forms Component Scenarios
 
   @149714 @verifyThatUnsavedDataAtFormsCanBeSavedSuccessfullyByClickAtSaveButton
   Scenario:validate that unsaved data can be saved by click on form's Save Button
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -954,7 +954,7 @@ Business Need: Forms Component Scenarios
 
   @149712 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserRefreshWithUnsavedDataAtForms
   Scenario:validate that users should be warned when they click on browser refresh button with unsaved data at forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -969,7 +969,7 @@ Business Need: Forms Component Scenarios
 
   @148989 @verifyThatUnsavedDataAlertMessageDisplayedOnBrowserRefreshShouldGetDisappearedByClickAtCancelButtonAtForms
   Scenario:validate that alert msg  displayed on browser refresh for unsaved data is disappeared by click at Cancel button at forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -986,7 +986,7 @@ Business Need: Forms Component Scenarios
 
   @146714 @verifyThatUnsavedDataAlertMessageDisplayedOnBrowserBackShouldGetDisappearedByClickAtCancelButtonAtForms
   Scenario:validate that alert msg displayed on browser back for unsaved data is disappeared by click at Cancel button at forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -1003,7 +1003,7 @@ Business Need: Forms Component Scenarios
 
   @149110 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserBackButtonWithUnsavedDataAtAllForms
   Scenario:validate that users should be warned when they click on browser back button with unsaved data at ALL forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -1017,7 +1017,7 @@ Business Need: Forms Component Scenarios
 
   @146713 @verifyThatAlertPopUpShouldDisplayWhenUserClickOnBrowserRefreshButtonWithUnsavedDataAtAllForms
   Scenario:validate that users should be warned when they click on browser refresh button with unsaved data at ALL forms
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -1077,7 +1077,7 @@ Business Need: Forms Component Scenarios
 
   @151586 @verifyThatPageIsNotRefreshedAfterClickAtCancelButtonAtConfirmationPop-UpAppearsOnFormLayoutForUnsavedData
   Scenario:validate that page is no refreshing by performing Cancel action at confirmation pop-up appears on form layout for unsaved data
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
@@ -1091,7 +1091,7 @@ Business Need: Forms Component Scenarios
 
   @148228 @verifyFormOpensInEditModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUserForFirefox @firefox
   Scenario:validate that form opens in edit mode even if hide from dropdown checkbox is checked for admin user on firefox
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -1102,7 +1102,7 @@ Business Need: Forms Component Scenarios
 
   @148227 @verifyFormOpensInViewModeEvenIfHideFromDropdownCheckBoxIsCheckedForAdminUserForFirefox @firefox
   Scenario:validate that form opens in view mode even if hide from dropdown checkbox is checked for admin user on firefox
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -1113,7 +1113,7 @@ Business Need: Forms Component Scenarios
 
   @174502 @OldForms-ToverifythatinFormEditmode,theDynamicFormTitlesshouldnotbeconfigured @sprint20
   Scenario:  Old Forms - To verify that in Form Edit mode, the Dynamic Form Titles should not be configured
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -1125,7 +1125,7 @@ Business Need: Forms Component Scenarios
 
   @174499 @OldForms-ToverifythatinViewmodeofForm,theDynamicFormTitlesshouldnotbeconfigurable @sprint20
   Scenario: Old Forms - To verify that in View mode of Form, the Dynamic Form Titles should not be configurable
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -1137,7 +1137,7 @@ Business Need: Forms Component Scenarios
 
   @174501 @OldForms-ToverifythatinPreviewmodeofForm,theDynamicFormTitlesshouldbeconfigured
   Scenario: Old Forms - To verify that in preview mode of Form, the Dynamic Form Titles should not be configurable
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -1149,7 +1149,7 @@ Business Need: Forms Component Scenarios
 
   @191194 @sprint1
   Scenario: To verify, if the user edits a Form in an Application record and then refreshes the page, the same correct phase should be highlighte
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -1160,7 +1160,7 @@ Business Need: Forms Component Scenarios
 
   @191197 @sprint1
   Scenario: To verify, if the user in an Application record and edit a Form and change the from name from dropdown then  the same correct phase should be highlighted
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -1171,7 +1171,7 @@ Business Need: Forms Component Scenarios
 
   @191371 @sprint1
   Scenario: To verify, if the user in an Application record and edit the form and change the from name from dropdown and save the form then  the same correct phase should be highlighted
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -1182,7 +1182,7 @@ Business Need: Forms Component Scenarios
 
   @191381 @sprint1
   Scenario:  To verify, if the user in an Application record and edit the form and change the from name from dropdown and save the form then  the same correct phase should be highlighte
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
