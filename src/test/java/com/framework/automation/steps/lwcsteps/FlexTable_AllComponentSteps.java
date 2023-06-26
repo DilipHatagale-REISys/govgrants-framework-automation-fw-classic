@@ -6,6 +6,7 @@ import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 
 public class FlexTable_AllComponentSteps {
@@ -57,5 +58,25 @@ public class FlexTable_AllComponentSteps {
     @Then("^I (see|do not see) \"([^\"]*)\" is displayed on table id \"([^\"]*)\"$")
     public void iSeeIsDisplayedOnTableId(String usage, String buttonName, String tableId) {
         flexTable_AllComponentPage.assertActionButtonIsDisplayed(usage, buttonName, tableId);
+    }
+
+    @Then("^I (see|do not see) value \"([^\"]*)\" is displayed inside table id \"([^\"]*)\"$")
+    public void iSeeWebelementIsDisplayedInsideTableId(String usage, String displayedValue, String tableId) {
+        flexTable_AllComponentPage.assertValueIsDisplayed(usage, displayedValue, tableId);
+    }
+
+    @When("I click on \"([^\"]*)\" button inside table id \"([^\"]*)\"$")
+    public void iClickOnButtonInsideTableId(String buttonName, String tableId) {
+        flexTable_AllComponentPage.clickOnMenuButton(buttonName, tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" option is getting displayed under Menu in table \"([^\"]*)\"$")
+    public void iSeeOptionIsGettingDisplayedUnderMenuInTable(String usage, String option, String tableId) {
+        flexTable_AllComponentPage.assertOptionIsDisplayedUnderMenu(usage, option, tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" options are available under Show Entries dropdown inside table id \"([^\"]*)\"$")
+    public void iSeeOptionsAreAvailableUnderShowEntriesDropdownInsideTableId(String usage,int values, String tableId) {
+        flexTable_AllComponentPage.assertShowEntriesDropdownIsDisplayed(usage,values,tableId);
     }
 }

@@ -646,18 +646,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 20"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 3"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 10"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 6"
 
   @335205 @dilip
   Scenario: Flex table-Page Size-PM-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 17"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 3"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 9"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 5"
 
   @335212 @dilip
   Scenario: Flex table-Page Size-SPI-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
@@ -670,72 +670,873 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
 #######################Test suite: Quick Search (Suite ID: 334512)#############################\
 
-  @334650
+  @334650 @dilip
   Scenario: Flex table-Quick Search-Admin-Config-To verify that on enabling Quick search, it displayed on top of the flex table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334652
+  @334652 @dilip
   Scenario: Flex table-Quick Search-PM-UI-To verify that on enabling Quick search, it displayed on top of the flex table
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334654
+  @334654 @dilip
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on enabling Quick search, it displayed on top of the flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334659
+  @334656 @dilip
+  Scenario: Flex table-Quick Search-Admin-Config-To verify that on disabling Quick search, it not displayed on top of the flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @334657 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @334658 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+
+  @334659 @dilip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334660
+  @334660 @dilip
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334661
+  @334661 @dilip
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I quick search "Vrush Application" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "GT-GA-00075" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "GT-GA-00075" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334663
-  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+  @334663 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "Testing Grant for" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Testing Grant for Automation" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334664
-  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
+
+  @334664 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334666 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for long text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+
+  @334667 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Rich text area field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+
+  @334668 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Rich text area field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334670 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Rich text area field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334671 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "60" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                      |
+      | Admin | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334672 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "60" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334675 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "60" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334676 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Currency field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,AwardedToDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334678 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Currency field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,AwardedToDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334679 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Currency field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "$1,000.00" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "$1,000.00" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,AwardedToDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334682 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Date field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334683 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Date field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "05/09/2023" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "05/09/2023" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334685 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Date and Date & Time field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "05/09/2023" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "05/09/2023" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334687 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for ID field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334689 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for ID field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334690 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for ID field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "PG-A11-1252" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "PG-A11-1252" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+
+  @334691 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Picklist field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,KPIsRequired__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334692 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Picklist field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,KPIsRequired__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334693 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Picklist field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,KPIsRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334694 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for URL field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334695 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for URL field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334696 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for URL field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "https://www.google.com" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "https://www.google.com" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334697 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Formula field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334698 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Formula field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @224699 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Formula field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334700 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Lookup field
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    And I quick search "AP-T09-007" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "AP-T09-007" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @334701 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for Lookup field
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "Testing Grant for" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Testing Grant for Automation" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "AP-A11-001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "AP-A11-001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334666
-  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for long text field
+  @334703 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I pause execution for "20" seconds
+    And I quick search "AP-A11-001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "AP-A11-001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                             | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334704 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Email field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,Email__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334705 @dilip
+  Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Email field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,Email__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334706 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Email field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I pause execution for "20" seconds
+    And I quick search "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334707 @dilip
+  Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334708 @dilip
+  Scenario Outline:Flex table-Quick Search-PM-UI-To verify that user is able to search for Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I quick search "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334709 @dilip
+  Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I pause execution for "20" seconds
+    And I quick search "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334710 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering whole data of respective field
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @334711 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering whole data of respective field
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @334712 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering whole data of respective field
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Grants" tab
-    And I quick search "Test Automation" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Test Automation Organization" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I navigate to "Applications" tab
+    And I quick search "Vrush Application" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Vrush Application" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
+  @334713 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering keyword
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "security" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334714 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering keyword
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    And I quick search "Program" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334715 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering keyword
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "security" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334720 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "snapshot" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "Test application for snapshot 3" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334722 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    And I quick search "Testing" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "New Application For Testing Only" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334724 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "release" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "package release flow sk4_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334725 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only digits
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334726 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only digits
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    And I quick search "001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334728 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only digits
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334730 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering alphanumeric values
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "T09" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334731 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering alphanumeric values
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "A11" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334734 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering alphanumeric values
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "T09" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334735 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering characters or digits with sp. characters.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "AP-T09-025" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-T09-025" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334736 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering characters or digits with sp. characters.
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    And I quick search "AP-A11-002" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "AP-A11-002	" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+
+  @334739 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering characters or digits with sp. characters.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334740 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for reference fields
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "07/18/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "07/18/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334741 @dilip
+  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for reference fields
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    And I quick search "07/27/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "07/27/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @334742 @dilip
+  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for reference fields
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I quick search "04/28/2022" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "04/28/2022" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @334789 @dilip
+  Scenario: Flex table-Quick Search-Admin-UI-To verify that after reloading page, searched results get cleared
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    And I quick search "Automation Internal Program for flow" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    And I refresh the page
+
+    #######################Test suite: UI (Suite ID: 336192)####################
+
+  @338451 @dilip
+  Scenario: Refresh- SPI- UI- Verify Refresh option is getting displayed under menu
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338452 @dilip
+  Scenario: Refresh- PM - UI- Verify Refresh option is getting displayed under menu
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @338454 @dilip
+  Scenario: Refresh- Admin- config- Verify Refresh option is getting displayed under menu
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @338457 @dilip
+  Scenario: Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @338459 @dilip
+  Scenario: Page Size- PM- UI- Verify dropdown appears on UI to select page size manually
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    When I click on "Form Control-Number of Entries" button inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338461 @dilip
+  Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
