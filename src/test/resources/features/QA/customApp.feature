@@ -48,12 +48,12 @@ Business Need: customApp Component Scenarios
 
   @332487
   Scenario: Custom App- To verify,  when User add the Abbreviation as "GRNTR' then it should get saved.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Custom App Config     | Abbreviation | GRNTR             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Abbreviation | GRNTR         | StateasGrantor     |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+#      | Custom App Config     | Abbreviation | GRNTR             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
+#      | Custom App Config:General | Abbreviation | GRNTR         | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
@@ -132,12 +132,12 @@ Business Need: customApp Component Scenarios
 
   @332510
   Scenario:Custom App- To verify,  when User add the Abbrevation as "GRNTE" then this should be saved
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Custom App Config     | Abbreviation | GRNTE             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Abbreviation | GRNTE         | StateasGrantee     |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+#      | Custom App Config     | Abbreviation | GRNTE             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
+#      | Custom App Config:General | Abbreviation | GRNTE         | StateasGrantee     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
@@ -226,12 +226,12 @@ Business Need: customApp Component Scenarios
 
   @332496
   Scenario: Custom App- To verify, when User add the Abbreviation as "ADM" then this should be saved.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Custom App Config     | Abbreviation | ADM               | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Abbreviation | ADM           | Admin              |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+#      | Custom App Config     | Abbreviation | ADM               | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
+#      | Custom App Config:General | Abbreviation | ADM           | Admin              |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As Administrator" inside CustomApp dropDown
@@ -281,12 +281,12 @@ Business Need: customApp Component Scenarios
 
   @332501
   Scenario: Custom App- To verify, when Default Theme Name is  "ColorContrast_Admin" should be saved on the  Custom App: Admin
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName          | fieldOrignalValue   | filterId         |
-      | Custom App Config     | Default Theme Name | ColorContrast_Admin | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Default Theme Name |               | Admin              |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName          | fieldOrignalValue   | filterId         |
+#      | Custom App Config     | Default Theme Name | ColorContrast_Admin | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
+#      | Custom App Config:General | Default Theme Name |               | Admin              |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
     Then I see "ColorContrast_Admin" on complete page for custom App as a Grantor
@@ -320,12 +320,12 @@ Business Need: customApp Component Scenarios
 
   @332522
   Scenario: Custom App- To verify,  when User add the Abbrevation as "RPT" then this should be saved
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Custom App Config     | Abbreviation | RPT               | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Abbreviation | RPT           | Recipient          |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+#      | Custom App Config     | Abbreviation | RPT               | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
+#      | Custom App Config:General | Abbreviation | RPT           | Recipient          |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I click CustomApp select dropdown

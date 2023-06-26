@@ -883,7 +883,8 @@ public class PageLayoutPage extends GovGrantsManager {
     public void performClickOnLookupLink(String usage, String lookupLink) {
         if (usage.contains("contains")) {
             TestingBlazeGlobal.setVariable("highlightElements", "off");
-            By getLookupLink = ByUsing.xpath("//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']//following-sibling::div//tr[1]//span[contains(text(),'" + lookupLink + "')]");
+            By getLookupLink = ByUsing.xpath("//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']//following-sibling::div//tr[1]//span[contains(text(),'" + lookupLink + "')] |" +
+                    "//td[contains(@class,'fc-today')]/ancestor::div[@class='fc-bg']/parent::div/following-sibling::div/div/div/a//span[contains(text(),'" + lookupLink + "')]");
             I.amPerforming().click().on(getLookupLink);
         } else {
             I.amPerforming().click().on(ByUsing.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')] | //div[@class='listBody']//span[text()='" + lookupLink + "']"));
@@ -2364,7 +2365,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
         } else if (approverTitle.equalsIgnoreCase("Program Manager Approver") || approverTitle.equalsIgnoreCase("Program Manager Approver (Pending for first approval)")) {
             try {
-                if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[2]//a/span[contains(text(),'" + approverName + "')] | //div[@id='chevronBarId']/ancestor::div/div//div[@class='pbBody']//tr/td/span/span[contains(text(),'"+ approverTitle +"')]/ancestor::tr/following-sibling::tr/td/span[text()='"+ approverName +"']")))) {
+                if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[2]//a/span[contains(text(),'" + approverName + "')] | //div[@id='chevronBarId']/ancestor::div/div//div[@class='pbBody']//tr/td/span/span[contains(text(),'" + approverTitle + "')]/ancestor::tr/following-sibling::tr/td/span[text()='" + approverName + "']")))) {
                     flag = true;
                 }
             } catch (Exception e) {
@@ -2467,7 +2468,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isDateTimeDisplayedInExpectedFormatInHistoryTable(String dateTimeFieldValue, String columnName) {
         boolean flag = false;
-        By getNewValue = By.xpath("//div[@id='History']//tr[2]//td[3] | //div[@id='History']//tr[2]//td[3]");
+        By getNewValue = By.xpath("//div[@id='History']//tr[1]//td[3] | //div[@id='History']//tr[1]//td[3]");
         By getOldValue = By.xpath("//div[@id='History']//tr[1]//td[4]");
 
         if (columnName.equalsIgnoreCase("New Value")) {
@@ -3575,5 +3576,10 @@ public class PageLayoutPage extends GovGrantsManager {
     public void ClickOnRightAllignInDescriptionField() {
         By ByPhaseButton = By.xpath("//a[@title='Align Right' and @id='cke_58']");
         I.amPerforming().click().on(ByPhaseButton);
+    }
+
+    public void clickOnCrossButtonInNotesSection(String NotesTitle, String button) {
+        By CrossButton = By.xpath("//a[contains(@aria-label,'" + NotesTitle + "')]/span[contains(@id,'close') or text='" + button + "']");
+        I.amPerforming().click().on(CrossButton);
     }
 }

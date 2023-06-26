@@ -9,22 +9,35 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Action | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName   | fieldNewValue | coreComponentField                                         |
-      | Program                          | Status      | Created       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Action | true          | ADAC-0105                                                  |
+      | configurationCategory            | fieldName   | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Hide Action | true          | ADAC-0105          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
 
   @34307    @changeApproveOptionSequence-Programs @smoke
@@ -33,22 +46,35 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
       | Approval Decision Action | Sequence  | 1                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName | fieldNewValue | coreComponentField                                         |
-      | Program                          | Status    | Created       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Sequence  | 5             | ADAC-0105                                                  |
+      | configurationCategory            | fieldName | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Sequence  | 5             | ADAC-0105          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send Back | Approve |
 
@@ -58,22 +84,35 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Required | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField                                         |
-      | Program                          | Status            | Created       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Comments Required | true          | ADAC-0105                                                  |
+      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Comments Required | true          | ADAC-0105          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Approve" in the approval decision
     And I submit the approval in the approval decision
     Then I can see the message "Comments are Required." in the approval decision
@@ -84,23 +123,36 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
       | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField                                         |
-      | Program                          | Status                | Created       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0105                                                  |
+      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0105          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Approved" in the approval decision
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    Then I can see the radio button "Approve" in the approval decision
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
@@ -108,23 +160,36 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName          | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                   | coreComponentField                                         |
-      | Program                          | Status               | Created                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Confirmation Title   | Automation Approval             | ADAC-0105                                                  |
-      | Approval Decision Action:General | Confirmation Message | Confirmation box for automation | ADAC-0105                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                   | coreComponentField |
+      | Approval Decision Action:General | Confirmation Title   | Automation Approval             | ADAC-0105          |
+      | Approval Decision Action:General | Confirmation Message | Confirmation box for automation | ADAC-0105          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     When I select radio button "Approve" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -136,23 +201,36 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory    | fieldName                         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Filter Criteria for User Reassign |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField                                         |
-      | Program                          | Status                            | Created                  | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0103                                                  |
+      | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField |
+      | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0103          |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select radio button "Reassign" in the approval decision
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I select radio button "Forward" in the approval decision
     Then I can see user "Automation PM" in the user lookup in the approval decision
     Examples:
       | newFilterCriteriaValue |
@@ -164,22 +242,35 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory        | fieldName      | fieldOrignalValue  | filterId         |
       | Approval Process Steps Cache | Field API Name | ProgramApprover__c | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName      | fieldNewValue | coreComponentField                                         |
-      | Program                              | Status         | Created       | Test program for automation -  SA mode only - Not approved |
-      | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver                                   |
+      | configurationCategory                | fieldName      | fieldNewValue | coreComponentField       |
+      | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    Then I see approval with subject as "{SavedValue:PEGMSID}" is not displayed
 
   @34313    @successEmailSentToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
@@ -349,10 +440,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -360,7 +447,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I "Send to Owner" in the approval decision
+    And I "Send back" in the approval decision
     When I re-login to "As a Grantor" app as "PM" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -407,10 +494,10 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Disapprove" in the approval decision
+    When I select radio button "Reject" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Reject Confirmation box for automation" is displayed
+    Then I see confirmation box with body "Successfully disapproved" is displayed
 
   @37431    @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
@@ -454,10 +541,10 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Reassign" in the approval decision
+    When I select radio button "Forward" in the approval decision
     And I select user "Automation PM" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Reassign Confirmation box for automation" is displayed
+    Then I see confirmation box with body "Successfully Re-Assigned" is displayed
 
   @37433    @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
@@ -500,10 +587,10 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Send to Owner" in the approval decision
+    When I select radio button "Send back" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Send to Owner Confirmation box for automation" is displayed
+    Then I see confirmation box with body "Successfully sent to Owner. It may take few minutes to process record." is displayed
 
   @37506    @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reject approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
@@ -533,23 +620,19 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Disapprove" in the approval decision
+    When I select radio button "Reject" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Test Automation for Rejection" is displayed
+    Then I see confirmation box with body "Successfully disapproved" is displayed
 
   @37523    @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
@@ -581,22 +664,18 @@ Business Need: Approval Process Component Scenarios
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Reassign" in the approval decision
+    When I select radio button "Forward" in the approval decision
     And I select user "Automation PM" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Test Automation for Forward" is displayed
+    Then I see confirmation box with body "Successfully Re-Assigned" is displayed
 
   @37539    @commentsFieldAPINameFieldForApproveAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
@@ -675,10 +754,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -686,10 +761,10 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Send to Owner" in the approval decision
+    When I select radio button "Send back" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Test Automation for Sendback" is displayed
+    Then I see confirmation box with body "Successfully sent to Owner. It may take few minutes to process record." is displayed
 
   @37540    @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
   Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
@@ -818,10 +893,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -829,7 +900,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I "Disapprove" in the approval decision
+    And I "Reject" in the approval decision
     When I re-login to "As Administrator" app as "PM" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -867,10 +938,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -878,7 +945,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Reassign" to user "Automation PM" in the approval decision
+    When I "Forward" to user "Automation PM" in the approval decision
     When I re-login to "As Administrator" app as "PM" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -916,10 +983,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -927,7 +990,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I "Send to Owner" in the approval decision
+    And I "Send back" in the approval decision
     When I re-login to "As Administrator" app as "PM" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -962,10 +1025,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -973,7 +1032,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Reassign" in the approval decision
+    When I select radio button "Forward" in the approval decision
     And I submit the approval in the approval decision
     Then I can see the message "Comments are Required." in the approval decision
 
@@ -1005,10 +1064,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1016,7 +1071,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I "Reassign" to user "Automation PM" in the approval decision
+    And I "Forward" to user "Automation PM" in the approval decision
     When I re-login to "As a Grantor" app as "PM" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1052,10 +1107,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1093,10 +1144,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1104,7 +1151,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I cannot see the radio button "Disapprove" in the approval decision
+    Then I cannot see the radio button "Reject" in the approval decision
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
@@ -1134,10 +1181,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1145,7 +1188,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I cannot see the radio button "Reassign" in the approval decision
+    Then I cannot see the radio button "Forward" in the approval decision
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
@@ -1175,10 +1218,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1186,7 +1225,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I cannot see the radio button "Send back" in the approval decision
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
@@ -1221,7 +1260,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Reassign" to user "Automation PM" in the approval decision
+    When I "Forward" to user "Automation PM" in the approval decision
     And I pause execution for "8" seconds
     When I re-login to "As a Grantor" app as "PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1376,10 +1415,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1446,15 +1481,28 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
       | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
-   # When I login to "As a Grantor" app as "PM" user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -1510,7 +1558,6 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program |                           |                            |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    #When I login to "As a Grantor" app as "PM" user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1530,10 +1577,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
