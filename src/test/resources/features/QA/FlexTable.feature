@@ -1537,7 +1537,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
+    When I navigate to "Applications" tab
     When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
