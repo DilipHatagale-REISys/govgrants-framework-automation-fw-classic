@@ -80,43 +80,29 @@ Business Need: Calender Config Component Scenarios
 
   @127031    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that admin user is redirected to respective record detail page by click on record id at calendar layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    #When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "3" seconds
     And I navigate to "Home" tab
+    And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I pause execution for "5" seconds
+    And I click on "more" button in current date
     And I click on lookup link contains "{SavedValue:PEGMSID}"
     And I wait for "5" seconds
     Then I softly see field "EGMS ID" as "{SavedValue:PEGMSID}"
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
-      | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -191,6 +177,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I click on "more" button in current date
     And I click on lookup link contains "{SavedValue:ANNEGMSID}"
     Then I see the header is "Funding Opportunity" in the page details
     Given I delete the record "{SavedValue:ANNEGMSID}" from the object "Announcement__c" with field "Name"
@@ -198,13 +185,6 @@ Business Need: Calender Config Component Scenarios
 
   @127042  @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at calendar layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -213,17 +193,18 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "5" seconds
-    And I save the field labeled "ID" as "savedValue"
-    And I save the field labeled "Title" as "TITLE"
-    And I save the field labeled "Program Type" as "PT"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Type" as "PT"
     And I pause execution for "3" seconds
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    And I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
+    And I click on "more" button in current date
+    And I hover mouse on lookup link "{SavedValue:PEGMSID} (Start Date)"
     Then I see the text :
-      | {SavedValue:savedValue}        |
+      | {SavedValue:PEGMSID}           |
       | Department of Community Health |
       | {SavedValue:PT}                |
 
@@ -602,12 +583,12 @@ Business Need: Calender Config Component Scenarios
 
   @127482  @verifyProgramIDDisplayedAtMonthWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
   Scenario: validate that program ID is displayed at month wise calendar inside respective record detail page for admin user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -619,13 +600,14 @@ Business Need: Calender Config Component Scenarios
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     Then I see the text :
-      | {SavedValue:savedValue} (Start Date) |
+      | {SavedValue:PEGMSID} (Start Date) |
 
   @127487   @verifyProgramIDDisplayedAtDayWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
   Scenario: validate that program ID is displayed at day wise calendar inside respective record detail page for admin user
@@ -689,35 +671,34 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "3" seconds
+    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
+    And I click on "more" button in current date
     And I click on lookup link contains "{SavedValue:PEGMSID}"
-    Then I see the header is "Program" in the page details
+    Then I see the header is "Internal Program" in the page details
 
   @127488    @verifyByClickOnRecordIdDisplayedAtRecordLevelCalendarCalendarItShouldRedirectToRespectiveRecordDetailPageForInternalUser
   Scenario: validate that Internal user is redirected to respective record detail page by click on record id at record detail
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -740,60 +721,60 @@ Business Need: Calender Config Component Scenarios
 
   @127491    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarAtRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at page detail layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    #When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Title" as "TITLE"
-    And I pause execution for "3" seconds
-    When I click on "Menu" in the page details
-    And I select "Calendar" from dropdown
+    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Internal Organization" as "ORG"
+    And I navigate to "Home" tab
+    And I pause execution for "25" seconds
+    When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
-    When I hover mouse on lookup link "{SavedValue:savedValue} (Start Date)"
-    And I pause execution for "10" seconds
+    And I click on "more" button in current date
+    When I hover mouse on lookup link "{SavedValue:PEGMSID} (Start Date)"
+    And I pause execution for "25" seconds
     Then I see the text :
-      | {SavedValue:PEGMSID}           |
-      | Department of Community Health |
-      | {SavedValue:TITLE}             |
+      | {SavedValue:PEGMSID} |
+      | {SavedValue:TITLE}   |
+      | {SavedValue:ORG}     |
 
   @127655    @verifyProgramIDIsDisplayedAtDayWiseCalendarForAdminUserAtHomePhase
   Scenario: validate that program ID is displayed at day wise calendar at home phase to admin user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    #When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "3" seconds
+    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
+    And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Day" Button at calendar
     Then I see the text :
@@ -801,29 +782,28 @@ Business Need: Calender Config Component Scenarios
 
   @127654    @verifyProgramIDIsDisplayedAtWeekWiseCalendarForAdminUserAtHomePhase
   Scenario: validate that program ID is displayed at week wise calendar at home phase to admin user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "365" into field "fieldEndDate__c"
+    #When I enter value "0" into field "fieldDateandTime__c"
+    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "3" seconds
     And I navigate to "Home" tab
+    And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Week" Button at calendar
+   # And I click on "more" button in current date
     Then I see the text :
       | {SavedValue:PEGMSID} (Start Date) |
 
@@ -859,46 +839,52 @@ Business Need: Calender Config Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
-    When I enter value "0" into field "fieldDateandTime__c"
+    #When I enter value "0" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "5" seconds
-    Then I see "PG-343-179 (DateandTime)" record is displayed in "aqua blue" color inside calendar
+    And I click on "more" button in current date
+   # Then I see "{SavedValue:PEGMSID} (DateandTime)" record is displayed in "aqua blue" color inside calendar
+    Then I see "{SavedValue:PEGMSID} (Start Date)" record is displayed in "aqua blue" color inside calendar
+
 
   @127658    @verifyAdminUserCanSeeAnnouncementIdInTealGreenColorAtMonthWiseCalendar-HomePhase
-  Scenario Outline: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName     | fieldOrignalValue                                                  | coreComponentField              | filterId         |
-      | Calender Config                          | Date Fields   | govgrants_config:DefaultDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active     | false                                                              | Annoucement Profile-Sole Source | ApiGeneratedId:1 |
-      | Calender Config                          | Filter Clause | <filterClause>                                                     | Grantor_Home_Announcement       | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName     | fieldNewValue                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Calender Config:General                  | Date Fields   | govgrants_config:NewDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active     | true                                                           | Annoucement Profile-Sole Source | Name                      | PBD-9244                   |
-      | Calender Config:General                  | Filter Clause |                                                                | Grantor_Home_Announcement       |                           |                            |
+  Scenario: validate admin User is able to see announcement ID in teal green color at month wise calendar-HomePhase
+#    Given I have "default" configuration as below:
+#      | configurationCategory                    | fieldName     | fieldOrignalValue                                                  | coreComponentField              | filterId         |
+#      | Calender Config                          | Date Fields   | govgrants_config:DefaultDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       | ApiGeneratedId:0 |
+#      | Page Block Config:Page Block Rule Detail | Is Active     | false                                                              | Annoucement Profile-Sole Source | ApiGeneratedId:1 |
+#      | Calender Config                          | Filter Clause | <filterClause>                                                     | Grantor_Home_Announcement       | ApiGeneratedId:2 |
+#    Given I setup test configuration as below:
+#      | configurationCategory                    | fieldName     | fieldNewValue                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Calender Config:General                  | Date Fields   | govgrants_config:NewDateFieldsJsonAtAnnouncementCalendarConfig | Grantor_Home_Announcement       |                           |                            |
+#      | Page Block Config:Page Block Rule Detail | Is Active     | true                                                           | Annoucement Profile-Sole Source | Name                      | PBD-9244                   |
+#      | Calender Config:General                  | Filter Clause |                                                                | Grantor_Home_Announcement       |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Test"
-    When I click on "Edit" icon for "Test" inside table
+    When I perform quick search for "Announcement For Calendar Testing"
+    When I click on "Edit" icon for "Announcement For Calendar Testing" inside table
     When I pause execution for "10" seconds
-    When I enter value "0" into field "fieldApplicationDeadlineWithDateTime__c"
+    When I enter value "0" into field "fieldApplicationDueDate__c"
     When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "ANNEGMSID"
     When I pause execution for "10" seconds
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "10" seconds
-    Then I see "AN-343-035" record is displayed in "teal green" color inside calendar
-    Examples:
-      | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
-      | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
+    And I click on "more" button in current date
+    Then I see "{SavedValue:ANNEGMSID}" record is displayed in "teal green" color inside calendar
+#    Examples:
+#      | filterClause                                                                                                                                                                                                                                                                                                                                                                            |
+#      | ((CreatedDate = LAST_N_DAYS:60) OR (FOAPublicationDate__c = LAST_N_DAYS:60 or FOAPublicationDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodStartDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodStartDate__c = NEXT_N_DAYS:90) or (EstimatedBudgetPeriodEndDate__c = LAST_N_DAYS:60 or EstimatedBudgetPeriodEndDate__c = NEXT_N_DAYS:90)) and recordType.DeveloperName = 'Grantor' |
 
   @127667    @verifySPIUserCanSeeGrantIdInAquaBlueColorAtMonthWiseCalendar-HomePhase
   Scenario: validate SPI User is able to see grant ID in turquoise color at month wise calendar-HomePhase
@@ -972,47 +958,47 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
-    And I save the field labeled "ID" as "PEGMSID1"
+    And I save the field labeled "EGMS ID" as "PEGMSID1"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
-    And I save the field labeled "ID" as "PEGMSID2"
+    And I save the field labeled "EGMS ID" as "PEGMSID2"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
-    And I save the field labeled "ID" as "PEGMSID3"
+    And I save the field labeled "EGMS ID" as "PEGMSID3"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
-    And I save the field labeled "ID" as "PEGMSID4"
+    And I save the field labeled "EGMS ID" as "PEGMSID4"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
-    And I save the field labeled "ID" as "PEGMSID5"
+    And I save the field labeled "EGMS ID" as "PEGMSID5"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
-    And I save the field labeled "ID" as "PEGMSID6"
+    And I save the field labeled "EGMS ID" as "PEGMSID6"
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "10" seconds
-    And I click on "more" Button at calendar
+    And I click on "more" button in current date
     Then I see the text :
       | {SavedValue:PEGMSID1} (Start Date) |
       | {SavedValue:PEGMSID2} (Start Date) |

@@ -871,4 +871,29 @@ public class PageLayoutSteps {
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
     }
+
+    @And("I click on {string} button in current date")
+    public void iClickOnButtonInCurrentDate(String buttonName) {
+        try {
+            By moreOptionDisplayed = By.xpath("//td[@class='fc-day fc-widget-content fc-wed fc-today fc-state-highlight']/ancestor::div[@class='fc-bg']/following-sibling::div/table/tbody/tr/td[@class='fc-more-cell']/div/a[contains(text(),'" + buttonName + "')]");
+            if (I.amPerforming().checkToSee().isDisplayed(moreOptionDisplayed)) {
+                for (int i = 7; i >= 1; i--) {
+                    System.out.println("value of i :" + i);
+                    try {
+                        By attachmentDescriptionPath1 = By.xpath("(//td[@class='fc-day fc-widget-content fc-wed fc-today fc-state-highlight']/ancestor::div[@class='fc-bg']/following-sibling::div/table/tbody/tr/td[@class='fc-more-cell']/div/a[contains(text(),'" + buttonName + "')])[" + i + "]");
+                        I.amPerforming().click().on(attachmentDescriptionPath1);
+                        break;
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }catch (Exception e){
+            System.out.println("more button is not available...");
+        }
+    }
+
+    @When("I delete specific Sticky Notes with title {string} on clicking {string} in notes")
+    public void iDeleteSpecificStickyNotesWithTitleOnClickingInNotes(String NotesTitle, String button) {
+        pageLayoutPage.clickOnCrossButtonInNotesSection(NotesTitle, button);
+    }
 }

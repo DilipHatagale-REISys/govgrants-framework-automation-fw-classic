@@ -20,8 +20,8 @@ public class UsersAndURL implements UsersController {
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             userName = getTEST5EnvironmentUser(userLevel);
         }
-         else
-            if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+        else
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             userName = getQAEnvironmentUser(userLevel);
         }else {
             userName = getQAEnvironmentUser(userLevel);
@@ -36,7 +36,7 @@ public class UsersAndURL implements UsersController {
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             password = getTEST5EnvironmentPassword(userType);
         }
-           else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+        else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             password = getQAEnvironmentPassword(userType);
         }else {
             password = getQAEnvironmentPassword(userType);
@@ -152,11 +152,11 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Automation@2024");
+        password.put("ADMIN", "Automation@2000");
         password.put("EXE", "FrameworkAuto@2022");
-        password.put("PM", "Automation@2023");
+        password.put("PM", "Automation@2001");
         password.put("FO", "Automation@2023");
-        password.put("SPI", "AUTOMATION@2023");
+        password.put("SPI", "AUTOMATION@2002");
         password.put("PM1", "FrameworkAuto@2024");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());

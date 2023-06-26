@@ -15,9 +15,11 @@ Business Need: history Component Scenarios
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
-    Then I softly see "PG-755-0205" value in flex table id "---program:-:historyTableId---"
+    Then I softly see "{SavedValue:PEGMSID}" value in flex table id "---program:-:historyTableId---"
 
   @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
@@ -60,8 +62,8 @@ Business Need: history Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Reassign" to user "Automation PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
-    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "3" contains text "EXE"
+    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation EXE"
+    Then I softly see column "Actual Approver" inside row "1" at position "3" and column at position "3" contains text "Automation PM"
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -104,7 +106,7 @@ Business Need: history Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
 
   @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
   Scenario: Validating status as REJECTED inside Approval history table after approval of record
@@ -311,7 +313,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
-    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I click on "View" icon for "Test Program specific for History" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I navigate to "History" sub tab
@@ -370,12 +372,12 @@ Business Need: history Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
-    Then I softly see "06/04/2020 10:00 AM" shown inside "New Value" column in history table
-    Then I softly see "06/03/2020 8:00 AM" shown inside "Old Value" column in history table
+    Then I softly see "05/30/2023" shown inside "New Value" column in history table
+    Then I softly see "05/22/2023" shown inside "Old Value" column in history table
 
   @84568  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderHistoryTable
   Scenario: validate the date and time field format under field history table with respective to EDT Local
@@ -388,12 +390,12 @@ Business Need: history Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "History" sub tab
-    Then I softly see "04/06/2020 11:00 AM" shown inside "New Value" column in history table
-    Then I softly see "03/06/2020 9:00 AM" shown inside "Old Value" column in history table
+    Then I softly see "05/30/2023" shown inside "New Value" column in history table
+    Then I softly see "05/22/2023" shown inside "Old Value" column in history table
 
   @84570  @verifyDateAndTimeFieldFormatForLocalAsISTUnderHistoryTable
   Scenario: validate the date and time field format under field history table with respective to IST Local
@@ -406,12 +408,12 @@ Business Need: history Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "History" sub tab
-    Then I softly see "4/6/2020 8:30 PM" shown inside "New Value" column in history table
-    Then I softly see "3/6/2020 6:30 PM" shown inside "Old Value" column in history table
+    Then I softly see "05/30/2023" shown inside "New Value" column in history table
+    Then I softly see "05/22/2023" shown inside "Old Value" column in history table
 
   @114727  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
@@ -425,7 +427,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details

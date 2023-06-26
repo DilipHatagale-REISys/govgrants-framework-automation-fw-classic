@@ -25,7 +25,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -80,7 +80,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -93,7 +93,7 @@ Business Need: New API related scenarios temporary
 
   @61455   @VerifySessionTimeoutDialogBoxTitle @checkSoftly @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box title
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Test Automation" is displayed
@@ -103,7 +103,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -116,7 +116,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -129,7 +129,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+    When I login as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -162,10 +162,9 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description                           | name                |
       | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside flex table with id "flexTableDivId" without waiting for record
+    And I click on "View" icon in flex table for first draft record
     When I pause execution for "180" seconds
     #Then I see "Logout" in current url
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed

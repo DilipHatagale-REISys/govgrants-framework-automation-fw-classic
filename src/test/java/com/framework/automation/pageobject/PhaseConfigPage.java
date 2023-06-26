@@ -190,8 +190,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return
      */
     public List<Elements> getAppDropDownItem(String dropDownItem) {
-        By appDropDown = By
-                .xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a");
+        By appDropDown = By.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownItem + "']");
         return I.amPerforming().getElementReference().forListOfElements().of(appDropDown);
     }
 
