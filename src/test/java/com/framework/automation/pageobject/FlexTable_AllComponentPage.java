@@ -2,10 +2,13 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class FlexTable_AllComponentPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
@@ -137,6 +140,72 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']/div//span/a[@title='" + button + "'] |" +
                     " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div/div[@class='" + button + "']/div/input[@id='quickSearchAllText']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertValueIsDisplayed(String usage, String dispalyedValue, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isValueDisplayedOnTable(dispalyedValue, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isValueDisplayedOnTable(dispalyedValue, tableId));
+        }
+    }
+
+    private boolean isValueDisplayedOnTable(String dispalyedValue, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div//table/tbody/tr/td/span/span[contains(text(),'" + dispalyedValue + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertOptionIsDisplayedUnderMenu(String usage, String option, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isOptionDisplayedUnderMenu(option, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isOptionDisplayedUnderMenu(option, tableId));
+        }
+    }
+
+    private boolean isOptionDisplayedUnderMenu(String option, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + option + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void clickOnMenuButton(String buttonName, String tabeleId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span/a[@title='" + buttonName + "'] |" +
+                " //div[@id='" + tabeleId + "']/div/div/span/select[@id='" + buttonName + "'] |" +
+                "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "']"));
+    }
+
+    public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isOptionsDisplyedUnderShowEntries(values, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isOptionsDisplyedUnderShowEntries(values, tableId));
+        }
+    }
+
+    private boolean isOptionsDisplyedUnderShowEntries(int values, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div/div[@class='col-md-4 col-sm-4 col-xs-4 showEntries ng-scope']//select/option"))) {
+                List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//div[@id='" + tableId + "']/div/div[@class='col-md-4 col-sm-4 col-xs-4 showEntries ng-scope']//select/option"));
+                int eleSize = elements.size();
+                Assert.assertEquals(eleSize, values);
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
