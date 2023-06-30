@@ -391,7 +391,7 @@ Business Need: customApp Component Scenarios
     Then I see govgrants logo "Current App logo" is displayed with name "Grants Portal"
 
     #### Custom App #####
-  @332530
+  @332530 @Vrushali
   Scenario: To verify, when we click on As a grantor option it should redirect on grantor portal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

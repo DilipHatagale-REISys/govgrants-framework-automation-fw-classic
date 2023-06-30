@@ -184,4 +184,19 @@ public class PhaseConfigSteps {
     public void iSeeAtInsideTaskSummaryByDueDateChart(String taskCount, String title) {
         phaseConfigPage.assertLateCountInsideTaskSummaryByDueDateChart(taskCount, title);
     }
+
+    @Then("I see option {string} on left panel")
+    public void iSeeOptionOnLeftPanel(String option) {
+        phaseConfigPage.assertOptionOnLeftPanel(option);
+    }
+
+    @Then("^I (see|do not see) single row contains single chart with width \"([^\"]*)\" or \"([^\"]*)\"$")
+    public void iSeeSingleRowContainsSingleChartWithWidthOr(String usage, String width1, String width2) {
+        phaseConfigPage.assertChartCountAvailableOnSingleRow(usage, width1, width2);
+    }
+
+    @Then("^I (see|do not see) single row contains two charts with width \"([^\"]*)\" or \"([^\"]*)\"$")
+    public void iSeeSingleRowContainsTwoChartsWithWidthOr(String usage, String width1, String width2) {
+        phaseConfigPage.assertChartCountAvailableOnSingleRow(usage, width1, width2);
+    }
 }

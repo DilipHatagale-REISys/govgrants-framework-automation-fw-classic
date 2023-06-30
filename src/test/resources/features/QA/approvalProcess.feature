@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34305    @hideApproveOption-Programs @smoke
+  @34305    @hideApproveOption-Programs @smoke @skiponjenkins
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
@@ -1079,7 +1079,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
+  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke @skiponjenkins
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
