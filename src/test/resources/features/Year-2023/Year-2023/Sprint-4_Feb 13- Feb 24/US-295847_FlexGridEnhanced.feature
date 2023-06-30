@@ -2013,8 +2013,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select value inside table "---program:-:SubawardTableIdForAdminPM---" is "5"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
 
@@ -2025,8 +2025,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select value inside table "---program:-:SubawardTableIdForSPIuser---" is "5"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForSPIuser---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForSPIuser---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForSPIuser---"
 
   @297469 @dilip
@@ -2037,8 +2037,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click on page navigation arrow "---program:-:SubawardTableIdForAdminPM---" for table id "Next"
     And I click on page navigation arrow "---program:-:SubawardTableIdForAdminPM---" for table id "Next"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see "---program:-:SubawardTableIdForAdminPM---" table contains "Page 1 of"
 
   @297470 @dilip
@@ -2048,8 +2048,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click on page navigation arrow "---program:-:SubawardTableIdForAdminPM---" for table id "Next"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see "---program:-:SubawardTableIdForAdminPM---" table contains "Page 1 of"
 
   @297471 @dilip
@@ -2059,8 +2059,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click on page navigation arrow "---program:-:SubawardTableIdForSPIuser---" for table id "Next"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForSPIuser---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForSPIuser---"
     Then I see "---program:-:SubawardTableIdForSPIuser---" table contains "Page 1 of"
 
   @297472 @dilip
@@ -2105,7 +2105,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I quick search "Vrush Application" inside table "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
     And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @297476 @dilip
@@ -2117,7 +2118,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I quick search "Vrush Application" inside table "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
     And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @297477 @dilip
@@ -2128,8 +2130,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I quick search "Vrush Application" inside table "---program:-:SubawardTableIdForSPIuser---"
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:SubawardTableIdForSPIuser---"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForSPIuser---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForSPIuser---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForSPIuser---"
 
   @297481 @dilip
@@ -2706,12 +2708,18 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @297576 @dilip
   Scenario: To verify when user changes page size to 10 and refreshes the page then records should be restored to page size to 10 (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I refresh the page
@@ -2730,11 +2738,10 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
-    When I navigate to "Component testing " sub tab
-    And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
-    And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
+    When I navigate to "Overview" sub tab
+    And I click on "View" icon in "---program:-:DataTableEnhanceTableIDforContactsTable---" flex table for "1" record
     And I click modal button "Close"
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
 
   @297578 @dilip
   Scenario: To verify when user changes page size to 10, click on row level View action and click on close icon of modal then records should be resorted to page size to 10 (PM)
