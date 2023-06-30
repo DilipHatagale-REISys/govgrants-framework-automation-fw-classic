@@ -402,7 +402,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
       | Flex Table            | Record Selection Column Header   | Demo text         | ApiGeneratedId:0 |
-      | Flex Table            | Record Selection Column Position |                   | ApiGeneratedId:1 |
+      | Flex Table            | Record Selection Column Position | None              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Record Selection Column Header   | Demo text     | Programs           | Name                      |                            |
@@ -414,7 +414,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335080 @dilip
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Record Selection Column Header   | Demo text         | ApiGeneratedId:0 |
+      | Flex Table            | Record Selection Column Position | None              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Record Selection Column Header   | Demo text     | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | None          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
@@ -1497,6 +1505,31 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     #######################Test suite: UI (Suite ID: 336192)####################
 
+  @338444 @dilip
+  Scenario: Refresh- SPI- UI- Verify if flex table is getting refreshed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Refresh" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see entire page is refreshing
+
+  @338445 @dilip
+  Scenario: Refresh- PM - UI- Verify if flex table is getting refreshed
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    When I click on "Refresh" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see entire page is refreshing
+
+  @338448 @dilip
+  Scenario: Refresh- Admin- config- Verify if flex table is getting refreshed
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    When I click on "Refresh" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see entire page is refreshing
+
   @338451 @dilip
   Scenario: Refresh- SPI- UI- Verify Refresh option is getting displayed under menu
     Given I am on "SUBPORTAL" portal
@@ -1540,3 +1573,834 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338465 @dilip
+  Scenario: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 10            | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338467 @dilip
+  Scenario: Default Page Size - PM- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 10            | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338468 @dilip
+  Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @338469 @dilip
+  Scenario: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @338471 @dilip
+  Scenario: Total Records Count- PM- UI- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
+
+  @338472
+  Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338473 @dilip
+  Scenario: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338475 @dilip
+  Scenario: Total Records Count- PM- UI- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338477 @dilip
+  Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338478 @dilip
+  Scenario: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Applications" tab
+    Then I see "---program:-:toggleFlexTableIdForAdminPM---" table contains "Page 1 of"
+
+  @338481 @dilip
+  Scenario: Pagination - PM- UI- Verify ‘Pagination’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    Then I see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
+
+  @338482 @dilip
+  Scenario: Pagination - SPI- UI- Verify ‘Pagination’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
+
+  @338489 @dilip
+  Scenario: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338490 @dilip
+  Scenario: Auto Index - PM- UI- Verify records are getting indexed under separate column (#)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338492 @dilip
+  Scenario: Auto Index - SPI- UI- Verify records are getting indexed under separate column (#)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338500 @dilip
+  Scenario: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338502 @dilip
+  Scenario: Record Selection- PM- UI- Verify ‘Record Selection Column’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338503 @dilip
+  Scenario: Record Selection- SPI- UI- Verify ‘Record Selection Column’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "1" to "7" Record Selection inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+    #############################Test suite: Export Functionality (Suite ID: 338453)#################################
+
+  @338981 @dilip
+  Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338982 @dilip
+  Scenario: Download as PDF- PM - UI- Verify Download as PDF option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338983 @dilip
+  Scenario: Download as XLS/CSV -PM- UI- Verify Download as XLS/CSV option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338984 @dilip
+  Scenario: Download as PDF- SPI - UI- Verify Download as PDF option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338949 @dilip
+  Scenario: Download as PDF - Admin - Config- Verify Download as PDF option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338951 @dilip
+  Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338952 @dilip
+  Scenario: Download as PDF - PM - UI- Verify Download as PDF option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338953 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify Download as PDF option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338954 @dilip
+  Scenario: Download as XLS/CSV - PM - UI - Verify Download as XLS/CSV option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338961 @dilip
+  Scenario: Download as XLS/CSV - SPI - UI - Verify Download as XLS/CSV option is visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338980 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify Download as PDF option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338985 @dilip
+  Scenario: Download as XLS/CSV - SPI - UI- Verify Download as XLS/CSV option is not visible on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338986 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify if we can download record details in PDF format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Grant Title" on page "1" of "govgrants" pdf file
+
+  @338987 @dilip
+  Scenario: Download as XLS/CSV - Admin- Config- Verify if we can download record details in XLS/CSV format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Grant Title" in downloaded xls or csv file "govgrants"
+
+  @338988 @dilip
+  Scenario: Download as PDF- PM- UI- Verify if we can download record details in PDF format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Grant Title" on page "1" of "govgrants" pdf file
+
+  @338989 @dilip
+  Scenario: Download as XLS/CSV - PM - UI- Verify if we can download record details in XLS/CSV format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Grant Title" in downloaded xls or csv file "govgrants"
+
+  @338990 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify if we can download record details in PDF format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Application Title" on page "1" of "govgrants" pdf file
+
+  @338991 @dilip
+  Scenario: Download as XLS/CSV - SPI - UI- Verify if we can download record details in XLS/CSV format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Application Title" in downloaded xls or csv file "govgrants"
+
+  @338999 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "EGMS ID" on page "1" of "govgrants" pdf file
+
+  @339000 @dilip
+  Scenario: Download as XLS/CSV - Admin- Config- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "EGMS ID" in downloaded xls or csv file "govgrants"
+    Then I see "Actions" in downloaded xls or csv file "govgrants"
+
+  @339003 @dilip
+  Scenario: Download as PDF- PM- UI- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "pm" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Status" on page "1" of "govgrants" pdf file
+    Then I see "Grant Title" on page "1" of "govgrants" pdf file
+    Then I see "Subrecipient" on page "1" of "govgrants" pdf file
+    Then I see "Project Period" on page "1" of "govgrants" pdf file
+    Then I see "EGMS" on page "1" of "govgrants" pdf file
+
+  @339004 @dilip
+  Scenario: Download as XLS/CSV - PM- UI- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "Project Period" in downloaded xls or csv file "govgrants"
+
+  @339001 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF)    | true              | ApiGeneratedId:1 |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)    | true              | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Skip Fields For Export | NumberofAwards__c | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "# of Subawards" on page "1" of "govgrants" pdf file
+
+  @339002 @dilip
+  Scenario: Download as XLS/CSV - Admin- Config- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export    | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export    | NumberofAwards__c | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true              | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
+
+  @339005 @dilip
+  Scenario: Download as PDF- PM- UI- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | NumberofAwards__c | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "# of Subawards" on page "1" of "govgrants" pdf file
+
+  @339006 @dilip
+  Scenario: Download as XLS/CSV - PM- UI- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | NumberofAwards__c | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
+
+  @339007 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Application Title" on page "1" of "govgrants" pdf file
+    Then I see "Funding Opportunity" on page "1" of "govgrants" pdf file
+    Then I see "Application Due" on page "1" of "govgrants" pdf file
+    Then I see "Submitted On" on page "1" of "govgrants" pdf file
+    Then I see "Owner" on page "1" of "govgrants" pdf file
+
+  @339009 @dilip
+  Scenario: Download as XLS/CSV - SPI - UI- Verify all fields are visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Application Title" in downloaded xls or csv file "govgrants"
+    Then I see "Owner" in downloaded xls or csv file "govgrants"
+
+  @339010 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF)    | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "Status" on page "1" of "govgrants" pdf file
+
+  @339011 @dilip
+  Scenario: Download as XLS/CSV - SPI- UI- Verify fields which are listed under Skip for export should not be visible in downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export    | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export    | Status__c     | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "Status" in downloaded xls or csv file "govgrants"
+
+  @339012 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify when click on download as PDF, Quick search, Advance filter and Pagination should not visible on downloaded file
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "quick search" on page "1" of "govgrants" pdf file
+    Then I cannot see "pagination" on page "1" of "govgrants" pdf file
+    Then I cannot see "Filter" on page "1" of "govgrants" pdf file
+
+  @339013 @dilip
+  Scenario: Download as XLS/CSV - Admin- Config- Verify when click on download as XLS/CSV, Quick search, Advance filter and Pagination should not visible on downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
+    Then I cannot see "filter" in downloaded xls or csv file "govgrants"
+    Then I cannot see "pagination" in downloaded xls or csv file "govgrants"
+
+  @339015 @dilip
+  Scenario: Download as PDF- PM- UI- Verify when click on download as PDF, Quick search, Advance filter and Pagination should not visible on downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "quick search" on page "1" of "govgrants" pdf file
+    Then I cannot see "pagination" on page "1" of "govgrants" pdf file
+    Then I cannot see "Filter" on page "1" of "govgrants" pdf file
+
+  @339016 @dilip
+  Scenario: Download as XLS/CSV - PM- UI- Verify when click on download as XLS/CSV, Quick search, Advance filter and Pagination should not visible on downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
+    Then I cannot see "filter" in downloaded xls or csv file "govgrants"
+    Then I cannot see "pagination" in downloaded xls or csv file "govgrants"
+    Then I softly do not see advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @339017 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify when click on download as PDF, Quick search, Advance filter and Pagination should not visible on downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF)    | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "search" on page "1" of "govgrants" pdf file
+    Then I cannot see "pagination" on page "1" of "govgrants" pdf file
+    Then I cannot see "Filter" on page "1" of "govgrants" pdf file
+
+  @339018 @dilip
+  Scenario: Download as XLS/CSV - SPI- UI- Verify when click on download as XLS/CSV, Quick search, Advance filter and Pagination should not visible on downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export    | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export    | Status__c     | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
+    Then I cannot see "filter" in downloaded xls or csv file "govgrants"
+    Then I cannot see "pagination" in downloaded xls or csv file "govgrants"
+
+@339019 @dilip
+  Scenario: Download as PDF- Admin- Config- Verify when click on download as PDF, Row level and Top level actions for flex table should not be visible under downloaded file
+  Given I have "default" configuration as below:
+    | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+    | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+  Given I setup test configuration as below:
+    | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+    | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+  When I login to "As a Grantor" app as "Admin" user
+  When I setup my app as "As a Grantor"
+  And I navigate to "Grants" tab
+  Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+  When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+  When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+  And I download the file

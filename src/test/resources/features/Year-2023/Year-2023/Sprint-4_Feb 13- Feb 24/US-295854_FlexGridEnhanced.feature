@@ -43,12 +43,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297625 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes the page size (Show entries) to 10, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 10. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -98,12 +104,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297630 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -151,12 +163,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297644 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes the page size (Show entries) to 10 and refreshes the page then table should get open on the page size (Show entries) to 10. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -203,12 +221,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297647 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes the page size (Show entries) to 20 and refreshes  the page then table should get open on the page size (Show entries) to 20. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -260,12 +284,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297667 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -315,12 +345,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297670 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Last"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -373,12 +409,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297673 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to Previous, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Previous.(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -429,12 +471,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297676 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I see "ActiveGrantsGrid_1FlexToggle" table contains "Page 1 of"
@@ -484,12 +532,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297680 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to next and refreshes the page then table should get open on the page where pagination was set to next (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -538,12 +592,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297683 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to Last and refreshes the page then table should get open on the page where pagination was set to Last.(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Last"
@@ -594,12 +654,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297686 @dilip @sprint-4 @us-295854
   Scenario: To verify when user changes pagination to Previous and refreshes the page then table should get open on the page where pagination was set to Previous (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -654,12 +720,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297689 @dilip
   Scenario: To verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -707,12 +779,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297692 @dilip
   Scenario: To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -758,12 +836,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297695 @dilip
   Scenario: To verify when user searches any value in quick search field and refreshes the page then table should show the records of Quick search results (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -806,12 +890,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297749 @dilip
   Scenario: To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -854,12 +944,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297823 @dilip
   Scenario: To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -887,12 +983,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297828 @dilip
   Scenario: To verify when sort direction of data type-Text is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Text(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -977,12 +1079,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297836 @dilip
   Scenario: To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1032,12 +1140,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297840 @dilip
   Scenario: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Picklist (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1083,12 +1197,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297844 @dilip
   Scenario: To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1136,12 +1256,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297850 @dilip
   Scenario: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Lookup (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1187,12 +1313,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297855 @dilip
   Scenario: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1234,12 +1366,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297862 @dilip
   Scenario: To verify when sort direction of data type-Number is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1281,12 +1419,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297866 @dilip
   Scenario: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1328,12 +1472,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297870 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1375,12 +1525,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297873 @dilip
   Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1428,12 +1584,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297878 @dilip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1479,12 +1641,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297882 @dilip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1525,12 +1693,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297885 @dilip
   Scenario: To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Percentage(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1572,12 +1746,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297888 @dilip
   Scenario: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1625,12 +1805,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297900 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1676,12 +1862,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297907 @dilip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1723,12 +1915,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297909 @dilip
   Scenario: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1770,12 +1968,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297913 @dilip
   Scenario: To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -1823,12 +2027,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297916 @dilip
   Scenario: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1874,12 +2084,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297919 @dilip
   Scenario: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -1959,12 +2175,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297921 @dilip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -2006,12 +2228,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297929 @dilip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -2059,12 +2287,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297932 @dilip
   Scenario: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
@@ -2112,12 +2346,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297935 @dilip
   Scenario: To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (spi)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
@@ -2167,12 +2407,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297941 @dilip
   Scenario: To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2221,12 +2467,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297945 @dilip
   Scenario: To verify when sort direction-ascending order and searched any value in Quick search and  refreshes the page then table should restore search results and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2278,12 +2530,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297949 @dilip
   Scenario: To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2335,12 +2593,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297952 @dilip
   Scenario: To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2394,12 +2658,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297956 @dilip
   Scenario: To verify when searched any value in Quick search, Pagination is changed to next and user clicks on row level view action and click on page back arrow then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2451,12 +2721,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297959 @dilip
   Scenario: To verify when searched any value in Quick search , Pagination is changed to next  and  refreshes the page then table should restore search results and Pagination ‘next’ (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -2510,12 +2786,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297964 @dilip
   Scenario: To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
@@ -2571,12 +2853,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @297994 @dilip
   Scenario: To verify when page size is 10, Pagination is changed to next and user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
@@ -2686,12 +2974,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298000 @dilip
   Scenario: To verify when Sort direction-ascending order, Pagination is changed to next and  user clicks on row level view action and click on page back arrow then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
@@ -2745,12 +3039,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298004 @dilip
   Scenario: To verify when Sort direction-ascending order and Pagination is changed to next and  refreshes the page then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -2760,12 +3060,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298005 @dilip
   Scenario: To verify when Sort direction-ascending order and  Pagination is changed to next and refreshes the page then table should restore Pagination and sorting (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
@@ -2813,12 +3119,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298008 @dilip
   Scenario: To verify when user changes page size and clicks on Reset Table then page size should set back to default value (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on menu inside "Grants - All"
@@ -2865,12 +3177,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298011 @dilip
   Scenario: To verify when user changes pagination and clicks on Reset Table then pagination should set back to default value (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     And I click on menu inside "Grants - All"
@@ -2919,12 +3237,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298015 @dilip
   Scenario: To verify when user changes sort direction and clicks on Reset Table then sort direction should set back to default value (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I pause execution for "10" seconds
@@ -2976,12 +3300,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298018 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset Table then table records should set back to default value (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -3027,12 +3357,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298021 @dilip
   Scenario: To verify when user changes page size then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     Then I can see the following message in table :
@@ -3076,12 +3412,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298024 @dilip
   Scenario:To verify when user changes pagination then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
     Then I can see the following message in table :
@@ -3125,12 +3467,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298027 @dilip
   Scenario: To verify when user changes sort direction then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I can see the following message in table :
@@ -3174,12 +3522,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298030 @dilip
   Scenario: To verify when user searches something in quick search then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I can see the following message in table :
@@ -3225,12 +3579,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298036 @dilip
   Scenario: To verify when user changes page size and clicks on Reset table then 'Table has been reset' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I click on "Reset Table" from parallel lines dropdown of Menu "Grants - All"
@@ -3299,12 +3659,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298040 @dilip
   Scenario: To verify when user changes sort direction and clicks on Reset table then 'Table has been reset' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on menu inside "Grants - All"
@@ -3354,12 +3720,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298045 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset table then 'Table has been reset' message should display (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on menu inside "Grants - All"
@@ -3369,12 +3741,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298048 @dilip
   Scenario: To verify when user changes the list view from Active to draft, changes the page size, click on All and again on draft then page size should be restored. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
@@ -3466,12 +3844,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298051 @dilip
   Scenario: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
@@ -3522,12 +3906,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298055 @dilip
   Scenario: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -3577,12 +3967,18 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
 
   @298058 @dilip
   Scenario: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
