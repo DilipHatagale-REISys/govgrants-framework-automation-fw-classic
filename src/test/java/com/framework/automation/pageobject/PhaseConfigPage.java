@@ -849,4 +849,29 @@ public class PhaseConfigPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertOptionOnLeftPanel(String option) {
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='customSidebar ng-scope']//ul//li//span[contains(text(),'" + option + "')]"));
+    }
+
+    public void assertChartCountAvailableOnSingleRow(String usage, String width1, String width2) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isChartDisplayedOnSingleRow(width1, width2));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isChartDisplayedOnSingleRow(width1, width2));
+        }
+    }
+
+
+    private boolean isChartDisplayedOnSingleRow(String width1, String width2) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='page-content-wrapper']//div[@class='row']//div[@id='charts']/div//span//div[@class='panel-body']/div/div[contains(@style,'" + width1 + "')] |" +
+                    "//div[@id='page-content-wrapper']//div[@class='row']//div[@id='charts']/div//span//div[@class='panel-body']/div/div[contains(@style,'" + width2 + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

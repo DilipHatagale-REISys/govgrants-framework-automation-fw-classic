@@ -153,9 +153,9 @@ public class UsersAndURL implements UsersController {
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "Automation@2000");
-        password.put("EXE", "FrameworkAuto@2004");
+        password.put("EXE", "FrameworkAuto@2022");
         password.put("PM", "Automation@2001");
-        password.put("FO", "Automation@2003");
+        password.put("FO", "Automation@2023");
         password.put("SPI", "AUTOMATION@2002");
         password.put("PM1", "FrameworkAuto@2024");
         if (userType.toUpperCase() != null) {
