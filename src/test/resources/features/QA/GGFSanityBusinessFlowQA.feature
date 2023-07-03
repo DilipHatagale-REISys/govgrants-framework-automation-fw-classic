@@ -49,7 +49,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
-  @1093921  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
+  @109392  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
   Scenario: validate announcement in created state
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user

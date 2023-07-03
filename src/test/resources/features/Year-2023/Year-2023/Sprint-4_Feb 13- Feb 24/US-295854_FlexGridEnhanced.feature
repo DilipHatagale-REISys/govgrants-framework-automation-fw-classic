@@ -1020,7 +1020,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1348,7 +1348,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1403,7 +1403,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1454,7 +1454,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1509,7 +1509,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1676,7 +1676,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1730,7 +1730,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1897,7 +1897,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1952,7 +1952,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2121,7 +2121,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2156,7 +2156,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2212,7 +2212,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
