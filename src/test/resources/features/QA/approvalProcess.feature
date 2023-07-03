@@ -1046,7 +1046,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0103          |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    And I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
