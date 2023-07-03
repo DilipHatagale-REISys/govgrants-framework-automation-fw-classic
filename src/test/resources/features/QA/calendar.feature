@@ -208,7 +208,7 @@ Business Need: Calender Config Component Scenarios
       | Department of Community Health |
       | {SavedValue:PT}                |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
+  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @wip
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -347,7 +347,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Today" Button at calendar
     Then I see today's Date is displayed with light pink background at calendar
 
-  @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase @skiponjenkins
+  @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user can create case and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -364,7 +364,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
 
-  @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase @skiponjenkins
+  @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user can create case with medium priority and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -381,7 +381,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
 
-  @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase @skiponjenkins
+  @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase @wip
   Scenario: validate that edit action opend in edit mode inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -400,7 +400,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "Edit" icon for "{SavedValue:savedValue}" inside table
     Then I see edit opens with "/apex/CaseEdit?Id="
 
-  @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase @skiponjenkins
+  @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user is able to edit and update existing case inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -421,7 +421,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     Then I see field "Type" as "Feature Request"
 
-  @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase @skiponjenkins
+  @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase @wip
   Scenario: validate advance filter inside 'Cases table' at home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -433,7 +433,7 @@ Business Need: Calender Config Component Scenarios
       | Subject | Starts with | Test Automation |
     Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
 
-  @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage @skiponjenkins
+  @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage @wip
   Scenario: validate assigned to field with value is displayed at cases detail page
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -446,7 +446,7 @@ Business Need: Calender Config Component Scenarios
     When I click "Nauman Shahid" lookup link
     Then I see the header is "User" in the page details
 
-  @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage @skiponjenkins
+  @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage @wip
   Scenario: validate Assign To User functionality at cases detail page
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -462,7 +462,7 @@ Business Need: Calender Config Component Scenarios
     And I save the field containing "Assigned To" as "AssignedTo"
     Then I softly see field "Assigned To" as "{SavedValue:AssignedTo}"
 
-  @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage @skiponjenkins
+  @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage @wip
   Scenario: validate by click on close case action at detail pages case should get closed
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -480,7 +480,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see "No Records Found" inside flex table with id "CaseList"
 
-  @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase @skiponjenkins
+  @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase @wip
   Scenario: validate that close case should be displayed inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -500,7 +500,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "View" icon for "{SavedValue:savedValue}" inside table
     Then I softly see field "Status" as "Closed"
 
-  @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase @skiponjenkins
+  @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase @wip
   Scenario: validate that close case should be editable inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -522,7 +522,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "Type" as "Question"
 
-  @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail @skiponjenkins
+  @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail @wip
   Scenario: validate by click at 'assigned toTier2' action, case status changes to Tier2 support
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -1047,7 +1047,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Next" navigation button at calendar
     Then I see "Next" month is displayed
 
-  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC @skipOnJenkins
+  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC @wip
   Scenario: verify user click on program ID from home phase calendar then open owner record page if Modal Page Url is provided
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1078,7 +1078,7 @@ Business Need: Calender Config Component Scenarios
     Then I see the text containing :
       | Automation PM |
 
-  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @skipOnJenkins
+  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @wip
   Scenario: verify user click on program ID from home phase calendar then open record page
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
