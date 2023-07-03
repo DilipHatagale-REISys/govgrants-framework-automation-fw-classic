@@ -896,7 +896,7 @@ Business Need: Forms Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                 | name                               |
       | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
-    When I login as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Application For Automation"
