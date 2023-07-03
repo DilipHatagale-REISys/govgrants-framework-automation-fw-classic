@@ -73,7 +73,7 @@ Business Need: Sticky Bottom Component Scenarios
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1C00000KyIeBUAV | 00515000005xr9aAAA | GNT__EnableOrgName__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1C00000KyIeBUAV | 00515000005xr9aAAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
