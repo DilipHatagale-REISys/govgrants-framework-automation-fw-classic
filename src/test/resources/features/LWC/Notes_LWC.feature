@@ -6,7 +6,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @208789 @208790 @208791 @208834 @208835 @208845
     @208810 @208813 @LWC-NotesSuit @dilip
   Scenario Outline:To verify, when the user clicks on page block shrink action button then the component gets shrunk (Admin / PM / SPI )
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -79,7 +79,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208852 @LWC-NotesSuit @dilip
   Scenario Outline: To verify 'Title' field is accepting alphanumeric and special characters as an input.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -121,7 +121,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208860 @208867 @208869 @208871 @208873 @208856 @LWC-NotesSuit @dilip
   Scenario Outline:To verify user applies font format 'Arial' on the text in description box then respective format should get apply.(Admin / PM )
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -181,7 +181,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @208875 @208877 @208879 @208881 @208883 @208885 @208887 @208889 @208891
     @208893 @208895 @208897 @208899 @208901 @208903 @275558 @LWC-NotesSuit @dilip
   Scenario Outline: To verify user applies font size 8,9,10,11,14,16,18,20,22,24,28,36,48,72 on the text in description box then respective font size should get apply.(Admin / PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -368,7 +368,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208905 @208907 @208909 @208911 @208912 @208915 @LWC-NotesSuit @dilip
   Scenario Outline:To verify user applies formatting Bold,Italic,Underline,bulletlist,Indent,Outdent on the text in description box then respective formatting should get apply.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -426,7 +426,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208917 @208919 @208921 @208932 @208934 @208938 @208939 @LWC-NotesSuit @dilip
   Scenario Outline: To verify user applies formatting Left align text,Center align text,Right align text Test on the text in description box then respective formatting should get apply.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -544,7 +544,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208941 @LWC-NotesSuit @dilip
   Scenario Outline:To verify only row level action view is visible for the user who is not record owner(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -560,7 +560,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @207396 @LWC-NotesSuit @dilip
   Scenario Outline:To verify when note is created then Title,Description,Created Date,Created By these details are showing correct.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -579,7 +579,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @207396 @LWC-NotesSuit @dilip
   Scenario Outline:To verify when note is created then Title,Description,Created Date,Created By these details are showing correct.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -598,7 +598,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @208936  @208927 @LWC-NotesSuit @dilip
   Scenario Outline: To verify user selects 'Image' then image is getting added.(Admin/PM)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

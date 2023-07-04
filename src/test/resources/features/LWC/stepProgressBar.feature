@@ -4,7 +4,7 @@ Business Need: StepProgressBar Scenarios
 
   @284374
   Scenario: To verify when user creates an internal program then 'Created' state displayed on step progress bar (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -17,7 +17,7 @@ Business Need: StepProgressBar Scenarios
 
   @284386 @284378 @284389
   Scenario: To verify when user sends program for peer review then 'Submitted for review' state displayed, To verify when reviewer reviews the program then 'Reviewed' state state displayed,when user clicks on submit for approval then 'Submitted for Approval' state displayed on step progress bar (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -72,7 +72,7 @@ Business Need: StepProgressBar Scenarios
   @284390 @284391
   Scenario: To verify when approver approves the program then 'Approved' state displayed on step progress bar (Admin/PM),
   To verify when user activates the program then 'Active' state displayed on step progress bar (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -137,7 +137,7 @@ Business Need: StepProgressBar Scenarios
 
   @284393
   Scenario: To verify when program is ended then 'Closed' state displayed on step progress bar (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -208,7 +208,7 @@ Business Need: StepProgressBar Scenarios
   @284395 @284406
   Scenario: To verify when program is rejected then 'Rejected' state displayed on step progress bar (Admin/PM),
   To verify the step progress bar is showing red in color for the steps which is rejected (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -241,7 +241,7 @@ Business Need: StepProgressBar Scenarios
   @284400 @284402 @284404
   Scenario: To verify the step progress bar is showing green in color for the steps which are completed but those are past steps (Admin/PM),
   To verify the step progress bar is showing blue in color for the step which is completed but its current/present step (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -279,7 +279,7 @@ Business Need: StepProgressBar Scenarios
 
   @284409
   Scenario: To verify when user selects future step which not completed then it shows blue in color and the current step shows white in color with border (Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -315,7 +315,7 @@ Business Need: StepProgressBar Scenarios
   Scenario: To verify text on each step shows white in color when step is completed (Admin/PM),
   To verify text on each step shows blue in color when step is not completed(Admin/PM),
   To verify for completed step white colored tick mark shows on step progress bar(Admin/PM)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

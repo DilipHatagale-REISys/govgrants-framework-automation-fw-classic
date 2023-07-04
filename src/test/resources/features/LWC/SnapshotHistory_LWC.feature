@@ -5,7 +5,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223111 @223116 @223117 @223118 @223119 @223120 @ManuallygeneratedsnapshotisdisplayedonLWCcomponent  @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario: To verify, manually generated snapshot is displayed on the LWC component
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -27,7 +27,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223112 @223113 @223114 @223115 @224128 @224131 @224130 @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:user click on submit for approval button snapshot getting generated then refresh the Aura then generated snapshot name display as expected
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -65,7 +65,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223121 @223122 @whenuserclicksonpageblockshrinkactionbuttonthenthecomponentgetsshrunk @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:when the user clicks on page block shrink action button then the component gets shrunk
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -89,7 +89,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223123 @TotalrecorddisplayasexpectedasontheUI @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:Total record display as expected as on the UI
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -117,7 +117,7 @@ Business Need: SnapshotHistory Component Scenarios
   @223125 @223126 @Whenuserlickongenaredsnapshotfileitwillbeopeninthenewtab @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:When user click on genared snapshot file it will be open in the new tab
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -171,7 +171,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @278534 @278535 @278536 @278552 @278537
   Scenario:  user click on submit for approval button snapshot getting generated then refresh the Aura then generated snapshot name display as expected
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"

@@ -1381,20 +1381,20 @@ Business Need: Approval Process Component Scenarios
 
   @148991    @verifySingleTaskIsGettingCreatedForUserInsideAssignedToMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned to me' table after record submission for approval
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
-      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                  | name                                  |
-      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                  | name                                  |
-      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
+#    Given I have "default" configuration as below:
+#      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
+#      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
+#      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                  | name                                  |
+#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
+#    Given I setup test configuration as below:
+#      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
+#      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                  | name                                  |
+#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1427,20 +1427,20 @@ Business Need: Approval Process Component Scenarios
 
   @149007    @verifySingleTaskIsGettingCreatedForUserInsideAssignedByMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned by me' table after record submission for approval
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
-      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                  | name                                  |
-      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                  | name                                  |
-      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
+#    Given I have "default" configuration as below:
+#      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
+#      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
+#      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
+#    Given I have "lightening" configuration as below:
+#      | booleanValue | integerValue | id                 | description                  | name                                  |
+#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
+#    Given I setup test configuration as below:
+#      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
+#      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
+#    And I update custom setting changes:
+#      | booleanValue | integerValue | id                 | description                  | name                                  |
+#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"

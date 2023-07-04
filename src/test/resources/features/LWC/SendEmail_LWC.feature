@@ -6,7 +6,7 @@ Business Need: SendEmailLWC Component Scenarios
   @256667 @256691 @256726 @256753 @256763 @256774 @256779 @256679 @256751 @256755
     @256765 @256775 @256727 @us-255931 @dilip
   Scenario Outline: Verify send email modal for Internal user(PM) and ADMIN user scenario's
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -82,7 +82,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256666 @256723 @256773 @256732 @256682 @256722 @256770 @256776 @us-255931 @dilip
   Scenario Outline: Verify Reply LWC modal for Internal user(PM) and ADMIN user scenario's
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -139,7 +139,7 @@ Business Need: SendEmailLWC Component Scenarios
   @256782 @256826 @256830 @256788 @256833 @256831 @256832 @256834 @256783 @256789 @256809
     @256837 @256845 @256856 @256860 @256884 @256795 @us-255931 @256858 @dilip
   Scenario Outline: Verify Send Email LWC for Internal user(PM) and ADMIN user scenario's after click on Send Button
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -218,7 +218,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256787 @256794 @256800 @256828 @256881 @256768 @256786 @256792 @us-255931 @dilip
   Scenario Outline: Verify Reply LWC modal for Internal user(PM) and ADMIN user scenario's after click on Send Button
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -291,7 +291,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223190 @223191 @223192 @223194 @223195 @223196 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values Internal, External, Groups, None for ADMIN user
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -325,7 +325,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223197 @223205 @223207 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -344,7 +344,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223199 @223207 @223211 @LWC_ID-208784 @dilip
   Scenario Outline: Verify Send Email LWC Modal dropDown values for ADMIN user for To and Cc field
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -366,7 +366,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256742 @256745 @us-255931 @dilip
   Scenario Outline: To verify, When user click on  ‘X’ action button on the send email modal then  remove the attached file from the email for admin user and PM user.
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -387,7 +387,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @257258 @257259 @us-255931 @dilip
   Scenario: To verify, IN front of  Attachment  is displayed in the grey circle when hover over on that  "File attachment" is displayed
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -404,7 +404,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @257600 @257602 @us-255931 @dilip
   Scenario Outline: To verify, Admin User try to attach the file more than 10 then  errror message is getting dispalyed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -458,7 +458,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256757 @256759 @us-255931 @dilip
   Scenario Outline: To verify, Admin User can not add the duplicate file if user can try then "File with this name already exist.' error message is displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -496,7 +496,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256746 @us-255931 @dilip
   Scenario Outline: To verify, When user click on  X action button on the send email reply modal then remove the attached file from the reply email for admin user
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -517,7 +517,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256816 @256817 @us-255931 @dilip
   Scenario Outline: To verify, Internal user can Download file by clicking on download action button in the Attachments table in front of the attached file on send email Reply  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -550,7 +550,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256891 @256892 @us-255931 @dilip
   Scenario:To verify, Admin User should not be able to see Attachment symbol when select file is not getting attached  to  send email modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -606,7 +606,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256894 @us-255931 @dilip
   Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -624,7 +624,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @256883 @256885 @us-255931 @dilip
   Scenario: To verify, Internal User should be able to see Attachment button when select file is attached  to  reply email modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -639,7 +639,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @257617 @257619 @us-255931 @dilip
   Scenario Outline: To verify, If Admin and PM try to download attach file then It will open in the new tab
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -686,7 +686,7 @@ Business Need: SendEmailLWC Component Scenarios
   @223210 @223212 @223213 @223220 @223222 @223223 @223227 @223860 @223861 @223862 @223863 @223864
   @223865 @223866 @223866 @223868 @223869 @223870 @223867 @LWC_ID-208784 @dilip
   Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -733,7 +733,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223228 @223231 @223844 @223845 @223858 @LWC_ID-208784 @dilip
   Scenario: Verify Send Email LWC Modal for ADMIN checkbox selected
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -761,7 +761,7 @@ Business Need: SendEmailLWC Component Scenarios
   @223848 @223849  @223850 @223851 @223852 @223853 @223847 @LWC_ID-208784 @dilip
   Scenario: send email-User send email with multiple Email addresses are separated by Comma (,) TO Field, Cc field,User Click on Reply LWC action then Reply LWC modal is displayed, User Click on View  LWC action then View LWC modal is displayed,
   User send email with Internal email ID's in TO &CC field, User send email with multiple Email addresses are separated by Comma (,) TO Field, User send email with multiple Email addresses are separated by Comma (,) CC Field, To verify , User send the email with multiple email address in TO field
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -829,7 +829,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223214 @223215 @223217 @223218 @LWC_ID-208784 @dilip
   Scenario Outline: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -873,7 +873,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223219 @223207 @LWC_ID-208784 @dilip
   Scenario: When User check the checkbox for  the group  from dropdown then internal &External  field is getting hidden from CC field
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -892,7 +892,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @223846 @LWC_ID-208784 @dilip
   Scenario: User send email without filling subject field then error message should displayed on the modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -910,7 +910,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296099 @lwcsmoke @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -945,7 +945,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296101 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -979,7 +979,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296102 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1012,7 +1012,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296103 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1045,7 +1045,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296108 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1079,7 +1079,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296109 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1112,7 +1112,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296110 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal   user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1146,7 +1146,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296118 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1201,7 +1201,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296125 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario:To verify , When Internal user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1242,7 +1242,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296126 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1283,7 +1283,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296127 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal  user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1323,7 +1323,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296128 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When   user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1363,7 +1363,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296129 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal   user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1404,7 +1404,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296130 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1445,7 +1445,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296131 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify, When Internal user sends an Email with an Multiple  file  from TO (Group) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1514,7 +1514,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296133 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When  user sends an Email with an Multiple file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1557,7 +1557,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296134 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal  user sends an Email with an Multiple file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1600,7 +1600,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296135 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When Internal  user sends an Email with an  file from TO &  CC(Internal) field then attached file is displayed on the View & Send modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1637,7 +1637,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296136 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When user sends an Email with an file from TO &  CC(Internal) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1674,7 +1674,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296137 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify , When   user sends an Email with an Multiple file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send  modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1716,7 +1716,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296138 @296141 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When Internal user sends an Email with an Multiple file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send  modal
   To verify , When  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1762,7 +1762,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296139 @296140 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline:To verify , When Internal user sends an Email with an  file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send modal,
   To verify , When user sends an Email with an  file  from TO & CC (Internal/External) field then attached file is displayed on the View & Send modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1801,7 +1801,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296142 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When internal  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1848,7 +1848,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296143 @296144 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When internal  user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal,
   To verify , When internal Internal user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1890,7 +1890,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296145 @296146 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When Internal user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal,
   To verify , When user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1936,7 +1936,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296147 @296148 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send modal,
   To verify , When Internal user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1975,7 +1975,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296168 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline: To verify , When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2013,7 +2013,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296224 @296225 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario:To verify, On reply modal user(Admin) are attached the file,To verify, On reply modal user(Admin) are attached the multiple  file
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2082,7 +2082,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296226 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify, On reply modal Internal user(PM) are attached the multiple  file
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2128,7 +2128,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296807 @296809 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario: To verify, Internal user are remove the select file  from  reply  email modal,To verify, user are remove the select file from reply email modal
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2200,7 +2200,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296816 @296817 @SendEmailSelectFile(Suitid:294113) @dilip
   Scenario Outline:To verify ,Internal user are remove the select file  from  send  email modal,To verify user are remove the select file  from  send  email modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2239,7 +2239,7 @@ Business Need: SendEmailLWC Component Scenarios
   @298559 @298560 @298563 @298564 @SendEmail-UI/UX(SuiteID:298512) @dilip
   Scenario Outline:UI - when Internal user Hover on the TO field help icon and help text is displayed,when user Hover on the TO field help icon and help text is displayed,
   when  user Hover on the  CC field help icon and help text is displayed,when Internal user Hover on the  CC field help icon and help text is displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2286,7 +2286,7 @@ Business Need: SendEmailLWC Component Scenarios
   @298566 @298567 @SendEmail-UI/UX(SuiteID:298512) @dilip
   Scenario Outline: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed,
   when  Internal user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2323,7 +2323,7 @@ Business Need: SendEmailLWC Component Scenarios
   UI - when Internal user Hover on the Body Content  field help icon and help text is displayed,
   UI - when Internal user Hover on the Attachments field help icon and help text is displayed,
   UI - when  user Hover on the Attachments field help icon and help text is displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2388,7 +2388,7 @@ Business Need: SendEmailLWC Component Scenarios
   UI - when Internal  user Hover on the Select file field help icon and help text is displayed,
   UI - Required to save fields  (*)  is displayed for admin user,
   UI - Required to save fields  (*)  is displayed for Internal user
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2420,7 +2420,7 @@ Business Need: SendEmailLWC Component Scenarios
   To verify,Internal User send the email from TO & CC field as 'internal',
   To verify,Internal User send the email from TO & CC field as 'External',
   To verify,Internal User send the email from TO & CC field as 'Group'
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2492,7 +2492,7 @@ Business Need: SendEmailLWC Component Scenarios
   @294828 @294129 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When user sends an Email with an Attachment  from TO (internal) field,
   To verify , When Internal user sends an Email with an Attachment  from TO (internal) field
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2534,7 +2534,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @294137 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario: To verify , When user sends an Email with an Attachment  from TO (External) field
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2553,7 +2553,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @294139 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When Internal  user sends an Email with an Attachment  from TO (External) field
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2575,7 +2575,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @294141 @294143 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When Internal  user sends an Email with an Attachment  from TO (Group) field,To verify , When  user sends an Email with an Attachment  from TO (Group) field
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2597,7 +2597,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @294147 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario: To verify , When  user sends an Email with an Attachment  from TO (Group) field then attached file is displayed on the View modal
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2629,7 +2629,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @294150 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline:To verify,When Internal user sends an Email with an Attachment from TO (Group)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2651,7 +2651,7 @@ Business Need: SendEmailLWC Component Scenarios
   @294151 @294152 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline:To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal,
   To verify , When  Internal user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2711,7 +2711,7 @@ Business Need: SendEmailLWC Component Scenarios
   @294159 @294161 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal,
   To verify , When  Internal user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2739,7 +2739,7 @@ Business Need: SendEmailLWC Component Scenarios
   @294163 @294166 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal,
   To verify , When  Internal user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2769,7 +2769,7 @@ Business Need: SendEmailLWC Component Scenarios
   @294168 @294171 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When  user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal,
   To verify , When Internal user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2800,7 +2800,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296234 @296235 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal,
   To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2860,7 +2860,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296244 @296245 @SendEmailAttachment(SuiteID:294112) @dilip
   Scenario Outline: To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section,
   To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -2914,7 +2914,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296257 @296259
   Scenario Outline: To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section,
   To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2951,7 +2951,7 @@ Business Need: SendEmailLWC Component Scenarios
 
   @296773
   Scenario: To verify, user are remove the attachment from  sends email modal
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2979,7 +2979,7 @@ Business Need: SendEmailLWC Component Scenarios
   @296526 @296535
   Scenario Outline:To verify, When user sends an Email with an attachment from then attachment is displayed in the outlook,
   To verify , When  Internal user sends an Email with an attachment  from then attachment is displayed in the outlook
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
