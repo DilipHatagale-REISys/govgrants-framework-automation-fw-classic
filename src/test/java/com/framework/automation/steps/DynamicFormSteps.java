@@ -107,7 +107,8 @@ public class DynamicFormSteps {
                 " //div[@class='container-fluid ng-scope']//span[text()='" + text + "'] |" +
                 " //div[@id='ActiveGrantsGrid_1FlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
                 " //div[@id='ActiveGrantsGridFlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
-                " //div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div/div//div//div/span[contains(text(),'" + text + "')]"));
+                " //div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div/div//div//div/span[contains(text(),'" + text + "')] |" +
+                " //div[@id='ActiveGrantsGridFlexToggle']/ancestor::div[@class='col-md-12']//span[contains(text(),'" + text + "')]"));
     }
 
     @And("I click on {string} icon in flex table for first draft record")

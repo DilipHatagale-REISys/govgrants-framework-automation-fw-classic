@@ -2389,18 +2389,172 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I cannot see "filter" in downloaded xls or csv file "govgrants"
     Then I cannot see "pagination" in downloaded xls or csv file "govgrants"
 
-@339019 @dilip
+  @339019 @dilip
   Scenario: Download as PDF- Admin- Config- Verify when click on download as PDF, Row level and Top level actions for flex table should not be visible under downloaded file
-  Given I have "default" configuration as below:
-    | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-    | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
-  Given I setup test configuration as below:
-    | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
-  When I login to "As a Grantor" app as "Admin" user
-  When I setup my app as "As a Grantor"
-  And I navigate to "Grants" tab
-  Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-  When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-  When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-  And I download the file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+
+  @339020 @dilip
+  Scenario: Download as XLS/CSV - Admin- Config- Verify when click on download as XLS/CSV, Row level and Top level actions for flex table should not be visible under downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)       | true          | ActiveGrants          | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+
+  @339021 @dilip
+  Scenario: Download as PDF- PM- UI- Verify when click on download as PDF, Row level and Top level actions for flex table should not be visible under downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+
+  @339022 @dilip
+  Scenario: Download as XLS/CSV - PM- UI- Verify when click on download as XLS/CSV, Row level and Top level actions for flex table should not be visible under downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)       | true          | ActiveGrants          | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+
+  @339023 @dilip
+  Scenario: Download as PDF- SPI- UI- Verify when click on download as PDF, Row level and Top level actions for flex table should not be visible under downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+
+  @339024 @dilip
+  Scenario: Download as XLS/CSV - SPI- UI- Verify when click on download as XLS/CSV, Row level and Top level actions for flex table should not be visible under downloaded file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)       | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+
+  @339025 @dilip
+  Scenario: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "$249,000.00" on page "3" of "govgrants" pdf file
+
+########################Test suite: Help Config (Suite ID: 338447)###################################
+
+  @339448 @dilip
+  Scenario: Associate Help Config- Admin- Config- Verify if admin can associate help config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "ActiveGrantstooltip" icon
+    And I pause execution for "10" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @339450 @dilip
+  Scenario: Create Help Config- Admin- Config- Verify if admin can configure new help config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "ActiveGrantstooltip" icon
+    And I pause execution for "10" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @339451 @dilip
+  Scenario: Help Config- SPI- UI- Verify if we are able to find help text under help option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "GrantsListtooltip" icon
+    Then I see "Help text for Automation" shown as help text
+

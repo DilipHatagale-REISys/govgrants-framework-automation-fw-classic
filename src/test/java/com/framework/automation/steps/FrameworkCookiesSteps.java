@@ -87,12 +87,17 @@ public class FrameworkCookiesSteps {
 
     @And("I click on {string} from parallel lines dropdown of Menu {string}")
     public void iClickOnFromParallelLinesDropdownOf(String action, String tableId) {
-        frameworkCookiesPage.iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(action,tableId);
+        frameworkCookiesPage.iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(action, tableId);
     }
 
     @Then("^I (see|do not see) list view \"([^\"]*)\" displayed inside table \"([^\"]*)\"$")
     public void iSeeListViewDisplayedInsideTable(String usage, String listViewName, String tableId) {
 
+    }
+
+    @And("I click on \"([^\"]*)\" button inside tabel header \"([^\"]*)\"$")
+    public void iClickOnButtonInsideTabelHeader(String button, String tableHeader) {
+        frameworkCookiesPage.iClickOnCloseButtonWithHeader(button, tableHeader);
     }
 }
 

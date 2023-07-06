@@ -5,60 +5,60 @@ Business Need: Send Email Component Scenarios
 
   @69004 @validateDisplayOfAttachmentComponentInSendEmailModal
   Scenario: Enabling Attachment section from custom metadata config and validating display of attachments in send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see Attachment section is displayed under send email modal
 
   @69005 @validateDisplayOfToEmailvalidationMessageInSendEmailModal
   Scenario: Validate if email id not associated with contact/user is entered then alert message is displayed on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o8QAA | EnableEmailValidation | true         | GNT__KeyValueHolder__mdt |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o8QAA | EnableEmailValidation | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o8QAA | EnableEmailValidation | true         | GNT__KeyValueHolder__mdt |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o8QAA | EnableEmailValidation | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "testautomation@gmail.com" into field "{testData:ToField}" on send email modal
@@ -69,24 +69,24 @@ Business Need: Send Email Component Scenarios
 
   @69092 @validateIfInternalCheckboxCheckedAtToFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If internal checkbox is checked at To Field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -95,24 +95,24 @@ Business Need: Send Email Component Scenarios
 
   @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -121,24 +121,24 @@ Business Need: Send Email Component Scenarios
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
   Scenario: Validate If Group checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -148,24 +148,24 @@ Business Need: Send Email Component Scenarios
 
   @69214 @validateIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -174,24 +174,24 @@ Business Need: Send Email Component Scenarios
 
   @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If External checkbox is checked At CC Field then only external user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -200,24 +200,24 @@ Business Need: Send Email Component Scenarios
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate If Internal+ External checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -230,30 +230,30 @@ Business Need: Send Email Component Scenarios
 
   @69090 @validateIfAttachmentUploadedAndEmailSendThenEmailIsSentWithUploadedFile
   Scenario: Validate If attachment uploaded and email is send then email is sent with uploaded attachment under send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                 | booleanValue | customMetaDataApiName    |
-      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                 | booleanValue | customMetaDataApiName    |
+#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "Test automation mail subject 1" inside table
@@ -269,24 +269,24 @@ Business Need: Send Email Component Scenarios
 
   @81106 @validateAtReplyModalIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "reply" icon for "Test automation mail subject 1" inside table
@@ -296,24 +296,24 @@ Business Need: Send Email Component Scenarios
 
   @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
@@ -323,24 +323,24 @@ Business Need: Send Email Component Scenarios
 
   @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
@@ -354,24 +354,24 @@ Business Need: Send Email Component Scenarios
 
   @89268 @validateTheItemsPresentInSearByFieldDropDownAtTOEmailFieldAtSendEmailModal @sendEmail
   Scenario: Validate the options present under search by field dropdown at TO email field at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field
@@ -381,24 +381,24 @@ Business Need: Send Email Component Scenarios
 
   @89269 @validateTheItemsPresentInSearByFieldDropDownAtCCEmailFieldAtSendEmailModal @sendEmail
   Scenario: Validate the options present under search by field dropdown at CC email field at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field
@@ -408,26 +408,26 @@ Business Need: Send Email Component Scenarios
 
   @89615 @validateEmailSubjectWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
   Scenario: Validate special characters present under subject in sent email view modal are displayed properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -446,26 +446,26 @@ Business Need: Send Email Component Scenarios
 
   @89619 @validateEmailBodyWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
   Scenario: Validate special characters present under body in sent email view modal are displayed properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -483,26 +483,26 @@ Business Need: Send Email Component Scenarios
 
   @89617 @validateReplyEmailSubjectAndBodyWithSpecialCharacterIsShownProperlyInReplyEmailViewModal @sendEmail
   Scenario: Validate special characters present under body and subject in reply mail on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "test@123.com" into field "{testData:ToField}" on send email modal
@@ -525,24 +525,24 @@ Business Need: Send Email Component Scenarios
 
   @89743 @validateReplyModalTitleAtSendEmail @sendEmail
   Scenario: Validate reply modal title at send email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "reply" icon for "Test automation mail subject 1" inside table
@@ -550,24 +550,24 @@ Business Need: Send Email Component Scenarios
 
   @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
   Scenario: Validate that attached file is deleted successfully by click on cross icon at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -580,24 +580,24 @@ Business Need: Send Email Component Scenarios
 
   @89677 @validateThatFileIsDeletedSuccessfullyFromMultipleFilesByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
   Scenario: Validate that attached file is deleted successfully from multiple uploaded file by click on cross icon at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -613,24 +613,24 @@ Business Need: Send Email Component Scenarios
 
   @90397 @validateDisplayOfRequiredFieldvalidationMessageInSendEmailModal @sendEmail
   Scenario: Validate if required field value is not entered and click on save then alert message is displayed on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
@@ -640,24 +640,24 @@ Business Need: Send Email Component Scenarios
 
   @90390 @validateToEmailSuggestionBoxSizeIfGreaterThan5RecordAreSuggestedInSendEmailModal @sendEmail @needToUpdateLogic
   Scenario: Validate suggested email's box size at To field if more than 5 records are suggested inside send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -666,24 +666,24 @@ Business Need: Send Email Component Scenarios
 
   @90388 @validateToEmailSuggestionBoxSizeIfLessThan5RecordAreSuggestedInSendEmailModal @sendEmail
   Scenario: Validate suggested email's box size at To field if less than 5 records are suggested inside send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -692,24 +692,24 @@ Business Need: Send Email Component Scenarios
 
   @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
   Scenario: Validate if reply email is sent then alert message is displayed on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -738,24 +738,24 @@ Business Need: Send Email Component Scenarios
 
   @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
@@ -763,24 +763,24 @@ Business Need: Send Email Component Scenarios
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "reply" icon for "Test automation mail subject 1" inside table
@@ -788,24 +788,24 @@ Business Need: Send Email Component Scenarios
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for IST time zone
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "timeZoneLocale" configuration as below:
-      | locale | timeZone         |
-      | en_US  | America/New_York |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update the locale and timezone related changes:
-      | locale | timeZone     |
-      | en_IN  | Asia/Kolkata |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "timeZoneLocale" configuration as below:
+#      | locale | timeZone         |
+#      | en_US  | America/New_York |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update the locale and timezone related changes:
+#      | locale | timeZone     |
+#      | en_IN  | Asia/Kolkata |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1 " in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1 " inside table
@@ -813,24 +813,24 @@ Business Need: Send Email Component Scenarios
 
   @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EDT time zone
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "timeZoneLocale" configuration as below:
-      | locale | timeZone         |
-      | en_US  | America/New_York |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update the locale and timezone related changes:
-      | locale | timeZone         |
-      | en_CA  | America/New_York |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "timeZoneLocale" configuration as below:
+#      | locale | timeZone         |
+#      | en_US  | America/New_York |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update the locale and timezone related changes:
+#      | locale | timeZone         |
+#      | en_CA  | America/New_York |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
@@ -838,24 +838,24 @@ Business Need: Send Email Component Scenarios
 
   @101042 @validateSentDateOfEmailInESTModeAtSendEmailModal
   Scenario: Validate send date of an email on send email modal for EST time zone
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I have "timeZoneLocale" configuration as below:
-      | locale | timeZone         |
-      | en_US  | America/New_York |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    And I update the locale and timezone related changes:
-      | locale | timeZone       |
-      | en_US  | America/Panama |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I have "timeZoneLocale" configuration as below:
+#      | locale | timeZone         |
+#      | en_US  | America/New_York |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    And I update the locale and timezone related changes:
+#      | locale | timeZone       |
+#      | en_US  | America/Panama |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "view" icon for "Test automation mail subject 1" inside table
@@ -863,60 +863,60 @@ Business Need: Send Email Component Scenarios
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see select files section is displayed under send email modal
 
   @102059 @validateSelectFilesComponentIsNotDisplayedWhenCheckboxIsUncheckedInCustomMetadataInSendEmailModal  @needManagedAPI @wip
   Scenario: disabling select files section from custom metadata config and validating display of attachments in send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZZKQA4 | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZZKQA4 | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZZKQA4 | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZZKQA4 | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I do not see select files section is displayed under send email modal
@@ -941,12 +941,12 @@ Business Need: Send Email Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label                          | booleanValue | customMetaDataApiName    |
       | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -972,12 +972,12 @@ Business Need: Send Email Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label                          | booleanValue | customMetaDataApiName    |
       | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -986,30 +986,30 @@ Business Need: Send Email Component Scenarios
 
   @102237 @validateThatFileUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInEditMode
   Scenario: validate that file uploaded from select files section in send email modal in view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1021,30 +1021,30 @@ Business Need: Send Email Component Scenarios
 
   @102238 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtSelectectFileInSendEmailModal @sendEmail
   Scenario: Validate that selected file is deleted successfully by click on cross icon at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1058,32 +1058,32 @@ Business Need: Send Email Component Scenarios
 
   @102239 @validateThatFileUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInViewMode
   Scenario: validate that file uploaded from select files section in send email modal in view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -1118,24 +1118,24 @@ Business Need: Send Email Component Scenarios
 
   @101273 @SentDateOfEmailAtSendEmailModalForNewlyCreatedRecord
   Scenario: Validate send date of an email on send email modal for newly created record
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "DND Email Created To Check Date" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "DND Email Created To Check Date" inside table
@@ -1155,60 +1155,60 @@ Business Need: Send Email Component Scenarios
 
   @102240 @validateDisplayOfHypelinkInsertedAtSelectFileSectionWhileSendingEmil @wip @functionalityDeprecated
   Scenario: Validate if email is sent by inserting link then a hyperlink is displayed inside message table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Email Created To Check Attached File Link" in "---program:-:communicationHistoryTableId---" panel
     Then I see hyperlink at column value "ProgramRecordDoNotDelete.png" inside "---program:-:communicationHistoryTableId---" table
 
   @104344 @validateDisplayOfSelectFilesComponentInSendEmailModalAtReply
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal at reply
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Temp Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Temp Record" inside table
@@ -1216,34 +1216,34 @@ Business Need: Send Email Component Scenarios
 
   @104330 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtReplyModal
   Scenario: validate hyperlink is displayed for the selected linked file name inside body at reply modal window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -1272,30 +1272,30 @@ Business Need: Send Email Component Scenarios
 
   @104328 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtViewModal
   Scenario: validate hyperlink is displayed for the selected linked file name inside body at view modal window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Temp Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "Temp Record" inside table
@@ -1303,26 +1303,26 @@ Business Need: Send Email Component Scenarios
 
   @116303 @validateIfOneMailIdIsRemovedFromReplyEmailToFieldThenEmailSentSuccessfullyOnIt
   Scenario: Validate if one email id is removed from reply modal TO field then email sent successfully
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "test@123.com;test@gmail.com" into field "{testData:ToField}" on send email modal
@@ -1344,26 +1344,26 @@ Business Need: Send Email Component Scenarios
 
   @116290 @validateNameIsDisplayedForExternalUserSelectedInToFieldInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field then name of user is displayed in view modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -1380,25 +1380,25 @@ Business Need: Send Email Component Scenarios
 
   @116243 @validateNameIsDisplayedForSelectedUserInToFieldAtReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field at reply email then name of user is displayed in view modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -1427,26 +1427,26 @@ Business Need: Send Email Component Scenarios
 
   @116299 @validateGroupNameIsDisplayedForSelectedGroupInToAndCCFieldAtViewAndReplyMailWhenOpenInViewMode  @wip @BugLogged_161456
   Scenario: Validate if group is selected in TO field at email and reply email modal then name of group is dsplayed in view modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -1480,23 +1480,23 @@ Business Need: Send Email Component Scenarios
 
   @116300 @validateToAndCCUserNameIsDisplayedInsideBodyFieldAtViewAndReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate that TO and CC email displayed properly inside body field at reply and email modal in view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Collab" sub tab
@@ -1530,26 +1530,26 @@ Business Need: Send Email Component Scenarios
 
   @116304 @validateIfUserRemovesNameFromToEmailThenAutoSuggestionBoxDisappearsFromToEmailField @needToUpdate
   Scenario: Validate if user remove name from To email and keep the To email field blank then auto suggestion box disappears
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -1561,26 +1561,26 @@ Business Need: Send Email Component Scenarios
 
   @118790 @validateEmailIsSentSuccessfullyToMultipleGroupsAndIsDisplayedInToFieldAtSendEmailModal
   Scenario: Validate if multiple group is selected in TO field at email modal then email sent successfully and name displayed
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -1592,34 +1592,34 @@ Business Need: Send Email Component Scenarios
 
   @121365 @validateThatMultipleFilesUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInEditMode
   Scenario: validate that multiple files uploaded from select files section in send email modal in view mode
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -1644,7 +1644,7 @@ Business Need: Send Email Component Scenarios
 
   @125698    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForAdminUser
   Scenario: validate Email Template rendering with body content at send invitation modal for admin user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
@@ -1662,7 +1662,7 @@ Business Need: Send Email Component Scenarios
   @126472    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForExternalUser
   Scenario: validate Email Template rendering with body content at send invitation modal for external user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "HOME" tab
     When I navigate to "Organization Profile" content inside "Activities" subheader on left panel
     When I navigate to "Overview" sub tab
@@ -1685,7 +1685,7 @@ Business Need: Send Email Component Scenarios
 
   @126469    @validateEmailTemplateRenderingInsideBodyContentAtSendInvitationModalWindowForInternalUser
   Scenario: validate Email Template rendering with body content at send invitation modal for internal user
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
@@ -1702,26 +1702,26 @@ Business Need: Send Email Component Scenarios
 
   @147248  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as bold text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1735,26 +1735,26 @@ Business Need: Send Email Component Scenarios
 
   @147282  @verifyTextInsideCkEditorInputBoxIsDisplayedAsItalicInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as italic text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1768,26 +1768,26 @@ Business Need: Send Email Component Scenarios
 
   @147285  @verifyTextInsideCkEditorInputBoxIsDisplayedAsUnderlineInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as underline text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1801,26 +1801,26 @@ Business Need: Send Email Component Scenarios
 
   @147288  @verifyTextInsideCkEditorInputBoxIsDisplayedAsStrikeThroughInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as Strike Through text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1834,26 +1834,26 @@ Business Need: Send Email Component Scenarios
 
   @147301  @verifyTextInsideCkEditorInputBoxIsDisplayedAsplainTextInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as plain text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1868,26 +1868,26 @@ Business Need: Send Email Component Scenarios
 
   @147337  @verifyTextInsideCkEditorInputBoxIsDisplayedAsNumberedListInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as "Numbered List" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1901,26 +1901,26 @@ Business Need: Send Email Component Scenarios
 
   @147358  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsNumberedListButAsNormalInsideSendEmailModal
   Scenario: validate text inside ck editor input box is not displayed as "Numbered List" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1935,26 +1935,26 @@ Business Need: Send Email Component Scenarios
 
   @147455  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBulletedListInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as "Bulleted List" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1968,26 +1968,26 @@ Business Need: Send Email Component Scenarios
 
   @147374  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsBulletedListButAsNormalInsideSendEmailModal
   Scenario: validate text inside ck editor input box is not displayed as "Bulleted List" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2002,26 +2002,26 @@ Business Need: Send Email Component Scenarios
 
   @147909  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBlockQuoteInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as "Block Quote" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2035,26 +2035,26 @@ Business Need: Send Email Component Scenarios
 
   @147374  @verifyTextInsideCkEditorInputBoxIsNotDisplayedAsBlockQuoteButAsNormalInsideSendEmailModal @wip
   Scenario: validate text inside ck editor input box is not displayed as "Block Quote" text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2068,33 +2068,33 @@ Business Need: Send Email Component Scenarios
 
   @149357 @validateThatFilesUploadedFromSelectFileSectionIsDisplayedIntoToReceiversEmail
   Scenario: validate that files uploaded from select files section is displayed in to receivers email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    And I update custom metadata setting changes:
-      | id                 | label                          | booleanValue | customMetaDataApiName    |
-      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    And I update custom metadata setting changes:
+#      | id                 | label                          | booleanValue | customMetaDataApiName    |
+#      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -2115,7 +2115,7 @@ Business Need: Send Email Component Scenarios
     And I pause execution for "10" seconds
     When I close modal by clicking the top right x button
     And I pause execution for "5" seconds
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
@@ -2130,24 +2130,24 @@ Business Need: Send Email Component Scenarios
 
   @150755 @SendCopyCCToMeFieldIsPresentOnModalWhileSendingEmail
   Scenario: Validate display of "Send Copy (Cc) to Me" field on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see the text :
@@ -2156,24 +2156,24 @@ Business Need: Send Email Component Scenarios
 
   @150757 @verifyHelpTextAtSendCopyCCToMeFieldIsPresentOnModalWhileSendingEmail
   Scenario: Validate display help text at "Send Copy (Cc) to Me" field on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hovering mouse on help text icon at "{testData:SendCopyCheckbox}" inside send email modal
@@ -2181,24 +2181,24 @@ Business Need: Send Email Component Scenarios
 
   @150758 @verifyIfSendCopyCCToMeFieldIsCheckedThenLoggedInUserMilIdIsDisplayedInCCField
   Scenario: Validate display help text at "Send Copy (Cc) to Me" field on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "ashwinimahore456@gmail.com" into field "{testData:ToField}" on send email modal
@@ -2210,7 +2210,7 @@ Business Need: Send Email Component Scenarios
 
   @147387    @validateSingleAttachmentCanBeAttachedAtSendInvitationModalForAdminUser
   Scenario: validate single attachment can be attached at send invitation modal for admin user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
@@ -2225,7 +2225,7 @@ Business Need: Send Email Component Scenarios
 
   @155307    @validateToEmailIsAutoPopulatedAtSendInvitationModalWindowForAdminUser
   Scenario: validate To email field value is auto populated at send invitation modal for admin user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
@@ -2238,26 +2238,26 @@ Business Need: Send Email Component Scenarios
 
   @141604    @validateSuccessMsgDisplayedBySendingEmailSuccessFullyByLoginAsAdminUser
   Scenario: validate success msg displayed by sucessfully sending of email by admin user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "test@gmail.com" into field "{testData:ToField}" on send email modal
@@ -2269,26 +2269,26 @@ Business Need: Send Email Component Scenarios
 
   @159444 @validateAttentionToFieldValueAtSendEmailMessageTable
   Scenario: Validate Attention To field at reply email inside message table at send email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2310,26 +2310,26 @@ Business Need: Send Email Component Scenarios
 
   @163532 @ValidateUserSelectInternalToFieldItShowActiveInternalUserWithStandardUser
   Scenario: Validate User Select Internal To Field It Show Active Internal User With Standard User
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2340,26 +2340,26 @@ Business Need: Send Email Component Scenarios
 
   @163533 @ValidateUserSelectInternalCcFieldItShowActiveInternalUserWithStandardUser
   Scenario: Validate User Select Internal Cc Field It Show Active Internal User With Standard User
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -2370,26 +2370,26 @@ Business Need: Send Email Component Scenarios
 
   @163534 @ValidateUserSelectInternalToFieldItShowActiveInternalUserWithStandardUserAndShowContactOfUser
   Scenario: Validate User Select Internal To Field It Show Active Internal User With Standard User And Show Contact Of User
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2401,26 +2401,26 @@ Business Need: Send Email Component Scenarios
 
   @163535 @ValidateUserSelectInternalCcFieldItShowActiveInternalUserWithStandardUserAndShowContactOfUser
   Scenario: Validate User Select Internal Cc Field It Show Active Internal User With Standard User And Show Contact Of User
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -2432,26 +2432,26 @@ Business Need: Send Email Component Scenarios
 
   @161867 @ValidateUserSendEmailWithMultipleEmailAddressesAreSeparatedBySemicolon
   Scenario: Validate User Send Email With Multiple Email Addresses Are Separated By Semicolon
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2463,26 +2463,26 @@ Business Need: Send Email Component Scenarios
 
   @161872 @ValidateUserRplyToAnEmailFromCollabTabSendEmailSubjectLineStartWithRe
   Scenario: Validate User Rply To An Email From Collab Tab Send Email Subject Line Start With Re
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2499,25 +2499,25 @@ Business Need: Send Email Component Scenarios
 
   @161998  @verifyForThePlanningPhaseInMyFeedSectionToThisProgramIsDispalyOnCollabTab   @abhishekS
   Scenario: Validate that in planning phase in my feed section text To this program is display
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     Then I softly see the text containing :
@@ -2526,26 +2526,26 @@ Business Need: Send Email Component Scenarios
 
   @161870  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedByComma    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by comma
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2558,26 +2558,26 @@ Business Need: Send Email Component Scenarios
 
   @161871  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySpace    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by space
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2590,26 +2590,26 @@ Business Need: Send Email Component Scenarios
 
   @164064  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySemicolon    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by Semicolon for TO and cc
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2624,26 +2624,26 @@ Business Need: Send Email Component Scenarios
 
   @164262 @ValidateUserSendEmailWithMultipleEmailAddressAreSeparatedByCommaTo&CcField @vaibhavC
   Scenario: Validate User Send Email With Multiple Email Address Are Separated By Comma To & Cc Field
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2657,26 +2657,26 @@ Business Need: Send Email Component Scenarios
 
   @164271 @ValidateUserSendEmailWithMultipleEmailAddressAreSeparatedBySpaceTo&CcField @vaibhavC
   Scenario: Validate User Send Email With Multiple Email Address Are Separated By Space To & Cc Field
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2690,30 +2690,30 @@ Business Need: Send Email Component Scenarios
 
   @169516 @tejal
   Scenario: verify,User send the email from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -2752,28 +2752,28 @@ Business Need: Send Email Component Scenarios
 
   @169519 @tejal
   Scenario: verify User send the email from TO&CC field as 'Group' with multiple attachment and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -2803,28 +2803,28 @@ Business Need: Send Email Component Scenarios
 
   @169499 @tejal
   Scenario: verify,User send the email from TO &CC field as 'internal&external' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -2855,28 +2855,28 @@ Business Need: Send Email Component Scenarios
 
   @169495 @tejal
   Scenario: verify,User send the email from TO  & CC field as 'Group' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -2906,28 +2906,28 @@ Business Need: Send Email Component Scenarios
 
   @169493 @tejal
   Scenario: verify,User send the email from TO &CC field as 'External' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -2957,28 +2957,28 @@ Business Need: Send Email Component Scenarios
 
   @169491 @tejal
   Scenario: verify User send the email from TO&CC  field as 'internal' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3006,30 +3006,30 @@ Business Need: Send Email Component Scenarios
 
   @169289 @tejal
   Scenario: verify User send the email from TO field as 'Group' with multiple attachment & files  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3082,28 +3082,28 @@ Business Need: Send Email Component Scenarios
 
   @169263 @tejal
   Scenario: Verify User send the email from TO field as 'internal' with attachment  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3130,28 +3130,28 @@ Business Need: Send Email Component Scenarios
 
   @169286 @tejal
   Scenario: Verify User send the email from TO field as 'Group' with multiple attachment and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3180,30 +3180,30 @@ Business Need: Send Email Component Scenarios
 
   @169287 @tejal
   Scenario: Verify User send the email from TO field as 'Group' with multiple files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3252,30 +3252,30 @@ Business Need: Send Email Component Scenarios
 
   @169527 @tejal
   Scenario: Verify User send the email from TO&CC field as 'Group' with multiple files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3327,30 +3327,30 @@ Business Need: Send Email Component Scenarios
 
   @169529 @tejal
   Scenario: Verify User send the email from TO&  CC field as 'Group' with multiple attachment & files  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3405,30 +3405,30 @@ Business Need: Send Email Component Scenarios
 
   @169266 @tejal
   Scenario: Verify User send the email from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3465,30 +3465,30 @@ Business Need: Send Email Component Scenarios
 
   @169265 @tejal
   Scenario: Verify user send the email from TO field as 'internal' with files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -3523,30 +3523,30 @@ Business Need: Send Email Component Scenarios
 
   @169515 @SendEmail-ToverifyUsersendtheemailfromTO&CCfieldaswithfilesandclickonViewactiononthatmailthenaddedfieldsinEmailBodystructureareseeninthemailbody @jyoti
   Scenario:Send Email-To verify,User send the email from TO& CCfield as 'internal' with files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -3583,30 +3583,30 @@ Business Need: Send Email Component Scenarios
 
   @169514 @jyoti @SendEmail-ToverifyUsersendtheemailfromTO&CCfieldas'internal'withattachmentandclickonViewactiononthatmailthenaddedfieldsinEmailBodystructureareseeninthemailbody
   Scenario:Send Email-To verify,User send the email from TO &CC  field as 'internal' with attachment  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -3640,28 +3640,28 @@ Business Need: Send Email Component Scenarios
 
   @169688 @jyoti
   Scenario:Send Email-To verify,User reply email previously send from TO field as 'internal' and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3691,28 +3691,28 @@ Business Need: Send Email Component Scenarios
 
   @169690 @jyoti
   Scenario: Send Email-To verify,User reply email previously send from TO field as 'External' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3743,28 +3743,28 @@ Business Need: Send Email Component Scenarios
 
   @169693 @jyoti @complete
   Scenario: Send Email-To verify,User reply email previously send from TO field as 'Group' and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3793,28 +3793,28 @@ Business Need: Send Email Component Scenarios
 
   @169696 @jyoti
   Scenario: Send Email-To verify,To verify,User reply email previously send from TO field as 'internal&external' and click on reply View action on that reply mai then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -3848,30 +3848,30 @@ Business Need: Send Email Component Scenarios
 
   @169931 @jyoti
   Scenario: Send Email-To verify,User reply with file the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -3924,30 +3924,30 @@ Business Need: Send Email Component Scenarios
 
   @169930 @jyoti
   Scenario:Send Email-To verify,User reply with attachment the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4000,28 +4000,28 @@ Business Need: Send Email Component Scenarios
 
   @169929 @jyoti
   Scenario: Send Email-To verify,User reply the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4062,30 +4062,30 @@ Business Need: Send Email Component Scenarios
 
   @169876 @jyoti
   Scenario:Send Email-To verify,User reply the email with files& attachment  from TO&CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4129,30 +4129,30 @@ Business Need: Send Email Component Scenarios
 
   @169875 @jyoti
   Scenario:Send Email-To verify,User reply the email with files  from TO  & CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4196,28 +4196,28 @@ Business Need: Send Email Component Scenarios
 
   @169873 @jyoti
   Scenario: Send Email-To verify,User reply the email from TO  & CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4251,30 +4251,30 @@ Business Need: Send Email Component Scenarios
 
   @169833 @jyoti
   Scenario: Send Email-To verify,User reply the email with attachment  from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4316,30 +4316,30 @@ Business Need: Send Email Component Scenarios
 
   @169835 @jyoti
   Scenario:Send Email-To verify,User reply the email with files from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4387,30 +4387,30 @@ Business Need: Send Email Component Scenarios
 
   @169844 @jyoti
   Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -4461,28 +4461,28 @@ Business Need: Send Email Component Scenarios
 
   @169874 @jyoti
   Scenario: Send Email-To verify,User reply the email with attachment  from TO  & CC field as 'Group' and click on View action on that reply  mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4520,28 +4520,28 @@ Business Need: Send Email Component Scenarios
 
   @169699 @tejal
   Scenario: Verify user reply email  previously send from  TO field as 'internal' with attachment  and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4579,20 +4579,20 @@ Business Need: Send Email Component Scenarios
 
   @160296 @jyoti
   Scenario: Send Email-To verify,  For Reply action show only Contacts from 'Cc' field whose Account Record Type Name is not Internal, No user records will be shown for external
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4616,20 +4616,20 @@ Business Need: Send Email Component Scenarios
 
   @160284 @jyoti
   Scenario: Send Email-To Verify,When For Reply action User select 'Internal'  from Cc field only users records should be visible not a contact record.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4653,20 +4653,20 @@ Business Need: Send Email Component Scenarios
 
   @160261 @jyoti
   Scenario: Send EMail-To Verify If user select the group from 'Cc' field  then  email get received to all group members Internal & External.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -4677,20 +4677,20 @@ Business Need: Send Email Component Scenarios
 
   @160256 @jyoti
   Scenario: Send Email-To Verify, When user select Internal/External From 'Cc' field only internal users display and External Contacts display.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -4704,30 +4704,30 @@ Business Need: Send Email Component Scenarios
 
   @169810 @tejal
   Scenario: Verify User reply email from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -4776,28 +4776,28 @@ Business Need: Send Email Component Scenarios
 
   @169700 @tejal
   Scenario: Verify user reply email with attachment to previously send from  TO field as 'internal' with attachment  and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -4831,35 +4831,35 @@ Business Need: Send Email Component Scenarios
     Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
     Then I see text as "Subject: test for reply with attachment" on reply email modal
     Then I see "test for reply with attachment" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
+    Then I see "Action" as "Files" on send email modal
 
   @169703 @tejal
   Scenario: Verify user reply email previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -4907,30 +4907,30 @@ Business Need: Send Email Component Scenarios
 
   @169705 @tejal
   Scenario: Verify user reply email with select file that previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -4982,20 +4982,20 @@ Business Need: Send Email Component Scenarios
 
   @160556 @jyoti
   Scenario: Send Email: To Verify, For Reply action when user not select Internal, External or Group from 'To' field, user records & contact records should not be visible.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5015,20 +5015,20 @@ Business Need: Send Email Component Scenarios
 
   @160489 @jyoti
   Scenario: Send Email: To Verify, When user not select Internal, External or Group From 'To' field then user record and  contact record should not be visible.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5037,20 +5037,20 @@ Business Need: Send Email Component Scenarios
 
   @159970 @jyoti
   Scenario: Send Email-To verify , When user select Active Internal user & Active External user from 'To' field then for Internal user record  & for External  contact should be visible.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5063,20 +5063,20 @@ Business Need: Send Email Component Scenarios
 
   @160198 @jyoti
   Scenario: Send Mail-To Verify, for Reply action When user select the group From 'TO' field email get received to all group members(Internal/External)
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5098,20 +5098,20 @@ Business Need: Send Email Component Scenarios
 
   @160141 @jyoti
   Scenario: Send Email- To Verify, when user select the group  from 'To' field then  email get received to all group members Internal & External.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5122,20 +5122,20 @@ Business Need: Send Email Component Scenarios
 
   @160313 @jyoti
   Scenario: Send Email- To Verify, For Relpy  action When user select the group from 'Cc' field  the email get received to all group members as a External & Internal.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5159,20 +5159,20 @@ Business Need: Send Email Component Scenarios
 
   @160300 @jyoti
   Scenario: Send Email-To Verify, For Reply action select the both Internal/External from 'Cc' field only Internal users display and External Contacts display.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5197,17 +5197,17 @@ Business Need: Send Email Component Scenarios
 
   @159887 @jyoti
   Scenario: Send Email-To Verify,When User select 'Internal' from 'TO' field only users records should be visible.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewProgramCreatedId}" inside table
     When I navigate to "Collab" sub tab
@@ -5218,20 +5218,20 @@ Business Need: Send Email Component Scenarios
 
   @160468 @jyoti
   Scenario: Send Email- To Verify,For Reply action  When user select Internal/External from 'To' field Only internal user and external contact should be visible
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5256,20 +5256,20 @@ Business Need: Send Email Component Scenarios
 
   @159937 @jyoti
   Scenario: Send Email-To Verify, When user select external from  'To'  field whose Account Record Type Name is not Internal then only contact should be display  user records should not be visible
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -5278,20 +5278,20 @@ Business Need: Send Email Component Scenarios
 
   @160226 @jyoti
   Scenario:  Send EMail-To Verify,  when user select External from 'Cc'  field then show only Contacts whose Account Record Type Name is not Internal  No user records will be shown.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -5304,20 +5304,20 @@ Business Need: Send Email Component Scenarios
 
   @160207 @jyoti
   Scenario: Send Email-To Verify,When User select 'Internal' from 'CC' field only users records should be visible & contact record should not be display
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -5329,20 +5329,20 @@ Business Need: Send Email Component Scenarios
 
   @160177 @jyoti
   Scenario: Send Mail-To Verify, for Reply action  when user select the external from 'To' field then show only contact whose record type is not internal and also user records should not shown
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5363,20 +5363,20 @@ Business Need: Send Email Component Scenarios
 
   @160159 @jyoti
   Scenario: Send Email To Verify, For Reply action when user select the internal from 'To' field then It will show only Active Internal Users no contact record should be visible.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5397,30 +5397,30 @@ Business Need: Send Email Component Scenarios
 
   @169708 @tejal
   Scenario: Verify Send Email-User reply email previously send from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5472,30 +5472,30 @@ Business Need: Send Email Component Scenarios
 
   @169832 @tejal
   Scenario: Verify user reply the email from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5537,30 +5537,30 @@ Business Need: Send Email Component Scenarios
 
   @169825 @tejal
   Scenario: Verify user reply the email with files&attachment  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5608,30 +5608,30 @@ Business Need: Send Email Component Scenarios
 
   @169823 @tejal
   Scenario: Verify user reply the email with files  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5680,28 +5680,28 @@ Business Need: Send Email Component Scenarios
 
   @169822 @tejal
   Scenario: Verify user reply the email with attachment from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5736,34 +5736,34 @@ Business Need: Send Email Component Scenarios
     Then I see text as "To: snehal.mulange@reisystems.in" on reply email modal
     Then I see text as "Subject: reply TO& CC internal" on reply email modal
     Then I see "reply TO& CC internal" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
-    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
+    Then I see "Action" as "Files" on send email modal
+    Then I see "actionsAtAttachment.png" as "Files" on send email modal
 
   @169818 @tejal
   Scenario: Verify user reply the email from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5799,30 +5799,30 @@ Business Need: Send Email Component Scenarios
 
   @169813 @tejal
   Scenario: Verify user reply email with attachment& files from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5893,38 +5893,38 @@ Business Need: Send Email Component Scenarios
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
     Then I see "TestAutomation.txt" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
-    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
-    Then I see "actionsAtEgrid.png" as "Attachments" on send email modal
-    Then I see "captureModalFields.png" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
+    Then I see "Action" as "Files" on send email modal
+    Then I see "actionsAtAttachment.png" as "Files" on send email modal
+    Then I see "actionsAtEgrid.png" as "Files" on send email modal
+    Then I see "captureModalFields.png" as "Files" on send email modal
 
   @169804 @tejal
   Scenario: Verify user reply email with files previously send fromTO field as 'Group' with multiple files and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -5992,30 +5992,30 @@ Business Need: Send Email Component Scenarios
 
   @169803 @tejal
   Scenario: Verify user reply email  previously send fromTO field as 'Group' with multiple files and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -6074,28 +6074,28 @@ Business Need: Send Email Component Scenarios
 
   @169802 @tejal
   Scenario: Verify user reply email with attachments that previously send from TO field as 'Group' with multiple attachment and click on  View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6133,36 +6133,36 @@ Business Need: Send Email Component Scenarios
     Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
     Then I see text as "Subject: test group for attachment" on reply email modal
     Then I see "test group for attachment" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
-    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
-    Then I see "actionsAtEgrid.png" as "Attachments" on send email modal
-    Then I see "captureModalFields.png" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
+    Then I see "Action" as "Files" on send email modal
+    Then I see "actionsAtAttachment.png" as "Files" on send email modal
+    Then I see "actionsAtEgrid.png" as "Files" on send email modal
+    Then I see "captureModalFields.png" as "Files" on send email modal
 
   @169801 @tejal
   Scenario: Verify user reply email that previously send from TO field as 'Group' with multiple attachment and click on  View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6200,30 +6200,30 @@ Business Need: Send Email Component Scenarios
 
   @169710 @tejal
   Scenario: Verify reply email with attachment & files that previously send from TO& CC field as 'internal' with attachment & files and click on reply View action on that mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I select Classification as "Medical Reports" at upload file modal
@@ -6281,36 +6281,36 @@ Business Need: Send Email Component Scenarios
     Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
     Then I see "TestAutomationFile.csv" as "Body Content" on send email modal
     Then I see "MultipleFileUploadCollabDND.png" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
-    Then I see "actionsAtAttachment.png" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
+    Then I see "Action" as "Files" on send email modal
+    Then I see "actionsAtAttachment.png" as "Files" on send email modal
 
   @168932 @SendEmail-Toverify,UserreplytheemailwithattachmentfromTO&CCfieldExternalandclickonViewactiononthatreplymailthenaddedfieldsEmailBodystructureareseeninthemailbody @jyoti
   Scenario: Send Email-To verify,User reply the email with attachment  from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6357,30 +6357,30 @@ Business Need: Send Email Component Scenarios
 
   @169843
   Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "customMetaData" configuration as below:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-    And I update custom metadata setting changes:
-      | id                 | label        | booleanValue | customMetaDataApiName    |
-      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
+#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#    Given I have "customMetaData" configuration as below:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
+#    And I update custom metadata setting changes:
+#      | id                 | label        | booleanValue | customMetaDataApiName    |
+#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6427,24 +6427,24 @@ Business Need: Send Email Component Scenarios
     Then I see text as "To: surya.namasivayam@reisystems.com" on reply email modal
     Then I see text as "Subject: reply for to &cc external" on reply email modal
     Then I see "reply for to &cc external" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
+    Then I see "Name" as "Files" on send email modal
 
   @168973 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon on Collab emails table, then  reply back content is aligned properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6465,22 +6465,22 @@ Business Need: Send Email Component Scenarios
 
   @168974 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when attachment is attached for the mail , then  reply back content is aligned properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6509,22 +6509,22 @@ Business Need: Send Email Component Scenarios
 
   @168976 @jyoti
   Scenario:Send email -To verify,When User click on  reply icon when file  is attached for the mail , then  reply back content is aligned properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6557,20 +6557,20 @@ Business Need: Send Email Component Scenarios
 
   @168977 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when enternal is selected  for the mail , then reply back content is aligned properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6593,20 +6593,20 @@ Business Need: Send Email Component Scenarios
 
   @173457 @tejal
   Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6614,21 +6614,21 @@ Business Need: Send Email Component Scenarios
 
   @181340 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO  (External)  field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6649,20 +6649,20 @@ Business Need: Send Email Component Scenarios
 
   @181347 @sprint23 @needtoaddattachment
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (Group)   field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6679,20 +6679,20 @@ Business Need: Send Email Component Scenarios
 
   @181342 @sprint23 @jyoti
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (group )  field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6709,21 +6709,21 @@ Business Need: Send Email Component Scenarios
 
   @181343 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO & CC (External) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6746,21 +6746,21 @@ Business Need: Send Email Component Scenarios
 
   @181339 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6782,21 +6782,21 @@ Business Need: Send Email Component Scenarios
 
   @181344 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO  (External)  field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6821,21 +6821,21 @@ Business Need: Send Email Component Scenarios
 
   @181345 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (External)   field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6863,20 +6863,20 @@ Business Need: Send Email Component Scenarios
 
   @181346 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO (group )  field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I save the field labeled "ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6896,21 +6896,21 @@ Business Need: Send Email Component Scenarios
 
   @181376 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6935,21 +6935,21 @@ Business Need: Send Email Component Scenarios
 
   @183895 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -6974,21 +6974,21 @@ Business Need: Send Email Component Scenarios
 
   @183842 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO (internal &External) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -7013,20 +7013,20 @@ Business Need: Send Email Component Scenarios
 
   @183830 @sprint23
   Scenario: Send Email -To verify , When user reply an Email with an multiple Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
@@ -7048,20 +7048,20 @@ Business Need: Send Email Component Scenarios
 
   @181341 @dnyaneshwari @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (Internal)   field that attachment is dispalyed in the column on the messages page block
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7077,19 +7077,19 @@ Business Need: Send Email Component Scenarios
 
   @186124 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to "true" when select file is attached to "TO- External " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7105,19 +7105,19 @@ Business Need: Send Email Component Scenarios
 
   @186685 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- group" reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7136,19 +7136,19 @@ Business Need: Send Email Component Scenarios
 
   @186684 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- internal" reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7167,19 +7167,19 @@ Business Need: Send Email Component Scenarios
 
   @186681 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO-external" reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7198,19 +7198,19 @@ Business Need: Send Email Component Scenarios
 
   @186677 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO- internal " reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7230,19 +7230,19 @@ Business Need: Send Email Component Scenarios
 
   @186678 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- external " reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7262,19 +7262,19 @@ Business Need: Send Email Component Scenarios
 
   @186294 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- Internal " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7289,19 +7289,19 @@ Business Need: Send Email Component Scenarios
 
   @186295 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- External " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7316,19 +7316,19 @@ Business Need: Send Email Component Scenarios
 
   @186297 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Internal " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7341,19 +7341,19 @@ Business Need: Send Email Component Scenarios
 
   @186298 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- External " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7366,19 +7366,19 @@ Business Need: Send Email Component Scenarios
 
   @186300 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Group " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7393,19 +7393,19 @@ Business Need: Send Email Component Scenarios
 
   @186296 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- group   " email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7427,19 +7427,19 @@ Business Need: Send Email Component Scenarios
 
   @186679 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- group " reply email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7456,19 +7456,19 @@ Business Need: Send Email Component Scenarios
 
   @187614 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- internal " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "PG-A11-1306"
+    When I click on "Edit" icon for "PG-A11-1306" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7488,19 +7488,19 @@ Business Need: Send Email Component Scenarios
 
   @187627 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- group " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7522,19 +7522,19 @@ Business Need: Send Email Component Scenarios
 
   @187630 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- external " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7554,19 +7554,19 @@ Business Need: Send Email Component Scenarios
 
   @187635 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- internal " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7586,18 +7586,18 @@ Business Need: Send Email Component Scenarios
 
   @195079 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"Group"inthecheckbox&typeanytextin"TO"fieldandpressenter @jyoti @userstory_174060
   Scenario:To verify , User should not be able to see "Upload file modal" when the user check "Group" in the checkbox & type any text in "TO" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -7607,18 +7607,18 @@ Business Need: Send Email Component Scenarios
 
   @195078 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"External"inthecheckbox&typeanytextin"TO"fieldandpressenter @userstory_174060 @jyoti
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "External" in the checkbox & type any text in "TO" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7628,18 +7628,18 @@ Business Need: Send Email Component Scenarios
 
   @195077 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"Internal"inthecheckbox&typeanytextin"TO"fieldandpressenter @userstory_174060 @jyoti
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "TO" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7649,18 +7649,18 @@ Business Need: Send Email Component Scenarios
 
   @195081 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"Internal"inthecheckbox&typeanytextin"TO"&CC"fieldandpressenter @userstory_174060 @jyoti
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "TO" & "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -7671,18 +7671,18 @@ Business Need: Send Email Component Scenarios
 
   @195082 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"External"inthecheckbox&typeanytextin"TO"&"CC"fieldandpressenter @userstory_174060 @jyoti
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "External" in the checkbox & type any text in "TO" & "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7693,18 +7693,18 @@ Business Need: Send Email Component Scenarios
 
   @195083 @Toverify,Usershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"Group"inthecheckbox&typeanytextin"TO"&"CC"fieldandpressenter @userstory_174060 @jyoti
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Group" in the checkbox & type any text in "TO" & "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -7714,18 +7714,18 @@ Business Need: Send Email Component Scenarios
 
   @187636 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- external " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7745,19 +7745,19 @@ Business Need: Send Email Component Scenarios
 
   @187639 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- group " reply  email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login as "Automation" user
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0280"
-    When I click on "Edit" icon for "PG-755-0280" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -7779,19 +7779,19 @@ Business Need: Send Email Component Scenarios
 
   @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7803,19 +7803,19 @@ Business Need: Send Email Component Scenarios
 
   @205481 @sprint6 @ToVerifySpelling @dnyaneshwari
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected for internal user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7827,18 +7827,18 @@ Business Need: Send Email Component Scenarios
 
   @194897 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario: Send Email - To verify , User should not be able to see "Upload file modal" when type any text in " TO " field and press "Enter"
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7847,18 +7847,18 @@ Business Need: Send Email Component Scenarios
 
   @194912 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario: To verify , User should not be able to see "Upload file modal" when type any text in " TO & CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7868,18 +7868,18 @@ Business Need: Send Email Component Scenarios
 
   @194914 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -7889,18 +7889,18 @@ Business Need: Send Email Component Scenarios
 
   @195096 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario:  To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "TO" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7910,18 +7910,18 @@ Business Need: Send Email Component Scenarios
 
   @195098 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Group" in the checkbox & type any text in "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -7931,18 +7931,18 @@ Business Need: Send Email Component Scenarios
 
   @195097 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "External" in the checkbox & type any text in "CC" field and press enter
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -7952,24 +7952,24 @@ Business Need: Send Email Component Scenarios
 
   @69217 @validateIfGroupCheckboxCheckedAtCCFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox @sendEmail
   Scenario: Validate If Group checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "3" seconds
@@ -7980,24 +7980,24 @@ Business Need: Send Email Component Scenarios
 
   @69095 @validateIfInternal+ExternalCheckboxCheckedAtToFieldThenBothUserIsShownInAutoSuggestionBox @sendEmail @needToUpdate
   Scenario: Validate If Internal+ External checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#    Given I have "global" configuration as below:
+#      | id                 | ownerId            | booleanValue                | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+#    And I update custom global setting changes:
+#      | id                 | ownerId            | booleanValue               | customSettingApiName |
+#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"

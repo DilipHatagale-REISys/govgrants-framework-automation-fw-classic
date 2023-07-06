@@ -256,4 +256,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void iClickOnCloseButtonWithHeader(String button, String tableHeader) {
+        I.amPerforming().click().on(ByUsing.xpath("//p[text()='" + tableHeader + "']/preceding-sibling::button[@aria-label='" + button + "']"));
+    }
 }

@@ -291,6 +291,7 @@ public class FlexTableSteps {
     public void iSeeValueInFlextable(String fileName, String tableName) {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + tableName + "']//ancestor::div[@class='col-md-12']//span[text()='" + fileName + "']"));
     }
+
     @Then("I can see last page displayed in pagination inside {string}")
     public void iCanSeeLastPageDisplayedInPaginationInside(String tableName) {
         String pagination = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[@class='bold ng-binding']")).getText();
@@ -315,7 +316,7 @@ public class FlexTableSteps {
         boolean errorMessageDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='err-access-message' and contains(text(),'" + errorMessage + "')] " +
                 "| //span[@id='theErrorPage:theError' and contains(text(),'" + errorMessage + "')] " +
                 "| //div[@class='slds-text-longform']//h3[text()='" + errorMessage + "'] " +
-                "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'"+ errorMessage +"')]"));
+                "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'" + errorMessage + "')]"));
         Assert.assertTrue(errorMessageDisplayed);
     }
 
@@ -385,4 +386,8 @@ public class FlexTableSteps {
         I.amPerforming().browserOperationsTo().navigateToUrl(newUrl1);
     }
 
+    @When("I hovering mouse on help text {string} icon")
+    public void iHoveringMouseOnHelpTextIcon(String iconId) {
+        flexTablePage.getHelpTextFromIcon(iconId);
+    }
 }
