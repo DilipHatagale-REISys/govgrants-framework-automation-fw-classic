@@ -26,7 +26,7 @@ Business Need: Attachment Component Scenarios
 
   @221534 @255886 @255891 @Toverifyuserisabletosave'.jpg'file @LWC-AttachmentTestSuit @Vrushali
   Scenario: To verify user is able to save '.jpg','.xlsx','.png' file
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -67,7 +67,7 @@ Business Need: Attachment Component Scenarios
 
   @255887 @255889 @255890 @Toverifyuserisabletosave'.pdf,.txt,.docx'file @LWC-AttachmentTestSuit @Vrushali
   Scenario:To verify user is able to save '.pdf,.txt,.docx' file
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -253,7 +253,7 @@ Business Need: Attachment Component Scenarios
 
   @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile @Vrushali @LWC-AttachmentTestSuit
   Scenario: validate msg "File should not be blank" after adding blank text file
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -660,7 +660,7 @@ Business Need: Attachment Component Scenarios
 
   @221530 @Toverifyallfilesaregettingattachedfrom'Uploadfilefromworkspace'section
   Scenario: To verify all files are getting attached from 'Upload file from workspace' section
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -679,7 +679,7 @@ Business Need: Attachment Component Scenarios
 
   @221538
   Scenario: To verify only one file is getting attached even user clicked multiple times on attach button in upload file from workspace. (Admin)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

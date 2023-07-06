@@ -48,12 +48,6 @@ Business Need: customApp Component Scenarios
 
   @332487
   Scenario: Custom App- To verify,  when User add the Abbreviation as "GRNTR' then it should get saved.
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-#      | Custom App Config     | Abbreviation | GRNTR             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-#      | Custom App Config:General | Abbreviation | GRNTR         | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
@@ -303,7 +297,7 @@ Business Need: customApp Component Scenarios
   Scenario: Custom App- To verify, to verify, on Sequence when user provide sequence as "1" then As a Recipient app should display at 1st position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Custom App Config     | Sequence  | 1                 | ApiGeneratedId:0 |
+      | Custom App Config     | Sequence  | 4                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 1             | Recipient          |

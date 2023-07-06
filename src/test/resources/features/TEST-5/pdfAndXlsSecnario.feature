@@ -13,12 +13,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Skip Fields For Export | Status__c     | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I cannot see "Status" on page "1" of "govgrants" pdf file
 
@@ -32,12 +32,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF         | true          | Programs           | Name                      | FLV-1835                   |
       | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "Active Programs" on page "1" of "govgrants" pdf file
 
@@ -49,7 +49,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Forms:General         | Skip Form Download | true          | General Application Budget Form |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -67,12 +67,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory        | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Skip for Export | true          | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -88,7 +88,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | PDF Render Type     | Block         | ActiveGrantsGrid   |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrantsGrid   |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
@@ -106,7 +106,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | PDF Render Type     | Table         | ActiveGrantsGrid   |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrantsGrid   |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
@@ -126,12 +126,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -154,12 +154,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Is Master View      | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -186,12 +186,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -217,12 +217,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:Flex Table List | Is Master View      | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -250,12 +250,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Is Master View      | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -282,12 +282,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF         | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -310,12 +310,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -335,12 +335,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
       | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -356,12 +356,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -381,12 +381,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Is Master View            | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:Flex Table List | Show in PDF               | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -408,12 +408,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
       | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -431,12 +431,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View            | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -452,11 +452,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Show Header Panel   | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -473,11 +473,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Show Header Panel         | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -493,11 +493,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Show Header Panel   | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -506,7 +506,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56766    @downloadedPDFFileContainsFormDetailsOnGranteeApplication
   Scenario: validate pdf contains form details for grantee application
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-DOS-USPDPA-001"
@@ -518,7 +518,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56524    @PDFShouldGetDownlodedWithThrowingAnyErrorAtGranteeApplicationView
   Scenario: validate pdf file getting downloaded without any error and oppotunity overview text is present
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
     And I click toggle button to select "Draft Applications"
@@ -537,12 +537,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | SelectFundingAccounts |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableSelectFundingAccounts"
@@ -552,12 +552,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56837    @pdfFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep @check
   Scenario: validate downloaded pdf file should get downloaded properly with text containing default application review step
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRelatedAppReviewStepTemplatesNew"
     And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
@@ -566,12 +566,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
   Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Log" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableRelatedProgramServiceAreas"
     And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
@@ -580,7 +580,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56479    @pdfFileShouldGetDownloadedProperlyForApplicationBudget
   Scenario: validate pdf file should get downloaded properly with text containing Application budget
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
     And I click toggle button to select "Draft Applications"
@@ -594,9 +594,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @check
   Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Late" content inside "Task Summary By Due Date" charts
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks "
@@ -605,22 +605,22 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable
   Scenario: Validate PDF is getting downloaded correctly at program flex table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
-    Then I see "Draft Programs" on page "1" of "govgrants" pdf file
+    Then I see "Internal Programs - Draft" on page "1" of "govgrants" pdf file
 
   @59363    @lookupFieldShouldDisplayCorrectlyOnDownloadedPDFFile @check
   Scenario: validating ID lookup field value should get downloaded and displayed properly in Downloaded file at application budget period grid
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -639,12 +639,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table List       | Hide Column JSON    | govgrants_config:Hide_Column_Enhancedgrid_ParentTable_Header | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                               | TmpActiveGrantsGrid |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true                                                         | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -665,10 +665,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Program for testing"
     When I click on "Edit" icon for "Test Program for testing" inside table
     When I enter value "1" into field "Number__c"
@@ -692,12 +692,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Show Header Panel   | false         | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -714,20 +714,20 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Vrush Application" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | DateTime |
       | Demo_Title    | 0        |
     And I refresh the page
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Vrush Application" in "flexGridEnhancedDivId" panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
@@ -739,7 +739,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @56480    @xlsFileShouldGetDownloadedProperlyForApplicatioBudgetCategoryFlexGrid
   Scenario: validating download as XLS is getting downloaded properly at application budget period grid
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
     When I perform quick search for "APP-HHS-082"
@@ -757,12 +757,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | SelectFundingAccounts |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableSelectFundingAccounts"
@@ -777,12 +777,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField                      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | ProgramRelatedAppReviewStepTemplatesNew |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRelatedAppReviewStepTemplatesNew"
     And I select "Download as CSV" from parallel lines dropdown of "Default Application Review Steps"
@@ -796,12 +796,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RelatedProgramServiceAreas |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Log" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableRelatedProgramServiceAreas"
     And I select "Download as CSV" from parallel lines dropdown of "Program Service Areas"
@@ -815,9 +815,9 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | TasksLate          |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Late" content inside "Task Summary By Due Date" charts
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as CSV" from parallel lines dropdown of "My Late Tasks "
@@ -833,7 +833,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (XLS / CSV) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
       | Flex Grid:General     | Display Field Names       | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Management" content inside "Activities" subheader on left panel
@@ -854,7 +854,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (XLS / CSV) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
       | Flex Grid:General     | Display Field Names       | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Management" content inside "Activities" subheader on left panel
@@ -873,12 +873,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -899,12 +899,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -922,11 +922,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -945,11 +945,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -967,11 +967,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridGrantFinancials"
     And I select "Download as PDF" from parallel lines dropdown of "Budget Period Details"
@@ -994,12 +994,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
       | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "Grant" on page "1" of "govgrants" pdf file
 
@@ -1019,12 +1019,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names       | <newFieldsApi>  | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true            | Programs           |                           |                            |
       | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as XLS" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as XLS" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "Grant" in downloaded xls or csv file "govgrants"
 
     Examples:
@@ -1040,10 +1040,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -1068,10 +1068,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantee State Program | Name                      | TAB-027                    |
       | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -1086,12 +1086,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @79173    @verifyPicklistFieldValueIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout
   Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at page detail
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -1107,11 +1107,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
       | Flex Grid:General     | Enable Export (XLS / CSV) | true           | GrantorBudgetPeriod |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridGrantFinancials"
     And I select "Download as XLS" from parallel lines dropdown of "Budget Period Details"
@@ -1135,12 +1135,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF         | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:Flex Table List | Is Master View      | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table List           | Filter Clause       | <newSoqlFilter> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "test Program for automation DND" inside table
@@ -1166,12 +1166,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
       | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1187,12 +1187,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF               | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
       | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1212,12 +1212,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF         | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:Flex Table List | Is Master View      | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table List           | Filter Clause       | <newSoqlFilter> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "test Program for automation DND" inside table
@@ -1234,11 +1234,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @80925    @verifyDoubleDollarSymbolIsNotDisplayedForTotalInDownloadedPDFAtMEGrid-gApplication @flexGrid
   Scenario: validate double dollar symbol at total is not displayed at ME Grid under downloaded pdf - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1247,11 +1247,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @80928    @verifyDoubleDollarSymbolIsNotDisplayedInTotalColumnInDownloadedXLSAtMEGrid-gApplication @flexGrid
   Scenario: validate double dollar symbol at total column is not displayed at ME Grid under downloaded XLS - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -1267,11 +1267,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
       | Flex Table List       | Enable Total        | true           | ApplicationBudgetCategoryFlexTable | Name                      | FTC-1512                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1290,11 +1290,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -1306,11 +1306,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @80913    @verifyCurrencyFieldValuesWithDecimalPlacesInDownloadedPDFAtMEGrid-gApplication @flexGrid
   Scenario: validate total amount at currency currency field without decimal places at ME Grid under downloaded pdf - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1319,11 +1319,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @80917    @verifyAtCurrecyFieldValuesWithoutDecimalPlacesInDownloadedXLSAtMEGrid-gApplication @flexGrid
   Scenario: validate amount at currency currency field without decimal places at ME Grid under downloaded XLS - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -1342,9 +1342,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -1365,9 +1365,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -1383,9 +1383,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
       | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1400,9 +1400,9 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1412,7 +1412,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that file is getting download from folder under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1423,9 +1423,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @70409 @validateThatFileShouldGetDownloadFromFolderForAuthorProfileHomePhase @libraryFiles
   Scenario: Verify that file is getting download from folder under home phase library for Author profile
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1436,9 +1436,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @70367 @validateThatWhenClickOnDownloadFileAtLibraryThenFilesFromThatLibraryGetsDownloadedAtHomePhase @libraryFiles
   Scenario: Verify that if click on download at library then files only from that library is getting downloaded under home phase library
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -1449,9 +1449,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @70496 @validateThatUserCanDownloadFileFromFileListTab-HomePhase-FileList @libraryFiles
   Scenario: Verify that user can download file from FileList tab - Home phase
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -1460,13 +1460,13 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @70729 @validateThatUserCanDownloadFileFromPlanningFilesTableAtAttachmentTab-RecordLevel @wip @NeedDeleteAPI @libraryFiles
   Scenario: Verify that user can download file from planning Files table at attachment tab - Record level
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Attachments" sub tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SheetJSFileUpload.xlsx" into library
     When I click on SelectChange Folder in add file modal
@@ -1481,9 +1481,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @83182 @validateThatAdminUserCanDownloadTheLibraryAndAllFilesInItAtAssetLibrary-HomePhase @libraryFiles
   Scenario: Verify that admin user can download library and it's files at  asset library
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -1492,9 +1492,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @83183 @validateThatAdminUserCanDownloadTheAttachedFilesFromAssetLibrary-HomePhase @libraryFiles
   Scenario: Verify that admin user can download the attached files from  asset library
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
@@ -1510,12 +1510,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "Status" on page "1" of "govgrants" pdf file
 
@@ -1527,12 +1527,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (xls / csv) | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "Status" in downloaded xls or csv file "govgrants"
 
   @83788    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtMEGrid-gApplication @flexGrid
@@ -1543,11 +1543,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1566,11 +1566,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -1582,12 +1582,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @83930    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout @smoke
   Scenario: validate a picklist field label is shown in downloaded pdf instead of picklist field API name inside program detail page
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -1601,13 +1601,13 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
     When I click on parallel lines menu bar with data target value "#ApplicationFilesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Application Files"
     And I download the file
@@ -1624,15 +1624,15 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
     When I click on "Menu" in the page details
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
@@ -1652,15 +1652,15 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -1679,15 +1679,15 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -1703,10 +1703,10 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
-    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I click on "View" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
@@ -1724,12 +1724,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "20.0000" on page "25" of "govgrants" pdf file
 
@@ -1747,11 +1747,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
       | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1776,12 +1776,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
       | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "$5,000" on page "1" of "govgrants" pdf file
 
@@ -1803,12 +1803,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (xls / csv) | true            | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi>  | Programs           |                           |                            |
       | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as CSV" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as CSV" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "$5,000" in downloaded xls or csv file "govgrants"
 
     Examples:
@@ -1827,11 +1827,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetMEGrid | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                        | ApplicationBudgetPeriods |                           |                            |
       | Flex Table List       | Filter Clause       | <newFilterClause>                                     | ApplicationBudgetPeriods | Name                      | FLV-2100                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -1854,11 +1854,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetMEGrid | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                        | ApplicationBudgetPeriods |                           |                            |
       | Flex Table List       | Filter Clause       | <newFilterClause>                                     | ApplicationBudgetPeriods | Name                      | FLV-2100                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -1880,19 +1880,19 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
       | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I enter value "40000.12" into field "fieldFundedAmount__c"
     When I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I see "$40,000" on page "1" of "govgrants" pdf file
 
@@ -1908,10 +1908,10 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I click on button "Download File" on download & upload wizard modal
     Then I see "Program Name" in downloaded xls or csv file "govgrants"
@@ -1924,7 +1924,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I seGiven I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF | true          | ActiveFundingOpportunities | Name                      | FLV-2399                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -1935,7 +1935,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @98869    @verifyDownloadingAsPDFAtAwardTable-gAward @flexTable
   Scenario: validate by click download as pdf at active award flex table then it is shown in downloaded pdf
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Active Awards" content inside "Manage Grants, Awards & Amendments" subheader on left panel
@@ -1946,12 +1946,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @100659    @validateFormatOfCurrencyFieldValueWithDollarSymbolInsideDownloadedPDFAtPageBlockDetail-gPlanning @pageLayout
   Scenario: validate format of currency field value with $ symbol inside program detail page
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -1971,12 +1971,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Messages"
@@ -1997,12 +1997,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Messages"
@@ -2023,12 +2023,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Messages"
@@ -2043,12 +2043,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Config | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -2065,10 +2065,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config:Page Layout Action | Is Active       | false         | Grantee State Program | Name                      | TAB-026                    |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantee State Program | Name                      | TAB-980                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2091,7 +2091,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
@@ -2132,12 +2132,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update custom metadata setting changes:
       | id                 | label                          | booleanValue | customMetaDataApiName    |
       | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Messages"
@@ -2154,7 +2154,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
@@ -2185,7 +2185,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
@@ -2220,7 +2220,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
       | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1532                   |
       | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
@@ -2251,12 +2251,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
       | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
@@ -2265,7 +2265,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @105419    @validateDollarSignAtSingleLevelMEGridParentTableDownloadedPDF
   Scenario: validating dollar sign under single level me grid parent table in downloaded pdf
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
@@ -2284,12 +2284,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update custom Dynamic Field setting changes:
       | id                 | Type     | Name                 |
       | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
     When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -2304,12 +2304,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update custom Dynamic Field setting changes:
       | id                 | Type  | Name                 |
       | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
     When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -2318,10 +2318,10 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @114427    @verifyReqFieldsAreHiddenFromDownloadPDFAtPageLayoutUsingHideFieldJSON
   Scenario: verify req fields are not displayed in downloaded pdf which are hidden using hide field JSON config field
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
@@ -2354,13 +2354,13 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -2369,7 +2369,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @114730    @verifyDecimalCurrencyFieldValueIsShownInDownloadedPDFAtHistoryTable-gPlanning @history
   Scenario: validate a decimal currency field value is shown in downloaded pdf at history table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -2390,12 +2390,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9228                   |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -2404,11 +2404,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @115546     @VerifyMeGridTableViewActionsIsAlignedProperly-gPlanning @flexGrid
   Scenario: validate alignment of view actions under me grid parent flex table - Planning phase
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-0001" in "---program:-:ProjectCostForApplicationFlexGridTableId---" panel
     Then I see actions are aligned at "---program:-:ProjectCostForApplicationFlexGridTableId---" me grid parent table and compared with "meGridProgramFinancials.png"
@@ -2426,11 +2426,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @116359    @verifyDoubleDollarSymbolIsDisplayedForTotalInDownloadedPDFAtMEGridChildTable-gApplication @flexGrid
   Scenario: validate dollar symbol at total is displayed at ME Grid under downloaded pdf at child table - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -2446,12 +2446,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF               | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
       | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
@@ -2459,7 +2459,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @118383    @verifyDownloadAsPDFAtFDM-gApplication @flexGrid
   Scenario: validate download as pdf at FDM table - gApplication
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I navigate to "Review FDM" content inside "Manage Application Review" subheader on left panel
@@ -2478,12 +2478,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForCurrencyFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                              | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -2502,11 +2502,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                 | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtProjectCostForApplicationMEGrid | ProjectCostForApplication |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridProjectCostForApplication"
     And I select "Download as PDF" from parallel lines dropdown of "Program Financials"
@@ -2516,12 +2516,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @118781 @verifyThatMultipleSectionsPresentAtUIShouldDisplayedInsideDownloadedPDFAtFormLayout
   Scenario:validate that  multiple sections present on UI should display inside downloaded pdf at form layout
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
     When I click on "View" icon of form "General Application Cover Page" program in flex table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -2531,9 +2531,9 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @127468  @verifyDownloadAsPDFAtCasesTableAtHomePhase
   Scenario: validate download as pdf at case table- gHome
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCaseList"
     And I select "Download as PDF" from parallel lines dropdown of "Open Cases"
@@ -2543,21 +2543,21 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @81048  @VerifyActionsAreAlignedInsideEnhancedDataTable
   Scenario: verify that actions are aligned inside enhanced data table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:GrantInsideEnhancedGrid}" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see actions under "---program:-:flexGridEnhancedDataTableId---" table are aligned and compared with "actionsAtEnhancedDataTable.png"
 
   @128295    @VerifyDownloadAsPDFAtReassignedTask
   Scenario: Validate download as PDF at reassigned task
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
     And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
@@ -2578,10 +2578,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2619,7 +2619,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
     And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
@@ -2628,7 +2628,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
     When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePhasePendingTasks"
     And I select "Download as PDF" from parallel lines dropdown of "Pending Tasks (Assigned To Me)"
@@ -2637,45 +2637,45 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @80889  @VerifyActionsAreAlignedInsideEnhancedGridTable @enhancedGrid
   Scenario: verify that actions are aligned inside enhanced grid table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "Vrush Application" in "---program:-:flexGridEnhancedID---" panel
     Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"
 
   @80890     @VerifyMeGridParentTableActionsAreAlignedProperly-gPlanning @flexGrid
   Scenario: validate alignment of actions under me grid parent flex table - Planning phase
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table and compared with "actionsAtMeGridTable.png"
 
   @80953   @VerifyFlexTableActionsAreAlignedProperly-gPlanning @flexTable
   Scenario: validate alignment of actions under flex table - Planning phase
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "test send to owner 2"
     Then I see actions under "---program:-:programsTableId---" table are aligned and compared with "actionsAtFlexTable.png"
 
   @96030     @VerifyAttachmentTableActionsAreAlignedProperly-gPlanning @flexTable
   Scenario: validate alignment of actions under attachment table - Planning phase
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "test send to owner 2"
     When I click on "View Program Details " icon for "test send to owner 2" inside table
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     Then I see actions are aligned at attachment
 
   @116105    @verifyWhiteSpaceIsNotPresentAtModalIfAnyFieldIsHiddenUsingHideExpressionJSON
@@ -2688,35 +2688,35 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideUserFieldUsingHideExpressionInsideRolesModalWindow | Roles and Responsibilities 7    | Name                      | PBD-8028                   |
       | Flex Table Action                        | Modal Width          | 1200                                                                    | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     Then I see fields are displayed without white space in modal
 
   @117758    @validateAlignmentOfValidateButtonAtFlexTableInsidePageLayout @pageLayout
   Scenario: Validate alignment of validate button at flex table header inside page layout
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
     When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     Then I see validate button is aligned at pannel header
 
   @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow @pageLayout
   Scenario: validate that mini page layout is displayed completely on hover at lookup field inside modal window
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Nauman Shahid" inside table
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
@@ -2731,9 +2731,9 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -2748,10 +2748,10 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "CollabFileVanish.pdf" inside flex table with id "---program:-:myFeedTableId---"
  #130108 verify if the uploaded file is displayed at record detail page in attachment tab
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
-    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Files" sub tab
     When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see value "CollabFileVanish.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
  #130108 verify if the uploaded file is displayed inside downloaded pdf
@@ -2766,7 +2766,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I pause execution for "5" seconds
     When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Delete" action at "Collab temp" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -2786,9 +2786,9 @@ Business Need: All pdf and xls related scenario including component and complete
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -2801,10 +2801,10 @@ Business Need: All pdf and xls related scenario including component and complete
  #130107 file is uploaded from home phase - my feed section
     Then I softly see "AttachmentTesting.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
-    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I navigate to "Files" sub tab
     When I perform quick search for "AttachmentTesting.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
  #130107 file uploaded from home phase is displayed inside attachment tab - record detail
     Then I softly see value "AttachmentTesting.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
@@ -2812,7 +2812,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
  #130107 file uploaded from home phase is displayed inside attachment tab - record detail
     Then I softly see "Creating a Core Service Area" on page "1" of "govgrants" pdf file
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -2826,7 +2826,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableFormEnhancedTable"
     And I select "Download as PDF" from parallel lines dropdown of "All Forms"
     And I download the file
@@ -2840,11 +2840,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                    | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtApplicationBudgetCategoryFlexTable | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-02"
@@ -2864,7 +2864,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                           | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtTotalAtApplicationBudgetCategoryFlexTable | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -2894,7 +2894,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                                   | ApplicationBudgetPeriods |                           |                            |
       | Flex Table List       | Enable Total        | true                                                             | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
       | Flex Table:General    | Enable Total Row    | true                                                             | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
@@ -2917,20 +2917,20 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     Then I softly see "12345678.00" on page "17" of "govgrants" pdf file
     Then I softly cannot see "12,345,678.00" on page "17" of "govgrants" pdf file
@@ -2941,12 +2941,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @145546    @validateDecimalValueIsDisplayedOnFlexGridEnhancedForNumberFieldInDownloadedPDF
   Scenario: Validate decimal value should be display on the Number field at flex grid enhanced In Downloaded PDF
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
     Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
@@ -2957,12 +2957,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @145566    @validateDecimalValueIsDisplayedOnMEGridForNumberFieldInDownloadedPDF
   Scenario: Validate decimal value should be display on the Number field at ME Grid In Downloaded PDF
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Plan" sub tab
     Then I softly see value "123,456.00" for title "Target" inside table "---program:-:programOutComesTableId---"
     When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
@@ -2978,11 +2978,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -3001,11 +3001,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -3023,20 +3023,20 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as CSV" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as CSV" from parallel lines dropdown of "Internal Programs - Draft"
     Then I softly see "12345678.00" in downloaded xls or csv file "govgrants"
 
     Examples:
@@ -3051,12 +3051,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
     Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
@@ -3066,12 +3066,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @145750    @validateDecimalValueIsDisplayedOnMEGridForNumberFieldInDownloadedCSV
   Scenario: Validate decimal value should be display on the Number field at ME Grid In Downloaded CSV
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Plan" sub tab
     Then I softly see value "11.80" for title "Target" inside table "---program:-:programOutComesTableId---"
     When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
@@ -3086,12 +3086,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3110,12 +3110,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3133,14 +3133,14 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "Vrush Application" in "---program:-:flexGridEnhancedID---" panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
@@ -3158,14 +3158,14 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "Vrush Application" in "---program:-:flexGridEnhancedID---" panel
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "2,323.0,000" in downloaded xls or csv file "govgrants"
@@ -3177,14 +3177,14 @@ Business Need: All pdf and xls related scenario including component and complete
   @147028    @validateAttachmentDownloadAction
   Scenario: validate by click at Attachment download action a file is getting downloaded
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     When I click on "Download" icon for "DynamicLayoutExport.pdf" inside table
     And I download the file
@@ -3193,14 +3193,14 @@ Business Need: All pdf and xls related scenario including component and complete
   @147031    @validateAttachmentIsGettingDownloadedByClickAtAttachmentNameHyperlink
   Scenario: validate by click at Attachment name hyperlink, a file is getting downloaded
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     And I click on hyperlink containing value "DynamicLayoutExport.pdf"
     And I download the file
@@ -3217,10 +3217,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantee State Program | Name                      | TAB-027                    |
       | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3242,10 +3242,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3269,10 +3269,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3295,11 +3295,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -3318,11 +3318,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -3340,11 +3340,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -3363,15 +3363,15 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "Demo_Title"
+    When I perform quick search for "Vrush Application" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Vrush Application"
     When I click on "Edit" icon for "AD-GG PJ--00" inside table
     When I enter value "122" into field "Amendments__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
@@ -3395,15 +3395,15 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsChildApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>      | TmpActiveGrantsGrid        |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "Demo_Title"
+    When I perform quick search for "Vrush Application" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Vrush Application"
     When I click on "Edit" icon for "AD-GG PJ--00" inside table
     When I enter value "122" into field "Amendments__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
@@ -3424,12 +3424,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3447,12 +3447,12 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
@@ -3465,7 +3465,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @148214    @verifyApostropheIsShownInDownloadedPDFAtPageLayout
   Scenario: validate a apostrophe is shown in downloaded pdf at page layout
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -3478,11 +3478,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @153953    @verifyAllColumnNamesAreDisplayedInDownloadedPDFAtMEGridParentTable
   Scenario: validate all column name are displayed in downloaded pdf at ME Grid parent table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -3495,11 +3495,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @153955    @verifyAllColumnNamesAreDisplayedInDownloadedXLSAtAtMEGridParentTable
   Scenario: validate all column name are displayed in downloaded xls at ME Grid parent table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -3511,11 +3511,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @153958    @verifyAllColumnNamesAreDisplayedInDownloadedPDFAtMEGridChildTable
   Scenario: validate all column name are displayed in downloaded pdf at ME Grid child table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
@@ -3529,11 +3529,11 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @153957  @verifyAllColumnNamesAreDisplayedInDownloadedXLSAtMEGridChildTable
   Scenario: validate all column name are displayed in downloaded xls at ME Grid child table
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
@@ -3549,7 +3549,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -3566,7 +3566,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -3583,7 +3583,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -3600,7 +3600,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -3622,12 +3622,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
@@ -3649,12 +3649,12 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Monitoring Schedule For All Active Grants"
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
@@ -3676,10 +3676,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
       | Flex Grid:General     | Enable Export (PDF) | true           | ProgramRolesAndResponsibilities |                           |                            |
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3696,10 +3696,10 @@ Business Need: All pdf and xls related scenario including component and complete
   @172134 @tejal
   Scenario: Verify if User  added lookup field on parent  table  (Required to Save) & save the record then mandatory icon should display for lookup field saved data is display on PDF
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3712,10 +3712,10 @@ Business Need: All pdf and xls related scenario including component and complete
   @172135 @tejal
   Scenario: Verify if User  added lookup field on parent  table  (Required to Save) & save the record then mandatory icon should display for lookup field saved data is display on XLS
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3734,10 +3734,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -3762,10 +3762,10 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details

@@ -11,7 +11,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -31,7 +31,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for User |               | PB-0108            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -51,7 +51,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide For Users | <changedUser> | Program Progress Bar | Name                      | Submitted for Approval     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -71,7 +71,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Sequence  | 0             | Program Progress Bar | Name                      | Submitted for Approval     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -104,7 +104,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0108            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -123,13 +123,29 @@ Business Need: Step Progress Bar Component Scenarios
       | Program                                | Status        | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Step Progressbar Detail                | Negative Path | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
       | Step Progressbar Header Config:General | Reject Color  | #E60000       | PB-0108                                                    |                           |                            |
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
     When I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "Red"
 
@@ -141,12 +157,12 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0108            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Rejected Programs"
-    When I perform quick search for "Test Program For Automation Reject"
-    When I click on "View Program Details" icon for "Test Program For Automation Reject" inside table
+    And I click toggle button to select "Internal Programs - Rejected"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see status in Progress-bar is "Rejected" and is "Blue"
 
   @37318    @incompleteColorFieldAtStepProgressBar-gPlanning
@@ -157,12 +173,12 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Incomplete Color | #0b0ba0       | PB-0108            |                           |                            |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSubmittedForApprovalMode}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInSubmittedForApprovalMode}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see status in Progress-bar is "Submitted for Approval" and is "Green"
 
   @37324    @displayValueFieldAtStepProgressBAr-gPlanning
@@ -173,12 +189,12 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName     | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Display Value | Automation    | Program Progress Bar | Name                      | Created                    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see changed display name as "ADMIN" inside step progress bar
 
   @37328    @isCreatedFieldAtStepProgressBar-gPlanning
@@ -190,24 +206,41 @@ Business Need: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Step Progressbar Detail | IsCreated | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     Then I see "By : Nauman Shahid" shown as help text
     Then I see "Date : 11/27/2018 1:15 AM" shown as help text
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see step progress bar is displayed
 
@@ -219,10 +252,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserTypeOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -234,10 +267,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -249,10 +282,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingContextAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -264,10 +297,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAppAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -279,10 +312,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsing$UserAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -294,10 +327,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -309,10 +342,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -324,10 +357,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -339,10 +372,10 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar
 
@@ -354,9 +387,9 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldProfileAndUserTypeWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-    When I login as "Automation-PM" user
+   When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Internal Organization(s)" content inside "Manage Organizations" subheader on left panel
+    And I navigate to "Home" tab
+    When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     Then I see "Level 1" is not displayed inside step progress bar

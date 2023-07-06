@@ -320,7 +320,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
+    When I re-login to "As Administrator" app as "PM" user on "QA" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
@@ -353,15 +353,15 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -373,12 +373,12 @@ Business Need: Approval Process Component Scenarios
 
   @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
-    Given I have "default" configuration as below:
-      | configurationCategory   | fieldName                          | fieldOrignalValue | filterId         |
-      | Task Config:Task Action | Send Task Assignment Notification? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
-      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory   | fieldName                          | fieldOrignalValue | filterId         |
+#      | Task Config:Task Action | Send Task Assignment Notification? | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
+#      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -396,15 +396,15 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
+    When I re-login to "As Administrator" app as "PM" user on "QA" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
@@ -419,7 +419,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Task Config:Task Action             | Complete On View? | true          | Approve Program       |                           |                            |
-      | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantee State Program | Name                      | TAB-1724                   |
+      | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantor State Program | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -663,7 +663,7 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
@@ -821,7 +821,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
       | Approval Process Steps Cache:General | Approve Email Template | true                            | Program_Manager_Approver        |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantee State Program           | Name                      | TAB-1724                   |
+      | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantor State Program           | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -872,7 +872,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name   | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantee State Program           | Name                      | TAB-1724                   |
+      | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantor State Program           | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -917,7 +917,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
    #   | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | true          | Program_Manager_Approver |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantee State Program    | Name                      | TAB-1724                   |
+      | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantor State Program    | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -962,7 +962,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantee State Program           | Name                      | TAB-1724                   |
+      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantor State Program           | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1381,20 +1381,6 @@ Business Need: Approval Process Component Scenarios
 
   @148991    @verifySingleTaskIsGettingCreatedForUserInsideAssignedToMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned to me' table after record submission for approval
-#    Given I have "default" configuration as below:
-#      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
-#      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
-#      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
-#    Given I have "lightening" configuration as below:
-#      | booleanValue | integerValue | id                 | description                  | name                                  |
-#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-#    Given I setup test configuration as below:
-#      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
-#      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
-#    And I update custom setting changes:
-#      | booleanValue | integerValue | id                 | description                  | name                                  |
-#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1413,34 +1399,21 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    Then I softly see value "{SavedValue:PEGMSID}" for title "Ref. ID" inside table "---program:-:HomePendingTasksTableId---"
+    And I pause execution for "10" seconds
+    Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:HomePendingTasksTableId---"
     Then I softly see the text :
       | Total Records: 1 |
 
   @149007    @verifySingleTaskIsGettingCreatedForUserInsideAssignedByMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned by me' table after record submission for approval
-#    Given I have "default" configuration as below:
-#      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
-#      | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:0 |
-#      | Page Tabs Config             | Highlights Panel?    | false             | ApiGeneratedId:1 |
-#    Given I have "lightening" configuration as below:
-#      | booleanValue | integerValue | id                 | description                  | name                                  |
-#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-#    Given I setup test configuration as below:
-#      | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |                           |                            |
-#      | Page Tabs Config:Page Layout Action  | Highlights Panel?    | true          | Grantee State Program    | Name                      | TAB-409                    |
-#    And I update custom setting changes:
-#      | booleanValue | integerValue | id                 | description                  | name                                  |
-#      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1459,8 +1432,8 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
@@ -1469,8 +1442,8 @@ Business Need: Approval Process Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "PhasePendingTasksBy" panel
-    Then I softly see value "{SavedValue:PEGMSID}" for title "Ref. ID" inside table "PhasePendingTasksBy"
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:PhasePendingTasksByTableId---" panel
+    Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:PhasePendingTasksByTableId---"
 
   @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess @wip
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
